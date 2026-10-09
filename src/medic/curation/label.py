@@ -6,8 +6,10 @@ the computed combination id / name / file name, and the Indications and Contrain
 text split into the same typed spans the pipeline uses (so a Limitations of Use passage is
 visibly marked as one). ``--skeleton`` prints a starting YAML file.
 
-The XML is cached under ``data/raw/dailymed/`` (gitignored), the directory the DailyMed
-ingest already reads.
+The XML is cached under ``cache/labels/dailymed/<setid>.v<version>.xml`` (gitignored). Not
+``data/raw/dailymed/``: that is the DailyMed ingest's input, and every label curated there
+would silently join the pipeline's input set. Caching by version keeps the copy a file's
+quotes were checked against even after DailyMed moves on.
 """
 
 from __future__ import annotations
@@ -35,10 +37,11 @@ from medic.ingest.dailymed.__main__ import (
     _extract_ingredients_from_root,
     _extract_section_chunks_from_root,
 )
+from medic.curation.paths import enter_repo_root
 from medic.ingest.dailymed.acquire import SPL_XML_URL
 from medic.spans import spans_for_source
 
-LABEL_CACHE_DIR = Path("data/raw/dailymed")
+LABEL_CACHE_DIR = Path("cache/labels/dailymed")
 COMBINATIONS_DIR = Path("kb/combinations")
 DAILYMED_SETID_URL = "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid={setid}"
 
@@ -92,28 +95,44 @@ def parse_label(xml_bytes: bytes) -> LabelDocument:
         product_name=product_name)
 
 
-def label_path(setid: str, cache_dir: Path = LABEL_CACHE_DIR) -> Path:
-    return cache_dir / f"{setid}.xml"
+def label_path(setid: str, version: int, cache_dir: Path = LABEL_CACHE_DIR) -> Path:
+    return cache_dir / f"{setid}.v{version}.xml"
 
 
-def fetch_label(setid: str, *, cache_dir: Path = LABEL_CACHE_DIR, offline: bool = False,
-                refresh: bool = False) -> LabelDocument:
-    """The label for ``setid``, from the cache or DailyMed.
+def _cached_versions(setid: str, cache_dir: Path) -> list[Path]:
+    paths = cache_dir.glob(f"{setid}.v*.xml")
+    return sorted(paths, key=lambda p: int(p.stem.rsplit(".v", 1)[1]))
 
-    DailyMed serves the *current* version of a setid. A curated file pins the version its
-    quotes were copied from, and the validator warns when the served version has moved on.
+
+def fetch_label(setid: str, *, version: int | None = None, cache_dir: Path = LABEL_CACHE_DIR,
+                offline: bool = False, refresh: bool = False) -> LabelDocument:
+    """The label for ``setid``: the pinned ``version`` if cached, else what DailyMed serves.
+
+    DailyMed only serves the *current* version of a setid. A curated file pins the version
+    its quotes were copied from; when that version is cached it is used, so a later revision
+    upstream cannot turn an unrelated check red. Otherwise the current version is fetched
+    and cached under its own version number, and the caller compares versions.
     """
-    path = label_path(setid, cache_dir)
-    if refresh or not path.exists():
-        if offline:
-            raise FileNotFoundError(f"label {setid} is not cached at {path} (offline)")
-        resp = httpx.get(SPL_XML_URL.format(setid=setid), timeout=60.0, follow_redirects=True)
-        resp.raise_for_status()
-        if b"<document" not in resp.content[:5000]:
-            raise ValueError(f"DailyMed returned no SPL document for setid {setid}")
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(resp.content)
-    return parse_label(path.read_bytes())
+    if version is not None and not refresh:
+        pinned = label_path(setid, version, cache_dir)
+        if pinned.exists():
+            return parse_label(pinned.read_bytes())
+    cached = _cached_versions(setid, cache_dir)
+    if offline or (cached and not refresh and version is None):
+        if not cached:
+            raise FileNotFoundError(f"label {setid} is not cached under {cache_dir} (offline)")
+        return parse_label(cached[-1].read_bytes())
+    resp = httpx.get(SPL_XML_URL.format(setid=setid), timeout=60.0, follow_redirects=True)
+    resp.raise_for_status()
+    if b"<document" not in resp.content[:5000]:
+        raise ValueError(f"DailyMed returned no SPL document for setid {setid}")
+    doc = parse_label(resp.content)
+    path = label_path(setid, doc.version or 0, cache_dir)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".part")
+    tmp.write_bytes(resp.content)
+    tmp.replace(path)
+    return doc
 
 
 def _resolve_ingredients(doc: LabelDocument, resolver: IngredientResolver):
@@ -131,13 +150,22 @@ SKILL_PATH = ".claude/skills/medic-combination-curation/SKILL.md"
 REPO_BLOB = "https://github.com/monarch-initiative/medic/blob/{rev}/" + SKILL_PATH
 
 
-def _git_head() -> str:
-    try:
-        out = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True,
-                             check=True)
-        return out.stdout.strip()
-    except (OSError, subprocess.CalledProcessError):
-        return "main"
+def _git(*args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(["git", *args], capture_output=True, text=True)
+
+
+def skill_curator_id() -> str:
+    """A URL that resolves to the exact skill text, or a marker the validator rejects.
+
+    The skill must be committed and unchanged since HEAD; otherwise ``HEAD`` would name a
+    commit whose SKILL.md is not the text that guided the curation.
+    """
+    head = _git("rev-parse", "HEAD")
+    tracked = _git("ls-files", "--error-unmatch", SKILL_PATH)
+    clean = _git("diff", "--quiet", "HEAD", "--", SKILL_PATH)
+    if head.returncode or tracked.returncode or clean.returncode:
+        return f"UNCOMMITTED {SKILL_PATH}: commit the skill before curating"
+    return REPO_BLOB.format(rev=head.stdout.strip())
 
 
 def skeleton(doc: LabelDocument, resolver: IngredientResolver) -> dict:
@@ -156,7 +184,7 @@ def skeleton(doc: LabelDocument, resolver: IngredientResolver) -> dict:
         "curators": [{
             "curator_type": "AI_AGENT",
             "name": "MeDIC combination-curation skill",
-            "curator_id": REPO_BLOB.format(rev=_git_head()),
+            "curator_id": skill_curator_id(),
         }],
         "products": [{
             "source": "DAILYMED",
@@ -210,6 +238,7 @@ def main(argv: list[str] | None = None) -> int:
                              "(refuses to overwrite)")
     parser.add_argument("--refresh", action="store_true", help="re-download the label")
     args = parser.parse_args(argv)
+    enter_repo_root()
     doc = fetch_label(args.setid, refresh=args.refresh)
     resolver = IngredientResolver()
     if args.write:

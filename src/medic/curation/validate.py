@@ -4,25 +4,34 @@
 With no files, every file under ``kb/combinations/`` is checked. Exit status 1 when any
 ERROR is found; WARNINGs are reported and do not fail.
 
-ERRORs are facts the file must get right and a machine can settle: the schema; the id, name
-and file name recomputed from the ingredients; the ingredient set equal to the label's own
-structured active ingredients; every quote a verbatim substring of the right label section,
-and not from a Limitations of Use passage; every descriptor's ``text`` inside its quote; a
-bound term that exists, is current and carries its label, with a ``binding``; an unbound
-descriptor that records its ``term_gap``; an object term no broader than the label's own
-words name; attributions to real ingredients that the quote names; no curated allergy to the
-product's own ingredients; no conflict with the disease grounding store; source and
-jurisdiction consistent; at least one valid history record naming the model that did the work.
+ERRORs are facts the file must get right and a machine can settle:
+
+- the schema; the id, name and file name recomputed from the ingredients, whose labels must
+  be the resolver's; one file per combination id; curator references that resolve to a
+  committed skill;
+- the ingredient set equal to the label's own structured active ingredients;
+- every quote a verbatim substring of the right label section, and not from a Limitations of
+  Use passage; every descriptor's ``text`` inside its quote;
+- a bound term that exists, is current, carries its label, comes from a configured source and
+  has a ``binding`` consistent with what the text names; an unbound descriptor that records
+  its ``term_gap``; no bound term broader than, or unrelated to, the single term the text
+  names (checked for every descriptor, not only the object);
+- attributions the label states: "the X component" for a component statement, the
+  ingredient within the causal clause for a stated reason — never a mention inside the
+  product's own name;
+- an allergy contraindication that names its agents, none of them the product's own;
+- source and jurisdiction consistent; at least one valid history record.
 
 WARNINGs are heuristics or gaps a human should look at: a negation cue in front of the
 condition, a relation the quote's wording does not suggest, an unusual ontology for a slot,
-a store row in another ontology, a label revised since the file pinned its version.
+anchors in another ontology, a label revised since the file pinned its version.
 """
 
 from __future__ import annotations
 
 import argparse
 import re
+import subprocess
 import sys
 import unicodedata
 from dataclasses import dataclass
@@ -31,14 +40,16 @@ from pathlib import Path
 
 import yaml
 
+from medic.curation import history, terms
 from medic.curation.identity import (
     IngredientResolver,
     combination_id,
     combination_name,
     combination_slug,
+    require_store,
 )
-from medic.curation import history, terms
 from medic.curation.label import LabelDocument, fetch_label
+from medic.curation.paths import enter_repo_root
 from medic.curie_utils import get_prefix
 from medic.grounding.store import NO_TERM, LiteralMappingStore
 from medic.normalization.store import NormalizationMappingStore
@@ -76,11 +87,26 @@ USUAL_PREFIXES = {
     "in_combination_with": ("CHEBI",),
 }
 
-#: Ontologies whose labels and synonyms anchor the specificity check on the object.
-ANCHOR_PREFIXES = ("MONDO", "HP")
+#: Per slot: which ontologies' labels and synonyms, and which grounding store, anchor the
+#: specificity check on a descriptor's text.
+ANCHOR_SOURCES = {
+    "object": (("MONDO", "HP"), "disease"),
+    "disease_context": (("MONDO", "HP"), "disease"),
+    "anatomical_context": (("UBERON",), None),
+    "life_stage": (("HsapDv",), None),
+    "sex": (("PATO",), None),
+    "object_specialization": (("CHEBI",), "drug"),
+    "in_combination_with": (("CHEBI",), "drug"),
+    "line_of_therapy": ((), None),
+}
 
-_CAUSE_CUES = re.compile(r"because|due to|risk|associated with|cause|since|related to")
+#: Causal wording a stated reason hangs on; the ingredient must follow within the clause.
+_CAUSE_CUES = re.compile(r"\b(because|due to|caused by|may cause|since|related to|"
+                         r"associated with|attributable to)\b")
+_CAUSE_WINDOW_WORDS = 20
 _OWN_PRODUCT = re.compile(r"component|excipient|ingredient|this product|the formulation", re.I)
+_ALLERGY = re.compile(r"hypersensitiv|allerg|anaphyla", re.I)
+_BLOB_URL = re.compile(r"^https://github\.com/[^/]+/[^/]+/blob/([0-9a-f]{7,40})/(.+)$")
 
 #: Wording that suggests each non-default relation; used only for a WARNING.
 _PREVENT_CUES = ("risk", "prevent", "prophyla", "reduc")
@@ -108,17 +134,25 @@ def _contains(haystack: str, needle: str) -> bool:
     return bool(needle) and _norm_ws(needle) in _norm_ws(haystack)
 
 
+def _word(name: str) -> re.Pattern:
+    """``name`` as whole words, case-insensitive (so "aspirin" never matches inside a word)."""
+    return re.compile(r"(?<![a-z0-9])" + re.escape(name.lower()) + r"(?![a-z0-9])")
+
+
 class Checker:
     def __init__(self, *, check_terms: bool = True, offline: bool = False):
         self.check_terms = check_terms
         self.offline = offline
         self.ingredients = IngredientResolver()
+        require_store(DISEASE_GROUNDING_STORE)
+        require_store(DISEASE_NORMALIZATION_STORE)
         self.disease_grounding = LiteralMappingStore(DISEASE_GROUNDING_STORE, "disease")
         self.disease_grounding.load()
         self.disease_normalization = NormalizationMappingStore(
             DISEASE_NORMALIZATION_STORE, "disease")
         self.disease_normalization.load()
         self.findings: list[Finding] = []
+        self._ids: dict[str, Path] = {}
 
     # -- reporting ---------------------------------------------------------------------
     def _add(self, level: str, file: Path, where: str, message: str) -> None:
@@ -143,6 +177,7 @@ class Checker:
         if not self._check_schema(path, data):
             return
         self._check_identity(path, data)
+        self._check_curators(path, data)
         self._check_history(path)
         for p_idx, product in enumerate(data.get("products") or []):
             self._check_product(path, data, product, f"products[{p_idx}]")
@@ -164,6 +199,10 @@ class Checker:
         expected_id = combination_id(ids)
         if data.get("id") != expected_id:
             self.error(path, "id", f"must be {expected_id} (computed from the ingredients)")
+        elif expected_id in self._ids and self._ids[expected_id] != path:
+            self.error(path, "id", f"same combination as {self._ids[expected_id]}; one file "
+                                   "per ingredient set (add a product block there instead)")
+        self._ids.setdefault(expected_id, path)
         expected_name = combination_name(labels)
         if data.get("name") != expected_name:
             self.error(path, "name", f"must be {expected_name!r} (computed from the ingredients)")
@@ -176,11 +215,34 @@ class Checker:
                 self.error(path, f"ingredients[{i}]",
                            f"{ing['id']} normalizes to {canonical}; use the canonical id")
 
+    def _check_curators(self, path: Path, data: dict) -> None:
+        """An AI curator's reference must resolve to the committed skill text that guided it."""
+        for i, curator in enumerate(data.get("curators") or []):
+            if curator.get("curator_type") != "AI_AGENT":
+                continue
+            ref = curator.get("curator_id") or ""
+            where = f"curators[{i}].curator_id"
+            match = _BLOB_URL.match(ref)
+            if not match:
+                self.error(path, where, f"{ref!r} is not a commit-pinned blob URL; regenerate "
+                                        "it with the label helper after committing the skill")
+                continue
+            if subprocess.run(["git", "rev-parse", "--git-dir"],
+                              capture_output=True).returncode:
+                self.warn(path, where, "not in a git repository; cannot verify the reference")
+                continue
+            rev, rel = match.groups()
+            if subprocess.run(["git", "cat-file", "-e", f"{rev}:{rel}"],
+                              capture_output=True).returncode:
+                self.error(path, where, f"{rel} does not exist at commit {rev}; the skill text "
+                                        "that guided this curation is not recoverable")
+
     def _check_history(self, path: Path) -> None:
         """Every curated file carries at least one valid append-only history record.
 
         The record is where the session, the actors and — for an AI actor — the model that
         did the work are written down (``medic.curation.history``, adopted from dismech).
+        Whether a *change* came with a new record is checked per pull request in CI.
         """
         try:
             target = path.resolve().relative_to(Path.cwd()).as_posix()
@@ -202,17 +264,18 @@ class Checker:
             self.error(path, where, f"source {source} must have jurisdiction "
                                     f"{SOURCE_JURISDICTION.get(source)}")
         setid = product["document"]["setid"]
+        pinned = product["document"].get("version")
         try:
-            doc = fetch_label(setid, offline=self.offline)
+            doc = fetch_label(setid, version=pinned, offline=self.offline)
         except Exception as exc:  # noqa: BLE001 — any fetch failure means "cannot verify"
             self.error(path, where, f"cannot load label {setid}: {exc}")
             return
-        pinned = product["document"].get("version")
         if doc.version is not None and pinned != doc.version:
             self.warn(path, f"{where}.document.version",
-                      f"file pins version {pinned}, DailyMed now serves {doc.version}; "
-                      "quotes were checked against the current version")
+                      f"file pins version {pinned}, which is not cached; DailyMed now serves "
+                      f"{doc.version} and the quotes were checked against that")
         names = self._ingredient_names(path, data, doc, where)
+        product_names = [n for n in (doc.product_name, product.get("product_name")) if n]
         seen: set[tuple] = set()
         for c_idx, claim in enumerate(product.get("claims") or []):
             cwhere = f"{where}.claims[{c_idx}]"
@@ -220,17 +283,18 @@ class Checker:
             if key in seen:
                 self.warn(path, cwhere, "duplicate of an earlier claim in this product")
             seen.add(key)
-            self._check_claim(path, claim, doc, names, cwhere)
+            self._check_claim(path, claim, doc, names, product_names, cwhere)
 
     def _ingredient_names(self, path: Path, data: dict, doc: LabelDocument,
                           where: str) -> dict[str, set[str]]:
-        """Check the ingredient set against the label; return each id's names (lowercased).
+        """Check the ingredient set and labels against the label; return each id's names.
 
-        The names are what the label calls the ingredient (its activeMoiety names) plus the
-        ingredient's own label, so an attribution can be checked against the quote.
+        The names (lowercased) are what the label calls the ingredient (its activeMoiety
+        names) plus the ingredient's own label, so an attribution can be checked against the
+        quote.
         """
-        names: dict[str, set[str]] = {i["id"]: {i["label"].lower()}
-                                      for i in data.get("ingredients") or []}
+        file_labels = {i["id"]: i["label"] for i in data.get("ingredients") or []}
+        names: dict[str, set[str]] = {i: {lbl.lower()} for i, lbl in file_labels.items()}
         label_ids = set()
         for moiety in doc.active_moieties:
             ing, why = self.ingredients.resolve(moiety)
@@ -239,15 +303,20 @@ class Checker:
                 return names
             label_ids.add(ing.id)
             names.setdefault(ing.id, set()).add(moiety.lower())
-        if set(names) != label_ids:
+            if ing.id in file_labels and file_labels[ing.id] != ing.label:
+                self.error(path, "ingredients",
+                           f"{ing.id} must be labelled {ing.label!r} (the resolver's label, "
+                           f"which the name and file name are computed from), not "
+                           f"{file_labels[ing.id]!r}")
+        if set(file_labels) != label_ids:
             self.error(path, "ingredients",
                        f"must equal the label's active ingredients {sorted(label_ids)}; "
-                       f"file has {sorted(set(names))}")
+                       f"file has {sorted(file_labels)}")
         return names
 
     # -- one claim ---------------------------------------------------------------------
     def _check_claim(self, path: Path, claim: dict, doc: LabelDocument,
-                     names: dict[str, set[str]], where: str) -> None:
+                     names: dict[str, set[str]], product_names: list[str], where: str) -> None:
         relation, section, quote = claim["relation"], claim["section"], claim["quote"]
         if RELATION_SECTION[relation] != section:
             self.error(path, where, f"{relation} claims must quote the "
@@ -257,11 +326,10 @@ class Checker:
             self._check_descriptor(path, quote, slot, desc, f"{where}.{slot}")
         if claim.get("age_range") and not _contains(quote, claim["age_range"].get("text", "")):
             self.error(path, f"{where}.age_range.text", "does not occur in the quote")
-        self._check_attribution(path, claim, names, where)
-        self._check_own_ingredient_allergy(path, claim, names, where)
+        self._check_attribution(path, claim, names, product_names, where)
+        self._check_allergy(path, claim, names, where)
         if claim["status"] in ("REVIEWED", "REJECTED") and not claim.get("reviewer"):
             self.error(path, f"{where}.status", f"{claim['status']} requires a reviewer")
-        self._check_object_specificity(path, claim["object"], f"{where}.object")
         self._check_polarity_and_wording(path, claim, where)
 
     def _check_quote(self, path: Path, claim: dict, doc: LabelDocument, where: str) -> None:
@@ -269,8 +337,6 @@ class Checker:
         if not _contains(doc.section_text(section), quote):
             self.error(path, f"{where}.quote",
                        f"not a verbatim substring of the label's {section} section")
-            return
-        if section != "INDICATIONS":
             return
         spans = doc.spans(section)
         readable = [s for s in spans if s["role"] not in NON_CLAIM_ROLES]
@@ -293,6 +359,7 @@ class Checker:
         if not term:
             if not (desc.get("term_gap") or "").strip():
                 self.error(path, where, "no term: record what was searched in term_gap")
+            self._check_unbound(path, slot, desc, where)
             return
         if not desc.get("binding"):
             self.error(path, f"{where}.binding", "required when a term is given")
@@ -301,20 +368,24 @@ class Checker:
         if usual and prefix not in usual:
             self.warn(path, f"{where}.term", f"{term['id']}: {slot} usually uses "
                                              f"{', '.join(usual)}; confirm this is intended")
-        self._check_term(path, term, f"{where}.term")
+        if self._check_term(path, term, f"{where}.term"):
+            self._check_specificity(path, slot, desc, where)
 
-    def _check_term(self, path: Path, term: dict, where: str) -> None:
+    def _check_term(self, path: Path, term: dict, where: str) -> bool:
+        """True when the term was found current and correctly labelled."""
         if not self.check_terms:
-            return
+            return True
         prefix = get_prefix(term["id"])
         if terms.source_selector(prefix) == "obo" and prefix not in terms.PREFIX_SOURCES:
-            self.warn(path, where, f"cannot check {term['id']}: no term source for {prefix}")
-            return
+            self.error(path, where, f"{term['id']}: no term source is configured for {prefix}, "
+                                    "so the term cannot be checked; add one in "
+                                    "conf/curation_terms.yaml or use a configured ontology")
+            return False
         try:
             info = terms.lookup(term["id"])
         except Exception as exc:  # noqa: BLE001 — unloadable ontology means "cannot check"
             self.error(path, where, f"cannot check {term['id']}: {exc}")
-            return
+            return False
         if info is None:
             self.error(path, where, f"{term['id']} does not exist in {prefix}")
         elif info.obsolete:
@@ -322,80 +393,125 @@ class Checker:
             self.error(path, where, f"{term['id']} is obsolete{hint}")
         elif info.label.lower() != term["label"].lower():
             self.error(path, where, f"{term['id']} is labelled {info.label!r}, not {term['label']!r}")
+        else:
+            return True
+        return False
 
     # -- specificity: the term must be as specific as the label's words ----------------
-    def _check_object_specificity(self, path: Path, obj: dict, where: str) -> None:
-        """Compare the bound term with every term the object's text names.
-
-        Each word span of ``object.text`` is looked up as an exact label or synonym in the
-        ontologies and as a disease grounding store row. The bound term may equal one of
-        those anchors or be more specific than it; it may not be *broader* than any of them
-        (the label's words support something more specific), and it should not be unrelated
-        to all of them.
-        """
-        text, term = obj.get("text", ""), obj.get("term")
-        anchors = self._anchors(text)  # id -> "ontology" | "store"
-        if not term:
-            if anchors and self.check_terms:
-                self.warn(path, where, f"text matches {sorted(anchors)}; bind one of them or "
-                                       "explain in term_gap why none applies")
+    def _check_unbound(self, path: Path, slot: str, desc: dict, where: str) -> None:
+        if not self.check_terms or slot not in ("object", "disease_context"):
             return
+        onto, store = self._anchors(slot, desc.get("text", ""))
+        if onto or store:
+            self.warn(path, where, f"text matches {sorted(set(onto) | set(store))}; bind one "
+                                   "of them or explain in term_gap why none applies")
+
+    def _check_specificity(self, path: Path, slot: str, desc: dict, where: str) -> None:
+        """Compare the bound term with every term the descriptor's text names.
+
+        Each word span of the text (and its singular) is looked up as an exact label or
+        synonym in the slot's ontologies, and as a grounding-store row. The bound term may
+        not be broader than any of those anchors, nor unrelated to the single term the words
+        name. ``binding`` is checked only against ontology matches on the *whole* text — the
+        stores are too coarse ("NSAIDs" -> anti-inflammatory drug), and what a *part* of the
+        text names ("infection" in "HIV-1 infection") says nothing about the whole: EXACT for
+        the term the whole text names, NARROWER for a descendant of it, never NARROWER for a
+        term only part of the text names.
+        """
+        text, term, binding = desc.get("text", ""), desc["term"], desc.get("binding")
+        onto, store = self._anchors(slot, text)  # id -> names the whole text?
         chosen = term["id"]
         prefix = get_prefix(chosen)
-        same = {a: how for a, how in anchors.items() if get_prefix(a) == prefix}
-        other = {a: how for a, how in anchors.items() if get_prefix(a) != prefix}
-        if not same:
-            if any(how == "store" for how in other.values()):
-                self.warn(path, where, f"grounding store maps {text!r} to {sorted(other)}; the "
-                                       f"curated {chosen} is in another ontology — confirm and "
-                                       "consider a semapv:ManualMappingCuration row")
-            elif not anchors:
+        named = sorted(a for a in set(onto) | set(store) if get_prefix(a) == prefix)
+        other = sorted(a for a in set(onto) | set(store) if get_prefix(a) != prefix)
+        if not named:
+            if other:
+                self.warn(path, where, f"text matches {other} in another ontology, not {chosen}; "
+                                       "confirm the binding"
+                          + (" and consider a semapv:ManualMappingCuration row"
+                             if any(a in store for a in other) else ""))
+            elif slot in ("object", "disease_context") and self.check_terms:
                 self.warn(path, where, f"no term or grounding row matches any part of {text!r}; "
                                        "confirm the binding")
             return
         if not self.check_terms:
-            if chosen not in same:
-                self.warn(path, where, f"text matches {sorted(same)}, not {chosen}; "
+            if chosen not in named:
+                self.warn(path, where, f"text matches {named}, not {chosen}; "
                                        "run with term checks to compare them")
             return
         # A longer part of the phrase can name a more specific term than a shorter part:
         # "acute myocardial infarction" contains "myocardial infarction". Check that first,
         # so matching the shorter part never excuses the broader binding.
-        narrower_matches = sorted(a for a in same if chosen in terms.ancestors(a))
-        if narrower_matches:
+        narrower = sorted(a for a in named if chosen in terms.ancestors(a))
+        if narrower:
             self.error(path, where, f"{chosen} is broader than the label's own words, which "
-                                    f"match {narrower_matches}; bind the more specific term")
+                                    f"match {narrower}; bind the more specific term")
             return
-        if chosen in same or any(a in terms.ancestors(chosen) for a in same):
-            return  # what the words name, or more specific and justified by the quote
-        store_targets = sorted(a for a, how in same.items() if how == "store")
-        if len(store_targets) == 1:
-            # The words name one condition, the store grounds it, and the curated term is
-            # unrelated to it: a real disagreement.
-            self.error(path, where, f"grounding store maps {text!r} to {store_targets}, which is "
-                                    f"unrelated to {chosen}; fix the claim or add a "
-                                    "semapv:ManualMappingCuration row")
+        chosen_ancestors = terms.ancestors(chosen)
+        if chosen in onto:
+            if onto[chosen] and binding != "EXACT":
+                self.error(path, f"{where}.binding", f"the whole text names {chosen}; "
+                                                     f"binding must be EXACT, not {binding}")
+            elif not onto[chosen] and binding == "NARROWER":
+                self.error(path, f"{where}.binding", f"{chosen} is what part of the text names, "
+                                                     "so it cannot be NARROWER than the text")
+            return
+        if chosen in named:
+            return  # a store row agrees; the store is too coarse to judge the binding
+        whole_ancestors = sorted(a for a, whole in onto.items()
+                                 if whole and a in chosen_ancestors)
+        if whole_ancestors:
+            if binding != "NARROWER":
+                self.error(path, f"{where}.binding", f"{chosen} is more specific than what the "
+                                                     f"whole text names ({whole_ancestors}); "
+                                                     f"binding must be NARROWER, not {binding}")
+            return
+        if any(a in chosen_ancestors for a in named):
+            return  # more specific than what part of the words name
+        store_targets = sorted(a for a in store if get_prefix(a) == prefix)
+        if len(store_targets) == 1 or len(named) == 1:
+            # The words name one condition and the curated term is unrelated to it.
+            self.error(path, where, f"the label's words name {named}, which is unrelated to "
+                                    f"{chosen}; fix the binding"
+                       + (" or add a semapv:ManualMappingCuration row" if store_targets else ""))
         else:
             # Several unrelated anchors means the text lists conditions (a named syndrome,
             # "asthma, rhinitis, and nasal polyps"); the composite term is not contradicted.
-            self.warn(path, where, f"text matches {sorted(same)}, none related to {chosen}; "
+            self.warn(path, where, f"text matches {named}, none related to {chosen}; "
                                    "confirm the binding")
 
-    def _anchors(self, text: str) -> dict[str, str]:
-        found: dict[str, str] = {}
-        for span in _word_spans(text):
-            for row in self.disease_grounding.lookup(span):
-                if row.object_id and row.object_id != NO_TERM:
-                    found.setdefault(self._normalize_disease(row.object_id), "store")
+    def _anchors(self, slot: str, text: str) -> tuple[dict[str, bool], dict[str, bool]]:
+        """Terms the text names, from ontologies and from the stores: id -> whole text?"""
+        prefixes, store_kind = ANCHOR_SOURCES.get(slot, ((), None))
+        # Plurals are folded for diseases, phenotypes and anatomy, whose labels are singular.
+        # Not for chemicals: in ChEBI the plural is the class ("benzimidazoles") and the
+        # singular the parent compound ("benzimidazole"), a different, narrower term.
+        fold = "CHEBI" not in prefixes
+        whole = _norm_ws(text).strip(".,;:()[]\"'").lower()
+        whole_forms = {whole, _singular(whole)} if fold else {whole}
+        onto: dict[str, bool] = {}
+        store: dict[str, bool] = {}
+
+        def note(found: dict[str, bool], curie: str, span: str) -> None:
+            found[curie] = found.get(curie, False) or span.lower() in whole_forms
+
+        for span in _word_spans(text, fold_plurals=fold):
+            if store_kind == "disease":
+                for row in self.disease_grounding.lookup(span):
+                    if row.object_id and row.object_id != NO_TERM:
+                        note(store, self._normalize_disease(row.object_id), span)
+            elif store_kind == "drug":
+                for curie in self.ingredients.drug_ids_for(span):
+                    note(store, curie, span)
             if self.check_terms:
-                for prefix in ANCHOR_PREFIXES:
+                for prefix in prefixes:
                     try:
                         ids = terms.exact_matches(prefix, span)
                     except Exception:  # noqa: BLE001 — no source: no anchors from it
                         ids = ()
                     for curie in ids:
-                        found[curie] = found.get(curie, "ontology")
-        return found
+                        note(onto, curie, span)
+        return onto, store
 
     def _normalize_disease(self, curie: str) -> str:
         norm = self.disease_normalization.lookup(curie)
@@ -403,42 +519,71 @@ class Checker:
 
     # -- attribution and allergy -------------------------------------------------------
     def _check_attribution(self, path: Path, claim: dict, names: dict[str, set[str]],
-                           where: str) -> None:
-        """An ingredient is credited only when the label names it in the quote."""
-        low = _norm_ws(claim["quote"]).lower()
+                           product_names: list[str], where: str) -> None:
+        """An ingredient is credited only on wording the label uses to credit it.
+
+        The product's own name is removed from the quote first: a generic name ("Ipratropium
+        Bromide and Albuterol Sulfate Inhalation Solution is indicated ...") names every
+        ingredient and attributes nothing.
+        """
+        text = _strip_product_names(_norm_ws(claim["quote"]).lower(), product_names)
         for i, attribution in enumerate(claim.get("attributed_to") or []):
             awhere = f"{where}.attributed_to[{i}]"
-            ingredient = attribution["ingredient"]
+            ingredient, basis = attribution["ingredient"], attribution["basis"]
             if ingredient not in names:
                 self.error(path, awhere, f"{ingredient} is not one of this combination's "
                                          "ingredients")
                 continue
-            if not any(n in low for n in names[ingredient]):
-                self.error(path, awhere, f"the quote never names {ingredient} "
-                                         f"({' / '.join(sorted(names[ingredient]))}); "
-                                         "attribution must be stated by the label")
-            if attribution["basis"] == "STATED_REASON" and not _CAUSE_CUES.search(low):
-                self.warn(path, awhere, "STATED_REASON, but the quote has no causal wording "
-                                        "(because / due to / risk / associated with)")
-            if attribution["basis"] == "COMPONENT_STATEMENT" and "component" not in low:
-                self.warn(path, awhere, "COMPONENT_STATEMENT, but the quote never says "
-                                        "'component'; check it is not a stated reason")
+            ing_names = sorted(names[ingredient])
+            if basis == "COMPONENT_STATEMENT":
+                if not any(re.search(_word(n).pattern + r"\s+component", text)
+                           for n in ing_names):
+                    wording = " or ".join(f"'the {n} component'" for n in ing_names)
+                    self.error(path, awhere, f"COMPONENT_STATEMENT needs the quote to say "
+                                             f"{wording}")
+            elif basis == "STATED_REASON":
+                if not _named_in_causal_clause(text, ing_names):
+                    self.error(path, awhere, "STATED_REASON needs the quote to name "
+                                             f"{' / '.join(ing_names)} in its causal clause "
+                                             "(after 'because', 'due to', 'caused by', ...)")
 
-    def _check_own_ingredient_allergy(self, path: Path, claim: dict,
-                                      names: dict[str, set[str]], where: str) -> None:
-        """Allergy to the product's own ingredients is not curated (only cross-sensitivity)."""
-        specs = claim.get("object_specialization") or []
-        if claim["relation"] != "CONTRAINDICATED" or not specs:
+    def _check_allergy(self, path: Path, claim: dict, names: dict[str, set[str]],
+                       where: str) -> None:
+        """Allergy contraindications name their agents, and not the product's own.
+
+        Allergy to the product's own ingredients is not curated; a cross-sensitivity to other
+        agents is, with those agents in ``object_specialization``.
+        """
+        if claim["relation"] != "CONTRAINDICATED":
             return
+        obj = claim["object"]
+        is_allergy = _ALLERGY.search(obj.get("text", "")) or _ALLERGY.search(
+            (obj.get("term") or {}).get("label", ""))
+        specs = claim.get("object_specialization") or []
+        if not is_allergy and not specs:
+            return
+        if is_allergy and not specs:
+            self.error(path, f"{where}.object_specialization",
+                       "an allergy contraindication must name the agents it concerns; if they "
+                       "are only the product's own ingredients, it is not curated")
+            return
+        all_names = [n for ns in names.values() for n in ns]
 
         def own(spec: dict) -> bool:
             term = spec.get("term") or {}
-            return term.get("id") in names or bool(_OWN_PRODUCT.search(spec.get("text", "")))
+            text = spec.get("text", "").lower()
+            return (term.get("id") in names or bool(_OWN_PRODUCT.search(text))
+                    or any(_word(n).search(text) for n in all_names))
 
-        if all(own(s) for s in specs):
+        own_specs = [s.get("text", "") for s in specs if own(s)]
+        if len(own_specs) == len(specs):
             self.error(path, f"{where}.object_specialization",
                        "allergy to the product's own ingredients is not curated; keep only "
                        "cross-sensitivities to other agents")
+        elif own_specs:
+            self.error(path, f"{where}.object_specialization",
+                       f"drop the product's own ingredients ({', '.join(own_specs)}); keep only "
+                       "the other agents")
 
     def _check_polarity_and_wording(self, path: Path, claim: dict, where: str) -> None:
         relation, quote, text = claim["relation"], claim["quote"], claim["object"]["text"]
@@ -495,15 +640,44 @@ def _claim_key(claim: dict) -> tuple:
     )
 
 
-def _word_spans(text: str, max_words: int = 8) -> list[str]:
-    """Every contiguous run of words in ``text``, longest first (punctuation trimmed)."""
+def _singular(span: str) -> str:
+    """Drop a plural "s" from the last word ("gastric ulcers" -> "gastric ulcer")."""
+    head, _, last = span.rpartition(" ")
+    if len(last) > 3 and last.endswith("s") and not last.endswith("ss"):
+        last = last[:-1]
+    return f"{head} {last}".strip()
+
+
+def _word_spans(text: str, max_words: int = 8, *, fold_plurals: bool = True) -> list[str]:
+    """Every contiguous run of words in ``text``, longest first, optionally with singulars."""
     words = [w.strip(".,;:()[]\"'") for w in _norm_ws(text).split()]
     words = [w for w in words if w]
-    spans = []
+    spans: list[str] = []
     for n in range(min(len(words), max_words), 0, -1):
         for i in range(len(words) - n + 1):
-            spans.append(" ".join(words[i:i + n]))
+            span = " ".join(words[i:i + n])
+            for form in ((span, _singular(span)) if fold_plurals else (span,)):
+                if form not in spans:
+                    spans.append(form)
     return spans
+
+
+def _strip_product_names(text: str, product_names: list[str]) -> str:
+    for name in product_names:
+        name = _norm_ws(name).lower()
+        if len(name) > 3:
+            text = text.replace(name, " ")
+    return text
+
+
+def _named_in_causal_clause(text: str, names: list[str]) -> bool:
+    """Does a causal cue in ``text`` have one of ``names`` within its clause after it?"""
+    for cue in _CAUSE_CUES.finditer(text):
+        clause = re.split(r"[.;]", text[cue.end():], maxsplit=1)[0]
+        window = " ".join(clause.split()[:_CAUSE_WINDOW_WORDS])
+        if any(_word(n).search(window) for n in names):
+            return True
+    return False
 
 
 @lru_cache(maxsize=1)
@@ -519,12 +693,6 @@ def _merged_schema():
     return view.schema
 
 
-def _files(paths: list[str]) -> list[Path]:
-    if paths:
-        return [Path(p) for p in paths]
-    return sorted(COMBINATIONS_DIR.glob("*.yaml"))
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("files", nargs="*", help="files to check (default: kb/combinations/)")
@@ -533,11 +701,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--offline", action="store_true",
                         help="use cached labels only; never download")
     args = parser.parse_args(argv)
-    files = _files(args.files)
+    files = enter_repo_root(args.files) or sorted(COMBINATIONS_DIR.glob("*.yaml"))
     if not files:
         print("no combination files to check")
         return 0
-    checker = Checker(check_terms=not args.no_terms, offline=args.offline)
+    try:
+        checker = Checker(check_terms=not args.no_terms, offline=args.offline)
+    except FileNotFoundError as exc:
+        print(f"ERROR   {exc}")
+        return 1
     for path in files:
         checker.check_file(path)
     for finding in checker.findings:

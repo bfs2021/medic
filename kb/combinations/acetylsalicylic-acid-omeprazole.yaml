@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f808d89e3519b3a45f6d3894db43700d55ac985/.claude/skills/medic-combination-curation/SKILL.md
+  curator_id: https://github.com/monarch-initiative/medic/blob/d68f1be/.claude/skills/medic-combination-curation/SKILL.md
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -253,14 +253,36 @@ products:
       concomitant use of aspirin"). Reye's syndrome is the risk avoided, not the contraindicated
       condition, so no claim for it. "suspected" is kept in the text; the term is bound EXACT to
       the condition itself.
+  - relation: CONTRAINDICATED
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: substituted benzimidazoles
+      term:
+        id: CHEBI:22715
+        label: benzimidazoles
+      binding: EXACT
+    quote: >-
+      ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is contraindicated in patients with known
+      hypersensitivity to aspirin, omeprazole, substituted benzimidazoles
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to the substituted benzimidazoles (the proton pump inhibitor class
+      omeprazole belongs to). The same sentence also names aspirin, omeprazole and the
+      excipients; allergy to the product's own ingredients is not curated, so only the class is
+      a specialization. Not attributed: the agents are allergens, not causes.
 notes: >-
   Not claimed: the product-level sentence ("patients who require aspirin for secondary prevention
   of cardiovascular and cerebrovascular events and who are at risk of developing aspirin
   associated gastric ulcers") describes a population; the revascularization item (CABG/PTCA) is a
   procedure; Limitations of Use (acute coronary syndrome, acute myocardial infarction, PCI; "has
   not been shown to reduce the risk of gastrointestinal bleeding") produce no claims; the
-  rilpivirine contraindication is a drug interaction with no condition; "known hypersensitivity
-  to aspirin, omeprazole, substituted benzimidazoles, or to any of the excipients" is allergy to
-  the product's own ingredients and is not curated (per the skill's worked example, although
-  "substituted benzimidazoles" reaches beyond omeprazole; reviewer may want a drug allergy +
-  CHEBI:22715 benzimidazoles claim). The Highlights copies restate the full-text claims.
+  rilpivirine contraindication is a drug interaction with no condition; in "known
+  hypersensitivity to aspirin, omeprazole, substituted benzimidazoles, or to any of the
+  excipients" only the benzimidazole cross-sensitivity is curated (aspirin, omeprazole and the
+  excipients are the product's own). The Highlights copies restate the full-text claims.

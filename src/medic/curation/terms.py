@@ -318,7 +318,10 @@ def main(argv: list[str] | None = None) -> int:
     Prefixes: MONDO, HP, UBERON, HsapDv, PATO, CHEBI. The source for each is set in
     conf/curation_terms.yaml or MEDIC_TERM_SOURCE_<PREFIX>.
     """
+    from medic.curation.paths import enter_repo_root
+
     argv = sys.argv[1:] if argv is None else argv
+    enter_repo_root()
     if len(argv) >= 3 and argv[0] == "search":
         for info, text in search(argv[1], " ".join(argv[2:])):
             via = "" if text == info.label else f"   (exact synonym: {text})"

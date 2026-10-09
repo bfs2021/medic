@@ -1,0 +1,25 @@
+history_version: 1
+target:
+  kind: combination
+  slug: albuterol-ipratropium
+  path: kb/combinations/albuterol-ipratropium.yaml
+session:
+  id: 2026-10-09T175225Z-claude-code-21ed97
+  timestamp: '2026-10-09T17:52:25Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls: []
+events:
+- type: AUDIT
+  outcome: changed
+  sections:
+  - curators
+  summary: 'Audit: term-checked validation; fix provenance'
+  details: |
+    Pointed curator_id at commit d68f1be, the first commit containing the skill (the earlier reference named a commit without it). Ran the validator with term checks after the post-review hardening (attribution wording, allergy agents, descriptor anchoring, binding direction): 0 errors. Claims unchanged. Supersedes the needs_followup outcome of the previous record, whose term-checked run could not complete because of the term-cache bug since fixed.

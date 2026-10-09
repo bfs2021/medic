@@ -114,14 +114,21 @@ jobs:
       - name: Install dependencies
         run: uv sync --group dev
 
+      # Labels are cached per pinned version, so a stale cache cannot change a verdict.
+      # Ontology releases are refreshed monthly (the month is part of the key), so
+      # "obsolete" and label checks do not run against a release cached once and kept forever.
+      - name: Month for the ontology cache key
+        id: month
+        run: echo "month=$(date -u +%Y-%m)" >> "$GITHUB_OUTPUT"
+
       - name: Cache labels and ontology releases
         uses: actions/cache@v4
         with:
           path: |
-            data/raw/dailymed
+            cache/labels/dailymed
             cache/ontologies
-          key: curation-sources-${{ hashFiles('kb/combinations/**') }}
-          restore-keys: curation-sources-
+          key: curation-sources-${{ steps.month.outputs.month }}-${{ hashFiles('kb/combinations/**') }}
+          restore-keys: curation-sources-${{ steps.month.outputs.month }}-
 
       - name: Validate curated combination files
         run: uv run python -m medic.curation.validate

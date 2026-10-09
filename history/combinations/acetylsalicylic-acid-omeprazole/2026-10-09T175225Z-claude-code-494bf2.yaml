@@ -1,0 +1,26 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-omeprazole
+  path: kb/combinations/acetylsalicylic-acid-omeprazole.yaml
+session:
+  id: 2026-10-09T175225Z-claude-code-494bf2
+  timestamp: '2026-10-09T17:52:25Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls: []
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  summary: 'Edit: add benzimidazole cross-sensitivity; fix provenance'
+  details: |
+    Added the CONTRAINDICATED drug allergy + CHEBI:22715 benzimidazoles claim from 'known hypersensitivity to aspirin, omeprazole, substituted benzimidazoles, or to any of the excipients': the benzimidazole class is a cross-sensitivity to other agents, while aspirin, omeprazole and the excipients are the product's own and stay uncurated. The previous run skipped the whole sentence by misreading the skill's example (review finding 10). Pointed curator_id at commit d68f1be, the first commit containing the skill (the earlier reference named a commit without it). Validated with term checks against DailyMed setid ae8f4eb4-b1eb-432e-b5ab-598c29996d6a v1: 0 errors; remaining warnings are the syndrome binding (see issues/06-mondo-aerd-triad-under-hereditary-disease.md) and a UMLS-only grounding-store row for the TIA context.

@@ -241,6 +241,10 @@ def check_record(path: Path) -> list[str]:
     for actor in session["actors"]:
         if actor["type"] == "ai_agent" and not actor.get("model"):
             problems.append(f"ai_agent actor {actor['name']!r} must record its model")
+        model = actor.get("model") or ""
+        if model and normalize_model_id(model) != model:
+            problems.append(f"model {model!r} carries a runtime suffix; record "
+                            f"{normalize_model_id(model)!r}")
     target = data["target"]
     if not Path(target["path"]).exists():
         moved = (target.get("superseded_by") or {}).get("path")
@@ -276,6 +280,7 @@ def validate_main(argv: list[str]) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Paths are relative to the working directory; the command line anchors it at the root."""
     argv = sys.argv[1:] if argv is None else argv
     if argv[:1] == ["validate"]:
         return validate_main(argv[1:])
@@ -301,5 +306,16 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
+def cli() -> int:
+    """Command-line entry: resolve file arguments, then work from the repository root."""
+    from medic.curation.paths import enter_repo_root
+
+    argv = sys.argv[1:]
+    if argv[:1] == ["validate"]:
+        return main(["validate", *(str(p) for p in enter_repo_root(argv[1:]))])
+    enter_repo_root()
+    return main(argv)
+
+
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(cli())

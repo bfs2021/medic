@@ -10,6 +10,7 @@ from __future__ import annotations
 import re
 import uuid
 from dataclasses import dataclass
+from pathlib import Path
 
 from medic.grounding.store import NO_TERM, LiteralMappingStore, is_locked
 from medic.mention import MEDICNE_NAMESPACE
@@ -49,6 +50,17 @@ def combination_slug(labels: list[str]) -> str:
     return re.sub(r"[^a-z0-9]+", "-", joined).strip("-")
 
 
+def require_store(path: str) -> None:
+    """Fail loudly when a decision store is missing.
+
+    ``LiteralMappingStore.load`` returns quietly on a missing file, which turned a wrong
+    working directory into "every ingredient is unresolvable" instead of an error.
+    """
+    if not Path(path).exists():
+        raise FileNotFoundError(f"decision store {path} not found (working directory: "
+                                f"{Path.cwd()}); run from the repository root")
+
+
 class IngredientResolver:
     """Resolve a label's active-ingredient names to canonical CURIEs through the drug stores.
 
@@ -59,6 +71,8 @@ class IngredientResolver:
 
     def __init__(self, grounding_path: str = DRUG_GROUNDING_STORE,
                  normalization_path: str = DRUG_NORMALIZATION_STORE):
+        require_store(grounding_path)
+        require_store(normalization_path)
         self._grounding = LiteralMappingStore(grounding_path, "drug")
         self._grounding.load()
         self._normalization = NormalizationMappingStore(normalization_path, "drug")
@@ -79,6 +93,11 @@ class IngredientResolver:
         if norm and norm.object_id:
             return Ingredient(norm.object_id, norm.object_label or row.object_label or ""), ""
         return Ingredient(row.object_id, row.object_label or ""), ""
+
+    def drug_ids_for(self, text: str) -> set[str]:
+        """Canonical ids the drug grounding store maps ``text`` to (empty when none)."""
+        return {self.normalize(r.object_id) for r in self._grounding.lookup(text)
+                if r.object_id and r.object_id != NO_TERM}
 
     def normalize(self, curie: str) -> str:
         norm = self._normalization.lookup(curie)

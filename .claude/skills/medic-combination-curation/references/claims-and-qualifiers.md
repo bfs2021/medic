@@ -51,9 +51,15 @@ disease_context:
 - When nothing fits, leave `term` out and write `term_gap`: what you searched
   and what is missing (a term-request URL if you filed one). Never force a
   distant term to avoid a gap.
-- The validator anchors on every word span of the object's `text` that names a
-  term. Binding a term *broader* than one the words name is an error ("acute
-  myocardial infarction" bound to myocardial infarction).
+- The validator anchors on every word span of each descriptor's `text` that
+  names a term (label or exact synonym; for diseases and anatomy plurals are
+  folded, for chemicals they are not, since "benzimidazoles" is the class and
+  "benzimidazole" the compound) or a grounding-store row. Binding a term
+  *broader* than one the words name is an error ("acute myocardial infarction"
+  bound to myocardial infarction); so is a term unrelated to the single thing
+  the words name. The binding must agree with what the *whole* text names:
+  EXACT if it is that term, NARROWER if you bound a descendant; a term that
+  only part of the text names can be EXACT or BROADER, never NARROWER.
 
 ## What is a claim object
 
@@ -88,14 +94,15 @@ Not claim objects (record nothing, mention in your summary if notable):
 
 ## Attribution
 
-`attributed_to` is a list of `{ingredient, basis}`. The label must name the
-ingredient inside the quote (the validator checks); there are exactly two
-bases:
+`attributed_to` is a list of `{ingredient, basis}`. There are exactly two
+bases, and the validator checks the wording of each (with the product's own
+name removed from the quote first, since a generic name lists every
+ingredient):
 
 | basis | when | example |
 |---|---|---|
-| `COMPONENT_STATEMENT` | the label assigns the claim to the component | "The omeprazole component of ... is indicated for decreasing the risk of ... gastric ulcers" |
-| `STATED_REASON` | the label names the ingredient as the cause | "... because of the risk of Reye's syndrome with concomitant use of aspirin"; "... due to the expected significantly increased grazoprevir plasma concentration" |
+| `COMPONENT_STATEMENT` | the label assigns the claim to the component; the quote must contain "the <ingredient> component" | "The omeprazole component of ... is indicated for decreasing the risk of ... gastric ulcers" |
+| `STATED_REASON` | the label names the ingredient as the cause; the ingredient must appear in the clause after a causal cue (because, due to, caused by, may cause, since, related to, associated with) | "... because of the risk of Reye's syndrome with concomitant use of aspirin"; "... due to the expected significantly increased grazoprevir plasma concentration" |
 
 Not attribution:
 

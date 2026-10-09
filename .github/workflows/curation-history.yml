@@ -1,0 +1,71 @@
+name: Curation history
+
+# Every change to a curated combination file must come with a new history record in the same
+# pull request: the record is where the session, the actors and the model that did the work
+# are written down. dismech runs the same comparison as an advisory warning; MeDIC blocks,
+# with a deliberate escape hatch: a maintainer adds the `history-skip` label for a change
+# that needs no record (a whitespace fix, a pure rename). Adding or removing that label
+# re-runs this check, which is why it is its own workflow.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+    paths:
+      - 'kb/combinations/**'
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  history-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require a new history record for every changed combination file
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+
+          # The PR's own file list (a merge-base diff), not a local two-dot diff: dismech
+          # found the latter blames main's newer commits on any branch that is behind main.
+          PR_FILES="repos/${REPO}/pulls/${PR}/files"
+          CHANGED=$(gh api --paginate "$PR_FILES" \
+            --jq '.[] | select(.status != "removed") | .filename' \
+            | grep -E '^kb/combinations/[^/]+\.yaml$' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No curated combination files changed."
+            exit 0
+          fi
+          ADDED_HISTORY=$(gh api --paginate "$PR_FILES" \
+            --jq '.[] | select(.status == "added") | .filename' \
+            | grep -E '^history/combinations/' || true)
+
+          MISSING=""
+          while IFS= read -r entry; do
+            [ -z "$entry" ] && continue
+            slug=$(basename "$entry" .yaml)
+            if ! echo "$ADDED_HISTORY" | grep -q "^history/combinations/${slug}/"; then
+              MISSING="${MISSING}  ${entry}"$'\n'
+            fi
+          done <<< "$CHANGED"
+
+          if [ -z "$MISSING" ]; then
+            echo "Every changed combination file has a new history record."
+            exit 0
+          fi
+
+          LABELS=$(gh pr view "$PR" --repo "$REPO" --json labels --jq '.labels[].name')
+          if echo "$LABELS" | grep -Fxq 'history-skip'; then
+            echo "::warning::history-skip label present; allowing changes without a record:"
+            printf '%s' "$MISSING"
+            exit 0
+          fi
+
+          echo "::error::These combination files changed without a new history record:"
+          printf '%s' "$MISSING"
+          echo "Add one with \`just new-history --kind combination --slug <file stem> ...\`,"
+          echo "or, for a change that needs no record, have a maintainer add 'history-skip'."
+          exit 1

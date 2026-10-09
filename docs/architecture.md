@@ -398,18 +398,26 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   typed spans; `uv run python -m medic.curation.terms search|info` looks terms up in the
   ontologies' OBO releases, cached under `cache/ontologies/`; `just combination-worklist`
   writes `curation/combination_worklist.tsv` from the pipeline's fan-out.
-- **Checks:** `just validate-curation` (`medic.curation.validate`). Errors: schema; computed
-  id/name/file name; ingredient set equal to the label's structured active ingredients;
+- **Checks:** `just validate-curation` (`medic.curation.validate`), runnable from any
+  directory. Errors: schema; computed id/name/file name, with ingredient labels equal to the
+  resolver's and one file per combination id; AI curator references that resolve to the
+  committed skill; ingredient set equal to the label's structured active ingredients;
   quotes verbatim in the right section and not from a Limitations of Use span; descriptor
-  text inside the quote; bound terms that exist, are current, carry their label and a
-  `binding`; unbound descriptors with a `term_gap`; an object term no broader than a term
-  the label's own words name (every word span is looked up as a term label/synonym and as a
-  grounding-store row, and compared through the `is_a` hierarchy); attributions to real
-  ingredients that the quote names; no own-ingredient allergy; no conflict with
-  `mappings/disease_grounding.sssom.tsv`; source/jurisdiction; at least one valid history
-  record. Warnings: negation cues, relation vs. wording, unusual ontology for a slot,
-  cross-ontology store rows, label revised since the pinned version. CI runs both validators
-  as the `curation` job.
+  text inside the quote; bound terms from a configured source that exist, are current and
+  carry their label; unbound descriptors with a `term_gap`; for **every** descriptor, a term
+  no broader than, and not unrelated to, what its own words name (every word span is looked
+  up as a term label/synonym and as a grounding-store row, compared through `is_a`), and a
+  `binding` consistent with what the whole text names; attributions on the label's own
+  wording ("the X component", or X inside a causal clause), never on the product's name;
+  allergy contraindications that name their agents, none of them the product's own; source
+  and jurisdiction; at least one valid history record. Warnings: negation cues, relation vs.
+  wording, unusual ontology for a slot, anchors in another ontology, a pinned label version
+  that is not cached. CI runs both validators as the `curation` job, and the
+  `curation-history` workflow blocks a pull request that changes a combination file without
+  adding a history record for it, unless a maintainer adds the `history-skip` label (dismech
+  runs the same comparison as an advisory warning).
+- **Label cache:** `cache/labels/dailymed/<setid>.v<version>.xml`, separate from the
+  pipeline's `data/raw/dailymed/` input; the pinned version is used when cached.
 - **Term source:** configurable per prefix in `conf/curation_terms.yaml` (or
   `MEDIC_TERM_SOURCE_<PREFIX>`): `obo` (default; the ontology's OBO release cached and pickled
   under `cache/ontologies/`) or any OAK selector (`sqlite:obo:mondo` with oaklib ≥ 0.7.2,

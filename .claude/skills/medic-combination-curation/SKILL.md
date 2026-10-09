@@ -36,12 +36,16 @@ file in a session; it is authoritative over this skill if they ever disagree.
    prints. Never paraphrase, never reorder, never fix typos or the label's
    footnote artifacts (e.g. `TABLETSA`). Whitespace may differ; nothing else.
 2. **Attribution only when stated.** Add an `attributed_to` entry only when
-   the label names the ingredient in the quote and either assigns the claim to
-   it (`basis: COMPONENT_STATEMENT`, "The omeprazole component ... is
-   indicated for ...") or gives it as the cause (`basis: STATED_REASON`,
-   "because of the risk of Reye's syndrome with ... aspirin"). An allergen
-   mention is not attribution, and neither is pharmacology you know. If the
-   label speaks of the product as a whole, omit `attributed_to`.
+   the quote either assigns the claim to the ingredient's component
+   (`basis: COMPONENT_STATEMENT` — the quote must contain "the omeprazole
+   component") or names the ingredient inside its causal clause
+   (`basis: STATED_REASON` — after "because", "due to", "caused by", ...:
+   "because of the risk of Reye's syndrome with concomitant use of aspirin").
+   The validator enforces both wordings and ignores the product's own name:
+   "Ipratropium Bromide and Albuterol Sulfate Inhalation Solution is indicated
+   ..." attributes nothing. An allergen mention is not attribution, and neither
+   is pharmacology you know. If the label speaks of the product as a whole,
+   omit `attributed_to`.
 3. **One claim per distinct condition** (and per distinct context, see
    `references/claims-and-qualifiers.md`). Never one claim per ingredient
    copied from a product-level sentence.
@@ -49,12 +53,17 @@ file in a session; it is authoritative over this skill if they ever disagree.
    `text` always; a `term` with its `binding` (EXACT / BROADER / NARROWER) when
    one fits; otherwise a `term_gap` saying what you searched. Never force a
    distant term to avoid a gap, and never bind a term broader than one the
-   label's words name.
+   label's words name. The validator checks every descriptor's term against
+   its own text, and checks the binding: EXACT when the whole text is the
+   term's label or exact synonym; NARROWER when you bind something more
+   specific than that; never NARROWER for a term that only part of the text
+   names ("MI" in "nonfatal MI").
 3c. **No allergy to the product's own ingredients.** "Hypersensitivity to any
    component / to aspirin, omeprazole or the excipients" is not curated.
    Cross-sensitivity to *other* agents ("aspirin and other NSAIDs") is, with
-   the agents in `object_specialization`. When one sentence lists both, curate
-   a claim carrying only the other agents.
+   the agents in `object_specialization` — every allergy contraindication must
+   name its agents there. When one sentence lists both, curate a claim
+   carrying only the other agents.
 4. **Section discipline.** `INDICATIONS` claims come from Indications and
    Usage. `CONTRAINDICATED` claims come from the Contraindications section
    only, never from Warnings and Precautions, Boxed Warning, or a Limitations
@@ -133,6 +142,12 @@ ingredients, curator block, product name and the pinned document filled in:
 ```bash
 uv run python -m medic.curation.label <setid> --write
 ```
+
+The skeleton's `curator_id` pins the commit of this skill. If the skill has
+uncommitted changes it writes an `UNCOMMITTED` marker instead, which the
+validator rejects: the skill text that guided a curation must be recoverable.
+Labels are cached by version under `cache/labels/dailymed/` (not the
+pipeline's `data/raw/`). All the tools work from any directory.
 
 If the file already exists (same ingredient set, another product), add a new
 `products:` block to it instead (`--skeleton` prints the block to copy).
@@ -220,8 +235,13 @@ Errors block; fix every one and re-run until there are none. Typical fixes:
 | no term: record what was searched in term_gap | Bind a term, or write the `term_gap` |
 | binding required when a term is given | Add EXACT / BROADER / NARROWER |
 | X is broader than the label's own words | Bind the more specific term the validator names |
-| the quote never names ingredient X | Remove the attribution, or quote the span that names it |
-| allergy to the product's own ingredients is not curated | Delete the claim |
+| binding must be EXACT / NARROWER, or cannot be NARROWER | Set the binding the message names; it follows from what the text names |
+| the label's words name X, which is unrelated to Y | The term does not match its own text; rebind it |
+| no term source is configured for PREFIX | Use a configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) |
+| COMPONENT_STATEMENT needs ... / STATED_REASON needs ... | Quote the span with "the X component" or the causal clause naming X, or drop the attribution |
+| allergy contraindication must name the agents | Add the other agents as specializations, or drop the claim if they are all the product's own |
+| drop the product's own ingredients | Keep only the other agents as specializations |
+| curator_id is not a commit-pinned blob URL / does not exist at commit | Commit the skill, regenerate the curator block with the label helper |
 | id / name / slug mismatch | Copy them from the helper again; never compute by hand |
 | ingredient set differs from label | Use exactly the helper's ingredient CURIEs |
 | claim negated | Drop the claim; it is not one |
@@ -258,7 +278,10 @@ just new-history --kind combination --slug <file stem> --actor-name claude-code 
 just validate-history <path printed above>
 ```
 
-Use `--event EDIT` when changing an existing file. Re-run the validator after.
+Use `--event EDIT` when changing an existing file; every pull request that
+changes a combination file must add a record for it (CI blocks otherwise;
+only a maintainer's `history-skip` label waives that). Re-run the validator
+after.
 
 ### Step 8: Hand off to the human
 
@@ -334,7 +357,7 @@ products:
           patients who have had ischemic stroke or transient ischemia of the brain due
           to fibrin platelet emboli, reducing the combined risk of death and nonfatal MI
           in patients with a previous MI or unstable angina pectoris
-        attributed_to:
+        attributed_to:             # the quote says "The aspirin component of ..."
           - {ingredient: CHEBI:15365, basis: COMPONENT_STATEMENT}
         disease_context:
           text: previous MI
