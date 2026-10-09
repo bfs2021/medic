@@ -1,4 +1,4 @@
-name: Curation history
+name: Curation provenance
 
 # Every change to a curated combination file must come with a new history record in the same
 # pull request: the record is where the session, the actors and the model that did the work
@@ -69,4 +69,38 @@ jobs:
           printf '%s' "$MISSING"
           echo "Add one with \`just new-history --kind combination --slug <file stem> ...\`,"
           echo "or, for a change that needs no record, have a maintainer add 'history-skip'."
+          exit 1
+
+  label-pins:
+    runs-on: ubuntu-latest
+    steps:
+      # A pin (curation/labels/dailymed/<setid>.v<N>.yaml) is the evidence a curated file's
+      # quotes are checked against. Adding one is normal; changing or deleting one would let a
+      # quote pass against text the label never had. Block that unless a maintainer has
+      # verified it (`uv run python -m medic.curation.label <setid> --verify-pin <N>`) and
+      # added the `pin-change` label.
+      - name: Refuse edits to existing label pins
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          TOUCHED=$(gh api --paginate "repos/${REPO}/pulls/${PR}/files" \
+            --jq '.[] | select(.status != "added") | "\(.status) \(.filename) \(.previous_filename // "")"' \
+            | grep -E 'curation/labels/' || true)
+          if [ -z "$TOUCHED" ]; then
+            echo "No existing label pin changed."
+            exit 0
+          fi
+          LABELS=$(gh pr view "$PR" --repo "$REPO" --json labels --jq '.labels[].name')
+          if echo "$LABELS" | grep -Fxq 'pin-change'; then
+            echo "::warning::pin-change label present; allowing changes to existing pins:"
+            echo "$TOUCHED"
+            exit 0
+          fi
+          echo "::error::This PR changes or removes existing label pins:"
+          echo "$TOUCHED"
+          echo "Pins are written by the label helper and never edited. If a pin is genuinely"
+          echo "wrong, verify it with --verify-pin and have a maintainer add 'pin-change'."
           exit 1

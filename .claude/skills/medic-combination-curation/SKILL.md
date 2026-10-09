@@ -40,8 +40,11 @@ file in a session; it is authoritative over this skill if they ever disagree.
    (`basis: COMPONENT_STATEMENT` — the quote must contain "the omeprazole
    component") or names the ingredient inside its causal clause
    (`basis: STATED_REASON` — after "because", "due to", "caused by", ...:
-   "because of the risk of Reye's syndrome with concomitant use of aspirin").
-   The validator enforces both wordings *within the sentence that names the
+   "because of the risk of Reye's syndrome with concomitant use of aspirin"),
+   or opens the object's sentence with the ingredient as its subject
+   (`basis: INGREDIENT_SUBJECT` — "Clarithromycin is contraindicated in
+   patients with ...", as co-packaged labels write each product's own text).
+   The validator enforces all three wordings *within the sentence that names the
    claim's object*, and ignores the product's own name: "Ipratropium Bromide and
    Albuterol Sulfate Inhalation Solution is indicated ..." attributes nothing,
    and in a long quote a later "The omeprazole component ..." sentence does not
@@ -254,10 +257,11 @@ Errors block; fix every one and re-run until there are none. Typical fixes:
 | no term source is configured for PREFIX | Use a configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI), or, if another is genuinely more accurate, report it so a human can add a source in `conf/curation_terms.yaml` |
 | no committed label pin | Run `uv run python -m medic.curation.label <setid> --pin` and stage the pin, if DailyMed still serves that version; otherwise re-curate against the current version |
 | binding warning: X is what only part of the text names | The remaining words may narrow the condition; use BROADER unless they don't |
-| COMPONENT_STATEMENT needs ... / STATED_REASON needs ... | The governing wording must be in the object's own sentence: the nearest "the X component" before it, or a causal cue after it naming X. Otherwise drop the attribution |
+| COMPONENT_STATEMENT / STATED_REASON / INGREDIENT_SUBJECT needs ... | The governing wording must be in the object's own sentence: the nearest "the X component" before it, or a causal cue after it naming X. Otherwise drop the attribution |
 | allergy contraindication must name the agents | Add the other agents as specializations, or drop the claim if they are all the product's own |
 | drop the product's own ingredients | Keep only the other agents as specializations |
-| curator_id is not a commit-pinned blob URL / does not exist at commit | Commit the skill, regenerate the curator block with the label helper |
+| curator_id is not a reference to this repository's SKILL.md with its git blob id | Commit the skill, regenerate the curator block with the label helper |
+| the pin for X holds Y; pins are written by the label helper | Restore the pin from git; never edit pins |
 | id / name / slug mismatch | Copy them from the helper again; never compute by hand |
 | ingredient set differs from label | Use exactly the helper's ingredient CURIEs |
 | claim negated | Drop the claim; it is not one |
@@ -266,7 +270,8 @@ Errors block; fix every one and re-run until there are none. Typical fixes:
 | quote comes from a Limitations of Use passage | Drop the claim |
 | no history record | Do Step 7b |
 
-Never edit the validator, the schema, the SSSOM, or cached label files to make
+Never edit the validator, the schema, the SSSOM, label pins
+(`curation/labels/`) or downloaded labels to make
 a check pass. Never report the validator as passing unless it finished and you
 read its output.
 

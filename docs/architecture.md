@@ -393,9 +393,10 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   (`MEDICNE:combo-<uuid5 of the sorted ingredient CURIEs>`), the name (ChEBI labels joined
   with " / ") and the file name from the ingredients, which are resolved through the drug
   grounding and normalization stores.
-- **Helpers:** `just curation-label <setid> [--skeleton]` (`medic.curation.label`) fetches and
-  caches the SPL under `data/raw/dailymed/` and prints the ingredients, computed identity and
-  typed spans; `uv run python -m medic.curation.terms search|info` looks terms up in the
+- **Helpers:** `just curation-label <setid> [--skeleton | --write | --pin | --verify-pin N]`
+  (`medic.curation.label`) fetches the current SPL (cached under `cache/labels/dailymed/`) and
+  prints the ingredients, computed identity and typed spans; `--write`/`--pin` write the
+  committed pin, and `--verify-pin` recomputes a pin from the label XML; `uv run python -m medic.curation.terms search|info` looks terms up in the
   ontologies' OBO releases, cached under `cache/ontologies/`; `just combination-worklist`
   writes `curation/combination_worklist.tsv` from the pipeline's fan-out.
 - **Checks:** `just validate-curation` (`medic.curation.validate`), runnable from any
@@ -410,14 +411,17 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   `binding` consistent with what the whole text names; attributions on the label's own
   wording in the object's own sentence ("the X component" nearest before it, or X in a causal
   clause after it), never on the product's name;
-  allergy contraindications (recognised by words or by MONDO/HP hypersensitivity, angioedema
-  or urticaria ancestry) that name their agents, none of them the product's own; source
+  allergy contraindications (recognised by words or by ancestry under MONDO allergic disease
+  or HP Allergy — not the wider hypersensitivity subtree, which holds hereditary angioedema
+  and asthma) that name their agents, none of them the product's own; pins whose content
+  names the label and version they are filed under; source
   and jurisdiction; at least one valid history record. Warnings: negation cues, relation vs.
-  wording, unusual ontology for a slot, anchors in another ontology, a pinned label version
-  that is not cached. CI runs both validators as the `curation` job, and the
-  `curation-history` workflow blocks a pull request that changes a combination file without
-  adding a history record for it, unless a maintainer adds the `history-skip` label (dismech
-  runs the same comparison as an advisory warning).
+  wording, unusual ontology for a slot, anchors in another ontology, a curation made with an
+  earlier skill text, a newer upstream label version (`--check-upstream`). CI runs both
+  validators as the `curation` job. The `curation-history` workflow blocks a pull request that
+  changes a combination file without adding a history record for it, unless a maintainer adds
+  the `history-skip` label (dismech runs the same comparison as an advisory warning), and
+  blocks any change to an existing label pin unless a maintainer adds `pin-change`.
 - **Label pins:** `curation/labels/dailymed/<setid>.v<version>.yaml`, committed: the
   ingredients and Indications/Contraindications text of the label version a file names, with
   the XML's SHA-256 (~3 KB each; ~6 MB even for every DailyMed label). Written by the label

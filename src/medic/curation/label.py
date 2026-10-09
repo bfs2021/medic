@@ -118,20 +118,43 @@ def _cached_versions(setid: str, cache_dir: Path) -> list[Path]:
     return sorted(paths, key=lambda p: int(p.stem.rsplit(".v", 1)[1]))
 
 
-def write_pin(doc: LabelDocument, xml: bytes, pin_dir: Path = PIN_DIR) -> Path:
-    """Commit-ready record of the parts of a label version the checks read."""
-    path = pin_path(doc.setid, doc.version or 0, pin_dir)
-    record = {
+def _pin_record(doc: LabelDocument, xml: bytes, retrieved: str) -> dict:
+    return {
         "setid": doc.setid,
         "version": doc.version,
         "source_url": SPL_XML_URL.format(setid=doc.setid),
         "xml_sha256": hashlib.sha256(xml).hexdigest(),
-        "retrieved": date.today().isoformat(),
+        "retrieved": retrieved,
         "title": doc.title,
         "product_name": doc.product_name,
         "active_moieties": doc.active_moieties,
         "sections": doc.sections,
     }
+
+
+def _comparable(record: dict) -> dict:
+    return {k: v for k, v in record.items() if k != "retrieved"}
+
+
+class PinMismatch(ValueError):
+    """An existing pin disagrees with what the label XML says."""
+
+
+def write_pin(doc: LabelDocument, xml: bytes, pin_dir: Path = PIN_DIR) -> Path:
+    """Commit-ready record of the parts of a label version the checks read.
+
+    Refuses to overwrite a pin whose content differs: a pin is evidence of what the label
+    said, so a difference means either the pin was edited or DailyMed changed a version in
+    place, and both need a human. An identical pin is left untouched (its date included).
+    """
+    path = pin_path(doc.setid, doc.version or 0, pin_dir)
+    record = _pin_record(doc, xml, date.today().isoformat())
+    if path.exists():
+        existing = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        if _comparable(existing) == _comparable(yaml.safe_load(yaml.safe_dump(record))):
+            return path
+        raise PinMismatch(f"{path} exists and differs from the label XML; investigate "
+                          "rather than overwrite (see `--verify-pin`)")
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as fh:
         yaml.safe_dump(record, fh, sort_keys=False, allow_unicode=True, width=100)
@@ -196,6 +219,31 @@ def pinned_label(setid: str, version: int, pin_dir: Path = PIN_DIR) -> LabelDocu
             f"`uv run python -m medic.curation.label {setid} --pin` while DailyMed still "
             f"serves version {version}")
     return doc
+
+
+def verify_pin(setid: str, version: int, cache_dir: Path = LABEL_CACHE_DIR,
+               pin_dir: Path = PIN_DIR) -> str:
+    """Recompute a pin from the label XML and compare. Returns a one-line verdict.
+
+    Uses the downloaded copy of that version if present, else what DailyMed serves now (which
+    can only verify the current version).
+    """
+    path = pin_path(setid, version, pin_dir)
+    if not path.exists():
+        return f"MISSING {path}"
+    pin = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    cached = label_path(setid, version, cache_dir)
+    if cached.exists():
+        xml = cached.read_bytes()
+    else:
+        doc, xml = _download(setid, cache_dir)
+        if doc.version != version:
+            return (f"UNVERIFIABLE {path}: DailyMed now serves v{doc.version}, and v{version} "
+                    "is not downloaded")
+    expected = _pin_record(parse_label(xml), xml, pin.get("retrieved", ""))
+    if _comparable(yaml.safe_load(yaml.safe_dump(expected))) == _comparable(pin):
+        return f"OK {path}"
+    return f"MISMATCH {path}: the pin differs from the label XML (sha256 {expected['xml_sha256']})"
 
 
 def pin_current(setid: str, cache_dir: Path = LABEL_CACHE_DIR,
@@ -315,11 +363,20 @@ def main(argv: list[str] | None = None) -> int:
                              "(--write does this too)")
     parser.add_argument("--offline", action="store_true",
                         help="use the newest downloaded copy instead of fetching")
+    parser.add_argument("--verify-pin", type=int, metavar="VERSION",
+                        help="recompute the committed pin for VERSION from the label XML")
     args = parser.parse_args(argv)
     enter_repo_root()
+    if args.verify_pin is not None:
+        verdict = verify_pin(args.setid, args.verify_pin)
+        print(verdict)
+        return 0 if verdict.startswith("OK") else 1
     resolver = IngredientResolver()
     if args.pin or args.write:
-        doc, pin = pin_current(args.setid)
+        try:
+            doc, pin = pin_current(args.setid)
+        except PinMismatch as exc:
+            sys.exit(f"error: {exc}")
         print(f"pinned {pin}", file=sys.stderr)
     else:
         doc = fetch_label(args.setid, offline=args.offline)

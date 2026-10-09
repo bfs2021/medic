@@ -54,7 +54,9 @@ SPL = f"""<?xml version="1.0" encoding="UTF-8"?>
         concomitant use of aspirin. TESTCOMBO is contraindicated in patients with a history of
         angioedema. TESTCOMBO is contraindicated in patients with severe renal impairment.
         TESTCOMBO is contraindicated after gastric bypass because of poor absorption of Aspirin
-        and Omeprazole Tablets.</paragraph></text>
+        and Omeprazole Tablets. TESTCOMBO is contraindicated in patients with hereditary
+        angioedema. TESTCOMBO is contraindicated in patients with pollinosis. Omeprazole is
+        contraindicated in patients with severe hepatic impairment.</paragraph></text>
     </section></component>
   </structuredBody></component>
   <subject><manufacturedProduct><manufacturedProduct>
@@ -87,6 +89,14 @@ ANGIOEDEMA_QUOTE = "TESTCOMBO is contraindicated in patients with a history of a
 RENAL_QUOTE = "TESTCOMBO is contraindicated in patients with severe renal impairment"
 BYPASS_QUOTE = ("TESTCOMBO is contraindicated after gastric bypass because of poor absorption of "
                 "Aspirin and Omeprazole Tablets")
+HAE_QUOTE = "TESTCOMBO is contraindicated in patients with hereditary angioedema"
+POLLINOSIS_QUOTE = "TESTCOMBO is contraindicated in patients with pollinosis"
+SUBJECT_QUOTE = "Omeprazole is contraindicated in patients with severe hepatic impairment"
+EARLIER_COMPONENT_QUOTE = (
+    "The omeprazole component of TESTCOMBO is indicated for decreasing the risk of developing "
+    "aspirin associated gastric ulcers in patients at risk for developing aspirin associated "
+    "gastric ulcers due to age (\u2265 55). TESTCOMBO is also indicated after acute myocardial "
+    "infarction")
 UTI_QUOTE = ("TESTCOMBO is indicated for complicated urinary tract infections including "
              "pyelonephritis")
 
@@ -114,6 +124,8 @@ _TERMS = {t.id: t for t in [
     TermInfo("CHEBI:22715", "benzimidazoles"),
     TermInfo("CHEBI:36622", "benzimidazole", parents=["CHEBI:22715"]),
     TermInfo("MONDO:0010481", "angioedema"),
+    TermInfo("MONDO:0019623", "hereditary angioedema", parents=["MONDO:0010481"]),
+    TermInfo("MONDO:9999901", "pollinosis", parents=["MONDO:0005271"]),
     TermInfo("HP:0012823", "Clinical modifier"),
     TermInfo("HP:0012824", "Severity", parents=["HP:0012823"]),
     TermInfo("HP:0012828", "Severe", parents=["HP:0012824"]),
@@ -766,12 +778,25 @@ def test_own_ingredient_rule_applies_only_to_allergies(workspace):
     assert not any("object_specialization" in e for e in errors)
 
 
+def _contra(c, quote, obj, **extra):
+    c.update({"quote": quote, "life_stage": None, "attributed_to": None, "object": obj,
+              **extra})
+
+
 def test_allergy_is_recognised_by_hierarchy(workspace):
-    """Round 2 S3: "angioedema" has no allergy word but is under a hypersensitivity root."""
-    errors, _ = _claim_errors(workspace, 3, lambda c: c.update(
-        quote=ANGIOEDEMA_QUOTE, life_stage=None, attributed_to=None,
-        object={"text": "angioedema", "term": _term("MONDO:0010481"), "binding": "EXACT"}))
+    """Round 2 S3: "pollinosis" has no allergy word but sits under allergic disease."""
+    errors, _ = _claim_errors(workspace, 3, lambda c: _contra(
+        c, POLLINOSIS_QUOTE,
+        {"text": "pollinosis", "term": _term("MONDO:9999901"), "binding": "EXACT"}))
     assert any("must name the agents" in e for e in errors)
+
+
+def test_hereditary_angioedema_is_not_an_allergy(workspace):
+    """Round 3 S1: an ACE-inhibitor contraindication that names no agent stays curatable."""
+    errors, _ = _claim_errors(workspace, 3, lambda c: _contra(
+        c, HAE_QUOTE,
+        {"text": "hereditary angioedema", "term": _term("MONDO:0019623"), "binding": "EXACT"}))
+    assert errors == []
 
 
 def test_hp_clinical_modifiers_do_not_anchor(workspace):
@@ -799,3 +824,63 @@ def test_exact_on_part_of_the_text_warns_when_words_could_narrow(workspace):
     # "nonfatal" describes the event, not a narrower condition.
     _, warnings = _claim_errors(workspace, 0, lambda c: None)
     assert not any("may narrow" in w for w in warnings)
+
+
+# --- review round 3 ---------------------------------------------------------------------------
+def test_component_statement_does_not_reach_back_into_an_earlier_sentence(workspace):
+    """Round 3: pins the sentence *start* (an earlier sentence's component phrase)."""
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote=EARLIER_COMPONENT_QUOTE, disease_context=None,
+        object={"text": "acute myocardial infarction", "term": _term("MONDO:0004781"),
+                "binding": "EXACT"},
+        attributed_to=[{"ingredient": OMEPRAZOLE, "basis": "COMPONENT_STATEMENT"}]))
+    assert any("COMPONENT_STATEMENT needs" in e for e in errors)
+
+
+def test_ingredient_as_sentence_subject(workspace):
+    """Co-packaged labels: "Omeprazole is contraindicated in patients with ..."."""
+    def mutate(ingredient):
+        def m(c):
+            _contra(c, SUBJECT_QUOTE,
+                    {"text": "hepatic impairment", "term_gap": "not in the test ontology"},
+                    attributed_to=[{"ingredient": ingredient, "basis": "INGREDIENT_SUBJECT"}])
+        return m
+    errors, _ = _claim_errors(workspace, 3, mutate(OMEPRAZOLE))
+    assert not any("attributed_to" in e for e in errors)
+    errors, _ = _claim_errors(workspace, 3, mutate(ASPIRIN))
+    assert any("INGREDIENT_SUBJECT needs" in e for e in errors)
+
+
+def test_pin_must_hold_the_label_it_is_named_for(workspace):
+    """Round 3 S2: a pin whose contents name another label/version is refused."""
+    pin = Path(f"curation/labels/dailymed/{SETID}.v3.yaml")
+    data = yaml.safe_load(pin.read_text())
+    data["version"] = 4
+    pin.write_text(yaml.safe_dump(data, sort_keys=False))
+    errors, _ = _findings(_write(workspace, _valid_record()))
+    assert any("pins are written by the label helper" in e for e in errors)
+
+
+def test_pins_are_never_silently_overwritten(workspace):
+    from medic.curation.label import PinMismatch, parse_label, write_pin
+
+    xml = SPL.encode()
+    pin = Path(f"curation/labels/dailymed/{SETID}.v3.yaml")
+    before = pin.read_text()
+    write_pin(parse_label(xml), xml, Path("curation/labels/dailymed"))  # identical: a no-op
+    assert pin.read_text() == before
+    edited = SPL.replace("relief of heartburn", "relief of gout").encode()
+    with pytest.raises(PinMismatch):
+        write_pin(parse_label(edited), edited, Path("curation/labels/dailymed"))
+
+
+def test_verify_pin_detects_a_hand_edit(workspace):
+    from medic.curation.label import verify_pin
+
+    cache = Path("cache/labels/dailymed")
+    cache.mkdir(parents=True)
+    (cache / f"{SETID}.v3.xml").write_text(SPL)
+    assert verify_pin(SETID, 3).startswith("OK")
+    pin = Path(f"curation/labels/dailymed/{SETID}.v3.yaml")
+    pin.write_text(pin.read_text().replace("heartburn", "gout"))
+    assert verify_pin(SETID, 3).startswith("MISMATCH")

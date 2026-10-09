@@ -99,8 +99,9 @@ jobs:
     # medic.curation.validate is a merge gate: verbatim quotes against the pinned label,
     # ingredient set against the label's own structured ingredients, computed identity, terms
     # that exist, no same-ontology conflict with the grounding store, and a valid history
-    # record naming the model that did the work. Labels and ontology releases are fetched on
-    # first use and cached between runs.
+    # record naming the model that did the work. Label text comes from the committed pins
+    # (no DailyMed access); ontology releases are downloaded once a month. The CURIE helpers
+    # also fetch bioregistry's prefix map from GitHub, so the job needs ordinary network.
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

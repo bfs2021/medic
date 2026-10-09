@@ -100,14 +100,16 @@ Not claim objects (record nothing, mention in your summary if notable):
 
 ## Attribution
 
-`attributed_to` is a list of `{ingredient, basis}`. There are exactly two
-bases, and the validator checks the wording of each (with the product's own
+`attributed_to` is a list of `{ingredient, basis}`. There are three bases, and
+the validator checks the wording of each, within the sentence that names the
+object (with the product's own
 name removed from the quote first, since a generic name lists every
 ingredient):
 
 | basis | when | example |
 |---|---|---|
 | `COMPONENT_STATEMENT` | the label assigns the claim to the component; the nearest "the <ingredient> component" before the object, in the object's sentence, must be this ingredient's | "The omeprazole component of ... is indicated for decreasing the risk of ... gastric ulcers" |
+| `INGREDIENT_SUBJECT` | the ingredient is the subject of the object's sentence, right before the claim's verb — how co-packaged labels (several separate products under one label) write each product's own text | "Clarithromycin is contraindicated in patients with a history of ..."; "Clarithromycin should not be given to patients with history of QT prolongation" |
 | `STATED_REASON` | the label names the ingredient as the cause; in the object's own sentence, a causal cue (because, due to, caused by, may cause, since, related to, associated with, attributable to) must follow the object, with the ingredient in the clause after it | "... because of the risk of Reye's syndrome with concomitant use of aspirin"; "... due to the expected significantly increased grazoprevir plasma concentration" |
 
 Not attribution:

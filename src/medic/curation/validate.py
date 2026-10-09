@@ -108,14 +108,13 @@ _CAUSE_WINDOW_WORDS = 20
 _SENTENCE_END = re.compile(r"(?<=[.;])\s+")
 _OWN_PRODUCT = re.compile(r"component|excipient|ingredient|this product|the formulation", re.I)
 _ALLERGY = re.compile(r"hypersensitiv|allerg|anaphyla", re.I)
-#: Hypersensitivity subtrees: a term under any of these is an allergy, whatever its words.
+#: Allergy subtrees: a term under either is an allergy, whatever its words. Deliberately not
+#: the wider hypersensitivity, angioedema or urticaria subtrees: those hold hereditary
+#: angioedema (an ACE-inhibitor contraindication that names no agent), asthma and celiac
+#: disease, which are not allergies to anything the label names.
 ALLERGY_ROOTS = frozenset({
-    "MONDO:0000605",  # hypersensitivity reaction disease (covers allergic disease)
-    "MONDO:0010481",  # angioedema
-    "MONDO:0005492",  # urticaria
-    "HP:0100326",     # Immunologic hypersensitivity (covers Allergy)
-    "HP:0100665",     # Angioedema
-    "HP:0001025",     # Urticaria
+    "MONDO:0005271",  # allergic disease (covers drug allergy)
+    "HP:0012393",     # Allergy (covers Drug allergy)
 })
 #: HP subtrees that qualify a finding rather than name one; "severe" in "severe renal
 #: impairment" matches HP "Severe", which says nothing about the condition.
@@ -305,6 +304,10 @@ class Checker:
         except FileNotFoundError as exc:
             self.error(path, f"{where}.document", str(exc))
             return
+        if doc.setid != setid or doc.version != pinned:
+            self.error(path, f"{where}.document", f"the pin for {setid} v{pinned} holds "
+                                                  f"{doc.setid} v{doc.version}; pins are "
+                                                  "written by the label helper, never by hand")
         if self.check_upstream:
             try:
                 current = fetch_label(setid)
@@ -602,6 +605,10 @@ class Checker:
           quote does not credit omeprazole with an earlier item.
         - STATED_REASON — a causal cue follows the object in its sentence, and the ingredient
           is named in the clause after it.
+        - INGREDIENT_SUBJECT — the ingredient is the subject of the object's sentence, right
+          before the claim's verb ("Clarithromycin is contraindicated in patients with ...",
+          "Clarithromycin should not be given to patients with ..."), as co-packaged labels
+          write each product's own text.
         """
         attributions = claim.get("attributed_to") or []
         if not attributions:
@@ -635,6 +642,11 @@ class Checker:
                                          "claim: the nearest component phrase before "
                                          f"{claim['object'].get('text')!r} in its sentence"
                                          + (f" is {nearest}'s" if nearest else " is missing"))
+            elif basis == "INGREDIENT_SUBJECT" and not _is_sentence_subject(before, ing_names):
+                self.error(path, awhere, "INGREDIENT_SUBJECT needs the object's sentence to open "
+                                         f"with {' / '.join(ing_names)} as its subject, right "
+                                         "before 'is indicated', 'is contraindicated', 'should "
+                                         "not be given', ...")
             elif basis == "STATED_REASON" and not _named_in_causal_clause(after, ing_names):
                 self.error(path, awhere, "STATED_REASON needs a causal cue ('because', 'due "
                                          "to', 'caused by', ...) after "
@@ -772,6 +784,18 @@ def _strip_product_names(text: str, product_names: list[str]) -> str:
         if len(name) > 3:
             text = text.replace(name, " ")
     return text
+
+
+#: A sentence that opens with an ingredient as the subject of the claim's verb. Up to two
+#: words may sit between the name and the verb ("clarithromycin tablets are").
+_SUBJECT_VERB = (r"(?:\s+[a-z0-9-]+){0,2}?\s+(?:is|are|should|must)\s+(?:not\s+)?(?:be\s+)?"
+                 r"(?:indicated|contraindicated|given|used|administered)\b")
+
+
+def _is_sentence_subject(before: str, names: list[str]) -> bool:
+    """Does the sentence (up to the object) open with one of ``names`` as its subject?"""
+    head = before.lstrip(" ([\"'")
+    return any(re.match(r"(?:the\s+)?" + re.escape(n) + _SUBJECT_VERB, head) for n in names)
 
 
 def _named_in_causal_clause(text: str, names: list[str]) -> bool:

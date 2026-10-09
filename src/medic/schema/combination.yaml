@@ -111,6 +111,11 @@ enums:
         description: >-
           The label names the ingredient as the cause ("because of the risk of Reye's syndrome
           with concomitant use of aspirin"). Not an allergen mention.
+      INGREDIENT_SUBJECT:
+        description: >-
+          The ingredient is the subject of the claim's sentence ("Clarithromycin is
+          contraindicated in patients with ..."), as co-packaged labels (one label for several
+          separate products) write each product's own text.
 
 classes:
   CombinationProduct:
