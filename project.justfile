@@ -377,6 +377,37 @@ validate-references file target_class="":
 validate-extraction *files:
     uv run python -m medic.validation.extraction_fidelity {{files}} --out extraction_flagged.tsv
 
+# ---- Curated combination products (kb/combinations/) --------------------------------
+
+# Deterministic checks for curated combination files (default: all of kb/combinations/)
+[group('curation')]
+validate-curation *files:
+    uv run python -m medic.curation.validate {{files}}
+
+# Print a DailyMed label for curation (add --skeleton for a starting YAML file)
+[group('curation')]
+[positional-arguments]
+curation-label *args:
+    uv run python -m medic.curation.label "$@"
+
+# Rebuild curation/combination_worklist.tsv from the pipeline's DailyMed rows
+[group('curation')]
+combination-worklist:
+    uv run python scripts/combination_worklist.py
+
+# Prose arguments pass through as real positional arguments so quoting survives (dismech #9784).
+# Scaffold an append-only curation history record (format adopted from dismech)
+[group('curation')]
+[positional-arguments]
+new-history *args:
+    uv run python -m medic.curation.history new "$@"
+
+# Validate history records (default: every record under history/)
+[group('curation')]
+[positional-arguments]
+validate-history *args:
+    uv run python -m medic.curation.history validate "$@"
+
 # Tally statements by type x reliability tier — the soft-launch importable subset
 [group('QC')]
 reliability-report *files:

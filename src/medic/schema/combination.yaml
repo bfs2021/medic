@@ -1,0 +1,391 @@
+id: https://w3id.org/monarch-initiative/medic/combination
+name: combination
+title: MeDIC Curated Combination Products
+description: >-
+  Hand-curated, source-of-truth records for combination drug products (two or more active
+  ingredients in one product). One file per combination under ``kb/combinations/``.
+
+  A combination label makes its claims about the *product*. The pipeline used to copy every
+  claim onto every ingredient, which published facts no regulator stated (omeprazole treating
+  myocardial infarction, from the aspirin/omeprazole label). These records keep the claim on
+  the combination and attribute it to an ingredient only when the label itself does.
+
+  Classes, slots and enums here are MeDIC's own. Where a Biolink concept means the same thing
+  it is referenced semantically (``meaning`` / ``exact_mappings`` / ``close_mappings``); the
+  Biolink schema is never imported. A test checks every such reference against the pinned
+  Biolink release.
+
+imports:
+  - linkml:types
+  - authority
+  - evidence
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  medic: https://w3id.org/monarch-initiative/medic/
+  biolink: https://w3id.org/biolink/vocab/
+  CHEBI: http://purl.obolibrary.org/obo/CHEBI_
+  MONDO: http://purl.obolibrary.org/obo/MONDO_
+  HP: http://purl.obolibrary.org/obo/HP_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
+  HsapDv: http://purl.obolibrary.org/obo/HsapDv_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  MEDICNE: https://w3id.org/monarch-initiative/medic/entity/
+
+default_prefix: medic
+
+enums:
+  ClaimRelationEnum:
+    description: >-
+      What the label asserts about the product and the condition. Each value names the
+      Biolink predicate it corresponds to and the label wording that signals it; the
+      descriptions are the curation guidance.
+    permissible_values:
+      TREATS:
+        meaning: biolink:treats
+        description: >-
+          The label states the product is indicated to treat the condition. Typical wording:
+          "indicated for the treatment of", "indicated for", "management of".
+      PREVENTS:
+        meaning: biolink:preventative_for_condition
+        description: >-
+          The label states the product reduces the risk of, or prevents, the condition.
+          Typical wording: "reduce the risk of", "prevention of", "prophylaxis of".
+      RELIEVES_SYMPTOMS:
+        meaning: biolink:ameliorates_condition
+        description: >-
+          The label states the product relieves symptoms rather than treating the condition.
+          Typical wording: "relief of", "symptomatic treatment of", "temporary relief".
+      CONTRAINDICATED:
+        meaning: biolink:contraindicated_in
+        description: >-
+          The Contraindications section states the product must not be used in patients with
+          the condition. Only ever drawn from the Contraindications section.
+
+  LabelSectionEnum:
+    description: The label section a claim's quote comes from.
+    permissible_values:
+      INDICATIONS:
+        description: Indications and Usage (SPL LOINC 34067-9).
+      CONTRAINDICATIONS:
+        description: Contraindications (SPL LOINC 34070-3).
+
+  CurationStatusEnum:
+    description: Review state of a record or claim. Only a human sets REVIEWED.
+    permissible_values:
+      DRAFT:
+        description: Written by an agent or a person and not yet reviewed.
+      REVIEWED:
+        description: Checked against the label by a human curator.
+      REJECTED:
+        description: Checked and found wrong; kept so the decision is visible.
+
+  CombinationSourceEnum:
+    description: The regulatory source a product block was read from.
+    permissible_values:
+      DAILYMED:
+        description: FDA structured product label via DailyMed (jurisdiction USA).
+
+  BindingEnum:
+    description: >-
+      How the bound ontology term relates to what the label's text says. The text is the
+      record; the term is a binding added when one fits (the dismech Descriptor pattern).
+    permissible_values:
+      EXACT:
+        description: The term means what the text says.
+      BROADER:
+        description: >-
+          The term is more general than the text, because no term as specific exists. The
+          validator requires this whenever the text matches a more specific term.
+      NARROWER:
+        description: The term is more specific than the text, justified by the rest of the quote.
+
+  AttributionBasisEnum:
+    description: Why a claim is attributed to an ingredient. The label must say so either way.
+    permissible_values:
+      COMPONENT_STATEMENT:
+        description: >-
+          The label assigns the claim to the component ("The omeprazole component of ... is
+          indicated for ...").
+      STATED_REASON:
+        description: >-
+          The label names the ingredient as the cause ("because of the risk of Reye's syndrome
+          with concomitant use of aspirin"). Not an allergen mention.
+
+classes:
+  CombinationProduct:
+    tree_root: true
+    description: >-
+      One combination, identified by its set of active ingredients. Products that share an
+      ingredient set (different brands, strengths) are separate blocks inside one file.
+    slots:
+      - id
+      - name
+      - ingredients
+      - xrefs
+      - curation_status
+      - curators
+      - products
+      - notes
+    slot_usage:
+      id:
+        description: >-
+          Computed from the sorted ingredient CURIEs (``medic.curation.identity``). Never
+          chosen by hand; the validator recomputes it.
+      name:
+        description: >-
+          Ingredient labels sorted and joined with " / " (the RxNorm multiple-ingredient
+          convention). Computed, never chosen.
+
+  Ingredient:
+    description: One active ingredient of the combination.
+    slots:
+      - id
+      - label
+
+  Product:
+    description: >-
+      One labelled product, read from one pinned source document. Every claim in the block
+      comes from that document alone (source isolation).
+    slots:
+      - source
+      - jurisdiction
+      - document
+      - product_name
+      - claims
+
+  SourceDocument:
+    description: The regulatory document a product block was curated from, pinned to a version.
+    slots:
+      - setid
+      - version
+      - title
+      - url
+
+  Claim:
+    description: >-
+      One thing the label asserts about the product and one condition, with the verbatim
+      quote it rests on and any context the label attaches. Every concept in it is a
+      Descriptor: the label's own words always, an ontology term when one fits.
+    slots:
+      - relation
+      - section
+      - quote
+      - object
+      - object_specialization
+      - attributed_to
+      - disease_context
+      - anatomical_context
+      - life_stage
+      - age_range
+      - sex
+      - line_of_therapy
+      - in_combination_with
+      - status
+      - reviewer
+      - notes
+
+  Descriptor:
+    description: >-
+      A concept as the label states it, optionally bound to an ontology term. Adopted from
+      dismech's Descriptor (preferred_term + optional term), with one difference: ``text``
+      is verbatim from the claim's quote and checked against it, never a curator's rewording.
+      Unbound is allowed and explicit: ``term_gap`` records what was searched.
+    slots:
+      - text
+      - term
+      - binding
+      - term_gap
+
+  Term:
+    description: An ontology term.
+    slots:
+      - id
+      - label
+
+  Attribution:
+    description: An ingredient the label holds responsible for a claim, and on what basis.
+    slots:
+      - ingredient
+      - basis
+
+  AgeRange:
+    description: >-
+      A stated age bound. Kept structured because label thresholds ("12 years of age and
+      older") rarely correspond to a single life-stage term.
+    slots:
+      - min_years
+      - max_years
+      - text
+
+slots:
+  id:
+    identifier: true
+    range: uriorcurie
+  name:
+    range: string
+    required: true
+  label:
+    range: string
+    required: true
+  ingredients:
+    range: Ingredient
+    multivalued: true
+    inlined_as_list: true
+    required: true
+    minimum_cardinality: 2
+    exact_mappings:
+      - biolink:has_active_ingredient
+  xrefs:
+    range: uriorcurie
+    multivalued: true
+    description: Equivalent identifiers for the combination, e.g. an RxNorm multiple-ingredient concept.
+  curation_status:
+    range: CurationStatusEnum
+    required: true
+  curators:
+    range: Agent
+    multivalued: true
+    inlined_as_list: true
+  products:
+    range: Product
+    multivalued: true
+    inlined_as_list: true
+    required: true
+  notes:
+    range: string
+  source:
+    range: CombinationSourceEnum
+    required: true
+  jurisdiction:
+    range: JurisdictionEnum
+    required: true
+  document:
+    range: SourceDocument
+    inlined: true
+    required: true
+  product_name:
+    range: string
+  setid:
+    range: string
+    required: true
+  version:
+    range: integer
+    required: true
+    description: The SPL version the quotes were copied from.
+  title:
+    range: string
+  url:
+    range: uri
+  claims:
+    range: Claim
+    multivalued: true
+    inlined_as_list: true
+  relation:
+    range: ClaimRelationEnum
+    required: true
+  section:
+    range: LabelSectionEnum
+    required: true
+  quote:
+    range: string
+    required: true
+    description: >-
+      A verbatim substring of the label section, copied character for character (whitespace
+      may differ). The claim rests on it; every Descriptor ``text`` in the claim occurs in it.
+  object:
+    range: Descriptor
+    inlined: true
+    required: true
+    description: >-
+      The condition the claim is about. Typically MONDO or HP; the curation model favours
+      accuracy over export convenience, and the export decides what fits Biolink.
+  object_specialization:
+    range: Descriptor
+    multivalued: true
+    inlined_as_list: true
+    exact_mappings:
+      - biolink:object_specialization_qualifier
+    description: >-
+      Post-composes the object with the agent(s) it concerns, e.g. drug allergy + NSAID, or
+      angioedema + ACE inhibitor. Typically CHEBI. Allergy to the product's own ingredients
+      is not curated.
+  attributed_to:
+    range: Attribution
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      The ingredient(s) the label itself holds responsible. Omit when the label makes the
+      claim about the product as a whole. An allergen mention is not an attribution.
+  disease_context:
+    range: Descriptor
+    inlined: true
+    exact_mappings:
+      - biolink:disease_context_qualifier
+    description: >-
+      The condition the claim is restricted to, e.g. bronchospasm associated with COPD.
+      MONDO or HP.
+  anatomical_context:
+    range: Descriptor
+    inlined: true
+    exact_mappings:
+      - biolink:anatomical_context_qualifier
+  life_stage:
+    range: Descriptor
+    inlined: true
+    close_mappings:
+      - biolink:stage_qualifier
+    comments:
+      - >-
+        Biolink's stage qualifier is defined for gene expression, not treatment edges, so
+        this is a close mapping only. Values are typically HsapDv terms.
+  age_range:
+    range: AgeRange
+    inlined: true
+  sex:
+    range: Descriptor
+    inlined: true
+    close_mappings:
+      - biolink:sex_qualifier
+    comments:
+      - Biolink allows sex_qualifier on phenotype associations only. Values are typically PATO terms.
+  line_of_therapy:
+    range: Descriptor
+    inlined: true
+    description: Label text restricting the line of therapy, e.g. "after failure of metformin".
+  in_combination_with:
+    range: Descriptor
+    multivalued: true
+    inlined_as_list: true
+    description: Co-therapies the label names, e.g. "in combination with other antiretroviral agents".
+  status:
+    range: CurationStatusEnum
+    required: true
+  reviewer:
+    range: string
+    description: GitHub handle of the human who set REVIEWED or REJECTED.
+  text:
+    range: string
+    required: true
+    description: The label's own words, verbatim; must occur inside the claim's quote.
+  term:
+    range: Term
+    inlined: true
+  binding:
+    range: BindingEnum
+    description: Required when ``term`` is given.
+  term_gap:
+    range: string
+    description: >-
+      Required when ``term`` is absent: what was searched and what is missing, ideally a
+      term-request URL (dismech's term_gap).
+  ingredient:
+    range: uriorcurie
+    required: true
+  basis:
+    range: AttributionBasisEnum
+    required: true
+  min_years:
+    range: float
+  max_years:
+    range: float

@@ -1,0 +1,25 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-omeprazole
+  path: kb/combinations/acetylsalicylic-acid-omeprazole.yaml
+session:
+  id: 2026-10-09T052951Z-claude-code-1870b5
+  timestamp: '2026-10-09T05:29:51Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls: []
+events:
+- type: EDIT
+  outcome: needs_followup
+  sections:
+  - claims
+  summary: 'Apply self-review: syndrome claim unattributed, triad term'
+  details: |
+    Fresh-context self-review: removed the STATED_REASON aspirin attribution from the asthma/rhinitis/nasal polyps contraindication (the following sentence has no causal link to the clause and explains the NSAID item equally); shortened the quote to the syndrome clause; rebound to MONDO:0008834 asthma, nasal polyps, and aspirin intolerance (NARROWER), which names the triad, instead of MONDO:0850287. Term-checked validation still blocked by the term cache bug.

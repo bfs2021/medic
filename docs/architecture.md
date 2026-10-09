@@ -363,6 +363,65 @@ The v1.0.0 pipeline propagated indications down the Mondo disease hierarchy (e.g
 
 ---
 
+### 5.8 Curated combination products (pilot)
+
+A combination label (two or more active ingredients) makes its claims about the **product**.
+The DailyMed ingest copies every claim onto every ingredient (`_process_spl_data` loops
+`for drug_name in drug_names`), which on this branch puts 40% of DailyMed indication rows and
+54% of contraindication rows on combination labels and publishes claims no regulator made
+(omeprazole → myocardial infarction from the aspirin/omeprazole label). The pilot replaces
+that fan-out with hand-curated, source-of-truth YAML, dismech-style:
+
+- **Records:** `kb/combinations/<slug>.yaml`, schema `src/medic/schema/combination.yaml`. One
+  file per ingredient set; each labelled product is a block pinned to its SPL `setid` +
+  `version`; each claim carries a relation (`TREATS` / `PREVENTS` / `RELIEVES_SYMPTOMS` /
+  `CONTRAINDICATED`) and a verbatim `quote`. Every concept in a claim (object, object
+  specialization, disease / anatomical context, life stage, sex, line of therapy,
+  co-therapy) is a **Descriptor**, dismech's strings-first pattern: the label's own `text`
+  always (verbatim, inside the quote), an ontology `term` with a `binding`
+  (`EXACT` / `BROADER` / `NARROWER`) when one fits, and a `term_gap` recording what was
+  searched when none does. The model favours curation accuracy over export fit: a qualifier
+  may use whichever ontology says what the label says (HP for "angina pectoris" as a
+  disease context), and the export decides what maps to a Biolink qualifier.
+  `object_specialization` post-composes the object with the agents it concerns (drug allergy
+  + NSAID; gastric ulcer + aspirin). `attributed_to` names an ingredient only when the label
+  assigns the claim to it (`COMPONENT_STATEMENT`) or names it as the cause (`STATED_REASON`).
+  Allergy to the product's own ingredients is not curated. Classes and slots are MeDIC's
+  own; Biolink is referenced semantically (`meaning`, `exact_mappings`, `close_mappings`),
+  never imported, and a test checks every reference against the pinned Biolink release.
+- **Identity is computed:** `medic.curation.identity` derives the id
+  (`MEDICNE:combo-<uuid5 of the sorted ingredient CURIEs>`), the name (ChEBI labels joined
+  with " / ") and the file name from the ingredients, which are resolved through the drug
+  grounding and normalization stores.
+- **Helpers:** `just curation-label <setid> [--skeleton]` (`medic.curation.label`) fetches and
+  caches the SPL under `data/raw/dailymed/` and prints the ingredients, computed identity and
+  typed spans; `uv run python -m medic.curation.terms search|info` looks terms up in the
+  ontologies' OBO releases, cached under `cache/ontologies/`; `just combination-worklist`
+  writes `curation/combination_worklist.tsv` from the pipeline's fan-out.
+- **Checks:** `just validate-curation` (`medic.curation.validate`). Errors: schema; computed
+  id/name/file name; ingredient set equal to the label's structured active ingredients;
+  quotes verbatim in the right section and not from a Limitations of Use span; descriptor
+  text inside the quote; bound terms that exist, are current, carry their label and a
+  `binding`; unbound descriptors with a `term_gap`; an object term no broader than a term
+  the label's own words name (every word span is looked up as a term label/synonym and as a
+  grounding-store row, and compared through the `is_a` hierarchy); attributions to real
+  ingredients that the quote names; no own-ingredient allergy; no conflict with
+  `mappings/disease_grounding.sssom.tsv`; source/jurisdiction; at least one valid history
+  record. Warnings: negation cues, relation vs. wording, unusual ontology for a slot,
+  cross-ontology store rows, label revised since the pinned version. CI runs both validators
+  as the `curation` job.
+- **Term source:** configurable per prefix in `conf/curation_terms.yaml` (or
+  `MEDIC_TERM_SOURCE_<PREFIX>`): `obo` (default; the ontology's OBO release cached and pickled
+  under `cache/ontologies/`) or any OAK selector (`sqlite:obo:mondo` with oaklib ≥ 0.7.2,
+  `ols:mondo`, a local database).
+- **History:** append-only session records under `history/combinations/<slug>/`, format and
+  scaffold adopted from dismech (`src/medic/schema/history.yaml`, `just new-history`,
+  `just validate-history`). MeDIC additionally requires the model id for any `ai_agent` actor.
+- **Agent skill:** `.claude/skills/medic-combination-curation/`.
+
+Not yet wired: the merge does not read `kb/combinations/`, and the ingest still fans
+combination labels out. Both change once the pilot's records are reviewed.
+
 ## 6. Disease List Pipeline
 
 The disease list pipeline runs via `just build-disease-list`.

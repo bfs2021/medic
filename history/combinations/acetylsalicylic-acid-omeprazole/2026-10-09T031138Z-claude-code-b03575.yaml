@@ -1,0 +1,26 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-omeprazole
+  path: kb/combinations/acetylsalicylic-acid-omeprazole.yaml
+session:
+  id: 2026-10-09T031138Z-claude-code-b03575
+  timestamp: '2026-10-09T03:11:38Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5[1m]
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls: []
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: acetylsalicylic acid / omeprazole'
+  details: |
+    Curated from DailyMed setid ae8f4eb4-b1eb-432e-b5ab-598c29996d6a v1. Model id taken from the session environment (claude-opus-5-5[1m]). Label attributes indications per component: 5 aspirin PREVENTS claims (stroke | ischemic stroke, stroke | TIA, MI | previous MI, MI | unstable angina, MI | chronic stable angina bound to myocardial ischemia as no MONDO stable-angina term exists) and 1 omeprazole PREVENTS gastric ulcer. 4 CONTRAINDICATED: drug allergy (aspirin/NSAIDs, attributed aspirin), asthma/nasal polyps/aspirin intolerance triad (unattributed), viral infection in pediatric patients (unattributed; Reye rationale names aspirin, flagged for reviewer), drug allergy (aspirin, omeprazole, benzimidazoles; attributed both). Skipped: product-level population sentence, revascularization procedure, death/sudden death outcomes, Limitations of Use, rilpivirine interaction.

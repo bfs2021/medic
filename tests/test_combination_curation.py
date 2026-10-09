@@ -1,0 +1,503 @@
+"""Curated combination files: identity, the deterministic checks, history and Biolink references.
+
+Each check gets a known-bad case, so a check that silently stops firing fails here. The label
+is a small synthetic SPL modelled on the aspirin/omeprazole label, and ontology lookups go
+through a small fake term source, so the whole file runs offline.
+"""
+
+from __future__ import annotations
+
+import copy
+from pathlib import Path
+
+import pytest
+import yaml
+
+from medic.curation import history, terms
+from medic.curation.identity import combination_id, combination_name, combination_slug
+from medic.curation.terms import TermInfo
+from medic.curation.validate import Checker
+
+REPO = Path(__file__).resolve().parent.parent
+SETID = "00000000-test-4000-8000-combination01"
+ASPIRIN, OMEPRAZOLE = "CHEBI:15365", "CHEBI:7772"
+SLUG = "acetylsalicylic-acid-omeprazole"
+
+SPL = f"""<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="urn:hl7-org:v3">
+  <setId root="{SETID}"/>
+  <versionNumber value="3"/>
+  <title>TESTCOMBO (aspirin and omeprazole) delayed-release tablets</title>
+  <component><structuredBody>
+    <component><section>
+      <code code="34067-9" codeSystem="2.16.840.1.113883.6.1"/>
+      <title>1 INDICATIONS AND USAGE</title>
+      <text><paragraph>The aspirin component of TESTCOMBO is indicated for reducing the
+        combined risk of death and nonfatal MI in patients with a previous MI or unstable
+        angina pectoris. The omeprazole component of TESTCOMBO is indicated for decreasing
+        the risk of developing aspirin associated gastric ulcers in patients at risk for
+        developing aspirin associated gastric ulcers due to age (&#8805; 55). TESTCOMBO is
+        also indicated after acute myocardial infarction.</paragraph>
+        <paragraph>Limitations of Use: Not for use as the initial dose of aspirin
+        therapy during onset of acute coronary syndrome.</paragraph></text>
+    </section></component>
+    <component><section>
+      <code code="34070-3" codeSystem="2.16.840.1.113883.6.1"/>
+      <title>4 CONTRAINDICATIONS</title>
+      <text><paragraph>TESTCOMBO is contraindicated in patients with known allergy to aspirin
+        and other NSAIDs. TESTCOMBO is contraindicated in patients with known
+        hypersensitivity to aspirin, omeprazole, or to any of the excipients. TESTCOMBO is
+        contraindicated in pediatric patients with suspected viral infections, with or
+        without fever.</paragraph></text>
+    </section></component>
+  </structuredBody></component>
+  <subject><manufacturedProduct><manufacturedProduct>
+    <name>TESTCOMBO</name>
+    <ingredient classCode="ACTIB"><ingredientSubstance>
+      <activeMoiety><activeMoiety><name>ASPIRIN</name></activeMoiety></activeMoiety>
+    </ingredientSubstance></ingredient>
+    <ingredient classCode="ACTIB"><ingredientSubstance>
+      <activeMoiety><activeMoiety><name>OMEPRAZOLE</name></activeMoiety></activeMoiety>
+    </ingredientSubstance></ingredient>
+  </manufacturedProduct></manufacturedProduct></subject>
+</document>
+"""
+
+MI_QUOTE = ("The aspirin component of TESTCOMBO is indicated for reducing the combined risk "
+            "of death and nonfatal MI in patients with a previous MI or unstable angina pectoris")
+ULCER_QUOTE = ("The omeprazole component of TESTCOMBO is indicated for decreasing the risk of "
+               "developing aspirin associated gastric ulcers")
+NSAID_QUOTE = "TESTCOMBO is contraindicated in patients with known allergy to aspirin and other NSAIDs"
+OWN_QUOTE = ("TESTCOMBO is contraindicated in patients with known hypersensitivity to aspirin, "
+             "omeprazole, or to any of the excipients")
+VIRAL_QUOTE = "TESTCOMBO is contraindicated in pediatric patients with suspected viral infections"
+ACUTE_QUOTE = "TESTCOMBO is also indicated after acute myocardial infarction"
+
+
+# --- a fake term source: just enough ontology for the checks ------------------------------
+_TERMS = {t.id: t for t in [
+    TermInfo("MONDO:0024643", "myocardial disorder"),
+    TermInfo("MONDO:0005068", "myocardial infarction", exact_synonyms=["MI"],
+             parents=["MONDO:0024643"]),
+    TermInfo("MONDO:0004781", "acute myocardial infarction", parents=["MONDO:0005068"]),
+    TermInfo("MONDO:0004247", "peptic ulcer disease"),
+    TermInfo("MONDO:0001126", "gastric ulcer", parents=["MONDO:0004247"]),
+    TermInfo("MONDO:0005271", "allergic disease", exact_synonyms=["allergy"]),
+    TermInfo("MONDO:0000775", "drug allergy", parents=["MONDO:0005271"]),
+    TermInfo("MONDO:0005108", "viral infectious disease"),
+    TermInfo("MONDO:0000001", "retired thing", obsolete=True, replaced_by="MONDO:0005068"),
+    TermInfo("HP:0001681", "Angina pectoris"),
+    TermInfo("CHEBI:15365", "acetylsalicylic acid"),
+    TermInfo("CHEBI:7772", "omeprazole"),
+    TermInfo("CHEBI:35475", "non-steroidal anti-inflammatory drug"),
+]}
+
+
+class FakeSource:
+    def lookup(self, curie):
+        return _TERMS.get(curie)
+
+    def ancestors(self, curie):
+        seen, stack = set(), list(_TERMS[curie].parents) if curie in _TERMS else []
+        while stack:
+            p = stack.pop()
+            if p not in seen:
+                seen.add(p)
+                stack.extend(_TERMS[p].parents if p in _TERMS else [])
+        return seen
+
+    def exact_matches(self, prefix, text):
+        low = text.lower()
+        return tuple(t.id for t in _TERMS.values()
+                     if t.id.startswith(prefix + ":") and not t.obsolete
+                     and low in [t.label.lower(), *(s.lower() for s in t.exact_synonyms)])
+
+    def search(self, prefix, query, limit=15):
+        return []
+
+
+def _term(curie: str) -> dict:
+    return {"id": curie, "label": _TERMS[curie].label}
+
+
+def _valid_record() -> dict:
+    ids = [ASPIRIN, OMEPRAZOLE]
+    labels = ["acetylsalicylic acid", "omeprazole"]
+    return {
+        "id": combination_id(ids),
+        "name": combination_name(labels),
+        "ingredients": [{"id": i, "label": lbl} for i, lbl in zip(ids, labels)],
+        "curation_status": "DRAFT",
+        "products": [{
+            "source": "DAILYMED",
+            "jurisdiction": "USA",
+            "document": {"setid": SETID, "version": 3, "title": "TESTCOMBO"},
+            "product_name": "TESTCOMBO",
+            "claims": [
+                {
+                    "relation": "PREVENTS",
+                    "section": "INDICATIONS",
+                    "quote": MI_QUOTE,
+                    "object": {"text": "nonfatal MI", "term": _term("MONDO:0005068"),
+                               "binding": "EXACT"},
+                    "attributed_to": [{"ingredient": ASPIRIN, "basis": "COMPONENT_STATEMENT"}],
+                    "disease_context": {"text": "unstable angina pectoris",
+                                        "term_gap": "no unstable-angina term in the test ontology"},
+                    "status": "DRAFT",
+                },
+                {
+                    "relation": "PREVENTS",
+                    "section": "INDICATIONS",
+                    "quote": ULCER_QUOTE,
+                    "object": {"text": "aspirin associated gastric ulcers",
+                               "term": _term("MONDO:0001126"), "binding": "BROADER"},
+                    "object_specialization": [{"text": "aspirin", "term": _term(ASPIRIN),
+                                               "binding": "EXACT"}],
+                    "attributed_to": [{"ingredient": OMEPRAZOLE,
+                                       "basis": "COMPONENT_STATEMENT"}],
+                    "status": "DRAFT",
+                },
+                {
+                    "relation": "CONTRAINDICATED",
+                    "section": "CONTRAINDICATIONS",
+                    "quote": NSAID_QUOTE,
+                    "object": {"text": "allergy", "term": _term("MONDO:0000775"),
+                               "binding": "NARROWER"},
+                    "object_specialization": [{"text": "NSAIDs", "term": _term("CHEBI:35475"),
+                                               "binding": "EXACT"}],
+                    "status": "DRAFT",
+                },
+                {
+                    "relation": "CONTRAINDICATED",
+                    "section": "CONTRAINDICATIONS",
+                    "quote": VIRAL_QUOTE,
+                    "object": {"text": "suspected viral infections",
+                               "term": _term("MONDO:0005108"), "binding": "EXACT"},
+                    "life_stage": {"text": "pediatric patients",
+                                   "term_gap": "not checked in the test ontology"},
+                    "status": "DRAFT",
+                },
+            ],
+        }],
+    }
+
+
+@pytest.fixture
+def workspace(tmp_path, monkeypatch):
+    """A repo-shaped working directory: real decision stores, a cached label, a fake ontology."""
+    (tmp_path / "mappings").symlink_to(REPO / "mappings")
+    label_dir = tmp_path / "data" / "raw" / "dailymed"
+    label_dir.mkdir(parents=True)
+    (label_dir / f"{SETID}.xml").write_text(SPL)
+    (tmp_path / "kb" / "combinations").mkdir(parents=True)
+    monkeypatch.chdir(tmp_path)
+    fake = FakeSource()
+    monkeypatch.setattr(terms, "source", lambda prefix: fake)
+    return tmp_path
+
+
+def _write(workspace: Path, record: dict, slug: str = SLUG, with_history: bool = True) -> Path:
+    path = Path("kb/combinations") / f"{slug}.yaml"
+    path.write_text(yaml.safe_dump(record, sort_keys=False))
+    if with_history:
+        history.main(["new", "--kind", "combination", "--slug", slug, "--event", "CREATE",
+                      "--summary", "Create", "--model", "claude-opus-5-5[1m]",
+                      "--agent-tool", "claude-code", "--details", "test"])
+    return path
+
+
+def _findings(path: Path) -> tuple[list[str], list[str]]:
+    checker = Checker(check_terms=True, offline=True)
+    checker.check_file(path)
+    errors = [f"{f.where}: {f.message}" for f in checker.findings if f.level == "ERROR"]
+    warnings = [f"{f.where}: {f.message}" for f in checker.findings if f.level == "WARNING"]
+    return errors, warnings
+
+
+def _claim_errors(workspace, index, mutate) -> tuple[list[str], list[str]]:
+    record = _valid_record()
+    mutate(record["products"][0]["claims"][index])
+    return _findings(_write(workspace, record))
+
+
+# --- identity -----------------------------------------------------------------------------
+def test_identity_is_order_independent():
+    assert combination_id([ASPIRIN, OMEPRAZOLE]) == combination_id([OMEPRAZOLE, ASPIRIN])
+    assert combination_id([ASPIRIN, OMEPRAZOLE]).startswith("MEDICNE:combo-")
+    assert combination_name(["omeprazole", "acetylsalicylic acid"]) == \
+        "acetylsalicylic acid / omeprazole"
+    assert combination_slug(["omeprazole", "acetylsalicylic acid"]) == SLUG
+
+
+def test_valid_file_has_no_errors(workspace):
+    errors, _ = _findings(_write(workspace, _valid_record()))
+    assert errors == []
+
+
+def test_hand_written_identity_is_an_error(workspace):
+    record = _valid_record()
+    record["id"] = "MEDICNE:combo-made-up"
+    record["name"] = "aspirin / omeprazole"
+    errors, _ = _findings(_write(workspace, record))
+    assert any(e.startswith("id:") for e in errors)
+    assert any(e.startswith("name:") for e in errors)
+
+
+def test_file_name_is_computed(workspace):
+    errors, _ = _findings(_write(workspace, _valid_record(), slug="aspirin-omeprazole"))
+    assert any("file name" in e for e in errors)
+
+
+def test_ingredient_set_must_match_the_label(workspace):
+    record = _valid_record()
+    record["ingredients"] = [{"id": ASPIRIN, "label": "acetylsalicylic acid"},
+                             {"id": "CHEBI:2549", "label": "albuterol"}]
+    record["id"] = combination_id([ASPIRIN, "CHEBI:2549"])
+    record["name"] = combination_name(["acetylsalicylic acid", "albuterol"])
+    for claim in record["products"][0]["claims"]:
+        claim.pop("attributed_to", None)
+    errors, _ = _findings(_write(workspace, record, slug="acetylsalicylic-acid-albuterol"))
+    assert any("must equal the label's active ingredients" in e for e in errors)
+
+
+# --- quotes and descriptor text -----------------------------------------------------------
+def test_paraphrased_quote_is_an_error(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote="Aspirin reduces the risk of death and nonfatal MI"))
+    assert any("not a verbatim substring" in e for e in errors)
+
+
+def test_quote_from_limitations_of_use_is_an_error(workspace):
+    def mutate(c):
+        c.update(quote="Not for use as the initial dose of aspirin therapy during onset of "
+                       "acute coronary syndrome", attributed_to=[],
+                 object={"text": "acute coronary syndrome",
+                         "term_gap": "not in the test ontology"})
+    errors, _ = _claim_errors(workspace, 0, mutate)
+    assert any("Limitations of Use" in e for e in errors)
+
+
+def test_contraindication_must_quote_the_contraindications_section(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(relation="CONTRAINDICATED"))
+    assert any("CONTRAINDICATIONS section" in e for e in errors)
+
+
+def test_descriptor_text_must_be_inside_the_quote(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["object"].update(text="heart attack"))
+    assert any("object.text" in e for e in errors)
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["disease_context"].update(text="CAD"))
+    assert any("disease_context.text" in e for e in errors)
+
+
+# --- descriptor binding -------------------------------------------------------------------
+def test_unbound_descriptor_needs_a_term_gap(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["disease_context"].pop("term_gap"))
+    assert any("term_gap" in e for e in errors)
+
+
+def test_bound_descriptor_needs_a_binding(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["object"].pop("binding"))
+    assert any("binding" in e for e in errors)
+
+
+def test_obsolete_and_mislabelled_terms_are_errors(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["object"].update(
+        term={"id": "MONDO:0000001", "label": "retired thing"}))
+    assert any("obsolete" in e for e in errors)
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["object"].update(
+        term={"id": "MONDO:0005068", "label": "heart attack"}))
+    assert any("is labelled" in e for e in errors)
+
+
+def test_hp_context_is_allowed(workspace):
+    errors, warnings = _claim_errors(workspace, 0, lambda c: c["disease_context"].update(
+        text="angina pectoris", term=_term("HP:0001681"), binding="BROADER"))
+    assert errors == []
+    assert not any("usually uses" in w for w in warnings)
+
+
+# --- specificity: no broader than the label's own words -----------------------------------
+def test_term_broader_than_the_words_is_an_error(workspace):
+    def mutate(c):
+        c.update(quote=ACUTE_QUOTE, attributed_to=[], disease_context=None,
+                 object={"text": "acute myocardial infarction",
+                         "term": _term("MONDO:0005068"), "binding": "BROADER"})
+    errors, _ = _claim_errors(workspace, 0, mutate)
+    assert any("broader than the label's own words" in e for e in errors)
+
+
+def test_term_more_specific_than_the_words_is_allowed(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["object"].update(
+        term=_term("MONDO:0004781"), binding="NARROWER"))
+    assert errors == []
+
+
+def test_term_unrelated_to_a_store_row_is_an_error(workspace):
+    # The grounding store maps "MI" to myocardial infarction.
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["object"].update(
+        term=_term("MONDO:0001126")))
+    assert any("unrelated" in e for e in errors)
+
+
+def test_store_row_in_another_ontology_is_only_a_warning(workspace):
+    errors, warnings = _claim_errors(workspace, 0, lambda c: c["object"].update(
+        term=_term("HP:0001681"), binding="BROADER"))
+    assert errors == []
+    assert any("another ontology" in w for w in warnings)
+
+
+# --- attribution and allergy --------------------------------------------------------------
+def test_attribution_must_name_an_ingredient(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        attributed_to=[{"ingredient": "CHEBI:2549", "basis": "COMPONENT_STATEMENT"}]))
+    assert any("not one of this combination's ingredients" in e for e in errors)
+
+
+def test_attribution_must_be_named_in_the_quote(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        attributed_to=[{"ingredient": OMEPRAZOLE, "basis": "COMPONENT_STATEMENT"}]))
+    assert any("never names" in e for e in errors)
+
+
+def test_stated_reason_without_causal_wording_warns(workspace):
+    _, warnings = _claim_errors(workspace, 3, lambda c: c.update(
+        quote=NSAID_QUOTE, object={"text": "allergy", "term": _term("MONDO:0000775"),
+                                   "binding": "BROADER"},
+        life_stage=None,
+        attributed_to=[{"ingredient": ASPIRIN, "basis": "STATED_REASON"}]))
+    assert any("no causal wording" in w for w in warnings)
+
+
+def test_own_ingredient_allergy_is_not_curated(workspace):
+    def mutate(c):
+        c.update(quote=OWN_QUOTE, object={"text": "hypersensitivity",
+                                          "term_gap": "no hypersensitivity term in the test"},
+                 object_specialization=[
+                     {"text": "aspirin", "term": _term(ASPIRIN), "binding": "EXACT"},
+                     {"text": "any of the excipients", "term_gap": "excipients have no term"}])
+    errors, _ = _claim_errors(workspace, 2, mutate)
+    assert any("own ingredients is not curated" in e for e in errors)
+
+
+def test_cross_sensitivity_is_curated(workspace):
+    errors, _ = _findings(_write(workspace, _valid_record()))
+    assert not any("own ingredients" in e for e in errors)
+
+
+# --- other claim checks -------------------------------------------------------------------
+def test_reviewed_claim_needs_a_reviewer(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(status="REVIEWED"))
+    assert any("requires a reviewer" in e for e in errors)
+
+
+def test_claims_differing_only_in_context_are_not_duplicates(workspace):
+    record = _valid_record()
+    claims = record["products"][0]["claims"]
+    second = copy.deepcopy(claims[0])
+    second["disease_context"] = {"text": "previous MI", "term": _term("MONDO:0005068"),
+                                 "binding": "EXACT"}
+    claims.insert(1, second)
+    _, warnings = _findings(_write(workspace, record))
+    assert not any("duplicate" in w for w in warnings)
+    claims.insert(1, copy.deepcopy(second))
+    _, warnings = _findings(_write(workspace, record, with_history=False))
+    assert any("duplicate" in w for w in warnings)
+
+
+def test_negation_cue_is_flagged(workspace):
+    def mutate(c):
+        c.update(relation="TREATS", section="INDICATIONS", life_stage=None,
+                 quote="Not for use as the initial dose of aspirin therapy during onset of "
+                       "acute coronary syndrome",
+                 object={"text": "acute coronary syndrome", "term_gap": "not in the test"})
+    _, warnings = _claim_errors(workspace, 3, mutate)
+    assert any("negation cue" in w for w in warnings)
+
+
+# --- history -------------------------------------------------------------------------------
+def test_missing_history_is_an_error(workspace):
+    errors, _ = _findings(_write(workspace, _valid_record(), with_history=False))
+    assert any(e.startswith("history:") for e in errors)
+
+
+def test_history_requires_a_model_for_ai_agents(workspace):
+    _write(workspace, _valid_record(), with_history=False)
+    with pytest.raises(SystemExit):
+        history.main(["new", "--kind", "combination", "--slug", SLUG, "--summary", "x"])
+
+
+def test_history_record_is_valid_and_records_the_bare_model_id(workspace):
+    _write(workspace, _valid_record())
+    records = history.records_for(f"kb/combinations/{SLUG}.yaml")
+    assert len(records) == 1
+    assert history.check_record(records[0]) == []
+    data = yaml.safe_load(records[0].read_text())
+    assert data["session"]["actors"][0]["model"] == "claude-opus-5-5"
+
+
+# --- terms ---------------------------------------------------------------------------------
+def test_obo_parser_reads_labels_obsolescence_synonyms_and_parents():
+    parsed = terms.parse_obo("""format-version: 1.2
+
+[Term]
+id: MONDO:0005068
+name: myocardial infarction
+synonym: "heart attack" EXACT []
+synonym: "MI" RELATED []
+is_a: MONDO:0024643 ! myocardial disorder
+
+[Term]
+id: MONDO:0000001
+name: obsolete thing
+is_obsolete: true
+replaced_by: MONDO:0005068
+
+[Typedef]
+id: part_of
+name: part of
+""".splitlines(keepends=True))
+    assert parsed["MONDO:0005068"].label == "myocardial infarction"
+    assert parsed["MONDO:0005068"].exact_synonyms == ["heart attack"]
+    assert parsed["MONDO:0005068"].parents == ["MONDO:0024643"]
+    assert parsed["MONDO:0000001"].obsolete and parsed["MONDO:0000001"].replaced_by
+    assert "part_of" not in parsed
+
+
+def test_term_source_is_configurable(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    assert terms.source_selector("MONDO") == "obo"
+    (tmp_path / "conf").mkdir()
+    (tmp_path / "conf" / "curation_terms.yaml").write_text(
+        "default: obo\nsources:\n  HP: ols:hp\n")
+    assert terms.source_selector("HP") == "ols:hp"
+    monkeypatch.setenv("MEDIC_TERM_SOURCE_MONDO", "sqlite:obo:mondo")
+    assert terms.source_selector("MONDO") == "sqlite:obo:mondo"
+
+
+# --- Biolink references -----------------------------------------------------------------------
+def test_every_biolink_reference_in_the_schema_exists():
+    """Semantic references only — but each must name a real term in the pinned release."""
+    from medic.export.kgx import biolink as bl
+
+    schema = yaml.safe_load((REPO / "src/medic/schema/combination.yaml").read_text())
+    refs: list[tuple[str, str]] = []
+    for enum in schema["enums"].values():
+        for pv in (enum.get("permissible_values") or {}).values():
+            if (pv or {}).get("meaning", "").startswith("biolink:"):
+                refs.append(("predicate", pv["meaning"]))
+    for slot in schema["slots"].values():
+        for key in ("exact_mappings", "close_mappings", "related_mappings"):
+            refs += [("slot", c) for c in (slot or {}).get(key, []) if c.startswith("biolink:")]
+    assert refs
+    for kind, curie in refs:
+        assert bl.model_name(curie) in bl.biolink_slots(), curie
+        if kind == "predicate":
+            assert bl.is_predicate(curie), f"{curie} is not a Biolink predicate"
+
+
+def test_relation_enum_covers_every_relation_the_validator_knows():
+    from medic.curation.validate import RELATION_SECTION
+
+    schema = yaml.safe_load((REPO / "src/medic/schema/combination.yaml").read_text())
+    assert set(schema["enums"]["ClaimRelationEnum"]["permissible_values"]) == \
+        set(RELATION_SECTION)

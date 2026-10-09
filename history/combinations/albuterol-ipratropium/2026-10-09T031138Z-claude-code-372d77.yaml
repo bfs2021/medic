@@ -1,0 +1,26 @@
+history_version: 1
+target:
+  kind: combination
+  slug: albuterol-ipratropium
+  path: kb/combinations/albuterol-ipratropium.yaml
+session:
+  id: 2026-10-09T031138Z-claude-code-372d77
+  timestamp: '2026-10-09T03:11:38Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5[1m]
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls: []
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: albuterol / ipratropium'
+  details: |
+    Curated from DailyMed setid 001e3b1c-b7c1-44aa-b812-e78dbf4f3069 v2. Model id taken from the session environment (claude-opus-5-5[1m]). One product-level TREATS claim: bronchospasm (HP Bronchoconstriction) with disease_context COPD; 'requiring more than one bronchodilator' kept in quote, not encoded as line_of_therapy. One CONTRAINDICATED drug allergy (atropine and derivatives), unattributed. Grounding store maps 'bronchospasm' to MONDO:0001358 bronchial disorder; flagged.

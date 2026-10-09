@@ -1,0 +1,14 @@
+# Where the curation checks (medic.curation.validate / medic.curation.terms) read ontology
+# terms from. Per CURIE prefix; `default` covers any prefix not listed.
+#
+#   obo   the ontology's own .obo release, fetched once into cache/ontologies/ (gitignored)
+#         and parsed locally. Needs only the OBO PURLs. ChEBI uses its 55 MB "lite" release.
+#   any OAK selector, e.g.
+#         sqlite:obo:mondo       semantic-sql database (oaklib >= 0.7.2 fetches these from the
+#                                semanticsql CDN; the pinned 0.6.x points at a dead S3 bucket)
+#         ols:mondo              EBI Ontology Lookup Service
+#         sqlite:/path/mondo.db  a local database
+#
+# An environment variable wins over this file: MEDIC_TERM_SOURCE_MONDO=sqlite:obo:mondo
+default: obo
+sources: {}

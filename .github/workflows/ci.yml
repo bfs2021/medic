@@ -14,6 +14,8 @@ on:
       - 'sources/**'
       - 'data/source_manifest.json'
       - 'kb/**/*.yaml'
+      - 'history/**'
+      - 'curation/**'
       - 'justfile'
       - 'project.justfile'
       - 'pyproject.toml'
@@ -91,6 +93,41 @@ jobs:
           name: build-qc-config
           path: /tmp/build_qc_config.yaml
           if-no-files-found: ignore
+
+  curation:
+    # Hand-curated combination files (kb/combinations/) are source of truth, so every check in
+    # medic.curation.validate is a merge gate: verbatim quotes against the pinned label,
+    # ingredient set against the label's own structured ingredients, computed identity, terms
+    # that exist, no same-ontology conflict with the grounding store, and a valid history
+    # record naming the model that did the work. Labels and ontology releases are fetched on
+    # first use and cached between runs.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --group dev
+
+      - name: Cache labels and ontology releases
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/raw/dailymed
+            cache/ontologies
+          key: curation-sources-${{ hashFiles('kb/combinations/**') }}
+          restore-keys: curation-sources-
+
+      - name: Validate curated combination files
+        run: uv run python -m medic.curation.validate
+
+      - name: Validate curation history records
+        run: uv run python -m medic.curation.history validate
 
   validate-schemas:
     runs-on: ubuntu-latest
