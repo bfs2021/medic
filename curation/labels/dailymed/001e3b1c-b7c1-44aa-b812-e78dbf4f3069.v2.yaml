@@ -1,0 +1,17 @@
+setid: 001e3b1c-b7c1-44aa-b812-e78dbf4f3069
+version: 2
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/001e3b1c-b7c1-44aa-b812-e78dbf4f3069.xml
+xml_sha256: 82826db3c3bc75f68a610727e49d47bcb13f7a8d9e0e7bdba16460e6c88b3650
+retrieved: '2026-10-09'
+title: Ipratropium Bromide and Albuterol Sulfate
+product_name: Ipratropium Bromide and Albuterol Sulfate
+active_moieties:
+- ALBUTEROL
+- IPRATROPIUM
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE Ipratropium Bromide and Albuterol Sulfate Inhalation Solution is indicated for
+    the treatment of bronchospasm associated with COPD in patients requiring more than one bronchodilator.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS Ipratropium Bromide and Albuterol Sulfate Inhalation Solution is contraindicated
+    in patients with a history of hypersensitivity to any of its components, or to atropine and its derivatives.

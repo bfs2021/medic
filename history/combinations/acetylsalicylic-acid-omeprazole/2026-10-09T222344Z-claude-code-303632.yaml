@@ -1,0 +1,26 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-omeprazole
+  path: kb/combinations/acetylsalicylic-acid-omeprazole.yaml
+session:
+  id: 2026-10-09T222344Z-claude-code-303632
+  timestamp: '2026-10-09T22:23:44Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls: []
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  summary: 'Edit: benzimidazole binding BROADER; content-hash curator reference'
+  details: |
+    Benzimidazole cross-sensitivity: binding EXACT -> BROADER (second review, S6): ChEBI's benzimidazoles class also contains unsubstituted benzimidazole, which the label's 'substituted benzimidazoles' excludes. curator_id now names the skill by git blob id (bfa1124b, the SKILL.md committed in d68f1be) rather than by commit alone, which failed in CI's shallow clone. The label text these quotes were checked against is now committed as curation/labels/dailymed/ae8f4eb4-b1eb-432e-b5ab-598c29996d6a.v1.yaml. Term-checked validation: 0 errors.

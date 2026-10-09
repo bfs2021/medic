@@ -7,11 +7,12 @@ name: Curation history
 # that needs no record (a whitespace fix, a pure rename). Adding or removing that label
 # re-runs this check, which is why it is its own workflow.
 
+# No `paths:` filter on purpose: if this check is made required, a path-filtered workflow
+# never reports on PRs that do not touch kb/combinations and leaves them pending. The script
+# exits 0 when no combination file changed.
 on:
   pull_request:
     types: [opened, synchronize, reopened, labeled, unlabeled]
-    paths:
-      - 'kb/combinations/**'
 
 permissions:
   contents: read

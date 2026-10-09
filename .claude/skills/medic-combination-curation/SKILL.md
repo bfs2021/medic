@@ -41,9 +41,12 @@ file in a session; it is authoritative over this skill if they ever disagree.
    component") or names the ingredient inside its causal clause
    (`basis: STATED_REASON` — after "because", "due to", "caused by", ...:
    "because of the risk of Reye's syndrome with concomitant use of aspirin").
-   The validator enforces both wordings and ignores the product's own name:
-   "Ipratropium Bromide and Albuterol Sulfate Inhalation Solution is indicated
-   ..." attributes nothing. An allergen mention is not attribution, and neither
+   The validator enforces both wordings *within the sentence that names the
+   claim's object*, and ignores the product's own name: "Ipratropium Bromide and
+   Albuterol Sulfate Inhalation Solution is indicated ..." attributes nothing,
+   and in a long quote a later "The omeprazole component ..." sentence does not
+   credit omeprazole with an earlier item. For a stated reason, the cue must come
+   after the object in its sentence. An allergen mention is not attribution, and neither
    is pharmacology you know. If the label speaks of the product as a whole,
    omit `attributed_to`.
 3. **One claim per distinct condition** (and per distinct context, see
@@ -63,7 +66,10 @@ file in a session; it is authoritative over this skill if they ever disagree.
    Cross-sensitivity to *other* agents ("aspirin and other NSAIDs") is, with
    the agents in `object_specialization` — every allergy contraindication must
    name its agents there. When one sentence lists both, curate a claim
-   carrying only the other agents.
+   carrying only the other agents. "Allergy" is judged by words *and* by the
+   term's place in MONDO/HP (angioedema and urticaria count). Other drug-caused
+   conditions may name the product's own ingredient as their agent
+   ("thrombocytopenia with use of trimethoprim"): that is curated.
 4. **Section discipline.** `INDICATIONS` claims come from Indications and
    Usage. `CONTRAINDICATED` claims come from the Contraindications section
    only, never from Warnings and Precautions, Boxed Warning, or a Limitations
@@ -143,11 +149,19 @@ ingredients, curator block, product name and the pinned document filled in:
 uv run python -m medic.curation.label <setid> --write
 ```
 
-The skeleton's `curator_id` pins the commit of this skill. If the skill has
-uncommitted changes it writes an `UNCOMMITTED` marker instead, which the
-validator rejects: the skill text that guided a curation must be recoverable.
-Labels are cached by version under `cache/labels/dailymed/` (not the
-pipeline's `data/raw/`). All the tools work from any directory.
+`--write` also writes a **pin** of the label version DailyMed serves
+now: `curation/labels/dailymed/<setid>.v<version>.yaml`, the label's
+ingredients and Indications/Contraindications text with the XML's checksum
+(about 3 KB). Stage it with your file: the validator checks quotes against
+the pin, never against a live download, so a later DailyMed revision cannot
+change a verdict. Adding a product block to an existing file needs its own
+pin: `uv run python -m medic.curation.label <setid> --pin`.
+
+The skeleton's `curator_id` names this skill with the git blob id of its exact
+text (`...SKILL.md#git-blob=<id>`). If the skill has uncommitted changes it
+writes an `UNCOMMITTED` marker instead, which the validator rejects. The
+history scaffold records the same reference for each session. All the tools
+work from any directory.
 
 If the file already exists (same ingredient set, another product), add a new
 `products:` block to it instead (`--skeleton` prints the block to copy).
@@ -237,8 +251,10 @@ Errors block; fix every one and re-run until there are none. Typical fixes:
 | X is broader than the label's own words | Bind the more specific term the validator names |
 | binding must be EXACT / NARROWER, or cannot be NARROWER | Set the binding the message names; it follows from what the text names |
 | the label's words name X, which is unrelated to Y | The term does not match its own text; rebind it |
-| no term source is configured for PREFIX | Use a configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) |
-| COMPONENT_STATEMENT needs ... / STATED_REASON needs ... | Quote the span with "the X component" or the causal clause naming X, or drop the attribution |
+| no term source is configured for PREFIX | Use a configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI), or, if another is genuinely more accurate, report it so a human can add a source in `conf/curation_terms.yaml` |
+| no committed label pin | Run `uv run python -m medic.curation.label <setid> --pin` and stage the pin, if DailyMed still serves that version; otherwise re-curate against the current version |
+| binding warning: X is what only part of the text names | The remaining words may narrow the condition; use BROADER unless they don't |
+| COMPONENT_STATEMENT needs ... / STATED_REASON needs ... | The governing wording must be in the object's own sentence: the nearest "the X component" before it, or a causal cue after it naming X. Otherwise drop the attribution |
 | allergy contraindication must name the agents | Add the other agents as specializations, or drop the claim if they are all the product's own |
 | drop the product's own ingredients | Keep only the other agents as specializations |
 | curator_id is not a commit-pinned blob URL / does not exist at commit | Commit the skill, regenerate the curator block with the label helper |

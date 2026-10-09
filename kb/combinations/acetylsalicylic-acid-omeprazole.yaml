@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/d68f1be/.claude/skills/medic-combination-curation/SKILL.md
+  curator_id: https://github.com/monarch-initiative/medic/blob/d68f1be/.claude/skills/medic-combination-curation/SKILL.md#git-blob=bfa1124b0c150a7e9884c97cd98de24accd55560
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -266,14 +266,15 @@ products:
       term:
         id: CHEBI:22715
         label: benzimidazoles
-      binding: EXACT
+      binding: BROADER
     quote: >-
       ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is contraindicated in patients with known
       hypersensitivity to aspirin, omeprazole, substituted benzimidazoles
     status: DRAFT
     notes: >-
       Cross-sensitivity to the substituted benzimidazoles (the proton pump inhibitor class
-      omeprazole belongs to). The same sentence also names aspirin, omeprazole and the
+      omeprazole belongs to). BROADER: ChEBI's benzimidazoles class also contains unsubstituted
+      benzimidazole, which the label does not name. The same sentence also names aspirin, omeprazole and the
       excipients; allergy to the product's own ingredients is not curated, so only the class is
       a specialization. Not attributed: the agents are allergens, not causes.
 notes: >-

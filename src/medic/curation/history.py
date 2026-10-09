@@ -154,6 +154,18 @@ def build_record(args: argparse.Namespace) -> tuple[dict, Path]:
         (args.details or "TODO: replace with curation/review notes.").rstrip() + "\n"
     )
 
+    urls = list(args.url)
+    if args.kind == "combination" and args.actor_type == "ai_agent":
+        # Which skill text guided this session, by content hash (see label.SKILL_REF).
+        from medic.curation.label import skill_curator_id
+
+        ref = skill_curator_id()
+        if ref.startswith("https://") and ref not in urls:
+            urls.append(ref)
+        elif not ref.startswith("https://"):
+            print(f"warning: {ref}; this record cannot name the skill text used",
+                  file=sys.stderr)
+
     record = {
         "history_version": 1,
         "target": target,
@@ -165,7 +177,7 @@ def build_record(args: argparse.Namespace) -> tuple[dict, Path]:
         "links": {
             "issues": [_expand_ref(v, "issue") for v in args.issue],
             "prs": [_expand_ref(v, "pr") for v in args.pr],
-            "urls": list(args.url),
+            "urls": urls,
         },
         "events": [event],
     }

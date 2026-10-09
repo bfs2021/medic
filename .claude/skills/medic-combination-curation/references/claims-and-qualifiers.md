@@ -57,9 +57,15 @@ disease_context:
   "benzimidazole" the compound) or a grounding-store row. Binding a term
   *broader* than one the words name is an error ("acute myocardial infarction"
   bound to myocardial infarction); so is a term unrelated to the single thing
-  the words name. The binding must agree with what the *whole* text names:
+  the words name. Not anchors: HP clinical modifiers ("severe", "transient"),
+  and members a label lists after "including" / "such as" ("complicated urinary
+  tract infections including pyelonephritis" can bind urinary tract
+  infection). The binding must agree with what the *whole* text names:
   EXACT if it is that term, NARROWER if you bound a descendant; a term that
-  only part of the text names can be EXACT or BROADER, never NARROWER.
+  only part of the text names can be EXACT or BROADER, never NARROWER — and
+  EXACT warns when the other words could narrow the condition ("aspirin
+  associated gastric ulcers"), not when they only describe the patient or event
+  ("previous MI", "nonfatal MI", "suspected viral infections").
 
 ## What is a claim object
 
@@ -101,8 +107,8 @@ ingredient):
 
 | basis | when | example |
 |---|---|---|
-| `COMPONENT_STATEMENT` | the label assigns the claim to the component; the quote must contain "the <ingredient> component" | "The omeprazole component of ... is indicated for decreasing the risk of ... gastric ulcers" |
-| `STATED_REASON` | the label names the ingredient as the cause; the ingredient must appear in the clause after a causal cue (because, due to, caused by, may cause, since, related to, associated with) | "... because of the risk of Reye's syndrome with concomitant use of aspirin"; "... due to the expected significantly increased grazoprevir plasma concentration" |
+| `COMPONENT_STATEMENT` | the label assigns the claim to the component; the nearest "the <ingredient> component" before the object, in the object's sentence, must be this ingredient's | "The omeprazole component of ... is indicated for decreasing the risk of ... gastric ulcers" |
+| `STATED_REASON` | the label names the ingredient as the cause; in the object's own sentence, a causal cue (because, due to, caused by, may cause, since, related to, associated with, attributable to) must follow the object, with the ingredient in the clause after it | "... because of the risk of Reye's syndrome with concomitant use of aspirin"; "... due to the expected significantly increased grazoprevir plasma concentration" |
 
 Not attribution:
 

@@ -1,0 +1,71 @@
+setid: ae8f4eb4-b1eb-432e-b5ab-598c29996d6a
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/ae8f4eb4-b1eb-432e-b5ab-598c29996d6a.xml
+xml_sha256: caeeb47204792b17c62cd65a920bb8061a982341ac652a37e42ab616a25f06d2
+retrieved: '2026-10-09'
+title: 'These highlights do not include all the information needed to use ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE
+  TABLETSA™ safely and effectively. See full prescribing information for ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE
+  TABLETSA. ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA (aspirin and omeprazole) delayed-release tablets,
+  for oral use Initial U.S. Approval: 2016'
+product_name: aspirin and omeprazole delayed-release tab
+active_moieties:
+- ASPIRIN
+- OMEPRAZOLE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA, a combination of aspirin and omeprazole, is indicated
+    for patients who require aspirin for secondary prevention of cardiovascular and cerebrovascular events
+    and who are at risk of developing aspirin associated gastric ulcers. The aspirin component of ASPIRIN
+    AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for: reducing the combined risk of death and
+    nonfatal stroke in patients who have had ischemic stroke or transient ischemia of the brain due to
+    fibrin platelet emboli, reducing the combined risk of death and nonfatal MI in patients with a previous
+    MI or unstable angina pectoris, reducing the combined risk of MI and sudden death in patients with
+    chronic stable angina pectoris, use in patients who have undergone revascularization procedures (Coronary
+    Artery Bypass Graft [CABG] or Percutaneous Transluminal Coronary Angioplasty [PTCA]) when there is
+    a pre-existing condition for which aspirin is already indicated. The omeprazole component of ASPIRIN
+    AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for decreasing the risk of developing aspirin-associated
+    gastric ulcers in patients at risk for developing aspirin-associated gastric ulcers due to age (≥
+    55) or documented history of gastric ulcers.'
+  - 'ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is a combination of aspirin, an anti-platelet agent,
+    and omeprazole, a proton pump inhibitor (PPI), indicated for patients who require aspirin for secondary
+    prevention of cardiovascular and cerebrovascular events and who are at risk of developing aspirin
+    associated gastric ulcers. The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA
+    is indicated for: reducing the combined risk of death and nonfatal stroke in patients who have had
+    ischemic stroke or transient ischemia of the brain due to fibrin platelet emboli, reducing the combined
+    risk of death and nonfatal MI in patients with a previous MI or unstable angina pectoris, reducing
+    the combined risk of MI and sudden death in patients with chronic stable angina pectoris, use in patients
+    who have undergone revascularization procedures (Coronary Artery Bypass Graft [CABG] or Percutaneous
+    Transluminal Coronary Angioplasty [PTCA]) when there is a pre-existing condition for which aspirin
+    is already indicated. The omeprazole component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA
+    is indicated for decreasing the risk of developing aspirin associated gastric ulcers in patients at
+    risk for developing aspirin-associated gastric ulcers due to age (≥ 55) or documented history of gastric
+    ulcers. ( 1 ) Limitations of Use: Not for use as the initial dose of aspirin therapy during onset
+    of acute coronary syndrome, acute myocardial infarction or before percutaneous coronary intervention.
+    ( 1 ) Has not been shown to reduce the risk of gastrointestinal bleeding due to aspirin. ( 1 ) Do
+    not substitute ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA with the single-ingredient products
+    of aspirin and omeprazole. ( 1 )'
+  - 'Limitations of Use: ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA contains a delayed-release formulation
+    of aspirin and it is not for use as the initial dose of aspirin therapy during onset of acute coronary
+    syndrome, acute myocardial infarction or before percutaneous coronary intervention (PCI), for which
+    immediate-release aspirin therapy is appropriate. ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA
+    has not been shown to reduce the risk of gastrointestinal bleeding due to aspirin. Do not substitute
+    ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA with the single-ingredient products of aspirin and
+    omeprazole.'
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is contraindicated in: Patients with known allergy
+    to aspirin and other nonsteroidal anti-inflammatory drug products (NSAIDs) and in patients with the
+    syndrome of asthma, rhinitis, and nasal polyps. Aspirin may cause severe urticaria, angioedema, or
+    bronchospasm (asthma). Pediatric patients with suspected viral infections, with or without fever,
+    because of the risk of Reye''s syndrome with concomitant use of aspirin in certain viral illnesses.
+    ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is contraindicated in patients with known hypersensitivity
+    to aspirin, omeprazole, substituted benzimidazoles, or to any of the excipients in the formulation
+    [see Warnings and Precautions (5.8) , Adverse Reactions (6.2) ]. Proton pump inhibitor (PPI)–containing
+    products, including ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA, are contraindicated in patients
+    receiving rilpivirine-containing products [see Drug Interactions (7) ].'
+  - History of asthma, urticaria, or other allergic-type reactions after taking aspirin or other NSAIDs.
+    ( 4 ) In pediatric patients with suspected viral infections, with or without fever, because of the
+    risk of Reye's Syndrome. ( 4 ) Known hypersensitivity to aspirin, omeprazole, substituted benzimidazoles
+    or to any of the excipients of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA. ( 4 ) Patients receiving
+    rilpivirine-containing products. ( 4 , 7 )

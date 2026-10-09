@@ -6,17 +6,26 @@ the computed combination id / name / file name, and the Indications and Contrain
 text split into the same typed spans the pipeline uses (so a Limitations of Use passage is
 visibly marked as one). ``--skeleton`` prints a starting YAML file.
 
-The XML is cached under ``cache/labels/dailymed/<setid>.v<version>.xml`` (gitignored). Not
-``data/raw/dailymed/``: that is the DailyMed ingest's input, and every label curated there
-would silently join the pipeline's input set. Caching by version keeps the copy a file's
-quotes were checked against even after DailyMed moves on.
+Two stores, by design:
+
+- **Pins** — ``curation/labels/dailymed/<setid>.v<version>.yaml``, committed. The label's
+  identity, active ingredients and its Indications and Contraindications text, exactly the
+  parts the checks read, plus the SHA-256 of the XML they came from. Written by this helper,
+  never by hand (dismech's ``references_cache`` pattern). A curated file is checked against
+  the pin for the version it names, so validation needs no network and a later revision
+  upstream cannot change a verdict. ~3 KB per label version.
+- **Downloads** — ``cache/labels/dailymed/<setid>.v<version>.xml``, gitignored. Not
+  ``data/raw/dailymed/``: that is the DailyMed ingest's input, and every label curated there
+  would silently join the pipeline's input set.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import subprocess
 import sys
+from datetime import date
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -42,6 +51,7 @@ from medic.ingest.dailymed.acquire import SPL_XML_URL
 from medic.spans import spans_for_source
 
 LABEL_CACHE_DIR = Path("cache/labels/dailymed")
+PIN_DIR = Path("curation/labels/dailymed")
 COMBINATIONS_DIR = Path("kb/combinations")
 DAILYMED_SETID_URL = "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid={setid}"
 
@@ -99,29 +109,48 @@ def label_path(setid: str, version: int, cache_dir: Path = LABEL_CACHE_DIR) -> P
     return cache_dir / f"{setid}.v{version}.xml"
 
 
+def pin_path(setid: str, version: int, pin_dir: Path = PIN_DIR) -> Path:
+    return pin_dir / f"{setid}.v{version}.yaml"
+
+
 def _cached_versions(setid: str, cache_dir: Path) -> list[Path]:
     paths = cache_dir.glob(f"{setid}.v*.xml")
     return sorted(paths, key=lambda p: int(p.stem.rsplit(".v", 1)[1]))
 
 
-def fetch_label(setid: str, *, version: int | None = None, cache_dir: Path = LABEL_CACHE_DIR,
-                offline: bool = False, refresh: bool = False) -> LabelDocument:
-    """The label for ``setid``: the pinned ``version`` if cached, else what DailyMed serves.
+def write_pin(doc: LabelDocument, xml: bytes, pin_dir: Path = PIN_DIR) -> Path:
+    """Commit-ready record of the parts of a label version the checks read."""
+    path = pin_path(doc.setid, doc.version or 0, pin_dir)
+    record = {
+        "setid": doc.setid,
+        "version": doc.version,
+        "source_url": SPL_XML_URL.format(setid=doc.setid),
+        "xml_sha256": hashlib.sha256(xml).hexdigest(),
+        "retrieved": date.today().isoformat(),
+        "title": doc.title,
+        "product_name": doc.product_name,
+        "active_moieties": doc.active_moieties,
+        "sections": doc.sections,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as fh:
+        yaml.safe_dump(record, fh, sort_keys=False, allow_unicode=True, width=100)
+    return path
 
-    DailyMed only serves the *current* version of a setid. A curated file pins the version
-    its quotes were copied from; when that version is cached it is used, so a later revision
-    upstream cannot turn an unrelated check red. Otherwise the current version is fetched
-    and cached under its own version number, and the caller compares versions.
-    """
-    if version is not None and not refresh:
-        pinned = label_path(setid, version, cache_dir)
-        if pinned.exists():
-            return parse_label(pinned.read_bytes())
-    cached = _cached_versions(setid, cache_dir)
-    if offline or (cached and not refresh and version is None):
-        if not cached:
-            raise FileNotFoundError(f"label {setid} is not cached under {cache_dir} (offline)")
-        return parse_label(cached[-1].read_bytes())
+
+def load_pin(setid: str, version: int, pin_dir: Path = PIN_DIR) -> LabelDocument | None:
+    path = pin_path(setid, version, pin_dir)
+    if not path.exists():
+        return None
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    return LabelDocument(
+        setid=data["setid"], version=data["version"], title=data.get("title", ""),
+        active_moieties=list(data.get("active_moieties") or []),
+        product_name=data.get("product_name", ""),
+        sections={k: list(v or []) for k, v in (data.get("sections") or {}).items()})
+
+
+def _download(setid: str, cache_dir: Path) -> tuple[LabelDocument, bytes]:
     resp = httpx.get(SPL_XML_URL.format(setid=setid), timeout=60.0, follow_redirects=True)
     resp.raise_for_status()
     if b"<document" not in resp.content[:5000]:
@@ -132,7 +161,48 @@ def fetch_label(setid: str, *, version: int | None = None, cache_dir: Path = LAB
     tmp = path.with_suffix(".part")
     tmp.write_bytes(resp.content)
     tmp.replace(path)
+    return doc, resp.content
+
+
+def fetch_label(setid: str, *, version: int | None = None, cache_dir: Path = LABEL_CACHE_DIR,
+                pin_dir: Path = PIN_DIR, offline: bool = False) -> LabelDocument:
+    """A label version for curation work.
+
+    With ``version``: the committed pin, else the downloaded copy, else (online) whatever
+    DailyMed serves now. Without: what DailyMed serves now — DailyMed only serves the current
+    version, and a new curation must start from it — or, offline, the newest download.
+    """
+    if version is not None:
+        pinned = load_pin(setid, version, pin_dir)
+        if pinned is not None:
+            return pinned
+        cached = label_path(setid, version, cache_dir)
+        if cached.exists():
+            return parse_label(cached.read_bytes())
+    if offline:
+        cached_all = _cached_versions(setid, cache_dir)
+        if not cached_all:
+            raise FileNotFoundError(f"label {setid} is not cached under {cache_dir} (offline)")
+        return parse_label(cached_all[-1].read_bytes())
+    return _download(setid, cache_dir)[0]
+
+
+def pinned_label(setid: str, version: int, pin_dir: Path = PIN_DIR) -> LabelDocument:
+    """The committed pin a curated file is validated against; raises if it is missing."""
+    doc = load_pin(setid, version, pin_dir)
+    if doc is None:
+        raise FileNotFoundError(
+            f"no committed label pin {pin_path(setid, version, pin_dir)}; create it with "
+            f"`uv run python -m medic.curation.label {setid} --pin` while DailyMed still "
+            f"serves version {version}")
     return doc
+
+
+def pin_current(setid: str, cache_dir: Path = LABEL_CACHE_DIR,
+                pin_dir: Path = PIN_DIR) -> tuple[LabelDocument, Path]:
+    """Download the current version and write its pin."""
+    doc, xml = _download(setid, cache_dir)
+    return doc, write_pin(doc, xml, pin_dir)
 
 
 def _resolve_ingredients(doc: LabelDocument, resolver: IngredientResolver):
@@ -148,6 +218,10 @@ def _resolve_ingredients(doc: LabelDocument, resolver: IngredientResolver):
 
 SKILL_PATH = ".claude/skills/medic-combination-curation/SKILL.md"
 REPO_BLOB = "https://github.com/monarch-initiative/medic/blob/{rev}/" + SKILL_PATH
+#: A curator reference: where to read the skill, and the git blob id of its exact text. The
+#: blob id identifies the content itself, so the reference survives shallow clones and
+#: squash merges, which a bare commit reference did not.
+SKILL_REF = REPO_BLOB + "#git-blob={blob}"
 
 
 def _git(*args: str) -> subprocess.CompletedProcess:
@@ -155,17 +229,17 @@ def _git(*args: str) -> subprocess.CompletedProcess:
 
 
 def skill_curator_id() -> str:
-    """A URL that resolves to the exact skill text, or a marker the validator rejects.
+    """The skill's commit-pinned URL plus its git blob id, or a marker the validator rejects.
 
-    The skill must be committed and unchanged since HEAD; otherwise ``HEAD`` would name a
-    commit whose SKILL.md is not the text that guided the curation.
+    The skill must be committed and unchanged since HEAD; otherwise no commit holds the text
+    that guided the curation.
     """
     head = _git("rev-parse", "HEAD")
-    tracked = _git("ls-files", "--error-unmatch", SKILL_PATH)
+    blob = _git("rev-parse", f"HEAD:{SKILL_PATH}")
     clean = _git("diff", "--quiet", "HEAD", "--", SKILL_PATH)
-    if head.returncode or tracked.returncode or clean.returncode:
+    if head.returncode or blob.returncode or clean.returncode:
         return f"UNCOMMITTED {SKILL_PATH}: commit the skill before curating"
-    return REPO_BLOB.format(rev=head.stdout.strip())
+    return SKILL_REF.format(rev=head.stdout.strip(), blob=blob.stdout.strip())
 
 
 def skeleton(doc: LabelDocument, resolver: IngredientResolver) -> dict:
@@ -236,11 +310,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--write", action="store_true",
                         help="write the skeleton to its computed path under kb/combinations/ "
                              "(refuses to overwrite)")
-    parser.add_argument("--refresh", action="store_true", help="re-download the label")
+    parser.add_argument("--pin", action="store_true",
+                        help="write the committed pin for the version DailyMed serves now "
+                             "(--write does this too)")
+    parser.add_argument("--offline", action="store_true",
+                        help="use the newest downloaded copy instead of fetching")
     args = parser.parse_args(argv)
     enter_repo_root()
-    doc = fetch_label(args.setid, refresh=args.refresh)
     resolver = IngredientResolver()
+    if args.pin or args.write:
+        doc, pin = pin_current(args.setid)
+        print(f"pinned {pin}", file=sys.stderr)
+    else:
+        doc = fetch_label(args.setid, offline=args.offline)
+    if args.pin and not args.write:
+        return 0
     if args.write:
         record = skeleton(doc, resolver)
         labels = [i["label"] for i in record["ingredients"]]

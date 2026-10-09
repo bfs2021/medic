@@ -38,7 +38,8 @@ SPL = f"""<?xml version="1.0" encoding="UTF-8"?>
         the risk of developing aspirin associated gastric ulcers in patients at risk for
         developing aspirin associated gastric ulcers due to age (&#8805; 55). TESTCOMBO is
         also indicated after acute myocardial infarction. Aspirin and Omeprazole Tablets are
-        indicated for the relief of heartburn.</paragraph>
+        indicated for the relief of heartburn. TESTCOMBO is indicated for complicated urinary
+        tract infections including pyelonephritis.</paragraph>
         <paragraph>Limitations of Use: Not for use as the initial dose of aspirin
         therapy during onset of acute coronary syndrome.</paragraph></text>
     </section></component>
@@ -50,7 +51,10 @@ SPL = f"""<?xml version="1.0" encoding="UTF-8"?>
         hypersensitivity to aspirin, omeprazole, substituted benzimidazoles, or to any of the
         excipients. TESTCOMBO is contraindicated in pediatric patients with suspected viral
         infections, with or without fever, because of the risk of Reye's syndrome with
-        concomitant use of aspirin.</paragraph></text>
+        concomitant use of aspirin. TESTCOMBO is contraindicated in patients with a history of
+        angioedema. TESTCOMBO is contraindicated in patients with severe renal impairment.
+        TESTCOMBO is contraindicated after gastric bypass because of poor absorption of Aspirin
+        and Omeprazole Tablets.</paragraph></text>
     </section></component>
   </structuredBody></component>
   <subject><manufacturedProduct><manufacturedProduct>
@@ -77,6 +81,14 @@ VIRAL_QUOTE = ("TESTCOMBO is contraindicated in pediatric patients with suspecte
                "concomitant use of aspirin")
 ACUTE_QUOTE = "TESTCOMBO is also indicated after acute myocardial infarction"
 GENERIC_QUOTE = "Aspirin and Omeprazole Tablets are indicated for the relief of heartburn"
+TWO_SENTENCE_QUOTE = MI_QUOTE + ". " + ULCER_QUOTE
+NEIGHBOUR_QUOTE = (NSAID_QUOTE + ". " + OWN_QUOTE + ". " + VIRAL_QUOTE)
+ANGIOEDEMA_QUOTE = "TESTCOMBO is contraindicated in patients with a history of angioedema"
+RENAL_QUOTE = "TESTCOMBO is contraindicated in patients with severe renal impairment"
+BYPASS_QUOTE = ("TESTCOMBO is contraindicated after gastric bypass because of poor absorption of "
+                "Aspirin and Omeprazole Tablets")
+UTI_QUOTE = ("TESTCOMBO is indicated for complicated urinary tract infections including "
+             "pyelonephritis")
 
 
 # --- a fake term source: just enough ontology for the checks ------------------------------
@@ -101,6 +113,13 @@ _TERMS = {t.id: t for t in [
     TermInfo("CHEBI:35475", "non-steroidal anti-inflammatory drug"),
     TermInfo("CHEBI:22715", "benzimidazoles"),
     TermInfo("CHEBI:36622", "benzimidazole", parents=["CHEBI:22715"]),
+    TermInfo("MONDO:0010481", "angioedema"),
+    TermInfo("HP:0012823", "Clinical modifier"),
+    TermInfo("HP:0012824", "Severity", parents=["HP:0012823"]),
+    TermInfo("HP:0012828", "Severe", parents=["HP:0012824"]),
+    TermInfo("HP:0000083", "Renal insufficiency"),
+    TermInfo("MONDO:0005047", "urinary tract infection"),
+    TermInfo("MONDO:0006939", "pyelonephritis", parents=["MONDO:0005047"]),
 ]}
 
 
@@ -198,9 +217,9 @@ def _valid_record() -> dict:
 def workspace(tmp_path, monkeypatch):
     """A repo-shaped working directory: real decision stores, a cached label, a fake ontology."""
     (tmp_path / "mappings").symlink_to(REPO / "mappings")
-    label_dir = tmp_path / "cache" / "labels" / "dailymed"
-    label_dir.mkdir(parents=True)
-    (label_dir / f"{SETID}.v3.xml").write_text(SPL)
+    from medic.curation.label import parse_label, write_pin
+
+    write_pin(parse_label(SPL.encode()), SPL.encode(), tmp_path / "curation/labels/dailymed")
     (tmp_path / "kb" / "combinations").mkdir(parents=True)
     monkeypatch.chdir(tmp_path)
     fake = FakeSource()
@@ -646,30 +665,34 @@ def test_one_file_per_combination(workspace):
                if f.level == "ERROR")
 
 
-def test_curator_reference_must_resolve(workspace):
+def test_curator_reference_names_the_skill_by_content(workspace):
+    """Round 2 B1/S7: a commit reference broke in shallow clones and accepted any file."""
     import subprocess
 
-    record = _valid_record()
-    record["curators"] = [{"curator_type": "AI_AGENT", "name": "skill",
-                           "curator_id": "UNCOMMITTED skill"}]
-    errors, _ = _findings(_write(workspace, record))
-    assert any("commit-pinned blob URL" in e for e in errors)
+    from medic.curation.label import SKILL_PATH, SKILL_REF
 
-    skill = Path(".claude/skills/medic-combination-curation/SKILL.md")
+    record = _valid_record()
+
+    def errors_for(ref):
+        record["curators"] = [{"curator_type": "AI_AGENT", "name": "skill", "curator_id": ref}]
+        return _findings(_write(workspace, record, with_history=False))
+
+    _write(workspace, _valid_record())  # one history record for the slug
+    assert any("git blob id" in e for e in errors_for("UNCOMMITTED skill")[0])
+    fork = f"https://github.com/evil/fork/blob/{'a' * 40}/README.md#git-blob={'b' * 40}"
+    assert any("git blob id" in e for e in errors_for(fork)[0])
+
+    skill = Path(SKILL_PATH)
     skill.parent.mkdir(parents=True)
     skill.write_text("skill text\n")
-    for cmd in (["init", "-q"], ["add", str(skill)],
-                ["-c", "user.name=t", "-c", "user.email=t@t", "commit", "-qm", "skill"]):
-        subprocess.run(["git", *cmd], check=True, capture_output=True)
-    rev = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True,
-                         text=True).stdout.strip()
-    url = f"https://github.com/monarch-initiative/medic/blob/{{}}/{skill.as_posix()}"
-    record["curators"][0]["curator_id"] = url.format(rev)
-    errors, _ = _findings(_write(workspace, record, with_history=False))
+    blob = subprocess.run(["git", "hash-object", str(skill)], capture_output=True,
+                          text=True).stdout.strip()
+    errors, warnings = errors_for(SKILL_REF.format(rev="a" * 40, blob=blob))
     assert not any("curator_id" in e for e in errors)
-    record["curators"][0]["curator_id"] = url.format("0" * 40)
-    errors, _ = _findings(_write(workspace, record, with_history=False))
-    assert any("does not exist at commit" in e for e in errors)
+    assert not any("earlier skill text" in w for w in warnings)
+    errors, warnings = errors_for(SKILL_REF.format(rev="a" * 40, blob="c" * 40))
+    assert not any("curator_id" in e for e in errors)
+    assert any("earlier skill text" in w for w in warnings)
 
 
 def test_history_rejects_runtime_suffixed_model_ids(workspace):
@@ -688,15 +711,15 @@ def test_missing_decision_store_fails_loudly(tmp_path, monkeypatch):
         Checker(check_terms=False, offline=True)
 
 
-def test_labels_are_cached_by_version(workspace):
-    from medic.curation.label import fetch_label
+def test_files_are_checked_against_committed_pins(workspace):
+    from medic.curation.label import load_pin, pinned_label
 
-    assert fetch_label(SETID, version=3, offline=True).version == 3
-    # A pin that is not cached falls back to the newest cached copy; the validator warns.
+    assert pinned_label(SETID, 3).sections["CONTRAINDICATIONS"]
+    assert load_pin(SETID, 2) is None
     record = _valid_record()
     record["products"][0]["document"]["version"] = 2
-    _, warnings = _findings(_write(workspace, record))
-    assert any("which is not cached" in w for w in warnings)
+    errors, _ = _findings(_write(workspace, record))
+    assert any("no committed label pin" in e for e in errors)
 
 
 def test_enter_repo_root_resolves_paths_first(tmp_path, monkeypatch):
@@ -705,3 +728,74 @@ def test_enter_repo_root_resolves_paths_first(tmp_path, monkeypatch):
     monkeypatch.chdir(REPO_ROOT / "kb")
     assert enter_repo_root(["combinations/x.yaml"]) == [Path("kb/combinations/x.yaml")]
     assert Path.cwd() == REPO_ROOT
+
+
+# --- review round 2 ---------------------------------------------------------------------------
+def test_component_statement_is_scoped_to_the_objects_sentence(workspace):
+    """Round 2 S1 (A2): a later "The omeprazole component" sentence credits nothing earlier."""
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote=TWO_SENTENCE_QUOTE,
+        attributed_to=[{"ingredient": OMEPRAZOLE, "basis": "COMPONENT_STATEMENT"}]))
+    assert any("COMPONENT_STATEMENT needs" in e for e in errors)
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(quote=TWO_SENTENCE_QUOTE))
+    assert not any("attributed_to" in e for e in errors)
+
+
+def test_stated_reason_is_scoped_to_the_objects_sentence(workspace):
+    """Round 2 S1 (A3/A4): a neighbouring sentence's cause is not this claim's."""
+    errors, _ = _claim_errors(workspace, 2, lambda c: c.update(
+        quote=NEIGHBOUR_QUOTE,
+        attributed_to=[{"ingredient": ASPIRIN, "basis": "STATED_REASON"}]))
+    assert any("STATED_REASON needs" in e for e in errors)
+
+
+def test_product_name_after_a_cause_is_not_a_stated_reason(workspace):
+    """Round 2 S9: pins the product-name stripping (this fails without it)."""
+    def mutate(c):
+        c.update(quote=BYPASS_QUOTE, life_stage=None,
+                 object={"text": "gastric bypass", "term_gap": "procedure; not a condition"},
+                 attributed_to=[{"ingredient": ASPIRIN, "basis": "STATED_REASON"}])
+    errors, _ = _claim_errors(workspace, 3, mutate)
+    assert any("STATED_REASON needs" in e for e in errors)
+
+
+def test_own_ingredient_rule_applies_only_to_allergies(workspace):
+    """Round 2 S2: a drug-caused condition may name the product's own ingredient."""
+    errors, _ = _claim_errors(workspace, 3, lambda c: c.update(object_specialization=[
+        {"text": "aspirin", "term": _term(ASPIRIN), "binding": "EXACT"}]))
+    assert not any("object_specialization" in e for e in errors)
+
+
+def test_allergy_is_recognised_by_hierarchy(workspace):
+    """Round 2 S3: "angioedema" has no allergy word but is under a hypersensitivity root."""
+    errors, _ = _claim_errors(workspace, 3, lambda c: c.update(
+        quote=ANGIOEDEMA_QUOTE, life_stage=None, attributed_to=None,
+        object={"text": "angioedema", "term": _term("MONDO:0010481"), "binding": "EXACT"}))
+    assert any("must name the agents" in e for e in errors)
+
+
+def test_hp_clinical_modifiers_do_not_anchor(workspace):
+    """Round 2 S4: "severe" matches HP Severe, which names no condition."""
+    errors, _ = _claim_errors(workspace, 3, lambda c: c.update(
+        quote=RENAL_QUOTE, life_stage=None, attributed_to=None,
+        object={"text": "severe renal impairment", "term": _term("HP:0000083"),
+                "binding": "BROADER"}))
+    assert errors == []
+
+
+def test_inclusion_lists_do_not_make_the_head_term_too_broad(workspace):
+    """Round 2 S5: "complicated urinary tract infections including pyelonephritis"."""
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote=UTI_QUOTE, relation="TREATS", attributed_to=None, disease_context=None,
+        object={"text": "complicated urinary tract infections including pyelonephritis",
+                "term": _term("MONDO:0005047"), "binding": "BROADER"}))
+    assert errors == []
+
+
+def test_exact_on_part_of_the_text_warns_when_words_could_narrow(workspace):
+    """Round 2 S6: "aspirin associated gastric ulcers" is more than gastric ulcer."""
+    _, warnings = _claim_errors(workspace, 1, lambda c: c["object"].update(binding="EXACT"))
+    assert any("may narrow the condition" in w for w in warnings)
+    # "nonfatal" describes the event, not a narrower condition.
+    _, warnings = _claim_errors(workspace, 0, lambda c: None)
+    assert not any("may narrow" in w for w in warnings)

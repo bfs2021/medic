@@ -408,16 +408,26 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   no broader than, and not unrelated to, what its own words name (every word span is looked
   up as a term label/synonym and as a grounding-store row, compared through `is_a`), and a
   `binding` consistent with what the whole text names; attributions on the label's own
-  wording ("the X component", or X inside a causal clause), never on the product's name;
-  allergy contraindications that name their agents, none of them the product's own; source
+  wording in the object's own sentence ("the X component" nearest before it, or X in a causal
+  clause after it), never on the product's name;
+  allergy contraindications (recognised by words or by MONDO/HP hypersensitivity, angioedema
+  or urticaria ancestry) that name their agents, none of them the product's own; source
   and jurisdiction; at least one valid history record. Warnings: negation cues, relation vs.
   wording, unusual ontology for a slot, anchors in another ontology, a pinned label version
   that is not cached. CI runs both validators as the `curation` job, and the
   `curation-history` workflow blocks a pull request that changes a combination file without
   adding a history record for it, unless a maintainer adds the `history-skip` label (dismech
   runs the same comparison as an advisory warning).
-- **Label cache:** `cache/labels/dailymed/<setid>.v<version>.xml`, separate from the
-  pipeline's `data/raw/dailymed/` input; the pinned version is used when cached.
+- **Label pins:** `curation/labels/dailymed/<setid>.v<version>.yaml`, committed: the
+  ingredients and Indications/Contraindications text of the label version a file names, with
+  the XML's SHA-256 (~3 KB each; ~6 MB even for every DailyMed label). Written by the label
+  helper, never by hand — dismech's `references_cache` pattern (953 MB across 64k files
+  there). Validation reads only pins, so it needs no network and a DailyMed revision cannot
+  change a verdict; `--check-upstream` reports newer versions. Raw downloads cache under
+  `cache/labels/dailymed/` (gitignored), never in the pipeline's `data/raw/dailymed/`.
+- **Curator references:** an AI curator's `curator_id` names the skill with the git blob id of
+  its exact text (`.../SKILL.md#git-blob=<id>`), which survives shallow clones and squash
+  merges; history records carry the same reference per session.
 - **Term source:** configurable per prefix in `conf/curation_terms.yaml` (or
   `MEDIC_TERM_SOURCE_<PREFIX>`): `obo` (default; the ontology's OBO release cached and pickled
   under `cache/ontologies/`) or any OAK selector (`sqlite:obo:mondo` with oaklib ≥ 0.7.2,
