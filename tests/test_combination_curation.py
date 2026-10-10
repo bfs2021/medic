@@ -1029,6 +1029,12 @@ def test_coordination_members_are_expanded():
     assert "hepatic disease" in _coordination_members("hepatic impairment or disease")
     assert _coordination_members("common cold/flu") == ["common cold", "flu", "common flu"]
     assert _coordination_members("MI with or without aura") == []
+    assert "migraine headaches with or without aura" in _coordination_members(
+        "headaches with focal neurological symptoms or have migraine headaches with or without "
+        "aura")
+    nested = _coordination_members("Breast cancer or other estrogen- or progestin-sensitive cancer")
+    assert {"breast cancer", "other estrogen-sensitive cancer",
+            "other progestin-sensitive cancer"} <= set(nested)
     assert _coordination_members("severe renal impairment") == []
 
 

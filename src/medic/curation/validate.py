@@ -998,8 +998,8 @@ _EXHAUSTIVE_PAIRS = {frozenset(p) for p in (
 def _coordination_items(text: str, *, loose: bool = False) -> list[list[str]]:
     """The coordinated items of ``text`` as word lists, or [] when it is not a coordination."""
     low = _norm_ws(text).lower().strip(".,;:()[]\"'")
-    if re.search(r"\bwith or without\b", low):
-        return []
+    # "with or without aura" qualifies one item; it never separates two.
+    low = re.sub(r"\bwith or without\b", "with\x00or\x00without", low)
     # "liver tumors, benign or malignant, or liver disease": the pair is one class.
     low = re.sub(r"\s*,\s*(?=,)", "", _drop_exhaustive(low)).strip(" ,")
     if not loose and "," in low and not re.search(r",\s*(?:or|and/or)\s", low):
@@ -1010,7 +1010,10 @@ def _coordination_items(text: str, *, loose: bool = False) -> list[list[str]]:
     else:
         pattern = _COORDINATOR
     items = [[w.strip(".,;:()[]\"'") for w in part.split()] for part in pattern.split(low)]
-    items = [[w for w in item if w] for item in items]
+    items = [[w.replace("\x00", " ") for w in item if w] for item in items]
+    # "have headaches ... or have migraine ...": a repeated verb is not part of the item.
+    items = [item[1:] if len(item) > 1 and item[0] in ("have", "has", "are", "is")
+             else item for item in items]
     items = [item for item in items if item]
     # A suspended hyphen borrows the next item's suffix: "estrogen- or progestin-sensitive".
     for item, following in zip(items, items[1:]):
@@ -1068,10 +1071,10 @@ def _item_of(member: str, items: list[list[str]]) -> int | None:
     """Which coordinated item a member expands: the item whose words it contains, longest
     first ("renal impairment" -> "renal"; "severe hepatic impairment" -> "hepatic
     impairment")."""
-    words = member.split()
+    padded = f" {_norm_ws(member).lower()} "
 
     def contains(item: list[str]) -> bool:
-        return any(words[i:i + len(item)] == item for i in range(len(words) - len(item) + 1))
+        return f" {' '.join(item)} " in padded
     ranked = sorted(range(len(items)), key=lambda i: -len(items[i]))
     # The first item lends its modifier to later ones; prefer a later item when both fit.
     fits = [i for i in ranked if contains(items[i])]
@@ -1096,8 +1099,14 @@ def _coordination_members(text: str, *, loose: bool = False) -> list[str]:
     first, last = items[0], items[-1]
     for item in items[:-1]:  # shared head: "renal" + "impairment"
         members += [" ".join([*item, *last[k:]]) for k in range(1, len(last))]
-    for item in items[1:]:  # shared modifier: "severe" / "hepatic" + "disease"
-        members += [" ".join([*first[:j], *item]) for j in range(1, len(first))]
+    for prev, item in zip(items, items[1:]):  # shared modifier: "severe" / "other" + item
+        for source in {id(first): first, id(prev): prev}.values():
+            members += [" ".join([*source[:j], *item]) for j in range(1, len(source))]
+    # A shared modifier and a shared head together ("other estrogen- or progestin-sensitive
+    # cancer" -> "other estrogen-sensitive cancer").
+    members += [" ".join([*prev[:j], *item, *last[k:]])
+                for prev, item in zip(items, items[1:-1]) for j in range(1, len(prev))
+                for k in range(1, len(last))]
     return list(dict.fromkeys(members))
 
 
