@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17beta-estradiol-norethisterone-relugolix
+  path: kb/combinations/17beta-estradiol-norethisterone-relugolix.yaml
+session:
+  id: 2026-10-10T021208Z-claude-code-ccd362
+  timestamp: '2026-10-10T02:12:08Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/121e7a36e9ca02a15d1f14253005ec29fd2b40e8/.claude/skills/medic-combination-curation/SKILL.md#git-blob=00d85a4f279a79f8d7dae38a94bffed547b16344
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  summary: 'Edit: split restricted example members into their own claims'
+  details: |
+    Applied the rule that a listed example with a restriction of its own is a separate claim (examples cannot carry qualifiers). Re-read DailyMed setid fc3feb73-cc84-43a8-aa32-b262460495e8 v18 from its pin. The high-risk-of-thrombotic-disorders claim loses three examples, each now its own CONTRAINDICATED_IN claim: deep vein thrombosis (HP:0002625) and pulmonary embolism (MONDO:0005279), both restricted 'current or history of' (no slot for a temporal scope; notes state the label covers current disease and history), and migraine with aura (MONDO:0005475) with age_range min_years 35, text 'over 35 years of age' (strict bound; no exclusive bound in age_range). The label's 'headaches with focal neurological symptoms or migraine headaches with aura if over 35 years of age' is ambiguous; read with the age on the migraine member only, so the headaches member stays an example, flagged in notes for review. Notes added to the two breast/hormone-sensitive malignancy claims recording 'current or history of'. curator_id updated to the current skill reference.

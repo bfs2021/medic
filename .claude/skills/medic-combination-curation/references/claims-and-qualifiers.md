@@ -80,7 +80,7 @@ Not claim objects (record nothing, mention in your summary if notable):
   cardiovascular and cerebrovascular events");
 - procedures ("use in patients who have undergone revascularization
   procedures");
-- outcomes that are not conditions ("death", "hospitalization");
+- outcomes that name no condition ("death", "sudden death", "revascularization procedure"); an outcome *for* a condition ("hospitalization for angina") is PREVENTATIVE_FOR_CONDITION that condition, binding BROADER (see SKILL.md Step 3);
 - pharmacological goals with no condition ("bowel cleansing prior to
   colonoscopy" has no disease; skip unless the schema later allows procedures).
 

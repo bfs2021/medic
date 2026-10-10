@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-atorvastatin
+  path: kb/combinations/amlodipine-atorvastatin.yaml
+session:
+  id: 2026-10-10T021208Z-claude-code-13ba99
+  timestamp: '2026-10-10T02:12:08Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/121e7a36e9ca02a15d1f14253005ec29fd2b40e8/.claude/skills/medic-combination-curation/SKILL.md#git-blob=00d85a4f279a79f8d7dae38a94bffed547b16344
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  summary: 'Edit: outcome endpoints bound BROADER to the condition they are for'
+  details: |
+    Applied the rule that outcome endpoints are PREVENTATIVE_FOR_CONDITION the condition they are for, object text keeping the outcome wording, binding BROADER. Re-read DailyMed setids 6f1a9bd8-ee30-4c7d-932f-3fa8c4e087b6 v52 and 909fad96-a941-443a-a39f-4f93607410fb v1 from their pins. Four claims changed, relation and terms unchanged: v52 amlodipine 'angina' EXACT -> 'hospitalization for angina' BROADER (HP:0001681); v52 atorvastatin 'congestive heart failure' EXACT -> 'hospitalization for congestive heart failure' BROADER (MONDO:0005009); v1 amlodipine 'angina' EXACT -> 'hospitalization due to angina' BROADER; v1 LIPITOR 'CHF' EXACT -> 'hospitalization for CHF' BROADER. Notes no longer suggest dropping them as outcomes. Revascularization procedures (and the coronary revascularization procedure) remain unclaimed: procedures, not conditions, with no condition named. Claims about conditions themselves (MI, non-fatal MI, fatal and non-fatal stroke, angina) are unaffected. curator_id updated to the current skill reference.

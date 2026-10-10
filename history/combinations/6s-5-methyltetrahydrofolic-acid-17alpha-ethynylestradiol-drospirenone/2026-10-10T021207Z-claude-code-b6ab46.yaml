@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone
+  path: kb/combinations/6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone.yaml
+session:
+  id: 2026-10-10T021207Z-claude-code-b6ab46
+  timestamp: '2026-10-10T02:12:07Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/121e7a36e9ca02a15d1f14253005ec29fd2b40e8/.claude/skills/medic-combination-curation/SKILL.md#git-blob=00d85a4f279a79f8d7dae38a94bffed547b16344
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  summary: 'Edit: split restricted example members into their own claims'
+  details: |
+    Applied the rule that a listed example with a restriction of its own is a separate claim (examples cannot carry qualifiers). Re-read DailyMed setid 786fb677-58c9-44ca-9c67-595d6be0fe7f v1 from its pin. The high-risk-of-thrombotic-disease claim loses three examples, each now its own CONTRAINDICATED_IN claim: deep vein thrombosis (HP:0002625) and pulmonary embolism (MONDO:0005279), both restricted 'now or in the past' (no slot for a temporal scope; notes state the label covers current disease and history), and migraine headaches with or without aura (MONDO:0005277) with age_range min_years 35, text 'over age 35' (the label's bound is strict; age_range has no exclusive bound). Headaches with focal neurological symptoms stay an example: the label's 'or have migraine ... if over age 35' attaches the age to migraine only. Notes added to the two breast/hormone-sensitive cancer claims recording 'now or in the past'. curator_id updated to the current skill reference.

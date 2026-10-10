@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+  curator_id: https://github.com/monarch-initiative/medic/blob/121e7a36e9ca02a15d1f14253005ec29fd2b40e8/.claude/skills/medic-combination-curation/SKILL.md#git-blob=00d85a4f279a79f8d7dae38a94bffed547b16344
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -95,11 +95,11 @@ products:
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
-      text: angina
+      text: hospitalization for angina
       term:
         id: HP:0001681
         label: Angina pectoris
-      binding: EXACT
+      binding: BROADER
     quote: >-
       In patients with recently documented CAD by angiography and without heart failure or an
       ejection fraction < 40%, amlodipine is indicated to reduce the risk of hospitalization
@@ -115,7 +115,9 @@ products:
       Not attributed: the sentence opens with the population, not with amlodipine, so
       INGREDIENT_SUBJECT does not apply although the label plainly means amlodipine. "without heart failure or an ejection fraction < 40%" is
       an exclusion, not recorded. The coronary revascularization procedure in the same sentence is
-      a procedure, not a condition. The endpoint is hospitalization for angina; recorded as PREVENTATIVE_FOR_CONDITION angina, as the hospitalization-for-CHF items are (a reviewer may drop both as outcomes).
+      a procedure, not a condition, so no claim. Outcome endpoint: PREVENTATIVE_FOR_CONDITION the
+      condition it is for (angina), object text keeping the outcome wording "hospitalization for
+      angina", bound BROADER.
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -303,11 +305,11 @@ products:
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
-      text: congestive heart failure
+      text: hospitalization for congestive heart failure
       term:
         id: MONDO:0005009
         label: congestive heart failure
-      binding: EXACT
+      binding: BROADER
     quote: >-
       Atorvastatin Atorvastatin is indicated: • To reduce the risk of: o Myocardial infarction
       (MI), stroke, revascularization procedures, and angina in adults with multiple risk factors
@@ -330,9 +332,10 @@ products:
       text: adults
     status: DRAFT
     notes: >-
-      The label's endpoint is 'hospitalization for congestive heart failure'; hospitalization is
-      an outcome, the condition is congestive heart failure. A reviewer may prefer to drop this
-      claim as an outcome rather than a condition.
+      Outcome endpoint: PREVENTATIVE_FOR_CONDITION the condition it is for (congestive heart
+      failure), object text keeping the outcome wording "hospitalization for congestive heart
+      failure", bound BROADER. The revascularization procedures in the same list are procedures,
+      not conditions, so no claim.
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -566,11 +569,11 @@ products:
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
-      text: angina
+      text: hospitalization due to angina
       term:
         id: HP:0001681
         label: Angina pectoris
-      binding: EXACT
+      binding: BROADER
     quote: >-
       In patients with recently documented CAD by angiography and without heart failure or an
       ejection fraction less than 40%, amlodipine is indicated to reduce the risk of
@@ -584,7 +587,9 @@ products:
     status: DRAFT
     notes: >-
       Not attributed: the sentence opens with the population, not with amlodipine. The coronary
-      revascularization procedure is a procedure, not a condition. The endpoint is hospitalization for angina; recorded as PREVENTATIVE_FOR_CONDITION angina, as the hospitalization-for-CHF items are (a reviewer may drop both as outcomes).
+      revascularization procedure is a procedure, not a condition, so no claim. Outcome endpoint:
+      PREVENTATIVE_FOR_CONDITION the condition it is for (angina), object text keeping the outcome
+      wording "hospitalization due to angina", bound BROADER.
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -753,11 +758,11 @@ products:
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
-      text: CHF
+      text: hospitalization for CHF
       term:
         id: MONDO:0005009
         label: congestive heart failure
-      binding: EXACT
+      binding: BROADER
     quote: >-
       In patients with clinically evident coronary heart disease, LIPITOR is indicated to: Reduce
       the risk of non-fatal myocardial infarction Reduce the risk of fatal and non-fatal stroke
@@ -771,8 +776,9 @@ products:
       binding: EXACT
     status: DRAFT
     notes: >-
-      Endpoint is 'hospitalization for CHF'; the condition is congestive heart failure (a reviewer
-      may drop it as an outcome). Not attributed: the subject is 'LIPITOR' (atorvastatin's brand
+      Outcome endpoint: PREVENTATIVE_FOR_CONDITION the condition it is for (congestive heart
+      failure), object text keeping the outcome wording "hospitalization for CHF", bound BROADER.
+      Not attributed: the subject is 'LIPITOR' (atorvastatin's brand
       name, carried over into this CADUET label), which is not one of the ingredient names the
       validator knows, and the sentence opens with the population.
   - relation: PREVENTATIVE_FOR_CONDITION

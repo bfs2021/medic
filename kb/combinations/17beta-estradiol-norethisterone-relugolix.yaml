@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+  curator_id: https://github.com/monarch-initiative/medic/blob/121e7a36e9ca02a15d1f14253005ec29fd2b40e8/.claude/skills/medic-combination-curation/SKILL.md#git-blob=00d85a4f279a79f8d7dae38a94bffed547b16344
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -112,16 +112,6 @@ products:
       hypertension headaches with focal neurological symptoms or migraine headaches with aura if
       over 35 years of age
     examples:
-    - text: deep vein thrombosis
-      term:
-        id: HP:0002625
-        label: Deep venous thrombosis
-      binding: EXACT
-    - text: pulmonary embolism
-      term:
-        id: MONDO:0005279
-        label: pulmonary embolism
-      binding: EXACT
     - text: vascular disease
       term:
         id: MONDO:0005385
@@ -177,11 +167,6 @@ products:
         id: HP:0002315
         label: Headache
       binding: BROADER
-    - text: migraine headaches with aura
-      term:
-        id: MONDO:0005475
-        label: migraine with aura
-      binding: EXACT
     status: DRAFT
     notes: >-
       The label contraindicates a high risk of thrombotic or thromboembolic disease and then lists
@@ -189,16 +174,74 @@ products:
       the listed conditions as `examples` (formerly one claim each). The term binds the disease the
       risk concerns. The nested "(e.g., ...)" members of vascular disease and of the thrombogenic
       heart diseases are flattened into the same list. "women over 35 years of age who smoke" is a
-      behaviour and is not an example descriptor. Example qualifiers the slot cannot carry: "if over
-      35 years of age" restricts the migraine example (examples have no age_range); "current or
-      history of" covers DVT/PE history. Example terms: no MONDO DVT term (searched MONDO "deep vein
-      thrombosis", "venous thrombosis"), so HP; "thrombogenic valvular ... diseases of the heart" is
+      behaviour and is not an example descriptor. Members with a restriction of their own are
+      separate claims below, not examples: deep vein thrombosis and pulmonary embolism ("current or
+      history of") and migraine with aura ("if over 35 years of age"). Example terms: "thrombogenic valvular ... diseases of the heart" is
       the contiguous part of the coordination, heart valve disorder BROADER; no
       thrombogenic-arrhythmia term, cardiac rhythm disease BROADER; "with valvular disease" narrows
       SBE, BROADER; thrombophilia EXACT for "inherited or acquired"; MONDO hypertensive disorder has
       no "hypertension" synonym, so HP Hypertension, "uncontrolled" narrows, BROADER; no
-      headache-with-focal-neurological-symptoms term, Headache BROADER; grounding store maps
-      "migraine headaches with aura" to sssom:NoTermFound, MONDO migraine with aura fits.
+      headache-with-focal-neurological-symptoms term, Headache BROADER. The label's "headaches with
+      focal neurological symptoms or migraine headaches with aura if over 35 years of age" is
+      ambiguous; read, as in the standard oral-contraceptive wording, with the age bound on the
+      migraine member only, so the headaches member stays an example. A reviewer who reads the
+      bound as covering both should split the headaches member out the same way.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      current or history of deep vein thrombosis or pulmonary embolism
+    status: DRAFT
+    notes: >-
+      A listed example of the high risk of arterial, venous thrombotic, or thromboembolic
+      disorders ("Examples include ... women who are known to have: ..."), separated from that
+      claim's examples because the label restricts it: "current or history of", i.e. current deep
+      vein thrombosis or a history of it. No slot records a temporal scope, so the object alone
+      reads as current disease; the label also contraindicates a past episode. No MONDO DVT term
+      (searched MONDO "deep vein thrombosis", "venous thrombosis"), so HP.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      current or history of deep vein thrombosis or pulmonary embolism
+    status: DRAFT
+    notes: >-
+      A listed example of the high risk of arterial, venous thrombotic, or thromboembolic
+      disorders, separated from that claim's examples because the label restricts it: "current or
+      history of", i.e. current pulmonary embolism or a history of it. No slot records a temporal
+      scope, so the object alone reads as current disease; the label also contraindicates a past
+      episode.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: migraine headaches with aura
+      term:
+        id: MONDO:0005475
+        label: migraine with aura
+      binding: EXACT
+    quote: >-
+      headaches with focal neurological symptoms or migraine headaches with aura if over 35 years
+      of age
+    age_range:
+      min_years: 35
+      text: over 35 years of age
+    status: DRAFT
+    notes: >-
+      A listed example of the high risk of arterial, venous thrombotic, or thromboembolic
+      disorders, separated from that claim's examples because the label restricts it to women over
+      35 years of age. "over" is a strict bound (older than 35); age_range has no exclusive bound,
+      so min_years 35 is the nearest encoding. Grounding store maps "migraine headaches with aura"
+      to sssom:NoTermFound; MONDO migraine with aura fits.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -237,6 +280,9 @@ products:
       With current or history of breast cancer or other hormone-sensitive malignancies, and with
       increased risk for hormone-sensitive malignancies
     status: DRAFT
+    notes: >-
+      "current or history of": the label contraindicates current breast cancer and a history of
+      it; no slot records a temporal scope.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -249,7 +295,8 @@ products:
       increased risk for hormone-sensitive malignancies
     status: DRAFT
     notes: >-
-      Also covers women at increased risk for such malignancies.
+      "current or history of": current disease or a history of it; no slot records a temporal
+      scope. Also covers women at increased risk for such malignancies.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
