@@ -1119,6 +1119,8 @@ def test_exhaustive_pairs_and_lists_expand_correctly():
     assert "itching of the throat" in _coordination_members("itching of the nose or throat")
     assert "itchy eyes" in _coordination_members("itchy, watery eyes", loose=True)
     assert _coordination_members("itchy, watery eyes") == []
+    assert "other estrogen-sensitive cancer" in _coordination_members(
+        "other estrogen- or progestin-sensitive cancer")
 
 
 def test_union_term_binds_an_exhaustive_pair(workspace):

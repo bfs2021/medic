@@ -974,6 +974,10 @@ def _coordination_items(text: str, *, loose: bool = False) -> list[list[str]]:
     items = [[w.strip(".,;:()[]\"'") for w in part.split()] for part in pattern.split(low)]
     items = [[w for w in item if w] for item in items]
     items = [item for item in items if item]
+    # A suspended hyphen borrows the next item's suffix: "estrogen- or progestin-sensitive".
+    for item, following in zip(items, items[1:]):
+        if item[-1].endswith("-") and "-" in following[0]:
+            item[-1] += following[0].split("-", 1)[1]
     if len(items) < 2:
         return []
     if len(items) == 2 and frozenset((items[0][-1], items[1][0])) in _EXHAUSTIVE_PAIRS:
