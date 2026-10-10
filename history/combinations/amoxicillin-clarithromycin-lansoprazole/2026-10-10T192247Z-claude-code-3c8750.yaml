@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amoxicillin-clarithromycin-lansoprazole
+  path: kb/combinations/amoxicillin-clarithromycin-lansoprazole.yaml
+session:
+  id: 2026-10-10T192247Z-claude-code-3c8750
+  timestamp: '2026-10-10T19:22:47Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: name coordination members; attribute colchicine claims to clarithromycin'
+  details: |
+    Revised under the rules of 7ac206a. The colchicine co-administration claims (renal or hepatic impairment) are attributed to clarithromycin with basis INTERACTING_INGREDIENT (snippet 'Concomitant administration of clarithromycin and colchicine is contraindicated'), colchicine kept in when_coadministered_with. Coordinations now carry the whole verbatim phrase as text with a member per claim: 'cholestatic jaundice/hepatic dysfunction', 'QT prolongation or ventricular cardiac arrhythmia', 'renal or hepatic impairment'. Curator block regenerated for the current skill text.

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-butalbital-caffeine-codeine
+  path: kb/combinations/acetylsalicylic-acid-butalbital-caffeine-codeine.yaml
+session:
+  id: 2026-10-10T192248Z-claude-code-221a6b
+  timestamp: '2026-10-10T19:22:48Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: unbind the NSAID syndrome; name coordination members'
+  details: |
+    Revised under the rules of 7ac206a. The syndrome of nasal polyps, angioedema and bronchospastic reactivity to aspirin or other NSAIDs is unbound (term_gap): the nearest candidate MONDO:0008834 names asthma, which the label does not, and sits under hereditary disease. It stays one claim with no member (a named syndrome; the validator's coordination warning is justified in notes). 'Peptic ulcer or other serious gastrointestinal lesions' claims now carry the whole phrase as text with a member each. Curator block regenerated for the current skill text.

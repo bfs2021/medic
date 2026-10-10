@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -142,7 +142,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: cholestatic jaundice
+      text: cholestatic jaundice/hepatic dysfunction
+      member: cholestatic jaundice
       term:
         id: HP:0000952
         label: Jaundice
@@ -175,12 +176,13 @@ products:
       "jaundice", "cholestasis", "cholestatic"; MONDO "cholestasis", "cholestatic"); HP Jaundice
       (is_a Cholestasis) is broader. HP Cholestatic liver disease exists but names the liver
       disease, not the jaundice. Grounding store maps "Cholestatic jaundice" to
-      UMLS:C0022354. The "/" pair is split into two claims; the members share no words, so each
-      claim's text is its own member.
+      UMLS:C0022354. The "/" pair is split into two claims, each with the whole phrase as its
+      text and its own member.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: hepatic dysfunction
+      text: cholestatic jaundice/hepatic dysfunction
+      member: hepatic dysfunction
       term:
         id: HP:0001410
         label: Decreased liver function
@@ -213,7 +215,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: QT prolongation
+      text: QT prolongation or ventricular cardiac arrhythmia
+      member: QT prolongation
       term:
         id: HP:0001657
         label: Prolonged QT interval
@@ -239,7 +242,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: ventricular cardiac arrhythmia
+      text: QT prolongation or ventricular cardiac arrhythmia
+      member: ventricular cardiac arrhythmia
       term:
         id: HP:0004308
         label: Ventricular arrhythmia
@@ -273,6 +277,7 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: renal or hepatic impairment
+      member: renal impairment
       term:
         id: HP:0000083
         label: Renal insufficiency
@@ -286,6 +291,13 @@ products:
         id: CHEBI:23359
         label: colchicine
       binding: EXACT
+    attributed_to:
+    - ingredient: CHEBI:3732
+      basis: INTERACTING_INGREDIENT
+      snippet: Concomitant administration of clarithromycin and colchicine is contraindicated
+      explanation: >-
+        The sentence names clarithromycin, alone of the three co-packaged drugs, as the party
+        whose co-administration with colchicine is contraindicated in these patients.
     explanation: >-
       "Concomitant administration of clarithromycin and colchicine is contraindicated in
       patients with renal or hepatic impairment": renal impairment (the "renal" member of the
@@ -293,18 +305,15 @@ products:
     status: DRAFT
     notes: >-
       Holds only when colchicine is given with the product's clarithromycin, so colchicine is
-      recorded in when_coadministered_with. The coordination "renal or hepatic impairment" is
-      split into two claims, each with the whole phrase as its text. HP Renal insufficiency is
-      what "renal impairment" says. Unattributed: the sentence names clarithromycin, alone of the
-      three drugs, as the one whose co-administration with colchicine is contraindicated, but its
-      subject is "Concomitant administration", not clarithromycin, and it gives no stated reason,
-      so none of the three bases describes it. A reviewer may decide it should be attributed to
-      clarithromycin (snippet "Concomitant administration of clarithromycin and colchicine is
-      contraindicated").
+      recorded in when_coadministered_with and the claim is attributed to clarithromycin as the
+      interacting ingredient (INTERACTING_INGREDIENT). The coordination "renal or hepatic
+      impairment" is split into two claims, each with the whole phrase as its text and its own
+      member. HP Renal insufficiency is what "renal impairment" says.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: renal or hepatic impairment
+      member: hepatic impairment
       term:
         id: HP:0001410
         label: Decreased liver function
@@ -318,6 +327,13 @@ products:
         id: CHEBI:23359
         label: colchicine
       binding: EXACT
+    attributed_to:
+    - ingredient: CHEBI:3732
+      basis: INTERACTING_INGREDIENT
+      snippet: Concomitant administration of clarithromycin and colchicine is contraindicated
+      explanation: >-
+        The sentence names clarithromycin, alone of the three co-packaged drugs, as the party
+        whose co-administration with colchicine is contraindicated in these patients.
     explanation: >-
       "Concomitant administration of clarithromycin and colchicine is contraindicated in
       patients with renal or hepatic impairment": hepatic impairment (the "hepatic" member of

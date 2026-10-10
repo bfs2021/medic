@@ -1,0 +1,26 @@
+history_version: 1
+target:
+  kind: combination
+  slug: abacavir-lamivudine
+  path: kb/combinations/abacavir-lamivudine.yaml
+session:
+  id: 2026-10-10T192455Z-claude-code-89c7ab
+  timestamp: '2026-10-10T19:24:55Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  summary: 'Edit: abacavir / lamivudine (round-5 rules)'
+  details: |
+    Re-checked under skill blob f3a0879f (commit 7ac206a), DailyMed setid 080e3423-5962-4465-8e78-cd8793699336 v1. Regenerated the curator block. No coordinated or exhaustive-pair objects and no attributions; no claim changes.

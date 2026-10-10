@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -201,6 +201,7 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic valvular diseases of the heart
       term:
         id: MONDO:0002869
         label: heart valve disorder
@@ -228,6 +229,7 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic rhythm diseases of the heart
       term:
         id: MONDO:0007263
         label: cardiac rhythm disease
@@ -252,31 +254,19 @@ products:
     object:
       text: inherited or acquired hypercoagulopathies
       term:
-        id: MONDO:0100240
-        label: inherited thrombophilia
+        id: MONDO:0002305
+        label: thrombophilia
       binding: EXACT
     quote: >-
       inherited or acquired hypercoagulopathies
     explanation: >-
       Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
-      known to have:". This claim is the member "inherited hypercoagulopathies"; inherited
-      thrombophilia (exact synonym hereditary hypercoagulable disorder) says it.
+      known to have:". "inherited or acquired" is an exhaustive pair: together the two alternatives
+      name every hypercoagulopathy, so the claim is the class, thrombophilia (hypercoagulability).
     status: DRAFT
-  - relation: CONTRAINDICATED_IN
-    section: CONTRAINDICATIONS
-    object:
-      text: inherited or acquired hypercoagulopathies
-      term:
-        id: MONDO:0002305
-        label: thrombophilia
-      binding: BROADER
-    quote: >-
-      inherited or acquired hypercoagulopathies
-    explanation: >-
-      Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
-      known to have:". This claim is the member "acquired hypercoagulopathies"; no acquired
-      thrombophilia term (searched MONDO "acquired thrombophilia"), so thrombophilia BROADER.
-    status: DRAFT
+    notes: >-
+      One claim on the class term rather than one per member (inherited thrombophilia / acquired),
+      per the exhaustive-pair rule.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -431,6 +421,7 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: hepatic impairment or disease
+      member: hepatic impairment
       term:
         id: HP:0001410
         label: Decreased liver function
@@ -448,6 +439,7 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: hepatic impairment or disease
+      member: hepatic disease
       term:
         id: MONDO:0005154
         label: liver disorder
@@ -466,7 +458,7 @@ products:
       term:
         id: HP:0100608
         label: Metrorrhagia
-      binding: EXACT
+      binding: NARROWER
     quote: >-
       With undiagnosed abnormal uterine bleeding.
     explanation: >-
@@ -474,9 +466,10 @@ products:
       bleeding".
     status: DRAFT
     notes: >-
-      HP Metrorrhagia carries the exact synonym "Abnormal uterus bleeding"; no MONDO term. A reviewer
-      may judge Metrorrhagia (intermenstrual bleeding) narrower than abnormal uterine bleeding.
-      "undiagnosed" describes the workup, not the condition.
+      NARROWER: HP Metrorrhagia means intermenstrual bleeding, while abnormal uterine bleeding also
+      covers heavy menstrual bleeding, so the term is more specific than the label's words, despite
+      its exact synonym "Abnormal uterus bleeding". No MONDO term. "undiagnosed" describes the
+      workup, not the condition.
 notes: >-
   The high risk of arterial, venous thrombotic, or thromboembolic disorders is not curated as a claim
   of its own: the label gives it as the heading of a risk-factor list ("Examples include ..."), and each

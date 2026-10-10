@@ -13,7 +13,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -117,10 +117,15 @@ products:
     object:
       text: the syndrome of nasal polyps, angioedema and bronchospastic reactivity to aspirin or other
         nonsteroidal anti-inflammatory drugs
-      term:
-        id: MONDO:0008834
-        label: asthma, nasal polyps, and aspirin intolerance
-      binding: NARROWER
+      term_gap: >-
+        searched MONDO "aspirin", "aspirin-induced", "aspirin-exacerbated", "Samter", "nasal polyp",
+        "NSAID", "nonsteroidal" and HP "aspirin", "NSAID", "nasal polyp", "bronchospasm". Nearest
+        candidate MONDO:0008834 asthma, nasal polyps, and aspirin intolerance does not fit: the
+        label names no asthma (it names angioedema and bronchospastic reactivity), and the term
+        sits under hereditary disease. MONDO:0850287 aspirin-induced respiratory disease sits
+        under intrinsic asthma and likewise names asthma. The text's word-span matches
+        (HP:0100582 Nasal polyposis, MONDO:0006314 nasal cavity polyp, HP:0100665 Angioedema,
+        MONDO:0005079, MONDO:0010481) each name one part of the syndrome, not the syndrome
     quote: >-
       Patients with the syndrome of nasal polyps, angioedema and bronchospastic reactivity to aspirin
       or other nonsteroidal anti-inflammatory drugs.
@@ -136,11 +141,17 @@ products:
       syndrome, with the other NSAIDs as the agents it concerns.
     status: DRAFT
     notes: >-
-      One claim for the named syndrome (aspirin-exacerbated respiratory disease / Samter's triad), not split into its parts. MONDO:0008834 is NARROWER: it names asthma where the label names angioedema and bronchospastic reactivity, and it is classed under hereditary disease (OMIM-derived); a human should confirm it over a term_gap. Specialization: the other NSAIDs; aspirin is the product's own ingredient and is dropped. Not attributed: aspirin is named as the agent the patient reacts to, not as a cause.
+      One claim for the named syndrome, not split into its parts and given no `member`: the
+      validator reads "aspirin or other nonsteroidal anti-inflammatory drugs" as a coordination,
+      but it names the agents of one syndrome, not alternative conditions. Unbound: the nearest
+      term, MONDO:0008834, names asthma, which this label does not, and is classed under
+      hereditary disease (see term_gap); the aspirin/omeprazole file binds it NARROWER to a
+      label that does name asthma. Specialization: the other NSAIDs; aspirin is the product's own ingredient and is dropped. Not attributed: aspirin is named as the agent the patient reacts to, not as a cause.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: Peptic ulcer
+      text: Peptic ulcer or other serious gastrointestinal lesions
+      member: Peptic ulcer
       term:
         id: MONDO:0004247
         label: peptic ulcer disease
@@ -152,16 +163,18 @@ products:
       other serious gastrointestinal lesions".
     status: DRAFT
     notes: >-
-      The two members share no words, so each claim's text is its own member; the other member
-      is a separate claim.
+      The coordination is split into two claims, each with the whole phrase as its text and its
+      own member.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: other serious gastrointestinal lesions
+      text: Peptic ulcer or other serious gastrointestinal lesions
+      member: other serious gastrointestinal lesions
       term_gap: >-
         searched MONDO/HP "gastrointestinal lesion", "gastrointestinal ulcer": no lesion term; the
         only fitting term, MONDO:0004335 digestive system disorder, would make the contraindication
-        far broader than "serious ... lesions"
+        far broader than "serious ... lesions". The phrase's term matches (MONDO:0004247,
+        HP:0004398, MONDO:0043839) all name the other member, "Peptic ulcer"
     quote: >-
       Peptic ulcer or other serious gastrointestinal lesions.
     explanation: >-

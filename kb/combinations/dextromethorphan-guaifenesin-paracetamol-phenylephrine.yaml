@@ -13,7 +13,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -36,6 +36,7 @@ products:
       temporarily relieves common cold/flu symptoms: nasal congestion
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
@@ -57,6 +58,7 @@ products:
       temporarily relieves common cold/flu symptoms: nasal congestion
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza
@@ -69,7 +71,8 @@ products:
   - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
-      text: sinus congestion
+      text: sinus congestion & pressure
+      member: sinus congestion
       term_gap: >-
         searched HP/MONDO "sinus congestion", "sinus", "paranasal": no term for sinus congestion (sinusitis
         is a disease, not this symptom). The grounding store maps "Sinus congestion" to UMLS:C0152029
@@ -78,6 +81,7 @@ products:
       temporarily relieves common cold/flu symptoms: nasal congestion sinus congestion & pressure
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
@@ -85,14 +89,15 @@ products:
     explanation: >-
       "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives AMELIORATES_CONDITION
       for that symptom. "sinus congestion & pressure" coordinates sinus congestion and sinus pressure;
-      this claim is the member sinus congestion, whose words occur verbatim as the object text. No
+      this claim covers the member sinus congestion, with the whole phrase as the object text. No
       term fits. "common cold/flu" coordinates common cold and flu; this claim takes the member common
       cold as the disease context.
     status: DRAFT
   - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
-      text: sinus congestion
+      text: sinus congestion & pressure
+      member: sinus congestion
       term_gap: >-
         searched HP/MONDO "sinus congestion", "sinus", "paranasal": no term for sinus congestion (sinusitis
         is a disease, not this symptom). The grounding store maps "Sinus congestion" to UMLS:C0152029
@@ -101,6 +106,7 @@ products:
       temporarily relieves common cold/flu symptoms: nasal congestion sinus congestion & pressure
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza
@@ -108,7 +114,7 @@ products:
     explanation: >-
       "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives AMELIORATES_CONDITION
       for that symptom. "sinus congestion & pressure" coordinates sinus congestion and sinus pressure;
-      this claim is the member sinus congestion, whose words occur verbatim as the object text. No
+      this claim covers the member sinus congestion, with the whole phrase as the object text. No
       term fits. "common cold/flu" coordinates common cold and flu; this claim takes the member flu
       as the disease context.
     status: DRAFT
@@ -116,13 +122,16 @@ products:
     section: INDICATIONS
     object:
       text: sinus congestion & pressure
+      member: sinus pressure
       term_gap: >-
         searched HP/MONDO "sinus pressure", "facial pressure", "sinus", "paranasal": no term for sinus
-        pressure
+        pressure. The grounding store's UMLS:C0152029 (Congestion of nasal sinus) matches the other
+        member, sinus congestion, and is outside the configured ontologies
     quote: >-
       temporarily relieves common cold/flu symptoms: nasal congestion sinus congestion & pressure
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
@@ -130,7 +139,7 @@ products:
     explanation: >-
       "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives AMELIORATES_CONDITION
       for that symptom. "sinus congestion & pressure" coordinates sinus congestion and sinus pressure;
-      this claim is the member sinus pressure, so the object text is the whole shared phrase. No term
+      this claim covers the member sinus pressure, with the whole phrase as the object text. No term
       fits. "common cold/flu" coordinates common cold and flu; this claim takes the member common
       cold as the disease context.
     status: DRAFT
@@ -138,13 +147,16 @@ products:
     section: INDICATIONS
     object:
       text: sinus congestion & pressure
+      member: sinus pressure
       term_gap: >-
         searched HP/MONDO "sinus pressure", "facial pressure", "sinus", "paranasal": no term for sinus
-        pressure
+        pressure. The grounding store's UMLS:C0152029 (Congestion of nasal sinus) matches the other
+        member, sinus congestion, and is outside the configured ontologies
     quote: >-
       temporarily relieves common cold/flu symptoms: nasal congestion sinus congestion & pressure
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza
@@ -152,7 +164,7 @@ products:
     explanation: >-
       "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives AMELIORATES_CONDITION
       for that symptom. "sinus congestion & pressure" coordinates sinus congestion and sinus pressure;
-      this claim is the member sinus pressure, so the object text is the whole shared phrase. No term
+      this claim covers the member sinus pressure, with the whole phrase as the object text. No term
       fits. "common cold/flu" coordinates common cold and flu; this claim takes the member flu as
       the disease context.
     status: DRAFT
@@ -169,6 +181,7 @@ products:
       cough due to minor throat & bronchial irritation
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
@@ -192,6 +205,7 @@ products:
       cough due to minor throat & bronchial irritation
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza
@@ -215,13 +229,16 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
       binding: EXACT
     explanation: >-
       "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives AMELIORATES_CONDITION
-      for that symptom. "minor aches & pains" is mild pain; HP Pain, broader because of "minor". "common
+      for that symptom. "minor aches & pains" is mild pain; HP Pain, broader because of "minor". The
+      "&" joins two words that both name pain (an ache is a pain), so this is one condition, not a
+      coordination of two, and one claim covers it with no member. "common
       cold/flu" coordinates common cold and flu; this claim takes the member common cold as the disease
       context.
     status: DRAFT
@@ -238,13 +255,16 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza
       binding: EXACT
     explanation: >-
       "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives AMELIORATES_CONDITION
-      for that symptom. "minor aches & pains" is mild pain; HP Pain, broader because of "minor". "common
+      for that symptom. "minor aches & pains" is mild pain; HP Pain, broader because of "minor". The
+      "&" joins two words that both name pain (an ache is a pain), so this is one condition, not a
+      coordination of two, and one claim covers it with no member. "common
       cold/flu" coordinates common cold and flu; this claim takes the member flu as the disease context.
     status: DRAFT
   - relation: AMELIORATES_CONDITION
@@ -260,6 +280,7 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains headache
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
@@ -282,6 +303,7 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains headache
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza
@@ -304,6 +326,7 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains headache fever
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
@@ -326,6 +349,7 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains headache fever
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza
@@ -348,6 +372,7 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains headache fever sore throat
     disease_context:
       text: common cold/flu
+      member: common cold
       term:
         id: MONDO:0005709
         label: common cold
@@ -371,6 +396,7 @@ products:
       cough due to minor throat & bronchial irritation minor aches & pains headache fever sore throat
     disease_context:
       text: common cold/flu
+      member: flu
       term:
         id: MONDO:0005812
         label: influenza

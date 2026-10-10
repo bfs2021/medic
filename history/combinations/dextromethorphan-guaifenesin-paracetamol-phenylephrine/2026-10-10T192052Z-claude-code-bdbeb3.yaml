@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-guaifenesin-paracetamol-phenylephrine
+  path: kb/combinations/dextromethorphan-guaifenesin-paracetamol-phenylephrine.yaml
+session:
+  id: 2026-10-10T192052Z-claude-code-bdbeb3
+  timestamp: '2026-10-10T19:20:52Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: name coordination members (DayQuil)'
+  details: |
+    Revised against DailyMed setid 5bbe271e-0344-4926-991c-3115756b908e v18 under the coordination-member rules (commit 7ac206a). Sinus congestion and sinus pressure claims now both use the whole phrase "sinus congestion & pressure" as object text with member "sinus congestion" / "sinus pressure" (both unbound, term_gap; the sinus-pressure gap now notes the UMLS store row belongs to the other member). Every "common cold/flu" disease context carries member "common cold" or "flu". "minor aches & pains" stays one claim (Pain, BROADER) with no member: both words name pain; the explanation says so. Curators block regenerated from the label helper for the new skill blob.

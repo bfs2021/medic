@@ -1,0 +1,26 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-omeprazole
+  path: kb/combinations/acetylsalicylic-acid-omeprazole.yaml
+session:
+  id: 2026-10-10T192249Z-claude-code-c51b4c
+  timestamp: '2026-10-10T19:22:49Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  summary: 'Edit: regenerate curator block for the current skill text'
+  details: |
+    Re-checked under the rules of 7ac206a; no claim changes needed. MONDO:0008834 stays NARROWER for 'the syndrome of asthma, rhinitis, and nasal polyps' (the label names asthma). Curator block regenerated for the current skill text.

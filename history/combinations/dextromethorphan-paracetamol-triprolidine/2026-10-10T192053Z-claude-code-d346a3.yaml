@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-paracetamol-triprolidine
+  path: kb/combinations/dextromethorphan-paracetamol-triprolidine.yaml
+session:
+  id: 2026-10-10T192053Z-claude-code-d346a3
+  timestamp: '2026-10-10T19:20:53Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: name coordination members (Delsym Nighttime)'
+  details: |
+    Revised against DailyMed setid 27f9d2db-38ce-41d2-8f1a-0eb171600274 v9 under the coordination-member rules (commit 7ac206a). "itchy, watery eyes due to hay fever": both claims now use object text "itchy, watery eyes" with member "itchy eyes" (Ocular pruritus, EXACT via exact synonym Itchy eyes; replaces the bare "itchy" NARROWER workaround) and "watery eyes" (Epiphora, EXACT). "itching of the nose or throat" claims carry members "itching of the nose" / "itching of the throat" (Pruritus, BROADER; HP has no nasal or throat pruritus term). Disease contexts now use the label's whole phrase "common cold and flu" with member "common cold" or "flu". "minor aches and pains" stays one claim (Pain, BROADER), no member, explained. Curators block regenerated for the new skill blob.

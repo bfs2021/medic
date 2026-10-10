@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
 products:
 - source: DAILYMED
   jurisdiction: USA

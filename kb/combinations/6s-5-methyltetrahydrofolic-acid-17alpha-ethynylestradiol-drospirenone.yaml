@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -261,6 +261,7 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic valvular diseases of the heart
       term:
         id: MONDO:0002869
         label: heart valve disorder
@@ -289,6 +290,7 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic rhythm diseases of the heart
       term:
         id: MONDO:0007263
         label: cardiac rhythm disease
@@ -313,31 +315,19 @@ products:
     object:
       text: inherited or acquired hypercoagulopathies
       term:
-        id: MONDO:0100240
-        label: inherited thrombophilia
+        id: MONDO:0002305
+        label: thrombophilia
       binding: EXACT
     quote: >-
       Have inherited or acquired hypercoagulopathies
     explanation: >-
       Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
-      to:". This claim is the member "inherited hypercoagulopathies"; inherited thrombophilia (exact
-      synonym hereditary hypercoagulable disorder) says it.
+      to:". "inherited or acquired" is an exhaustive pair: together the two alternatives name every
+      hypercoagulopathy, so the claim is the class, thrombophilia (hypercoagulability).
     status: DRAFT
-  - relation: CONTRAINDICATED_IN
-    section: CONTRAINDICATIONS
-    object:
-      text: inherited or acquired hypercoagulopathies
-      term:
-        id: MONDO:0002305
-        label: thrombophilia
-      binding: BROADER
-    quote: >-
-      Have inherited or acquired hypercoagulopathies
-    explanation: >-
-      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
-      to:". This claim is the member "acquired hypercoagulopathies"; no acquired thrombophilia term
-      (searched MONDO "acquired thrombophilia"), so thrombophilia BROADER.
-    status: DRAFT
+    notes: >-
+      One claim on the class term rather than one per member (inherited thrombophilia / acquired),
+      per the exhaustive-pair rule.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -422,7 +412,7 @@ products:
       term:
         id: HP:0100608
         label: Metrorrhagia
-      binding: EXACT
+      binding: NARROWER
     quote: >-
       Undiagnosed abnormal uterine bleeding
     explanation: >-
@@ -430,10 +420,10 @@ products:
       thrombotic risk-factor list: undiagnosed abnormal uterine bleeding.
     status: DRAFT
     notes: >-
-      HP Metrorrhagia carries the exact synonym "Abnormal uterus bleeding"; no MONDO term (searched
-      MONDO "abnormal uterine bleeding", "uterine bleeding"). Grounding store maps the text to
-      sssom:NoTermFound. A reviewer may judge Metrorrhagia (intermenstrual bleeding) narrower than
-      abnormal uterine bleeding.
+      NARROWER: HP Metrorrhagia means intermenstrual bleeding, while abnormal uterine bleeding also
+      covers heavy menstrual bleeding, so the term is more specific than the label's words, despite
+      its exact synonym "Abnormal uterus bleeding". No MONDO term (searched MONDO "abnormal uterine
+      bleeding", "uterine bleeding"). Grounding store maps the text to sssom:NoTermFound.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -456,22 +446,42 @@ products:
     section: CONTRAINDICATIONS
     object:
       text: other estrogen- or progestin-sensitive cancer
+      member: other estrogen-sensitive cancer
       term_gap: >-
         searched MONDO "hormone", "hormone-sensitive", "hormone-dependent", "estrogen", "progest",
-        "cancer": no term for estrogen-sensitive or progestin-sensitive cancer in general (only
-        hormone receptor-positive breast cancer); MONDO:0004992 cancer, which the grounding store
-        matches, would drop the hormone sensitivity
+        "cancer": no term for estrogen-sensitive cancer in general (only hormone receptor-positive breast
+        cancer); MONDO:0004992 cancer, which the grounding store matches, would drop the hormone
+        sensitivity
     quote: >-
       Breast cancer or other estrogen- or progestin-sensitive cancer, now or in the past
     explanation: >-
-      The same item's second member, "other estrogen- or progestin-sensitive cancer", current or past.
-      The phrase coordinates estrogen-sensitive cancer and progestin-sensitive cancer; both members are
-      unbound, so they share this one claim.
+      The same item's second member, "other estrogen- or progestin-sensitive cancer", current ("now")
+      or past ("in the past"). The phrase coordinates estrogen-sensitive and progestin-sensitive cancer; this
+      claim is the first member, "other estrogen-sensitive cancer".
     status: DRAFT
     notes: >-
-      Not split per member: with no term for either member, two claims would be identical (same text,
-      same quote, no term) and the validator flags them as duplicates. Split if terms are added. No
-      slot records "now or in the past".
+      Unbound; the member distinguishes this claim from its progestin-sensitive sibling. No slot
+      records "now or in the past".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: other estrogen- or progestin-sensitive cancer
+      member: other progestin-sensitive cancer
+      term_gap: >-
+        searched MONDO "hormone", "hormone-sensitive", "hormone-dependent", "estrogen", "progest",
+        "cancer": no term for progestin-sensitive cancer in general (only hormone receptor-positive breast
+        cancer); MONDO:0004992 cancer, which the grounding store matches, would drop the hormone
+        sensitivity
+    quote: >-
+      Breast cancer or other estrogen- or progestin-sensitive cancer, now or in the past
+    explanation: >-
+      The same item's second member, "other estrogen- or progestin-sensitive cancer", current ("now")
+      or past ("in the past"). The phrase coordinates progestin-sensitive and estrogen-sensitive cancer; this
+      claim is the second member, "other progestin-sensitive cancer".
+    status: DRAFT
+    notes: >-
+      Unbound; the member distinguishes this claim from its estrogen-sensitive sibling. No slot
+      records "now or in the past".
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:

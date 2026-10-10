@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: s-atropine-atropine-phenobarbital-scopolamine
+  path: kb/combinations/s-atropine-atropine-phenobarbital-scopolamine.yaml
+session:
+  id: 2026-10-10T192247Z-claude-code-44abb8
+  timestamp: '2026-10-10T19:22:47Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: name coordination members; unbind acute hemorrhage'
+  details: |
+    Revised under the rules of 7ac206a. 'restlessness and/or excitement' claims now carry the whole phrase as text with a member each. The 'acute hemorrhage' disease context is unbound (term_gap): HP:0001892 Abnormal bleeding means a bleeding tendency, and HP/MONDO have no general hemorrhage term. Curator block regenerated for the current skill text.
