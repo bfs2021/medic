@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-guaifenesin-paracetamol-phenylephrine
+  path: kb/combinations/dextromethorphan-guaifenesin-paracetamol-phenylephrine.yaml
+session:
+  id: 2026-10-10T034812Z-claude-code-afab7c
+  timestamp: '2026-10-10T03:48:12Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  - notes
+  summary: 'Edit: split OTC symptom list per symptom per condition; add explanations'
+  details: |
+    Revised under the rules of a12de84 against DailyMed setid 5bbe271e-0344-4926-991c-3115756b908e v18. Replaced the two condition-object claims (common cold, flu) with one AMELIORATES_CONDITION claim per listed symptom per member of the coordination 'common cold/flu' (16 claims): nasal congestion, sinus congestion, sinus pressure (both unbound, term_gap; the coordination 'sinus congestion & pressure' split per member), cough due to minor throat & bronchial irritation (Cough, BROADER), minor aches & pains (Pain, BROADER), headache, fever, sore throat (Pharyngalgia). Effect items (reduces swelling of nasal passages, restores freer breathing, promotes drainage, loosens phlegm) not curated. Added explanations to every claim; no attributions (label assigns no use to an ingredient). Regenerated the curator block from the label helper skeleton.

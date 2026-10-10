@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-paracetamol-triprolidine
+  path: kb/combinations/dextromethorphan-paracetamol-triprolidine.yaml
+session:
+  id: 2026-10-10T034813Z-claude-code-f5e733
+  timestamp: '2026-10-10T03:48:13Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  - notes
+  summary: 'Edit: split OTC symptom list per symptom per condition; add explanations'
+  details: |
+    Revised under the rules of a12de84 against DailyMed setid 27f9d2db-38ce-41d2-8f1a-0eb171600274 v9. Replaced the three condition-object claims (common cold, flu, hay fever) with one AMELIORATES_CONDITION claim per listed symptom per named condition (common cold, flu): cough, minor aches and pains (Pain, BROADER), sore throat, headache, runny nose, sneezing, and itching of the nose or throat split per member (Pruritus BROADER, nose/throat as anatomical context). 'itchy, watery eyes due to hay fever' gives two claims (Ocular pruritus, object text 'itchy', NARROWER; Epiphora) with hay fever as their only context, since the item names its own cause. Kept 'temporarily reduces fever' and 'controls cough to help you get to sleep' without context. Added explanations to every claim; no attributions. Regenerated the curator block.

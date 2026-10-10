@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -42,6 +42,10 @@ products:
         id: MONDO:0005412
         label: duodenal ulcer
       binding: EXACT
+    explanation: >-
+      "The components in ... are indicated for the treatment of patients with H. pylori
+      infection and duodenal ulcer disease ... to eradicate H. pylori" is treatment of H. pylori
+      infection in patients who also have duodenal ulcer disease (disease context).
     status: DRAFT
     notes: >-
       The regimen eradicates H. pylori in patients who also have duodenal ulcer disease ("active
@@ -77,6 +81,11 @@ products:
       A history of severe hypersensitivity reactions (e.g., anaphylaxis or Stevens-Johnson
       syndrome) to amoxicillin or other beta-lactam antibiotics (e.g., penicillins and
       cephalosporins) is a contraindication.
+    explanation: >-
+      "A history of severe hypersensitivity reactions (e.g., anaphylaxis or Stevens-Johnson
+      syndrome) to amoxicillin or other beta-lactam antibiotics ... is a contraindication": drug
+      allergy to other beta-lactams (cross-sensitivity), with anaphylaxis and Stevens-Johnson
+      syndrome as the label's examples of the reactions.
     status: DRAFT
     notes: >-
       Cross-sensitivity to beta-lactams other than the product's own amoxicillin; amoxicillin
@@ -112,6 +121,16 @@ products:
     attributed_to:
     - ingredient: CHEBI:3732
       basis: INGREDIENT_SUBJECT
+      snippet: Clarithromycin is contraindicated
+      explanation: >-
+        Clarithromycin is the subject of the sentence stating this contraindication; on this co-
+        packaged label it is the clarithromycin tablets' own contraindication, not the
+        lansoprazole's or amoxicillin's.
+    explanation: >-
+      "Clarithromycin is contraindicated in patients with a known hypersensitivity to
+      clarithromycin, erythromycin, or any of the macrolide antibiotics": drug allergy to
+      erythromycin and the macrolides (cross-sensitivity); clarithromycin as an allergen is the
+      product's own.
     status: DRAFT
     notes: >-
       Co-packaged label: this sentence is the clarithromycin tablets' own contraindication, with
@@ -140,6 +159,15 @@ products:
     attributed_to:
     - ingredient: CHEBI:3732
       basis: INGREDIENT_SUBJECT
+      snippet: Clarithromycin is contraindicated
+      explanation: >-
+        Clarithromycin is the subject of the sentence stating this contraindication; on this co-
+        packaged label it is the clarithromycin tablets' own contraindication, not the
+        lansoprazole's or amoxicillin's.
+    explanation: >-
+      "contraindicated in patients with a history of cholestatic jaundice/hepatic dysfunction
+      associated with prior use of clarithromycin": cholestatic jaundice, the first member of
+      the "/" pair, caused by clarithromycin (specialization).
     status: DRAFT
     notes: >-
       Drug-caused condition: jaundice associated with prior clarithromycin use, so clarithromycin
@@ -147,7 +175,8 @@ products:
       "jaundice", "cholestasis", "cholestatic"; MONDO "cholestasis", "cholestatic"); HP Jaundice
       (is_a Cholestasis) is broader. HP Cholestatic liver disease exists but names the liver
       disease, not the jaundice. Grounding store maps "Cholestatic jaundice" to
-      UMLS:C0022354. The "/" pair is split into two claims.
+      UMLS:C0022354. The "/" pair is split into two claims; the members share no words, so each
+      claim's text is its own member.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -168,6 +197,15 @@ products:
     attributed_to:
     - ingredient: CHEBI:3732
       basis: INGREDIENT_SUBJECT
+      snippet: Clarithromycin is contraindicated
+      explanation: >-
+        Clarithromycin is the subject of the sentence stating this contraindication; on this co-
+        packaged label it is the clarithromycin tablets' own contraindication, not the
+        lansoprazole's or amoxicillin's.
+    explanation: >-
+      "contraindicated in patients with a history of cholestatic jaundice/hepatic dysfunction
+      associated with prior use of clarithromycin": hepatic dysfunction, the second member of
+      the "/" pair, caused by clarithromycin (specialization).
     status: DRAFT
     notes: >-
       HP Decreased liver function (exact synonym "Liver dysfunction") says what "hepatic
@@ -186,6 +224,14 @@ products:
     attributed_to:
     - ingredient: CHEBI:3732
       basis: INGREDIENT_SUBJECT
+      snippet: Clarithromycin should not be given
+      explanation: >-
+        Clarithromycin is the subject of the sentence stating this contraindication; on this co-
+        packaged label it is the clarithromycin tablets' own contraindication, not the
+        lansoprazole's or amoxicillin's.
+    explanation: >-
+      "should not be given to patients with history of QT prolongation or ventricular cardiac
+      arrhythmia": a contraindication in QT prolongation, the first member of the "or" pair.
     status: DRAFT
     notes: >-
       Grounding store has sssom:NoTermFound for "QT prolongation"; HP Prolonged QT interval is
@@ -204,12 +250,21 @@ products:
     attributed_to:
     - ingredient: CHEBI:3732
       basis: INGREDIENT_SUBJECT
+      snippet: Clarithromycin should not be given
+      explanation: >-
+        Clarithromycin is the subject of the sentence stating this contraindication; on this co-
+        packaged label it is the clarithromycin tablets' own contraindication, not the
+        lansoprazole's or amoxicillin's.
     examples:
     - text: torsades de pointes
       term:
         id: MONDO:0005478
         label: torsades de pointes
       binding: EXACT
+    explanation: >-
+      "should not be given to patients with history of QT prolongation or ventricular cardiac
+      arrhythmia, including torsades de pointes": a contraindication in ventricular arrhythmia,
+      the second member, with torsades de pointes as the label's listed member.
     status: DRAFT
     notes: >-
       Torsades de pointes is listed as a member ("including"), recorded as an example of the
@@ -231,18 +286,25 @@ products:
         id: CHEBI:23359
         label: colchicine
       binding: EXACT
+    explanation: >-
+      "Concomitant administration of clarithromycin and colchicine is contraindicated in
+      patients with renal or hepatic impairment": renal impairment (the "renal" member of the
+      coordination), only when colchicine is co-administered.
     status: DRAFT
     notes: >-
       Holds only when colchicine is given with the product's clarithromycin, so colchicine is
       recorded in when_coadministered_with. The coordination "renal or hepatic impairment" is
-      split into two claims; the object text has to keep the coordination because "renal" alone
-      is not verbatim-quotable as a condition. HP Renal insufficiency is what "renal impairment"
-      says. Not attributed: the sentence's subject is "Concomitant administration", not
-      clarithromycin, although the label plainly means the clarithromycin tablets.
+      split into two claims, each with the whole phrase as its text. HP Renal insufficiency is
+      what "renal impairment" says. Unattributed: the sentence names clarithromycin, alone of the
+      three drugs, as the one whose co-administration with colchicine is contraindicated, but its
+      subject is "Concomitant administration", not clarithromycin, and it gives no stated reason,
+      so none of the three bases describes it. A reviewer may decide it should be attributed to
+      clarithromycin (snippet "Concomitant administration of clarithromycin and colchicine is
+      contraindicated").
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: hepatic impairment
+      text: renal or hepatic impairment
       term:
         id: HP:0001410
         label: Decreased liver function
@@ -256,6 +318,10 @@ products:
         id: CHEBI:23359
         label: colchicine
       binding: EXACT
+    explanation: >-
+      "Concomitant administration of clarithromycin and colchicine is contraindicated in
+      patients with renal or hepatic impairment": hepatic impairment (the "hepatic" member of
+      the coordination), only when colchicine is co-administered.
     status: DRAFT
     notes: >-
       As the renal-impairment claim. HP Decreased liver function (exact synonym "Liver

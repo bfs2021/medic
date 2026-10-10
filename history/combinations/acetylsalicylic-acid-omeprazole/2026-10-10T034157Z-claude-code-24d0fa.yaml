@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-omeprazole
+  path: kb/combinations/acetylsalicylic-acid-omeprazole.yaml
+session:
+  id: 2026-10-10T034157Z-claude-code-24d0fa
+  timestamp: '2026-10-10T03:41:57Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: explanations and attribution evidence under the new rules'
+  details: |
+    Revised against DailyMed setid ae8f4eb4-b1eb-432e-b5ab-598c29996d6a v1 for the evidence-style attribution rules. Every claim gained an explanation; the five aspirin COMPONENT_STATEMENT attributions, the omeprazole one and the aspirin STATED_REASON (Reye's) one gained verbatim snippets and explanations. No claims added, removed or split (the stroke/TIA and previous-MI/unstable-angina contexts were already one claim per member). MONDO:0008834 kept NARROWER for the asthma/rhinitis/nasal polyps syndrome (issue 06); the syndrome stays unattributed because 'Aspirin may cause ...' names no tie to that clause. Curator block regenerated from the label skeleton.

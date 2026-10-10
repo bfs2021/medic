@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/d68f1be/.claude/skills/medic-combination-curation/SKILL.md#git-blob=bfa1124b0c150a7e9884c97cd98de24accd55560
+  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -38,12 +38,21 @@ products:
     attributed_to:
     - ingredient: CHEBI:15365
       basis: COMPONENT_STATEMENT
+      snippet: The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for
+      explanation: >-
+        The sentence assigns the indications it lists, this stroke-risk reduction first among them,
+        to the aspirin component.
     disease_context:
       text: ischemic stroke
       term:
         id: MONDO:1060198
         label: ischemic stroke
       binding: EXACT
+    explanation: >-
+      "indicated for: reducing the combined risk of death and nonfatal stroke" is prevention of
+      stroke; "in patients who have had ischemic stroke" is the disease context (the first member
+      of "ischemic stroke or transient ischemia of the brain"). "nonfatal" describes the event, not
+      a kind of stroke.
     status: DRAFT
     notes: >-
       Secondary prevention. "death" in the combined endpoint is an outcome, not a condition. The
@@ -63,12 +72,20 @@ products:
     attributed_to:
     - ingredient: CHEBI:15365
       basis: COMPONENT_STATEMENT
+      snippet: The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for
+      explanation: >-
+        The sentence assigns the indications it lists, this stroke-risk reduction first among them,
+        to the aspirin component.
     disease_context:
       text: transient ischemia of the brain due to fibrin platelet emboli
       term:
         id: MONDO:0005264
         label: transient ischemic attack
       binding: BROADER
+    explanation: >-
+      "indicated for: reducing the combined risk of death and nonfatal stroke" is prevention of
+      stroke; "in patients who have had ... transient ischemia of the brain due to fibrin platelet
+      emboli" is the disease context (the second member of the "or" list).
     status: DRAFT
     notes: >-
       No embolic-TIA term (searched MONDO "transient ischemic", "cerebral ischemia",
@@ -90,12 +107,20 @@ products:
     attributed_to:
     - ingredient: CHEBI:15365
       basis: COMPONENT_STATEMENT
+      snippet: The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for
+      explanation: >-
+        The sentence assigns the indications it lists after the colon, this MI-risk reduction among
+        them, to the aspirin component.
     disease_context:
       text: previous MI
       term:
         id: MONDO:0005068
         label: myocardial infarction
       binding: EXACT
+    explanation: >-
+      "reducing the combined risk of death and nonfatal MI" is prevention of myocardial infarction;
+      "in patients with a previous MI" is the disease context (the first member of "a previous MI or
+      unstable angina pectoris").
     status: DRAFT
     notes: >-
       Secondary prevention after a previous MI. The quote runs from "The aspirin component"
@@ -116,12 +141,20 @@ products:
     attributed_to:
     - ingredient: CHEBI:15365
       basis: COMPONENT_STATEMENT
+      snippet: The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for
+      explanation: >-
+        The sentence assigns the indications it lists after the colon, this MI-risk reduction among
+        them, to the aspirin component.
     disease_context:
       text: unstable angina pectoris
       term:
         id: MONDO:0006805
         label: intermediate coronary syndrome
       binding: EXACT
+    explanation: >-
+      "reducing the combined risk of death and nonfatal MI" is prevention of myocardial infarction;
+      "in patients with ... unstable angina pectoris" is the disease context (the second member of
+      "a previous MI or unstable angina pectoris").
     status: DRAFT
     notes: >-
       MONDO's unstable-angina term is labelled "intermediate coronary syndrome" (exact synonym
@@ -144,12 +177,19 @@ products:
     attributed_to:
     - ingredient: CHEBI:15365
       basis: COMPONENT_STATEMENT
+      snippet: The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for
+      explanation: >-
+        The sentence assigns the indications it lists after the colon, this third item among them,
+        to the aspirin component.
     disease_context:
       text: chronic stable angina pectoris
       term:
         id: HP:0001681
         label: Angina pectoris
       binding: BROADER
+    explanation: >-
+      "reducing the combined risk of MI and sudden death" is prevention of myocardial infarction;
+      "in patients with chronic stable angina pectoris" is the disease context.
     status: DRAFT
     notes: >-
       No stable-angina term in MONDO or HP (searched MONDO "stable angina", "angina"; HP
@@ -177,6 +217,14 @@ products:
     attributed_to:
     - ingredient: CHEBI:7772
       basis: COMPONENT_STATEMENT
+      snippet: The omeprazole component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for
+      explanation: >-
+        The sentence assigns its one indication, decreasing the risk of aspirin-associated gastric
+        ulcers, to the omeprazole component.
+    explanation: >-
+      "indicated for decreasing the risk of developing aspirin-associated gastric ulcers" is
+      prevention of gastric ulcer; "aspirin-associated" names aspirin as the agent, recorded as the
+      object specialization.
     status: DRAFT
     notes: >-
       gastric ulcer + specialization aspirin composes "aspirin-associated gastric ulcer"; no
@@ -200,13 +248,16 @@ products:
     quote: >-
       Patients with known allergy to aspirin and other nonsteroidal anti-inflammatory drug products
       (NSAIDs)
+    explanation: >-
+      An item of the "is contraindicated in:" list: patients with known allergy to other NSAIDs
+      (cross-sensitivity). Aspirin is named as an allergen, not as a cause, and as the product's own
+      ingredient it is not a specialization.
     status: DRAFT
     notes: >-
-      Cross-sensitivity to NSAIDs other than the product's own aspirin. Not attributed: aspirin is
-      the allergen, not a cause. drug allergy is NARROWER than the bare word "allergy", justified
-      by "to aspirin and other ... NSAIDs" in the quote. The Highlights item "History of asthma,
-      urticaria, or other allergic-type reactions after taking aspirin or other NSAIDs" restates
-      this contraindication and is not a separate claim.
+      drug allergy is NARROWER than the bare word "allergy", justified by "to aspirin and other ...
+      NSAIDs" in the quote. The Highlights item "History of asthma, urticaria, or other
+      allergic-type reactions after taking aspirin or other NSAIDs" restates this contraindication
+      and is not a separate claim.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -217,16 +268,19 @@ products:
       binding: NARROWER
     quote: >-
       in patients with the syndrome of asthma, rhinitis, and nasal polyps.
+    explanation: >-
+      Continues "is contraindicated in: ... and in patients with the syndrome of asthma, rhinitis,
+      and nasal polyps": a contraindication in one named syndrome, not in its three parts.
     status: DRAFT
     notes: >-
-      One claim for the named syndrome (Samter's triad / aspirin-exacerbated respiratory
-      disease), not split into its parts. MONDO:0008834 (OMIM:208550) names the triad; NARROWER
-      because it adds aspirin intolerance, which this clause does not state. It sits under
-      hereditary disease; the alternative MONDO:0850287 aspirin-induced respiratory disease is
-      an intrinsic-asthma term that covers neither rhinitis nor nasal polyps. Unattributed: the
-      next sentence ("Aspirin may cause severe urticaria, angioedema, or bronchospasm (asthma).")
-      points at aspirin but is not linked to this clause by any causal wording, and it explains
-      the NSAID-allergy item equally.
+      Samter's triad / aspirin-exacerbated respiratory disease. MONDO:0008834 (OMIM:208550) names
+      the triad; NARROWER because it adds aspirin intolerance, which this clause does not state.
+      Kept despite its MONDO placement under hereditary disease (see
+      issues/06-mondo-aerd-triad-under-hereditary-disease.md); the alternative MONDO:0850287
+      aspirin-induced respiratory disease is an intrinsic-asthma term that covers neither rhinitis
+      nor nasal polyps. Unattributed: the next sentence ("Aspirin may cause severe urticaria,
+      angioedema, or bronchospasm (asthma).") points at aspirin but names no tie to this clause,
+      and it explains the NSAID-allergy item equally.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -247,12 +301,17 @@ products:
     attributed_to:
     - ingredient: CHEBI:15365
       basis: STATED_REASON
+      snippet: because of the risk of Reye's syndrome with concomitant use of aspirin
+      explanation: >-
+        The label gives the risk of Reye's syndrome with aspirin as the reason this item is
+        contraindicated.
+    explanation: >-
+      An item of the "is contraindicated in:" list: pediatric patients (life stage) with suspected
+      viral infections. "with or without fever" does not restrict it; Reye's syndrome is the risk
+      avoided, not the contraindicated condition.
     status: DRAFT
     notes: >-
-      The label names aspirin as the cause ("because of the risk of Reye's syndrome with
-      concomitant use of aspirin"). Reye's syndrome is the risk avoided, not the contraindicated
-      condition, so no claim for it. "suspected" is kept in the text; the term is bound EXACT to
-      the condition itself.
+      "suspected" is kept in the text; the term is bound EXACT to the condition itself.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -270,13 +329,14 @@ products:
     quote: >-
       ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is contraindicated in patients with known
       hypersensitivity to aspirin, omeprazole, substituted benzimidazoles
+    explanation: >-
+      "is contraindicated in patients with known hypersensitivity to ... substituted
+      benzimidazoles" is a contraindication in drug allergy to that class. Aspirin and omeprazole,
+      also listed, are the product's own ingredients and are not curated.
     status: DRAFT
     notes: >-
-      Cross-sensitivity to the substituted benzimidazoles (the proton pump inhibitor class
-      omeprazole belongs to). BROADER: ChEBI's benzimidazoles class also contains unsubstituted
-      benzimidazole, which the label does not name. The same sentence also names aspirin, omeprazole and the
-      excipients; allergy to the product's own ingredients is not curated, so only the class is
-      a specialization. Not attributed: the agents are allergens, not causes.
+      BROADER: ChEBI's benzimidazoles class also contains unsubstituted benzimidazole, which the
+      label does not name. Not attributed: the agents are allergens, not causes.
 notes: >-
   Not claimed: the product-level sentence ("patients who require aspirin for secondary prevention
   of cardiovascular and cerebrovascular events and who are at risk of developing aspirin
@@ -286,4 +346,6 @@ notes: >-
   rilpivirine contraindication is a drug interaction with no condition; in "known
   hypersensitivity to aspirin, omeprazole, substituted benzimidazoles, or to any of the
   excipients" only the benzimidazole cross-sensitivity is curated (aspirin, omeprazole and the
-  excipients are the product's own). The Highlights copies restate the full-text claims.
+  excipients are the product's own). "Aspirin may cause severe urticaria, angioedema, or
+  bronchospasm (asthma)" states a risk, not a contraindicated condition. The Highlights copies
+  restate the full-text claims.

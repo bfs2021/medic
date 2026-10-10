@@ -1,0 +1,29 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone
+  path: kb/combinations/6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone.yaml
+session:
+  id: 2026-10-10T034028Z-claude-code-9ef61e
+  timestamp: '2026-10-10T03:40:28Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  - notes
+  summary: 'Edit: conform to evidence-style rules; split risk factors; restore menarche
+    restriction'
+  details: |
+    Re-read DailyMed setid 786fb677-58c9-44ca-9c67-595d6be0fe7f v1 from its pin. Added an explanation to every claim (no attributions existed; 'to raise folate levels' names no ingredient). Acne claim: restored 'achieved menarche' as an unbound life_stage (no HsapDv/UBERON term; HP:6000309 also excludes menopause). Removed the category claim 'arterial or venous thrombotic diseases' with its examples; each risk factor is now its own claim: smoking (unbound, age_range over 35), cerebrovascular disease, coronary artery disease, thrombogenic valvular / rhythm heart disease (two claims on the whole phrase, SBE and AF as their examples), inherited / acquired hypercoagulopathies (two claims), uncontrolled hypertension, diabetes mellitus with vascular disease, headaches with focal neurological symptoms; DVT, PE and migraine kept. Renal impairment and adrenal insufficiency quotes shortened to end at their own item. 'other estrogen- or progestin-sensitive cancer' kept as one unbound claim (two unbound member claims would be identical); 'Liver tumors, benign or malignant' kept as one claim bound to the general liver neoplasm term (the pair covers the class). curator_id regenerated from the skeleton.

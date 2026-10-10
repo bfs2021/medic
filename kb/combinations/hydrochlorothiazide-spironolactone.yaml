@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -41,6 +41,10 @@ products:
       text: when the patient is only partially responsive to, or is intolerant of, other therapeutic
         measures
       term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "For the management of edema" gives TREATS and the object; the item sits under "Congestive
+      heart failure:", the disease context; "when the patient is only partially responsive to,
+      or is intolerant of, other therapeutic measures" restricts the line of therapy.
     status: DRAFT
     notes: Listed under "Edematous conditions for patients with". Product-level, unattributed.
   - relation: TREATS
@@ -66,6 +70,10 @@ products:
       text: when the patient is only partially responsive to, or is intolerant of, other therapeutic
         measures
       term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "For the management of edema and sodium retention": sodium retention is the second object
+      of "management of", under "Congestive heart failure:" (disease context), with the same
+      line-of-therapy restriction.
     status: DRAFT
   - relation: TREATS
     section: INDICATIONS
@@ -93,6 +101,10 @@ products:
     line_of_therapy:
       text: when other measures are considered inappropriate
       term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "The treatment of diuretic-induced hypokalemia" gives TREATS and the object, specialised
+      to diuretics as the cause; "in patients with congestive heart failure" is the disease
+      context; "when other measures are considered inappropriate" restricts the line of therapy.
     status: DRAFT
     notes: >-
       Hypokalemia + specialization diuretic composes "diuretic-induced hypokalemia"; no
@@ -118,10 +130,18 @@ products:
     line_of_therapy:
       text: when other therapies are considered inadequate or inappropriate
       term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "The treatment of patients with congestive heart failure taking digitalis" gives TREATS
+      with congestive heart failure as the object, in patients taking digitalis (co-therapy);
+      "when other therapies are considered inadequate or inappropriate" restricts the line of
+      therapy.
     status: DRAFT
     notes: >-
       Patients already taking digitalis; recorded as a co-therapy. Listed under "Edematous
-      conditions", but the item's own object is congestive heart failure.
+      conditions for patients with: Congestive heart failure:", but unlike the nephrotic-syndrome
+      entry this item names its own object ("The treatment of patients with congestive heart
+      failure"), so the object is congestive heart failure rather than edema. A reviewer who reads
+      the heading as governing should make edema the object with congestive heart failure as context.
   - relation: TREATS
     section: INDICATIONS
     object:
@@ -141,6 +161,10 @@ products:
         id: MONDO:0005155
         label: cirrhosis of liver
       binding: EXACT
+    explanation: >-
+      Under "Cirrhosis of the liver accompanied by edema and/or ascites:", the product "is
+      indicated for maintenance therapy"; edema is the first member of "edema and/or ascites",
+      cirrhosis of the liver the disease context.
     status: DRAFT
     notes: >-
       Maintenance therapy together with bed rest and fluid/sodium restriction (non-drug measures,
@@ -164,6 +188,10 @@ products:
         id: MONDO:0005155
         label: cirrhosis of liver
       binding: EXACT
+    explanation: >-
+      Under "Cirrhosis of the liver accompanied by edema and/or ascites:", the product "is
+      indicated for maintenance therapy"; ascites is the second member of "edema and/or
+      ascites", cirrhosis of the liver the disease context.
     status: DRAFT
   - relation: TREATS
     section: INDICATIONS
@@ -195,6 +223,12 @@ products:
       text: when treatment of the underlying disease, restriction of fluid and sodium intake, and the
         use of other diuretics do not provide an adequate response
       term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "indicated for: Edematous conditions for patients with: ... The nephrotic syndrome: For
+      nephrotic patients when ...": the nephrotic-syndrome entry is one of the edematous
+      conditions, so the object is the edema ("Edematous conditions") and the nephrotic syndrome
+      the disease context; the "when treatment of the underlying disease, ... do not provide an
+      adequate response" clause restricts the line of therapy.
     status: DRAFT
     notes: >-
       The nephrotic-syndrome item names no condition of its own; it is the third entry under
@@ -215,6 +249,10 @@ products:
     line_of_therapy:
       text: in whom other measures are considered inadequate or inappropriate
       term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "Essential hypertension: For patients with essential hypertension" gives TREATS and the
+      object; "in whom other measures are considered inadequate or inappropriate" restricts the
+      line of therapy.
     status: DRAFT
   - relation: TREATS
     section: INDICATIONS
@@ -242,6 +280,11 @@ products:
     line_of_therapy:
       text: when other measures are considered inappropriate
       term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "In hypertensive patients for the treatment of a diuretic-induced hypokalemia" gives
+      TREATS and the object, specialised to diuretics as the cause; "hypertensive patients" is
+      the disease context; "when other measures are considered inappropriate" restricts the line
+      of therapy.
     status: DRAFT
     notes: >-
       Listed under "Essential hypertension:", but the item's own words say only "hypertensive
@@ -257,6 +300,9 @@ products:
     quote: >-
       Spironolactone and hydrochlorothiazide tablets are indicated for the treatment of
       hypertension, to lower blood pressure.
+    explanation: >-
+      "indicated for the treatment of hypertension, to lower blood pressure" gives TREATS and
+      the object.
     status: DRAFT
     notes: >-
       HP Hypertension agrees with the grounding store; MONDO has no term whose label or exact
@@ -280,6 +326,9 @@ products:
         searched MONDO, HP, PATO and HsapDv "pregnan": only pregnancy disorders (ectopic pregnancy,
         toxemia of pregnancy), pregnancy history/exposure and modifiers (Triggered by pregnancy);
         no term for the state of being pregnant.
+    explanation: >-
+      "indicated in pregnancy when edema is due to pathologic causes" gives TREATS with edema as
+      the object; "in pregnancy" is the patient's life stage.
     status: DRAFT
     notes: >-
       Edema in pregnancy from pathologic causes. Pregnancy is recorded as the patient's life
@@ -298,6 +347,9 @@ products:
       acute renal insufficiency, significant impairment of renal excretory function,
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients with anuria" gives CONTRAINDICATED_IN and the object, the
+      first item of the list.
     status: DRAFT
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
@@ -312,6 +364,8 @@ products:
       acute renal insufficiency, significant impairment of renal excretory function,
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients with ... acute renal insufficiency": an item of the list.
     status: DRAFT
     notes: >-
       MONDO acute kidney injury (exact synonyms acute renal failure / acute kidney failure).
@@ -323,16 +377,19 @@ products:
       term:
         id: HP:0000083
         label: Renal insufficiency
-      binding: EXACT
+      binding: BROADER
     quote: >-
       Spironolactone and hydrochlorothiazide tablets are contraindicated in patients with anuria,
       acute renal insufficiency, significant impairment of renal excretory function,
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients with ... significant impairment of renal excretory function":
+      an item of the list. Renal insufficiency lacks the severity "significant", so BROADER.
     status: DRAFT
     notes: >-
       HP Renal insufficiency (reduced kidney performance) is what "impairment of renal excretory
-      function" says; "significant" is severity only.
+      function" says; the term has no severity, so BROADER.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -346,6 +403,8 @@ products:
       acute renal insufficiency, significant impairment of renal excretory function,
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients with ... hypercalcemia": an item of the list.
     status: DRAFT
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
@@ -360,6 +419,8 @@ products:
       acute renal insufficiency, significant impairment of renal excretory function,
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients with ... hyperkalemia": an item of the list.
     status: DRAFT
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
@@ -374,6 +435,8 @@ products:
       acute renal insufficiency, significant impairment of renal excretory function,
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients with ... Addison's disease": an item of the list.
     status: DRAFT
     notes: >-
       MONDO lists "Addison's disease" as an exact synonym of autoimmune primary adrenal
@@ -404,6 +467,10 @@ products:
       acute renal insufficiency, significant impairment of renal excretory function,
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
+    explanation: >-
+      "and in patients who are allergic to thiazide diuretics or to other sulfonamide-derived
+      drugs": a drug allergy (the object, "allergic") to the two named classes, recorded as
+      specializations; no own ingredient is named.
     status: DRAFT
     notes: >-
       Cross-sensitivity to thiazide diuretics and sulfonamide-derived drugs. No thiazide-diuretic
@@ -416,17 +483,39 @@ products:
     object:
       text: acute or severe hepatic failure
       term:
+        id: MONDO:0019542
+        label: acute liver failure
+      binding: EXACT
+    quote: >-
+      Spironolactone and hydrochlorothiazide may also be contraindicated in acute or severe
+      hepatic failure.
+    explanation: >-
+      "may also be contraindicated in acute or severe hepatic failure": this claim is the member
+      "acute hepatic failure" of the coordination; acute liver failure has the exact synonym "acute
+      hepatic failure".
+    status: DRAFT
+    notes: >-
+      Hedged in the label ("may also be contraindicated"); curated because it sits in the
+      Contraindications section, but a reviewer should decide whether a "may" contraindication
+      is kept.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: acute or severe hepatic failure
+      term:
         id: MONDO:0100192
         label: liver failure
       binding: BROADER
     quote: >-
       Spironolactone and hydrochlorothiazide may also be contraindicated in acute or severe
       hepatic failure.
+    explanation: >-
+      "may also be contraindicated in acute or severe hepatic failure": this claim is the member
+      "severe hepatic failure" of the coordination; liver failure (exact synonym "hepatic failure")
+      lacks the severity, so BROADER.
     status: DRAFT
     notes: >-
-      Hedged in the label ("may also be contraindicated"); curated because it sits in the
-      Contraindications section, but a reviewer should decide whether a "may" contraindication
-      is kept. liver failure is broader than "acute or severe".
+      Hedged in the label ("may also be contraindicated"), as the acute member above.
 notes: >-
   The SPL title is empty; the product name is as the skeleton gave it. Not claimed: the opening
   tumorigenicity statement (a warning); the class-level cardiovascular-outcomes paragraph after the

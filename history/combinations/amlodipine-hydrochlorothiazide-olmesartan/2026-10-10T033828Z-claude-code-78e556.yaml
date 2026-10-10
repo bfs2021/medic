@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-hydrochlorothiazide-olmesartan
+  path: kb/combinations/amlodipine-hydrochlorothiazide-olmesartan.yaml
+session:
+  id: 2026-10-10T033828Z-claude-code-78e556
+  timestamp: '2026-10-10T03:38:28Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: Revise amlodipine / hydrochlorothiazide / olmesartan under the evidence-attribution
+    rules
+  details: |
+    Revised against pinned DailyMed label 49ec5ac8 v103 for skill blob 13cd638. Every claim now has an explanation. The anuria and sulfonamide cross-sensitivity attributions to hydrochlorothiazide (COMPONENT_STATEMENT) now carry the snippet 'Because of the hydrochlorothiazide component' and an explanation. Hypertension (product-level) and diabetes with aliskiren (product-level) stay unattributed. No claims added, removed or split: no coordinated object text, no example lists, no DESI wording; the Limitations of Use statements produce no claim. Curator block regenerated from the skeleton.

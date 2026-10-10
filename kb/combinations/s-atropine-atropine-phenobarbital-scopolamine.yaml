@@ -13,7 +13,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -35,11 +35,23 @@ products:
     quote: >-
       For use as adjunctive therapy in the treatment of irritable bowel syndrome (irritable colon,
       spastic colon, mucous colitis) and acute enterocolitis.
+    line_of_therapy:
+      text: adjunctive therapy
+      term_gap: >-
+        no configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) has a term for adjunctive
+        use (searched HP "adjunct"); the label names no co-therapy, so in_combination_with does not
+        apply
     evidence_status: DESI_POSSIBLY_EFFECTIVE
+    explanation: >-
+      "For use as adjunctive therapy in the treatment of irritable bowel syndrome" is treatment
+      of IBS, restricted to adjunctive use (line_of_therapy). The parenthesis (irritable colon,
+      spastic colon, mucous colitis) gives other names for IBS. The quote follows the DESI
+      "possibly" effective statement, hence evidence_status.
     status: DRAFT
     notes: >-
       FDA (DESI) classified this indication as "possibly" effective; the claim records what the
-      label states. "adjunctive therapy" names no co-therapy, so no in_combination_with. The
+      label states. "adjunctive therapy" names no co-therapy, so it is recorded as an unbound
+      line_of_therapy rather than in_combination_with. The
       parenthetical (irritable colon, spastic colon, mucous colitis) lists synonyms of IBS, not
       separate conditions. Product-level claim, unattributed.
   - relation: TREATS
@@ -53,7 +65,17 @@ products:
     quote: >-
       For use as adjunctive therapy in the treatment of irritable bowel syndrome (irritable colon,
       spastic colon, mucous colitis) and acute enterocolitis.
+    line_of_therapy:
+      text: adjunctive therapy
+      term_gap: >-
+        no configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) has a term for adjunctive
+        use (searched HP "adjunct"); the label names no co-therapy, so in_combination_with does not
+        apply
     evidence_status: DESI_POSSIBLY_EFFECTIVE
+    explanation: >-
+      "For use as adjunctive therapy in the treatment of ... and acute enterocolitis" is
+      treatment of acute enterocolitis, restricted to adjunctive use (line_of_therapy). The
+      quote follows the DESI "possibly" effective statement, hence evidence_status.
     status: DRAFT
     notes: >-
       DESI "possibly" effective. No acute-enterocolitis term (searched MONDO/HP "enterocolitis");
@@ -70,7 +92,17 @@ products:
       binding: EXACT
     quote: >-
       May also be useful as adjunctive therapy in the treatment of duodenal ulcer.
+    line_of_therapy:
+      text: adjunctive therapy
+      term_gap: >-
+        no configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) has a term for adjunctive
+        use (searched HP "adjunct"); the label names no co-therapy, so in_combination_with does not
+        apply
     evidence_status: DESI_POSSIBLY_EFFECTIVE
+    explanation: >-
+      "May also be useful as adjunctive therapy in the treatment of duodenal ulcer" is a hedged
+      treatment indication for duodenal ulcer, restricted to adjunctive use (line_of_therapy).
+      It follows the DESI "possibly" effective statement, hence evidence_status.
     status: DRAFT
     notes: >-
       Hedged ("May also be useful") within the DESI "possibly" effective list. The following
@@ -90,6 +122,13 @@ products:
     attributed_to:
     - ingredient: CHEBI:8069
       basis: INGREDIENT_SUBJECT
+      snippet: Phenobarbital is contraindicated
+      explanation: >-
+        Phenobarbital is the subject of the sentence that states this contraindication, so the
+        label holds phenobarbital, not the anticholinergic ingredients, responsible for it.
+    explanation: >-
+      "Phenobarbital is contraindicated in patients with acute intermittent porphyria" is a
+      contraindication in acute intermittent porphyria.
     status: DRAFT
     notes: >-
       The label makes phenobarbital the subject of the contraindication sentence. This is a single
@@ -114,10 +153,19 @@ products:
     attributed_to:
     - ingredient: CHEBI:8069
       basis: INGREDIENT_SUBJECT
+      snippet: Phenobarbital is contraindicated
+      explanation: >-
+        Phenobarbital is the subject of the sentence that states this contraindication, so the
+        label holds phenobarbital, not the anticholinergic ingredients, responsible for it.
+    explanation: >-
+      "in those patients in which phenobarbital produces restlessness and/or excitement" is a
+      contraindication in restlessness (the first member of "restlessness and/or excitement")
+      produced by phenobarbital, recorded as the specialization.
     status: DRAFT
     notes: >-
       Paradoxical reaction: restlessness produced by phenobarbital, so phenobarbital is the agent
-      (specialization). Attributed because phenobarbital is the subject of the sentence.
+      (specialization). The two members of "restlessness and/or excitement" share no words, so
+      each claim's text is its own member.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
@@ -138,6 +186,14 @@ products:
     attributed_to:
     - ingredient: CHEBI:8069
       basis: INGREDIENT_SUBJECT
+      snippet: Phenobarbital is contraindicated
+      explanation: >-
+        Phenobarbital is the subject of the sentence that states this contraindication, so the
+        label holds phenobarbital, not the anticholinergic ingredients, responsible for it.
+    explanation: >-
+      "in those patients in which phenobarbital produces restlessness and/or excitement" is a
+      contraindication in excitement (the second member of "restlessness and/or excitement")
+      produced by phenobarbital, recorded as the specialization.
     status: DRAFT
     notes: >-
       Paradoxical excitement produced by phenobarbital; unbound for lack of a term.
@@ -155,6 +211,8 @@ products:
       hemorrhage; severe ulcerative colitis especially if complicated by toxic megacolon; hiatal hernia
       associated with reflux esophagitis; obstructive disease of the gastrointestinal tract; or severe
       ulcerative colitis.
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "glaucoma".
     status: DRAFT
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
@@ -170,6 +228,9 @@ products:
       hemorrhage; severe ulcerative colitis especially if complicated by toxic megacolon; hiatal hernia
       associated with reflux esophagitis; obstructive disease of the gastrointestinal tract; or severe
       ulcerative colitis.
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...":
+      "obstructive uropathy".
     status: DRAFT
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
@@ -185,6 +246,9 @@ products:
       hemorrhage; severe ulcerative colitis especially if complicated by toxic megacolon; hiatal hernia
       associated with reflux esophagitis; obstructive disease of the gastrointestinal tract; or severe
       ulcerative colitis.
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "paralytic
+      ileus".
     status: DRAFT
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
@@ -200,6 +264,9 @@ products:
       hemorrhage; severe ulcerative colitis especially if complicated by toxic megacolon; hiatal hernia
       associated with reflux esophagitis; obstructive disease of the gastrointestinal tract; or severe
       ulcerative colitis.
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "myasthenia
+      gravis".
     status: DRAFT
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
@@ -215,6 +282,9 @@ products:
       hemorrhage; severe ulcerative colitis especially if complicated by toxic megacolon; hiatal hernia
       associated with reflux esophagitis; obstructive disease of the gastrointestinal tract; or severe
       ulcerative colitis.
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "intestinal
+      atony".
     status: DRAFT
     notes: >-
       HP Ileus carries the exact synonym "Gastrointestinal atony", broader than "intestinal"; no intestinal-atony term in MONDO (searched MONDO "atony", "colonic inertia"). Grounding store maps "Intestinal atony" to UMLS:C2363890.
@@ -237,6 +307,10 @@ products:
         id: HP:0001892
         label: Abnormal bleeding
       binding: BROADER
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "unstable
+      cardiovascular status in acute hemorrhage": the object is the unstable cardiovascular
+      status, restricted to acute hemorrhage (disease context).
     status: DRAFT
     notes: >-
       Contraindicated condition is cardiovascular instability, restricted to acute hemorrhage. HP Abnormal bleeding is the general bleeding phenotype; "acute" narrows, so BROADER.
@@ -254,6 +328,10 @@ products:
       hemorrhage; severe ulcerative colitis especially if complicated by toxic megacolon; hiatal hernia
       associated with reflux esophagitis; obstructive disease of the gastrointestinal tract; or severe
       ulcerative colitis.
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "severe
+      ulcerative colitis" (named twice in the sentence; one claim). "especially if complicated
+      by toxic megacolon" stresses a subset and does not restrict it.
     status: DRAFT
     notes: >-
       "severe" is a severity modifier with no term, so BROADER. The phrase "especially if complicated by toxic megacolon" emphasises a subset and is not curated as a separate claim; the sentence repeats "severe ulcerative colitis" at its end (one claim).
@@ -277,6 +355,10 @@ products:
         id: MONDO:0001409
         label: esophagitis
       binding: BROADER
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "hiatal
+      hernia associated with reflux esophagitis": the object is hiatal hernia, restricted to
+      hernia associated with reflux esophagitis (disease context).
     status: DRAFT
     notes: >-
       Restricted to hernia associated with reflux esophagitis. No reflux-esophagitis term for humans (searched MONDO "reflux esophagitis", "esophagitis"; MONDO:0006896 peptic esophagitis sits under peptic ulcer disease); esophagitis is broader. Grounding store maps "reflux esophagitis" to sssom:NoTermFound.
@@ -294,6 +376,9 @@ products:
       hemorrhage; severe ulcerative colitis especially if complicated by toxic megacolon; hiatal hernia
       associated with reflux esophagitis; obstructive disease of the gastrointestinal tract; or severe
       ulcerative colitis.
+    explanation: >-
+      An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...":
+      "obstructive disease of the gastrointestinal tract".
     status: DRAFT
     notes: >-
       No MONDO term for gastrointestinal-tract obstruction as a whole (MONDO intestinal obstruction is narrower); HP Gastrointestinal obstruction says what the label says.

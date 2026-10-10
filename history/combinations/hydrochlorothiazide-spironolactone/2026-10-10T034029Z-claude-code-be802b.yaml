@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-spironolactone
+  path: kb/combinations/hydrochlorothiazide-spironolactone.yaml
+session:
+  id: 2026-10-10T034029Z-claude-code-be802b
+  timestamp: '2026-10-10T03:40:29Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  summary: 'Edit: add claim explanations; split acute or severe hepatic failure'
+  details: |
+    Re-read DailyMed setid 6fa96947-f4d8-4ca4-98fd-a2c123310d83 v3 from its pin. Added an explanation to every claim (no attributions existed; the label never assigns a claim to spironolactone or hydrochlorothiazide). 'acute or severe hepatic failure' split per member, both quoting and using the whole phrase: acute liver failure EXACT (acute member) and liver failure BROADER (severe member). Other coordinations checked: 'edema and/or ascites' and 'edema and sodium retention' already one claim per member; 'thiazide diuretics or ... other sulfonamide-derived drugs' are two specializations of one allergy claim. No DESI wording; no Limitations of Use. curator_id regenerated from the skeleton. After fresh-context review: 'significant impairment of renal excretory function' rebound BROADER (Renal insufficiency lacks the severity); the digitalis claim's notes now say why its object is congestive heart failure rather than edema.

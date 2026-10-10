@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/d68f1be/.claude/skills/medic-combination-curation/SKILL.md#git-blob=bfa1124b0c150a7e9884c97cd98de24accd55560
+  curator_id: https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -37,6 +37,10 @@ products:
         id: MONDO:0005002
         label: chronic obstructive pulmonary disease
       binding: EXACT
+    explanation: >-
+      "is indicated for the treatment of" gives TREATS; the object is "bronchospasm"; "associated
+      with COPD" restricts it to bronchospasm in COPD, the disease context. "in patients requiring
+      more than one bronchodilator" describes the population and is recorded as no qualifier.
     status: DRAFT
     notes: >-
       Bronchospasm is a phenotype: HP Bronchoconstriction (exact synonym "Bronchospasm"). The
@@ -67,6 +71,11 @@ products:
       Ipratropium Bromide and Albuterol Sulfate Inhalation Solution is contraindicated in patients
       with a history of hypersensitivity to any of its components, or to atropine and its
       derivatives.
+    explanation: >-
+      "is contraindicated in patients with a history of hypersensitivity ... to atropine and its
+      derivatives" is a contraindication in patients allergic to atropine and its derivatives
+      (cross-sensitivity to agents other than the product's own components), so the object is the
+      allergy and atropine and its derivatives are its specializations.
     status: DRAFT
     notes: >-
       Only the cross-sensitivity to atropine and its derivatives is curated; "any of its

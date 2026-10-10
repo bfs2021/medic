@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17beta-estradiol-norethisterone-relugolix
+  path: kb/combinations/17beta-estradiol-norethisterone-relugolix.yaml
+session:
+  id: 2026-10-10T034027Z-claude-code-362f43
+  timestamp: '2026-10-10T03:40:27Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  - notes
+  summary: 'Edit: conform to evidence-style rules; split risk factors and coordinations'
+  details: |
+    Re-read DailyMed setid fc3feb73-cc84-43a8-aa32-b262460495e8 v18 from its pin. Added an explanation to every claim (no attributions existed; the label assigns nothing to relugolix, estradiol or norethindrone). Removed the category claim 'high risk of arterial, venous thrombotic, or thromboembolic disorders' with its examples; each listed risk factor is now its own CONTRAINDICATED_IN claim: smoking (unbound, age_range over 35), vascular disease (examples cerebrovascular, coronary artery, peripheral vascular disease), thrombogenic valvular / rhythm diseases of the heart (two claims on the whole phrase, heart valve disorder and cardiac rhythm disease BROADER, SBE and atrial fibrillation as their examples), inherited / acquired hypercoagulopathies (two claims: inherited thrombophilia EXACT, thrombophilia BROADER), uncontrolled hypertension (Hypertension BROADER), headaches with focal neurological symptoms (Headache BROADER, no age bound on the reading that 'if over 35' binds the migraine member). DVT, PE and migraine with aura kept. 'hepatic impairment or disease' now two claims with the whole phrase as text (Decreased liver function; liver disorder EXACT via its synonym 'hepatic disease'), replacing the bare-word 'disease' NARROWER binding. Added a claim for 'increased risk for hormone-sensitive malignancies' (unbound), which the old note conflated with the other-malignancies claim. Removed the stale note that the 1.3 Limitations of Use prints as SECTION_TEXT (the helper now types it LIMITATION_STATEMENT). curator_id regenerated from the skeleton. After fresh-context review: the headaches claim's explanation states the age-bound scope as ambiguous rather than as the label's.

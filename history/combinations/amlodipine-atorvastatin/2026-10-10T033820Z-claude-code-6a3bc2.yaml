@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-atorvastatin
+  path: kb/combinations/amlodipine-atorvastatin.yaml
+session:
+  id: 2026-10-10T033820Z-claude-code-6a3bc2
+  timestamp: '2026-10-10T03:38:20Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: Revise amlodipine / atorvastatin under the evidence-attribution rules
+  details: |
+    Revised against pinned DailyMed labels 6f1a9bd8 v52 and 909fad96 v1 for skill blob 13cd638. Every claim now has an explanation; every attribution is an evidence item (snippet + explanation). v52: the atorvastatin lipid items (primary hyperlipidemia, HeFH, HoFH, dysbetalipoproteinemia, hypertriglyceridemia) had quotes widened to start at 'Atorvastatin Atorvastatin is indicated:' so the governing subject sits inside the quote (the validator then warns 'reads as risk reduction' from earlier list items; relation stays TREATS). v1: the three 'CADUET contains atorvastatin and is therefore contraindicated' claims (active liver disease, pregnant, may become pregnant) are now attributed to atorvastatin (STATED_REASON), wording the old validator could not parse. Still unattributed by rule: the amlodipine angiographic-CAD claims and v1 primary-prevention claims (population lead-in), the LIPITOR claims (brand name), breastfeeding (reason names the statin class). 'clinically evident CHD / coronary heart disease' disease contexts rebound BROADER (the modifier narrows). No claims added, removed or split: no coordinated object text, no restricted example members, no DESI wording, no Limitations of Use in this label. Curator block regenerated from the skeleton.

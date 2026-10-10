@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-butalbital-caffeine-codeine
+  path: kb/combinations/acetylsalicylic-acid-butalbital-caffeine-codeine.yaml
+session:
+  id: 2026-10-10T034158Z-claude-code-67ca32
+  timestamp: '2026-10-10T03:41:58Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: explanations; split peptic ulcer coordination'
+  details: |
+    Revised against DailyMed setid c8b93fc1-472c-4890-8d02-2ee4f7175c22 v1. Every claim gained an explanation. 'Peptic ulcer or other serious gastrointestinal lesions' is now one claim per member: the second member, previously uncurated, is a new claim with a term_gap (only digestive system disorder fits, far broader). No attributions: the label ties no claim to one ingredient. Curator block regenerated from the label skeleton.

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amoxicillin-clarithromycin-lansoprazole
+  path: kb/combinations/amoxicillin-clarithromycin-lansoprazole.yaml
+session:
+  id: 2026-10-10T034200Z-claude-code-2a698a
+  timestamp: '2026-10-10T03:42:00Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/a12de8402be9d9979c7e87169573bd37aae3984e/.claude/skills/medic-combination-curation/SKILL.md#git-blob=13cd63889caad6fd9b3fd12b57f2fa98f861e67d
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: coordinations as whole phrases; explanations and attribution evidence'
+  details: |
+    Revised against DailyMed setid 40adc1d3-7ce7-4698-aa7f-b5dbaaecec00 v13. The hepatic-impairment member of 'renal or hepatic impairment' now carries the whole phrase as its text, like the renal one. The five clarithromycin INGREDIENT_SUBJECT attributions gained snippets ('Clarithromycin is contraindicated' x3, 'Clarithromycin should not be given' x2). The colchicine co-administration claims stay unattributed: the sentence's subject is the co-administration, and no basis describes it; flagged for review. Every claim gained an explanation. Curator block regenerated from the label skeleton.
