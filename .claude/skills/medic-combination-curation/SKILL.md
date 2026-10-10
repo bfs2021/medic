@@ -41,7 +41,11 @@ file in a session; it is authoritative over this skill if they ever disagree.
    - `snippet`: the label's own words that make the tie, copied verbatim from
      the label element that holds the quote, in the same sentence as the
      claim's object — or a list lead ending in ":" ("Atorvastatin is
-     indicated:") that governs the object's list item ("The omeprazole
+     indicated:") that governs the object's list item — up to the next
+     sentence that makes a claim of its own, a DESI classification, or a
+     warning. When the item appears in both the Highlights and the full text,
+     the validator checks the first copy (Highlights), so use the lead from
+     that copy ("The omeprazole
      component of ...", "because of the risk of Reye's syndrome with
      concomitant use of aspirin", "Clarithromycin is contraindicated",
      "contains atorvastatin and is therefore"). Keep quotes to the claim's own
@@ -230,12 +234,17 @@ Contraindications section. For each sentence ask:
    - **Coordinations** ("renal or hepatic impairment", "acute or severe hepatic
      failure", "QT prolongation or ventricular cardiac arrhythmia", "sinus
      congestion & pressure", "itchy, watery eyes"): one claim per member. Each
-     claim's object `text` is the *whole* verbatim phrase, and its `member` is
+     claim's object (or disease context) `text` is the *whole* verbatim
+     phrase — always, even when the member reads as a complete condition on its
+     own ("deep vein thrombosis or pulmonary embolism"); the validator warns
+     when a text is one item of a larger coordination — and its `member` is
      the one member it covers, as you expand it ("hepatic impairment",
      "sinus pressure", "itchy eyes"). The validator checks that the member is an
      expansion of the text (it reads "or", "and/or", "/", commas, "and", "&"),
      judges the term and binding against the member, and warns when a phrase's
-     members are not all covered. Do not use `member` for a named syndrome
+     members are not all covered. A member names a condition on its own:
+     "renal impairment", never the bare modifier "renal". Do not use `member`
+     for a named syndrome
      ("asthma, rhinitis, and nasal polyps") — that is one condition.
    - **Exhaustive pairs** ("Liver tumors, benign or malignant", "inherited or
      acquired hypercoagulopathies", "arterial or venous thrombosis"): the
@@ -573,8 +582,9 @@ Note what is **absent**, and why:
   for "gastrointestinal bleeding" (negated: "Has not been shown to reduce").
 - The quote for the MI claim starts at "The aspirin component" so the
   attribution snippet sits inside the quote, even though the quote then has to
-  run through the stroke item to stay contiguous. A snippet just before the
-  quote, in the same element, would do as well.
+  run through the stroke item to stay contiguous. The snippet must be in the
+  same sentence as the object (or be a list lead ending in ":" that governs
+  it); a snippet from a neighbouring sentence does not count.
 - The stroke claims (object stroke, contexts ischemic stroke / transient
   ischemia of the brain) and the unstable-angina and chronic-stable-angina
   claims would follow the same pattern.

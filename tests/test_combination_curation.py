@@ -1129,7 +1129,7 @@ def test_union_term_binds_an_exhaustive_pair(workspace):
         c, THROMBOSIS_QUOTE, {"text": "arterial or venous thrombosis",
                               "term": _term("MONDO:7000001"), "binding": "EXACT"}))
     assert errors == []
-    assert not any("member" in w for w in warnings)
+    assert not any("claims[3]" in w and "member" in w for w in warnings)
 
 
 def test_member_is_checked_and_judged(workspace):
@@ -1166,7 +1166,7 @@ def test_members_must_all_be_covered(workspace):
                                           "binding": "BROADER"}})
         return _findings(_write(workspace, record))
     _, warnings = twins("renal impairment", "renal impairment")
-    assert any("cover only ['renal impairment']" in w for w in warnings)
+    assert any("no claim covers ['hepatic impairment']" in w for w in warnings)
     assert any(w.startswith("bindings") for w in warnings)
 
 
@@ -1232,3 +1232,100 @@ def test_ies_plurals_fold():
 
     assert _singular("inherited hypercoagulopathies") == "inherited hypercoagulopathy"
     assert _singular("allergies") == "allergy"
+
+
+# --- round 6 ------------------------------------------------------------------------------------
+def test_bare_agent_name_does_not_make_a_stated_reason(workspace):
+    """Round 6 (V1): the ingredient must follow the causal cue, not precede it as an agent."""
+    quote = ("The omeprazole component of TESTCOMBO is indicated for decreasing the risk of "
+             "developing aspirin associated gastric ulcers in patients at risk for developing "
+             "aspirin associated gastric ulcers due to age")
+    errors, _ = _claim_errors(workspace, 1, lambda c: c.update(
+        quote=quote, object={"text": "gastric ulcers", "term": _term("MONDO:0001126"),
+                             "binding": "EXACT"},
+        attributed_to=[_attr(ASPIRIN, "STATED_REASON",
+                             "aspirin associated gastric ulcers due to age")]))
+    assert any("STATED_REASON needs" in e for e in errors)
+
+
+def test_subject_inside_a_longer_phrase_is_not_a_subject(workspace):
+    """Round 6 (J3): "... of omeprazole and colchicine is contraindicated"."""
+    errors, _ = _claim_errors(workspace, 3, lambda c: _contra(
+        c, COLCHICINE_QUOTE, {"text": "gout", "term": _term("MONDO:0005393"), "binding": "EXACT"},
+        attributed_to=[_attr(OMEPRAZOLE, "INGREDIENT_SUBJECT",
+                             "omeprazole and colchicine is contraindicated")]))
+    assert any("INGREDIENT_SUBJECT needs" in e for e in errors)
+
+
+def test_list_lead_stops_at_a_desi_statement(workspace):
+    """Round 6 (J2)."""
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote='"possibly" effective: for gout', relation="TREATS", disease_context=None,
+        evidence_status="DESI_POSSIBLY_EFFECTIVE",
+        object={"text": "gout", "term": _term("MONDO:0005393"), "binding": "EXACT"},
+        attributed_to=[_attr(ASPIRIN, "INGREDIENT_SUBJECT", "Aspirin is indicated:")]))
+    assert any("not in the sentence that names the claim's object" in e for e in errors)
+
+
+def test_sentences_are_not_split_at_abbreviations_or_semicolons():
+    from medic.curation.validate import _governs
+
+    text = ("omeprazole is indicated for eradication of H. pylori to reduce the risk of "
+            "duodenal ulcer; and for gout")
+    low = text.lower()
+    assert _governs(low, 0, len("omeprazole is indicated"), low.index("duodenal"), text)
+    assert _governs(low, 0, len("omeprazole is indicated"), low.index("gout"), text)
+
+
+def test_bare_modifier_is_no_member(workspace):
+    """Round 6 (V2): "renal" names nothing and must not switch the term check off."""
+    errors, _ = _claim_errors(workspace, 3, lambda c: _contra(
+        c, COORD_QUOTE, {"text": "renal or hepatic impairment", "member": "renal",
+                         "term": _term("MONDO:0005393"), "binding": "EXACT"}))
+    assert any("names no condition on its own" in e for e in errors)
+
+
+def test_coverage_counts_items_not_spellings(workspace):
+    """Round 6 (V3): "renal impairment" and "renal" are the same item."""
+    record = _valid_record()
+    claims = record["products"][0]["claims"]
+    base = {**claims[3], "life_stage": None, "attributed_to": None, "quote": COORD_QUOTE}
+    for member in ("renal impairment", "severe renal impairment"):
+        claims.append({**base, "object": {"text": "renal or hepatic impairment", "member": member,
+                                          "term_gap": "test"}})
+    claims.pop(3)
+    _, warnings = _findings(_write(workspace, record))
+    assert any("no claim covers ['hepatic impairment']" in w for w in warnings)
+
+
+def test_embedded_exhaustive_pair_is_one_item():
+    """Round 6 (V5)."""
+    from medic.curation.validate import _coordination_items
+
+    items = _coordination_items("Liver tumors, benign or malignant, or liver disease")
+    assert items == [["liver", "tumors"], ["liver", "disease"]]
+
+
+def test_one_item_of_a_coordination_warns(workspace):
+    """Round 6 (D1): item text bypasses member and coverage checks, so it warns."""
+    _, warnings = _claim_errors(workspace, 3, lambda c: _contra(
+        c, COORD_QUOTE, {"text": "hepatic impairment", "term": _term("MONDO:9999903"),
+                         "binding": "EXACT"}))
+    assert any("one item of a coordination" in w for w in warnings)
+    # "nonfatal MI" after "fatal or" is an exhaustive pair, not an item.
+    from medic.curation.validate import _is_coordinated_item
+    assert not _is_coordinated_item("reduce the risk of fatal or nonfatal MI", "nonfatal MI")
+
+
+def test_indication_after_a_limitation_is_not_swallowed():
+    """Round 6 (V4)."""
+    from medic.curation.label import LabelDocument
+
+    doc = LabelDocument(setid="x", version=1, title="", active_moieties=[], sections={
+        "INDICATIONS": ["1.3 Limitations of Use", "Not for use in acute bronchospasm",
+                        "Drug is also indicated for hypertension in patients not adequately "
+                        "controlled on monotherapy."],
+        "CONTRAINDICATIONS": []})
+    roles = {s["text"][:20]: s["role"] for s in doc.spans("INDICATIONS")}
+    assert roles["Not for use in acute"] == "LIMITATION_STATEMENT"
+    assert roles["Drug is also indicat"] != "LIMITATION_STATEMENT"

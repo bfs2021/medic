@@ -113,7 +113,10 @@ attributed_to:
 - `snippet` is the label's own words, verbatim, from the label element holding
   the quote, in the sentence that names the claim's object — or a list lead
   ending in ":" ("Atorvastatin is indicated:") before the object's item, with
-  no other claim sentence in between.
+  no other claim sentence ("X is indicated / contraindicated"), DESI
+  classification or warning ("should not", "do not use") in between.
+  Sentences are split at periods followed by a capital, never at ";" or at an
+  abbreviation ("H. pylori", "e.g.").
 - `explanation` says how those words tie this claim to this ingredient, without
   adding conclusions they do not state.
 - `basis` classifies the statement:
@@ -234,8 +237,10 @@ Guidance:
   thrombotic risk factor. There is no claim for the heading condition.
 - **Coordinations** ("renal or hepatic impairment", "acute or severe hepatic
   failure", "QT prolongation or ventricular cardiac arrhythmia"): one claim per
-  member. Each uses the whole verbatim phrase as object `text` and names its
-  member in `member`:
+  member. Each uses the whole verbatim phrase as object (or context) `text`,
+  even when the member is a complete condition on its own ("deep vein
+  thrombosis or pulmonary embolism"), and names its member, in full ("renal
+  impairment", not "renal"), in `member`:
 
   ```yaml
   object:
