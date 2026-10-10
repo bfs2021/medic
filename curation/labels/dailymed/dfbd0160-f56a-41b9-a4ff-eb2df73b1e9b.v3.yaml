@@ -1,0 +1,45 @@
+setid: dfbd0160-f56a-41b9-a4ff-eb2df73b1e9b
+version: 3
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/dfbd0160-f56a-41b9-a4ff-eb2df73b1e9b.xml
+xml_sha256: 53722605693904960c1ffbb1a967f150ace69f82a942d040d1454e4f752c22af
+retrieved: '2026-10-10'
+title: Atenolol and Chlorthalidone Tablets, USP
+product_name: Atenolol and Chlorthalidone
+active_moieties:
+- ATENOLOL
+- CHLORTHALIDONE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Atenolol and chlorthalidone tablets are indicated for the treatment of hypertension, to lower blood
+    pressure. Lowering blood pressure lowers the risk of fatal and non-fatal cardiovascular events, primarily
+    strokes and myocardial infarctions. These benefits have been seen in controlled trials of antihypertensive
+    drugs from a wide variety of pharmacologic classes including atenolol and chlorthalidone. Control
+    of high blood pressure should be part of comprehensive cardiovascular risk management, including,
+    as appropriate, lipid control, diabetes management, antithrombotic therapy, smoking cessation, exercise,
+    and limited sodium intake. Many patients will require more than 1 drug to achieve blood pressure goals.
+    For specific advice on goals and management, see published guidelines, such as those of the National
+    High Blood Pressure Education Program's Joint National Committee on Prevention, Detection, Evaluation,
+    and Treatment of High Blood Pressure (JNC). Numerous antihypertensive drugs, from a variety of pharmacologic
+    classes and with different mechanisms of action, have been shown in randomized controlled trials to
+    reduce cardiovascular morbidity and mortality, and it can be concluded that it is blood pressure reduction,
+    and not some other pharmacologic property of the drugs, that is largely responsible for those benefits.
+    The largest and most consistent cardiovascular outcome benefit has been a reduction in the risk of
+    stroke, but reductions in myocardial infarction and cardiovascular mortality also have been seen regularly.
+    Elevated systolic or diastolic pressure causes increased cardiovascular risk, and the absolute risk
+    increase per mmHg is greater at higher blood pressures, so that even modest reductions of severe hypertension
+    can provide substantial benefit. Relative risk reduction from blood pressure reduction is similar
+    across populations with varying absolute risk, so the absolute benefit is greater in patients who
+    are at higher risk independent of their hypertension (for example, patients with diabetes or hyperlipidemia),
+    and such patients would be expected to benefit from more aggressive treatment to a lower blood pressure
+    goal. Some antihypertensive drugs have smaller blood pressure effects (as monotherapy) in black patients,
+    and many antihypertensive drugs have additional approved indications and effects (e.g., on angina,
+    heart failure, or diabetic kidney disease). These considerations may guide selection of therapy. This
+    fixed dose combination drug is not indicated for initial therapy of hypertension. If the fixed dose
+    combination represents the dose appropriate to the individual patient's needs, it may be more convenient
+    than the separate components.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia; heart
+    block greater than first degree; cardiogenic shock; overt cardiac failure (see WARNINGS ); anuria;
+    hypersensitivity to this product or to sulfonamide-derived drugs.'

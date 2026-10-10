@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: piperacillin-tazobactam
+  path: kb/combinations/piperacillin-tazobactam.yaml
+session:
+  id: 2026-10-10T230905Z-claude-code-823cdf
+  timestamp: '2026-10-10T23:09:05Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: piperacillin / tazobactam'
+  details: |
+    Curated from DailyMed setid 80f4bdb8-131e-4485-b7a2-accd596d4cde v3. TREATS complicated appendicitis (BROADER) and infectious peritonitis (NARROWER, from 'caused by') from 2 months of age; nosocomial pneumonia (pneumonia, BROADER) from 2 months; skin and skin structure infections (skin disease caused by bacterial infection, NARROWER; examples cellulitis, cutaneous abscess, ischemic/diabetic foot infections), postpartum endometritis (endometritis, BROADER), pelvic inflammatory disease and community-acquired pneumonia (pneumonia, BROADER) in adults; CONTRAINDICATED_IN drug allergy to penicillins, cephalosporins and beta-lactamase inhibitors. Causative organisms kept in quotes (no schema slot). All product-level.

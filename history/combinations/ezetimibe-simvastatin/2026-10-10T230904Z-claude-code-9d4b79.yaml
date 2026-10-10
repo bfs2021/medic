@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: ezetimibe-simvastatin
+  path: kb/combinations/ezetimibe-simvastatin.yaml
+session:
+  id: 2026-10-10T230904Z-claude-code-9d4b79
+  timestamp: '2026-10-10T23:09:04Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: ezetimibe / simvastatin'
+  details: |
+    Curated from DailyMed setid 52a46269-2262-4052-a3ff-5455523f591f v9. TREATS primary hyperlipidemia (hyperlipidemia, BROADER), HeFH (familial hypercholesterolemia, BROADER, age 10+), HoFH (with other LDL-C-lowering therapies as in_combination_with); CONTRAINDICATED_IN acute liver failure and decompensated cirrhosis. The simvastatin cardiovascular-risk indication is deliberately not curated yet: the label attributes it to simvastatin, but the validator's INGREDIENT_SUBJECT 40-character subject-to-verb window rejects the snippet, and unattributed claims would credit ezetimibe; the planned claims are listed in the file notes. Drug-interaction bullets and own-ingredient hypersensitivity not claimed.

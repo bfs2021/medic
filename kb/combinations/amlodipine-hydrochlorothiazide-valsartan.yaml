@@ -1,0 +1,125 @@
+id: MEDICNE:combo-7ede9eb2-1b4b-56c1-a5f0-e423af0f3cb7
+name: amlodipine / hydrochlorothiazide / valsartan
+ingredients:
+- id: CHEBI:2668
+  label: amlodipine
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:9927
+  label: valsartan
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: e9ecbadb-c548-6fe5-e053-2a95a90a7577
+    version: 3
+    title: 'AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE tablets. These highlights do not include all the
+      information needed to use AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE safely and effectively. See full
+      prescribing information for AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE. AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE
+      tablets, for oral use Initial U.S. Approval: 2009'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e9ecbadb-c548-6fe5-e053-2a95a90a7577
+  product_name: AMLODIPINE, VALSARTAN, HYDROCHLOROTHIAZIDE
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Amlodipine/valsartan/hydrochlorothiazide is indicated for the treatment of hypertension, to
+      lower blood pressure.
+    explanation: >-
+      "is indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. The Limitation of Use ("not indicated for the initial therapy
+      of hypertension") restricts this claim but produces none. HP Hypertension agrees with the
+      grounding store; MONDO has no term labelled or exactly synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Do not use in patients with anuria, hypersensitivity to other sulfonamide-derived drugs, or
+      hypersensitivity to any component of this product.
+    explanation: >-
+      "Do not use in patients with anuria" states the anuria contraindication, the first item of
+      the sentence's list.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: unlike the olmesartan triple-combination label, this label does
+      not say "Because of the hydrochlorothiazide component".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Do not use in patients with anuria, hypersensitivity to other sulfonamide-derived drugs, or
+      hypersensitivity to any component of this product.
+    explanation: >-
+      "Do not use in patients with ... hypersensitivity to other sulfonamide-derived drugs" states
+      a drug-allergy contraindication with other sulfonamide-derived drugs as the agents; "other"
+      excludes the product's own ingredients.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs; "hypersensitivity to any component of
+      this product" (the product's own) is not curated. ChEBI sulfonamide is the chemical class,
+      broader than "sulfonamide-derived drugs". The text stays "hypersensitivity" without
+      `member`: the "or" joins two hypersensitivities that differ only in their agents, as in the
+      olmesartan/amlodipine/hydrochlorothiazide file. Unattributed: the label names no component.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not coadminister aliskiren with amlodipine/valsartan/hydrochlorothiazide in patients with
+      diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not coadminister aliskiren with amlodipine/valsartan/hydrochlorothiazide in patients with
+      diabetes" contraindicates the product in patients with diabetes when given with aliskiren,
+      recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: the sentence speaks of the product, not of valsartan. The
+      Highlights restate it.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication (the label says
+  there are no controlled trials demonstrating risk reduction with this product); the Limitation
+  of Use (not for initial therapy); "hypersensitivity to any component of this product" (own
+  ingredients). The Highlights restate the indication and the contraindications. All claims are
+  product-level: the label never assigns an indication or contraindication to amlodipine,
+  valsartan or hydrochlorothiazide.

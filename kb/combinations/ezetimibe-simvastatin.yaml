@@ -1,0 +1,165 @@
+id: MEDICNE:combo-da4c45b1-e609-579c-951d-fb234b67c547
+name: ezetimibe / simvastatin
+ingredients:
+- id: CHEBI:49040
+  label: ezetimibe
+- id: CHEBI:9150
+  label: simvastatin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 52a46269-2262-4052-a3ff-5455523f591f
+    version: 9
+    title: 'These highlights do not include all the information needed to use EZETIMIBE AND SIMVASTATIN
+      TABLETS safely and effectively. See full prescribing information for EZETIMIBE AND SIMVASTATIN TABLETS.
+      EZETIMIBE AND SIMVASTATIN tablets, for oral useInitial U.S. Approval: 2004'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=52a46269-2262-4052-a3ff-5455523f591f
+  product_name: ezetimibe and simvastatin
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: primary hyperlipidemia
+      term:
+        id: MONDO:0021187
+        label: hyperlipidemia
+      binding: BROADER
+    quote: >-
+      As an adjunct to diet to reduce elevated low density lipoprotein cholesterol (LDL-C): • In
+      adults with primary hyperlipidemia.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under the product-level lead "are a combination of simvastatin and ezetimibe indicated:", "As
+      an adjunct to diet to reduce elevated low density lipoprotein cholesterol (LDL-C): • In adults
+      with primary hyperlipidemia" states treatment (LDL-C lowering) of primary hyperlipidemia;
+      "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. Adjunct to diet (a non-drug measure, kept in the quote). No
+      primary-hyperlipidemia term (searched MONDO "hyperlipidemia"); hyperlipidemia is broader, as
+      the grounding store's broadMatch row says, and as in the amlodipine/atorvastatin file.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: heterozygous familial hypercholesterolemia
+      term:
+        id: MONDO:0005439
+        label: familial hypercholesterolemia
+      binding: BROADER
+    quote: >-
+      In adults and pediatric patients aged 10 years and older with heterozygous familial
+      hypercholesterolemia (HeFH).
+    age_range:
+      min_years: 10
+      text: aged 10 years and older
+    explanation: >-
+      Under "indicated: • As an adjunct to diet to reduce elevated low density lipoprotein
+      cholesterol (LDL-C):", the item "In adults and pediatric patients aged 10 years and older
+      with heterozygous familial hypercholesterolemia (HeFH)" states treatment of HeFH; "aged 10
+      years and older" is the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. No heterozygous-FH term in MONDO (searched "familial
+      hypercholesterolemia", "heterozygous"); familial hypercholesterolemia is broader, as in the
+      amlodipine/atorvastatin file. Grounding store maps the phrase to UMLS:C0342882. Adjunct to
+      diet (from the sub-lead, outside the item-sized quote).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: homozygous familial hypercholesterolemia
+      term:
+        id: MONDO:0018328
+        label: homozygous familial hypercholesterolemia
+      binding: EXACT
+    quote: >-
+      As an adjunct to other LDL-C-lowering therapies to reduce elevated LDL-C in adults with
+      homozygous familial hypercholesterolemia (HoFH).
+    in_combination_with:
+    - text: other LDL-C-lowering therapies
+      term_gap: >-
+        searched CHEBI "anticholesteremic", "lipid": CHEBI anticholesteremic drug (CHEBI:35821)
+        covers drugs only, while "LDL-C-lowering therapies" also covers non-drug therapies such as
+        lipoprotein apheresis; left unbound.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "As an adjunct to other LDL-C-lowering therapies to reduce elevated LDL-C in adults with
+      homozygous familial hypercholesterolemia (HoFH)" states treatment of HoFH, together with
+      other LDL-C-lowering therapies (co-therapy); "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. Unlike the atorvastatin label ("or alone if such treatments are
+      unavailable"), this label makes the co-therapy part of the indication, so it is recorded in
+      in_combination_with. The Highlights copy reads "LDL-C lowering therapies" (no hyphen); the
+      quote is from the full text.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute liver failure or decompensated cirrhosis
+      member: Acute liver failure
+      term:
+        id: MONDO:0019542
+        label: acute liver failure
+      binding: EXACT
+    quote: >-
+      • Acute liver failure or decompensated cirrhosis [see Warnings and Precautions ( 5.3 )].
+    explanation: >-
+      Under "are contraindicated in the following conditions:", the bullet "Acute liver failure or
+      decompensated cirrhosis" lists acute liver failure as a contraindicated condition; this claim
+      covers that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. Grounding store maps "Acute liver failure" to UMLS:C0162557.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute liver failure or decompensated cirrhosis
+      member: decompensated cirrhosis
+      term:
+        id: MONDO:0005155
+        label: cirrhosis of liver
+      binding: BROADER
+    quote: >-
+      • Acute liver failure or decompensated cirrhosis [see Warnings and Precautions ( 5.3 )].
+    explanation: >-
+      Under "are contraindicated in the following conditions:", the bullet "Acute liver failure or
+      decompensated cirrhosis" lists decompensated cirrhosis as a contraindicated condition; this
+      claim covers that member of the coordination.
+    status: DRAFT
+    notes: >-
+      No decompensated-cirrhosis term (searched MONDO "cirrhosis", "decompensated"; MONDO chronic
+      liver failure's synonym "end stage liver disease (decompensated liver disease)" is not
+      cirrhosis-specific); cirrhosis of liver is broader, as in the amlodipine/atorvastatin file.
+      Grounding store maps the phrase to UMLS:C1619727.
+notes: >-
+  Not claimed: the strong-CYP3A4-inhibitor and cyclosporine/danazol bullets (pure drug-drug
+  interactions with no condition; the full text reads "cyclosporine, danazol, or danazol" where the
+  Highlights read "cyclosporine, danazol or gemfibrozil", an apparent label error); hypersensitivity
+  to simvastatin, ezetimibe or the excipients (own ingredients); "Hypersensitivity reactions,
+  including anaphylaxis, angioedema, and Stevens-Johnson syndrome, have been reported" (a report of
+  adverse reactions, not a contraindicated condition). The three lipid-lowering indications are
+  product-level ("a combination of simvastatin and ezetimibe indicated:").
+  NOT YET CURATED: the cardiovascular-risk indication "Simvastatin, when used as a component of
+  ezetimibe and simvastatin tablets, is indicated to reduce the risk of total mortality by reducing
+  risk of coronary heart disease death, non-fatal myocardial infarction and stroke, ... in adults
+  with established coronary heart disease, cerebrovascular disease, peripheral vascular disease,
+  and/or diabetes". The label assigns it to simvastatin, but the validator's INGREDIENT_SUBJECT
+  check allows at most 40 characters between the subject and "is" once the product name is
+  blanked, and this subject is 42 characters from its verb, so the true attribution cannot pass.
+  Recording these claims without attributed_to would state them of the product, crediting
+  ezetimibe with myocardial infarction and stroke prevention, which the label does not say; they
+  are therefore left out until the check accepts the attribution. Planned: PREVENTATIVE_FOR_CONDITION
+  non-fatal myocardial infarction (MONDO:0005068, EXACT) and stroke (MONDO:0005098, EXACT), each
+  with the four disease_context members (coronary artery disorder, cerebrovascular disorder,
+  peripheral vascular disease, diabetes mellitus), age_range adults, attributed to CHEBI:9150 by
+  INGREDIENT_SUBJECT. "total mortality", "coronary heart disease death" and the revascularization
+  procedures name no separate condition to prevent.

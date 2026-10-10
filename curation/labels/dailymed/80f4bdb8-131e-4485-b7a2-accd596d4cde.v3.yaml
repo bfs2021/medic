@@ -1,0 +1,62 @@
+setid: 80f4bdb8-131e-4485-b7a2-accd596d4cde
+version: 3
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/80f4bdb8-131e-4485-b7a2-accd596d4cde.xml
+xml_sha256: c7d4cd475b1f846b27097daa95f08d4179d24bbd7c29f06eb838905401524640
+retrieved: '2026-10-10'
+title: 'These highlights do not include all the information needed to use PIPERACILLIN AND TAZOBACTAM
+  FOR INJECTION safely and effectively. See full prescribing information for PIPERACILLIN AND TAZOBACTAM
+  FOR INJECTION. PIPERACILLIN and TAZOBACTAM for injection, for intravenous use Initial U.S. approval:
+  1993'
+product_name: Piperacillin and Tazobactam
+active_moieties:
+- PIPERACILLIN ANHYDROUS
+- TAZOBACTAM
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'Piperacillin and tazobactam for injection is a combination of piperacillin, a penicillin-class antibacterial
+    and tazobactam, a beta-lactamase inhibitor, indicated for the treatment of: Intra-abdominal infections
+    in adult and pediatric patients 2 months of age and older ( 1.1 ) Nosocomial pneumonia in adult and
+    pediatric patients 2 months of age and older ( 1.2 ) Skin and skin structure infections in adults
+    ( 1.3 ) Female pelvic infections in adults ( 1.4 ) Community-acquired pneumonia in adults ( 1.5 )
+    To reduce the development of drug-resistant bacteria and maintain the effectiveness of piperacillin
+    and tazobactam for injection and other antibacterial drugs, piperacillin and tazobactam for injection
+    should be used only to treat or prevent infections that are proven or strongly suspected to be caused
+    by bacteria. ( 1.6 )'
+  - 1.1 Intra-abdominal Infections
+  - 'Piperacillin and tazobactam for injection is indicated in adults and pediatric patients (2 months
+    of age and older) for the treatment of appendicitis (complicated by rupture or abscess) and peritonitis
+    caused by beta-lactamase producing isolates of Escherichia coli or the following members of the Bacteroides
+    fragilis group: B. fragilis , B. ovatus , B. thetaiotaomicron , or B. vulgatus .'
+  - 1.2 Nosocomial Pneumonia
+  - Piperacillin and tazobactam for injection is indicated in adults and pediatric patients (2 months
+    of age and older) for the treatment of nosocomial pneumonia (moderate to severe) caused by beta-lactamase
+    producing isolates of Staphylococcus aureus and by piperacillin and tazobactam-susceptible Acinetobacter
+    baumannii , Haemophilus influenzae , Klebsiella pneumoniae , and Pseudomonas aeruginosa (Nosocomial
+    pneumonia caused by P. aeruginosa should be treated in combination with an aminoglycoside) [see Dosage
+    and Administration (2) ] .
+  - 1.3 Skin and Skin Structure Infections
+  - Piperacillin and tazobactam for injection is indicated in adults for the treatment of uncomplicated
+    and complicated skin and skin structure infections, including cellulitis, cutaneous abscesses and
+    ischemic/diabetic foot infections caused by beta-lactamase producing isolates of Staphylococcus aureus
+    .
+  - 1.4 Female Pelvic Infections
+  - Piperacillin and tazobactam for injection is indicated in adults for the treatment of postpartum endometritis
+    or pelvic inflammatory disease caused by beta-lactamase producing isolates of Escherichia coli .
+  - 1.5 Community-acquired Pneumonia
+  - Piperacillin and tazobactam for injection is indicated in adults for the treatment of community-acquired
+    pneumonia (moderate severity only) caused by beta-lactamase producing isolates of Haemophilus influenzae
+    .
+  - 1.6 Usage
+  - To reduce the development of drug-resistant bacteria and maintain the effectiveness of piperacillin
+    and tazobactam for injection and other antibacterial drugs, piperacillin and tazobactam for injection
+    should be used only to treat or prevent infections that are proven or strongly suspected to be caused
+    by bacteria. When culture and susceptibility information are available, they should be considered
+    in selecting or modifying antibacterial therapy. In the absence of such data, local epidemiology and
+    susceptibility patterns may contribute to the empiric selection of therapy.
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Piperacillin and tazobactam for injection is contraindicated in patients with a history of allergic
+    reactions to any of the penicillins, cephalosporins, or beta-lactamase inhibitors.
+  - Patients with a history of allergic reactions to any of the penicillins, cephalosporins, or beta-lactamase
+    inhibitors. ( 4 )

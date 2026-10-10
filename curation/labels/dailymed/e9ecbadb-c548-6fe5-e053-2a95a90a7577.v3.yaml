@@ -1,0 +1,59 @@
+setid: e9ecbadb-c548-6fe5-e053-2a95a90a7577
+version: 3
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/e9ecbadb-c548-6fe5-e053-2a95a90a7577.xml
+xml_sha256: 6a3963542143a6f4de99fc3b02fbbc8d03cc123517a2f8e2f83533784480216f
+retrieved: '2026-10-10'
+title: 'AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE tablets. These highlights do not include all the information
+  needed to use AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE safely and effectively. See full prescribing
+  information for AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE. AMLODIPINE/VALSARTAN/HYDROCHLOROTHIAZIDE tablets,
+  for oral use Initial U.S. Approval: 2009'
+product_name: AMLODIPINE, VALSARTAN, HYDROCHLOROTHIAZIDE
+active_moieties:
+- AMLODIPINE
+- HYDROCHLOROTHIAZIDE
+- VALSARTAN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Amlodipine/valsartan/hydrochlorothiazide is indicated for the treatment of hypertension, to lower
+    blood pressure. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular events,
+    primarily strokes and myocardial infarctions. These benefits have been seen in controlled trials of
+    antihypertensive drugs from a wide variety of pharmacologic classes, including amlodipine, hydrochlorothiazide,
+    and the ARB class to which valsartan principally belongs. There are no controlled trials demonstrating
+    risk reduction with amlodipine/valsartan/hydrochlorothiazide. Control of high blood pressure should
+    be part of comprehensive cardiovascular risk management, including, as appropriate, lipid control,
+    diabetes management, antithrombotic therapy, smoking cessation, exercise, and limited sodium intake.
+    Many patients will require more than 1 drug to achieve blood pressure goals. For specific advice on
+    goals and management, see published guidelines, such as those of the National High Blood Pressure
+    Education Program's Joint National Committee on Prevention, Detection, Evaluation, and Treatment of
+    High Blood Pressure (JNC). Numerous antihypertensive drugs, from a variety of pharmacologic classes
+    and with different mechanisms of action, have been shown in randomized controlled trials to reduce
+    cardiovascular morbidity and mortality, and it can be concluded that it is blood pressure reduction,
+    and not some other pharmacologic property of the drugs, that is largely responsible for those benefits.
+    The largest and most consistent cardiovascular outcome benefit has been a reduction in the risk of
+    stroke, but reductions in myocardial infarction and cardiovascular mortality also have been seen regularly.
+    Elevated systolic or diastolic pressure causes increased cardiovascular risk, and the absolute risk
+    increase per mmHg is greater at higher blood pressures, so that even modest reductions of severe hypertension
+    can provide substantial benefit. Relative risk reduction from blood pressure reduction is similar
+    across populations with varying absolute risk, so the absolute benefit is greater in patients who
+    are at higher risk independent of their hypertension (e.g., patients with diabetes or hyperlipidemia),
+    and such patients would be expected to benefit from more aggressive treatment to a lower blood pressure
+    goal. Some antihypertensive drugs have smaller blood pressure effects (as monotherapy) in black patients,
+    and many antihypertensive drugs have additional approved indications and effects (e.g., on angina,
+    heart failure, or diabetic kidney disease). These considerations may guide selection of therapy. Limitation
+    of Use Amlodipine/valsartan/hydrochlorothiazide is not indicated for the initial therapy of hypertension
+    [see Dosage and Administration (2)].
+  - Amlodipine/valsartan/hydrochlorothiazide is a combination tablet of amlodipine, a dihydropyridine
+    calcium channel blocker (DHP CCB), valsartan, an angiotensin II receptor blocker (ARB), and hydrochlorothiazide,
+    a thiazide diuretic. Amlodipine/Valsartan/Hydrochlorothiazide is indicated for the treatment of hypertension
+    to lower blood pressure. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular
+    events, primarily strokes, and myocardial infarctions. (1) Limitation of Use Amlodipine/valsartan/hydrochlorothiazide
+    is not indicated for initial treatment of hypertension.
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Do not use in patients with anuria, hypersensitivity to other sulfonamide-derived drugs, or hypersensitivity
+    to any component of this product. Do not coadminister aliskiren with amlodipine/valsartan/hydrochlorothiazide
+    in patients with diabetes [see Drug Interactions (7)].
+  - Anuria (4) Hypersensitivity to sulfonamide-derived drugs (4) Known hypersensitivity to any component
+    (4) Do not coadminister aliskiren with amlodipine/valsartan/hydrochlorothiazide in patients with diabetes
+    (4)

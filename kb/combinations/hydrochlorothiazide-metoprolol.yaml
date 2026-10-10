@@ -1,0 +1,223 @@
+id: MEDICNE:combo-b065d2cf-c88c-5625-8dbe-add2d120572f
+name: hydrochlorothiazide / metoprolol
+ingredients:
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:6904
+  label: metoprolol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 2b77f66f-6891-4977-be8f-7955473d2f92
+    version: 10
+    title: 'These highlights do not include all the information needed to use METOPROLOL TARTRATE AND
+      HYDROCHLOROTHIAZIDE TABLETS safely and effectively. See full prescribing information for METOPROLOL
+      TARTRATE AND HYDROCHLOROTHIAZIDE TABLETS METOPROLOL TARTRATE and HYDROCHLOROTHIAZIDE TABLETS, for
+      oral use Initial U.S. Approval: 1984'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2b77f66f-6891-4977-be8f-7955473d2f92
+  product_name: Metoprolol Tartrate and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Metoprolol tartrate and hydrochlorothiazide tablets are indicated for the treatment of
+      hypertension, to lower blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "may be administered with other antihypertensive agents" makes
+      co-therapy optional, so no in_combination_with. The Limitation of Use ("not indicated for
+      initial therapy of hypertension") restricts this claim but produces none. HP Hypertension
+      agrees with the grounding store.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Cardiogenic shock or decompensated heart failure
+      member: Cardiogenic shock
+      term:
+        id: HP:0030149
+        label: Cardiogenic shock
+      binding: EXACT
+    quote: >-
+      Cardiogenic shock or decompensated heart failure.
+    explanation: >-
+      Under "are contraindicated in patients with:", the item "Cardiogenic shock or decompensated
+      heart failure" lists cardiogenic shock as a contraindicated condition; this claim covers that
+      member of the coordination.
+    status: DRAFT
+    notes: >-
+      HP Cardiogenic shock agrees with the grounding store (MONDO cardiogenic shock MONDO:0800175
+      also exists). Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Cardiogenic shock or decompensated heart failure
+      member: decompensated heart failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Cardiogenic shock or decompensated heart failure.
+    explanation: >-
+      Under "are contraindicated in patients with:", the item "Cardiogenic shock or decompensated
+      heart failure" lists decompensated heart failure as a contraindicated condition; this claim
+      covers that member of the coordination.
+    status: DRAFT
+    notes: >-
+      No decompensated-heart-failure term (searched MONDO "heart failure", "decompensated"; HP
+      "heart failure", "decompensated"); MONDO heart failure is broader. Grounding store maps
+      "Decompensated heart failure" to UMLS:C0581377.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Sinus bradycardia, sick sinus syndrome, and greater than first-degree block
+      member: Sinus bradycardia
+      term:
+        id: HP:0001688
+        label: Sinus bradycardia
+      binding: EXACT
+    quote: >-
+      Sinus bradycardia, sick sinus syndrome, and greater than first-degree block unless a
+      permanent pacemaker is in place.
+    explanation: >-
+      Under "are contraindicated in patients with:", the item "Sinus bradycardia, sick sinus
+      syndrome, and greater than first-degree block unless a permanent pacemaker is in place" lists
+      sinus bradycardia as a contraindicated condition; this claim covers that member.
+    status: DRAFT
+    notes: >-
+      "unless a permanent pacemaker is in place" is an exception to the contraindication; the
+      schema has no slot for an exception, so it stays in the quote. Whether it governs sinus
+      bradycardia as well as the conduction disorders is not clear from the wording.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Sinus bradycardia, sick sinus syndrome, and greater than first-degree block
+      member: sick sinus syndrome
+      term:
+        id: HP:0011704
+        label: Sick sinus syndrome
+      binding: EXACT
+    quote: >-
+      Sinus bradycardia, sick sinus syndrome, and greater than first-degree block unless a
+      permanent pacemaker is in place.
+    explanation: >-
+      Under "are contraindicated in patients with:", the item lists sick sinus syndrome as a
+      contraindicated condition; this claim covers that member. "unless a permanent pacemaker is in
+      place" is an exception kept in the quote.
+    status: DRAFT
+    notes: >-
+      HP Sick sinus syndrome agrees with the grounding store (MONDO sick sinus syndrome
+      MONDO:0001823 also exists).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Sinus bradycardia, sick sinus syndrome, and greater than first-degree block
+      member: greater than first-degree block
+      term:
+        id: HP:0011706
+        label: Second degree atrioventricular block
+      binding: NARROWER
+    quote: >-
+      Sinus bradycardia, sick sinus syndrome, and greater than first-degree block unless a
+      permanent pacemaker is in place.
+    explanation: >-
+      Under "are contraindicated in patients with:", the item lists "greater than first-degree
+      block" as a contraindicated condition; this claim covers that member. Block greater than
+      first degree is second- or third-degree atrioventricular block, so this claim binds the
+      second-degree block, NARROWER than the words. "unless a permanent pacemaker is in place" is an
+      exception kept in the quote.
+    status: DRAFT
+    notes: >-
+      "greater than first-degree block" is split into its two degrees (second, third), each bound
+      NARROWER; no single term says "greater than first degree" (searched MONDO and HP
+      "atrioventricular block", "heart block"), and Atrioventricular block would include the
+      excluded first degree. Grounding store has sssom:NoTermFound for the phrase.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Sinus bradycardia, sick sinus syndrome, and greater than first-degree block
+      member: greater than first-degree block
+      term:
+        id: HP:0001709
+        label: Third degree atrioventricular block
+      binding: NARROWER
+    quote: >-
+      Sinus bradycardia, sick sinus syndrome, and greater than first-degree block unless a
+      permanent pacemaker is in place.
+    explanation: >-
+      Under "are contraindicated in patients with:", the item lists "greater than first-degree
+      block" as a contraindicated condition; this claim covers that member. Block greater than
+      first degree is second- or third-degree atrioventricular block, so this claim binds the
+      third-degree block, NARROWER than the words. "unless a permanent pacemaker is in place" is an
+      exception kept in the quote.
+    status: DRAFT
+    notes: >-
+      "greater than first-degree block" is split into its two degrees (second, third), each bound
+      NARROWER; no single term says "greater than first degree" (searched MONDO and HP
+      "atrioventricular block", "heart block"), and Atrioventricular block would include the
+      excluded first degree. Grounding store has sssom:NoTermFound for the phrase.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Anuria.
+    explanation: >-
+      The Contraindications item "Anuria." lists anuria as a contraindicated condition.
+    status: DRAFT
+    notes: >-
+      Quoted from the Highlights copy ("Anuria. (4)"): the full text runs the "Anuria" item into
+      the next one without punctuation, so an item-sized quote exists only there.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Anuria Hypersensitivity to metoprolol tartrate or hydrochlorothiazide or to other sulfonamide
+      derived drugs.
+    explanation: >-
+      Under "are contraindicated in patients with:", "Hypersensitivity to ... other sulfonamide
+      derived drugs" states a drug-allergy contraindication with other sulfonamide-derived drugs as
+      the agents; the product's own ingredients (metoprolol tartrate, hydrochlorothiazide) are
+      dropped.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs only; hypersensitivity to metoprolol
+      tartrate or hydrochlorothiazide (own ingredients) is not curated. ChEBI sulfonamide is the
+      chemical class, broader than "sulfonamide derived drugs". Unattributed: the allergens are
+      not causes.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication (outcomes are
+  credited to antihypertensive drug classes, not to this product); the Limitation of Use (not for
+  initial therapy); hypersensitivity to metoprolol tartrate or hydrochlorothiazide (own
+  ingredients). The Highlights restate the contraindications. All claims are product-level: the
+  label never assigns an indication or contraindication to metoprolol or hydrochlorothiazide.
