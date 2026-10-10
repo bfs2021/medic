@@ -1,0 +1,26 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-atorvastatin
+  path: kb/combinations/amlodipine-atorvastatin.yaml
+session:
+  id: 2026-10-10T005555Z-claude-code-1c7619
+  timestamp: '2026-10-10T00:55:55Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6bac0e459997842222b3654c3333153f46c2f2da/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  summary: 'Edit: apply decisions mechanically ahead of the batch revision'
+  details: |
+    Decoded an HTML entity in one quote (&lt; -> <) after the label helper began decoding entities; the pin was regenerated from the same v52 XML.
