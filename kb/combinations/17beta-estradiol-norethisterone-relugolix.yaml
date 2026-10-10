@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -130,7 +130,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: deep vein thrombosis
+      text: deep vein thrombosis or pulmonary embolism
+      member: deep vein thrombosis
       term:
         id: HP:0002625
         label: Deep venous thrombosis
@@ -138,8 +139,8 @@ products:
     quote: >-
       current or history of deep vein thrombosis or pulmonary embolism
     explanation: >-
-      Contraindicated as a thrombotic risk factor: deep vein thrombosis is the first member of "deep
-      vein thrombosis or pulmonary embolism", listed after "Examples include ... women who are known to
+      Contraindicated as a thrombotic risk factor: this claim is the member "deep vein thrombosis" of
+      the coordination "deep vein thrombosis or pulmonary embolism", listed after "Examples include ... women who are known to
       have:" under the high risk of thrombotic disorders. "current or history of" covers current
       disease and a past episode.
     status: DRAFT
@@ -150,7 +151,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: pulmonary embolism
+      text: deep vein thrombosis or pulmonary embolism
+      member: pulmonary embolism
       term:
         id: MONDO:0005279
         label: pulmonary embolism
@@ -158,8 +160,8 @@ products:
     quote: >-
       current or history of deep vein thrombosis or pulmonary embolism
     explanation: >-
-      Contraindicated as a thrombotic risk factor: pulmonary embolism is the second member of "deep
-      vein thrombosis or pulmonary embolism", listed after "Examples include ... women who are known to
+      Contraindicated as a thrombotic risk factor: this claim is the member "pulmonary embolism" of
+      the coordination "deep vein thrombosis or pulmonary embolism", listed after "Examples include ... women who are known to
       have:". "current or history of" covers current disease and a past episode.
     status: DRAFT
     notes: >-
@@ -287,7 +289,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: headaches with focal neurological symptoms
+      text: headaches with focal neurological symptoms or migraine headaches with aura
+      member: headaches with focal neurological symptoms
       term:
         id: HP:0002315
         label: Headache
@@ -297,7 +300,8 @@ products:
       age
     explanation: >-
       Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
-      known to have:". "headaches with focal neurological symptoms" is the first member of the item. The
+      known to have:". This claim is the member "headaches with focal neurological symptoms" of the
+      coordination "headaches with focal neurological symptoms or migraine headaches with aura". The
       wording leaves open whether "if over 35 years of age" covers both members; this claim takes
       the reading that it bounds the migraine member only, so no age restriction here. No term for headache with focal neurological symptoms, so Headache BROADER.
     status: DRAFT
@@ -309,7 +313,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: migraine headaches with aura
+      text: headaches with focal neurological symptoms or migraine headaches with aura
+      member: migraine headaches with aura
       term:
         id: MONDO:0005475
         label: migraine with aura
@@ -322,8 +327,9 @@ products:
       text: over 35 years of age
     explanation: >-
       Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
-      known to have:". The member "migraine headaches with aura" carries its own restriction "if
-      over 35 years of age", recorded as age_range.
+      known to have:". This claim is the member "migraine headaches with aura" of the coordination
+      "headaches with focal neurological symptoms or migraine headaches with aura"; it carries the
+      restriction "if over 35 years of age", recorded as age_range.
     status: DRAFT
     notes: >-
       "over" is a strict bound (older than 35); age_range has no exclusive bound, so min_years 35 is
@@ -363,7 +369,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: breast cancer
+      text: breast cancer or other hormone-sensitive malignancies
+      member: breast cancer
       term:
         id: MONDO:0007254
         label: breast cancer
@@ -373,8 +380,8 @@ products:
       increased risk for hormone-sensitive malignancies
     explanation: >-
       An item of "MYFEMBREE is contraindicated in women:": "With current or history of breast cancer
-      ..."; breast cancer is the first member of "breast cancer or other hormone-sensitive
-      malignancies", current or past.
+      ..."; this claim is the member "breast cancer" of the coordination "breast cancer or other
+      hormone-sensitive malignancies", current or past.
     status: DRAFT
     notes: >-
       "current or history of": the label contraindicates current breast cancer and a history of it;
@@ -382,7 +389,8 @@ products:
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
-      text: other hormone-sensitive malignancies
+      text: breast cancer or other hormone-sensitive malignancies
+      member: other hormone-sensitive malignancies
       term_gap: >-
         searched MONDO "hormone", "hormone-sensitive", "hormone-dependent", "cancer": no term for
         hormone-sensitive cancer in general (only hormone receptor-positive breast cancer); MONDO:0004992
@@ -392,7 +400,8 @@ products:
       increased risk for hormone-sensitive malignancies
     explanation: >-
       An item of "MYFEMBREE is contraindicated in women:": "With current or history of ... other
-      hormone-sensitive malignancies", the second member of the coordination, current or past.
+      hormone-sensitive malignancies"; this claim is the member "other hormone-sensitive malignancies"
+      of the coordination "breast cancer or other hormone-sensitive malignancies", current or past.
     status: DRAFT
     notes: >-
       "current or history of": current disease or a history of it; no slot records a temporal scope.
@@ -456,9 +465,9 @@ products:
     object:
       text: undiagnosed abnormal uterine bleeding
       term:
-        id: HP:0100608
-        label: Metrorrhagia
-      binding: NARROWER
+        id: HP:0000140
+        label: Abnormality of the menstrual cycle
+      binding: BROADER
     quote: >-
       With undiagnosed abnormal uterine bleeding.
     explanation: >-
@@ -466,10 +475,12 @@ products:
       bleeding".
     status: DRAFT
     notes: >-
-      NARROWER: HP Metrorrhagia means intermenstrual bleeding, while abnormal uterine bleeding also
-      covers heavy menstrual bleeding, so the term is more specific than the label's words, despite
-      its exact synonym "Abnormal uterus bleeding". No MONDO term. "undiagnosed" describes the
-      workup, not the condition.
+      No HP or MONDO term for abnormal uterine bleeding, so the parent HP Abnormality of the menstrual
+      cycle, BROADER. Not Metrorrhagia: HP lists "Abnormal uterus bleeding" as an exact synonym of
+      HP:0100608 Metrorrhagia, although metrorrhagia means intermenstrual bleeding while abnormal
+      uterine bleeding also covers heavy menstrual bleeding; the synonym should be reported upstream
+      to HPO. "undiagnosed" describes the workup, not the condition. Grounding store maps the text
+      to UMLS:C0019080 / UMLS:C3650625.
 notes: >-
   The high risk of arterial, venous thrombotic, or thromboembolic disorders is not curated as a claim
   of its own: the label gives it as the heading of a risk-factor list ("Examples include ..."), and each

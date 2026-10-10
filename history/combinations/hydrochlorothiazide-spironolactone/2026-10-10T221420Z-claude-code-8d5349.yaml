@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-spironolactone
+  path: kb/combinations/hydrochlorothiazide-spironolactone.yaml
+session:
+  id: 2026-10-10T221420Z-claude-code-8d5349
+  timestamp: '2026-10-10T22:14:20Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Name coordination members: hydrochlorothiazide / spironolactone'
+  details: |
+    Round-6 revision against DailyMed setid 6fa96947-f4d8-4ca4-98fd-a2c123310d83 v3. Curator block regenerated from the helper skeleton. The cirrhosis edema and ascites claims now use the whole phrase 'edema and/or ascites' as object text, with members edema and ascites; terms unchanged (HP Edema, HP Ascites, EXACT).

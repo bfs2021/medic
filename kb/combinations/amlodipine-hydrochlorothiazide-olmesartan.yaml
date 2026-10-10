@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -109,7 +109,11 @@ products:
       (the product's own) is not curated. Attributed to hydrochlorothiazide on the label's
       "Because of the hydrochlorothiazide component", not on the allergen (sulfonamides are
       other drugs). ChEBI sulfonamide is the chemical class, broader than "sulfonamide-derived
-      drugs".
+      drugs". The text stays "hypersensitivity", without `member`: the "or" before it joins
+      "hypersensitivity to any component" and "hypersensitivity to other sulfonamide-derived
+      drugs", the same condition with two sets of agents, so it coordinates agents, not
+      conditions. The agents are carried by object_specialization, and the own-component
+      alternative is not curated.
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:

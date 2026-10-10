@@ -13,7 +13,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -123,7 +123,10 @@ products:
         candidate MONDO:0008834 asthma, nasal polyps, and aspirin intolerance does not fit: the
         label names no asthma (it names angioedema and bronchospastic reactivity), and the term
         sits under hereditary disease. MONDO:0850287 aspirin-induced respiratory disease sits
-        under intrinsic asthma and likewise names asthma. The text's word-span matches
+        under intrinsic asthma and likewise names asthma. HP:0012042 Aspirin-induced asthma
+        (is_a Asthma) is rejected for the same reason: it names asthma and aspirin alone, not
+        the syndrome of nasal polyps, angioedema and bronchospastic reactivity to other NSAIDs.
+        The text's word-span matches
         (HP:0100582 Nasal polyposis, MONDO:0006314 nasal cavity polyp, HP:0100665 Angioedema,
         MONDO:0005079, MONDO:0010481) each name one part of the syndrome, not the syndrome
     quote: >-
@@ -173,7 +176,9 @@ products:
       term_gap: >-
         searched MONDO/HP "gastrointestinal lesion", "gastrointestinal ulcer": no lesion term; the
         only fitting term, MONDO:0004335 digestive system disorder, would make the contraindication
-        far broader than "serious ... lesions". The phrase's term matches (MONDO:0004247,
+        far broader than "serious ... lesions". HP:0034274 Gastrointestinal ulcer is rejected: an
+        ulcer is one kind of lesion, so it would narrow "lesions" to ulcers, and an ulcer is
+        already what the other member, "Peptic ulcer", names. The phrase's term matches (MONDO:0004247,
         HP:0004398, MONDO:0043839) all name the other member, "Peptic ulcer"
     quote: >-
       Peptic ulcer or other serious gastrointestinal lesions.

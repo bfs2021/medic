@@ -13,7 +13,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -307,18 +307,21 @@ products:
     disease_context:
       text: acute hemorrhage
       term_gap: >-
-        no general hemorrhage term: searched HP and MONDO "hemorrhage", "haemorrhage", "bleeding",
-        "blood loss", "acute hemorrhage"; only site-specific hemorrhages (cerebral, retinal,
-        internal, ...) and HP Abnormal bleeding (HP:0001892), which means a bleeding tendency, not
-        an episode of blood loss. The grounding store's rows for the text are UMLS
-        (UMLS:C0019080, UMLS:C0333276), not a configured ontology
+        searched HP and MONDO "hemorrhage", "haemorrhage", "bleeding", "blood loss", "acute
+        hemorrhage". The candidate is HP:0001892 Abnormal bleeding, HP's de facto root for
+        bleeding events (Epistaxis HP:0000421 and Internal hemorrhage HP:0011029 sit under it),
+        but its exact synonyms are bleeding-tendency terms ("Bleeding diathesis", "Bleeding
+        tendency", "Hemorrhagic diathesis"), so binding it would read as a bleeding tendency
+        rather than an acute episode of blood loss; left unbound. Other matches are site-specific
+        hemorrhages (cerebral, retinal, internal, ...). The grounding store's rows for the text
+        are UMLS (UMLS:C0019080, UMLS:C0333276), not a configured ontology
     explanation: >-
       An item of "PHENOHYTRO ® ELIXIR is also contraindicated in patients with ...": "unstable
       cardiovascular status in acute hemorrhage": the object is the unstable cardiovascular
       status, restricted to acute hemorrhage (disease context).
     status: DRAFT
     notes: >-
-      Contraindicated condition is cardiovascular instability, restricted to acute hemorrhage. The context is unbound: HP Abnormal bleeding (HP:0001892) means a bleeding tendency, not an acute episode of blood loss, and HP and MONDO have no general hemorrhage term.
+      Contraindicated condition is cardiovascular instability, restricted to acute hemorrhage. The context is unbound: HP Abnormal bleeding (HP:0001892) is the parent of bleeding events such as epistaxis and internal hemorrhage, but its exact synonyms name a bleeding tendency, so binding it would misread "acute hemorrhage" (see term_gap).
   - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:

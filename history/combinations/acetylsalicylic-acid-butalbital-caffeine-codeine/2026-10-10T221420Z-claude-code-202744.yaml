@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-butalbital-caffeine-codeine
+  path: kb/combinations/acetylsalicylic-acid-butalbital-caffeine-codeine.yaml
+session:
+  id: 2026-10-10T221420Z-claude-code-202744
+  timestamp: '2026-10-10T22:14:20Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Record rejected candidates: acetylsalicylic acid / butalbital / caffeine
+    / codeine'
+  details: |
+    Round-6 revision against DailyMed setid c8b93fc1-472c-4890-8d02-2ee4f7175c22 v1. Curator block regenerated from the helper skeleton. Term gaps now name two rejected candidates, confirmed with terms info: HP:0012042 Aspirin-induced asthma (is_a Asthma) for the NSAID-reactivity syndrome, since it names asthma and aspirin alone; HP:0034274 Gastrointestinal ulcer for 'other serious gastrointestinal lesions', since it narrows lesions to ulcers, which the other member (peptic ulcer) already names.

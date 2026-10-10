@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-atorvastatin
+  path: kb/combinations/amlodipine-atorvastatin.yaml
+session:
+  id: 2026-10-10T221233Z-claude-code-301a3e
+  timestamp: '2026-10-10T22:12:33Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: amlodipine / atorvastatin (review round 6)'
+  details: |
+    Round-6 review of DailyMed setids 6f1a9bd8-ee30-4c7d-932f-3fa8c4e087b6 v52 and 909fad96-a941-443a-a39f-4f93607410fb v1. Cut products[0].claims[5-7] quotes to their list item ('Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults ... without clinically evident CHD'), moved their snippet to the Highlights lead 'Atorvastatin is indicated ( 1 ):' and corrected their notes. Made products[0].claims[15]'s explanation cite the same lead as its snippet. Rebound products[1] mixed dyslipidemia from HP:0003077 to MONDO:0021187 hyperlipidemia (BROADER) and elevated serum TG levels from HP:0002155 to MONDO:0005347 hypertriglyceridemia (EXACT), matching the current label's claims; kept HP:0003124 for primary hypercholesterolemia (MONDO has only familial forms) and HP:0001681 for angina (no general MONDO angina term). The validator flags no coordination items; and-lists of outcomes keep item text. Regenerated the curator block against the skill at 7f80c42.

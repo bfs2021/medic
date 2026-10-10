@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -162,21 +162,21 @@ products:
         label: myocardial infarction
       binding: EXACT
     quote: >-
-      Atorvastatin Atorvastatin is indicated: • To reduce the risk of: o Myocardial infarction
-      (MI), stroke, revascularization procedures, and angina in adults with multiple risk factors
-      for coronary heart disease (CHD) but without clinically evident CHD
+      Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults with
+      multiple risk factors for coronary heart disease (CHD) but without clinically evident CHD
     attributed_to:
     - ingredient: CHEBI:39548
       basis: INGREDIENT_SUBJECT
-      snippet: 'Atorvastatin is indicated:'
+      snippet: 'Atorvastatin is indicated ( 1 ):'
       explanation: >-
-        Atorvastatin is the subject of "Atorvastatin is indicated:", which introduces the bulleted
-        list this item belongs to; the list has no other subject before the item.
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
     age_range:
       min_years: 18
       text: adults
     explanation: >-
-      "To reduce the risk of: o Myocardial infarction (MI), stroke, revascularization procedures,
+      Under "To reduce the risk of:", the item "Myocardial infarction (MI), stroke, revascularization procedures,
       and angina" lists Myocardial infarction as an outcome whose risk is reduced, so prevention;
       "in adults" gives the age bound; the population "with multiple risk factors for coronary
       heart disease (CHD) but without clinically evident CHD" names no disease the patients have,
@@ -184,8 +184,12 @@ products:
     status: DRAFT
     notes: >-
       Primary prevention in adults with multiple CHD risk factors but without clinically evident
-      CHD (a population, so no disease_context). The quote starts at the list lead 'Atorvastatin is
-      indicated:' (after the heading 'Atorvastatin') and ends with this first item.
+      CHD (a population, so no disease_context). The item-sized quote has no risk-reduction
+      wording of its own; the relation comes from the list lead "To reduce the risk of:" that
+      governs the item. (The validator's prevention-cue check stays silent here only because "risk
+      factors" contains "risk".) The quote occurs in both the Highlights and the full text; the
+      validator reads it in the Highlights copy, whose list lead "Atorvastatin is indicated ( 1 ):"
+      carries the attribution (the full text's "Atorvastatin is indicated:" says the same).
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -195,28 +199,30 @@ products:
         label: stroke disorder
       binding: EXACT
     quote: >-
-      Atorvastatin Atorvastatin is indicated: • To reduce the risk of: o Myocardial infarction
-      (MI), stroke, revascularization procedures, and angina in adults with multiple risk factors
-      for coronary heart disease (CHD) but without clinically evident CHD
+      Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults with
+      multiple risk factors for coronary heart disease (CHD) but without clinically evident CHD
     attributed_to:
     - ingredient: CHEBI:39548
       basis: INGREDIENT_SUBJECT
-      snippet: 'Atorvastatin is indicated:'
+      snippet: 'Atorvastatin is indicated ( 1 ):'
       explanation: >-
-        Atorvastatin is the subject of "Atorvastatin is indicated:", which introduces the bulleted
-        list this item belongs to; the list has no other subject before the item.
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
     age_range:
       min_years: 18
       text: adults
     explanation: >-
-      "To reduce the risk of: o Myocardial infarction (MI), stroke, revascularization procedures,
+      Under "To reduce the risk of:", the item "Myocardial infarction (MI), stroke, revascularization procedures,
       and angina" lists stroke as an outcome whose risk is reduced, so prevention; "in adults"
       gives the age bound; the population "with multiple risk factors for coronary heart disease
       (CHD) but without clinically evident CHD" names no disease the patients have, so no disease
       context.
     status: DRAFT
     notes: >-
-      Primary prevention, as the myocardial infarction claim.
+      Primary prevention, as the myocardial infarction claim. The item-sized quote has no risk-reduction wording of its own; the relation comes from the
+      list lead "To reduce the risk of:" that governs the item. (The validator's prevention-cue
+      check stays silent here only because "risk factors" contains "risk".)
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -226,21 +232,21 @@ products:
         label: Angina pectoris
       binding: EXACT
     quote: >-
-      Atorvastatin Atorvastatin is indicated: • To reduce the risk of: o Myocardial infarction
-      (MI), stroke, revascularization procedures, and angina in adults with multiple risk factors
-      for coronary heart disease (CHD) but without clinically evident CHD
+      Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults with
+      multiple risk factors for coronary heart disease (CHD) but without clinically evident CHD
     attributed_to:
     - ingredient: CHEBI:39548
       basis: INGREDIENT_SUBJECT
-      snippet: 'Atorvastatin is indicated:'
+      snippet: 'Atorvastatin is indicated ( 1 ):'
       explanation: >-
-        Atorvastatin is the subject of "Atorvastatin is indicated:", which introduces the bulleted
-        list this item belongs to; the list has no other subject before the item.
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
     age_range:
       min_years: 18
       text: adults
     explanation: >-
-      "To reduce the risk of: o Myocardial infarction (MI), stroke, revascularization procedures,
+      Under "To reduce the risk of:", the item "Myocardial infarction (MI), stroke, revascularization procedures,
       and angina" lists angina as an outcome whose risk is reduced, so prevention; "in adults"
       gives the age bound; the population "with multiple risk factors for coronary heart disease
       (CHD) but without clinically evident CHD" names no disease the patients have, so no disease
@@ -248,7 +254,9 @@ products:
     status: DRAFT
     notes: >-
       Primary prevention, as the myocardial infarction claim. Revascularization procedures are not
-      a condition.
+      a condition. The item-sized quote has no risk-reduction wording of its own; the relation comes from the
+      list lead "To reduce the risk of:" that governs the item. (The validator's prevention-cue
+      check stays silent here only because "risk factors" contains "risk".)
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -525,8 +533,8 @@ products:
       min_years: 10
       text: aged 10 years and older
     explanation: >-
-      Under "Atorvastatin is indicated:" and "As an adjunct to diet to reduce ... LDL-C in:", the
-      item "Adults and pediatric patients aged 10 years and older with heterozygous familial
+      Under "Atorvastatin is indicated ( 1 ):" and "As an adjunct to diet to reduce ... LDL-C in:",
+      the item "Adults and pediatric patients aged 10 years and older with heterozygous familial
       hypercholesterolemia (HeFH)" states treatment of HeFH; "aged 10 years and older" is the age
       bound.
     status: DRAFT
@@ -1068,17 +1076,19 @@ products:
       claim.
     status: DRAFT
     notes: >-
-      No primary-hypercholesterolemia term (searched MONDO "hypercholesterolemia", "primary
-      hypercholesterolemia"; HP "hypercholesterolemia"); MONDO familial hypercholesterolemia would
-      exclude the nonfamilial form the label names, so HP Hypercholesterolemia (broader) is bound.
+      No primary-hypercholesterolemia term (searched MONDO "hypercholesterolemia",
+      "hypercholesterol", "primary hyper"; HP "hypercholesterolemia"). HP kept deliberately: every
+      MONDO hypercholesterolemia term is a familial/genetic form, which would exclude the
+      nonfamilial form the label names, and MONDO hyperlipidemia would say less (any raised
+      lipid) than HP Hypercholesterolemia, which is still broader than "primary".
       Grounding store maps the phrase to UMLS:C0342879.
   - relation: TREATS
     section: INDICATIONS
     object:
       text: mixed dyslipidemia
       term:
-        id: HP:0003077
-        label: Hyperlipidemia
+        id: MONDO:0021187
+        label: hyperlipidemia
       binding: BROADER
     quote: >-
       Atorvastatin is indicated as an adjunct to diet to reduce elevated total-C, LDL-C, apo B,
@@ -1098,15 +1108,18 @@ products:
     status: DRAFT
     notes: >-
       No mixed-dyslipidemia / combined-hyperlipidemia term outside familial forms (searched MONDO
-      "dyslipidemia", "combined hyperlipidemia", "mixed hyperlipidemia"; HP "mixed"); HP
-      Hyperlipidemia is broader. Grounding store has sssom:NoTermFound for the phrase.
+      "dyslipidemia", "dyslipid", "combined hyperlipidemia", "mixed", "hyperlipoproteinemia",
+      "Fredrickson"; HP "mixed"): MONDO's combined-hyperlipidemia terms are the familial/genetic
+      forms (hyperlipidemia, combined, 1 and 2; familial combined, LPL related), which the label
+      does not restrict to. MONDO hyperlipidemia is broader, the same term as the current label's
+      primary hyperlipidemia claim. The grounding store maps the phrase to UMLS:C0242339 only.
   - relation: TREATS
     section: INDICATIONS
     object:
       text: elevated serum TG levels
       term:
-        id: HP:0002155
-        label: Hypertriglyceridemia
+        id: MONDO:0005347
+        label: hypertriglyceridemia
       binding: EXACT
     quote: >-
       Atorvastatin is indicated as an adjunct to diet for the treatment of patients with elevated
@@ -1122,7 +1135,11 @@ products:
       states treatment of hypertriglyceridemia (elevated serum TG levels).
     status: DRAFT
     notes: >-
-      HP Hypertriglyceridemia (exact synonym 'Increased serum triglycerides').
+      MONDO hypertriglyceridemia, the same term as the current label's Hypertriglyceridemia claim;
+      "elevated serum TG levels" names the condition (HP Hypertriglyceridemia's exact synonym
+      'Increased serum triglycerides' is the same wording), so EXACT. "( Fredrickson Type IV)" has
+      no MONDO term (searched "hyperlipoproteinemia type 4", "type IV", "Fredrickson", "familial
+      hypertriglyceridemia"). The validator anchors nothing on the abbreviated "TG" wording.
   - relation: TREATS
     section: INDICATIONS
     object:

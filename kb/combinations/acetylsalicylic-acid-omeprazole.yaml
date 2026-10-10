@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -43,16 +43,17 @@ products:
         The sentence assigns the indications it lists, this stroke-risk reduction first among them,
         to the aspirin component.
     disease_context:
-      text: ischemic stroke
+      text: ischemic stroke or transient ischemia of the brain due to fibrin platelet emboli
+      member: ischemic stroke
       term:
         id: MONDO:1060198
         label: ischemic stroke
       binding: EXACT
     explanation: >-
       "indicated for: reducing the combined risk of death and nonfatal stroke" is prevention of
-      stroke; "in patients who have had ischemic stroke" is the disease context (the first member
-      of "ischemic stroke or transient ischemia of the brain"). "nonfatal" describes the event, not
-      a kind of stroke.
+      stroke; "in patients who have had ischemic stroke or transient ischemia of the brain due to
+      fibrin platelet emboli" is the disease context, of which this claim covers the member
+      "ischemic stroke". "nonfatal" describes the event, not a kind of stroke.
     status: DRAFT
     notes: >-
       Secondary prevention. "death" in the combined endpoint is an outcome, not a condition. The
@@ -77,15 +78,17 @@ products:
         The sentence assigns the indications it lists, this stroke-risk reduction first among them,
         to the aspirin component.
     disease_context:
-      text: transient ischemia of the brain due to fibrin platelet emboli
+      text: ischemic stroke or transient ischemia of the brain due to fibrin platelet emboli
+      member: transient ischemia of the brain due to fibrin platelet emboli
       term:
         id: MONDO:0005264
         label: transient ischemic attack
       binding: BROADER
     explanation: >-
       "indicated for: reducing the combined risk of death and nonfatal stroke" is prevention of
-      stroke; "in patients who have had ... transient ischemia of the brain due to fibrin platelet
-      emboli" is the disease context (the second member of the "or" list).
+      stroke; "in patients who have had ischemic stroke or transient ischemia of the brain due to
+      fibrin platelet emboli" is the disease context, of which this claim covers the member
+      "transient ischemia of the brain due to fibrin platelet emboli".
     status: DRAFT
     notes: >-
       No embolic-TIA term (searched MONDO "transient ischemic", "cerebral ischemia",
@@ -112,19 +115,21 @@ products:
         The sentence assigns the indications it lists after the colon, this MI-risk reduction among
         them, to the aspirin component.
     disease_context:
-      text: previous MI
+      text: previous MI or unstable angina pectoris
+      member: previous MI
       term:
         id: MONDO:0005068
         label: myocardial infarction
       binding: EXACT
     explanation: >-
       "reducing the combined risk of death and nonfatal MI" is prevention of myocardial infarction;
-      "in patients with a previous MI" is the disease context (the first member of "a previous MI or
-      unstable angina pectoris").
+      "in patients with a previous MI or unstable angina pectoris" is the disease context, of which
+      this claim covers the member "previous MI".
     status: DRAFT
     notes: >-
       Secondary prevention after a previous MI. The quote runs from "The aspirin component"
       through the stroke item to stay contiguous. The unstable-angina context is a separate claim.
+      The context text starts after the determiner "a", which belongs to the first item only.
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -146,19 +151,22 @@ products:
         The sentence assigns the indications it lists after the colon, this MI-risk reduction among
         them, to the aspirin component.
     disease_context:
-      text: unstable angina pectoris
+      text: previous MI or unstable angina pectoris
+      member: unstable angina pectoris
       term:
         id: MONDO:0006805
         label: intermediate coronary syndrome
       binding: EXACT
     explanation: >-
       "reducing the combined risk of death and nonfatal MI" is prevention of myocardial infarction;
-      "in patients with ... unstable angina pectoris" is the disease context (the second member of
-      "a previous MI or unstable angina pectoris").
+      "in patients with a previous MI or unstable angina pectoris" is the disease context, of which
+      this claim covers the member "unstable angina pectoris".
     status: DRAFT
     notes: >-
       MONDO's unstable-angina term is labelled "intermediate coronary syndrome" (exact synonym
-      "unstable angina").
+      "unstable angina"). EXACT despite the validator's note that "pectoris" may narrow it:
+      "angina pectoris" is the full name of angina, so "unstable angina pectoris" is unstable
+      angina, not a subtype.
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
@@ -168,19 +176,15 @@ products:
         label: myocardial infarction
       binding: EXACT
     quote: >-
-        The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for:
-        reducing the combined risk of death and nonfatal stroke in patients who have had ischemic
-        stroke or transient ischemia of the brain due to fibrin platelet emboli, reducing the combined
-        risk of death and nonfatal MI in patients with a previous MI or unstable angina pectoris,
         reducing the combined risk of MI and sudden death in patients with chronic stable angina
         pectoris
     attributed_to:
     - ingredient: CHEBI:15365
       basis: COMPONENT_STATEMENT
-      snippet: The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for
+      snippet: 'The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA is indicated for:'
       explanation: >-
-        The sentence assigns the indications it lists after the colon, this third item among them,
-        to the aspirin component.
+        The list lead assigns the items after its colon, this third item among them, to the aspirin
+        component; the item sits in the same sentence as the lead.
     disease_context:
       text: chronic stable angina pectoris
       term:
@@ -194,7 +198,11 @@ products:
     notes: >-
       No stable-angina term in MONDO or HP (searched MONDO "stable angina", "angina"; HP
       "angina", "stable angina"); HP Angina pectoris is the closest accurate term, broader than
-      "chronic stable". "sudden death" is an outcome, not a condition, so no claim for it.
+      "chronic stable". "sudden death" is an outcome, not a condition, so no claim for it; "MI and
+      sudden death" is a combined endpoint, not a coordination of conditions, so the object text
+      is "MI" alone. The quote is the item alone, with the list lead "The aspirin component ... is
+      indicated for:" as the snippet; a quote from the lead would run through "a previous MI or
+      unstable angina pectoris", where "MI" is an item of a coordination.
   - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:

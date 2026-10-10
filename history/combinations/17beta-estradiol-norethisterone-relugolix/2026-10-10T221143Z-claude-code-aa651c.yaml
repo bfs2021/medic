@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17beta-estradiol-norethisterone-relugolix
+  path: kb/combinations/17beta-estradiol-norethisterone-relugolix.yaml
+session:
+  id: 2026-10-10T221143Z-claude-code-aa651c
+  timestamp: '2026-10-10T22:11:43Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: whole-phrase coordinations, abnormal uterine bleeding rebind'
+  details: |
+    Revised against DailyMed setid fc3feb73-cc84-43a8-aa32-b262460495e8 v18 (pinned). Coordinated objects now carry the whole verbatim phrase as text with the item in member: 'deep vein thrombosis or pulmonary embolism', 'headaches with focal neurological symptoms or migraine headaches with aura', 'breast cancer or other hormone-sensitive malignancies'. 'undiagnosed abnormal uterine bleeding' rebound from HP:0100608 Metrorrhagia (NARROWER) to HP:0000140 Abnormality of the menstrual cycle (BROADER); HP lists 'Abnormal uterus bleeding' as an exact synonym of Metrorrhagia although metrorrhagia means intermenstrual bleeding (to report upstream). Curators block regenerated from the label helper.

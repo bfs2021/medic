@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-omeprazole
+  path: kb/combinations/acetylsalicylic-acid-omeprazole.yaml
+session:
+  id: 2026-10-10T221418Z-claude-code-162608
+  timestamp: '2026-10-10T22:14:18Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Name coordination members: acetylsalicylic acid / omeprazole'
+  details: |
+    Round-6 revision against DailyMed setid ae8f4eb4-b1eb-432e-b5ab-598c29996d6a v1. Curator block regenerated from the helper skeleton. Disease contexts now carry the whole coordinated phrase with a member: 'ischemic stroke or transient ischemia of the brain due to fibrin platelet emboli' (members ischemic stroke; transient ischemia of the brain due to fibrin platelet emboli) and 'previous MI or unstable angina pectoris' (members previous MI; unstable angina pectoris; the determiner 'a' belongs to the first item and is left out). The chronic-stable-angina MI claim now quotes its own list item, with the list lead 'The aspirin component ... is indicated for:' as snippet; the old quote ran through 'a previous MI or unstable angina pectoris', which made the object 'MI' look like a coordination item although 'MI and sudden death' is a combined endpoint. MONDO:0008834 kept NARROWER as decided. Unstable angina kept EXACT: 'pectoris' does not narrow it.

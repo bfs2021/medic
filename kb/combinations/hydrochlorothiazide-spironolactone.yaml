@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -145,7 +145,8 @@ products:
   - relation: TREATS
     section: INDICATIONS
     object:
-      text: edema
+      text: edema and/or ascites
+      member: edema
       term:
         id: HP:0000969
         label: Edema
@@ -163,8 +164,8 @@ products:
       binding: EXACT
     explanation: >-
       Under "Cirrhosis of the liver accompanied by edema and/or ascites:", the product "is
-      indicated for maintenance therapy"; edema is the first member of "edema and/or ascites",
-      cirrhosis of the liver the disease context.
+      indicated for maintenance therapy"; the object is "edema and/or ascites", of which this claim
+      covers the member "edema"; cirrhosis of the liver is the disease context.
     status: DRAFT
     notes: >-
       Maintenance therapy together with bed rest and fluid/sodium restriction (non-drug measures,
@@ -172,7 +173,8 @@ products:
   - relation: TREATS
     section: INDICATIONS
     object:
-      text: ascites
+      text: edema and/or ascites
+      member: ascites
       term:
         id: HP:0001541
         label: Ascites
@@ -190,8 +192,8 @@ products:
       binding: EXACT
     explanation: >-
       Under "Cirrhosis of the liver accompanied by edema and/or ascites:", the product "is
-      indicated for maintenance therapy"; ascites is the second member of "edema and/or
-      ascites", cirrhosis of the liver the disease context.
+      indicated for maintenance therapy"; the object is "edema and/or ascites", of which this claim
+      covers the member "ascites"; cirrhosis of the liver is the disease context.
     status: DRAFT
   - relation: TREATS
     section: INDICATIONS
