@@ -16,15 +16,20 @@ ERRORs are facts the file must get right and a machine can settle:
   has a ``binding`` consistent with what the text names; an unbound descriptor that records
   its ``term_gap``; no bound term broader than, or unrelated to, the single term the text
   names (checked for every descriptor, not only the object);
-- attributions the label states: "the X component" for a component statement, the
-  ingredient within the causal clause for a stated reason — never a mention inside the
-  product's own name;
+- attributions as evidence (dismech's pattern): a verbatim snippet from the quote's label
+  element, in the sentence naming the object (or a list lead governing it), naming the
+  ingredient outside the claim's own condition/agent wording and the product's name, with
+  the wording its basis stands for, and an explanation; every claim explained; members of
+  a coordination that are real expansions of its text; DESI evidence status matching the
+  wording before the object;
 - an allergy contraindication that names its agents, none of them the product's own;
 - source and jurisdiction consistent; at least one valid history record.
 
 WARNINGs are heuristics or gaps a human should look at: a negation cue in front of the
 condition, a relation the quote's wording does not suggest, an unusual ontology for a slot,
-anchors in another ontology, a label revised since the file pinned its version.
+anchors in another ontology, the same wording bound to different terms, a coordination
+without a member or with members its claims leave uncovered, a label revised since the
+file pinned its version.
 """
 
 from __future__ import annotations
@@ -231,21 +236,40 @@ class Checker:
         for p_idx, product in enumerate(data.get("products") or []):
             self._check_product(path, data, product, f"products[{p_idx}]")
         self._check_consistent_bindings(path, data)
+        self._check_member_coverage(path, data)
 
     def _check_consistent_bindings(self, path: Path, data: dict) -> None:
-        """The same wording should bind the same term throughout one file."""
+        """The same wording (and member) should bind the same term throughout one file."""
         seen: dict[str, set[str]] = {}
         for product in data.get("products") or []:
             for claim in product.get("claims") or []:
                 for _slot, desc in _descriptors(claim):
                     term = (desc.get("term") or {}).get("id")
-                    if term and not _coordination_members(desc.get("text", "")):
-                        key = _norm_ws(desc.get("text", "")).lower()
+                    text, member = desc.get("text", ""), desc.get("member")
+                    if term and (member or not _coordination_members(text)):
+                        key = _norm_ws(text).lower() + (f" [{member}]" if member else "")
                         seen.setdefault(key, set()).add(term)
         for text, ids in sorted(seen.items()):
             if len(ids) > 1:
                 self.warn(path, "bindings", f"{text!r} is bound to {sorted(ids)} in different "
                                             "claims; bind one term unless the contexts differ")
+
+    def _check_member_coverage(self, path: Path, data: dict) -> None:
+        """Claims that split a coordinated object should cover every member, once each."""
+        for p, product in enumerate(data.get("products") or []):
+            groups: dict[tuple[str, str], list[str]] = {}
+            for claim in product.get("claims") or []:
+                obj = claim.get("object") or {}
+                if obj.get("member"):
+                    key = (_norm_ws(claim.get("quote", "")).lower(),
+                           _norm_ws(obj.get("text", "")).lower())
+                    groups.setdefault(key, []).append(_norm_ws(obj["member"]).lower())
+            for (_quote, text), members in sorted(groups.items()):
+                items = (_coordination_items(text) or _coordination_items(text, loose=True))
+                if len(set(members)) < len(items):
+                    self.warn(path, f"products[{p}].claims",
+                              f"{text!r} has {len(items)} members, but its claims cover only "
+                              f"{sorted(set(members))}")
 
     def _check_schema(self, path: Path, data: dict) -> bool:
         from linkml.validator import validate
@@ -426,19 +450,20 @@ class Checker:
 
         A label can list effective indications and then, after a DESI statement ("... has
         classified the indications as follows: 'Possibly' effective: ..."), the
-        less-than-effective ones. So the classification that governs a quote is the nearest
-        DESI wording before it, not any wording anywhere in the section.
+        less-than-effective ones. So the classification that governs a claim is the nearest
+        DESI wording before its object, not any wording anywhere in the section (and not
+        before the quote's start: a quote may open with the marker itself).
         """
         if claim["section"] != "INDICATIONS":
             if claim.get("evidence_status"):
                 self.error(path, f"{where}.evidence_status", "applies to indications only")
             return
-        text = _norm_ws(doc.section_text("INDICATIONS"))
-        quote = _norm_ws(claim["quote"])
+        text = _norm_ws(doc.section_text("INDICATIONS")).lower()
+        quote = _norm_ws(claim["quote"]).lower()
         markers = sorted((m.start(), status) for status, pattern in _DESI_WORDING.items()
                          for m in pattern.finditer(text))
         governing = set()
-        for at in (m.start() for m in re.finditer(re.escape(quote), text)):
+        for at in _object_positions(text, quote, (claim.get("object") or {}).get("text", "")):
             before = [status for start, status in markers if start < at]
             governing.add(before[-1] if before else None)
         if not governing:
@@ -476,6 +501,17 @@ class Checker:
         """Text always, verbatim; a term optional; an unbound concept says why."""
         if not _contains(quote, desc.get("text", "")):
             self.error(path, f"{where}.text", f"{desc.get('text')!r} does not occur in the quote")
+        member = desc.get("member")
+        if member is not None:
+            members = _coordination_members(desc.get("text", ""), loose=True)
+            if _norm_ws(member).lower() not in members:
+                self.error(path, f"{where}.member",
+                           f"{member!r} is not a member of {desc.get('text')!r}"
+                           + (f" (members: {members})" if members else
+                              ", which is not a coordination"))
+        elif slot == "object" and _coordination_members(desc.get("text", "")):
+            self.warn(path, f"{where}.member", f"{desc.get('text')!r} is a coordination; name "
+                                               "the member this claim covers in `member`")
         term = desc.get("term")
         if not term:
             if not (desc.get("term_gap") or "").strip():
@@ -528,31 +564,32 @@ class Checker:
                                    "of them or explain in term_gap why none applies")
 
     def _check_specificity(self, path: Path, slot: str, desc: dict, where: str) -> None:
-        """The bound term against what its text names; per member for a coordination.
+        """The bound term against what its text names; against the member, when one is named.
 
-        "renal or hepatic impairment" names two conditions sharing words. Each claim quotes
-        the whole phrase and binds one member, so the check expands the coordination
-        ("renal impairment", "hepatic impairment") and passes when the term fits one member,
-        judging the binding against that member.
+        "renal or hepatic impairment" names two conditions. Each claim quotes the whole
+        phrase and says in ``member`` which one it covers ("hepatic impairment"); the term
+        and binding are judged against that member. Without a member, the term must fit the
+        whole text or one member the validator can judge (one whose words name a term in
+        the term's ontology: "renal" alone names nothing, and must not pass any term).
         """
         text, term, binding = desc.get("text", ""), desc["term"], desc.get("binding")
-        prefix = get_prefix(term["id"])
-        # Only a member whose words name something in the term's ontology can be judged;
-        # "renal" alone names nothing, and must not pass an unrelated term by default.
-        members = [m for m in _coordination_members(text)
-                   if any(get_prefix(a) == prefix for part in self._anchors(slot, m) for a in part)]
-        if not members:
-            findings = self._specificity(slot, text, term, binding)
+        if desc.get("member"):
+            findings = self._specificity(slot, desc["member"], term, binding)
         else:
-            per_member = [self._specificity(slot, m, term, binding) for m in members]
-            clean = [f for f in per_member if not any(level == "ERROR" for level, _, _ in f)]
-            if clean:
-                findings = min(clean, key=len)
-            else:
-                findings = [("ERROR", "", f"{term['id']} fits no member of the coordination "
-                                          f"{text!r} ({', '.join(repr(m) for m in members)}): "
-                                          + "; ".join(msg for f in per_member
-                                                      for level, _, msg in f if level == "ERROR"))]
+            findings = self._specificity(slot, text, term, binding)
+            prefix = get_prefix(term["id"])
+            members = [m for m in _coordination_members(text)
+                       if any(get_prefix(a) == prefix
+                              for part in self._anchors(slot, m) for a in part)]
+            if members and any(level == "ERROR" for level, _, _ in findings):
+                per_member = [self._specificity(slot, m, term, binding) for m in members]
+                clean = [f for f in per_member
+                         if not any(level == "ERROR" for level, _, _ in f)]
+                findings = min(clean, key=len) if clean else [(
+                    "ERROR", "", f"{term['id']} fits neither {text!r} nor any member of it "
+                                 f"({', '.join(repr(m) for m in members)}): "
+                                 + "; ".join(msg for f in per_member
+                                             for level, _, msg in f if level == "ERROR"))]
         for level, suffix, msg in findings:
             self._add(level, path, f"{where}{suffix}", msg)
 
@@ -661,6 +698,7 @@ class Checker:
     def _anchors(self, slot: str, text: str) -> tuple[dict[str, bool], dict[str, bool]]:
         """Terms the text names, from ontologies and from the stores: id -> whole text?"""
         prefixes, store_kind = ANCHOR_SOURCES.get(slot, ((), None))
+        text = _drop_exhaustive(text)
         # Plurals are folded for diseases, phenotypes and anatomy, whose labels are singular.
         # Not for chemicals: in ChEBI the plural is the class ("benzimidazoles") and the
         # singular the parent compound ("benzimidazole"), a different, narrower term.
@@ -713,15 +751,29 @@ class Checker:
                            where: str) -> None:
         """An attribution is evidence: the label's own words, checked mechanically.
 
-        dismech's pattern. The snippet must be verbatim, sit in the same label element as the
-        claim's quote (inside it or within a sentence's reach of it), and name the ingredient
-        outside the product's own name; an explanation must argue the case. Whether the words
-        really attribute the claim is the reviewer's call, not a parser's: four rounds of
-        review showed free-text inference both accepting wrong attributions and rejecting
-        right ones. The basis is a classification, checked only by a warning.
+        dismech's pattern. The snippet must be verbatim from the label element holding the
+        claim's quote, in the sentence that names the claim's object (or be a list lead
+        ending in ":" that governs it), name the ingredient somewhere other than the claim's
+        own condition and agent wording and the product's name, and show the wording its
+        basis stands for. An explanation must argue the case. Whether the words really
+        attribute the claim is the reviewer's call: four rounds of review showed that
+        free-text inference both accepted wrong attributions and rejected right ones.
         """
-        chunks = doc.sections.get(claim["section"]) or []
+        chunks = [_norm_ws(c) for c in doc.sections.get(claim["section"]) or []]
         quote = _norm_ws(claim["quote"]).lower()
+        element = next((c for c in chunks if quote in c.lower()), None)
+        if element is None:  # a quote across elements: the section is the element
+            element = _norm_ws(doc.section_text(claim["section"]))
+        el = element.lower()
+        objects = _object_positions(el, quote, (claim.get("object") or {}).get("text", ""))
+        # A condition or agent wording that mentions an ingredient ("aspirin associated
+        # gastric ulcers") does not attribute anything. A bare ingredient name is left alone:
+        # it is also the subject of "Clarithromycin is contraindicated", and a bare-name
+        # snippet fails the basis wording anyway.
+        bare = {n for ns in names.values() for n in ns}
+        own_words = sorted({t for _s, d in _descriptors(claim)
+                            if (t := _norm_ws(d.get("text", "")).lower()) and t not in bare},
+                           key=len, reverse=True)
         for i, attribution in enumerate(claim.get("attributed_to") or []):
             awhere = f"{where}.attributed_to[{i}]"
             ingredient, basis = attribution["ingredient"], attribution["basis"]
@@ -734,34 +786,56 @@ class Checker:
             if not (attribution.get("explanation") or "").strip():
                 self.error(path, f"{awhere}.explanation", "explain how the snippet ties the "
                                                           "claim to the ingredient")
-            element = next((c for c in map(_norm_ws, chunks)
-                            if low and low in c.lower() and quote in c.lower()), None)
             if not low:
                 self.error(path, f"{awhere}.snippet", "required: the label's words that "
                                                       "attribute the claim")
                 continue
-            if element is None:
-                self.error(path, f"{awhere}.snippet", "must be verbatim from the same label "
-                                                      "element as the claim's quote")
+            starts = [m.start() for m in re.finditer(re.escape(low), el)]
+            if not starts:
+                self.error(path, f"{awhere}.snippet", "must be verbatim from the label element "
+                                                      "that holds the claim's quote")
                 continue
-            el = element.lower()
-            gap = _gap(el, low, quote)
-            if gap > _SNIPPET_REACH:
-                self.error(path, f"{awhere}.snippet", f"is {gap} characters away from the "
-                                                      "claim's quote; it must be inside it or "
-                                                      "beside it")
-            stripped = _strip_product_names(low, product_names)
-            if not any(_word(n).search(stripped) for n in names[ingredient]):
+            if not any(_governs(el, at, len(low), obj) for at in starts for obj in objects):
                 self.error(path, f"{awhere}.snippet",
-                           f"never names {' / '.join(sorted(names[ingredient]))} (outside the "
-                           "product's own name)")
-            cue_ok = {"COMPONENT_STATEMENT": "component" in low,
-                      "STATED_REASON": bool(_CAUSE_CUES.search(low) or "therefore" in low),
-                      "INGREDIENT_SUBJECT": any(low.startswith(n) or low.startswith("the " + n)
-                                                for n in names[ingredient])}.get(basis, True)
-            if not cue_ok:
-                self.warn(path, f"{awhere}.basis", f"{basis}, but the snippet's wording does "
-                                                   "not show it; check the classification")
+                           "is not in the sentence that names the claim's object (nor a list "
+                           "lead ending in ':' that governs it)")
+            stripped = low
+            for words in own_words:
+                stripped = stripped.replace(words, " ")
+            stripped = _strip_product_names(stripped, product_names)
+            ingredient_names = sorted(names[ingredient])
+            if not any(_word(n).search(stripped) for n in ingredient_names):
+                self.error(path, f"{awhere}.snippet",
+                           f"never names {' / '.join(ingredient_names)} outside the claim's own "
+                           "condition and agent wording and the product's name")
+                continue
+            self._check_basis(path, claim, basis, low, ingredient_names, awhere)
+
+    def _check_basis(self, path: Path, claim: dict, basis: str, low: str,
+                     ingredient_names: list[str], where: str) -> None:
+        """The snippet shows the kind of statement its basis names."""
+        alternatives = "|".join(re.escape(n) for n in ingredient_names)
+        if basis == "COMPONENT_STATEMENT":
+            ok = bool(re.search(rf"\b(?:{alternatives})\s+component\b", low))
+            need = '"the <ingredient> component"'
+        elif basis == "INGREDIENT_SUBJECT":
+            ok = bool(re.match(rf"(?:the\s+)?(?:{alternatives})\b[^.;:]{{0,40}}?"
+                               r"\b(?:is|are|should|must|may)\b", low))
+            need = "the snippet to open with the ingredient as the subject of the claim's verb"
+        elif basis == "STATED_REASON":
+            ok = bool(_CAUSE_CUES.search(low) or re.search(r"\btherefore\b", low))
+            need = "a causal cue (because, due to, therefore, ...)"
+        elif basis == "INTERACTING_INGREDIENT":
+            if not claim.get("when_coadministered_with"):
+                self.error(path, f"{where}.basis", "INTERACTING_INGREDIENT needs the other agent "
+                                                   "in when_coadministered_with")
+            ok = bool(re.search(r"concomitant|co-?administ|coadminist|together with|"
+                                r"combination with|use with", low))
+            need = "co-administration wording (concomitant, co-administration, ...)"
+        else:
+            return
+        if not ok:
+            self.error(path, f"{where}.basis", f"{basis} needs {need}")
 
     def _is_allergy(self, obj: dict) -> bool:
         """Words or hierarchy: "allergy", or a term under a hypersensitivity subtree."""
@@ -851,7 +925,8 @@ def _desc_key(desc: dict | None) -> str:
     if not desc:
         return ""
     term = desc.get("term") or {}
-    return term.get("id") or _norm_ws(desc.get("text", "")).lower()
+    key = term.get("id") or _norm_ws(desc.get("text", "")).lower()
+    return key + (f" [{_norm_ws(desc['member']).lower()}]" if desc.get("member") else "")
 
 
 def _claim_key(claim: dict) -> tuple:
@@ -870,38 +945,83 @@ def _claim_key(claim: dict) -> tuple:
     )
 
 
-_COORDINATOR = re.compile(r"\s+(?:or|and/or)\s+|(?<=\w)/(?=\w)")
+#: Coordinators the validator reads on its own: "or", "and/or", "/", and a comma list that
+#: ends in ", or". "and", "&" and bare commas also join names of one syndrome ("asthma,
+#: rhinitis, and nasal polyps"), so they count only when a curator names a ``member``.
+_COORDINATOR = re.compile(r"\s*,\s*(?:or|and/or)\s+|\s+(?:or|and/or)\s+|(?<=\w)/(?=\w)")
+_LOOSE_COORDINATOR = re.compile(
+    r"\s*,\s*(?:or|and/or|and)\s+|\s+(?:or|and/or|and|&)\s+|(?<=\w)/(?=\w)|\s*,\s+")
+#: Alternatives that together name the whole class: "liver tumors, benign or malignant",
+#: "inherited or acquired hypercoagulopathies". Not a coordination: one claim, head term.
+_EXHAUSTIVE_PAIRS = {frozenset(p) for p in (
+    ("benign", "malignant"), ("inherited", "acquired"), ("hereditary", "acquired"),
+    ("congenital", "acquired"), ("arterial", "venous"), ("acute", "chronic"),
+    ("fatal", "nonfatal"), ("fatal", "non-fatal"), ("primary", "secondary"))}
 
 
-def _coordination_members(text: str) -> list[str]:
-    """The conditions a coordinated phrase names, or [] when it is not one.
-
-    "renal or hepatic impairment" -> renal impairment, hepatic impairment (shared head);
-    "hepatic impairment or disease" -> hepatic impairment, hepatic disease (shared
-    modifier); "common cold/flu" -> common cold, flu. All readings are returned; the check
-    passes when the bound term fits any one of them.
-    """
+def _coordination_items(text: str, *, loose: bool = False) -> list[list[str]]:
+    """The coordinated items of ``text`` as word lists, or [] when it is not a coordination."""
     low = _norm_ws(text).lower().strip(".,;:()[]\"'")
     if re.search(r"\bwith or without\b", low):
         return []
-    parts = _COORDINATOR.split(low, maxsplit=1)
-    if len(parts) != 2:
+    if not loose and "," in low and not re.search(r",\s*(?:or|and/or)\s", low):
+        # "liver tumors, benign or malignant": the comma sets off a modifier, not an item.
+        pattern = re.compile(r"\s+(?:or|and/or)\s+|(?<=\w)/(?=\w)")
+    elif loose or "," in low:  # "renal, hepatic, or cardiac impairment"
+        pattern = _LOOSE_COORDINATOR if loose else re.compile(_COORDINATOR.pattern + r"|\s*,\s+")
+    else:
+        pattern = _COORDINATOR
+    items = [[w.strip(".,;:()[]\"'") for w in part.split()] for part in pattern.split(low)]
+    items = [[w for w in item if w] for item in items]
+    items = [item for item in items if item]
+    if len(items) < 2:
         return []
-    left, right = parts[0].split(), parts[1].split()
-    if not left or not right:
+    if len(items) == 2 and frozenset((items[0][-1], items[1][0])) in _EXHAUSTIVE_PAIRS:
         return []
-    members = [" ".join(left), " ".join(right)]
-    if len(left) == 1 and len(right) > 1:
-        members.append(" ".join([left[0], *right[1:]]))
-    if len(right) == 1 and len(left) > 1:
-        members.append(" ".join([*left[:-1], right[0]]))
+    return items
+
+
+_PAIR = re.compile(r"\b([\w-]+)\s*,?\s+(?:or|and/or)\s+([\w-]+)\b", re.I)
+
+
+def _drop_exhaustive(text: str) -> str:
+    """``text`` without an exhaustive pair: "arterial or venous thrombosis" -> "thrombosis".
+
+    The pair names the whole class, so neither alternative may anchor a narrower term.
+    """
+    return _norm_ws(_PAIR.sub(
+        lambda m: " " if frozenset((m[1].lower(), m[2].lower())) in _EXHAUSTIVE_PAIRS
+        else m[0], text)).strip(" ,")
+
+
+def _coordination_members(text: str, *, loose: bool = False) -> list[str]:
+    """The conditions a coordinated phrase names, or [] when it is not one.
+
+    "renal or hepatic impairment" -> renal impairment, hepatic impairment (shared head);
+    "hepatic impairment or disease" -> hepatic disease (shared modifier); "severe renal or
+    hepatic impairment" -> severe renal impairment, severe hepatic impairment (both);
+    "common cold/flu" -> common cold, flu. All readings are returned, the literal items
+    among them; a check passes when the bound term fits one of them. Exhaustive pairs
+    ("benign or malignant") are not coordinations.
+    """
+    items = _coordination_items(text, loose=loose)
+    if not items:
+        return []
+    members = [" ".join(item) for item in items]
+    first, last = items[0], items[-1]
+    for item in items[:-1]:  # shared head: "renal" + "impairment"
+        members += [" ".join([*item, *last[k:]]) for k in range(1, len(last))]
+    for item in items[1:]:  # shared modifier: "severe" / "hepatic" + "disease"
+        members += [" ".join([*first[:j], *item]) for j in range(1, len(first))]
     return list(dict.fromkeys(members))
 
 
 def _singular(span: str) -> str:
     """Drop a plural "s" from the last word ("gastric ulcers" -> "gastric ulcer")."""
     head, _, last = span.rpartition(" ")
-    if len(last) > 3 and last.endswith("s") and not last.endswith("ss"):
+    if len(last) > 4 and last.endswith("ies"):
+        last = last[:-3] + "y"  # "hypercoagulopathies", "allergies"
+    elif len(last) > 3 and last.endswith("s") and not last.endswith("ss"):
         last = last[:-1]
     return f"{head} {last}".strip()
 
@@ -933,18 +1053,44 @@ def _strip_product_names(text: str, product_names: list[str], keep_case: bool = 
 
 #: How far (characters) an attribution snippet may sit from the claim's quote: inside it, or
 #: in the same label element close enough to be the same statement.
-_SNIPPET_REACH = 200
+#: Sentence boundaries inside one label element.
+_SENTENCE_END = re.compile(r"(?<=[.;])\s+(?=[A-Z0-9(])", re.I)
+#: A sentence that makes a claim of its own; it ends the reach of an earlier list lead.
+_CLAIM_SENTENCE = re.compile(r"\b(?:is|are)\s+(?:also\s+)?(?:indicated|contraindicated)\b")
 
 
-def _gap(element: str, snippet: str, quote: str) -> int:
-    """Characters between the snippet and the quote in ``element`` (0 when they overlap)."""
-    best = None
-    for s_at in (m.start() for m in re.finditer(re.escape(snippet), element)):
-        for q_at in (m.start() for m in re.finditer(re.escape(quote), element)):
-            s_end, q_end = s_at + len(snippet), q_at + len(quote)
-            gap = max(0, max(s_at, q_at) - min(s_end, q_end))
-            best = gap if best is None else min(best, gap)
-    return best if best is not None else 10**9
+def _object_positions(element: str, quote: str, obj: str) -> list[int]:
+    """Where the claim's object text sits in ``element``, inside each copy of the quote.
+
+    All lowercased and whitespace-normalised. Falls back to the quote's start when the
+    object text is not inside the quote (the descriptor check reports that).
+    """
+    obj = _norm_ws(obj).lower()
+    out = []
+    for q in (m.start() for m in re.finditer(re.escape(quote), element)):
+        at = element.find(obj, q, q + len(quote)) if obj else -1
+        out.append(at if at >= 0 else q)
+    return out
+
+
+def _governs(element: str, at: int, length: int, obj: int) -> bool:
+    """Whether a snippet at ``at`` speaks for the object at ``obj``.
+
+    The same sentence does; so does a list lead ending in ":" ("Atorvastatin is
+    indicated:") before the object, up to the next sentence that makes a claim of its own.
+    The case-insensitive sentence split errs towards longer sentences, never shorter.
+    """
+    bounds = [0, *(m.start() for m in _SENTENCE_END.finditer(element)), len(element) + 1]
+
+    def sentence(pos: int) -> int:
+        return max(i for i, b in enumerate(bounds) if b <= pos)
+
+    end = at + length
+    if sentence(at) == sentence(obj) or sentence(max(at, end - 1)) == sentence(obj):
+        return True
+    snippet = element[at:end].rstrip()
+    return (snippet.endswith(":") and end <= obj
+            and not _CLAIM_SENTENCE.search(element, end, obj))
 
 
 @lru_cache(maxsize=1)

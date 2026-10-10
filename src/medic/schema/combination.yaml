@@ -136,9 +136,17 @@ enums:
           with concomitant use of aspirin"). Not an allergen mention.
       INGREDIENT_SUBJECT:
         description: >-
-          The ingredient is the subject of the claim's sentence ("Clarithromycin is
-          contraindicated in patients with ..."), as co-packaged labels (one label for several
-          separate products) write each product's own text.
+          The ingredient is the grammatical subject of the claim's verb ("Clarithromycin is
+          contraindicated in patients with ...", "In patients with CAD, amlodipine is
+          indicated to ..."), on any product: co-packaged labels write each product's text
+          this way, and so do some single-product labels. A lead-in phrase before the subject
+          does not change it; a brand name is not the ingredient.
+      INTERACTING_INGREDIENT:
+        description: >-
+          The label names the ingredient as the party to a contraindicated co-administration
+          ("Concomitant administration of clarithromycin and colchicine is contraindicated
+          in patients with renal or hepatic impairment"). Only on a claim that records the
+          other agent in when_coadministered_with.
 
 classes:
   CombinationProduct:
@@ -225,6 +233,7 @@ classes:
       Unbound is allowed and explicit: ``term_gap`` records what was searched.
     slots:
       - text
+      - member
       - term
       - binding
       - term_gap
@@ -435,6 +444,13 @@ slots:
   binding:
     range: BindingEnum
     description: Required when ``term`` is given.
+  member:
+    range: string
+    description: >-
+      For a coordinated ``text`` ("renal or hepatic impairment"), the one member this claim
+      covers, as the curator expands it ("hepatic impairment"). The validator checks that
+      it is an expansion of the text, judges the term and binding against it, and warns when
+      the claims for one coordinated text do not cover every member.
   term_gap:
     range: string
     description: >-

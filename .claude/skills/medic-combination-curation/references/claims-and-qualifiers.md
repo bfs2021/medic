@@ -110,8 +110,10 @@ attributed_to:
     explanation: The label gives aspirin as the reason for the contraindication.
 ```
 
-- `snippet` is the label's own words, verbatim, from the same label element as
-  the quote: inside the quote or within a sentence of it.
+- `snippet` is the label's own words, verbatim, from the label element holding
+  the quote, in the sentence that names the claim's object — or a list lead
+  ending in ":" ("Atorvastatin is indicated:") before the object's item, with
+  no other claim sentence in between.
 - `explanation` says how those words tie this claim to this ingredient, without
   adding conclusions they do not state.
 - `basis` classifies the statement:
@@ -119,19 +121,21 @@ attributed_to:
 | basis | when | example snippet |
 |---|---|---|
 | `COMPONENT_STATEMENT` | the label assigns the claim to the component | "The omeprazole component of ..." |
-| `INGREDIENT_SUBJECT` | the ingredient is the subject of the claim's sentence — how co-packaged labels write each product's text, and how some single-product labels name their own ingredient | "Clarithromycin is contraindicated"; "Clarithromycin should not be given" |
+| `INGREDIENT_SUBJECT` | the ingredient is the grammatical subject of the claim's verb, whatever lead-in precedes it — how co-packaged labels write each product's text, and how some single-product labels name their own ingredient. The snippet starts at the subject | "Clarithromycin is contraindicated"; "Clarithromycin should not be given"; "amlodipine is indicated to reduce the risk" (after "In patients with CAD,") |
+| `INTERACTING_INGREDIENT` | the label names the ingredient as party to a contraindicated co-administration; the claim records the other agent in `when_coadministered_with` | "Concomitant administration of clarithromycin and colchicine is contraindicated" |
 | `STATED_REASON` | the label names the ingredient as the cause | "because of the risk of Reye's syndrome with concomitant use of aspirin"; "contains atorvastatin and is therefore contraindicated" |
 
-The validator checks the snippet mechanically: verbatim, in the quote's
-element, near the quote, naming the ingredient outside the product's own name
-(a generic name such as "Aspirin and Omeprazole Tablets" lists every
-ingredient and attributes nothing). It warns when the snippet's wording does
-not look like the basis. It does not decide whether the words attribute the
-claim; the human reviewer does, from your snippet and explanation. Hold
-yourself to the old rules: the component wording governs only its own
-sentence's items, a stated reason must give the ingredient as the cause of
-*this* claim, and a lead-in ("In patients with CAD, amlodipine ...") is not a
-subject.
+The validator checks the snippet mechanically, as errors: verbatim, in the
+quote's element, in the object's sentence or its list lead, naming the
+ingredient outside the claim's own condition and agent wording ("aspirin
+associated gastric ulcers") and outside the product's own name (a generic name
+such as "Aspirin and Omeprazole Tablets" lists every ingredient and attributes
+nothing), and showing the basis's wording ("X component"; a causal cue; the
+ingredient opening the snippet before its verb; co-administration wording). It
+does not decide whether the words attribute the claim; the human reviewer
+does, from your snippet and explanation. A stated reason must give the
+ingredient as the cause of *this* claim; a brand name (LIPITOR) is not the
+ingredient.
 
 Not attribution:
 
@@ -229,12 +233,28 @@ Guidance:
   `CONTRAINDICATED_IN` claim; its `explanation` says it is contraindicated as a
   thrombotic risk factor. There is no claim for the heading condition.
 - **Coordinations** ("renal or hepatic impairment", "acute or severe hepatic
-  failure", "hepatic impairment or disease"): one claim per member. Each
-  quotes, and uses as object `text`, the whole shared phrase; the term binds
-  one member and the `explanation` names it. The validator expands the phrase
-  ("renal impairment", "hepatic impairment") and judges the term and binding
-  against the member it fits. "with or without fever" is not a coordination
-  of conditions.
+  failure", "QT prolongation or ventricular cardiac arrhythmia"): one claim per
+  member. Each uses the whole verbatim phrase as object `text` and names its
+  member in `member`:
+
+  ```yaml
+  object:
+    text: renal or hepatic impairment
+    member: hepatic impairment
+    term: {id: HP:0001410, label: Decreased liver function}
+    binding: EXACT
+  ```
+
+  The validator checks the member is an expansion of the text (shared heads
+  and modifiers: "severe renal or hepatic impairment" -> "severe hepatic
+  impairment"; lists "A, B, or C"; "/", "&", "and", commas), judges the term
+  and binding against it, and warns when the phrase's members are not all
+  covered. "with or without fever" is not a coordination of conditions, and a
+  named syndrome ("asthma, rhinitis, and nasal polyps") is one condition.
+- **Exhaustive pairs** ("Liver tumors, benign or malignant", "inherited or
+  acquired hypercoagulopathies", "arterial or venous thrombosis"): the
+  alternatives name the whole class. One claim, bound to the class term,
+  normally EXACT; no `member`.
 - A contraindication stated only under Warnings and Precautions is never a
   `CONTRAINDICATED_IN` claim.
 

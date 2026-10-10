@@ -66,7 +66,11 @@ _LIMITATION_HEADING = re.compile(r"^\s*(\d+(\.\d+)*\s+)?Limitations? of Use\s*:?
 #: A chunk that opens a new numbered subsection ("1.4 Something", "2 DOSAGE ...").
 _NUMBERED_HEADING = re.compile(r"^\s*\d+(\.\d+)*\s+[A-Z]")
 #: A chunk that states an indication rather than restricting one ("X is also indicated for").
-_INDICATION_STATEMENT = re.compile(r"\b(?:is|are)\s+(?:also\s+)?indicated\b", re.I)
+_INDICATION_STATEMENT = re.compile(r"\b(?:is|are)\s+(?:also\s+)?indicated\b(?!\s+(?:only|solely))",
+                                   re.I)
+#: Wording that limits use: a chunk carrying it stays inside the limitation.
+_LIMITING = re.compile(r"\b(?:not|only|solely|limited|should not|do not|has not|have not)\b",
+                       re.I)
 #: Longest chunk without closing punctuation still read as a heading ("Hypertension").
 _HEADING_MAX_WORDS = 8
 
@@ -76,7 +80,12 @@ def _ends_limitation(part: str, part_spans: list[dict]) -> bool:
 
     A numbered subsection, a section header, a short unpunctuated heading ("Hypertension"),
     or a sentence stating an indication all start something that is not the limitation.
+    A chunk with limiting wording ("Not for use in acute bronchospasm", "indicated only as
+    an adjunct") never does, punctuated or not: limitation bullets often lack a period.
     """
+    if _LIMITING.search(part):
+        return bool(_NUMBERED_HEADING.match(part)
+                    or any(s["role"] == "SECTION_HEADER" for s in part_spans))
     text = part.strip()
     heading_like = (bool(text) and len(text.split()) <= _HEADING_MAX_WORDS
                     and text[-1] not in ".;:)")

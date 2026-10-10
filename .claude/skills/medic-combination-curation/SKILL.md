@@ -39,26 +39,37 @@ file in a session; it is authoritative over this skill if they ever disagree.
    an `attributed_to` entry only when the label itself ties the claim to the
    ingredient. Each entry is evidence in dismech's pattern:
    - `snippet`: the label's own words that make the tie, copied verbatim from
-     the same label element as the quote, inside the quote or right beside it
-     ("The omeprazole component of ...", "because of the risk of Reye's
-     syndrome with concomitant use of aspirin", "Clarithromycin is
-     contraindicated", "contains atorvastatin and is therefore");
+     the label element that holds the quote, in the same sentence as the
+     claim's object — or a list lead ending in ":" ("Atorvastatin is
+     indicated:") that governs the object's list item ("The omeprazole
+     component of ...", "because of the risk of Reye's syndrome with
+     concomitant use of aspirin", "Clarithromycin is contraindicated",
+     "contains atorvastatin and is therefore"). Keep quotes to the claim's own
+     item; never widen a quote just to reach a snippet;
    - `explanation`: one or two sentences on how the snippet ties *this* claim
      to *this* ingredient, without adding conclusions the words do not state;
    - `basis`: the kind of statement — `COMPONENT_STATEMENT` (the label assigns
      the claim to the component), `STATED_REASON` (it names the ingredient as
-     the cause), `INGREDIENT_SUBJECT` (the ingredient is the subject of the
-     claim's sentence, on any product, single or co-packaged).
-   The validator checks the snippet mechanically (verbatim, same element, near
-   the quote, names the ingredient outside the product's own name; "Ipratropium
-   Bromide and Albuterol Sulfate Inhalation Solution is indicated" names no
-   ingredient). Whether the words really attribute the claim is the human
+     the cause), `INGREDIENT_SUBJECT` (the ingredient is the grammatical
+     subject of the claim's verb, on any product, single or co-packaged; a
+     lead-in such as "In patients with CAD, amlodipine is indicated ..." does
+     not change that — start the snippet at the subject, "amlodipine is
+     indicated ..."; a brand name such as LIPITOR is not the ingredient),
+     `INTERACTING_INGREDIENT` (the label names the ingredient as party to a
+     contraindicated co-administration, "Concomitant administration of
+     clarithromycin and colchicine is contraindicated"; only with the other
+     agent in `when_coadministered_with`).
+   The validator checks the snippet mechanically, as errors: verbatim, from
+   the quote's element, in the object's sentence (or its list lead), naming the
+   ingredient somewhere other than the claim's own condition and agent wording
+   ("aspirin associated gastric ulcers" attributes nothing to aspirin) and the
+   product's own name ("Ipratropium Bromide and Albuterol Sulfate Inhalation
+   Solution is indicated" names no ingredient), and showing its basis's
+   wording. Whether the words really attribute the claim is the human
    reviewer's call, made from your snippet and explanation, so make them
-   checkable: a later "The omeprazole component ..." sentence does not credit
-   omeprazole with an earlier item, and a lead-in ("In patients with CAD,
-   amlodipine ...") is not a subject. An allergen mention is not attribution,
-   and neither is pharmacology you know. If the label speaks of the product as
-   a whole, omit `attributed_to`.
+   checkable. An allergen mention is not attribution, and neither is
+   pharmacology you know. If the label speaks of the product as a whole, omit
+   `attributed_to`.
 2b. **Every claim explains itself.** `explanation` (required) says how the
    quote states this claim: which words give the relation, the object, and
    each qualifier, and any reading you made (a coordination member, a risk
@@ -81,7 +92,8 @@ file in a session; it is authoritative over this skill if they ever disagree.
    the agents in `object_specialization` — every allergy contraindication must
    name its agents there. When one sentence lists both, curate a claim
    carrying only the other agents. "Allergy" is judged by words *and* by the
-   term's place in MONDO/HP (angioedema and urticaria count). Other drug-caused
+   term's place in MONDO/HP (anything under MONDO allergic disease or HP
+   Allergy; hereditary angioedema and asthma are not allergies). Other drug-caused
    conditions may name the product's own ingredient as their agent
    ("thrombocytopenia with use of trimethoprim"): that is curated.
 4. **Section discipline.** `INDICATIONS` claims come from Indications and
@@ -152,8 +164,9 @@ and Contraindications text split into typed spans (`[SECTION_TEXT]`,
 `[SUBSECTION_HEADER]`, `[LIMITATION_STATEMENT]`). That printed text is your only
 quotable source. Read both sections in full before writing anything. Labels
 usually carry the text twice (full prescribing information and Highlights);
-either copy is quotable, but a quote must come from a single span, and never
-from a `[LIMITATION_STATEMENT]` span.
+either copy is quotable. Quote from a single span where you can (the validator
+warns when a quote crosses spans), and never from a `[LIMITATION_STATEMENT]`
+span.
 
 Start the file from the skeleton. `--write` creates it at its computed path
 (creating `kb/combinations/` if needed, refusing to overwrite) with identity,
@@ -215,10 +228,19 @@ Contraindications section. For each sentence ask:
      each as its own claim. The explanation says the item is contraindicated as
      a thrombotic risk factor; the heading condition is not a claim of its own.
    - **Coordinations** ("renal or hepatic impairment", "acute or severe hepatic
-     failure", "hepatic impairment or disease"): one claim per member, each
-     quoting and with object `text` the *whole* shared phrase. The validator
-     expands the coordination and checks the term against the member it fits;
-     the explanation names the member.
+     failure", "QT prolongation or ventricular cardiac arrhythmia", "sinus
+     congestion & pressure", "itchy, watery eyes"): one claim per member. Each
+     claim's object `text` is the *whole* verbatim phrase, and its `member` is
+     the one member it covers, as you expand it ("hepatic impairment",
+     "sinus pressure", "itchy eyes"). The validator checks that the member is an
+     expansion of the text (it reads "or", "and/or", "/", commas, "and", "&"),
+     judges the term and binding against the member, and warns when a phrase's
+     members are not all covered. Do not use `member` for a named syndrome
+     ("asthma, rhinitis, and nasal polyps") — that is one condition.
+   - **Exhaustive pairs** ("Liver tumors, benign or malignant", "inherited or
+     acquired hypercoagulopathies", "arterial or venous thrombosis"): the
+     alternatives together name the whole class, so this is one claim bound to
+     the class term (liver neoplasm, thrombophilia, thrombosis), usually EXACT.
 6. Does a contraindication apply only with a co-administered agent ("Do not
    co-administer aliskiren ... in patients with diabetes")? Object = the
    condition; the agent in `when_coadministered_with`. A contraindication with
@@ -315,11 +337,16 @@ Errors block; fix every one and re-run until there are none. Typical fixes:
 | no term source is configured for PREFIX | Use a configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI), or, if another is genuinely more accurate, report it so a human can add a source in `conf/curation_terms.yaml` |
 | no committed label pin | Run `uv run python -m medic.curation.label <setid> --pin` and stage the pin, if DailyMed still serves that version; otherwise re-curate against the current version |
 | binding warning: X is what only part of the text names | The remaining words may narrow the condition; use BROADER unless they don't |
-| snippet must be verbatim from the same label element / is N characters away | Copy the attributing words from the element the quote is in, inside or beside the quote; if the label only says it elsewhere, it does not attribute this claim |
+| snippet must be verbatim from the label element that holds the claim's quote / is not in the sentence that names the claim's object | Copy the attributing words from the object's own sentence, or its list lead ending in ":"; if the label only says it elsewhere, it does not attribute this claim. Never widen the quote to reach it |
 | snippet never names X (outside the product's own name) | The snippet must name the ingredient itself; a product name is not an attribution |
-| basis warning: the snippet's wording does not show it | Check the classification (component wording, a cause, or the ingredient as subject) |
+| never names X outside the claim's own condition and agent wording | The ingredient appears only as part of the condition or allergen; that is not an attribution |
+| BASIS needs ... | The snippet must show its basis: "the X component", a causal cue, the ingredient opening the snippet as the verb's subject, or co-administration wording; reclassify or drop it |
+| INTERACTING_INGREDIENT needs the other agent in when_coadministered_with | Record the co-administered agent |
 | explain how the quote states this claim / the snippet ties the claim | Write the explanation; it is required |
-| X fits no member of the coordination | Bind a term for one member ("renal impairment" in "renal or hepatic impairment"), one claim per member |
+| X fits neither the text nor any member of it | Add `member` and bind a term for that member, one claim per member |
+| 'M' is not a member of 'TEXT' | Write the member as an expansion of the text's own words ("hepatic impairment" for "renal or hepatic impairment") |
+| TEXT is a coordination; name the member (warning) | Add `member`; or, for an exhaustive pair or a named syndrome, say so in the explanation |
+| TEXT has N members, but its claims cover only ... (warning) | Add the missing member's claim, or explain in notes why it is not curated |
 | allergy contraindication must name the agents | Add the other agents as specializations, or drop the claim if they are all the product's own |
 | drop the product's own ingredients | Keep only the other agents as specializations |
 | curator_id is not a reference to this repository's SKILL.md with its git blob id | Commit the skill, regenerate the curator block with the label helper |
@@ -566,7 +593,9 @@ Note what is **absent**, and why:
 | Pharmacology-based attribution ("omeprazole is a PPI so it must be the ulcer part") | Attribution must be stated by the label | Leave unattributed; say in `notes` it looks component-specific |
 | An explanation that argues beyond the words ("omeprazole protects the stomach, so ...") | The reviewer approves the label's words, not your pharmacology | Say only what the snippet or quote states |
 | A risk-factor list curated as its heading ("thrombotic diseases") | The items are what is contraindicated | One claim per risk factor |
-| One claim for "renal or hepatic impairment" bound to one of them | Silently drops the other member | One claim per member, each with the whole phrase |
+| One claim for "renal or hepatic impairment" bound to one of them | Silently drops the other member | One claim per member, each with the whole phrase and its `member` |
+| Splitting an exhaustive pair ("inherited or acquired hypercoagulopathies") | The pair is the whole class; the split claims repeat it | One claim, the class term |
+| Widening a quote to swallow a distant attribution | Hides that the attribution is not in the object's sentence | Item-sized quote; snippet from the object's sentence or its list lead |
 | Bundling several conditions into one claim | Each condition is its own edge downstream | One claim per condition / context |
 | Using the label wording as `term.label` | `label` must be the ontology label | Wording goes in the descriptor's `text` |
 | Marking anything REVIEWED | Only humans review | `DRAFT` everywhere |

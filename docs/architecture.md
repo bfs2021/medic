@@ -393,9 +393,11 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   it. Members a label lists as examples ("e.g.", "including") are `examples` on the
   category's claim, not claims of their own, unless a member carries its own restriction
   ("if over age 35"), which makes it a claim. Risk-factor lists, coordinations ("renal or
-  hepatic impairment", one claim per member quoting the shared phrase) and OTC symptom lists
-  (one `AMELIORATES_CONDITION` claim per symptom, the named condition as disease context)
-  are split per item; a
+  hepatic impairment": one claim per member, each with the whole phrase as text and its
+  `member`) and OTC symptom lists (one `AMELIORATES_CONDITION` claim per symptom, the named
+  condition as disease context) are split per item; exhaustive pairs ("benign or malignant")
+  are one claim on the class term; an ingredient named as party to a contraindicated
+  co-administration is attributed as `INTERACTING_INGREDIENT`; a
   contraindication that holds only with a co-administered agent records it in
   `when_coadministered_with`; DESI "possibly/probably effective" indications carry
   `evidence_status`. Pregnancy, lactation and contraception have no term in the configured
@@ -415,7 +417,8 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   (`medic.curation.label`) fetches the current SPL (cached under `cache/labels/dailymed/`) and
   prints the ingredients, computed identity and typed spans (HTML entities decoded; OTC "Do
   not use" read as Contraindications; a full-text "Limitations of Use" heading types the
-  paragraphs under it, up to the next heading or indication statement); `--write`/`--pin` write the
+  paragraphs under it, up to the next heading or indication statement — a chunk with
+  limiting wording such as "not" or "only" stays inside); `--write`/`--pin` write the
   committed pin, and `--verify-pin` recomputes a pin from the label XML; `uv run python -m medic.curation.terms search|info` looks terms up in the
   ontologies' OBO releases, cached under `cache/ontologies/`; `just combination-worklist`
   writes `curation/combination_worklist.tsv` from the pipeline's fan-out.
@@ -428,19 +431,20 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   carry their label; unbound descriptors with a `term_gap`; for **every** descriptor, a term
   no broader than, and not unrelated to, what its own words name (every word span is looked
   up as a term label/synonym and as a grounding-store row, compared through `is_a`), and a
-  `binding` consistent with what the whole text names (a coordination is expanded into its
-  members and judged against the member the term fits); claim and attribution explanations;
-  attribution snippets verbatim from the quote's label element, beside or inside the quote,
-  naming the ingredient outside the product's own name (whether the words attribute the claim
-  is the reviewer's judgement, not a parser's); `evidence_status` matching the nearest DESI
-  wording before the quote; co-administered agents that are not the product's own;
+  `binding` consistent with what the whole text names (judged against the claim's `member`
+  for a coordination, which must be an expansion of the text); claim and attribution
+  explanations; attribution snippets verbatim from the quote's label element, in the
+  object's sentence or its ":" list lead, naming the ingredient outside the claim's own
+  condition/agent wording and the product's name, and showing their basis's wording (whether
+  the words attribute the claim is the reviewer's judgement, not a parser's);
+  `evidence_status` matching the nearest DESI wording before the object; co-administered agents that are not the product's own;
   allergy contraindications (recognised by words or by ancestry under MONDO allergic disease
   or HP Allergy — not the wider hypersensitivity subtree, which holds hereditary angioedema
   and asthma) that name their agents, none of them the product's own; pins whose content
   names the label and version they are filed under; source
   and jurisdiction; at least one valid history record. Warnings: negation cues, relation vs.
-  wording, an attribution basis its snippet's wording does not show, the same wording bound
-  to different terms in one file, unusual ontology for a slot, anchors in another ontology, a curation made with an
+  wording, the same wording bound to different terms in one file, a coordinated object without a
+  `member`, members a phrase's claims leave uncovered, unusual ontology for a slot, anchors in another ontology, a curation made with an
   earlier skill text, a newer upstream label version (`--check-upstream`). CI runs both
   validators as the `curation` job. The `curation-history` workflow blocks a pull request that
   changes a combination file without adding a history record for it, unless a maintainer adds
