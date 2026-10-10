@@ -1,0 +1,68 @@
+setid: c88c3eb8-3bf5-4004-a7ab-7218cd2f9182
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/c88c3eb8-3bf5-4004-a7ab-7218cd2f9182.xml
+xml_sha256: 3f77099a3e92cc2ec65e15f690230f21a18e5616486866b87f787b0ff54f2158
+retrieved: '2026-10-10'
+title: 'These highlights do not include all the information needed to use DROSPIRENONE AND ETHINYL ESTRADIOL
+  TABLETS safely and effectively. See full prescribing information for DROSPIRENONE AND ETHINYL ESTRADIOL
+  TABLETS. DROSPIRENONE and ETHINYL ESTRADIOL tablets, for oral use Initial U.S. Approval: 2001'
+product_name: Drospirenone and Ethinyl Estradiol
+active_moieties:
+- DROSPIRENONE
+- ETHINYL ESTRADIOL
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'Drospirenone and ethinyl estradiol tablets are a combination of drospirenone, a progestin, and ethinyl
+    estradiol, an estrogen, indicated for use by females of reproductive potential to: Prevent pregnancy.
+    ( 1.1 ) Treat symptoms of premenstrual dysphoric disorder (PMDD) for females of reproductive potential
+    who choose to use an oral contraceptive for contraception. ( 1.2 ) Treat moderate acne for women at
+    least 14 years old only if the patient desires an oral contraceptive for birth control. ( 1.3 )'
+  - 1.1 Oral Contraceptive
+  - Drospirenone and ethinyl estradiol tablets are indicated for use by females of reproductive potential
+    to prevent pregnancy.
+  - 1.2 Premenstrual Dysphoric Disorder (PMDD)
+  - Drospirenone and ethinyl estradiol tablets are also indicated for the treatment of symptoms of premenstrual
+    dysphoric disorder (PMDD) in females of reproductive potential who choose to use an oral contraceptive
+    as their method of contraception. The effectiveness of drospirenone and ethinyl estradiol tablets
+    for PMDD when used for more than three menstrual cycles has not been evaluated. The essential features
+    of PMDD according to the Diagnostic and Statistical Manual-4th edition (DSM-IV) include markedly depressed
+    mood, anxiety or tension, affective lability, and persistent anger or irritability. Other features
+    include decreased interest in usual activities, difficulty concentrating, lack of energy, change in
+    appetite or sleep, and feeling out of control. Physical symptoms associated with PMDD include breast
+    tenderness, headache, joint and muscle pain, bloating and weight gain. In this disorder, these symptoms
+    occur regularly during the luteal phase and remit within a few days following onset of menses; the
+    disturbance markedly interferes with work or school, or with usual social activities and relationships
+    with others. Diagnosis is made by healthcare providers according to DSM-IV criteria, with symptomatology
+    assessed prospectively over at least two menstrual cycles. In making the diagnosis, care should be
+    taken to rule out other cyclical mood disorders. Drospirenone and ethinyl estradiol tablets has not
+    been evaluated for the treatment of premenstrual syndrome (PMS).
+  - 1.3 Acne
+  - Drospirenone and ethinyl estradiol tablets are indicated for the treatment of moderate acne vulgaris
+    in women at least 14 years of age, who have no known contraindications to oral contraceptive therapy
+    and have achieved menarche. Drospirenone and ethinyl estradiol tablets should be used for the treatment
+    of acne only if the patient desires an oral contraceptive for birth control.
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'Drospirenone and ethinyl estradiol tablets are contraindicated in females who are known to have or
+    develop the following conditions: Renal impairment Adrenal insufficiency A high risk of arterial or
+    venous thrombotic diseases. Examples include women who are known to: Smoke, if over age 35 [see Boxed
+    Warning and Warnings and Precautions (5.1) ] Have deep vein thrombosis or pulmonary embolism, now
+    or in the past [see Warnings and Precautions (5.1) ] Have cerebrovascular disease [see Warnings and
+    Precautions (5.1) ] Have coronary artery disease [see Warnings and Precautions (5.1) ] Have thrombogenic
+    valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial endocarditis
+    with valvular disease, or atrial fibrillation) [see Warnings and Precautions (5.1) ] Have inherited
+    or acquired hypercoagulopathies [see Warnings and Precautions (5.1) ] Have uncontrolled hypertension
+    [see Warnings and Precautions (5.6) ] Have diabetes mellitus with vascular disease [see Warnings and
+    Precautions (5.8) ] Have headaches with focal neurological symptoms or have migraine headaches with
+    or without aura if over age 35 [see Warnings and Precautions (5.9) ] Undiagnosed abnormal uterine
+    bleeding [see Warnings and Precautions (5.10) ] Current diagnosis of, or history of, breast cancer,
+    which may be hormone-sensitive [see Warnings and Precautions (5.3) ] Liver tumors, benign or malignant,
+    or liver disease [see Warnings and Precautions (5.4) and Use in Specific Populations (8.7) ] Use of
+    Hepatitis C drug combinations containing ombitasvir, paritaprevir/ritonavir, with or without dasabuvir
+    due to the potential for ALT elevations [see Warnings and Precautions (5.5) and Drug Interactions
+    (7.3) ].'
+  - Renal impairment (4) Adrenal insufficiency (4) A high risk of arterial or venous thrombotic diseases
+    (4) Undiagnosed abnormal uterine bleeding ( 4 ) Breast cancer (4) Liver tumors or liver disease (4)
+    Co-administration with Hepatitis C drug combinations containing ombitasvir, paritaprevir/ritonavir,
+    with or without dasabuvir (4)

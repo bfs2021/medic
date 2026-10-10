@@ -1,0 +1,237 @@
+id: MEDICNE:combo-3c091039-803b-5b14-9f61-78d900b1f262
+name: brompheniramine / dextromethorphan / pseudoephedrine
+ingredients:
+- id: CHEBI:3183
+  label: brompheniramine
+- id: CHEBI:4470
+  label: dextromethorphan
+- id: CHEBI:51209
+  label: pseudoephedrine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 01ea6357-24dc-4056-9fd2-9e643650b91f
+    version: 7
+    title: BROMPHENIRAMINE MALEATE, PSEUDOEPHEDRINE HYDROCHLORIDE, AND DEXTROMETHORPHAN HYDROBROMIDE ORAL
+      SOLUTION
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=01ea6357-24dc-4056-9fd2-9e643650b91f
+  product_name: Brompheniramine Maleate, Pseudoephedrine Hydrochloride and Dextromethorphan Hydrobromide
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: coughs
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Brompheniramine maleate, pseudoephedrine hydrochloride, and dextromethorphan hydrobromide syrup is
+      indicated for relief of coughs and upper respiratory symptoms, including nasal congestion,
+      associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    explanation: >-
+      "indicated for relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory symptoms"
+      names two conditions; this claim is the member "coughs". "associated with allergy or the common
+      cold" names the conditions they occur in; this claim takes the member "allergy" as the disease
+      context (one claim per symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper
+      respiratory symptoms, not only nasal congestion. MONDO allergic disease has the exact synonym
+      "allergy"; an indication context, not an allergy contraindication. Product-level, unattributed.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: coughs
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Brompheniramine maleate, pseudoephedrine hydrochloride, and dextromethorphan hydrobromide syrup is
+      indicated for relief of coughs and upper respiratory symptoms, including nasal congestion,
+      associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "indicated for relief of" gives AMELIORATES_CONDITION. This claim is the member "coughs" of
+      "coughs and upper respiratory symptoms", with the member "the common cold" of "allergy or the common
+      cold" as the disease context.
+    status: DRAFT
+    notes: >-
+      Same reading of "associated with" as the allergy claim. Product-level, unattributed.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no
+        term for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits
+        under Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper
+        respiratory tract disorder names a disease; the grounding store's UMLS:C0749874 is in no
+        configured ontology
+    quote: >-
+      Brompheniramine maleate, pseudoephedrine hydrochloride, and dextromethorphan hydrobromide syrup is
+      indicated for relief of coughs and upper respiratory symptoms, including nasal congestion,
+      associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    examples:
+    - text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    explanation: >-
+      "indicated for relief of" gives AMELIORATES_CONDITION. This claim is the member "upper
+      respiratory symptoms" of "coughs and upper respiratory symptoms"; "including nasal congestion"
+      lists an example, recorded in examples. The member "allergy" of "allergy or the common cold" is
+      the disease context.
+    status: DRAFT
+    notes: >-
+      Member unbound (see term_gap); its listed example, nasal congestion, is bound.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no
+        term for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits
+        under Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper
+        respiratory tract disorder names a disease; the grounding store's UMLS:C0749874 is in no
+        configured ontology
+    quote: >-
+      Brompheniramine maleate, pseudoephedrine hydrochloride, and dextromethorphan hydrobromide syrup is
+      indicated for relief of coughs and upper respiratory symptoms, including nasal congestion,
+      associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    examples:
+    - text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    explanation: >-
+      "indicated for relief of" gives AMELIORATES_CONDITION. This claim is the member "upper
+      respiratory symptoms", with the example "nasal congestion" and the member "the common cold"
+      of "allergy or the common cold" as the disease context.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: premature infants
+      term:
+        id: HP:0001622
+        label: Premature birth
+      binding: BROADER
+    quote: >-
+      Do not use in the newborn, in premature infants
+    explanation: >-
+      "Do not use ... in premature infants" contraindicates the product in infants born prematurely; HP
+      Premature birth is the condition of having been born before term. The quote starts at the
+      sentence's verb, so it carries the preceding item "the newborn", which is not curated.
+    status: DRAFT
+    notes: >-
+      HP Premature birth also covers the delivery event (exact synonyms "Premature delivery",
+      "Preterm birth"); "premature infants" restricts it to the infant, so BROADER. No HsapDv
+      preterm stage (searched HsapDv "premature", "infant"). Grounding store maps the text to
+      UMLS:C4048294 Infants, Preterm and "infants" to UMLS:C0021270, population concepts in no
+      configured ontology.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: nursing mothers
+      term_gap: >-
+        searched MONDO "lactation", "breastfeed"; HP "lactation", "breast feed": only lactation
+        disorders and modifiers (Triggered by breast feeding, History of exclusive breast feeding);
+        no term for the state of breastfeeding
+    quote: >-
+      Do not use in the newborn, in premature infants, in nursing mothers
+    explanation: >-
+      "Do not use ... in nursing mothers" is a lactation contraindication; the treated patient is the
+      nursing mother.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term, as in the amlodipine/atorvastatin lactation claim. No sex qualifier:
+      "mothers" names no PATO term the validator would accept as text, and the object implies it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe hypertension or severe coronary artery disease
+      member: severe hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      Do not use in the newborn, in premature infants, in nursing mothers, or in patients with severe
+      hypertension or severe coronary artery disease.
+    explanation: >-
+      "Do not use ... in patients with severe hypertension or severe coronary artery disease"; this
+      claim is the member "severe hypertension". HP Hypertension lacks the severity, so BROADER.
+    status: DRAFT
+    notes: >-
+      No severe-hypertension term (searched HP "severe hypertension", MONDO "hypertension"); MONDO
+      malignant hypertension (hypertensive emergency) is narrower than "severe". HP Hypertension as
+      in the drospirenone files.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe hypertension or severe coronary artery disease
+      member: severe coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    quote: >-
+      Do not use in the newborn, in premature infants, in nursing mothers, or in patients with severe
+      hypertension or severe coronary artery disease.
+    explanation: >-
+      The same sentence; this claim is the member "severe coronary artery disease". MONDO coronary
+      artery disorder (exact synonym "coronary artery disease") lacks the severity, so BROADER.
+    status: DRAFT
+notes: >-
+  Prescription-format label with an Indications and Usage section. The single indication sentence is
+  split per symptom (coughs; upper respiratory symptoms, with nasal congestion as its listed example)
+  and per condition (allergy; the common cold). No indication or contraindication is assigned to an
+  ingredient by name. Not curated: "Hypersensitivity to any of the ingredients" (allergy to the
+  product's own ingredients); "Do not use dextromethorphan in patients receiving monoamine oxidase
+  inhibitors (MAOI)" (a drug interaction, no condition); "Do not use in the newborn" (an age
+  population with no condition; the skill curates pregnancy and lactation states, not age groups); "Antihistamines should not be used to treat
+  lower respiratory tract conditions including asthma" (it says what the antihistamine should not be
+  used to treat, not that patients with these conditions must not take the product; read as a
+  limitation of use, not a contraindication; it would point to brompheniramine, which the label names
+  only by class).

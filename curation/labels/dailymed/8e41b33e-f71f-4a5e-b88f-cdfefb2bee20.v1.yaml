@@ -1,0 +1,27 @@
+setid: 8e41b33e-f71f-4a5e-b88f-cdfefb2bee20
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/8e41b33e-f71f-4a5e-b88f-cdfefb2bee20.xml
+xml_sha256: 9e5c517d422b0465fcd14ca52e7b2bacf0ed75994916d35dada1243def9c4d34
+retrieved: '2026-10-10'
+title: Orphenadrine Citrate, Aspirin and Caffeine Tablets
+product_name: Orphenadrine Citrate, Aspirin and Caffeine
+active_moieties:
+- ASPIRIN
+- CAFFEINE
+- ORPHENADRINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Symptomatic relief of mild to moderate pain of acute musculoskeletal disorders. The orphenadrine component
+    is indicated as an adjunct to rest, physical therapy, and other measures for the relief of discomfort
+    associated with acute painful musculoskeletal conditions. The mode of action of orphenadrine has not
+    been clearly identified, but may be related to its analgesic properties. Orphenadrine Citrate, Aspirin,
+    and Caffeine Tablets do not directly relax tense skeletal muscles in man.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Because of the mild anti-cholinergic effect of orphenadrine, Orphenadrine Citrate, Aspirin, and Caffeine
+    Tablets should not be used in patients with glaucoma, pyloric or duodenal obstruction, achalasia,
+    prostatic hypertrophy, or obstructions at the bladder neck. Orphenadrine Citrate, Aspirin, and Caffeine
+    Tablets are also contraindicated in patients with myasthenia gravis and in patients known to be sensitive
+    to aspirin or caffeine. The drug is contraindicated in patients who have demonstrated a previous hypersensitivity
+    to the drug.

@@ -1,0 +1,24 @@
+setid: cf31538c-9eee-4c81-80cb-66eecabf0aff
+version: 9
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/cf31538c-9eee-4c81-80cb-66eecabf0aff.xml
+xml_sha256: ba4f1714b733dbf576ef1157e375087917d11172fb2cff01fd532a8be5f7226f
+retrieved: '2026-10-10'
+title: HEB Nighttime Drug Facts
+product_name: night time
+active_moieties:
+- ACETAMINOPHEN
+- DEXTROMETHORPHAN
+- DOXYLAMINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial irritation
+    • sore throat • headache • minor aches and pains • fever • runny nose and sneezing'
+  CONTRAINDICATIONS:
+  - Do not use
+  - • with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure
+    whether a drug contains acetaminophen, ask a doctor or pharmacist. • if you are now taking a prescription
+    monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions,
+    or Parkinson’s disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription
+    drug contains an MAOI, ask a doctor or pharmacist before taking this product. • if you have ever had
+    an allergic reaction to this product or any of its ingredients

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17alpha-ethynylestradiol-drospirenone
+  path: kb/combinations/17alpha-ethynylestradiol-drospirenone.yaml
+session:
+  id: 2026-10-10T230347Z-claude-code-5deabe
+  timestamp: '2026-10-10T23:03:47Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17alpha-ethynylestradiol / drospirenone'
+  details: |
+    Curated from DailyMed setid c88c3eb8-3bf5-4004-a7ab-7218cd2f9182 v1 (generic drospirenone and ethinyl estradiol tablets). Indications: contraception (pregnancy unbound), PMDD symptoms (AMELIORATES), moderate acne (acne BROADER, age >= 14, menarche unbound). Contraindications follow the levomefolate-containing precedent: renal impairment, adrenal insufficiency, each thrombotic risk factor its own claim (heading 'A high risk of ...' not curated), coordinations split with member, abnormal uterine bleeding on HP:0000140 BROADER, breast cancer, liver tumors / liver disease members. Label lists no pregnancy contraindication. Not curated: hepatitis C drug-combination interaction. All unattributed.

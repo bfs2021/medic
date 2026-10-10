@@ -1,0 +1,24 @@
+setid: 01ea6357-24dc-4056-9fd2-9e643650b91f
+version: 7
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/01ea6357-24dc-4056-9fd2-9e643650b91f.xml
+xml_sha256: 51b62e50dfffb4ac29ce585f398787067e5b7ed3c00af4eff88a7b865c581398
+retrieved: '2026-10-10'
+title: BROMPHENIRAMINE MALEATE, PSEUDOEPHEDRINE HYDROCHLORIDE, AND DEXTROMETHORPHAN HYDROBROMIDE ORAL
+  SOLUTION
+product_name: Brompheniramine Maleate, Pseudoephedrine Hydrochloride and Dextromethorphan Hydrobromide
+active_moieties:
+- BROMPHENIRAMINE
+- DEXTROMETHORPHAN
+- PSEUDOEPHEDRINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Brompheniramine maleate, pseudoephedrine hydrochloride, and dextromethorphan hydrobromide syrup is
+    indicated for relief of coughs and upper respiratory symptoms, including nasal congestion, associated
+    with allergy or the common cold.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Hypersensitivity to any of the ingredients. Do not use in the newborn, in premature infants, in nursing
+    mothers, or in patients with severe hypertension or severe coronary artery disease. Do not use dextromethorphan
+    in patients receiving monoamine oxidase inhibitors (MAOI) (see PRECAUTIONS - Drug Interactions ).
+    Antihistamines should not be used to treat lower respiratory tract conditions including asthma.

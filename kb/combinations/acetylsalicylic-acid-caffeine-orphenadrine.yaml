@@ -1,0 +1,284 @@
+id: MEDICNE:combo-a3ee6c25-2c30-59d9-b763-8270fe08cf8a
+name: acetylsalicylic acid / caffeine / orphenadrine
+ingredients:
+- id: CHEBI:15365
+  label: acetylsalicylic acid
+- id: CHEBI:27732
+  label: caffeine
+- id: CHEBI:7789
+  label: orphenadrine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 8e41b33e-f71f-4a5e-b88f-cdfefb2bee20
+    version: 1
+    title: Orphenadrine Citrate, Aspirin and Caffeine Tablets
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8e41b33e-f71f-4a5e-b88f-cdfefb2bee20
+  product_name: Orphenadrine Citrate, Aspirin and Caffeine
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: mild to moderate pain
+      term:
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: >-
+      Symptomatic relief of mild to moderate pain of acute musculoskeletal disorders.
+    disease_context:
+      text: acute musculoskeletal disorders
+      term:
+        id: MONDO:0002081
+        label: musculoskeletal system disorder
+      binding: BROADER
+    explanation: >-
+      "Symptomatic relief of" gives AMELIORATES_CONDITION; the object is "mild to moderate pain" and
+      "of acute musculoskeletal disorders" the disease context. HP Pain lacks the severity and MONDO
+      musculoskeletal system disorder lacks "acute", so both BROADER.
+    status: DRAFT
+    notes: >-
+      The sentence has no subject; it opens the Indications section and speaks for the product, so it
+      is unattributed. Searched MONDO "musculoskeletal" for an acute musculoskeletal term: none.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: acute painful musculoskeletal conditions
+      term:
+        id: MONDO:0002081
+        label: musculoskeletal system disorder
+      binding: BROADER
+    quote: >-
+      The orphenadrine component is indicated as an adjunct to rest, physical therapy, and other
+      measures for the relief of discomfort associated with acute painful musculoskeletal conditions.
+    attributed_to:
+    - ingredient: CHEBI:7789
+      basis: COMPONENT_STATEMENT
+      snippet: The orphenadrine component is indicated
+      explanation: >-
+        The sentence assigns this indication, relief of discomfort in acute painful musculoskeletal
+        conditions, to the orphenadrine component.
+    explanation: >-
+      "indicated ... for the relief of discomfort associated with acute painful musculoskeletal
+      conditions" is relief of the symptoms of those conditions, so AMELIORATES_CONDITION with the
+      conditions as the object (the "treatment of symptoms of X" pattern). "acute painful" narrows
+      MONDO musculoskeletal system disorder, so BROADER.
+    status: DRAFT
+    notes: >-
+      "discomfort" has no term (searched HP "discomfort", "pain"); it is the symptom being relieved,
+      so the conditions are the object rather than a context. "as an adjunct to rest, physical
+      therapy, and other measures" names non-drug co-therapies; kept in the quote and not recorded in
+      in_combination_with, which is used for named treatments. The next sentences (mode of action,
+      "do not directly relax tense skeletal muscles") make no claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: glaucoma
+      term:
+        id: MONDO:0005041
+        label: glaucoma
+      binding: EXACT
+    quote: >-
+      Because of the mild anti-cholinergic effect of orphenadrine, Orphenadrine Citrate,
+      Aspirin, and Caffeine Tablets should not be used in patients with glaucoma, pyloric or
+      duodenal obstruction, achalasia, prostatic hypertrophy, or obstructions at the bladder
+      neck.
+    attributed_to:
+    - ingredient: CHEBI:7789
+      basis: STATED_REASON
+      snippet: Because of the mild anti-cholinergic effect of orphenadrine
+      explanation: >-
+        The sentence gives the anticholinergic effect of orphenadrine as the reason the
+        product should not be used in patients with the listed conditions, this one among
+        them.
+    explanation: >-
+      "Orphenadrine Citrate, Aspirin, and Caffeine Tablets should not be used in patients
+      with" lists the condition "glaucoma"; in the Contraindications section "should not be
+      used in patients with" states a contraindication.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pyloric or duodenal obstruction
+      member: pyloric obstruction
+      term:
+        id: HP:0004796
+        label: Gastrointestinal obstruction
+      binding: BROADER
+    quote: >-
+      Because of the mild anti-cholinergic effect of orphenadrine, Orphenadrine Citrate,
+      Aspirin, and Caffeine Tablets should not be used in patients with glaucoma, pyloric or
+      duodenal obstruction, achalasia, prostatic hypertrophy, or obstructions at the bladder
+      neck.
+    attributed_to:
+    - ingredient: CHEBI:7789
+      basis: STATED_REASON
+      snippet: Because of the mild anti-cholinergic effect of orphenadrine
+      explanation: >-
+        The sentence gives the anticholinergic effect of orphenadrine as the reason the
+        product should not be used in patients with the listed conditions, this one among
+        them.
+    explanation: >-
+      "Orphenadrine Citrate, Aspirin, and Caffeine Tablets should not be used in patients
+      with" lists the condition "pyloric or duodenal obstruction"; in the Contraindications
+      section "should not be used in patients with" states a contraindication. This claim is
+      the member "pyloric obstruction" of the coordination "pyloric or duodenal obstruction";
+      HP Gastrointestinal obstruction lacks the site, so BROADER.
+    status: DRAFT
+    notes: >-
+      No pyloric-obstruction term (searched MONDO "pyloric", "pyloric obstruction", "gastric
+      outlet"; HP "pyloric", "obstruction"). MONDO:0001561 pyloric stenosis carries the exact
+      synonym "gastric outlet obstruction" and may be what a reviewer prefers, but its label
+      names one cause (stenosis) of obstruction, so it is not bound; HP:0002021 Pyloric
+      stenosis likewise. Grounding store maps "pyloric obstruction" to UMLS:C1541124 (marked
+      ambiguous) and "obstruction" to UMLS:C0028778, in no configured ontology.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pyloric or duodenal obstruction
+      member: duodenal obstruction
+      term:
+        id: MONDO:0002688
+        label: duodenal obstruction
+      binding: EXACT
+    quote: >-
+      Because of the mild anti-cholinergic effect of orphenadrine, Orphenadrine Citrate,
+      Aspirin, and Caffeine Tablets should not be used in patients with glaucoma, pyloric or
+      duodenal obstruction, achalasia, prostatic hypertrophy, or obstructions at the bladder
+      neck.
+    attributed_to:
+    - ingredient: CHEBI:7789
+      basis: STATED_REASON
+      snippet: Because of the mild anti-cholinergic effect of orphenadrine
+      explanation: >-
+        The sentence gives the anticholinergic effect of orphenadrine as the reason the
+        product should not be used in patients with the listed conditions, this one among
+        them.
+    explanation: >-
+      "Orphenadrine Citrate, Aspirin, and Caffeine Tablets should not be used in patients
+      with" lists the condition "pyloric or duodenal obstruction"; in the Contraindications
+      section "should not be used in patients with" states a contraindication. This claim is
+      the member "duodenal obstruction" of the coordination "pyloric or duodenal obstruction".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: achalasia
+      term:
+        id: MONDO:0008698
+        label: achalasia
+      binding: EXACT
+    quote: >-
+      Because of the mild anti-cholinergic effect of orphenadrine, Orphenadrine Citrate,
+      Aspirin, and Caffeine Tablets should not be used in patients with glaucoma, pyloric or
+      duodenal obstruction, achalasia, prostatic hypertrophy, or obstructions at the bladder
+      neck.
+    attributed_to:
+    - ingredient: CHEBI:7789
+      basis: STATED_REASON
+      snippet: Because of the mild anti-cholinergic effect of orphenadrine
+      explanation: >-
+        The sentence gives the anticholinergic effect of orphenadrine as the reason the
+        product should not be used in patients with the listed conditions, this one among
+        them.
+    explanation: >-
+      "Orphenadrine Citrate, Aspirin, and Caffeine Tablets should not be used in patients
+      with" lists the condition "achalasia"; in the Contraindications section "should not be
+      used in patients with" states a contraindication.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: prostatic hypertrophy
+      term:
+        id: MONDO:0010811
+        label: benign prostatic hyperplasia
+      binding: EXACT
+    quote: >-
+      Because of the mild anti-cholinergic effect of orphenadrine, Orphenadrine Citrate,
+      Aspirin, and Caffeine Tablets should not be used in patients with glaucoma, pyloric or
+      duodenal obstruction, achalasia, prostatic hypertrophy, or obstructions at the bladder
+      neck.
+    attributed_to:
+    - ingredient: CHEBI:7789
+      basis: STATED_REASON
+      snippet: Because of the mild anti-cholinergic effect of orphenadrine
+      explanation: >-
+        The sentence gives the anticholinergic effect of orphenadrine as the reason the
+        product should not be used in patients with the listed conditions, this one among
+        them.
+    explanation: >-
+      "Orphenadrine Citrate, Aspirin, and Caffeine Tablets should not be used in patients
+      with" lists the condition "prostatic hypertrophy"; in the Contraindications section
+      "should not be used in patients with" states a contraindication.
+    status: DRAFT
+    notes: >-
+      MONDO benign prostatic hyperplasia carries the exact synonym "benign prostatic
+      hypertrophy"; the label omits "benign", but prostatic hypertrophy is clinically benign
+      prostatic hyperplasia. Kept as its own item text rather than the whole list with a member:
+      see the notes on the bladder-neck claim. Grounding store maps the text to UMLS:C1739363, in
+      no configured ontology.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: obstructions at the bladder neck
+      term:
+        id: MONDO:0006679
+        label: bladder neck obstruction
+      binding: EXACT
+    quote: >-
+      Because of the mild anti-cholinergic effect of orphenadrine, Orphenadrine Citrate,
+      Aspirin, and Caffeine Tablets should not be used in patients with glaucoma, pyloric or
+      duodenal obstruction, achalasia, prostatic hypertrophy, or obstructions at the bladder
+      neck.
+    attributed_to:
+    - ingredient: CHEBI:7789
+      basis: STATED_REASON
+      snippet: Because of the mild anti-cholinergic effect of orphenadrine
+      explanation: >-
+        The sentence gives the anticholinergic effect of orphenadrine as the reason the
+        product should not be used in patients with the listed conditions, this one among
+        them.
+    explanation: >-
+      "Orphenadrine Citrate, Aspirin, and Caffeine Tablets should not be used in patients
+      with" lists the condition "obstructions at the bladder neck"; in the Contraindications
+      section "should not be used in patients with" states a contraindication.
+    status: DRAFT
+    notes: >-
+      The last item of a comma list ending ", or", so the validator may read it as one member
+      of a coordination; every other item of the list has its own claim. The list nests a
+      coordination ("pyloric or duodenal obstruction") that the validator's member reading of the
+      whole list does not expand (it yields "pyloric" alone as a member), so each item keeps its
+      own text, as in the atropine/phenobarbital/scopolamine file. Grounding store maps
+      "obstruction" to UMLS:C0028778 Block, in no configured ontology.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: myasthenia gravis
+      term:
+        id: MONDO:0009688
+        label: myasthenia gravis
+      binding: EXACT
+    quote: >-
+      Orphenadrine Citrate, Aspirin, and Caffeine Tablets are also contraindicated in patients with
+      myasthenia gravis
+    explanation: >-
+      "Orphenadrine Citrate, Aspirin, and Caffeine Tablets are also contraindicated in patients with
+      myasthenia gravis".
+    status: DRAFT
+    notes: >-
+      Product-level: the sentence gives no reason and names no ingredient, so it is unattributed even
+      though it follows the anticholinergic sentence.
+notes: >-
+  Old-format (non-PLR) label. The first indication sentence speaks for the product; the second assigns
+  its indication to "The orphenadrine component" and is attributed. The first contraindication
+  sentence names orphenadrine's anticholinergic effect as the reason for each listed condition, so
+  each of those claims is attributed to orphenadrine (STATED_REASON); myasthenia gravis, in the next
+  sentence, is product-level. Not curated: "patients known to be sensitive to aspirin or caffeine" and
+  "a previous hypersensitivity to the drug" (allergy to the product's own ingredients).

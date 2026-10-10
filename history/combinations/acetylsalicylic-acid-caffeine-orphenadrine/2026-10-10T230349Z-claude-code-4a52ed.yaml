@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-caffeine-orphenadrine
+  path: kb/combinations/acetylsalicylic-acid-caffeine-orphenadrine.yaml
+session:
+  id: 2026-10-10T230349Z-claude-code-4a52ed
+  timestamp: '2026-10-10T23:03:49Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: acetylsalicylic acid / caffeine / orphenadrine'
+  details: |
+    Curated from DailyMed setid 8e41b33e-f71f-4a5e-b88f-cdfefb2bee20 v1. Indications: pain of acute musculoskeletal disorders (product-level, AMELIORATES); acute painful musculoskeletal conditions attributed to orphenadrine (COMPONENT_STATEMENT 'The orphenadrine component is indicated'). Contraindications: glaucoma, pyloric and duodenal obstruction members, achalasia, prostatic hypertrophy, bladder neck obstruction, each attributed to orphenadrine (STATED_REASON 'Because of the mild anti-cholinergic effect of orphenadrine'); myasthenia gravis product-level. Not curated: own-ingredient sensitivity (aspirin, caffeine, the drug).

@@ -1,0 +1,528 @@
+id: MEDICNE:combo-777553cd-a94e-5a11-ae8f-d847d369cc03
+name: drospirenone / estetrol
+ingredients:
+- id: CHEBI:50838
+  label: drospirenone
+- id: CHEBI:142773
+  label: estetrol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: c5270073-d083-4109-ae4b-156986175e0a
+    version: 7
+    title: 'These highlights do not include all the information needed to use NEXTSTELLIS safely and effectively.
+      See full prescribing information for NEXTSTELLIS. NEXTSTELLIS® (drospirenone and estetrol tablets),
+      for oral use Initial U.S. Approval: 2021'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c5270073-d083-4109-ae4b-156986175e0a
+  product_name: Nextstellis
+  claims:
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy", "pregnan", "contracept"; HP "pregnancy", "pregnant", "pregnan";
+        PATO "pregnan": no term for pregnancy as a state (only pregnancy disorders, exposures and
+        modifiers); the grounding store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      NEXTSTELLIS is indicated for use by females of reproductive potential to prevent pregnancy.
+    sex:
+      text: females
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    life_stage:
+      text: of reproductive potential
+      term_gap: >-
+        searched HsapDv "adult", "menarche", "menopause"; PATO "female" (female fertile describes
+        fertility, not a stage); HP "menarche": no reproductive-age life-stage term (adult stage
+        would drop the restriction)
+    explanation: >-
+      "indicated for use by females of reproductive potential to prevent pregnancy" is contraception:
+      PREVENTATIVE_FOR_CONDITION with pregnancy as the object; "females" gives the sex and "of
+      reproductive potential" the life stage.
+    status: DRAFT
+    notes: >-
+      The Highlights sentence ("NEXTSTELLIS is a combination of drospirenone, a progestin, and
+      estetrol, an estrogen, indicated ...") names both ingredients by class but assigns the
+      indication to the combination, so the claim is unattributed. The Limitations of Use (reduced
+      effectiveness at BMI >= 30 kg/m2) produce no claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: arterial or venous thrombotic/thromboembolic diseases
+      member: thrombotic diseases
+      term:
+        id: MONDO:0000831
+        label: thrombotic disease
+      binding: EXACT
+    quote: >-
+      NEXTSTELLIS is contraindicated in females who are known to have or develop the following
+      conditions: A history of, increased risk for, or current arterial or venous
+      thrombotic/thromboembolic diseases.
+    explanation: >-
+      The first item of "contraindicated in females who are known to have or develop the following
+      conditions:" is "A history of, increased risk for, or current arterial or venous
+      thrombotic/thromboembolic diseases". Current or past disease is contraindicated directly, so it
+      is curated; "arterial or venous" is an exhaustive pair (every thrombosis), and
+      "thrombotic/thromboembolic" coordinates two conditions. This claim is the member "thrombotic
+      diseases".
+    status: DRAFT
+    notes: >-
+      Unlike the "A high risk of arterial or venous thrombotic diseases" heading of the other
+      drospirenone labels, this heading names the disease itself ("history of ... or current"), not
+      only the risk, so it is curated as well as the risk factors that follow ("Examples include
+      ..."), which carry the "increased risk for" part. No slot records "history of"; the object reads
+      as current disease.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: arterial or venous thrombotic/thromboembolic diseases
+      member: thromboembolic diseases
+      term:
+        id: HP:0001907
+        label: Thromboembolism
+      binding: EXACT
+    quote: >-
+      NEXTSTELLIS is contraindicated in females who are known to have or develop the following
+      conditions: A history of, increased risk for, or current arterial or venous
+      thrombotic/thromboembolic diseases.
+    explanation: >-
+      The same item; this claim is the member "thromboembolic diseases" of "arterial or venous
+      thrombotic/thromboembolic diseases", current or past. HP Thromboembolism has the exact synonym
+      "Thromboembolic disease".
+    status: DRAFT
+    notes: >-
+      MONDO has only venous thromboembolism (MONDO:0005399), which would drop the arterial half of
+      the exhaustive pair, so HP. No slot records "history of".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Smoke
+      term_gap: >-
+        searched MONDO "smok", "tobacco", "nicotine"; HP "smok", "tobacco": only nicotine dependence /
+        addictive nicotine use, HP:0430133 Tobacco use history (an exposure history, not current
+        smoking) and modifiers ("Triggered by smoking"); no term for being a smoker
+    quote: >-
+      Examples include females who are known to: - Smoke, if 35 years of age and older
+    age_range:
+      min_years: 35
+      text: 35 years of age and older
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: smoking is listed after "Examples include females
+      who are known to:", under the increased risk of thrombotic diseases; "if 35 years of age and
+      older" restricts it, recorded as age_range (inclusive).
+    status: DRAFT
+    notes: >-
+      A risk factor rather than a disease; unbound for lack of a term.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      Have current or history of deep vein thrombosis or pulmonary embolism
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "deep vein thrombosis" of the coordination "deep vein
+      thrombosis or pulmonary embolism"; "current or history of" covers current disease and a past
+      episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode. No MONDO DVT term, so HP.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      Have current or history of deep vein thrombosis or pulmonary embolism
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "pulmonary embolism" of the coordination "deep vein
+      thrombosis or pulmonary embolism"; "current or history of" covers current disease and a past
+      episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cerebrovascular disease
+      term:
+        id: MONDO:0011057
+        label: cerebrovascular disorder
+      binding: EXACT
+    quote: >-
+      Have cerebrovascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: "Have cerebrovascular disease" is an item of the
+      list after "Examples include females who are known to:".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    quote: >-
+      Have coronary artery disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: "Have coronary artery disease" is an item of the
+      list after "Examples include females who are known to:".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic valvular diseases of the heart
+      term:
+        id: MONDO:0002869
+        label: heart valve disorder
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute
+      bacterial endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: subacute bacterial endocarditis with valvular disease
+      term:
+        id: MONDO:0006981
+        label: subacute bacterial endocarditis
+      binding: BROADER
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "thrombogenic valvular diseases of the heart" of the
+      coordination; heart valve disorder lacks "thrombogenic", so BROADER. Of the shared "(for
+      example, ...)" members, "subacute bacterial endocarditis with valvular disease" is the valvular
+      example.
+    status: DRAFT
+    notes: >-
+      Assigning the shared examples to members (SBE with valvular disease -> valvular, atrial
+      fibrillation -> rhythm) is a reading of the list; the label gives them for the pair. "with
+      valvular disease" narrows SBE, so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic rhythm diseases of the heart
+      term:
+        id: MONDO:0007263
+        label: cardiac rhythm disease
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute
+      bacterial endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: atrial fibrillation
+      term:
+        id: MONDO:0004981
+        label: atrial fibrillation
+      binding: EXACT
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "thrombogenic rhythm diseases of the heart"; no
+      thrombogenic-arrhythmia term, so cardiac rhythm disease BROADER. Of the shared "(for example,
+      ...)" members, "atrial fibrillation" is the rhythm example.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: inherited or acquired hypercoagulopathies
+      term:
+        id: MONDO:0002305
+        label: thrombophilia
+      binding: EXACT
+    quote: >-
+      Have inherited or acquired hypercoagulopathies
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". "inherited or acquired" is an exhaustive pair: together the two alternatives name
+      every hypercoagulopathy, so the claim is the class, thrombophilia (hypercoagulability).
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: uncontrolled hypertension or hypertension with vascular disease
+      member: uncontrolled hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      Have uncontrolled hypertension or hypertension with vascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "uncontrolled hypertension" of the coordination
+      "uncontrolled hypertension or hypertension with vascular disease"; "uncontrolled" narrows the
+      term, so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO hypertensive disorder has no "hypertension" synonym, so HP Hypertension.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: uncontrolled hypertension or hypertension with vascular disease
+      member: hypertension with vascular disease
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      Have uncontrolled hypertension or hypertension with vascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "hypertension with vascular disease"; "with vascular
+      disease" narrows the term, so BROADER.
+    status: DRAFT
+    notes: >-
+      No term for hypertension with vascular disease (searched MONDO "hypertensive", "hypertension");
+      MONDO hypertensive heart disease and hypertensive retinopathy name particular organs.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes mellitus with hypertension or end-organ damage; or diabetes mellitus of > 20 years
+        duration
+      member: diabetes mellitus with hypertension
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: >-
+      Have diabetes mellitus with hypertension or end-organ damage; or diabetes mellitus of > 20 years
+      duration
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". The item coordinates three conditions; this claim is the member "diabetes mellitus
+      with hypertension". "with hypertension" narrows diabetes mellitus, so BROADER.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes mellitus with hypertension or end-organ damage; or diabetes mellitus of > 20 years
+        duration
+      member: diabetes mellitus with end-organ damage
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: >-
+      Have diabetes mellitus with hypertension or end-organ damage; or diabetes mellitus of > 20 years
+      duration
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "diabetes mellitus with end-organ damage" (the shared
+      "diabetes mellitus with" carries over to "end-organ damage"); BROADER for the same reason.
+    status: DRAFT
+    notes: >-
+      No diabetic end-organ-damage term (searched MONDO "diabetic", "end-organ"); the specific
+      complications (diabetic kidney disease, retinopathy, neuropathy) would each name one organ.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes mellitus with hypertension or end-organ damage; or diabetes mellitus of > 20 years
+        duration
+      member: diabetes mellitus of > 20 years duration
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: >-
+      Have diabetes mellitus with hypertension or end-organ damage; or diabetes mellitus of > 20 years
+      duration
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include females who are
+      known to:". This claim is the member "diabetes mellitus of > 20 years duration"; the duration
+      narrows diabetes mellitus, so BROADER.
+    status: DRAFT
+    notes: >-
+      No slot records disease duration; it stays in the object text and member.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: migraine headaches with aura
+      term:
+        id: MONDO:0005475
+        label: migraine with aura
+      binding: EXACT
+    quote: >-
+      Have migraine headaches with aura
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: "Have migraine headaches with aura" is an item of
+      the list after "Examples include females who are known to:". Unlike the other drospirenone
+      labels, no age restriction is given.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breast cancer
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: >-
+      Current diagnosis of, or history of, breast cancer, which may be hormone-sensitive
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following
+      conditions:": breast cancer, currently diagnosed or in the history. "which may be
+      hormone-sensitive" describes the cancer; it does not restrict the contraindication.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope; the label contraindicates current breast cancer and a history
+      of it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated)
+        cirrhosis
+      member: Hepatic adenoma
+      term:
+        id: HP:0012028
+        label: Hepatocellular adenoma
+      binding: EXACT
+    quote: >-
+      Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated) cirrhosis
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following
+      conditions:" listing four liver conditions; this claim is the member "Hepatic adenoma". HP
+      Hepatocellular adenoma has the exact synonym "Hepatic adenoma".
+    status: DRAFT
+    notes: >-
+      MONDO:0018902 hepatocellular adenoma means the same but lacks the "hepatic adenoma" synonym, so
+      the HP term whose synonym the label uses.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated)
+        cirrhosis
+      member: hepatocellular carcinoma
+      term:
+        id: MONDO:0007256
+        label: hepatocellular carcinoma
+      binding: EXACT
+    quote: >-
+      Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated) cirrhosis
+    explanation: >-
+      The same item; this claim is the member "hepatocellular carcinoma".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated)
+        cirrhosis
+      member: acute hepatitis
+      term:
+        id: HP:0200119
+        label: Acute hepatitis
+      binding: EXACT
+    quote: >-
+      Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated) cirrhosis
+    explanation: >-
+      The same item; this claim is the member "acute hepatitis".
+    status: DRAFT
+    notes: >-
+      No MONDO acute-hepatitis term other than virus-specific ones (searched MONDO "acute hepatitis",
+      "hepatitis"), so HP.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated)
+        cirrhosis
+      member: severe decompensated cirrhosis
+      term:
+        id: MONDO:0005155
+        label: cirrhosis of liver
+      binding: BROADER
+    quote: >-
+      Hepatic adenoma, hepatocellular carcinoma, acute hepatitis, or severe (decompensated) cirrhosis
+    explanation: >-
+      The same item; this claim is the member "severe (decompensated) cirrhosis", written "severe decompensated cirrhosis". MONDO cirrhosis of
+      liver (exact synonym "cirrhosis") lacks the severity, so BROADER.
+    status: DRAFT
+    notes: >-
+      No decompensated-cirrhosis term (searched MONDO "cirrhosis", "decompensated"; HP "cirrhosis",
+      "decompensated"). MONDO:0100193 chronic liver failure carries the synonym "end stage liver
+      disease (decompensated liver disease)", but end-stage disease is narrower than decompensation,
+      so it is not bound; a reviewer may prefer it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Abnormal uterine bleeding that has an undiagnosed etiology
+      term:
+        id: HP:0000140
+        label: Abnormality of the menstrual cycle
+      binding: BROADER
+    quote: >-
+      Abnormal uterine bleeding that has an undiagnosed etiology
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following
+      conditions:": abnormal uterine bleeding of undiagnosed cause.
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for abnormal uterine bleeding (searched HP "abnormal uterine", "uterine
+      bleeding"), so the parent HP Abnormality of the menstrual cycle, BROADER, as in the other
+      drospirenone labels. Not Metrorrhagia, whose HP exact synonym "Abnormal uterus bleeding" is too
+      narrow a reading (metrorrhagia is intermenstrual bleeding). "that has an undiagnosed etiology"
+      describes the workup, not the condition. The validator's match MONDO:0019395 Hinman syndrome
+      comes from the word "has" (Hinman syndrome's exact synonym "HAS"), a spurious anchor; the
+      grounding store's UMLS:C0019080 / UMLS:C3650625 are in no configured ontology.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Renal Impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: EXACT
+    quote: >-
+      Renal Impairment
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following
+      conditions:": renal impairment.
+    status: DRAFT
+    notes: >-
+      HP Renal insufficiency is the closest term for impaired renal function, as in the other
+      drospirenone labels. Grounding store maps "Renal impairment" to UMLS:C1565489 Renal
+      Insufficiencies.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Adrenal insufficiency
+      term:
+        id: MONDO:0000004
+        label: adrenocortical insufficiency
+      binding: EXACT
+    quote: >-
+      Adrenal insufficiency
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following
+      conditions:": adrenal insufficiency.
+    status: DRAFT
+notes: >-
+  The first contraindication, "A history of, increased risk for, or current arterial or venous
+  thrombotic/thromboembolic diseases", is curated for its current-or-past disease reading (two claims,
+  thrombotic and thromboembolic disease); its "increased risk for" reading is carried by the
+  risk-factor list that follows ("Examples include females who are known to: ..."), each item its own
+  claim. Not curated: use of hepatitis C drug combinations containing ombitasvir/paritaprevir/ritonavir
+  (drug interaction, no condition); the Limitations of Use (BMI >= 30 kg/m2). The Highlights copy of
+  the contraindications restates the full text in shorter form; the full-text items are quoted. Unlike
+  the other drospirenone labels, this one lists no pregnancy contraindication and no PMDD or acne
+  indication.
