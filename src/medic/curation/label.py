@@ -23,6 +23,8 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
+import re
 import subprocess
 import sys
 from datetime import date
@@ -56,6 +58,13 @@ COMBINATIONS_DIR = Path("kb/combinations")
 DAILYMED_SETID_URL = "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid={setid}"
 
 SECTION_LOINC = {"INDICATIONS": LOINC_INDICATIONS, "CONTRAINDICATIONS": LOINC_CONTRAINDICATIONS}
+#: OTC Drug Facts "Do not use" (LOINC 50570-1): the OTC label's contraindications. Read only
+#: when the label has no prescription Contraindications section.
+LOINC_OTC_DO_NOT_USE = "50570-1"
+#: A chunk that is nothing but a numbered "Limitations of Use" heading ("1.3 Limitations of Use").
+_LIMITATION_HEADING = re.compile(r"^\s*(\d+(\.\d+)*\s+)?Limitations? of Use\s*:?\s*$", re.I)
+#: A chunk that opens a new numbered subsection ("1.4 Something", "2 DOSAGE ...").
+_NUMBERED_HEADING = re.compile(r"^\s*\d+(\.\d+)*\s+[A-Z]")
 
 
 @dataclass
@@ -75,10 +84,30 @@ class LabelDocument:
         return " ".join(self.sections.get(section, []))
 
     def spans(self, section: str) -> list[dict]:
-        """The section split into typed spans, element by element (see ``medic.spans``)."""
-        return spans_for_source(
-            "DAILYMED", self.section_text(section), document=self.setid,
-            section_code=SECTION_LOINC[section], parts=self.sections.get(section))
+        """The section split into typed spans, element by element (see ``medic.spans``).
+
+        One correction on top of ``medic.spans``: when "Limitations of Use" is a heading of its
+        own (a ``<title>`` like "1.3 Limitations of Use"), the paragraphs under it are the
+        limitation. Element-by-element splitting sees only the heading as the marker and types
+        those paragraphs as ordinary section text, so a quote from them would pass as a claim.
+        """
+        parts = self.sections.get(section) or []
+        out: list[dict] = []
+        in_limitation = False
+        for part in parts:
+            part_spans = spans_for_source(
+                "DAILYMED", part, document=self.setid, section_code=SECTION_LOINC[section],
+                parts=[part])
+            if _LIMITATION_HEADING.match(part):
+                in_limitation = True
+            elif in_limitation and (_NUMBERED_HEADING.match(part)
+                                    or any(s["role"] == "SECTION_HEADER" for s in part_spans)):
+                in_limitation = False
+            elif in_limitation:
+                part_spans = [{**s, "role": "LIMITATION_STATEMENT"}
+                              if s["role"] == "SECTION_TEXT" else s for s in part_spans]
+            out.extend(part_spans)
+        return out
 
 
 def parse_label(xml_bytes: bytes) -> LabelDocument:
@@ -94,9 +123,12 @@ def parse_label(xml_bytes: bytes) -> LabelDocument:
     title_elem = root.find("v3:title", NS)
     title = " ".join("".join(title_elem.itertext()).split()) if title_elem is not None else ""
     sections = {
-        name: _extract_section_chunks_from_root(root, loinc)
+        name: [html.unescape(c) for c in _extract_section_chunks_from_root(root, loinc)]
         for name, loinc in SECTION_LOINC.items()
     }
+    if not sections["CONTRAINDICATIONS"]:
+        sections["CONTRAINDICATIONS"] = [
+            html.unescape(c) for c in _extract_section_chunks_from_root(root, LOINC_OTC_DO_NOT_USE)]
     name_elem = root.find(".//v3:manufacturedProduct/v3:manufacturedProduct/v3:name", NS)
     product_name = " ".join("".join(name_elem.itertext()).split()) if name_elem is not None else ""
     return LabelDocument(

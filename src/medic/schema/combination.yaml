@@ -86,6 +86,21 @@ enums:
       DAILYMED:
         description: FDA structured product label via DailyMed (jurisdiction USA).
 
+  EvidenceStatusEnum:
+    description: >-
+      Qualifies how firmly the label itself states a claim, when it says so in regulatory
+      terms. Absent means the label states the claim without qualification.
+    permissible_values:
+      DESI_POSSIBLY_EFFECTIVE:
+        description: >-
+          FDA's Drug Efficacy Study Implementation classified the indication as "possibly"
+          effective: substantial evidence of effectiveness was not found, and the product is
+          marketed without a completed efficacy approval for it.
+      DESI_PROBABLY_EFFECTIVE:
+        description: >-
+          FDA's DESI classified the indication as "probably" effective, pending further
+          evidence.
+
   BindingEnum:
     description: >-
       How the bound ontology term relates to what the label's text says. The text is the
@@ -186,6 +201,9 @@ classes:
       - sex
       - line_of_therapy
       - in_combination_with
+      - when_coadministered_with
+      - examples
+      - evidence_status
       - status
       - reviewer
       - notes
@@ -362,7 +380,30 @@ slots:
     range: Descriptor
     multivalued: true
     inlined_as_list: true
-    description: Co-therapies the label names, e.g. "in combination with other antiretroviral agents".
+    description: >-
+      Co-therapies the label names as part of the treatment, e.g. "in combination with other
+      antiretroviral agents". Not for hazardous co-medications; see when_coadministered_with.
+  when_coadministered_with:
+    range: Descriptor
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      On a CONTRAINDICATED claim only: the contraindication applies when the product is given
+      together with these agents ("Do not co-administer aliskiren with ... in patients with
+      diabetes" -> object diabetes, when_coadministered_with aliskiren). A contraindication
+      with no condition at all (a pure drug-drug interaction) is out of scope.
+  examples:
+    range: Descriptor
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      Members the label lists as examples of the claim's object, after "e.g.", "including",
+      "such as" ("hemorrhagic diathesis (e.g., hemophilia, von Willebrand's disease, ...)").
+      The claim is about the category; the export may expand members into edges marked as
+      listed examples.
+  evidence_status:
+    range: EvidenceStatusEnum
+    description: How firmly the label states the claim, when it qualifies it in regulatory terms.
   status:
     range: CurationStatusEnum
     required: true

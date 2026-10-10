@@ -43,7 +43,11 @@ file in a session; it is authoritative over this skill if they ever disagree.
    "because of the risk of Reye's syndrome with concomitant use of aspirin"),
    or opens the object's sentence with the ingredient as its subject
    (`basis: INGREDIENT_SUBJECT` — "Clarithromycin is contraindicated in
-   patients with ...", as co-packaged labels write each product's own text).
+   patients with ...", "Amlodipine is indicated for ..."; on any product, single
+   or co-packaged; a heading may precede the subject, a lead-in like "In
+   patients with CAD, amlodipine ..." may not, and brand names do not count yet).
+   The checks read the label's own sentence from the pin, not your quote, so
+   trimming a quote changes nothing.
    The validator enforces all three wordings *within the sentence that names the
    claim's object*, and ignores the product's own name: "Ipratropium Bromide and
    Albuterol Sulfate Inhalation Solution is indicated ..." attributes nothing,
@@ -189,27 +193,48 @@ Contraindications section. For each sentence ask:
    cause? If yes, which one(s), on which basis?
 4. What context does the label attach (disease context, age, sex, life stage,
    anatomical site, line of therapy, co-therapy)? Each needs verbatim `text`
-   inside the quote.
-5. Is it negated, or inside a Limitations of Use paragraph? Then no claim.
+   inside the quote. A qualifier describes the treated patient: a sex or age
+   on a claim about a fetus or conceptus ("neural tube defect") is wrong.
+5. Does the label list examples of the condition ("e.g.", "including", "such
+   as")? One claim for the category; the members go in its `examples`, never
+   one claim per member.
+6. Does a contraindication apply only with a co-administered agent ("Do not
+   co-administer aliskiren ... in patients with diabetes")? Object = the
+   condition; the agent in `when_coadministered_with`. A contraindication with
+   no condition at all (a pure drug-drug interaction) is out of scope.
+7. Does the label qualify its indications as DESI "possibly" or "probably"
+   effective? Set `evidence_status` on every such indication claim (the
+   validator requires it whenever the label says so).
+8. Pregnancy, lactation, contraception ("prevent pregnancy"): curate them.
+   No configured ontology has these terms yet, so the object is unbound with a
+   `term_gap`; do not skip them.
+9. Is it negated, or inside a Limitations of Use paragraph? Then no claim.
 
 ### Step 4: Look up terms
 
 ```bash
-uv run python -m medic.curation.terms search MONDO "gastric ulcer"
+uv run python -m medic.curation.terms search MONDO "gastric ulcer" thrombo "von Willebrand"
+uv run python -m medic.curation.terms search MONDO angina --limit 40
 uv run python -m medic.curation.terms info MONDO:0001126 HP:0001681 CHEBI:35475
-uv run python -m medic.curation.terms search HP bronchospasm
 ```
 
-Search matches labels and exact synonyms (substring, case-insensitive); `info`
-prints label, obsolescence, exact synonyms and `is_a` parents. Prefixes: MONDO,
-HP, UBERON, HsapDv, PATO, CHEBI. Each call spends ~20 s starting up (the CURIE
-converter), so **pass several ids to one `info` call**. Where terms come from
+Search matches labels and exact synonyms at the **start of a word**, case-
+insensitive: "thrombo" finds thrombosis, "stable angina" does not find
+"unstable angina". Each argument is one query (quote multi-word ones); results
+are capped at 15 unless you pass `--limit`, and an empty result says so.
+`info` prints label, obsolescence, exact synonyms and `is_a` parents.
+Prefixes: MONDO, HP, UBERON, HsapDv, PATO, CHEBI. Each call spends ~20 s
+starting up (the CURIE converter), so **batch queries and ids into one call**. Where terms come from
 (OBO releases by default, or an OAK selector such as `sqlite:obo:mondo`) is
 set in `conf/curation_terms.yaml`; you do not need to change it.
 
 - Accuracy first: MONDO or HP for the condition, whichever says what the label
   says; UBERON for anatomy, HsapDv for life stage, PATO for sex, CHEBI for
-  agents in `object_specialization`. An unusual choice only warns.
+  agents in `object_specialization` and `when_coadministered_with`. An unusual
+  choice only warns.
+- Over-the-counter labels: the helper reads Drug Facts "Uses" as Indications
+  and "Do not use" as Contraindications (`section: CONTRAINDICATIONS`).
+  `product_name` may be empty when the SPL gives none; leave it empty.
 - `term.label` is the ontology's canonical label exactly; the label's wording
   is the descriptor's `text`.
 - Choose the most specific term the wording supports and set `binding`. If

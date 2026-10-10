@@ -85,6 +85,8 @@ USUAL_PREFIXES = {
     "sex": ("PATO",),
     "object_specialization": ("CHEBI",),
     "in_combination_with": ("CHEBI",),
+    "when_coadministered_with": ("CHEBI",),
+    "examples": ("MONDO", "HP"),
 }
 
 #: Per slot: which ontologies' labels and synonyms, and which grounding store, anchor the
@@ -97,6 +99,8 @@ ANCHOR_SOURCES = {
     "sex": (("PATO",), None),
     "object_specialization": (("CHEBI",), "drug"),
     "in_combination_with": (("CHEBI",), "drug"),
+    "when_coadministered_with": (("CHEBI",), "drug"),
+    "examples": (("MONDO", "HP"), "disease"),
     "line_of_therapy": ((), None),
 }
 
@@ -104,8 +108,6 @@ ANCHOR_SOURCES = {
 _CAUSE_CUES = re.compile(r"\b(because|due to|caused by|may cause|since|related to|"
                          r"associated with|attributable to)\b")
 _CAUSE_WINDOW_WORDS = 20
-#: Sentence boundaries in lowercased text (a period or semicolon, then whitespace).
-_SENTENCE_END = re.compile(r"(?<=[.;])\s+")
 _OWN_PRODUCT = re.compile(r"component|excipient|ingredient|this product|the formulation", re.I)
 _ALLERGY = re.compile(r"hypersensitiv|allerg|anaphyla", re.I)
 #: Allergy subtrees: a term under either is an allergy, whatever its words. Deliberately not
@@ -118,10 +120,20 @@ ALLERGY_ROOTS = frozenset({
 })
 #: HP subtrees that qualify a finding rather than name one; "severe" in "severe renal
 #: impairment" matches HP "Severe", which says nothing about the condition.
-HP_MODIFIER_ROOTS = frozenset({
-    "HP:0012823",  # Clinical modifier
-    "HP:0000005",  # Mode of inheritance
-    "HP:0040279",  # Frequency
+MODIFIER_ROOTS = frozenset({
+    "HP:0012823",     # Clinical modifier
+    "HP:0000005",     # Mode of inheritance
+    "HP:0040279",     # Frequency
+    "MONDO:0021125",  # disease characteristic ("acquired", "inherited", ...)
+})
+#: Roots too general to say anything about what the words name ("disease" in "obstructive
+#: disease of the GI tract").
+GENERIC_ANCHORS = frozenset({
+    "MONDO:0000001",  # disease
+    "MONDO:0700096",  # human disease
+    "MONDO:0002254",  # syndromic disease
+    "HP:0000001",     # All
+    "HP:0000118",     # Phenotypic abnormality
 })
 #: Qualifiers that describe the patient or the event rather than a narrower condition.
 _NON_NARROWING = frozenset({
@@ -136,9 +148,16 @@ _CURATOR_REF = re.compile(
     r"^https://github\.com/monarch-initiative/medic/blob/[0-9a-f]{7,40}/"
     + re.escape(SKILL_PATH) + r"#git-blob=([0-9a-f]{40})$")
 
+#: FDA DESI efficacy classifications as labels state them ('classified ... as "possibly"
+#: effective').
+_DESI_WORDING = {
+    "DESI_POSSIBLY_EFFECTIVE": re.compile(r"possibly\W{0,3}\s*effective", re.I),
+    "DESI_PROBABLY_EFFECTIVE": re.compile(r"probably\W{0,3}\s*effective", re.I),
+}
+
 #: Wording that suggests each non-default relation; used only for a WARNING.
 _PREVENT_CUES = ("risk", "prevent", "prophyla", "reduc")
-_RELIEF_CUES = ("relie", "symptom")
+_RELIEF_CUES = ("relie", "symptom", "temporar", "reduc", "control")
 
 
 @dataclass
@@ -370,11 +389,33 @@ class Checker:
             self._check_descriptor(path, quote, slot, desc, f"{where}.{slot}")
         if claim.get("age_range") and not _contains(quote, claim["age_range"].get("text", "")):
             self.error(path, f"{where}.age_range.text", "does not occur in the quote")
-        self._check_attribution(path, claim, names, product_names, where)
+        self._check_attribution(path, claim, doc, names, product_names, where)
         self._check_allergy(path, claim, names, where)
+        if claim.get("when_coadministered_with") and relation != "CONTRAINDICATED":
+            self.error(path, f"{where}.when_coadministered_with",
+                       "only a CONTRAINDICATED claim can depend on a co-administered agent")
+        self._check_evidence_status(path, claim, doc, where)
         if claim["status"] in ("REVIEWED", "REJECTED") and not claim.get("reviewer"):
             self.error(path, f"{where}.status", f"{claim['status']} requires a reviewer")
         self._check_polarity_and_wording(path, claim, where)
+
+    def _check_evidence_status(self, path: Path, claim: dict, doc: LabelDocument,
+                               where: str) -> None:
+        """DESI wording on the label and evidence_status on its indications must agree."""
+        if claim["section"] != "INDICATIONS":
+            if claim.get("evidence_status"):
+                self.error(path, f"{where}.evidence_status", "applies to indications only")
+            return
+        text = _norm_ws(doc.section_text("INDICATIONS"))
+        stated = {status for status, pattern in _DESI_WORDING.items() if pattern.search(text)}
+        status = claim.get("evidence_status")
+        if status and status not in stated:
+            self.error(path, f"{where}.evidence_status",
+                       f"{status}, but the label's Indications do not use that DESI wording")
+        elif stated and not status:
+            self.error(path, f"{where}.evidence_status",
+                       f"the label classifies its indications as {sorted(stated)}; record it "
+                       "in evidence_status")
 
     def _check_quote(self, path: Path, claim: dict, doc: LabelDocument, where: str) -> None:
         section, quote = claim["section"], claim["quote"]
@@ -541,7 +582,12 @@ class Checker:
         named = set()
         for name in (info.label, *info.exact_synonyms) if info else ():
             named |= set(_norm_ws(name).lower().split())
-        words = [w.strip(".,;:()[]\"'").lower() for w in _norm_ws(text).split()]
+        low = _norm_ws(text).lower()
+        # "with or without aura", "arterial or venous", "inherited or acquired": alternatives
+        # that together cover the term do not narrow it.
+        low = re.sub(r"\bwith or without\s+\S+", " ", low)
+        low = re.sub(r"\b[\w-]+\s+(?:or|and/or)\s+[\w-]+\b", " ", low)
+        words = [w.strip(".,;:()[]\"'") for w in low.split()]
         return [w for w in words if w and w not in named and _singular(w) not in named
                 and w not in _NON_NARROWING]
 
@@ -566,7 +612,9 @@ class Checker:
             if store_kind == "disease":
                 for row in self.disease_grounding.lookup(span):
                     if row.object_id and row.object_id != NO_TERM:
-                        note(store, self._normalize_disease(row.object_id), span)
+                        curie = self._normalize_disease(row.object_id)
+                        if curie not in GENERIC_ANCHORS:
+                            note(store, curie, span)
             elif store_kind == "drug":
                 for curie in self.ingredients.drug_ids_for(span):
                     note(store, curie, span)
@@ -583,7 +631,7 @@ class Checker:
                                   f"nothing: {exc}")
                         continue
                     for curie in ids:
-                        if prefix == "HP" and terms.ancestors(curie) & HP_MODIFIER_ROOTS:
+                        if curie in GENERIC_ANCHORS or terms.ancestors(curie) & MODIFIER_ROOTS:
                             continue
                         note(onto, curie, span)
         return onto, store
@@ -593,41 +641,32 @@ class Checker:
         return norm.object_id if norm and norm.object_id else curie
 
     # -- attribution and allergy -------------------------------------------------------
-    def _check_attribution(self, path: Path, claim: dict, names: dict[str, set[str]],
-                           product_names: list[str], where: str) -> None:
+    def _check_attribution(self, path: Path, claim: dict, doc: LabelDocument,
+                           names: dict[str, set[str]], product_names: list[str],
+                           where: str) -> None:
         """An ingredient is credited only on wording the label uses for *this* claim.
 
-        Checked within the sentence that names the claim's object, with the product's own name
-        removed (a generic name lists every ingredient and attributes nothing):
+        Judged on the label's own text (the pin), not the quote, so trimming a quote cannot
+        change the verdict; and for every place the object occurs in the quote, which must
+        all agree. The scope is the object's sentence, extended back to the sentence that
+        carries the claim's verb when the object sits in a list under it ("Atorvastatin is
+        indicated: ... To reduce the risk of: Myocardial infarction ..."). Product names are
+        removed first (a generic name lists every ingredient and attributes nothing).
 
-        - COMPONENT_STATEMENT — the nearest "the X component" before the object is the
-          attributed ingredient's. A later "The omeprazole component ..." sentence in a long
-          quote does not credit omeprazole with an earlier item.
-        - STATED_REASON — a causal cue follows the object in its sentence, and the ingredient
-          is named in the clause after it.
-        - INGREDIENT_SUBJECT — the ingredient is the subject of the object's sentence, right
-          before the claim's verb ("Clarithromycin is contraindicated in patients with ...",
-          "Clarithromycin should not be given to patients with ..."), as co-packaged labels
-          write each product's own text.
+        - COMPONENT_STATEMENT — the nearest "the X component" before the object, in scope,
+          is the attributed ingredient's.
+        - INGREDIENT_SUBJECT — the scope opens with the ingredient as the subject of the
+          claim's verb ("Clarithromycin is contraindicated in ...").
+        - STATED_REASON — a causal cue follows the object in its own sentence, and the
+          ingredient is named in the clause after it.
         """
         attributions = claim.get("attributed_to") or []
         if not attributions:
             return
-        text = _strip_product_names(_norm_ws(claim["quote"]).lower(), product_names)
-        obj = _norm_ws(claim["object"].get("text", "")).lower()
-        at = text.find(obj) if obj else -1
-        if at < 0:
-            return  # the object-text check reports this
-        sentence_start = max([m.end() for m in _SENTENCE_END.finditer(text, 0, at)], default=0)
-        tail = _SENTENCE_END.search(text, at)
-        sentence = text[sentence_start:tail.start() if tail else len(text)]
-        before, after = sentence[:at - sentence_start], sentence[at - sentence_start:]
-        components = []  # (position, ingredient) for every "the X component" before the object
-        for curie, ing_names in names.items():
-            for n in ing_names:
-                for m in re.finditer(_word(n).pattern + r"\s+component", before):
-                    components.append((m.start(), curie))
-        nearest = max(components)[1] if components else None
+        scopes = _attribution_scopes(doc.sections.get(claim["section"]) or [], claim["quote"],
+                                     claim["object"].get("text", ""), product_names)
+        if not scopes:
+            return  # the quote / object-text checks report this
         for i, attribution in enumerate(attributions):
             awhere = f"{where}.attributed_to[{i}]"
             ingredient, basis = attribution["ingredient"], attribution["basis"]
@@ -636,22 +675,31 @@ class Checker:
                                          "ingredients")
                 continue
             ing_names = sorted(names[ingredient])
-            if basis == "COMPONENT_STATEMENT" and nearest != ingredient:
-                wording = " or ".join(f"'the {n} component'" for n in ing_names)
-                self.error(path, awhere, f"COMPONENT_STATEMENT needs {wording} to govern this "
-                                         "claim: the nearest component phrase before "
-                                         f"{claim['object'].get('text')!r} in its sentence"
-                                         + (f" is {nearest}'s" if nearest else " is missing"))
-            elif basis == "INGREDIENT_SUBJECT" and not _is_sentence_subject(before, ing_names):
-                self.error(path, awhere, "INGREDIENT_SUBJECT needs the object's sentence to open "
-                                         f"with {' / '.join(ing_names)} as its subject, right "
-                                         "before 'is indicated', 'is contraindicated', 'should "
-                                         "not be given', ...")
-            elif basis == "STATED_REASON" and not _named_in_causal_clause(after, ing_names):
-                self.error(path, awhere, "STATED_REASON needs a causal cue ('because', 'due "
-                                         "to', 'caused by', ...) after "
-                                         f"{claim['object'].get('text')!r} in its sentence, "
-                                         f"followed by {' / '.join(ing_names)}")
+            for openings, before, after in scopes:
+                if basis == "COMPONENT_STATEMENT":
+                    nearest = _nearest_component(before, names)
+                    if nearest != ingredient:
+                        wording = " or ".join(f"'the {n} component'" for n in ing_names)
+                        self.error(path, awhere, f"COMPONENT_STATEMENT needs {wording} to govern "
+                                                 "this claim: the nearest component phrase "
+                                                 f"before {claim['object'].get('text')!r} in its "
+                                                 "sentence"
+                                                 + (f" is {nearest}'s" if nearest else " is missing"))
+                        break
+                elif basis == "INGREDIENT_SUBJECT":
+                    if not any(_is_sentence_subject(o, ing_names) for o in openings):
+                        self.error(path, awhere, "INGREDIENT_SUBJECT needs the object's sentence "
+                                                 f"to open with {' / '.join(ing_names)} as its "
+                                                 "subject, right before 'is indicated', 'is "
+                                                 "contraindicated', 'should not be given', ...")
+                        break
+                elif basis == "STATED_REASON":
+                    if not _named_in_causal_clause(after, ing_names):
+                        self.error(path, awhere, "STATED_REASON needs a causal cue ('because', "
+                                                 "'due to', 'caused by', ...) after "
+                                                 f"{claim['object'].get('text')!r} in its "
+                                                 f"sentence, followed by {' / '.join(ing_names)}")
+                        break
 
     def _is_allergy(self, obj: dict) -> bool:
         """Words or hierarchy: "allergy", or a term under a hypersensitivity subtree."""
@@ -724,7 +772,8 @@ class Checker:
 #: Descriptor slots on a claim, single- or multi-valued.
 SINGLE_DESCRIPTORS = ("object", "disease_context", "anatomical_context", "life_stage", "sex",
                       "line_of_therapy")
-MULTI_DESCRIPTORS = ("object_specialization", "in_combination_with")
+MULTI_DESCRIPTORS = ("object_specialization", "in_combination_with",
+                     "when_coadministered_with", "examples")
 
 
 def _descriptors(claim: dict):
@@ -753,6 +802,7 @@ def _claim_key(claim: dict) -> tuple:
         tuple(sorted(_desc_key(d) for d in claim.get("in_combination_with") or [])),
         tuple(sorted(a.get("ingredient", "") for a in claim.get("attributed_to") or [])),
         str(claim.get("age_range") or ""),
+        _norm_ws(claim.get("quote", "")).lower(),
     )
 
 
@@ -778,24 +828,118 @@ def _word_spans(text: str, max_words: int = 8, *, fold_plurals: bool = True) -> 
     return spans
 
 
-def _strip_product_names(text: str, product_names: list[str]) -> str:
+def _strip_product_names(text: str, product_names: list[str], keep_case: bool = False) -> str:
+    """Blank out the product's own names (case-insensitively; ``text`` keeps its case when
+    ``keep_case``, otherwise is expected to be lowercased already)."""
     for name in product_names:
-        name = _norm_ws(name).lower()
+        name = _norm_ws(name)
         if len(name) > 3:
-            text = text.replace(name, " ")
+            text = re.sub(re.escape(name), " ", text, flags=re.I) if keep_case else \
+                text.replace(name.lower(), " ")
     return text
 
 
 #: A sentence that opens with an ingredient as the subject of the claim's verb. Up to two
 #: words may sit between the name and the verb ("clarithromycin tablets are").
-_SUBJECT_VERB = (r"(?:\s+[a-z0-9-]+){0,2}?\s+(?:is|are|should|must)\s+(?:not\s+)?(?:be\s+)?"
-                 r"(?:indicated|contraindicated|given|used|administered)\b")
+_SUBJECT_VERB = (r"(?:\s+(?!and\b|or\b|with\b|plus\b)[\w-]+){0,2}?\s+(?:is|are|should|must)"
+                 r"\s+(?:not\s+)?(?:be\s+)?(?:indicated|contraindicated|given|used|administered)\b")
 
 
-def _is_sentence_subject(before: str, names: list[str]) -> bool:
-    """Does the sentence (up to the object) open with one of ``names`` as its subject?"""
-    head = before.lstrip(" ([\"'")
-    return any(re.match(r"(?:the\s+)?" + re.escape(n) + _SUBJECT_VERB, head) for n in names)
+#: An optional heading in front of a sentence's subject, matched on the label's own
+#: capitalisation: a numbered heading, a "Heading :" lead-in, or a run of Title-Case words
+#: and parentheticals ("Coronary Artery Disease (CAD) Chronic Stable Angina"). A lowercase
+#: lead-in ("In patients with CAD, amlodipine is ...") is not a heading.
+_HEADING_PREFIX = (r"(?:\d+(?:\.\d+)*\s+)?"
+                   r"(?:[^.:;]{1,60}?\s*:\s+"
+                   r"|(?:(?:[A-Z][\w’'/-]*|\([^)]{1,40}\)|of|and|or|the|in|with|for|to)\s+){1,12}?)?")
+
+
+def _is_sentence_subject(opening: str, names: list[str]) -> bool:
+    """Does ``opening`` (original case) start, after an optional heading, with one of
+    ``names`` as the subject of the claim's verb?"""
+    head = opening.lstrip(" ([\"'•")
+    return any(re.match(_HEADING_PREFIX + r"(?i:(?:the\s+)?" + re.escape(n) + _SUBJECT_VERB + ")",
+                        head)
+               for n in names)
+
+
+#: Tokens whose trailing period is not a sentence end.
+_ABBREVIATIONS = frozenset({"u.s", "e.g", "i.e", "approx", "fig", "no", "vs", "dr", "inc",
+                            "etc", "al", "mg", "ml", "ph", "st", "ca"})
+#: Verbs that carry a claim; a sentence without one is an item in a list under a lead-in.
+_CLAIM_VERB = re.compile(r"\b(?:contra)?indicated\b|\b(?:should|must)\s+not\b|\bdo not\b",
+                         re.I)
+
+
+def _sentence_starts(text: str, element_starts: list[int]) -> list[int]:
+    """Start offsets of sentences in ``text`` (original case).
+
+    A sentence starts at every label element (a ``<title>`` heading is its own element, so
+    "Chronic Stable Angina" does not run into the next sentence), and after a period,
+    question or exclamation mark followed by whitespace and a capital, digit, bullet or
+    bracket — unless the period ends a known abbreviation. Semicolons do not end sentences:
+    lists use them.
+    """
+    starts = set(element_starts) | {0}
+    for m in re.finditer(r"[.!?]\s+(?=[A-Z0-9•(\[])", text):
+        token = re.findall(r"[\w.]+$", text[:m.start()])
+        if token and token[0].lower().rstrip(".") in _ABBREVIATIONS:
+            continue
+        starts.add(m.end())
+    return sorted(starts)
+
+
+def _attribution_scopes(chunks: list[str], quote: str, obj: str,
+                        product_names: list[str]) -> list[tuple[list[str], str, str]]:
+    """For each occurrence of ``obj`` in ``quote``: (candidate openings, text before the
+    object within scope, the object's sentence from the object on) — lowercased, product
+    names removed. The openings are the scope's start and the start of the semicolon clause
+    holding the object ("...agents; Vasospastic Angina: Amlodipine is indicated ...").
+    Empty when the quote is not in the section or the object not in the quote."""
+    parts = [_norm_ws(c) for c in chunks if _norm_ws(c)]
+    text = " ".join(parts)
+    element_starts, offset = [], 0
+    for part in parts:
+        element_starts.append(offset)
+        offset += len(part) + 1
+    low = text.lower()
+    q, o = _norm_ws(quote).lower(), _norm_ws(obj).lower()
+    qpos = low.find(q)
+    if qpos < 0 or not o:
+        return []
+    starts = _sentence_starts(text, element_starts)
+    scopes = []
+    for m in re.finditer(re.escape(o), q):
+        opos = qpos + m.start()
+        i = max(k for k, st in enumerate(starts) if st <= opos)
+        end = starts[i + 1] if i + 1 < len(starts) else len(text)
+        scope_i = i
+        for _ in range(10):  # walk back from a list item to the sentence carrying the verb
+            sentence = text[starts[scope_i]:starts[scope_i + 1] if scope_i + 1 < len(starts)
+                            else len(text)]
+            if _CLAIM_VERB.search(sentence) or scope_i == 0:
+                break
+            scope_i -= 1
+        start = starts[scope_i]
+        before = _strip_product_names(low[start:opos], product_names)
+        after = _strip_product_names(low[opos:end], product_names)
+        # Openings keep the label's capitalisation, which tells a heading from a lead-in.
+        opening = _strip_product_names(text[start:end], product_names, keep_case=True)
+        clause_start = text.rfind(";", start, opos)
+        clause = _strip_product_names(text[clause_start + 1 if clause_start >= 0 else start:end],
+                                      product_names, keep_case=True)
+        scopes.append(([opening, clause], before, after))
+    return scopes
+
+
+def _nearest_component(before: str, names: dict[str, set[str]]) -> str | None:
+    """The ingredient whose "the X component" phrase comes last in ``before``."""
+    found = []
+    for curie, ing_names in names.items():
+        for n in ing_names:
+            for m in re.finditer(_word(n).pattern + r"\s+component", before):
+                found.append((m.start(), curie))
+    return max(found)[1] if found else None
 
 
 def _named_in_causal_clause(text: str, names: list[str]) -> bool:

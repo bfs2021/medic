@@ -13,9 +13,15 @@ active_moieties:
 sections:
   INDICATIONS:
   - Uses
-  - 'temporarily relieves common cold/flu symptoms: nasal congestion sinus congestion &amp; pressure cough
-    due to minor throat &amp; bronchial irritation minor aches &amp; pains headache fever sore throat
-    reduces swelling of nasal passages temporarily restores freer breathing through the nose promotes
-    nasal and/or sinus drainage helps loosen phlegm (mucus) and thin bronchial secretions to rid the bronchial
-    passageways of bothersome mucus and make coughs more productive.'
-  CONTRAINDICATIONS: []
+  - 'temporarily relieves common cold/flu symptoms: nasal congestion sinus congestion & pressure cough
+    due to minor throat & bronchial irritation minor aches & pains headache fever sore throat reduces
+    swelling of nasal passages temporarily restores freer breathing through the nose promotes nasal and/or
+    sinus drainage helps loosen phlegm (mucus) and thin bronchial secretions to rid the bronchial passageways
+    of bothersome mucus and make coughs more productive.'
+  CONTRAINDICATIONS:
+  - Do not use
+  - • with any drug containing acetaminophen (prescription or nonprescription). If you are not sure whether
+    a drug contains acetaminophen, ask a doctor or pharmacist. • if you are now taking a prescription
+    monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric or emotional conditions,
+    or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription
+    drug contains an MAOI, ask a doctor or pharmacist before taking this product.

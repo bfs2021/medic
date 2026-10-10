@@ -385,7 +385,14 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   disease context), and the export decides what maps to a Biolink qualifier.
   `object_specialization` post-composes the object with the agents it concerns (drug allergy
   + NSAID; gastric ulcer + aspirin). `attributed_to` names an ingredient only when the label
-  assigns the claim to it (`COMPONENT_STATEMENT`) or names it as the cause (`STATED_REASON`).
+  assigns the claim to it (`COMPONENT_STATEMENT`), names it as the cause (`STATED_REASON`),
+  or makes it the subject of the claim's sentence (`INGREDIENT_SUBJECT`, as co-packaged and
+  ingredient-by-ingredient labels write). Members a label lists as examples ("e.g.",
+  "including") are `examples` on the category's claim, not claims of their own; a
+  contraindication that holds only with a co-administered agent records it in
+  `when_coadministered_with`; DESI "possibly/probably effective" indications carry
+  `evidence_status`. Pregnancy, lactation and contraception have no term in the configured
+  ontologies and are curated unbound with a `term_gap`.
   Allergy to the product's own ingredients is not curated. Classes and slots are MeDIC's
   own; Biolink is referenced semantically (`meaning`, `exact_mappings`, `close_mappings`),
   never imported, and a test checks every reference against the pinned Biolink release.
@@ -395,7 +402,9 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
   grounding and normalization stores.
 - **Helpers:** `just curation-label <setid> [--skeleton | --write | --pin | --verify-pin N]`
   (`medic.curation.label`) fetches the current SPL (cached under `cache/labels/dailymed/`) and
-  prints the ingredients, computed identity and typed spans; `--write`/`--pin` write the
+  prints the ingredients, computed identity and typed spans (HTML entities decoded; OTC "Do
+  not use" read as Contraindications; a full-text "Limitations of Use" heading types the
+  paragraphs under it); `--write`/`--pin` write the
   committed pin, and `--verify-pin` recomputes a pin from the label XML; `uv run python -m medic.curation.terms search|info` looks terms up in the
   ontologies' OBO releases, cached under `cache/ontologies/`; `just combination-worklist`
   writes `curation/combination_worklist.tsv` from the pipeline's fan-out.

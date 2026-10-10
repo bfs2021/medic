@@ -884,3 +884,113 @@ def test_verify_pin_detects_a_hand_edit(workspace):
     pin = Path(f"curation/labels/dailymed/{SETID}.v3.yaml")
     pin.write_text(pin.read_text().replace("heartburn", "gout"))
     assert verify_pin(SETID, 3).startswith("MISMATCH")
+
+
+# --- batch-1 decisions and tool fixes ---------------------------------------------------------
+def test_desi_wording_and_evidence_status_must_agree(workspace):
+    """Decision 2: a DESI-classified indication carries evidence_status, and only then."""
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        evidence_status="DESI_POSSIBLY_EFFECTIVE"))
+    assert any("do not use that DESI wording" in e for e in errors)
+    errors, _ = _claim_errors(workspace, 3, lambda c: c.update(
+        evidence_status="DESI_POSSIBLY_EFFECTIVE"))
+    assert any("applies to indications only" in e for e in errors)
+
+
+def test_coadministration_only_on_contraindications(workspace):
+    """Decision 4: when_coadministered_with qualifies a contraindication, nothing else."""
+    spec = [{"text": "aspirin", "term": _term(ASPIRIN), "binding": "EXACT"}]
+    errors, _ = _claim_errors(workspace, 1, lambda c: c.update(when_coadministered_with=spec))
+    assert any("only a CONTRAINDICATED claim" in e for e in errors)
+    errors, _ = _claim_errors(workspace, 3, lambda c: c.update(when_coadministered_with=spec))
+    assert not any("when_coadministered_with" in e for e in errors)
+
+
+def test_examples_are_descriptors_of_the_quote(workspace):
+    """Decision 5: listed members are checked like any descriptor."""
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote=UTI_QUOTE, relation="TREATS", attributed_to=None, disease_context=None,
+        object={"text": "complicated urinary tract infections",
+                "term": _term("MONDO:0005047"), "binding": "BROADER"},
+        examples=[{"text": "pyelonephritis", "term": _term("MONDO:0006939"),
+                   "binding": "EXACT"}]))
+    assert errors == []
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote=UTI_QUOTE, relation="TREATS", attributed_to=None, disease_context=None,
+        object={"text": "complicated urinary tract infections",
+                "term": _term("MONDO:0005047"), "binding": "BROADER"},
+        examples=[{"text": "cystitis", "term_gap": "not in the test ontology"}]))
+    assert any("examples.text" in e for e in errors)
+
+
+def test_attribution_is_read_from_the_label_sentence_not_the_quote():
+    """A quote trimmed to start at the ingredient cannot make it the subject."""
+    from medic.curation.validate import _attribution_scopes, _is_sentence_subject
+
+    chunks = ["Rarely, aspirin is contraindicated in patients with gout."]
+    [(openings, _, _)] = _attribution_scopes(
+        chunks, "aspirin is contraindicated in patients with gout", "gout", [])
+    assert not any(_is_sentence_subject(o, ["aspirin"]) for o in openings)
+
+
+def test_subject_after_a_heading_but_not_after_a_lead_in():
+    from medic.curation.validate import _is_sentence_subject
+
+    assert _is_sentence_subject("Coronary Artery Disease (CAD) Chronic Stable Angina Amlodipine "
+                                "is indicated for the symptomatic treatment", ["amlodipine"])
+    assert _is_sentence_subject("1.1 Hypertension: Amlodipine is indicated", ["amlodipine"])
+    assert not _is_sentence_subject("In patients with CAD, amlodipine is indicated",
+                                    ["amlodipine"])
+    assert not _is_sentence_subject("Amlodipine and benazepril are indicated", ["amlodipine"])
+
+
+def test_sentences_respect_abbreviations_elements_and_lists():
+    from medic.curation.validate import _attribution_scopes, _sentence_starts
+
+    text = "Approved in the U.S. Under review elsewhere."
+    assert _sentence_starts(text, []) == [0]  # "U.S." is not a sentence end
+    chunks = ["Atorvastatin is indicated: To reduce the risk of: Myocardial infarction. "
+              "Stroke."]
+    [(openings, _, _)] = _attribution_scopes(chunks, "Stroke", "Stroke", [])
+    assert openings[0].startswith("Atorvastatin is indicated")
+
+
+def test_coordinations_do_not_narrow(workspace):
+    checker = Checker(check_terms=True, offline=True)
+    assert checker._narrowing_words("fatal or nonfatal MI", "MONDO:0005068") == []
+    assert checker._narrowing_words("MI with or without aura", "MONDO:0005068") == []
+    assert checker._narrowing_words("aspirin associated MI", "MONDO:0005068") == \
+        ["aspirin", "associated"]
+
+
+def test_label_text_is_decoded_and_otc_do_not_use_is_read():
+    from medic.curation.label import parse_label
+
+    otc = (SPL.replace("relief of heartburn", "relief of heartburn &amp; acid indigestion")
+              .replace('code="34070-3"', 'code="50570-1"'))
+    doc = parse_label(otc.encode())
+    assert "&amp;" not in doc.section_text("INDICATIONS")
+    assert "heartburn & acid indigestion" in doc.section_text("INDICATIONS")
+    assert doc.sections["CONTRAINDICATIONS"]  # read from the OTC "Do not use" section
+
+
+def test_full_text_limitations_heading_types_its_paragraphs():
+    from medic.curation.label import LabelDocument
+
+    doc = LabelDocument(setid="x", version=1, title="", active_moieties=[], sections={
+        "INDICATIONS": ["1 INDICATIONS AND USAGE", "Drug is indicated for asthma.",
+                        "1.3 Limitations of Use", "Not for use in acute bronchospasm.",
+                        "2 DOSAGE AND ADMINISTRATION"],
+        "CONTRAINDICATIONS": []})
+    roles = [(s["role"], s["text"][:20]) for s in doc.spans("INDICATIONS")]
+    assert ("LIMITATION_STATEMENT", "Not for use in acute") in roles
+    assert ("SECTION_TEXT", "Drug is indicated fo") in roles
+
+
+def test_term_search_matches_word_prefixes(monkeypatch):
+    fake = {t.id: t for t in _TERMS.values()}
+    monkeypatch.setattr(terms, "ontology", lambda prefix, cache_dir=None: fake)
+    source = terms.OboSource()
+    assert [i.id for i, _ in source.search("MONDO", "myocardial infar", 5)][:1] == \
+        ["MONDO:0005068"]
+    assert not source.search("MONDO", "yocardial", 5)  # must start at a word

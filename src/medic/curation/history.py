@@ -281,7 +281,11 @@ def records_for(target_path: str, history_dir: Path = HISTORY_DIR) -> list[Path]
 
 
 def validate_main(argv: list[str]) -> int:
-    paths = [Path(a) for a in argv] or sorted(HISTORY_DIR.rglob("*.yaml"))
+    paths: list[Path] = []
+    for arg in argv:
+        path = Path(arg)
+        paths.extend(sorted(path.rglob("*.yaml")) if path.is_dir() else [path])
+    paths = paths or sorted(HISTORY_DIR.rglob("*.yaml"))
     failed = 0
     for path in paths:
         for problem in check_record(path):
@@ -313,7 +317,11 @@ def main(argv: list[str] | None = None) -> int:
         yaml.dump(record, fh, sort_keys=False, default_flow_style=False, allow_unicode=True)
 
     print(f"Wrote history record: {out_path}", file=sys.stderr)
-    print(f"Next: edit the 'details', then run: just validate-history {out_path}", file=sys.stderr)
+    if args.details:
+        print(f"Next: just validate-history {out_path}", file=sys.stderr)
+    else:
+        print(f"Next: replace the placeholder 'details', then run: just validate-history "
+              f"{out_path}", file=sys.stderr)
     print(out_path)  # machine-capturable final stdout line
     return 0
 

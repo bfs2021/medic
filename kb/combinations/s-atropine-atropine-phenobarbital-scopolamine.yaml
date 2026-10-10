@@ -35,6 +35,7 @@ products:
     quote: >-
       For use as adjunctive therapy in the treatment of irritable bowel syndrome (irritable colon,
       spastic colon, mucous colitis) and acute enterocolitis.
+    evidence_status: DESI_POSSIBLY_EFFECTIVE
     status: DRAFT
     notes: >-
       FDA (DESI) classified this indication as "possibly" effective; the claim records what the
@@ -52,6 +53,7 @@ products:
     quote: >-
       For use as adjunctive therapy in the treatment of irritable bowel syndrome (irritable colon,
       spastic colon, mucous colitis) and acute enterocolitis.
+    evidence_status: DESI_POSSIBLY_EFFECTIVE
     status: DRAFT
     notes: >-
       DESI "possibly" effective. No acute-enterocolitis term (searched MONDO/HP "enterocolitis");
@@ -68,6 +70,7 @@ products:
       binding: EXACT
     quote: >-
       May also be useful as adjunctive therapy in the treatment of duodenal ulcer.
+    evidence_status: DESI_POSSIBLY_EFFECTIVE
     status: DRAFT
     notes: >-
       Hedged ("May also be useful") within the DESI "possibly" effective list. The following

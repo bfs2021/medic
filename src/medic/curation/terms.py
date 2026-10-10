@@ -156,8 +156,9 @@ class OboSource:
 
     def search(self, prefix: str, query: str, limit: int) -> list[tuple[TermInfo, str]]:
         q = query.lower().strip()
-        # Whole-word matching: "stable angina" must not find "unstable angina".
-        pattern = re.compile(r"(?<![a-z0-9])" + re.escape(q) + r"(?![a-z0-9])")
+        # Matches at the start of a word, and may end mid-word: "thrombo" finds thrombosis,
+        # "allerg" finds allergy, but "stable angina" does not find "unstable angina".
+        pattern = re.compile(r"(?<![a-z0-9])" + re.escape(q))
         hits: list[tuple[int, int, TermInfo, str]] = []
         for info in ontology(prefix).values():
             if info.obsolete or not info.id.startswith(f"{prefix}:"):
@@ -292,7 +293,7 @@ def exact_matches(prefix: str, text: str) -> tuple[str, ...]:
 
 
 def search(prefix: str, query: str, limit: int = 15) -> list[tuple[TermInfo, str]]:
-    """Terms whose label or an exact synonym contains ``query`` as whole words (case-insensitive)."""
+    """Terms whose label or an exact synonym contains ``query`` starting at a word boundary."""
     return source(prefix).search(prefix, query, limit)
 
 
@@ -307,25 +308,42 @@ def _print_info(curie: str) -> bool:
     for syn in info.exact_synonyms:
         print(f"  exact synonym: {syn}")
     for parent in info.parents:
-        p = lookup(parent) if ":" in parent else None
+        try:
+            p = lookup(parent)
+        except KeyError:  # a parent from an ontology with no configured source (e.g. BFO)
+            p = None
         print(f"  is_a: {parent} {p.label if p else ''}")
     return True
 
 
 def main(argv: list[str] | None = None) -> int:
-    """``search <PREFIX> <query>`` or ``info <CURIE> [<CURIE> ...]``.
+    """``search <PREFIX> <query> [<query> ...] [--limit N]`` or ``info <CURIE> [<CURIE> ...]``.
 
-    Prefixes: MONDO, HP, UBERON, HsapDv, PATO, CHEBI. The source for each is set in
-    conf/curation_terms.yaml or MEDIC_TERM_SOURCE_<PREFIX>.
+    Each search argument is one query (quote multi-word queries). A query matches a label or
+    exact synonym at the start of a word: "thrombo" finds thrombosis. Prefixes: MONDO, HP,
+    UBERON, HsapDv, PATO, CHEBI; the source for each is set in conf/curation_terms.yaml or
+    MEDIC_TERM_SOURCE_<PREFIX>. Several queries or ids per call save the ~20 s start-up.
     """
     from medic.curation.paths import enter_repo_root
 
-    argv = sys.argv[1:] if argv is None else argv
+    argv = list(sys.argv[1:] if argv is None else argv)
     enter_repo_root()
+    limit = 15
+    if "--limit" in argv:
+        i = argv.index("--limit")
+        limit = int(argv[i + 1])
+        del argv[i:i + 2]
     if len(argv) >= 3 and argv[0] == "search":
-        for info, text in search(argv[1], " ".join(argv[2:])):
-            via = "" if text == info.label else f"   (exact synonym: {text})"
-            print(f"{info.id}\t{info.label}{via}")
+        prefix, queries = argv[1], argv[2:]
+        for query in queries:
+            if len(queries) > 1:
+                print(f"## {query}")
+            hits = search(prefix, query, limit=limit)
+            if not hits:
+                print(f"(no {prefix} term matches {query!r})")
+            for info, text in hits:
+                via = "" if text == info.label else f"   (exact synonym: {text})"
+                print(f"{info.id}\t{info.label}{via}")
         return 0
     if len(argv) >= 2 and argv[0] == "info":
         found = [_print_info(curie) for curie in argv[1:]]

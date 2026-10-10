@@ -167,8 +167,12 @@ Guidance:
   no `age_range`; put it in `notes`.
 - Adults-only ("in adults") → `age_range: {min_years: 18, text: "adults"}`
   only if the word occurs in the quote; otherwise omit.
-- Do not encode severity or disease stage as a qualifier unless there is a
-  specific term for it; prefer the specific term as `object` instead
+- Severity words ("severe", "acute"): HP's clinical-modifier terms never
+  anchor (so "severe" never names a term on its own), but a severity word the
+  bound term does not include can still narrow it, and the validator warns
+  when such a term is bound EXACT. Use BROADER when the term lacks the
+  severity. Do not encode severity or disease stage as a qualifier unless there
+  is a specific term for it; prefer the specific term as `object` instead
   ("moderate to severe plaque psoriasis": check `terms search` for a specific
   term; if none, bind plaque psoriasis with `binding: BROADER`).
 
@@ -184,11 +188,18 @@ Guidance:
   `object_specialization`. Not attributed: an allergen is not a cause.
 - **A named syndrome** ("the syndrome of asthma, rhinitis, and nasal polyps"):
   one claim for the syndrome, never split into its parts.
-- **Drug-interaction contraindications** ("co-administration with
-  rilpivirine-containing products"): no condition object; skip and list in
+- **Co-medication-conditional contraindications** ("Do not co-administer
+  aliskiren with ... in patients with diabetes"): object = the condition
+  (diabetes), the agent in `when_coadministered_with` (CHEBI).
+- **Pure drug-interaction contraindications** ("co-administration with
+  rilpivirine-containing products"): no condition object; out of scope, list in
   summary.
-- **Pregnancy / lactation**: the condition is pregnancy; bind only if a
-  suitable term is confirmed via `terms info`, otherwise skip and report.
+- **Pregnancy / lactation** (and contraception as an indication, "prevent
+  pregnancy" → PREVENTS): curate with an unbound object and a `term_gap`; no
+  configured ontology has these terms yet. Do not skip them.
+- **Examples of a category** ("hemorrhagic diathesis (e.g., hemophilia,
+  von Willebrand's disease, ...)"): one claim for the category, the members as
+  `examples` descriptors (each bound or with its `term_gap`).
 - A contraindication stated only under Warnings and Precautions is never a
   `CONTRAINDICATED` claim.
 

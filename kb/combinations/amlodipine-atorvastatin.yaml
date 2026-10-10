@@ -102,7 +102,7 @@ products:
       binding: EXACT
     quote: >-
       In patients with recently documented CAD by angiography and without heart failure or an
-      ejection fraction &lt; 40%, amlodipine is indicated to reduce the risk of hospitalization
+      ejection fraction < 40%, amlodipine is indicated to reduce the risk of hospitalization
       for angina
     disease_context:
       text: CAD

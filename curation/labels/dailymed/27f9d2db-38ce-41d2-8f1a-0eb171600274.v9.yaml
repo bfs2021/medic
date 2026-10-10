@@ -15,4 +15,10 @@ sections:
   - 'temporarily relieves these common cold and flu symptoms: cough minor aches and pains sore throat
     headache runny nose sneezing itching of the nose or throat itchy, watery eyes due to hay fever temporarily
     reduces fever controls cough to help you get to sleep'
-  CONTRAINDICATIONS: []
+  CONTRAINDICATIONS:
+  - Do not use
+  - with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure
+    whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription
+    monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions,
+    or Parkinson's disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription
+    drug contains an MAOI, ask a doctor or pharmacist before taking this product.
