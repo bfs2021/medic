@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amoxicillin-clarithromycin-lansoprazole
+  path: kb/combinations/amoxicillin-clarithromycin-lansoprazole.yaml
+session:
+  id: 2026-10-09T235512Z-claude-code-67cdd5
+  timestamp: '2026-10-09T23:55:12Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: amoxicillin / clarithromycin / lansoprazole'
+  details: |
+    Curated from DailyMed setid 40adc1d3-7ce7-4698-aa7f-b5dbaaecec00 v13 (co-packaged lansoprazole/amoxicillin/clarithromycin). Product-level TREATS H. pylori infection | duodenal ulcer disease and PREVENTS duodenal ulcer (recurrence, from the indication heading; flagged). Contraindications: beta-lactam cross-allergy (unattributed); macrolide/erythromycin allergy, cholestatic jaundice and hepatic dysfunction with prior clarithromycin use, QT prolongation and ventricular arrhythmia attributed to clarithromycin on INGREDIENT_SUBJECT. Skipped own-ingredient allergy, drug-interaction contraindications (rilpivirine, lurasidone, cisapride etc., statins) and the colchicine-in-renal/hepatic-impairment item (co-medication-conditional; left for a human).

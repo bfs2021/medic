@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone
+  path: kb/combinations/6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone.yaml
+session:
+  id: 2026-10-09T235737Z-claude-code-ec8f8b
+  timestamp: '2026-10-09T23:57:37Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: (6S)-5-methyltetrahydrofolic acid / 17alpha-ethynylestradiol /
+    drospirenone'
+  details: |
+    Curated from DailyMed setid 786fb677-58c9-44ca-9c67-595d6be0fe7f v1. Indications: PMDD (RELIEVES_SYMPTOMS), moderate acne (TREATS, min age 14), neural tube defect (PREVENTS, unattributed although it points to levomefolate; no sex qualifier because the defect is in the conceptus). Contraception and the pregnancy contraindication not curated (no term for pregnancy). Twenty product-level contraindication claims from the full-text list; smoking (a behaviour) and the HCV drug interaction skipped; hormone-sensitive cancer left as term_gap.

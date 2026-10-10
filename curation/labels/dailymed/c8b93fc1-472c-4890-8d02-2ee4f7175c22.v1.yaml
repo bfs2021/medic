@@ -1,0 +1,35 @@
+setid: c8b93fc1-472c-4890-8d02-2ee4f7175c22
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/c8b93fc1-472c-4890-8d02-2ee4f7175c22.xml
+xml_sha256: 3ceb4e7ebb4c719e69c2bbc0ec8367cd4fe37c522600491b519ce64642eae3e3
+retrieved: '2026-10-09'
+title: BUTALBITAL, ASPIRIN, CAFFEINE AND CODEINE PHOSPHATECAPSULES, USP
+product_name: ''
+active_moieties:
+- ASPIRIN
+- BUTALBITAL
+- CAFFEINE
+- CODEINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - 'Butalbital, Aspirin, Caffeine and Codeine Phosphate Capsules are indicated for the relief of the
+    symptom complex of tension (or muscle contraction) headache. Evidence supporting the efficacy of butalbital,
+    aspirin, caffeine and codeine phosphate capsules is derived from 2 multi-clinic trials that compared
+    patients with tension headache randomly assigned to 4 parallel treatments: 1) butalbital, aspirin,
+    caffeine and codeine; 2) codeine; 3) butalbital, aspirin and caffeine; 4) placebo. Response was assessed
+    over the course of the first 4 hours of each of 2 distinct headaches, separated by at least 24 hours.
+    The combination product of butalbital, aspirin, caffeine and codeine proved statistically significantly
+    superior to each of its components and to placebo on measures of pain relief. Evidence supporting
+    the efficacy and safety of butalbital, aspirin, caffeine and codeine in the treatment of multiple
+    recurrent headaches is unavailable. Caution in this regard is required because codeine and butalbital
+    are habit-forming and potentially abusable.'
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'This combination product is contraindicated under the following conditions: Hypersensitivity or intolerance
+    to aspirin, caffeine, butalbital or codeine. Patients with hemorrhagic diathesis (e.g., hemophilia,
+    hypoprothrombinemia, von Willebrand''s disease, the thrombocytopenias, thrombasthenia and other ill-defined
+    hereditary platelet dysfunctions, severe vitamin K deficiency and severe liver damage.) Patients with
+    the syndrome of nasal polyps, angioedema and bronchospastic reactivity to aspirin or other nonsteroidal
+    anti-inflammatory drugs. Anaphylactoid reactions have occurred in such patients. Peptic ulcer or other
+    serious gastrointestinal lesions. Patients with porphyria.'

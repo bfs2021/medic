@@ -1,0 +1,54 @@
+setid: 40adc1d3-7ce7-4698-aa7f-b5dbaaecec00
+version: 13
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/40adc1d3-7ce7-4698-aa7f-b5dbaaecec00.xml
+xml_sha256: f44d4a2dc27bdca33e1ce6f20af589b77f0d148e5aa034add6482ab86e279bfd
+retrieved: '2026-10-09'
+title: Lansoprazole Delayed-Release Capsules USP, 30 mg, Amoxicillin Capsules USP, 500 mg, and Clarithromycin
+  Tablets USP, 500 mg Rx only
+product_name: Lansoprazole, Amoxicillin, Clarithromycin
+active_moieties:
+- AMOXICILLIN ANHYDROUS
+- CLARITHROMYCIN
+- LANSOPRAZOLE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - H. pylori Eradication to Reduce the Risk of Duodenal Ulcer Recurrence The components in lansoprazole
+    delayed-release capsules, amoxicillin capsules, and clarithromycin tablets are indicated for the treatment
+    of patients with H. pylori infection and duodenal ulcer disease (active or one-year history of a duodenal
+    ulcer) to eradicate H. pylori . Eradication of H. pylori has been shown to reduce the risk of duodenal
+    ulcer recurrence (see CLINICAL STUDIES and DOSAGE AND ADMINISTRATION ). To reduce the development
+    of drug-resistant bacteria and maintain the effectiveness of lansoprazole delayed-release capsules,
+    amoxicillin capsules, and clarithromycin tablets and other antibacterial drugs, lansoprazole delayed-release
+    capsules, amoxicillin capsules, and clarithromycin tablets should be used only to treat or prevent
+    infections that are proven or strongly suspected to be caused by susceptible bacteria. When culture
+    and susceptibility information are available, they should be considered in selecting or modifying
+    antibacterial therapy. In the absence of such data, local epidemiology and susceptibility patterns
+    may contribute to the empiric selection of therapy.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Lansoprazole delayed-release capsules, amoxicillin capsules, and clarithromycin tablets are contraindicated
+    in patients with known severe hypersensitivity to any component of the formulation of lansoprazole
+    delayed-release capsules. Hypersensitivity reactions may include anaphylaxis, anaphylactic shock,
+    angioedema, bronchospasm, acute interstitial nephritis, and urticaria (see ADVERSE REACTIONS ). Proton
+    Pump Inhibitors (PPIs), including lansoprazole delayed-release capsules, are contraindicated with
+    rilpivirine-containing products (see CLINICAL PHARMACOLOGY , Drug Interaction Studies ). A history
+    of severe hypersensitivity reactions (e.g., anaphylaxis or Stevens-Johnson syndrome) to amoxicillin
+    or other beta-lactam antibiotics (e.g., penicillins and cephalosporins) is a contraindication. Clarithromycin
+    is contraindicated in patients with a known hypersensitivity to clarithromycin, erythromycin, or any
+    of the macrolide antibiotics. Clarithromycin is contraindicated in patients with a history of cholestatic
+    jaundice/hepatic dysfunction associated with prior use of clarithromycin. Clarithromycin is contraindicated
+    with concomitant use of lurasidone due to the risk of an increase in lurasidone exposure and the potential
+    for serious adverse reactions [(see PRECAUTIONS , Drug Interactions ) (7)]. Clarithromycin should
+    not be given to patients with history of QT prolongation or ventricular cardiac arrhythmia, including
+    torsades de pointes. Concomitant administration of clarithromycin, a component of lansoprazole delayed-release
+    capsules, amoxicillin capsules, and clarithromycin tablets, and any of the following drugs is contraindicated:
+    cisapride, pimozide, astemizole, terfenadine, ergotamine or dihydroergotamine (see PRECAUTIONS, Drug
+    Interactions ). There have been post-marketing reports of drug interactions when clarithromycin and/or
+    erythromycin are coadministered with cisapride, pimozide, astemizole, or terfenadine resulting in
+    cardiac arrhythmias (QT prolongation, ventricular tachycardia, ventricular fibrillation, and torsades
+    de pointes ) most likely due to inhibition of metabolism of these drugs by erythromycin and clarithromycin.
+    Fatalities have been reported. Concomitant administration of clarithromycin and colchicine is contraindicated
+    in patients with renal or hepatic impairment. Clarithromycin should not be used concomitantly with
+    HMG-CoA reductase inhibitors (statins) that are extensively metabolized by CYP3A4 (lovastatin or simvastatin),
+    due to the increase risk of myopathy, including rhabdomyolysis (see WARNINGS ).'

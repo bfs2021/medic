@@ -1,0 +1,62 @@
+id: MEDICNE:combo-b00e5439-f8d7-5a13-bb36-c9d8e563a554
+name: dextromethorphan / Guaifenesin / paracetamol / phenylephrine
+ingredients:
+- id: CHEBI:4470
+  label: dextromethorphan
+- id: CHEBI:5551
+  label: Guaifenesin
+- id: CHEBI:46195
+  label: paracetamol
+- id: CHEBI:8093
+  label: phenylephrine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 5bbe271e-0344-4926-991c-3115756b908e
+    version: 18
+    title: Vicks ® DayQuil™ Severe Cold & Flu Liquid
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5bbe271e-0344-4926-991c-3115756b908e
+  product_name: Vicks DayQuil Severe Cold and Flu
+  claims:
+  - relation: RELIEVES_SYMPTOMS
+    section: INDICATIONS
+    object:
+      text: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms
+    status: DRAFT
+    notes: >-
+      OTC Drug Facts "Uses". The symptoms the label then lists (nasal congestion, sinus congestion and
+      pressure, cough, minor aches and pains, headache, fever, sore throat) are the cold/flu symptoms
+      relieved, not separate claims. Product-level; the label does not say which ingredient relieves
+      which symptom.
+  - relation: RELIEVES_SYMPTOMS
+    section: INDICATIONS
+    object:
+      text: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms
+    status: DRAFT
+    notes: >-
+      "flu" is an exact synonym of MONDO influenza (also the grounding-store row).
+notes: >-
+  OTC label: the helper prints the Drug Facts "Uses" as Indications and finds no Contraindications
+  section (the Drug Facts "Do not use" / "Ask a doctor before use if you have" warnings are not read,
+  and by the section-discipline rule would not be CONTRAINDICATED claims anyway). The bulleted Uses
+  list is printed as one run-on span with HTML entities left encoded ("&amp;"); the curated quote
+  avoids them. Not curated as claims: the listed symptoms and the mechanism phrases ("reduces
+  swelling of nasal passages", "helps loosen phlegm (mucus)").

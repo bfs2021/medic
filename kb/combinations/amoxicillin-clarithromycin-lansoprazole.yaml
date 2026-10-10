@@ -1,0 +1,213 @@
+id: MEDICNE:combo-91ef7abb-f3d0-5361-bad3-92ea28a33217
+name: amoxicillin / clarithromycin / lansoprazole
+ingredients:
+- id: CHEBI:2676
+  label: amoxicillin
+- id: CHEBI:3732
+  label: clarithromycin
+- id: CHEBI:6375
+  label: lansoprazole
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 40adc1d3-7ce7-4698-aa7f-b5dbaaecec00
+    version: 13
+    title: Lansoprazole Delayed-Release Capsules USP, 30 mg, Amoxicillin Capsules USP, 500 mg, and Clarithromycin
+      Tablets USP, 500 mg Rx only
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=40adc1d3-7ce7-4698-aa7f-b5dbaaecec00
+  product_name: Lansoprazole, Amoxicillin, Clarithromycin
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: H. pylori infection
+      term:
+        id: MONDO:0006781
+        label: Helicobacter pylori infectious disease
+      binding: EXACT
+    quote: >-
+      The components in lansoprazole delayed-release capsules, amoxicillin capsules, and
+      clarithromycin tablets are indicated for the treatment of patients with H. pylori infection
+      and duodenal ulcer disease (active or one-year history of a duodenal ulcer) to eradicate
+      H. pylori .
+    disease_context:
+      text: duodenal ulcer disease
+      term:
+        id: MONDO:0005412
+        label: duodenal ulcer
+      binding: EXACT
+    status: DRAFT
+    notes: >-
+      The regimen eradicates H. pylori in patients who also have duodenal ulcer disease ("active
+      or one-year history"). Product-level claim ("The components in ... are indicated"),
+      unattributed: the label does not assign eradication to any one component. Grounding store
+      maps "H. pylori infection" to UMLS:C0850666 and "duodenal ulcer disease" to UMLS:C0013295.
+  - relation: CONTRAINDICATED
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity reactions
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other beta-lactam antibiotics
+      term:
+        id: CHEBI:27933
+        label: beta-lactam antibiotic
+      binding: EXACT
+    quote: >-
+      A history of severe hypersensitivity reactions (e.g., anaphylaxis or Stevens-Johnson
+      syndrome) to amoxicillin or other beta-lactam antibiotics (e.g., penicillins and
+      cephalosporins) is a contraindication.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to beta-lactams other than the product's own amoxicillin; amoxicillin
+      itself is not a specialization (own ingredient). Penicillins and cephalosporins are the
+      label's examples of the class and are not listed separately. drug allergy is NARROWER than
+      "hypersensitivity reactions", justified by "to amoxicillin or other beta-lactam
+      antibiotics". Not attributed: the agents are allergens, and the sentence has no ingredient
+      subject.
+  - relation: CONTRAINDICATED
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: erythromycin
+      term:
+        id: CHEBI:42355
+        label: erythromycin A
+      binding: EXACT
+    - text: macrolide antibiotics
+      term:
+        id: CHEBI:25105
+        label: macrolide antibiotic
+      binding: EXACT
+    quote: >-
+      Clarithromycin is contraindicated in patients with a known hypersensitivity to
+      clarithromycin, erythromycin, or any of the macrolide antibiotics.
+    attributed_to:
+    - ingredient: CHEBI:3732
+      basis: INGREDIENT_SUBJECT
+    status: DRAFT
+    notes: >-
+      Co-packaged label: this sentence is the clarithromycin tablets' own contraindication, with
+      clarithromycin as its subject, so it is attributed to clarithromycin (INGREDIENT_SUBJECT),
+      not to the allergen. Clarithromycin as an allergen is the product's own and is not a
+      specialization; erythromycin and the macrolide class are the cross-sensitivities.
+      Erythromycin is bound to erythromycin A, the compound MeDIC's drug grounding uses for the
+      drug erythromycin (ChEBI's "erythromycin" CHEBI:48923 is the family of erythromycins).
+  - relation: CONTRAINDICATED
+    section: CONTRAINDICATIONS
+    object:
+      text: cholestatic jaundice
+      term:
+        id: HP:0000952
+        label: Jaundice
+      binding: BROADER
+    object_specialization:
+    - text: clarithromycin
+      term:
+        id: CHEBI:3732
+        label: clarithromycin
+      binding: EXACT
+    quote: >-
+      Clarithromycin is contraindicated in patients with a history of cholestatic
+      jaundice/hepatic dysfunction associated with prior use of clarithromycin.
+    attributed_to:
+    - ingredient: CHEBI:3732
+      basis: INGREDIENT_SUBJECT
+    status: DRAFT
+    notes: >-
+      Drug-caused condition: jaundice associated with prior clarithromycin use, so clarithromycin
+      is the specialization (not an allergy). No cholestatic-jaundice term (searched HP
+      "jaundice", "cholestasis", "cholestatic"; MONDO "cholestasis", "cholestatic"); HP Jaundice
+      (is_a Cholestasis) is broader. HP Cholestatic liver disease exists but names the liver
+      disease, not the jaundice. Grounding store maps "Cholestatic jaundice" to
+      UMLS:C0022354. The "/" pair is split into two claims.
+  - relation: CONTRAINDICATED
+    section: CONTRAINDICATIONS
+    object:
+      text: hepatic dysfunction
+      term:
+        id: HP:0001410
+        label: Decreased liver function
+      binding: EXACT
+    object_specialization:
+    - text: clarithromycin
+      term:
+        id: CHEBI:3732
+        label: clarithromycin
+      binding: EXACT
+    quote: >-
+      Clarithromycin is contraindicated in patients with a history of cholestatic
+      jaundice/hepatic dysfunction associated with prior use of clarithromycin.
+    attributed_to:
+    - ingredient: CHEBI:3732
+      basis: INGREDIENT_SUBJECT
+    status: DRAFT
+    notes: >-
+      HP Decreased liver function (exact synonym "Liver dysfunction") says what "hepatic
+      dysfunction" says. Grounding store maps "Hepatic dysfunction" to UMLS:C0086565.
+  - relation: CONTRAINDICATED
+    section: CONTRAINDICATIONS
+    object:
+      text: QT prolongation
+      term:
+        id: HP:0001657
+        label: Prolonged QT interval
+      binding: EXACT
+    quote: >-
+      Clarithromycin should not be given to patients with history of QT prolongation or
+      ventricular cardiac arrhythmia, including torsades de pointes.
+    attributed_to:
+    - ingredient: CHEBI:3732
+      basis: INGREDIENT_SUBJECT
+    status: DRAFT
+    notes: >-
+      Grounding store has sssom:NoTermFound for "QT prolongation"; HP Prolonged QT interval is
+      the phenotype.
+  - relation: CONTRAINDICATED
+    section: CONTRAINDICATIONS
+    object:
+      text: ventricular cardiac arrhythmia
+      term:
+        id: HP:0004308
+        label: Ventricular arrhythmia
+      binding: EXACT
+    quote: >-
+      Clarithromycin should not be given to patients with history of QT prolongation or
+      ventricular cardiac arrhythmia, including torsades de pointes.
+    attributed_to:
+    - ingredient: CHEBI:3732
+      basis: INGREDIENT_SUBJECT
+    status: DRAFT
+    notes: >-
+      Torsades de pointes is listed as a member ("including") and is covered by this claim, not
+      curated separately. Grounding store has sssom:NoTermFound for the phrase.
+notes: >-
+  Co-packaged product (lansoprazole capsules, amoxicillin capsules, clarithromycin tablets).
+  Not curated: "known severe hypersensitivity to any component of the formulation of
+  lansoprazole delayed-release capsules" (allergy to the product's own ingredient); the list of
+  hypersensitivity reaction types (describes reactions, not a contraindication); drug-interaction
+  contraindications with no condition object (PPIs with rilpivirine; clarithromycin with
+  lurasidone, cisapride, pimozide, astemizole, terfenadine, ergotamine, dihydroergotamine;
+  clarithromycin with lovastatin/simvastatin "due to the increase risk of myopathy"); the
+  post-marketing cardiac-arrhythmia narrative. "Concomitant administration of clarithromycin and
+  colchicine is contraindicated in patients with renal or hepatic impairment" names conditions,
+  but only for the co-administration with colchicine; it is left for a human to decide how to
+  record a co-medication-conditional contraindication. The antibacterial-stewardship paragraph in
+  Indications is usage guidance, not an indication. No PREVENTS duodenal-ulcer claim: the only
+  recurrence wording is the subsection heading ("H. pylori Eradication to Reduce the Risk of
+  Duodenal Ulcer Recurrence") and a study-result sentence ("has been shown to reduce the risk"),
+  neither an indication statement; a reviewer may want it added.

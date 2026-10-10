@@ -1,0 +1,18 @@
+setid: 27f9d2db-38ce-41d2-8f1a-0eb171600274
+version: 9
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/27f9d2db-38ce-41d2-8f1a-0eb171600274.xml
+xml_sha256: 1985d96acffdf5cd51d4e2ac064e52e7f35acd4b00093d65ba7a72f141aab2e8
+retrieved: '2026-10-09'
+title: Delsym ®Nighttime Cough
+product_name: Delsym Nighttime Cough
+active_moieties:
+- ACETAMINOPHEN
+- DEXTROMETHORPHAN
+- TRIPROLIDINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves these common cold and flu symptoms: cough minor aches and pains sore throat
+    headache runny nose sneezing itching of the nose or throat itchy, watery eyes due to hay fever temporarily
+    reduces fever controls cough to help you get to sleep'
+  CONTRAINDICATIONS: []

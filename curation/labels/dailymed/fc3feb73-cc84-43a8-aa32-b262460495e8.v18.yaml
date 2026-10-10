@@ -1,0 +1,53 @@
+setid: fc3feb73-cc84-43a8-aa32-b262460495e8
+version: 18
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/fc3feb73-cc84-43a8-aa32-b262460495e8.xml
+xml_sha256: 0eb4e4f8b01a38b0d90375dc32a76a26496cf188e28e3693293d7bd67ae180c9
+retrieved: '2026-10-09'
+title: 'These highlights do not include all the information needed to use MYFEMBREE safely and effectively.
+  See full prescribing information for MYFEMBREE. MYFEMBREE® (relugolix, estradiol, and norethindrone
+  acetate) tablets, for oral useInitial U.S. Approval: 2021'
+product_name: Myfembree
+active_moieties:
+- ESTRADIOL
+- NORETHINDRONE
+- RELUGOLIX
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'MYFEMBREE is a combination of relugolix, a gonadotropin-releasing hormone (GnRH) receptor antagonist,
+    estradiol, an estrogen, and norethindrone acetate, a progestin, indicated in premenopausal women for
+    the: management of heavy menstrual bleeding associated with uterine leiomyomas (fibroids). ( 1.1 ,
+    14.1 ) management of moderate to severe pain associated with endometriosis. ( 1.2 , 14.2 ) Limitations
+    of Use Use of MYFEMBREE should be limited to 24 months due to the risk of continued bone loss which
+    may not be reversible. ( 1.3 , 5.2 , 6 )'
+  - 1.1 Heavy Menstrual Bleeding Associated with Uterine Leiomyomas
+  - MYFEMBREE is indicated for the management of heavy menstrual bleeding associated with uterine leiomyomas
+    (fibroids) in premenopausal women [ see Clinical Studies ( 14 ) ].
+  - 1.2 Moderate to Severe Pain Associated with Endometriosis
+  - MYFEMBREE is indicated for the management of moderate to severe pain associated with endometriosis
+    in premenopausal women [ see Clinical Studies ( 14 ) ].
+  - 1.3 Limitations of Use
+  - Use of MYFEMBREE should be limited to 24 months due to the risk of continued bone loss that may not
+    be reversible [see Warnings and Precautions ( 5.2 ) and Adverse Reactions ( 6 )].
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'MYFEMBREE is contraindicated in women: With a high risk of arterial, venous thrombotic, or thromboembolic
+    disorders [see Boxed Warning and Warnings and Precautions ( 5.1 )] . Examples include women over 35
+    years of age who smoke and women who are known to have: current or history of deep vein thrombosis
+    or pulmonary embolism vascular disease (e.g., cerebrovascular disease, coronary artery disease, peripheral
+    vascular disease) thrombogenic valvular or thrombogenic rhythm diseases of the heart (e.g., subacute
+    bacterial endocarditis with valvular disease, or atrial fibrillation) inherited or acquired hypercoagulopathies
+    uncontrolled hypertension headaches with focal neurological symptoms or migraine headaches with aura
+    if over 35 years of age Who are pregnant. Exposure to MYFEMBREE early in pregnancy may increase the
+    risk of early pregnancy loss [see Warnings and Precautions ( 5.9 ) and Use in Specific Populations
+    ( 8.1 )] . With known osteoporosis, because of the risk of further bone loss [see Warnings and Precautions
+    ( 5.2 )]. With current or history of breast cancer or other hormone-sensitive malignancies, and with
+    increased risk for hormone-sensitive malignancies [see Warnings and Precautions ( 5.3 )] . With known
+    hepatic impairment or disease [see Warnings and Precautions ( 5.5 )] . With undiagnosed abnormal uterine
+    bleeding. With known anaphylactic reaction, angioedema, or hypersensitivity to MYFEMBREE or any of
+    its components. Anaphylactoid reactions, urticaria, and angioedema have been reported [see Warnings
+    and Precautions ( 5.14 ), Adverse Reactions ( 6.2 )].'
+  - High risk of arterial, venous thrombotic, or thromboembolic disorder. ( 4 ) Pregnancy. ( 4 ) Known
+    osteoporosis. ( 4 ) Current or history of breast cancer or other hormone-sensitive malignancies. (
+    4 ) Known hepatic impairment or disease. ( 4 ) Undiagnosed abnormal uterine bleeding. ( 4 ) Known
+    hypersensitivity to components of MYFEMBREE. ( 4 )

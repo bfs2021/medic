@@ -1,0 +1,102 @@
+id: MEDICNE:combo-3210b8d2-a948-54a5-92ff-49c3a1c335a9
+name: dextromethorphan / paracetamol / triprolidine
+ingredients:
+- id: CHEBI:4470
+  label: dextromethorphan
+- id: CHEBI:46195
+  label: paracetamol
+- id: CHEBI:84116
+  label: triprolidine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 27f9d2db-38ce-41d2-8f1a-0eb171600274
+    version: 9
+    title: Delsym ®Nighttime Cough
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=27f9d2db-38ce-41d2-8f1a-0eb171600274
+  product_name: Delsym Nighttime Cough
+  claims:
+  - relation: RELIEVES_SYMPTOMS
+    section: INDICATIONS
+    object:
+      text: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    quote: >-
+      temporarily relieves these common cold and flu symptoms: cough minor aches and pains sore
+      throat headache runny nose sneezing itching of the nose or throat itchy, watery eyes due to
+      hay fever
+    status: DRAFT
+    notes: >-
+      "relieves these common cold and flu symptoms: ..." is symptomatic treatment of the
+      conditions, so the condition is the object; the listed symptoms (cough, minor aches and
+      pains, sore throat, headache, runny nose, sneezing, itching of the nose or throat) stay in
+      the quote and are not separate claims. Product-level OTC Uses text, unattributed.
+  - relation: RELIEVES_SYMPTOMS
+    section: INDICATIONS
+    object:
+      text: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    quote: >-
+      temporarily relieves these common cold and flu symptoms: cough minor aches and pains sore
+      throat headache runny nose sneezing itching of the nose or throat itchy, watery eyes due to
+      hay fever
+    status: DRAFT
+  - relation: RELIEVES_SYMPTOMS
+    section: INDICATIONS
+    object:
+      text: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    quote: >-
+      temporarily relieves these common cold and flu symptoms: cough minor aches and pains sore
+      throat headache runny nose sneezing itching of the nose or throat itchy, watery eyes due to
+      hay fever
+    status: DRAFT
+    notes: >-
+      The flattened Uses list makes the scope of "due to hay fever" ambiguous: in the usual OTC
+      layout it qualifies the antihistamine symptoms (runny nose, sneezing, itching of the nose or
+      throat, itchy watery eyes); here it can only be shown to attach to "itchy, watery eyes".
+      Either way the claim is relief of hay fever symptoms.
+  - relation: RELIEVES_SYMPTOMS
+    section: INDICATIONS
+    object:
+      text: fever
+      term:
+        id: HP:0001945
+        label: Fever
+      binding: EXACT
+    quote: >-
+      temporarily reduces fever
+    status: DRAFT
+    notes: Temporary symptomatic reduction, so RELIEVES_SYMPTOMS rather than TREATS.
+  - relation: RELIEVES_SYMPTOMS
+    section: INDICATIONS
+    object:
+      text: cough
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      controls cough to help you get to sleep
+    status: DRAFT
+    notes: >-
+      Cough control at night, stated on its own line apart from the cold/flu symptom list.
+notes: >-
+  OTC Drug Facts label; the Uses text is the indication section. There is no Contraindications
+  section (the "Do not use" items sit under Warnings and are not curated). No use is assigned to an
+  ingredient by the label.

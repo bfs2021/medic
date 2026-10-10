@@ -1,0 +1,30 @@
+setid: a5aaf1db-1938-4073-9da4-c47f959d013e
+version: 7
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/a5aaf1db-1938-4073-9da4-c47f959d013e.xml
+xml_sha256: f6656b904fb50a4812d24162fe6df4689af6e7f53351eb40a36920264550438b
+retrieved: '2026-10-09'
+title: PHENOHYTRO ®ELIXIR
+product_name: Phenohytro
+active_moieties:
+- ATROPINE
+- HYOSCYAMINE
+- PHENOBARBITAL
+- SCOPOLAMINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - 'Based on the National Academy of Sciences-National Research Council''s review of this drug and/or
+    other information, FDA has classified the following indications as "possibly" effective: For use as
+    adjunctive therapy in the treatment of irritable bowel syndrome (irritable colon, spastic colon, mucous
+    colitis) and acute enterocolitis. May also be useful as adjunctive therapy in the treatment of duodenal
+    ulcer. IT HAS NOT BEEN SHOWN CONCLUSIVELY WHETHER ANTICHOLINERGIC / ANTISPASMODIC DRUGS AID IN THE
+    HEALING OF A DUODENAL ULCER, DECREASE THE RATE OF RECURRENCES, OR PREVENT COMPLICATIONS.'
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - PHENOHYTRO ® ELIXIR is contraindicated in patients with known hypersensitivity to any of the ingredients.
+    Phenobarbital is contraindicated in patients with acute intermittent porphyria and in those patients
+    in which phenobarbital produces restlessness and/or excitement. PHENOHYTRO ® ELIXIR is also contraindicated
+    in patients with glaucoma, obstructive uropathy; paralytic ileus; myasthenia gravis; intestinal atony;
+    unstable cardiovascular status in acute hemorrhage; severe ulcerative colitis especially if complicated
+    by toxic megacolon; hiatal hernia associated with reflux esophagitis; obstructive disease of the gastrointestinal
+    tract; or severe ulcerative colitis.

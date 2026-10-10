@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: s-atropine-atropine-phenobarbital-scopolamine
+  path: kb/combinations/s-atropine-atropine-phenobarbital-scopolamine.yaml
+session:
+  id: 2026-10-09T235736Z-claude-code-cc1796
+  timestamp: '2026-10-09T23:57:36Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: (S)-atropine / atropine / phenobarbital / scopolamine'
+  details: |
+    Curated from DailyMed setid a5aaf1db-1938-4073-9da4-c47f959d013e v7 (PHENOHYTRO elixir). Three TREATS claims from the DESI 'possibly effective' indications (IBS, acute enterocolitis BROADER, duodenal ulcer, the last hedged 'may also be useful'). Phenobarbital contraindications (acute intermittent porphyria; paradoxical restlessness / excitement, with phenobarbital as the agent) attributed to phenobarbital via INGREDIENT_SUBJECT; the remaining ten-item contraindication list is product-level. Own-ingredient hypersensitivity not curated. Fresh-context review applied: acute hemorrhage and intestinal atony bindings set to BROADER.

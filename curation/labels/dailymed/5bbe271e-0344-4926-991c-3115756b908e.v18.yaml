@@ -1,0 +1,21 @@
+setid: 5bbe271e-0344-4926-991c-3115756b908e
+version: 18
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/5bbe271e-0344-4926-991c-3115756b908e.xml
+xml_sha256: 64aacc04e5906a29fb0d86b74669bdc8983945796b8b08aacd790cd606ff948d
+retrieved: '2026-10-09'
+title: Vicks ® DayQuil™ Severe Cold & Flu Liquid
+product_name: Vicks DayQuil Severe Cold and Flu
+active_moieties:
+- ACETAMINOPHEN
+- DEXTROMETHORPHAN
+- GUAIFENESIN
+- PHENYLEPHRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves common cold/flu symptoms: nasal congestion sinus congestion &amp; pressure cough
+    due to minor throat &amp; bronchial irritation minor aches &amp; pains headache fever sore throat
+    reduces swelling of nasal passages temporarily restores freer breathing through the nose promotes
+    nasal and/or sinus drainage helps loosen phlegm (mucus) and thin bronchial secretions to rid the bronchial
+    passageways of bothersome mucus and make coughs more productive.'
+  CONTRAINDICATIONS: []

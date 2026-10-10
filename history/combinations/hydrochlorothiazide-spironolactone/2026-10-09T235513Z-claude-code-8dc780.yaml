@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-spironolactone
+  path: kb/combinations/hydrochlorothiazide-spironolactone.yaml
+session:
+  id: 2026-10-09T235513Z-claude-code-8dc780
+  timestamp: '2026-10-09T23:55:13Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: hydrochlorothiazide / spironolactone'
+  details: |
+    Curated from DailyMed setid 6fa96947-f4d8-4ca4-98fd-a2c123310d83 v3. All claims product-level. Indications: edema and sodium retention (term_gap) in CHF, diuretic-induced hypokalemia in CHF and in hypertensive patients, CHF with digitalis, edema and ascites in cirrhosis, edema in nephrotic syndrome (quote runs from the Edematous conditions heading), essential hypertension, hypertension, pathologic edema in pregnancy (no pregnancy term). Contraindications: anuria, acute renal insufficiency, renal excretory impairment, hypercalcemia, hyperkalemia, Addison's disease, thiazide/sulfonamide cross-allergy, and the hedged 'may also be contraindicated' acute or severe hepatic failure (flagged). Grounding store maps Sodium retention to hypernatremia (UMLS:C0020488), flagged as wrong.
