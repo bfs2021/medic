@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: acetylsalicylic-acid-butalbital-caffeine-codeine
+  path: kb/combinations/acetylsalicylic-acid-butalbital-caffeine-codeine.yaml
+session:
+  id: 2026-10-10T010218Z-claude-code-684cfa
+  timestamp: '2026-10-10T01:02:18Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  summary: Fold hemorrhagic-diathesis examples into one claim
+  details: |
+    Re-decided against DailyMed setid c8b93fc1-472c-4890-8d02-2ee4f7175c22 v1 under the current skill. The parenthesised members of 'hemorrhagic diathesis (e.g., ...)' (hemophilia, hypoprothrombinemia, von Willebrand's disease, the thrombocytopenias, thrombasthenia, severe vitamin K deficiency, severe liver damage) were seven separate CONTRAINDICATED claims; the examples rule makes them examples descriptors on the single hemorrhagic-diathesis claim, keeping each term, binding and the thrombasthenia term_gap. Other claims unchanged; no attribution is supported by the label's sentences (the contraindications are stated of 'This combination product'). curator_id updated to the current skill text.

@@ -177,7 +177,7 @@ def _valid_record() -> dict:
             "product_name": "TESTCOMBO",
             "claims": [
                 {
-                    "relation": "PREVENTS",
+                    "relation": "PREVENTATIVE_FOR_CONDITION",
                     "section": "INDICATIONS",
                     "quote": MI_QUOTE,
                     "object": {"text": "nonfatal MI", "term": _term("MONDO:0005068"),
@@ -188,7 +188,7 @@ def _valid_record() -> dict:
                     "status": "DRAFT",
                 },
                 {
-                    "relation": "PREVENTS",
+                    "relation": "PREVENTATIVE_FOR_CONDITION",
                     "section": "INDICATIONS",
                     "quote": ULCER_QUOTE,
                     "object": {"text": "aspirin associated gastric ulcers",
@@ -200,7 +200,7 @@ def _valid_record() -> dict:
                     "status": "DRAFT",
                 },
                 {
-                    "relation": "CONTRAINDICATED",
+                    "relation": "CONTRAINDICATED_IN",
                     "section": "CONTRAINDICATIONS",
                     "quote": NSAID_QUOTE,
                     "object": {"text": "allergy", "term": _term("MONDO:0000775"),
@@ -210,7 +210,7 @@ def _valid_record() -> dict:
                     "status": "DRAFT",
                 },
                 {
-                    "relation": "CONTRAINDICATED",
+                    "relation": "CONTRAINDICATED_IN",
                     "section": "CONTRAINDICATIONS",
                     "quote": VIRAL_QUOTE,
                     "object": {"text": "suspected viral infections",
@@ -321,7 +321,7 @@ def test_quote_from_limitations_of_use_is_an_error(workspace):
 
 
 def test_contraindication_must_quote_the_contraindications_section(workspace):
-    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(relation="CONTRAINDICATED"))
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(relation="CONTRAINDICATED_IN"))
     assert any("CONTRAINDICATIONS section" in e for e in errors)
 
 
@@ -405,7 +405,7 @@ def test_component_statement_needs_the_component_wording(workspace):
 def test_product_name_is_not_an_attribution(workspace):
     """Review repro A: a generic product name names every ingredient and attributes nothing."""
     def mutate(c):
-        c.update(quote=GENERIC_QUOTE, relation="RELIEVES_SYMPTOMS", disease_context=None,
+        c.update(quote=GENERIC_QUOTE, relation="AMELIORATES_CONDITION", disease_context=None,
                  object={"text": "heartburn", "term_gap": "not in the test ontology"},
                  attributed_to=[{"ingredient": ASPIRIN, "basis": "COMPONENT_STATEMENT"}])
     errors, _ = _claim_errors(workspace, 0, mutate)
@@ -547,9 +547,21 @@ def test_every_biolink_reference_in_the_schema_exists():
 
     schema = yaml.safe_load((REPO / "src/medic/schema/combination.yaml").read_text())
     refs: list[tuple[str, str]] = []
+    relations = schema["enums"]["ClaimRelationEnum"]["permissible_values"]
+    for name, pv in relations.items():
+        pv = pv or {}
+        # Naming policy: a Biolink match takes Biolink's name; anything more specific maps
+        # to its Biolink parent with broad_mappings.
+        if pv.get("meaning", "").startswith("biolink:"):
+            assert bl.model_name(pv["meaning"]).replace(" ", "_").upper() == name, name
+        else:
+            assert pv.get("broad_mappings"), f"{name} names no Biolink parent"
+        refs += [("predicate", c) for c in [pv.get("meaning", ""), *pv.get("broad_mappings", [])]
+                 if c.startswith("biolink:")]
     for enum in schema["enums"].values():
         for pv in (enum.get("permissible_values") or {}).values():
-            if (pv or {}).get("meaning", "").startswith("biolink:"):
+            if (pv or {}).get("meaning", "").startswith("biolink:") and \
+                    ("predicate", pv["meaning"]) not in refs:
                 refs.append(("predicate", pv["meaning"]))
     for slot in schema["slots"].values():
         for key in ("exact_mappings", "close_mappings", "related_mappings"):
@@ -901,7 +913,7 @@ def test_coadministration_only_on_contraindications(workspace):
     """Decision 4: when_coadministered_with qualifies a contraindication, nothing else."""
     spec = [{"text": "aspirin", "term": _term(ASPIRIN), "binding": "EXACT"}]
     errors, _ = _claim_errors(workspace, 1, lambda c: c.update(when_coadministered_with=spec))
-    assert any("only a CONTRAINDICATED claim" in e for e in errors)
+    assert any("only a CONTRAINDICATED_IN claim" in e for e in errors)
     errors, _ = _claim_errors(workspace, 3, lambda c: c.update(when_coadministered_with=spec))
     assert not any("when_coadministered_with" in e for e in errors)
 

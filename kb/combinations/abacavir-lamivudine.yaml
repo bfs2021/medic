@@ -45,7 +45,7 @@ products:
       "antiretroviral", "anti-HIV", "antiviral"); anti-HIV agent is NARROWER than
       "antiretroviral agents", justified by the HIV-1 indication in the same sentence.
       Product-level claim, unattributed.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hepatic impairment

@@ -13,7 +13,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -24,7 +24,7 @@ products:
     url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5bbe271e-0344-4926-991c-3115756b908e
   product_name: Vicks DayQuil Severe Cold and Flu
   claims:
-  - relation: RELIEVES_SYMPTOMS
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: common cold
@@ -40,7 +40,7 @@ products:
       pressure, cough, minor aches and pains, headache, fever, sore throat) are the cold/flu symptoms
       relieved, not separate claims. Product-level; the label does not say which ingredient relieves
       which symptom.
-  - relation: RELIEVES_SYMPTOMS
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: flu
@@ -54,9 +54,12 @@ products:
     notes: >-
       "flu" is an exact synonym of MONDO influenza (also the grounding-store row).
 notes: >-
-  OTC label: the helper prints the Drug Facts "Uses" as Indications and finds no Contraindications
-  section (the Drug Facts "Do not use" / "Ask a doctor before use if you have" warnings are not read,
-  and by the section-discipline rule would not be CONTRAINDICATED claims anyway). The bulleted Uses
-  list is printed as one run-on span with HTML entities left encoded ("&amp;"); the curated quote
-  avoids them. Not curated as claims: the listed symptoms and the mechanism phrases ("reduces
-  swelling of nasal passages", "helps loosen phlegm (mucus)").
+  OTC label: the helper prints the Drug Facts "Uses" as Indications and "Do not use" as
+  Contraindications. Neither "Do not use" item is curated: "with any drug containing acetaminophen"
+  and "if you are now taking a prescription monoamine oxidase inhibitor (MAOI) ... or for 2 weeks
+  after stopping the MAOI drug" are drug-drug interactions with no patient condition (the
+  parenthesis "certain drugs for depression, psychiatric or emotional conditions, or Parkinson's
+  disease" describes what MAOIs are used for, not a condition that contraindicates the product).
+  The Drug Facts "Ask a doctor before use" warnings are not a contraindications section. Not
+  curated as claims from Uses: the listed symptoms and the mechanism phrases ("reduces swelling of
+  nasal passages", "helps loosen phlegm (mucus)").

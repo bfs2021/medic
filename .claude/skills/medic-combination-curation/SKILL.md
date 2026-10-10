@@ -78,7 +78,7 @@ file in a session; it is authoritative over this skill if they ever disagree.
    conditions may name the product's own ingredient as their agent
    ("thrombocytopenia with use of trimethoprim"): that is curated.
 4. **Section discipline.** `INDICATIONS` claims come from Indications and
-   Usage. `CONTRAINDICATED` claims come from the Contraindications section
+   Usage. `CONTRAINDICATED_IN` claims come from the Contraindications section
    only, never from Warnings and Precautions, Boxed Warning, or a Limitations
    of Use paragraph.
 5. **Limitations of Use are not indications** and not contraindications. A
@@ -186,8 +186,8 @@ Contraindications section. For each sentence ask:
    secondary prevention of cardiovascular and cerebrovascular events"),
    procedures ("revascularization procedures"), and outcomes that are not
    diseases ("death") are not claim objects. Note them, do not force them.
-2. Which relation? `TREATS`, `PREVENTS`, `RELIEVES_SYMPTOMS`, or
-   (Contraindications only) `CONTRAINDICATED`. See the decision table in
+2. Which relation? `TREATS`, `PREVENTATIVE_FOR_CONDITION`, `AMELIORATES_CONDITION`, or
+   (Contraindications only) `CONTRAINDICATED_IN`. See the decision table in
    `references/claims-and-qualifiers.md`.
 3. Does the label assign it to a component, or name an ingredient as its
    cause? If yes, which one(s), on which basis?
@@ -197,7 +197,11 @@ Contraindications section. For each sentence ask:
    on a claim about a fetus or conceptus ("neural tube defect") is wrong.
 5. Does the label list examples of the condition ("e.g.", "including", "such
    as")? One claim for the category; the members go in its `examples`, never
-   one claim per member.
+   one claim per member — except a member with a restriction of its own
+   ("migraine ... if over age 35", "now or in the past"): that member is a
+   separate claim carrying the restriction, since `examples` cannot hold one.
+   A coordination ("renal or hepatic impairment") is two claims, each quoting
+   the shared phrase.
 6. Does a contraindication apply only with a co-administered agent ("Do not
    co-administer aliskiren ... in patients with diabetes")? Object = the
    condition; the agent in `when_coadministered_with`. A contraindication with
@@ -207,7 +211,13 @@ Contraindications section. For each sentence ask:
    validator requires it whenever the label says so).
 8. Pregnancy, lactation, contraception ("prevent pregnancy"): curate them.
    No configured ontology has these terms yet, so the object is unbound with a
-   `term_gap`; do not skip them.
+   `term_gap`; do not skip them. When pregnancy qualifies another claim
+   ("edema of pregnancy"), record it as an unbound `life_stage`.
+   Outcome endpoints ("reduce the risk of hospitalization for angina") are
+   PREVENTATIVE_FOR_CONDITION the condition they are for, text keeping the
+   outcome wording, binding BROADER.
+   Within one file, bind the same wording to the same term (the validator
+   warns otherwise).
 9. Is it negated, or inside a Limitations of Use paragraph? Then no claim.
 
 ### Step 4: Look up terms
@@ -391,7 +401,7 @@ products:
       url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae8f4eb4-b1eb-432e-b5ab-598c29996d6a
     product_name: aspirin and omeprazole delayed-release tab   # from the skeleton
     claims:
-      - relation: PREVENTS
+      - relation: PREVENTATIVE_FOR_CONDITION
         section: INDICATIONS
         object:
           text: nonfatal MI
@@ -413,7 +423,7 @@ products:
         notes: >-
           Secondary prevention. The same sentence also covers patients with unstable
           angina pectoris; that context is a separate claim.
-      - relation: PREVENTS
+      - relation: PREVENTATIVE_FOR_CONDITION
         section: INDICATIONS
         object:
           text: aspirin-associated gastric ulcers
@@ -435,7 +445,7 @@ products:
           gastric ulcer + specialization aspirin composes "aspirin-associated gastric
           ulcer"; no drug-induced gastric ulcer term exists. "age (≥ 55) or documented
           history" are alternative risk criteria, so no age_range is recorded.
-      - relation: CONTRAINDICATED
+      - relation: CONTRAINDICATED_IN
         section: CONTRAINDICATIONS
         object:
           text: allergy
@@ -449,7 +459,7 @@ products:
           Patients with known allergy to aspirin and other nonsteroidal
           anti-inflammatory drug products (NSAIDs)
         status: DRAFT
-      - relation: CONTRAINDICATED
+      - relation: CONTRAINDICATED_IN
         section: CONTRAINDICATIONS
         object:
           text: suspected viral infections
@@ -499,8 +509,8 @@ Note what is **absent**, and why:
 | Treating an allergen as an attribution ("allergy to aspirin and other NSAIDs" → aspirin) | The patient is allergic to it; it is not the cause of a claim | `object_specialization`, no attribution |
 | Forcing a distant term to avoid a gap ("chronic stable angina" → myocardial ischemia) | The record says less than the label, silently | The accurate term (HP is fine) with `binding`, or a `term_gap` |
 | Paraphrased or tidied quote ("is indicated to reduce MI risk") | Fails the substring check; destroys traceability (I-8) | Copy the label span exactly, artifacts included |
-| Claims from Limitations of Use ("not for ... acute myocardial infarction" → TREATS or CONTRAINDICATED) | It limits use; it neither indicates nor contraindicates | No claim; mention it in your summary if notable |
-| Contraindications pulled from Warnings and Precautions or Boxed Warning | Those are risks, not contraindications | `CONTRAINDICATED` only from the Contraindications section |
+| Claims from Limitations of Use ("not for ... acute myocardial infarction" → TREATS or CONTRAINDICATED_IN) | It limits use; it neither indicates nor contraindicates | No claim; mention it in your summary if notable |
+| Contraindications pulled from Warnings and Precautions or Boxed Warning | Those are risks, not contraindications | `CONTRAINDICATED_IN` only from the Contraindications section |
 | Inventing CURIEs (ingredients, combo id, MONDO ids from memory) | Plausible wrong ids pass casual review and silently corrupt the KB | Helper for ingredients/id; `terms` lookup for every term, this session |
 | Pharmacology-based attribution ("omeprazole is a PPI so it must be the ulcer part") | Attribution must be stated by the label | Leave unattributed; say in `notes` it looks component-specific |
 | Bundling several conditions into one claim | Each condition is its own edge downstream | One claim per condition / context |

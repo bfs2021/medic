@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-guaifenesin-paracetamol-phenylephrine
+  path: kb/combinations/dextromethorphan-guaifenesin-paracetamol-phenylephrine.yaml
+session:
+  id: 2026-10-10T010240Z-claude-code-decd2e
+  timestamp: '2026-10-10T01:02:40Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - notes
+  summary: Review Drug Facts Do not use as Contraindications; no new claims
+  details: |
+    Re-decided against DailyMed setid 5bbe271e-0344-4926-991c-3115756b908e v18 (pin regenerated at the same version with the OTC sections). The helper now reads Drug Facts 'Do not use' as Contraindications; both items (any other acetaminophen-containing drug; current or recent prescription MAOI) are drug-drug interactions with no patient condition, so out of scope, and the MAOI parenthesis names what MAOIs treat rather than a contraindicating condition. Indication claims (common cold, influenza; RELIEVES_SYMPTOMS, unattributed) unchanged. File notes rewritten (they said no Contraindications section was found and mentioned encoded entities); curator_id updated.

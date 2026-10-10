@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -44,7 +44,7 @@ products:
       therapy of hypertension") restricts this claim but produces none; it is not recorded as
       line_of_therapy because it cannot be quoted. HP Hypertension agrees with the grounding
       store; MONDO has no term labelled or exactly synonymous with "hypertension".
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: anuria
@@ -63,7 +63,7 @@ products:
     notes: >-
       "Because of the hydrochlorothiazide component" opens the sentence and governs every item in
       it, so the anuria contraindication is attributed to hydrochlorothiazide.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hypersensitivity
@@ -91,11 +91,32 @@ products:
       "Because of the hydrochlorothiazide component", not on the allergen (sulfonamides are
       other drugs). ChEBI sulfonamide is the chemical class, broader than "sulfonamide-derived
       drugs".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not coadminister aliskiren with olmesartan medoxomil, amlodipine and hydrochlorothiazide
+      tablets in patients with diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration, so aliskiren is recorded in
+      when_coadministered_with. MONDO diabetes mellitus has the exact synonym "diabetes". Not
+      attributed: the label names no component (the aliskiren interaction points at olmesartan
+      pharmacologically, but the sentence speaks of the product). The Highlights restate it.
 notes: >-
   Not claimed: the class-level cardiovascular-outcomes text after the indication (the label says
   there are no controlled trials demonstrating risk reduction with this product); Limitations of
-  Use (not for initial therapy); "Do not coadminister aliskiren ... in patients with diabetes", a
-  drug-interaction contraindication conditional on co-administration with aliskiren, left for a
-  human to decide how to record; "hypersensitivity to any component" (own ingredients). The
+  Use (not for initial therapy); "hypersensitivity to any component" (own ingredients). The
   Highlights copy ("Anuria: Hypersensitivity to sulfonamide-derived drugs ( 4 )") restates the
   full-text contraindications without the component wording.

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-spironolactone
+  path: kb/combinations/hydrochlorothiazide-spironolactone.yaml
+session:
+  id: 2026-10-10T011344Z-claude-code-564bdc
+  timestamp: '2026-10-10T01:13:44Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  summary: 'Edit: record pregnancy as an unbound life stage'
+  details: |
+    Re-checked against DailyMed setid 6fa96947-f4d8-4ca4-98fd-a2c123310d83 v3 under the current skill. The edema-in-pregnancy indication now carries life_stage 'pregnancy', unbound with a term_gap (no pregnancy-state term in MONDO/HP/PATO/HsapDv), per the rule that pregnancy is curated rather than skipped. No attribution is available: every claim sentence has the product (generic name) as subject. curator_id updated to the current skill text.

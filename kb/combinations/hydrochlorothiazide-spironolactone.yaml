@@ -9,7 +9,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -274,13 +274,18 @@ products:
     quote: >-
       Spironolactone and hydrochlorothiazide tablets are indicated in pregnancy when edema is due
       to pathologic causes just as it is in the absence of pregnancy
+    life_stage:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO, HP, PATO and HsapDv "pregnan": only pregnancy disorders (ectopic pregnancy,
+        toxemia of pregnancy), pregnancy history/exposure and modifiers (Triggered by pregnancy);
+        no term for the state of being pregnant.
     status: DRAFT
     notes: >-
-      Edema in pregnancy from pathologic causes. Pregnancy is not recorded as a qualifier: no
-      pregnancy term in MONDO, HP, PATO or HsapDv (searched MONDO/HP "pregnancy", "pregnan";
-      PATO "pregnant"). Dependent/physiologic edema of pregnancy is stated not to warrant
+      Edema in pregnancy from pathologic causes. Pregnancy is recorded as the patient's life
+      stage, unbound (no configured ontology has a pregnancy-state term). Dependent/physiologic edema of pregnancy is stated not to warrant
       diuretics, so no claim for it.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: anuria
@@ -294,7 +299,7 @@ products:
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
     status: DRAFT
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: acute renal insufficiency
@@ -311,7 +316,7 @@ products:
     notes: >-
       MONDO acute kidney injury (exact synonyms acute renal failure / acute kidney failure).
       Grounding store maps "Acute renal insufficiency" to UMLS:C1565662.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: significant impairment of renal excretory function
@@ -328,7 +333,7 @@ products:
     notes: >-
       HP Renal insufficiency (reduced kidney performance) is what "impairment of renal excretory
       function" says; "significant" is severity only.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hypercalcemia
@@ -342,7 +347,7 @@ products:
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
     status: DRAFT
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hyperkalemia
@@ -356,7 +361,7 @@ products:
       hypercalcemia, hyperkalemia, Addison’s disease, and in patients who are allergic to thiazide
       diuretics or to other sulfonamide-derived drugs.
     status: DRAFT
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: Addison’s disease
@@ -375,7 +380,7 @@ products:
       insufficiency. Grounding store maps it to UMLS:C0001403 (Primary adrenal insufficiency),
       which is broader than MONDO's autoimmune term; a reviewer may prefer primary adrenal
       insufficiency.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: allergic
@@ -406,7 +411,7 @@ products:
       is broader (it includes non-diuretics). sulfonamide is the chemical class, broader than
       "sulfonamide-derived drugs". Hydrochlorothiazide is itself a thiazide sulfonamide, but the
       label names the classes, not the ingredient. Unattributed.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: acute or severe hepatic failure

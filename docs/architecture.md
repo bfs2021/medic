@@ -311,7 +311,7 @@ any legacy table — there is no legacy Excel fallback.
 The indication schema (`src/medic/schema/indication.yaml`) models:
 
 - **`IndicationAssociation`** -- a canonical drug-disease pair with relationship type, reliability, a noisy-OR confidence, and an `assertions` list of per-source-document `SourceAssertion`s (each with its own mentions, spans, evidence and regulatory status)
-- **`Hyperrelation`** -- symptom-level specificity within an indication (e.g., "reduces tremor in Parkinson's"), with target symptom (HPO), relationship type (REDUCES, PREVENTS, TREATS, CONTRAINDICATES_IN, WORSENS), and supporting text
+- **`Hyperrelation`** -- symptom-level specificity within an indication (e.g., "reduces tremor in Parkinson's"), with target symptom (HPO), relationship type (REDUCES, PREVENTATIVE_FOR_CONDITION, TREATS, CONTRAINDICATES_IN, WORSENS), and supporting text
 - **`IndicationList`** -- collection wrapper
 
 Contraindication-specific fields include `is_allergen` and `is_diagnostic_agent`.
@@ -374,8 +374,8 @@ that fan-out with hand-curated, source-of-truth YAML, dismech-style:
 
 - **Records:** `kb/combinations/<slug>.yaml`, schema `src/medic/schema/combination.yaml`. One
   file per ingredient set; each labelled product is a block pinned to its SPL `setid` +
-  `version`; each claim carries a relation (`TREATS` / `PREVENTS` / `RELIEVES_SYMPTOMS` /
-  `CONTRAINDICATED`) and a verbatim `quote`. Every concept in a claim (object, object
+  `version`; each claim carries a relation (`TREATS` / `PREVENTATIVE_FOR_CONDITION` / `AMELIORATES_CONDITION` /
+  `CONTRAINDICATED_IN`) and a verbatim `quote`. Every concept in a claim (object, object
   specialization, disease / anatomical context, life stage, sex, line of therapy,
   co-therapy) is a **Descriptor**, dismech's strings-first pattern: the label's own `text`
   always (verbatim, inside the quote), an ontology `term` with a `binding`

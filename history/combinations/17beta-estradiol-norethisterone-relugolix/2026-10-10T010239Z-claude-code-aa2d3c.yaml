@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17beta-estradiol-norethisterone-relugolix
+  path: kb/combinations/17beta-estradiol-norethisterone-relugolix.yaml
+session:
+  id: 2026-10-10T010239Z-claude-code-aa2d3c
+  timestamp: '2026-10-10T01:02:39Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  - notes
+  summary: Fold thrombotic-risk examples; curate the pregnancy contraindication
+  details: |
+    Re-decided against DailyMed setid fc3feb73-cc84-43a8-aa32-b262460495e8 v18 under the current skill. (1) 'With a high risk of arterial, venous thrombotic, or thromboembolic disorders ... Examples include ... women who are known to have: ...' is an examples list: the fourteen per-member CONTRAINDICATED claims (DVT, PE, vascular disease and its e.g. members cerebrovascular / coronary artery / peripheral vascular disease, thrombogenic valvular / rhythm heart disease, SBE, atrial fibrillation, hypercoagulopathies, uncontrolled hypertension, headaches with focal neurological symptoms, migraine with aura) are now examples on the one thrombotic-disease claim, terms and bindings kept; nested e.g. members flattened; the migraine example's 'if over 35 years of age' restriction is recorded in notes since examples carry no age_range. (2) New CONTRAINDICATED claim for 'Who are pregnant', unbound with a term_gap, previously skipped. MYFEMBREE is a brand name, so no INGREDIENT_SUBJECT; no other attribution supported. curator_id updated.

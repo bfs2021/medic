@@ -44,7 +44,7 @@ products:
       loses the phenotype. "in patients requiring more than one bronchodilator" is a population /
       severity criterion, not a prior-therapy failure, so no line_of_therapy. Product-level claim,
       unattributed.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hypersensitivity

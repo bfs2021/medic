@@ -70,9 +70,9 @@ SOURCE_JURISDICTION = {"DAILYMED": "USA"}
 #: Which section each relation may be quoted from.
 RELATION_SECTION = {
     "TREATS": "INDICATIONS",
-    "PREVENTS": "INDICATIONS",
-    "RELIEVES_SYMPTOMS": "INDICATIONS",
-    "CONTRAINDICATED": "CONTRAINDICATIONS",
+    "PREVENTATIVE_FOR_CONDITION": "INDICATIONS",
+    "AMELIORATES_CONDITION": "INDICATIONS",
+    "CONTRAINDICATED_IN": "CONTRAINDICATIONS",
 }
 
 #: The ontologies each descriptor slot usually binds to. Advisory only (a WARNING): the
@@ -231,6 +231,22 @@ class Checker:
         self._check_history(path)
         for p_idx, product in enumerate(data.get("products") or []):
             self._check_product(path, data, product, f"products[{p_idx}]")
+        self._check_consistent_bindings(path, data)
+
+    def _check_consistent_bindings(self, path: Path, data: dict) -> None:
+        """The same wording should bind the same term throughout one file."""
+        seen: dict[str, set[str]] = {}
+        for product in data.get("products") or []:
+            for claim in product.get("claims") or []:
+                for _slot, desc in _descriptors(claim):
+                    term = (desc.get("term") or {}).get("id")
+                    if term:
+                        key = _norm_ws(desc.get("text", "")).lower()
+                        seen.setdefault(key, set()).add(term)
+        for text, ids in sorted(seen.items()):
+            if len(ids) > 1:
+                self.warn(path, "bindings", f"{text!r} is bound to {sorted(ids)} in different "
+                                            "claims; bind one term unless the contexts differ")
 
     def _check_schema(self, path: Path, data: dict) -> bool:
         from linkml.validator import validate
@@ -391,9 +407,9 @@ class Checker:
             self.error(path, f"{where}.age_range.text", "does not occur in the quote")
         self._check_attribution(path, claim, doc, names, product_names, where)
         self._check_allergy(path, claim, names, where)
-        if claim.get("when_coadministered_with") and relation != "CONTRAINDICATED":
+        if claim.get("when_coadministered_with") and relation != "CONTRAINDICATED_IN":
             self.error(path, f"{where}.when_coadministered_with",
-                       "only a CONTRAINDICATED claim can depend on a co-administered agent")
+                       "only a CONTRAINDICATED_IN claim can depend on a co-administered agent")
         self._check_evidence_status(path, claim, doc, where)
         if claim["status"] in ("REVIEWED", "REJECTED") and not claim.get("reviewer"):
             self.error(path, f"{where}.status", f"{claim['status']} requires a reviewer")
@@ -723,7 +739,7 @@ class Checker:
         the product's own ingredients as their agent ("thrombocytopenia with use of
         trimethoprim"): that is a drug-caused condition, not an allergy, and is curated.
         """
-        if claim["relation"] != "CONTRAINDICATED" or not self._is_allergy(claim["object"]):
+        if claim["relation"] != "CONTRAINDICATED_IN" or not self._is_allergy(claim["object"]):
             return
         specs = claim.get("object_specialization") or []
         if not specs:
@@ -751,22 +767,22 @@ class Checker:
 
     def _check_polarity_and_wording(self, path: Path, claim: dict, where: str) -> None:
         relation, quote, text = claim["relation"], claim["quote"], claim["object"]["text"]
-        cues = _CONTRA_NEGATION_CUES if relation == "CONTRAINDICATED" else _NEGATION_CUES
+        cues = _CONTRA_NEGATION_CUES if relation == "CONTRAINDICATED_IN" else _NEGATION_CUES
         neg, total, cue = assertion_negated(text, quote, head_fallback=False, cues=cues)
         if total and neg == total:
             self.warn(path, f"{where}.quote",
                       f"{text!r} follows the negation cue {cue!r}; check the label states "
                       "this claim positively")
         low = quote.lower()
-        if relation == "PREVENTS" and not any(c in low for c in _PREVENT_CUES):
-            self.warn(path, f"{where}.relation", "PREVENTS, but the quote has no "
+        if relation == "PREVENTATIVE_FOR_CONDITION" and not any(c in low for c in _PREVENT_CUES):
+            self.warn(path, f"{where}.relation", "PREVENTATIVE_FOR_CONDITION, but the quote has no "
                                                  "risk-reduction or prevention wording")
-        if relation == "RELIEVES_SYMPTOMS" and not any(c in low for c in _RELIEF_CUES):
-            self.warn(path, f"{where}.relation", "RELIEVES_SYMPTOMS, but the quote has no "
+        if relation == "AMELIORATES_CONDITION" and not any(c in low for c in _RELIEF_CUES):
+            self.warn(path, f"{where}.relation", "AMELIORATES_CONDITION, but the quote has no "
                                                  "relief or symptom wording")
         if relation == "TREATS" and re.search(r"\b(reduc\w* the (combined )?risk|prevent)", low):
             self.warn(path, f"{where}.relation", "TREATS, but the quote reads as "
-                                                 "risk reduction; consider PREVENTS")
+                                                 "risk reduction; consider PREVENTATIVE_FOR_CONDITION")
 
 
 #: Descriptor slots on a claim, single- or multi-valued.

@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-atorvastatin
+  path: kb/combinations/amlodipine-atorvastatin.yaml
+session:
+  id: 2026-10-10T011347Z-claude-code-c0fbbd
+  timestamp: '2026-10-10T01:13:47Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - claims
+  - notes
+  summary: 'Edit: list-scoped atorvastatin attributions; pregnancy and lactation contraindications'
+  details: |
+    Re-checked against CADUET setids 6f1a9bd8-ee30-4c7d-932f-3fa8c4e087b6 v52 and 909fad96-a941-443a-a39f-4f93607410fb v1. v52: added INGREDIENT_SUBJECT atorvastatin to HeFH, HoFH, primary dysbetalipoproteinemia and hypertriglyceridemia (items of the list governed by 'Atorvastatin is indicated:', which the validator now scopes back to); trimmed the primary-hyperlipidemia quote to its own list item (attribution is read from the pin), which clears the TREATS-reads-as-risk-reduction warning; removed stale notes about '&lt;' and the old duplicate check. v1: added CONTRAINDICATED 'pregnant' and 'may become pregnant' and 'breastfeed', unbound with term_gaps, sex women -> PATO female (the treated patient), all unattributed ('contains atorvastatin and is therefore' is not an accepted cue; the lactation reason names 'statins'). Lead-in sentences ('In patients with ..., amlodipine/atorvastatin is indicated') and LIPITOR-subject sentences stay unattributed. curator_id updated to the current skill text.

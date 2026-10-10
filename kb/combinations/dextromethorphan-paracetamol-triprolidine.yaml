@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -22,7 +22,7 @@ products:
     url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=27f9d2db-38ce-41d2-8f1a-0eb171600274
   product_name: Delsym Nighttime Cough
   claims:
-  - relation: RELIEVES_SYMPTOMS
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: common cold
@@ -40,7 +40,7 @@ products:
       conditions, so the condition is the object; the listed symptoms (cough, minor aches and
       pains, sore throat, headache, runny nose, sneezing, itching of the nose or throat) stay in
       the quote and are not separate claims. Product-level OTC Uses text, unattributed.
-  - relation: RELIEVES_SYMPTOMS
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: flu
@@ -53,7 +53,7 @@ products:
       throat headache runny nose sneezing itching of the nose or throat itchy, watery eyes due to
       hay fever
     status: DRAFT
-  - relation: RELIEVES_SYMPTOMS
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: hay fever
@@ -71,7 +71,7 @@ products:
       layout it qualifies the antihistamine symptoms (runny nose, sneezing, itching of the nose or
       throat, itchy watery eyes); here it can only be shown to attach to "itchy, watery eyes".
       Either way the claim is relief of hay fever symptoms.
-  - relation: RELIEVES_SYMPTOMS
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: fever
@@ -82,8 +82,8 @@ products:
     quote: >-
       temporarily reduces fever
     status: DRAFT
-    notes: Temporary symptomatic reduction, so RELIEVES_SYMPTOMS rather than TREATS.
-  - relation: RELIEVES_SYMPTOMS
+    notes: Temporary symptomatic reduction, so AMELIORATES_CONDITION rather than TREATS.
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: cough
@@ -97,6 +97,12 @@ products:
     notes: >-
       Cough control at night, stated on its own line apart from the cold/flu symptom list.
 notes: >-
-  OTC Drug Facts label; the Uses text is the indication section. There is no Contraindications
-  section (the "Do not use" items sit under Warnings and are not curated). No use is assigned to an
-  ingredient by the label.
+  OTC Drug Facts label; the Uses text is the indication section and "Do not use" the
+  Contraindications section. Both "Do not use" items are drug interactions with no condition, so
+  no contraindication is curated: "with any other drug containing acetaminophen" (duplicate
+  acetaminophen) and "if you are now taking a prescription monoamine oxidase inhibitor (MAOI)"
+  (the parenthesis "certain drugs for depression, psychiatric, or emotional conditions, or
+  Parkinson's disease" describes what MAOIs are for, not a patient condition the product is
+  contraindicated in). The symptom list after "these common cold and flu symptoms:" is a colon
+  list of the symptoms relieved, not an "e.g."/"including" examples list. No use is assigned to
+  an ingredient by the label.

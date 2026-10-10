@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-paracetamol-triprolidine
+  path: kb/combinations/dextromethorphan-paracetamol-triprolidine.yaml
+session:
+  id: 2026-10-10T011345Z-claude-code-0204ab
+  timestamp: '2026-10-10T01:13:45Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - curators
+  - notes
+  summary: 'Edit: OTC Do not use reviewed as Contraindications; notes corrected'
+  details: |
+    Re-checked against DailyMed setid 27f9d2db-38ce-41d2-8f1a-0eb171600274 v9. The helper now exposes Drug Facts 'Do not use' as the Contraindications section. Both items (other acetaminophen-containing drugs; current or recent MAOI use) are drug interactions with no patient condition, so no claim is added; the file notes, which said there was no Contraindications section, are corrected. Claims unchanged. curator_id updated to the current skill text.

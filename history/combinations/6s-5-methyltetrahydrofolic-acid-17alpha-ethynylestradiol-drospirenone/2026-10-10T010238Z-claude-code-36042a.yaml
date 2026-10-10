@@ -1,0 +1,28 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone
+  path: kb/combinations/6s-5-methyltetrahydrofolic-acid-17alpha-ethynylestradiol-drospirenone.yaml
+session:
+  id: 2026-10-10T010238Z-claude-code-36042a
+  timestamp: '2026-10-10T01:02:38Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  - curators
+  - notes
+  summary: Fold thrombotic-risk examples; curate contraception and pregnancy
+  details: |
+    Re-decided against DailyMed setid 786fb677-58c9-44ca-9c67-595d6be0fe7f v1 under the current skill. (1) 'A high risk of arterial or venous thrombotic diseases. Examples include women who are known to: ...' is an examples list: the thirteen per-member CONTRAINDICATED claims (DVT, PE, cerebrovascular disease, coronary artery disease, thrombogenic valvular / rhythm heart disease, SBE, atrial fibrillation, hypercoagulopathies, uncontrolled hypertension, diabetes with vascular disease, headaches with focal neurological symptoms, migraine) are now examples on the one thrombotic-disease claim, terms and bindings kept; the nested 'for example' members are flattened; the migraine example's 'if over age 35' restriction can no longer be carried as age_range and is recorded in notes. (2) New PREVENTS claim for 'indicated for use by women to prevent pregnancy' and new CONTRAINDICATED claim for 'Pregnancy', both unbound with a term_gap (no pregnancy term in MONDO/HP/PATO), previously skipped. No attribution supported by the label's sentences. curator_id updated.

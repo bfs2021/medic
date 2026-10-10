@@ -23,7 +23,7 @@ products:
     url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae8f4eb4-b1eb-432e-b5ab-598c29996d6a
   product_name: aspirin and omeprazole delayed-release tab
   claims:
-  - relation: PREVENTS
+  - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
       text: nonfatal stroke
@@ -48,7 +48,7 @@ products:
     notes: >-
       Secondary prevention. "death" in the combined endpoint is an outcome, not a condition. The
       transient-ischemia context is a separate claim.
-  - relation: PREVENTS
+  - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
       text: nonfatal stroke
@@ -74,7 +74,7 @@ products:
       No embolic-TIA term (searched MONDO "transient ischemic", "cerebral ischemia",
       "ischemia of the brain"); transient ischemic attack is broader than the label's
       "due to fibrin platelet emboli".
-  - relation: PREVENTS
+  - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
       text: nonfatal MI
@@ -100,7 +100,7 @@ products:
     notes: >-
       Secondary prevention after a previous MI. The quote runs from "The aspirin component"
       through the stroke item to stay contiguous. The unstable-angina context is a separate claim.
-  - relation: PREVENTS
+  - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
       text: nonfatal MI
@@ -126,7 +126,7 @@ products:
     notes: >-
       MONDO's unstable-angina term is labelled "intermediate coronary syndrome" (exact synonym
       "unstable angina").
-  - relation: PREVENTS
+  - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
       text: MI
@@ -155,7 +155,7 @@ products:
       No stable-angina term in MONDO or HP (searched MONDO "stable angina", "angina"; HP
       "angina", "stable angina"); HP Angina pectoris is the closest accurate term, broader than
       "chronic stable". "sudden death" is an outcome, not a condition, so no claim for it.
-  - relation: PREVENTS
+  - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
       text: aspirin-associated gastric ulcers
@@ -183,7 +183,7 @@ products:
       drug-induced or aspirin-induced gastric ulcer term (searched MONDO "gastric ulcer",
       "peptic ulcer", "aspirin"; HP "gastric ulcer"). "age (≥ 55) or documented history of gastric
       ulcers" are alternative risk criteria, so no age_range is recorded.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: allergy
@@ -207,7 +207,7 @@ products:
       by "to aspirin and other ... NSAIDs" in the quote. The Highlights item "History of asthma,
       urticaria, or other allergic-type reactions after taking aspirin or other NSAIDs" restates
       this contraindication and is not a separate claim.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: the syndrome of asthma, rhinitis, and nasal polyps
@@ -227,7 +227,7 @@ products:
       next sentence ("Aspirin may cause severe urticaria, angioedema, or bronchospasm (asthma).")
       points at aspirin but is not linked to this clause by any causal wording, and it explains
       the NSAID-allergy item equally.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: suspected viral infections
@@ -253,7 +253,7 @@ products:
       concomitant use of aspirin"). Reye's syndrome is the risk avoided, not the contraindicated
       condition, so no claim for it. "suspected" is kept in the text; the term is bound EXACT to
       the condition itself.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hypersensitivity

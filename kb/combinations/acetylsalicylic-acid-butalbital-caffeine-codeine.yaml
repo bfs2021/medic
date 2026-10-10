@@ -13,7 +13,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -24,7 +24,7 @@ products:
     url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c8b93fc1-472c-4890-8d02-2ee4f7175c22
   product_name: ''
   claims:
-  - relation: RELIEVES_SYMPTOMS
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: tension (or muscle contraction) headache
@@ -37,13 +37,13 @@ products:
       the symptom complex of tension (or muscle contraction) headache.
     status: DRAFT
     notes: >-
-      "relief of the symptom complex of" -> RELIEVES_SYMPTOMS. No MONDO tension-type headache term
+      "relief of the symptom complex of" -> AMELIORATES_CONDITION. No MONDO tension-type headache term
       (searched MONDO "tension", "tension headache", "tension-type headache", "headache"); HP
       Tension-type headache says what the label says ("muscle contraction headache" is the older
       name). Grounding store maps "tension headache" to UMLS:C0033893. Product-level claim; the
       clinical-trial text that follows states no further indication, and "Evidence ... in the
       treatment of multiple recurrent headaches is unavailable" is negated.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hemorrhagic diathesis
@@ -55,111 +55,56 @@ products:
       Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
       disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
       dysfunctions, severe vitamin K deficiency and severe liver damage.)
-    status: DRAFT
-    notes: >-
-      HP Abnormal bleeding carries the exact synonym "Hemorrhagic diathesis" (also the grounding-store row). The examples in the parenthesis are each curated as their own claim, since the label names them as contraindicated conditions.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: hemophilia
+    examples:
+    - text: hemophilia
       term:
         id: MONDO:0018660
         label: hemophilia
       binding: EXACT
-    quote: >-
-      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
-      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
-      dysfunctions, severe vitamin K deficiency and severe liver damage.)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: hypoprothrombinemia
+    - text: hypoprothrombinemia
       term:
         id: MONDO:0024307
         label: prothrombin deficiency
       binding: EXACT
-    quote: >-
-      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
-      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
-      dysfunctions, severe vitamin K deficiency and severe liver damage.)
-    status: DRAFT
-    notes: >-
-      Hypoprothrombinemia is prothrombin deficiency; MONDO:0024307 covers congenital and acquired. Grounding store maps "hypoprothrombinemia" to sssom:NoTermFound.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: von Willebrand's disease
+    - text: von Willebrand's disease
       term:
         id: MONDO:0024574
         label: von Willebrand disease (hereditary or acquired)
       binding: EXACT
-    quote: >-
-      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
-      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
-      dysfunctions, severe vitamin K deficiency and severe liver damage.)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: the thrombocytopenias
+    - text: the thrombocytopenias
       term:
         id: MONDO:0002049
         label: thrombocytopenia
       binding: EXACT
-    quote: >-
-      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
-      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
-      dysfunctions, severe vitamin K deficiency and severe liver damage.)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: thrombasthenia
+    - text: thrombasthenia
       term_gap: >-
         searched MONDO "thrombasthenia", "platelet": MONDO lists "thrombasthenia" as an exact
         synonym of MONDO:0031332 Glanzmann thrombasthenia 1 (an ITGA2B-related subtype) and the
         grounding store maps it there too, so the validator refuses the grouping term MONDO:0100326
         Glanzmann thrombasthenia; binding the subtype would say more than the label
-    quote: >-
-      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
-      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
-      dysfunctions, severe vitamin K deficiency and severe liver damage.)
-    status: DRAFT
-    notes: >-
-      Intended binding MONDO:0100326 Glanzmann thrombasthenia; held unbound for a human to add a
-      semapv:ManualMappingCuration row (and possibly report the mis-scoped synonym to MONDO).
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: severe vitamin K deficiency
+    - text: severe vitamin K deficiency
       term:
         id: MONDO:0001244
         label: vitamin K deficiency hemorrhagic disease
       binding: BROADER
-    quote: >-
-      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
-      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
-      dysfunctions, severe vitamin K deficiency and severe liver damage.)
-    status: DRAFT
-    notes: >-
-      MONDO:0001244 carries the exact synonym "vitamin K deficiency"; "severe" narrows, so BROADER.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: severe liver damage
+    - text: severe liver damage
       term:
         id: MONDO:0005154
         label: liver disorder
       binding: BROADER
-    quote: >-
-      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
-      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
-      dysfunctions, severe vitamin K deficiency and severe liver damage.)
     status: DRAFT
     notes: >-
-      No liver-damage term other than drug-induced liver injury (searched MONDO "liver injury", "liver damage", "liver disease"); liver disorder is broader. Grounding store maps "Severe liver damage" to UMLS:C0151763 (broadMatch).
-  - relation: CONTRAINDICATED
+      HP Abnormal bleeding carries the exact synonym "Hemorrhagic diathesis" (also the grounding-store
+      row). The parenthesis lists examples of the category, so they are recorded as `examples` on this
+      one claim. Example terms: hypoprothrombinemia is prothrombin deficiency (MONDO:0024307 covers
+      congenital and acquired; grounding store has sssom:NoTermFound); thrombasthenia is held unbound
+      (intended MONDO:0100326 Glanzmann thrombasthenia, pending a human semapv:ManualMappingCuration
+      row and possibly a MONDO synonym fix); MONDO:0001244 carries the exact synonym "vitamin K
+      deficiency" and "severe" narrows, so BROADER; no liver-damage term other than drug-induced liver
+      injury (searched MONDO "liver injury", "liver damage", "liver disease"), so liver disorder,
+      BROADER (grounding store maps "Severe liver damage" to UMLS:C0151763). "other ill-defined
+      hereditary platelet dysfunctions" is too vague to bind and is not recorded.
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: the syndrome of nasal polyps, angioedema and bronchospastic reactivity to aspirin or other
@@ -180,7 +125,7 @@ products:
     status: DRAFT
     notes: >-
       One claim for the named syndrome (aspirin-exacerbated respiratory disease / Samter's triad), not split into its parts. MONDO:0008834 is NARROWER: it names asthma where the label names angioedema and bronchospastic reactivity, and it is classed under hereditary disease (OMIM-derived); a human should confirm it over a term_gap. Specialization: the other NSAIDs; aspirin is the product's own ingredient and is dropped. Not attributed: aspirin is named as the agent the patient reacts to, not as a cause.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: Peptic ulcer
@@ -193,7 +138,7 @@ products:
     status: DRAFT
     notes: >-
       "other serious gastrointestinal lesions" is too vague to bind and is not curated.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: porphyria

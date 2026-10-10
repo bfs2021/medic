@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -92,8 +92,8 @@ products:
     notes: >-
       Object is the pain, context endometriosis (same pattern as bronchospasm | COPD). "moderate to
       severe" narrows, so BROADER. "management of" -> TREATS per the decision table, although the
-      claim is symptomatic; a reviewer may prefer RELIEVES_SYMPTOMS.
-  - relation: CONTRAINDICATED
+      claim is symptomatic; a reviewer may prefer AMELIORATES_CONDITION.
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: arterial, venous thrombotic, or thromboembolic disorders
@@ -103,182 +103,116 @@ products:
       binding: EXACT
     quote: >-
       MYFEMBREE is contraindicated in women: With a high risk of arterial, venous thrombotic, or
-      thromboembolic disorders
-    status: DRAFT
-    notes: >-
-      The label contraindicates a high risk of thrombotic or thromboembolic disease, not only established disease; the term binds the disease the risk concerns; the examples that follow are curated as their own claims where they name a condition. "women over 35 years of age who smoke" is a behaviour and is not curated.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: deep vein thrombosis
+      thromboembolic disorders [see Boxed Warning and Warnings and Precautions ( 5.1 )] . Examples
+      include women over 35 years of age who smoke and women who are known to have: current or
+      history of deep vein thrombosis or pulmonary embolism vascular disease (e.g., cerebrovascular
+      disease, coronary artery disease, peripheral vascular disease) thrombogenic valvular or
+      thrombogenic rhythm diseases of the heart (e.g., subacute bacterial endocarditis with valvular
+      disease, or atrial fibrillation) inherited or acquired hypercoagulopathies uncontrolled
+      hypertension headaches with focal neurological symptoms or migraine headaches with aura if
+      over 35 years of age
+    examples:
+    - text: deep vein thrombosis
       term:
         id: HP:0002625
         label: Deep venous thrombosis
       binding: EXACT
-    quote: >-
-      current or history of deep vein thrombosis or pulmonary embolism
-    status: DRAFT
-    notes: >-
-      No MONDO deep-vein-thrombosis term (searched MONDO "deep vein thrombosis", "venous thrombosis"); HP Deep venous thrombosis has the exact synonym.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: pulmonary embolism
+    - text: pulmonary embolism
       term:
         id: MONDO:0005279
         label: pulmonary embolism
       binding: EXACT
-    quote: >-
-      current or history of deep vein thrombosis or pulmonary embolism
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: vascular disease
+    - text: vascular disease
       term:
         id: MONDO:0005385
         label: vascular disorder
       binding: EXACT
-    quote: >-
-      vascular disease (e.g., cerebrovascular disease, coronary artery disease, peripheral vascular disease)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: cerebrovascular disease
+    - text: cerebrovascular disease
       term:
         id: MONDO:0011057
         label: cerebrovascular disorder
       binding: EXACT
-    quote: >-
-      vascular disease (e.g., cerebrovascular disease, coronary artery disease, peripheral vascular disease)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: coronary artery disease
+    - text: coronary artery disease
       term:
         id: MONDO:0005010
         label: coronary artery disorder
       binding: EXACT
-    quote: >-
-      vascular disease (e.g., cerebrovascular disease, coronary artery disease, peripheral vascular disease)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: peripheral vascular disease
+    - text: peripheral vascular disease
       term:
         id: MONDO:0005294
         label: peripheral vascular disease
       binding: EXACT
-    quote: >-
-      vascular disease (e.g., cerebrovascular disease, coronary artery disease, peripheral vascular disease)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: thrombogenic valvular
+    - text: thrombogenic valvular
       term:
         id: MONDO:0002869
         label: heart valve disorder
       binding: BROADER
-    quote: >-
-      thrombogenic valvular or thrombogenic rhythm diseases of the heart (e.g., subacute bacterial
-      endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-    notes: >-
-      "thrombogenic valvular ... diseases of the heart": the text is the contiguous part of the coordinated phrase; heart valve disorder is broader.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: thrombogenic rhythm diseases of the heart
+    - text: thrombogenic rhythm diseases of the heart
       term:
         id: MONDO:0007263
         label: cardiac rhythm disease
       binding: BROADER
-    quote: >-
-      thrombogenic valvular or thrombogenic rhythm diseases of the heart (e.g., subacute bacterial
-      endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: subacute bacterial endocarditis with valvular disease
+    - text: subacute bacterial endocarditis with valvular disease
       term:
         id: MONDO:0006981
         label: subacute bacterial endocarditis
       binding: BROADER
-    quote: >-
-      thrombogenic valvular or thrombogenic rhythm diseases of the heart (e.g., subacute bacterial
-      endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: atrial fibrillation
+    - text: atrial fibrillation
       term:
         id: MONDO:0004981
         label: atrial fibrillation
       binding: EXACT
-    quote: >-
-      thrombogenic valvular or thrombogenic rhythm diseases of the heart (e.g., subacute bacterial
-      endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: inherited or acquired hypercoagulopathies
+    - text: inherited or acquired hypercoagulopathies
       term:
         id: MONDO:0002305
         label: thrombophilia
       binding: EXACT
-    quote: >-
-      inherited or acquired hypercoagulopathies uncontrolled hypertension
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: uncontrolled hypertension
+    - text: uncontrolled hypertension
       term:
         id: HP:0000822
         label: Hypertension
       binding: BROADER
-    quote: >-
-      inherited or acquired hypercoagulopathies uncontrolled hypertension
-    status: DRAFT
-    notes: >-
-      MONDO's hypertensive disorder has no "hypertension" synonym, so HP Hypertension; "uncontrolled" narrows, so BROADER.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: headaches with focal neurological symptoms
+    - text: headaches with focal neurological symptoms
       term:
         id: HP:0002315
         label: Headache
       binding: BROADER
-    quote: >-
-      headaches with focal neurological symptoms or migraine headaches with aura if over 35 years of age
-    status: DRAFT
-    notes: >-
-      No term for headache with focal neurological symptoms; Headache is broader. The age condition attaches to the migraine item.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: migraine headaches with aura
+    - text: migraine headaches with aura
       term:
         id: MONDO:0005475
         label: migraine with aura
       binding: EXACT
-    quote: >-
-      headaches with focal neurological symptoms or migraine headaches with aura if over 35 years of age
-    age_range:
-      min_years: 35
-      text: if over 35 years of age
     status: DRAFT
     notes: >-
-      Grounding store maps "migraine headaches with aura" to sssom:NoTermFound; MONDO migraine with aura fits.
-  - relation: CONTRAINDICATED
+      The label contraindicates a high risk of thrombotic or thromboembolic disease and then lists
+      examples ("Examples include ... women who are known to have: ..."), so this is one claim with
+      the listed conditions as `examples` (formerly one claim each). The term binds the disease the
+      risk concerns. The nested "(e.g., ...)" members of vascular disease and of the thrombogenic
+      heart diseases are flattened into the same list. "women over 35 years of age who smoke" is a
+      behaviour and is not an example descriptor. Example qualifiers the slot cannot carry: "if over
+      35 years of age" restricts the migraine example (examples have no age_range); "current or
+      history of" covers DVT/PE history. Example terms: no MONDO DVT term (searched MONDO "deep vein
+      thrombosis", "venous thrombosis"), so HP; "thrombogenic valvular ... diseases of the heart" is
+      the contiguous part of the coordination, heart valve disorder BROADER; no
+      thrombogenic-arrhythmia term, cardiac rhythm disease BROADER; "with valvular disease" narrows
+      SBE, BROADER; thrombophilia EXACT for "inherited or acquired"; MONDO hypertensive disorder has
+      no "hypertension" synonym, so HP Hypertension, "uncontrolled" narrows, BROADER; no
+      headache-with-focal-neurological-symptoms term, Headache BROADER; grounding store maps
+      "migraine headaches with aura" to sssom:NoTermFound, MONDO migraine with aura fits.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnant
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant"; PATO "pregnan": no term for pregnancy
+        as a state (only pregnancy disorders, exposures and modifiers)
+    quote: >-
+      Who are pregnant.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. The following sentence (risk of early pregnancy loss) is the
+      reason, not a further claim. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: osteoporosis
@@ -291,7 +225,7 @@ products:
     status: DRAFT
     notes: >-
       The stated reason (further bone loss) names no ingredient, so unattributed.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: breast cancer
@@ -303,7 +237,7 @@ products:
       With current or history of breast cancer or other hormone-sensitive malignancies, and with
       increased risk for hormone-sensitive malignancies
     status: DRAFT
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: other hormone-sensitive malignancies
@@ -316,7 +250,7 @@ products:
     status: DRAFT
     notes: >-
       Also covers women at increased risk for such malignancies.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: hepatic impairment
@@ -329,7 +263,7 @@ products:
     status: DRAFT
     notes: >-
       No MONDO hepatic-impairment term; HP Decreased liver function (exact synonym Liver dysfunction), as in the abacavir/lamivudine file.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: disease
@@ -342,7 +276,7 @@ products:
     status: DRAFT
     notes: >-
       "hepatic ... disease": the word "disease" is the only contiguous text for the second item; liver disorder is NARROWER than the bare word, justified by "hepatic" in the quote (same pattern as "allergy" -> drug allergy).
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: undiagnosed abnormal uterine bleeding
@@ -356,8 +290,7 @@ products:
     notes: >-
       HP Metrorrhagia carries the exact synonym "Abnormal uterus bleeding"; no MONDO term. A reviewer may judge Metrorrhagia (intermenstrual bleeding) narrower than abnormal uterine bleeding.
 notes: >-
-  Not curated: the pregnancy contraindication ("Who are pregnant"; no MONDO/HP/PATO term for
-  pregnancy); "women over 35 years of age who smoke" (a behaviour); "known anaphylactic reaction,
+  Not curated: "women over 35 years of age who smoke" (a behaviour); "known anaphylactic reaction,
   angioedema, or hypersensitivity to MYFEMBREE or any of its components" (allergy to the product
   itself); the Limitations of Use (24-month limit for bone loss). The Highlights restate the
   full-text indications and contraindications. The full-text "1.3 Limitations of Use" paragraph is

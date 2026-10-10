@@ -11,7 +11,7 @@ curation_status: DRAFT
 curators:
 - curator_type: AI_AGENT
   name: MeDIC combination-curation skill
-  curator_id: https://github.com/monarch-initiative/medic/blob/6f6cdc2987cdc2f69228407be43b9b303d6d6df9/.claude/skills/medic-combination-curation/SKILL.md#git-blob=d33a9c5d850501e8e6807cc72863929a96066eb5
+  curator_id: https://github.com/monarch-initiative/medic/blob/f89dd4fbb69eeb1a516bebb59bf7077039f5be25/.claude/skills/medic-combination-curation/SKILL.md#git-blob=a416148ab9a9d0278b141e0ccae1a28ce14207a8
 products:
 - source: DAILYMED
   jurisdiction: USA
@@ -26,7 +26,27 @@ products:
     url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=786fb677-58c9-44ca-9c67-595d6be0fe7f
   product_name: DROSPIRENONE, ETHINYL ESTRADIOL AND LEVOMEFOLATE CALCIUM AND LEVOMEFOLATE CALCIUM
   claims:
-  - relation: RELIEVES_SYMPTOMS
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy", "contracept"; HP "pregnancy", "pregnant"; PATO "pregnan": no term
+        for pregnancy as a state (only pregnancy disorders, exposures and modifiers)
+    quote: >-
+      Drospirenone, ethinyl estradiol and levomefolate calcium tablets and levomefolate calcium
+      tablets are indicated for use by women to prevent pregnancy.
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    status: DRAFT
+    notes: >-
+      Contraception: "prevent pregnancy" -> PREVENTATIVE_FOR_CONDITION, object unbound (no configured ontology has a
+      pregnancy term). Product-level claim, unattributed.
+  - relation: AMELIORATES_CONDITION
     section: INDICATIONS
     object:
       text: premenstrual dysphoric disorder
@@ -46,7 +66,7 @@ products:
       binding: EXACT
     status: DRAFT
     notes: >-
-      "treatment of symptoms of" -> RELIEVES_SYMPTOMS. "who choose to use an oral contraceptive as
+      "treatment of symptoms of" -> AMELIORATES_CONDITION. "who choose to use an oral contraceptive as
       their method of contraception" is a population criterion, not a co-therapy. Effectiveness
       beyond three cycles not evaluated and PMS not evaluated (negated, no claim). Product-level.
   - relation: TREATS
@@ -76,7 +96,7 @@ products:
       "acne vulgaris" is an exact synonym of MONDO acne; "moderate" narrows, so BROADER. "have
       achieved menarche" is a further life-stage criterion with no HsapDv term (not recorded as
       life_stage). Use only when the patient desires an oral contraceptive (next sentence).
-  - relation: PREVENTS
+  - relation: PREVENTATIVE_FOR_CONDITION
     section: INDICATIONS
     object:
       text: neural tube defect
@@ -97,7 +117,7 @@ products:
       supplementation points to the levomefolate component pharmacologically, but the label states
       it of the product, so unattributed. Grounding store maps "Neural tube defect" to HP:0045005;
       MONDO chosen for the disease.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: Renal impairment
@@ -112,7 +132,7 @@ products:
     status: DRAFT
     notes: >-
       HP Renal insufficiency (exact synonym Renal failure) is the closest term for impaired renal function; MONDO kidney failure is equivalent. Grounding store maps "Renal impairment" to UMLS:C1565489 Renal Insufficiencies.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: Adrenal insufficiency
@@ -125,7 +145,7 @@ products:
       levomefolate calcium tablets to women who are known to have the following: Renal impairment
       Adrenal insufficiency A high risk of arterial or venous thrombotic diseases.
     status: DRAFT
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: arterial or venous thrombotic diseases
@@ -134,183 +154,103 @@ products:
         label: thrombotic disease
       binding: EXACT
     quote: >-
-      Do not prescribe drospirenone, ethinyl estradiol and levomefolate calcium tablets and
-      levomefolate calcium tablets to women who are known to have the following: Renal impairment
-      Adrenal insufficiency A high risk of arterial or venous thrombotic diseases.
-    status: DRAFT
-    notes: >-
-      The label contraindicates a high risk of thrombotic disease, not only established disease; the term binds the disease the risk concerns; the examples that follow in the label are curated as their own claims where they name a condition. "Smoke, if over age 35" is a behaviour, not a condition, and is not curated.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: deep vein thrombosis
+      A high risk of arterial or venous thrombotic diseases. Examples include women who are known to:
+      Smoke, if over age 35 [see Boxed Warning and Warnings And Precautions ( 5.1 )] Have deep vein
+      thrombosis or pulmonary embolism, now or in the past [see Warnings And Precautions ( 5.1 )] Have
+      cerebrovascular disease [see Warnings And Precautions ( 5.1 )] Have coronary artery disease [see
+      Warnings And Precautions ( 5.1 )] Have thrombogenic valvular or thrombogenic rhythm diseases of
+      the heart (for example, subacute bacterial endocarditis with valvular disease, or atrial
+      fibrillation) [see Warnings And Precautions ( 5.1 )] Have inherited or acquired
+      hypercoagulopathies [see Warnings And Precautions ( 5.1 )] Have uncontrolled hypertension [see
+      Warnings And Precautions ( 5.5 )] Have diabetes mellitus with vascular disease [see Warnings And
+      Precautions ( 5.7 )] Have headaches with focal neurological symptoms or have migraine headaches
+      with or without aura if over age 35
+    examples:
+    - text: deep vein thrombosis
       term:
         id: HP:0002625
         label: Deep venous thrombosis
       binding: EXACT
-    quote: >-
-      Have deep vein thrombosis or pulmonary embolism, now or in the past
-    status: DRAFT
-    notes: >-
-      No MONDO deep-vein-thrombosis term (searched MONDO "deep vein thrombosis", "venous thrombosis", "vein thrombosis"); HP Deep venous thrombosis has the exact synonym.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: pulmonary embolism
+    - text: pulmonary embolism
       term:
         id: MONDO:0005279
         label: pulmonary embolism
       binding: EXACT
-    quote: >-
-      Have deep vein thrombosis or pulmonary embolism, now or in the past
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: cerebrovascular disease
+    - text: cerebrovascular disease
       term:
         id: MONDO:0011057
         label: cerebrovascular disorder
       binding: EXACT
-    quote: >-
-      Have cerebrovascular disease
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: coronary artery disease
+    - text: coronary artery disease
       term:
         id: MONDO:0005010
         label: coronary artery disorder
       binding: EXACT
-    quote: >-
-      Have coronary artery disease
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: thrombogenic valvular
+    - text: thrombogenic valvular
       term:
         id: MONDO:0002869
         label: heart valve disorder
       binding: BROADER
-    quote: >-
-      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute
-      bacterial endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-    notes: >-
-      "thrombogenic valvular ... diseases of the heart": the text is the contiguous part of the coordinated phrase; heart valve disorder is broader (no thrombogenic-valve term).
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: thrombogenic rhythm diseases of the heart
+    - text: thrombogenic rhythm diseases of the heart
       term:
         id: MONDO:0007263
         label: cardiac rhythm disease
       binding: BROADER
-    quote: >-
-      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute
-      bacterial endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-    notes: >-
-      No thrombogenic-arrhythmia term; cardiac rhythm disease is broader.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: subacute bacterial endocarditis with valvular disease
+    - text: subacute bacterial endocarditis with valvular disease
       term:
         id: MONDO:0006981
         label: subacute bacterial endocarditis
       binding: BROADER
-    quote: >-
-      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute
-      bacterial endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-    notes: >-
-      "with valvular disease" narrows, so BROADER.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: atrial fibrillation
+    - text: atrial fibrillation
       term:
         id: MONDO:0004981
         label: atrial fibrillation
       binding: EXACT
-    quote: >-
-      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute
-      bacterial endocarditis with valvular disease, or atrial fibrillation)
-    status: DRAFT
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: inherited or acquired hypercoagulopathies
+    - text: inherited or acquired hypercoagulopathies
       term:
         id: MONDO:0002305
         label: thrombophilia
       binding: EXACT
-    quote: >-
-      Have inherited or acquired hypercoagulopathies
-    status: DRAFT
-    notes: >-
-      MONDO thrombophilia (exact synonym hypercoagulability); "inherited or acquired" covers both, so EXACT.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: uncontrolled hypertension
+    - text: uncontrolled hypertension
       term:
         id: HP:0000822
         label: Hypertension
       binding: BROADER
-    quote: >-
-      Have uncontrolled hypertension
-    status: DRAFT
-    notes: >-
-      MONDO's hypertensive disorder has no "hypertension" synonym, so HP Hypertension; "uncontrolled" narrows, so BROADER. Grounding store maps "Uncontrolled hypertension" to UMLS:C1868885.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: diabetes mellitus with vascular disease
+    - text: diabetes mellitus with vascular disease
       term:
         id: MONDO:0005015
         label: diabetes mellitus
       binding: BROADER
-    quote: >-
-      Have diabetes mellitus with vascular disease
-    status: DRAFT
-    notes: >-
-      MONDO:0000960 diabetic peripheral angiopathy (exact synonym diabetic vascular disorder) is restricted to peripheral vessels and sits under peripheral vascular disease, not diabetes mellitus; diabetes mellitus BROADER is the accurate binding.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: headaches with focal neurological symptoms
+    - text: headaches with focal neurological symptoms
       term:
         id: HP:0002315
         label: Headache
       binding: BROADER
-    quote: >-
-      Have headaches with focal neurological symptoms or have migraine headaches with or without aura
-      if over age 35
-    status: DRAFT
-    notes: >-
-      No term for headache with focal neurological symptoms (searched HP "Headache", "focal", "Focal neurological deficit"); Headache is broader. The age condition attaches to the migraine item only.
-  - relation: CONTRAINDICATED
-    section: CONTRAINDICATIONS
-    object:
-      text: migraine headaches with or without aura
+    - text: migraine headaches with or without aura
       term:
         id: MONDO:0005277
         label: migraine disorder
       binding: EXACT
-    quote: >-
-      Have headaches with focal neurological symptoms or have migraine headaches with or without aura
-      if over age 35
-    age_range:
-      min_years: 35
-      text: if over age 35
     status: DRAFT
     notes: >-
-      "with or without aura" covers all migraine, so EXACT. Restricted to women over 35.
-  - relation: CONTRAINDICATED
+      The label contraindicates a high risk of thrombotic disease and then lists examples ("Examples
+      include women who are known to: ..."), so this is one claim with the listed conditions as
+      `examples` (formerly one claim each). The term binds the disease the risk concerns. The
+      nested "(for example, subacute bacterial endocarditis ..., or atrial fibrillation)" members
+      are flattened into the same list. "Smoke, if over age 35" is a behaviour and is not an
+      example descriptor. Example qualifiers the slot cannot carry: "if over age 35" restricts the
+      migraine example (examples have no age_range); "now or in the past" covers DVT/PE history.
+      Example terms: no MONDO DVT term (searched MONDO "deep vein thrombosis", "venous
+      thrombosis"), so HP; "thrombogenic valvular ... diseases of the heart" is the contiguous part
+      of the coordination, heart valve disorder BROADER; no thrombogenic-arrhythmia term, cardiac
+      rhythm disease BROADER; "with valvular disease" narrows SBE, BROADER; thrombophilia (exact
+      synonym hypercoagulability), "inherited or acquired" covers both, EXACT; MONDO hypertensive
+      disorder has no "hypertension" synonym, so HP Hypertension, "uncontrolled" narrows, BROADER;
+      MONDO:0000960 diabetic peripheral angiopathy is peripheral-only, so diabetes mellitus
+      BROADER; no headache-with-focal-neurological-symptoms term (searched HP "Headache", "focal",
+      "Focal neurological deficit"), Headache BROADER; "with or without aura" covers all migraine,
+      EXACT.
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: Undiagnosed abnormal uterine bleeding
@@ -323,7 +263,7 @@ products:
     status: DRAFT
     notes: >-
       HP Metrorrhagia carries the exact synonym "Abnormal uterus bleeding"; no MONDO term (searched MONDO "abnormal uterine bleeding", "uterine bleeding"). Grounding store maps the text to sssom:NoTermFound. A reviewer may judge Metrorrhagia (intermenstrual bleeding) narrower than abnormal uterine bleeding.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: Breast cancer
@@ -334,7 +274,7 @@ products:
     quote: >-
       Breast cancer or other estrogen- or progestin-sensitive cancer, now or in the past
     status: DRAFT
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: other estrogen- or progestin-sensitive cancer
@@ -345,7 +285,7 @@ products:
     quote: >-
       Breast cancer or other estrogen- or progestin-sensitive cancer, now or in the past
     status: DRAFT
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: Liver tumors, benign or malignant
@@ -358,7 +298,7 @@ products:
     status: DRAFT
     notes: >-
       "liver tumor" is an exact synonym; benign or malignant covers both.
-  - relation: CONTRAINDICATED
+  - relation: CONTRAINDICATED_IN
     section: CONTRAINDICATIONS
     object:
       text: liver disease
@@ -369,10 +309,19 @@ products:
     quote: >-
       Liver tumors, benign or malignant, or liver disease
     status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant"; PATO "pregnan": no term for pregnancy
+        as a state (only pregnancy disorders, exposures and modifiers)
+    quote: >-
+      Pregnancy, because there is no reason to use COCs during pregnancy
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. The stated reason names no ingredient, so unattributed.
 notes: >-
-  Not curated: "indicated for use by women to prevent pregnancy" (contraception; pregnancy is not a
-  condition and has no MONDO/HP/PATO term: searched MONDO "pregnancy", HP "Pregnancy", PATO
-  "pregnant"); the Pregnancy contraindication, for the same reason; "Smoke, if over age 35" (a
-  behaviour); co-administration with ombitasvir/paritaprevir/ritonavir (drug interaction, no
+  Not curated: "Smoke, if over age 35" (a behaviour); co-administration with ombitasvir/paritaprevir/ritonavir (drug interaction, no
   condition). The Highlights copy of the contraindications restates the full-text list. The DSM-IV
   description of PMDD and its feature list are background, not claims.

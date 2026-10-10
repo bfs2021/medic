@@ -1,0 +1,25 @@
+history_version: 1
+target:
+  kind: combination
+  slug: abacavir-lamivudine
+  path: kb/combinations/abacavir-lamivudine.yaml
+session:
+  id: 2026-10-10T020103Z-claude-code-1c11f3
+  timestamp: '2026-10-10T02:01:03Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls: []
+events:
+- type: EDIT
+  outcome: changed
+  sections:
+  - claims
+  summary: 'Edit: relation values renamed to Biolink''s predicate names'
+  details: |
+    Mechanical rename, no claim changed in meaning: PREVENTS -> PREVENTATIVE_FOR_CONDITION, RELIEVES_SYMPTOMS -> AMELIORATES_CONDITION, CONTRAINDICATED -> CONTRAINDICATED_IN (TREATS unchanged), so each value carries the name of the Biolink predicate it means (user decision: Biolink names where they match; anything more specific is a MeDIC value with broad_mappings to its Biolink parent).

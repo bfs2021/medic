@@ -10,17 +10,17 @@ Decide from the label's own verb phrase, not from what you know about the drug.
 | Label wording (examples) | Section | `relation` | Biolink (reference only) |
 |---|---|---|---|
 | "indicated for the treatment of", "indicated for", "management of", "to improve glycemic control in adults with" | INDICATIONS | `TREATS` | `biolink:treats` |
-| "reduce the risk of", "reducing the combined risk of", "prevention of", "prophylaxis of", "decreasing the risk of developing" | INDICATIONS | `PREVENTS` | `biolink:preventative_for_condition` |
-| "relief of", "temporary relief of", "symptomatic treatment of", "for the relief of symptoms of" | INDICATIONS | `RELIEVES_SYMPTOMS` | `biolink:ameliorates_condition` |
-| "contraindicated in patients with", "do not use in patients with" (inside Contraindications) | CONTRAINDICATIONS | `CONTRAINDICATED` | `biolink:contraindicated_in` |
+| "reduce the risk of", "reducing the combined risk of", "prevention of", "prophylaxis of", "decreasing the risk of developing" | INDICATIONS | `PREVENTATIVE_FOR_CONDITION` | `biolink:preventative_for_condition` |
+| "relief of", "temporary relief of", "symptomatic treatment of", "for the relief of symptoms of" | INDICATIONS | `AMELIORATES_CONDITION` | `biolink:ameliorates_condition` |
+| "contraindicated in patients with", "do not use in patients with" (inside Contraindications) | CONTRAINDICATIONS | `CONTRAINDICATED_IN` | `biolink:contraindicated_in` |
 
 Tie-breaks:
 
 - "maintenance treatment of bronchospasm" → `TREATS` (maintenance is still
-  treatment). "Reduction of exacerbations of COPD" → `PREVENTS` (object:
+  treatment). "Reduction of exacerbations of COPD" → `PREVENTATIVE_FOR_CONDITION` (object:
   the exacerbation, context: COPD), if a fitting term exists; otherwise
   leave the object unbound with a `term_gap`.
-- "Treatment of symptoms of X" → `RELIEVES_SYMPTOMS`, object X.
+- "Treatment of symptoms of X" → `AMELIORATES_CONDITION`, object X.
 - "As an adjunct to diet and exercise" is context, not a relation change:
   record it verbatim in `in_combination_with` when it names a co-therapy, or
   leave it in the quote and mention it in `notes`.
@@ -195,13 +195,13 @@ Guidance:
   rilpivirine-containing products"): no condition object; out of scope, list in
   summary.
 - **Pregnancy / lactation** (and contraception as an indication, "prevent
-  pregnancy" → PREVENTS): curate with an unbound object and a `term_gap`; no
+  pregnancy" → PREVENTATIVE_FOR_CONDITION): curate with an unbound object and a `term_gap`; no
   configured ontology has these terms yet. Do not skip them.
 - **Examples of a category** ("hemorrhagic diathesis (e.g., hemophilia,
   von Willebrand's disease, ...)"): one claim for the category, the members as
   `examples` descriptors (each bound or with its `term_gap`).
 - A contraindication stated only under Warnings and Precautions is never a
-  `CONTRAINDICATED` claim.
+  `CONTRAINDICATED_IN` claim.
 
 ## Term choice
 

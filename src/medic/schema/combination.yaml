@@ -37,26 +37,34 @@ default_prefix: medic
 enums:
   ClaimRelationEnum:
     description: >-
-      What the label asserts about the product and the condition. Each value names the
-      Biolink predicate it corresponds to and the label wording that signals it; the
-      descriptions are the curation guidance.
+      What the label asserts about the product and the condition. The descriptions are the
+      curation guidance.
+
+      Naming policy: a value whose meaning is a Biolink predicate takes that predicate's
+      name (upper-cased) and declares it as ``meaning``. A relation more specific than any
+      Biolink predicate gets a MeDIC name of its own; its description says which Biolink
+      predicate it is a child of, and it records that with ``broad_mappings`` (SKOS
+      broadMatch: the Biolink predicate is the broader one). A test checks every such
+      reference against the pinned Biolink release.
     permissible_values:
       TREATS:
         meaning: biolink:treats
         description: >-
           The label states the product is indicated to treat the condition. Typical wording:
           "indicated for the treatment of", "indicated for", "management of".
-      PREVENTS:
+      PREVENTATIVE_FOR_CONDITION:
         meaning: biolink:preventative_for_condition
         description: >-
           The label states the product reduces the risk of, or prevents, the condition.
-          Typical wording: "reduce the risk of", "prevention of", "prophylaxis of".
-      RELIEVES_SYMPTOMS:
+          Typical wording: "reduce the risk of", "prevention of", "prophylaxis of". Outcome
+          endpoints belong here too: "reduce the risk of hospitalization for angina" is
+          preventative for angina (object text keeps the outcome wording; binding BROADER).
+      AMELIORATES_CONDITION:
         meaning: biolink:ameliorates_condition
         description: >-
           The label states the product relieves symptoms rather than treating the condition.
           Typical wording: "relief of", "symptomatic treatment of", "temporary relief".
-      CONTRAINDICATED:
+      CONTRAINDICATED_IN:
         meaning: biolink:contraindicated_in
         description: >-
           The Contraindications section states the product must not be used in patients with
@@ -388,7 +396,7 @@ slots:
     multivalued: true
     inlined_as_list: true
     description: >-
-      On a CONTRAINDICATED claim only: the contraindication applies when the product is given
+      On a CONTRAINDICATED_IN claim only: the contraindication applies when the product is given
       together with these agents ("Do not co-administer aliskiren with ... in patients with
       diabetes" -> object diabetes, when_coadministered_with aliskiren). A contraindication
       with no condition at all (a pure drug-drug interaction) is out of scope.
