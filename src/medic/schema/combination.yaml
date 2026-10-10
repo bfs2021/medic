@@ -212,6 +212,7 @@ classes:
       - when_coadministered_with
       - examples
       - evidence_status
+      - explanation
       - status
       - reviewer
       - notes
@@ -235,10 +236,16 @@ classes:
       - label
 
   Attribution:
-    description: An ingredient the label holds responsible for a claim, and on what basis.
+    description: >-
+      An ingredient the label holds responsible for a claim: the label's own words that say
+      so, and why they support it. Adopted from dismech's evidence pattern — the snippet is
+      checked mechanically (verbatim, beside the claim's quote, naming the ingredient); whether
+      it really attributes the claim is for the explanation to argue and a reviewer to accept.
     slots:
       - ingredient
       - basis
+      - snippet
+      - explanation
 
   AgeRange:
     description: >-
@@ -436,9 +443,28 @@ slots:
   ingredient:
     range: uriorcurie
     required: true
+  snippet:
+    range: string
+    required: true
+    description: >-
+      The label's words that attribute the claim to the ingredient, verbatim ("The omeprazole
+      component of", "Clarithromycin is contraindicated", "contains atorvastatin and is
+      therefore contraindicated"). In the same label element as the claim's quote.
+  explanation:
+    range: string
+    required: true
+    description: >-
+      Why the quoted words support this statement, without adding conclusions they do not
+      establish (dismech's evidence explanation). On a claim: how the quote states this
+      relation to this object, and any judgement made (a member of a coordination, a risk
+      factor, an outcome endpoint). On an attribution: how the snippet ties the claim to the
+      ingredient.
   basis:
     range: AttributionBasisEnum
     required: true
+    description: >-
+      How the label attributes the claim. A classification for reviewers and consumers; the
+      validator checks only the snippet, not the wording behind the basis.
   min_years:
     range: float
   max_years:

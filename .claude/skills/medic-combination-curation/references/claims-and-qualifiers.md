@@ -92,7 +92,7 @@ Not claim objects (record nothing, mention in your summary if notable):
   `disease_context` is single-valued. Claims that differ only in context are
   not duplicates.
 - The quote must be one contiguous verbatim span that contains every
-  descriptor `text` and (when attributing) the ingredient's name. If
+  descriptor `text`. If
   that span is long because the list sits between them, keep it long; never
   splice two pieces together with "...".
 - Several products in one file may carry the same claim; each product block
@@ -100,17 +100,38 @@ Not claim objects (record nothing, mention in your summary if notable):
 
 ## Attribution
 
-`attributed_to` is a list of `{ingredient, basis}`. There are three bases, and
-the validator checks the wording of each, within the sentence that names the
-object (with the product's own
-name removed from the quote first, since a generic name lists every
-ingredient):
+`attributed_to` is a list of evidence items, after dismech's `EvidenceItem`:
 
-| basis | when | example |
+```yaml
+attributed_to:
+  - ingredient: CHEBI:15365
+    basis: STATED_REASON
+    snippet: because of the risk of Reye's syndrome with concomitant use of aspirin
+    explanation: The label gives aspirin as the reason for the contraindication.
+```
+
+- `snippet` is the label's own words, verbatim, from the same label element as
+  the quote: inside the quote or within a sentence of it.
+- `explanation` says how those words tie this claim to this ingredient, without
+  adding conclusions they do not state.
+- `basis` classifies the statement:
+
+| basis | when | example snippet |
 |---|---|---|
-| `COMPONENT_STATEMENT` | the label assigns the claim to the component; the nearest "the <ingredient> component" before the object, in the object's sentence, must be this ingredient's | "The omeprazole component of ... is indicated for decreasing the risk of ... gastric ulcers" |
-| `INGREDIENT_SUBJECT` | the ingredient is the subject of the object's sentence, right before the claim's verb — how co-packaged labels (several separate products under one label) write each product's own text | "Clarithromycin is contraindicated in patients with a history of ..."; "Clarithromycin should not be given to patients with history of QT prolongation" |
-| `STATED_REASON` | the label names the ingredient as the cause; in the object's own sentence, a causal cue (because, due to, caused by, may cause, since, related to, associated with, attributable to) must follow the object, with the ingredient in the clause after it | "... because of the risk of Reye's syndrome with concomitant use of aspirin"; "... due to the expected significantly increased grazoprevir plasma concentration" |
+| `COMPONENT_STATEMENT` | the label assigns the claim to the component | "The omeprazole component of ..." |
+| `INGREDIENT_SUBJECT` | the ingredient is the subject of the claim's sentence — how co-packaged labels write each product's text, and how some single-product labels name their own ingredient | "Clarithromycin is contraindicated"; "Clarithromycin should not be given" |
+| `STATED_REASON` | the label names the ingredient as the cause | "because of the risk of Reye's syndrome with concomitant use of aspirin"; "contains atorvastatin and is therefore contraindicated" |
+
+The validator checks the snippet mechanically: verbatim, in the quote's
+element, near the quote, naming the ingredient outside the product's own name
+(a generic name such as "Aspirin and Omeprazole Tablets" lists every
+ingredient and attributes nothing). It warns when the snippet's wording does
+not look like the basis. It does not decide whether the words attribute the
+claim; the human reviewer does, from your snippet and explanation. Hold
+yourself to the old rules: the component wording governs only its own
+sentence's items, a stated reason must give the ingredient as the cause of
+*this* claim, and a lead-in ("In patients with CAD, amlodipine ...") is not a
+subject.
 
 Not attribution:
 
@@ -199,9 +220,40 @@ Guidance:
   configured ontology has these terms yet. Do not skip them.
 - **Examples of a category** ("hemorrhagic diathesis (e.g., hemophilia,
   von Willebrand's disease, ...)"): one claim for the category, the members as
-  `examples` descriptors (each bound or with its `term_gap`).
+  `examples` descriptors (each bound or with its `term_gap`). A member with its
+  own restriction ("migraine ... if over age 35") is its own claim.
+- **Risk-factor lists** ("a high risk of arterial or venous thrombotic
+  diseases. Examples include women who are known to: smoke, if over age 35;
+  have deep vein thrombosis or pulmonary embolism, now or in the past; ...;
+  have uncontrolled hypertension"): each risk factor is its own
+  `CONTRAINDICATED_IN` claim; its `explanation` says it is contraindicated as a
+  thrombotic risk factor. There is no claim for the heading condition.
+- **Coordinations** ("renal or hepatic impairment", "acute or severe hepatic
+  failure", "hepatic impairment or disease"): one claim per member. Each
+  quotes, and uses as object `text`, the whole shared phrase; the term binds
+  one member and the `explanation` names it. The validator expands the phrase
+  ("renal impairment", "hepatic impairment") and judges the term and binding
+  against the member it fits. "with or without fever" is not a coordination
+  of conditions.
 - A contraindication stated only under Warnings and Precautions is never a
   `CONTRAINDICATED_IN` claim.
+
+## OTC symptom lists
+
+"Temporarily relieves these symptoms due to the common cold, hay fever or other
+upper respiratory allergies: runny nose, sneezing, itchy, watery eyes": one
+`AMELIORATES_CONDITION` claim per symptom (object = the symptom, usually HP),
+with the named condition as `disease_context` — one claim per symptom per
+condition when several are named (cold, flu, hay fever). Symptoms the label
+names without a condition carry no context.
+
+## DESI classifications
+
+A label may list effective indications first and then, after a DESI statement
+("... has classified the indications as follows: \"Possibly\" effective:"),
+the less-than-effective ones. The classification that governs a quote is the
+nearest DESI wording *before* it in the Indications section; claims before any
+DESI wording carry no `evidence_status`.
 
 ## Term choice
 

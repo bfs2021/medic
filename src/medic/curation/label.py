@@ -65,6 +65,24 @@ LOINC_OTC_DO_NOT_USE = "50570-1"
 _LIMITATION_HEADING = re.compile(r"^\s*(\d+(\.\d+)*\s+)?Limitations? of Use\s*:?\s*$", re.I)
 #: A chunk that opens a new numbered subsection ("1.4 Something", "2 DOSAGE ...").
 _NUMBERED_HEADING = re.compile(r"^\s*\d+(\.\d+)*\s+[A-Z]")
+#: A chunk that states an indication rather than restricting one ("X is also indicated for").
+_INDICATION_STATEMENT = re.compile(r"\b(?:is|are)\s+(?:also\s+)?indicated\b", re.I)
+#: Longest chunk without closing punctuation still read as a heading ("Hypertension").
+_HEADING_MAX_WORDS = 8
+
+
+def _ends_limitation(part: str, part_spans: list[dict]) -> bool:
+    """Whether ``part`` closes the paragraphs under a "Limitations of Use" heading.
+
+    A numbered subsection, a section header, a short unpunctuated heading ("Hypertension"),
+    or a sentence stating an indication all start something that is not the limitation.
+    """
+    text = part.strip()
+    heading_like = (bool(text) and len(text.split()) <= _HEADING_MAX_WORDS
+                    and text[-1] not in ".;:)")
+    return (bool(_NUMBERED_HEADING.match(part)) or heading_like
+            or bool(_INDICATION_STATEMENT.search(part))
+            or any(s["role"] == "SECTION_HEADER" for s in part_spans))
 
 
 @dataclass
@@ -100,8 +118,7 @@ class LabelDocument:
                 parts=[part])
             if _LIMITATION_HEADING.match(part):
                 in_limitation = True
-            elif in_limitation and (_NUMBERED_HEADING.match(part)
-                                    or any(s["role"] == "SECTION_HEADER" for s in part_spans)):
+            elif in_limitation and _ends_limitation(part, part_spans):
                 in_limitation = False
             elif in_limitation:
                 part_spans = [{**s, "role": "LIMITATION_STATEMENT"}

@@ -56,7 +56,8 @@ SPL = f"""<?xml version="1.0" encoding="UTF-8"?>
         TESTCOMBO is contraindicated after gastric bypass because of poor absorption of Aspirin
         and Omeprazole Tablets. TESTCOMBO is contraindicated in patients with hereditary
         angioedema. TESTCOMBO is contraindicated in patients with pollinosis. Omeprazole is
-        contraindicated in patients with severe hepatic impairment.</paragraph></text>
+        contraindicated in patients with severe hepatic impairment. TESTCOMBO is
+        contraindicated in patients with renal or hepatic impairment.</paragraph></text>
     </section></component>
   </structuredBody></component>
   <subject><manufacturedProduct><manufacturedProduct>
@@ -97,6 +98,7 @@ EARLIER_COMPONENT_QUOTE = (
     "aspirin associated gastric ulcers in patients at risk for developing aspirin associated "
     "gastric ulcers due to age (\u2265 55). TESTCOMBO is also indicated after acute myocardial "
     "infarction")
+COORD_QUOTE = "TESTCOMBO is contraindicated in patients with renal or hepatic impairment"
 UTI_QUOTE = ("TESTCOMBO is indicated for complicated urinary tract infections including "
              "pyelonephritis")
 
@@ -132,6 +134,8 @@ _TERMS = {t.id: t for t in [
     TermInfo("HP:0000083", "Renal insufficiency"),
     TermInfo("MONDO:0005047", "urinary tract infection"),
     TermInfo("MONDO:0006939", "pyelonephritis", parents=["MONDO:0005047"]),
+    TermInfo("MONDO:9999902", "renal impairment"),
+    TermInfo("MONDO:9999903", "hepatic impairment"),
 ]}
 
 
@@ -162,6 +166,11 @@ def _term(curie: str) -> dict:
     return {"id": curie, "label": _TERMS[curie].label}
 
 
+def _attr(ingredient: str, basis: str, snippet: str) -> dict:
+    return {"ingredient": ingredient, "basis": basis, "snippet": snippet,
+            "explanation": "The snippet names the ingredient as the source of the claim."}
+
+
 def _valid_record() -> dict:
     ids = [ASPIRIN, OMEPRAZOLE]
     labels = ["acetylsalicylic acid", "omeprazole"]
@@ -182,7 +191,8 @@ def _valid_record() -> dict:
                     "quote": MI_QUOTE,
                     "object": {"text": "nonfatal MI", "term": _term("MONDO:0005068"),
                                "binding": "EXACT"},
-                    "attributed_to": [{"ingredient": ASPIRIN, "basis": "COMPONENT_STATEMENT"}],
+                    "attributed_to": [_attr(ASPIRIN, "COMPONENT_STATEMENT",
+                                            "The aspirin component of TESTCOMBO")],
                     "disease_context": {"text": "unstable angina pectoris",
                                         "term_gap": "no unstable-angina term in the test ontology"},
                     "status": "DRAFT",
@@ -195,8 +205,8 @@ def _valid_record() -> dict:
                                "term": _term("MONDO:0001126"), "binding": "BROADER"},
                     "object_specialization": [{"text": "aspirin", "term": _term(ASPIRIN),
                                                "binding": "EXACT"}],
-                    "attributed_to": [{"ingredient": OMEPRAZOLE,
-                                       "basis": "COMPONENT_STATEMENT"}],
+                    "attributed_to": [_attr(OMEPRAZOLE, "COMPONENT_STATEMENT",
+                                            "The omeprazole component of TESTCOMBO")],
                     "status": "DRAFT",
                 },
                 {
@@ -217,7 +227,9 @@ def _valid_record() -> dict:
                                "term": _term("MONDO:0005108"), "binding": "EXACT"},
                     "life_stage": {"text": "pediatric patients",
                                    "term_gap": "not checked in the test ontology"},
-                    "attributed_to": [{"ingredient": ASPIRIN, "basis": "STATED_REASON"}],
+                    "attributed_to": [_attr(ASPIRIN, "STATED_REASON",
+                                            "because of the risk of Reye's syndrome with "
+                                            "concomitant use of aspirin")],
                     "status": "DRAFT",
                 },
             ],
@@ -239,7 +251,13 @@ def workspace(tmp_path, monkeypatch):
     return tmp_path
 
 
-def _write(workspace: Path, record: dict, slug: str = SLUG, with_history: bool = True) -> Path:
+def _write(workspace: Path, record: dict, slug: str = SLUG, with_history: bool = True,
+           explain: bool = True) -> Path:
+    """Write ``record``; ``explain`` gives every claim without one a placeholder explanation."""
+    if explain:
+        for product in record.get("products", []):
+            for claim in product.get("claims", []):
+                claim.setdefault("explanation", "The quote states this claim.")
     path = Path("kb/combinations") / f"{slug}.yaml"
     path.write_text(yaml.safe_dump(record, sort_keys=False))
     if with_history:
@@ -391,47 +409,88 @@ def test_store_row_in_another_ontology_is_only_a_warning(workspace):
 
 # --- attribution and allergy --------------------------------------------------------------
 def test_attribution_must_name_an_ingredient(workspace):
-    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
-        attributed_to=[{"ingredient": "CHEBI:2549", "basis": "COMPONENT_STATEMENT"}]))
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(attributed_to=[
+        _attr("CHEBI:2549", "COMPONENT_STATEMENT", "The aspirin component of TESTCOMBO")]))
     assert any("not one of this combination's ingredients" in e for e in errors)
 
 
-def test_component_statement_needs_the_component_wording(workspace):
+def test_attribution_needs_a_snippet_and_an_explanation(workspace):
+    """dismech's evidence pattern: the label's words, and the curator's argument."""
+    def strip(c):
+        c["attributed_to"][0].pop("snippet")
+        c["attributed_to"][0]["explanation"] = " "
+    errors, _ = _claim_errors(workspace, 0, strip)
+    assert any("'snippet' is a required property" in e for e in errors)
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["attributed_to"][0].update(
+        explanation=" "))
+    assert any("attributed_to[0].explanation" in e for e in errors)
+
+
+def test_snippet_must_be_verbatim_from_the_quotes_element(workspace):
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["attributed_to"][0].update(
+        snippet="the aspirin part of TESTCOMBO"))
+    assert any("same label element" in e for e in errors)
+    # Verbatim, but from the Contraindications, not the indication's section.
+    errors, _ = _claim_errors(workspace, 0, lambda c: c["attributed_to"][0].update(
+        snippet="concomitant use of aspirin"))
+    assert any("same label element" in e for e in errors)
+
+
+def test_snippet_must_be_beside_the_quote(workspace):
+    """A component phrase several sentences earlier is not this claim's attribution."""
     errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
-        attributed_to=[{"ingredient": OMEPRAZOLE, "basis": "COMPONENT_STATEMENT"}]))
-    assert any("'the omeprazole component'" in e for e in errors)
+        quote=UTI_QUOTE, relation="TREATS", disease_context=None,
+        object={"text": "complicated urinary tract infections including pyelonephritis",
+                "term": _term("MONDO:0005047"), "binding": "BROADER"}))
+    assert any("characters away" in e for e in errors)
 
 
 def test_product_name_is_not_an_attribution(workspace):
-    """Review repro A: a generic product name names every ingredient and attributes nothing."""
-    def mutate(c):
-        c.update(quote=GENERIC_QUOTE, relation="AMELIORATES_CONDITION", disease_context=None,
-                 object={"text": "heartburn", "term_gap": "not in the test ontology"},
-                 attributed_to=[{"ingredient": ASPIRIN, "basis": "COMPONENT_STATEMENT"}])
-    errors, _ = _claim_errors(workspace, 0, mutate)
-    assert any("COMPONENT_STATEMENT needs" in e for e in errors)
-
-    def as_reason(c):
-        mutate(c)
-        c["attributed_to"] = [{"ingredient": ASPIRIN, "basis": "STATED_REASON"}]
-    errors, _ = _claim_errors(workspace, 0, as_reason)
-    assert any("STATED_REASON needs" in e for e in errors)
-
-
-def test_second_ingredient_mentioned_in_the_quote_is_not_attributed(workspace):
-    """Review repro B: "aspirin associated" in the omeprazole claim is not an aspirin claim."""
-    errors, _ = _claim_errors(workspace, 1, lambda c: c["attributed_to"].append(
-        {"ingredient": ASPIRIN, "basis": "COMPONENT_STATEMENT"}))
-    assert any("'the aspirin component'" in e for e in errors)
-
-
-def test_stated_reason_needs_the_ingredient_in_the_causal_clause(workspace):
+    """A generic product name names every ingredient and attributes nothing."""
+    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
+        quote=GENERIC_QUOTE, relation="AMELIORATES_CONDITION", disease_context=None,
+        object={"text": "heartburn", "term_gap": "not in the test ontology"},
+        attributed_to=[_attr(ASPIRIN, "COMPONENT_STATEMENT", "Aspirin and Omeprazole Tablets")]))
+    assert any("outside the product's own name" in e for e in errors)
     errors, _ = _claim_errors(workspace, 3, lambda c: c.update(
-        attributed_to=[{"ingredient": OMEPRAZOLE, "basis": "STATED_REASON"}]))
-    assert any("STATED_REASON needs" in e for e in errors)
-    errors, _ = _claim_errors(workspace, 2, lambda c: c.update(
-        attributed_to=[{"ingredient": ASPIRIN, "basis": "STATED_REASON"}]))
-    assert any("STATED_REASON needs" in e for e in errors)
+        quote=BYPASS_QUOTE, life_stage=None,
+        object={"text": "gastric bypass", "term_gap": "procedure; not a condition"},
+        attributed_to=[_attr(ASPIRIN, "STATED_REASON",
+                             "because of poor absorption of Aspirin and Omeprazole Tablets")]))
+    assert any("outside the product's own name" in e for e in errors)
+
+
+def test_snippet_must_name_the_attributed_ingredient(workspace):
+    """Round 3 repro B: "aspirin associated" in an omeprazole claim credits omeprazole only."""
+    errors, _ = _claim_errors(workspace, 1, lambda c: c["attributed_to"].append(
+        _attr(ASPIRIN, "COMPONENT_STATEMENT", "The omeprazole component of TESTCOMBO")))
+    assert any("never names acetylsalicylic acid" in e or "never names aspirin" in e
+               for e in errors)
+
+
+def test_basis_wording_is_only_a_warning(workspace):
+    errors, warnings = _claim_errors(workspace, 3, lambda c: c["attributed_to"][0].update(
+        basis="COMPONENT_STATEMENT"))
+    assert not any("attributed_to" in e for e in errors)
+    assert any("COMPONENT_STATEMENT, but the snippet's wording" in w for w in warnings)
+
+
+def test_ingredient_as_sentence_subject(workspace):
+    """Co-packaged labels: "Omeprazole is contraindicated in patients with ..."."""
+    errors, warnings = _claim_errors(workspace, 3, lambda c: _contra(
+        c, SUBJECT_QUOTE, {"text": "hepatic impairment", "term_gap": "not in the test ontology"},
+        attributed_to=[_attr(OMEPRAZOLE, "INGREDIENT_SUBJECT", "Omeprazole is contraindicated")]))
+    assert not any("attributed_to" in e for e in errors + warnings)
+
+
+def test_claim_needs_an_explanation(workspace):
+    record = _valid_record()
+    errors, _ = _findings(_write(workspace, record, explain=False))
+    assert sum("'explanation' is a required property" in e for e in errors) == 4
+    for claim in record["products"][0]["claims"]:
+        claim["explanation"] = "  "
+    errors, _ = _findings(_write(workspace, record, explain=False))
+    assert sum("explain how the quote states this claim" in e for e in errors) == 4
 
 
 def test_own_ingredient_allergy_is_not_curated(workspace):
@@ -755,34 +814,6 @@ def test_enter_repo_root_resolves_paths_first(tmp_path, monkeypatch):
 
 
 # --- review round 2 ---------------------------------------------------------------------------
-def test_component_statement_is_scoped_to_the_objects_sentence(workspace):
-    """Round 2 S1 (A2): a later "The omeprazole component" sentence credits nothing earlier."""
-    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
-        quote=TWO_SENTENCE_QUOTE,
-        attributed_to=[{"ingredient": OMEPRAZOLE, "basis": "COMPONENT_STATEMENT"}]))
-    assert any("COMPONENT_STATEMENT needs" in e for e in errors)
-    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(quote=TWO_SENTENCE_QUOTE))
-    assert not any("attributed_to" in e for e in errors)
-
-
-def test_stated_reason_is_scoped_to_the_objects_sentence(workspace):
-    """Round 2 S1 (A3/A4): a neighbouring sentence's cause is not this claim's."""
-    errors, _ = _claim_errors(workspace, 2, lambda c: c.update(
-        quote=NEIGHBOUR_QUOTE,
-        attributed_to=[{"ingredient": ASPIRIN, "basis": "STATED_REASON"}]))
-    assert any("STATED_REASON needs" in e for e in errors)
-
-
-def test_product_name_after_a_cause_is_not_a_stated_reason(workspace):
-    """Round 2 S9: pins the product-name stripping (this fails without it)."""
-    def mutate(c):
-        c.update(quote=BYPASS_QUOTE, life_stage=None,
-                 object={"text": "gastric bypass", "term_gap": "procedure; not a condition"},
-                 attributed_to=[{"ingredient": ASPIRIN, "basis": "STATED_REASON"}])
-    errors, _ = _claim_errors(workspace, 3, mutate)
-    assert any("STATED_REASON needs" in e for e in errors)
-
-
 def test_own_ingredient_rule_applies_only_to_allergies(workspace):
     """Round 2 S2: a drug-caused condition may name the product's own ingredient."""
     errors, _ = _claim_errors(workspace, 3, lambda c: c.update(object_specialization=[
@@ -839,30 +870,6 @@ def test_exact_on_part_of_the_text_warns_when_words_could_narrow(workspace):
 
 
 # --- review round 3 ---------------------------------------------------------------------------
-def test_component_statement_does_not_reach_back_into_an_earlier_sentence(workspace):
-    """Round 3: pins the sentence *start* (an earlier sentence's component phrase)."""
-    errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
-        quote=EARLIER_COMPONENT_QUOTE, disease_context=None,
-        object={"text": "acute myocardial infarction", "term": _term("MONDO:0004781"),
-                "binding": "EXACT"},
-        attributed_to=[{"ingredient": OMEPRAZOLE, "basis": "COMPONENT_STATEMENT"}]))
-    assert any("COMPONENT_STATEMENT needs" in e for e in errors)
-
-
-def test_ingredient_as_sentence_subject(workspace):
-    """Co-packaged labels: "Omeprazole is contraindicated in patients with ..."."""
-    def mutate(ingredient):
-        def m(c):
-            _contra(c, SUBJECT_QUOTE,
-                    {"text": "hepatic impairment", "term_gap": "not in the test ontology"},
-                    attributed_to=[{"ingredient": ingredient, "basis": "INGREDIENT_SUBJECT"}])
-        return m
-    errors, _ = _claim_errors(workspace, 3, mutate(OMEPRAZOLE))
-    assert not any("attributed_to" in e for e in errors)
-    errors, _ = _claim_errors(workspace, 3, mutate(ASPIRIN))
-    assert any("INGREDIENT_SUBJECT needs" in e for e in errors)
-
-
 def test_pin_must_hold_the_label_it_is_named_for(workspace):
     """Round 3 S2: a pin whose contents name another label/version is refused."""
     pin = Path(f"curation/labels/dailymed/{SETID}.v3.yaml")
@@ -903,7 +910,8 @@ def test_desi_wording_and_evidence_status_must_agree(workspace):
     """Decision 2: a DESI-classified indication carries evidence_status, and only then."""
     errors, _ = _claim_errors(workspace, 0, lambda c: c.update(
         evidence_status="DESI_POSSIBLY_EFFECTIVE"))
-    assert any("do not use that DESI wording" in e for e in errors)
+    assert any("the DESI wording before the quote gives ['no DESI classification']" in e
+               for e in errors)
     errors, _ = _claim_errors(workspace, 3, lambda c: c.update(
         evidence_status="DESI_POSSIBLY_EFFECTIVE"))
     assert any("applies to indications only" in e for e in errors)
@@ -915,6 +923,9 @@ def test_coadministration_only_on_contraindications(workspace):
     errors, _ = _claim_errors(workspace, 1, lambda c: c.update(when_coadministered_with=spec))
     assert any("only a CONTRAINDICATED_IN claim" in e for e in errors)
     errors, _ = _claim_errors(workspace, 3, lambda c: c.update(when_coadministered_with=spec))
+    assert any("one of this product's own ingredients" in e for e in errors)
+    nsaids = [{"text": "NSAIDs", "term": _term("CHEBI:35475"), "binding": "EXACT"}]
+    errors, _ = _claim_errors(workspace, 2, lambda c: c.update(when_coadministered_with=nsaids))
     assert not any("when_coadministered_with" in e for e in errors)
 
 
@@ -933,38 +944,6 @@ def test_examples_are_descriptors_of_the_quote(workspace):
                 "term": _term("MONDO:0005047"), "binding": "BROADER"},
         examples=[{"text": "cystitis", "term_gap": "not in the test ontology"}]))
     assert any("examples.text" in e for e in errors)
-
-
-def test_attribution_is_read_from_the_label_sentence_not_the_quote():
-    """A quote trimmed to start at the ingredient cannot make it the subject."""
-    from medic.curation.validate import _attribution_scopes, _is_sentence_subject
-
-    chunks = ["Rarely, aspirin is contraindicated in patients with gout."]
-    [(openings, _, _)] = _attribution_scopes(
-        chunks, "aspirin is contraindicated in patients with gout", "gout", [])
-    assert not any(_is_sentence_subject(o, ["aspirin"]) for o in openings)
-
-
-def test_subject_after_a_heading_but_not_after_a_lead_in():
-    from medic.curation.validate import _is_sentence_subject
-
-    assert _is_sentence_subject("Coronary Artery Disease (CAD) Chronic Stable Angina Amlodipine "
-                                "is indicated for the symptomatic treatment", ["amlodipine"])
-    assert _is_sentence_subject("1.1 Hypertension: Amlodipine is indicated", ["amlodipine"])
-    assert not _is_sentence_subject("In patients with CAD, amlodipine is indicated",
-                                    ["amlodipine"])
-    assert not _is_sentence_subject("Amlodipine and benazepril are indicated", ["amlodipine"])
-
-
-def test_sentences_respect_abbreviations_elements_and_lists():
-    from medic.curation.validate import _attribution_scopes, _sentence_starts
-
-    text = "Approved in the U.S. Under review elsewhere."
-    assert _sentence_starts(text, []) == [0]  # "U.S." is not a sentence end
-    chunks = ["Atorvastatin is indicated: To reduce the risk of: Myocardial infarction. "
-              "Stroke."]
-    [(openings, _, _)] = _attribution_scopes(chunks, "Stroke", "Stroke", [])
-    assert openings[0].startswith("Atorvastatin is indicated")
 
 
 def test_coordinations_do_not_narrow(workspace):
@@ -1006,3 +985,88 @@ def test_term_search_matches_word_prefixes(monkeypatch):
     assert [i.id for i, _ in source.search("MONDO", "myocardial infar", 5)][:1] == \
         ["MONDO:0005068"]
     assert not source.search("MONDO", "yocardial", 5)  # must start at a word
+
+
+# --- round 4 decisions ------------------------------------------------------------------------
+def test_coordination_members_are_expanded():
+    from medic.curation.validate import _coordination_members
+
+    assert _coordination_members("renal or hepatic impairment") == [
+        "renal", "hepatic impairment", "renal impairment"]
+    assert "hepatic disease" in _coordination_members("hepatic impairment or disease")
+    assert _coordination_members("common cold/flu") == ["common cold", "flu", "common flu"]
+    assert _coordination_members("MI with or without aura") == []
+    assert _coordination_members("severe renal impairment") == []
+
+
+def test_coordinated_text_binds_one_member(workspace):
+    """Decision c: one claim per member, each quoting the shared phrase."""
+    def bind(curie, binding="EXACT"):
+        return lambda c: _contra(c, COORD_QUOTE, {"text": "renal or hepatic impairment",
+                                                  "term": _term(curie), "binding": binding})
+    for member in ("MONDO:9999902", "MONDO:9999903"):
+        errors, _ = _claim_errors(workspace, 3, bind(member))
+        assert errors == [], member
+    errors, _ = _claim_errors(workspace, 3, bind("MONDO:0001126", "NARROWER"))
+    assert any("fits no member of the coordination" in e for e in errors), errors
+
+
+def test_binding_consistency_warns_but_skips_coordinations(workspace):
+    def add_twin(curie, text, quote):
+        def mutate(record):
+            claims = record["products"][0]["claims"]
+            twin = {**claims[3], "life_stage": None, "attributed_to": None, "quote": quote}
+            claims[3] = {**twin, "object": {"text": text, "term": _term("MONDO:9999902"),
+                                            "binding": "EXACT"}}
+            claims.append({**twin, "object": {"text": text, "term": _term(curie),
+                                              "binding": "EXACT"}})
+        return mutate
+    record = _valid_record()
+    add_twin("MONDO:9999903", "renal or hepatic impairment", COORD_QUOTE)(record)
+    _, warnings = _findings(_write(workspace, record))
+    assert not any(w.startswith("bindings") for w in warnings)
+    record = _valid_record()
+    add_twin("MONDO:9999903", "hepatic impairment", SUBJECT_QUOTE)(record)
+    _, warnings = _findings(_write(workspace, record))
+    assert any(w.startswith("bindings") and "in different" in w for w in warnings)
+
+
+def test_desi_classification_governs_only_what_follows_it():
+    from medic.curation.label import LabelDocument
+
+    doc = LabelDocument(setid="x", version=1, title="", active_moieties=[], sections={
+        "INDICATIONS": ["Drug is indicated for asthma. Based on a review of this drug by the "
+                        "National Academy of Sciences, FDA has classified the other "
+                        "indications as \"possibly\" effective: for bronchitis."],
+        "CONTRAINDICATIONS": []})
+    checker = Checker(check_terms=False, offline=True)
+
+    def errors(quote, status=None):
+        checker.findings = []
+        claim = {"section": "INDICATIONS", "quote": quote}
+        if status:
+            claim["evidence_status"] = status
+        checker._check_evidence_status(Path("x.yaml"), claim, doc, "c")
+        return [f.message for f in checker.findings if f.level == "ERROR"]
+
+    assert errors("Drug is indicated for asthma") == []
+    assert errors("Drug is indicated for asthma", "DESI_POSSIBLY_EFFECTIVE")
+    assert any("record it in evidence_status" in e for e in errors("for bronchitis"))
+    assert errors("for bronchitis", "DESI_POSSIBLY_EFFECTIVE") == []
+    assert errors("for bronchitis", "DESI_PROBABLY_EFFECTIVE")
+
+
+def test_limitations_of_use_end_at_the_next_heading_or_indication():
+    from medic.curation.label import LabelDocument
+
+    doc = LabelDocument(setid="x", version=1, title="", active_moieties=[], sections={
+        "INDICATIONS": ["1.3 Limitations of Use", "Not for use in acute bronchospasm.",
+                        "Hypertension", "Drug lowers blood pressure in adults.",
+                        "1.4 Limitations of Use", "Not for children.",
+                        "Drug is also indicated for angina."],
+        "CONTRAINDICATIONS": []})
+    roles = {s["text"][:20]: s["role"] for s in doc.spans("INDICATIONS")}
+    assert roles["Not for use in acute"] == "LIMITATION_STATEMENT"
+    assert roles["Not for children."] == "LIMITATION_STATEMENT"
+    assert roles["Drug lowers blood pr"] != "LIMITATION_STATEMENT"
+    assert roles["Drug is also indicat"] != "LIMITATION_STATEMENT"

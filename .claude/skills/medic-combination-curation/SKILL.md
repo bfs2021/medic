@@ -35,27 +35,34 @@ file in a session; it is authoritative over this skill if they ever disagree.
 1. **Verbatim or nothing.** `quote` and every descriptor `text` are copied character-for-character from the label section the helper
    prints. Never paraphrase, never reorder, never fix typos or the label's
    footnote artifacts (e.g. `TABLETSA`). Whitespace may differ; nothing else.
-2. **Attribution only when stated.** Add an `attributed_to` entry only when
-   the quote either assigns the claim to the ingredient's component
-   (`basis: COMPONENT_STATEMENT` — the quote must contain "the omeprazole
-   component") or names the ingredient inside its causal clause
-   (`basis: STATED_REASON` — after "because", "due to", "caused by", ...:
-   "because of the risk of Reye's syndrome with concomitant use of aspirin"),
-   or opens the object's sentence with the ingredient as its subject
-   (`basis: INGREDIENT_SUBJECT` — "Clarithromycin is contraindicated in
-   patients with ...", "Amlodipine is indicated for ..."; on any product, single
-   or co-packaged; a heading may precede the subject, a lead-in like "In
-   patients with CAD, amlodipine ..." may not, and brand names do not count yet).
-   The checks read the label's own sentence from the pin, not your quote, so
-   trimming a quote changes nothing.
-   The validator enforces all three wordings *within the sentence that names the
-   claim's object*, and ignores the product's own name: "Ipratropium Bromide and
-   Albuterol Sulfate Inhalation Solution is indicated ..." attributes nothing,
-   and in a long quote a later "The omeprazole component ..." sentence does not
-   credit omeprazole with an earlier item. For a stated reason, the cue must come
-   after the object in its sentence. An allergen mention is not attribution, and neither
-   is pharmacology you know. If the label speaks of the product as a whole,
-   omit `attributed_to`.
+2. **Attribution only when stated, with the label's words as evidence.** Add
+   an `attributed_to` entry only when the label itself ties the claim to the
+   ingredient. Each entry is evidence in dismech's pattern:
+   - `snippet`: the label's own words that make the tie, copied verbatim from
+     the same label element as the quote, inside the quote or right beside it
+     ("The omeprazole component of ...", "because of the risk of Reye's
+     syndrome with concomitant use of aspirin", "Clarithromycin is
+     contraindicated", "contains atorvastatin and is therefore");
+   - `explanation`: one or two sentences on how the snippet ties *this* claim
+     to *this* ingredient, without adding conclusions the words do not state;
+   - `basis`: the kind of statement — `COMPONENT_STATEMENT` (the label assigns
+     the claim to the component), `STATED_REASON` (it names the ingredient as
+     the cause), `INGREDIENT_SUBJECT` (the ingredient is the subject of the
+     claim's sentence, on any product, single or co-packaged).
+   The validator checks the snippet mechanically (verbatim, same element, near
+   the quote, names the ingredient outside the product's own name; "Ipratropium
+   Bromide and Albuterol Sulfate Inhalation Solution is indicated" names no
+   ingredient). Whether the words really attribute the claim is the human
+   reviewer's call, made from your snippet and explanation, so make them
+   checkable: a later "The omeprazole component ..." sentence does not credit
+   omeprazole with an earlier item, and a lead-in ("In patients with CAD,
+   amlodipine ...") is not a subject. An allergen mention is not attribution,
+   and neither is pharmacology you know. If the label speaks of the product as
+   a whole, omit `attributed_to`.
+2b. **Every claim explains itself.** `explanation` (required) says how the
+   quote states this claim: which words give the relation, the object, and
+   each qualifier, and any reading you made (a coordination member, a risk
+   factor, a symptom of a named condition). No conclusions beyond the words.
 3. **One claim per distinct condition** (and per distinct context, see
    `references/claims-and-qualifiers.md`). Never one claim per ingredient
    copied from a product-level sentence.
@@ -190,7 +197,8 @@ Contraindications section. For each sentence ask:
    (Contraindications only) `CONTRAINDICATED_IN`. See the decision table in
    `references/claims-and-qualifiers.md`.
 3. Does the label assign it to a component, or name an ingredient as its
-   cause? If yes, which one(s), on which basis?
+   cause? If yes, which one(s), on which basis, and which words (`snippet`)
+   show it?
 4. What context does the label attach (disease context, age, sex, life stage,
    anatomical site, line of therapy, co-therapy)? Each needs verbatim `text`
    inside the quote. A qualifier describes the treated patient: a sex or age
@@ -200,8 +208,17 @@ Contraindications section. For each sentence ask:
    one claim per member — except a member with a restriction of its own
    ("migraine ... if over age 35", "now or in the past"): that member is a
    separate claim carrying the restriction, since `examples` cannot hold one.
-   A coordination ("renal or hepatic impairment") is two claims, each quoting
-   the shared phrase.
+   Two shapes are different:
+   - **Risk-factor lists** ("a high risk of arterial or venous thrombotic
+     diseases. Examples include women who are known to: smoke, ..., have
+     uncontrolled hypertension"): the listed items are what is contraindicated,
+     each as its own claim. The explanation says the item is contraindicated as
+     a thrombotic risk factor; the heading condition is not a claim of its own.
+   - **Coordinations** ("renal or hepatic impairment", "acute or severe hepatic
+     failure", "hepatic impairment or disease"): one claim per member, each
+     quoting and with object `text` the *whole* shared phrase. The validator
+     expands the coordination and checks the term against the member it fits;
+     the explanation names the member.
 6. Does a contraindication apply only with a co-administered agent ("Do not
    co-administer aliskiren ... in patients with diabetes")? Object = the
    condition; the agent in `when_coadministered_with`. A contraindication with
@@ -209,16 +226,22 @@ Contraindications section. For each sentence ask:
 7. Does the label qualify its indications as DESI "possibly" or "probably"
    effective? Set `evidence_status` on every such indication claim (the
    validator requires it whenever the label says so).
-8. Pregnancy, lactation, contraception ("prevent pregnancy"): curate them.
+8. OTC symptom lists ("temporarily relieves these symptoms due to the common
+   cold, hay fever or other upper respiratory allergies: runny nose, sneezing,
+   ..."): one `AMELIORATES_CONDITION` claim per symptom, with the named
+   condition(s) as `disease_context` — one claim per symptom per condition
+   (cold, flu, hay fever) when several are named.
+9. Pregnancy, lactation, contraception ("prevent pregnancy"): curate them.
    No configured ontology has these terms yet, so the object is unbound with a
    `term_gap`; do not skip them. When pregnancy qualifies another claim
    ("edema of pregnancy"), record it as an unbound `life_stage`.
    Outcome endpoints ("reduce the risk of hospitalization for angina") are
    PREVENTATIVE_FOR_CONDITION the condition they are for, text keeping the
    outcome wording, binding BROADER.
-   Within one file, bind the same wording to the same term (the validator
+   Within one file, bind the same wording to the same term, coordinations
+   aside (the validator
    warns otherwise).
-9. Is it negated, or inside a Limitations of Use paragraph? Then no claim.
+10. Is it negated, or inside a Limitations of Use paragraph? Then no claim.
 
 ### Step 4: Look up terms
 
@@ -292,7 +315,11 @@ Errors block; fix every one and re-run until there are none. Typical fixes:
 | no term source is configured for PREFIX | Use a configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI), or, if another is genuinely more accurate, report it so a human can add a source in `conf/curation_terms.yaml` |
 | no committed label pin | Run `uv run python -m medic.curation.label <setid> --pin` and stage the pin, if DailyMed still serves that version; otherwise re-curate against the current version |
 | binding warning: X is what only part of the text names | The remaining words may narrow the condition; use BROADER unless they don't |
-| COMPONENT_STATEMENT / STATED_REASON / INGREDIENT_SUBJECT needs ... | The governing wording must be in the object's own sentence: the nearest "the X component" before it, or a causal cue after it naming X. Otherwise drop the attribution |
+| snippet must be verbatim from the same label element / is N characters away | Copy the attributing words from the element the quote is in, inside or beside the quote; if the label only says it elsewhere, it does not attribute this claim |
+| snippet never names X (outside the product's own name) | The snippet must name the ingredient itself; a product name is not an attribution |
+| basis warning: the snippet's wording does not show it | Check the classification (component wording, a cause, or the ingredient as subject) |
+| explain how the quote states this claim / the snippet ties the claim | Write the explanation; it is required |
+| X fits no member of the coordination | Bind a term for one member ("renal impairment" in "renal or hepatic impairment"), one claim per member |
 | allergy contraindication must name the agents | Add the other agents as specializations, or drop the claim if they are all the product's own |
 | drop the product's own ingredients | Keep only the other agents as specializations |
 | curator_id is not a reference to this repository's SKILL.md with its git blob id | Commit the skill, regenerate the curator block with the label helper |
@@ -413,12 +440,20 @@ products:
           patients who have had ischemic stroke or transient ischemia of the brain due
           to fibrin platelet emboli, reducing the combined risk of death and nonfatal MI
           in patients with a previous MI or unstable angina pectoris
-        attributed_to:             # the quote says "The aspirin component of ..."
-          - {ingredient: CHEBI:15365, basis: COMPONENT_STATEMENT}
+        attributed_to:
+          - ingredient: CHEBI:15365
+            basis: COMPONENT_STATEMENT
+            snippet: The aspirin component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA
+            explanation: >-
+              The sentence assigns its indications, MI prevention among them, to the
+              aspirin component.
         disease_context:
           text: previous MI
           term: {id: MONDO:0005068, label: myocardial infarction}
           binding: EXACT
+        explanation: >-
+          "indicated for reducing the combined risk of ... nonfatal MI" is prevention of
+          MI; "in patients with a previous MI" is the disease context.
         status: DRAFT
         notes: >-
           Secondary prevention. The same sentence also covers patients with unstable
@@ -439,7 +474,13 @@ products:
           ulcers in patients at risk for developing aspirin-associated gastric ulcers
           due to age (≥ 55) or documented history of gastric ulcers.
         attributed_to:
-          - {ingredient: CHEBI:7772, basis: COMPONENT_STATEMENT}
+          - ingredient: CHEBI:7772
+            basis: COMPONENT_STATEMENT
+            snippet: The omeprazole component of ASPIRIN AND OMEPRAZOLE DELAYED-RELEASE TABLETSA
+            explanation: The sentence assigns the ulcer-risk indication to the omeprazole component.
+        explanation: >-
+          "decreasing the risk of developing aspirin-associated gastric ulcers" is
+          prevention of gastric ulcer, specialised to aspirin as the cause.
         status: DRAFT
         notes: >-
           gastric ulcer + specialization aspirin composes "aspirin-associated gastric
@@ -458,6 +499,9 @@ products:
         quote: >-
           Patients with known allergy to aspirin and other nonsteroidal
           anti-inflammatory drug products (NSAIDs)
+        explanation: >-
+          A contraindication in patients allergic to NSAIDs (cross-sensitivity); aspirin
+          here is an allergen, not an attribution.
         status: DRAFT
       - relation: CONTRAINDICATED_IN
         section: CONTRAINDICATIONS
@@ -470,10 +514,16 @@ products:
           term: {id: HsapDv:0000264, label: pediatric stage}
           binding: EXACT
         attributed_to:
-          - {ingredient: CHEBI:15365, basis: STATED_REASON}
+          - ingredient: CHEBI:15365
+            basis: STATED_REASON
+            snippet: because of the risk of Reye's syndrome with concomitant use of aspirin
+            explanation: The label gives aspirin as the reason for the contraindication.
         quote: >-
           Pediatric patients with suspected viral infections, with or without fever,
           because of the risk of Reye's syndrome with concomitant use of aspirin
+        explanation: >-
+          Contraindicated in pediatric patients with suspected viral infections; "with or
+          without fever" does not restrict it.
         status: DRAFT
 ```
 
@@ -495,8 +545,9 @@ Note what is **absent**, and why:
 - No claim for "acute myocardial infarction" from Limitations of Use, and none
   for "gastrointestinal bleeding" (negated: "Has not been shown to reduce").
 - The quote for the MI claim starts at "The aspirin component" so the
-  attribution is visible inside the quote, even though it then has to run
-  through the stroke item to stay contiguous.
+  attribution snippet sits inside the quote, even though the quote then has to
+  run through the stroke item to stay contiguous. A snippet just before the
+  quote, in the same element, would do as well.
 - The stroke claims (object stroke, contexts ischemic stroke / transient
   ischemia of the brain) and the unstable-angina and chronic-stable-angina
   claims would follow the same pattern.
@@ -513,6 +564,9 @@ Note what is **absent**, and why:
 | Contraindications pulled from Warnings and Precautions or Boxed Warning | Those are risks, not contraindications | `CONTRAINDICATED_IN` only from the Contraindications section |
 | Inventing CURIEs (ingredients, combo id, MONDO ids from memory) | Plausible wrong ids pass casual review and silently corrupt the KB | Helper for ingredients/id; `terms` lookup for every term, this session |
 | Pharmacology-based attribution ("omeprazole is a PPI so it must be the ulcer part") | Attribution must be stated by the label | Leave unattributed; say in `notes` it looks component-specific |
+| An explanation that argues beyond the words ("omeprazole protects the stomach, so ...") | The reviewer approves the label's words, not your pharmacology | Say only what the snippet or quote states |
+| A risk-factor list curated as its heading ("thrombotic diseases") | The items are what is contraindicated | One claim per risk factor |
+| One claim for "renal or hepatic impairment" bound to one of them | Silently drops the other member | One claim per member, each with the whole phrase |
 | Bundling several conditions into one claim | Each condition is its own edge downstream | One claim per condition / context |
 | Using the label wording as `term.label` | `label` must be the ontology label | Wording goes in the descriptor's `text` |
 | Marking anything REVIEWED | Only humans review | `DRAFT` everywhere |
@@ -524,7 +578,10 @@ Note what is **absent**, and why:
 - [ ] Every descriptor `text` occurs inside the quote; every term has a
       `binding`; every unbound descriptor has a `term_gap`
 - [ ] `attributed_to` only where the label assigns the claim or names the
-      cause, with the right `basis`; no own-ingredient allergy claims
+      cause, each with a verbatim `snippet`, an `explanation` and the right
+      `basis`; no own-ingredient allergy claims
+- [ ] Every claim has an `explanation`
+- [ ] Risk-factor lists, coordinations and OTC symptom lists split per item
 - [ ] Nothing from Limitations of Use, Warnings, Boxed Warning; nothing negated
 - [ ] Every term id from a `terms` lookup this session; labels canonical
 - [ ] All statuses `DRAFT`
