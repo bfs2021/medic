@@ -1,0 +1,40 @@
+setid: 3fbcd7d8-cc53-4dbb-8edc-451acadc472c
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/3fbcd7d8-cc53-4dbb-8edc-451acadc472c.xml
+xml_sha256: be9177bc84aa171eabf225d189ec3a9a5b5e0753d14dacfd042bc3dc50df533f
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use Natazia safely and effectively.
+  See full prescribing information for Natazia. Natazia (estradiol valerate and estradiol valerate/dienogest)
+  tablets for oral use Initial U.S. Approval: 2010'
+product_name: Natazia
+active_moieties:
+- DIENOGEST
+- ESTRADIOL VALERATE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Natazia™ is indicated for use by women to prevent pregnancy. The efficacy of Natazia in women with
+    a body mass index (BMI) of > 30 kg/m 2 has not been evaluated.
+  - Natazia is an estrogen/progestin COC indicated for use by women to prevent pregnancy. ( 1 ) The efficacy
+    of Natazia in women with a body mass index (BMI) of >30 kg/m 2 has not been evaluated. ( 1 , 8.8 )
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'Do not prescribe Natazia to women who are known to have the following: A high risk of arterial or
+    venous thrombotic diseases. Examples include women who are known to: Smoke, if over age 35 [see Boxed
+    Warning and Warnings and Precautions ( 5.1 )] Have deep vein thrombosis or pulmonary embolism, now
+    or in the past [see Warnings and Precautions ( 5.1 )] Have cerebrovascular disease [see Warnings and
+    Precautions ( 5.1 )] Have coronary artery disease [see Warnings and Precautions ( 5.1 )] Have thrombogenic
+    valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial endocarditis
+    with valvular disease, or atrial fibrillation) [see Warnings and Precautions ( 5.1 )] Have inherited
+    or acquired hypercoagulopathies [see Warnings and Precautions ( 5.1 )] Have uncontrolled hypertension
+    [see Warnings and Precautions ( 5.4 )] Have diabetes with vascular disease [see Warnings and Precautions
+    ( 5.6 )] Have headaches with focal neurological symptoms or have migraine headaches with or without
+    aura if over age 35 [see Warnings and Precautions ( 5.7 )] Undiagnosed abnormal genital bleeding [see
+    Warnings and Precautions ( 5.8 )] Breast cancer or other estrogen- or progestin-sensitive cancer,
+    now or in the past [see Warnings and Precautions ( 5.2 )] Liver tumors, benign or malignant, or liver
+    disease [see Warnings and Precautions ( 5.3 ), Use in Specific Populations ( 8.7 ) and Clinical Pharmacology
+    ( 12.3 )] . Pregnancy, because there is no reason to use COCs during pregnancy [see Warnings and Precautions
+    ( 5.9 ) and Use in Specific Populations ( 8.1 )] .'
+  - A high risk of arterial or venous thrombotic diseases ( 4 ) Undiagnosed abnormal genital bleeding
+    ( 4 ) Breast cancer or other estrogen- or progestin-sensitive cancer ( 4 ) Liver tumors or liver disease
+    ( 4 ) Pregnancy ( 4 )

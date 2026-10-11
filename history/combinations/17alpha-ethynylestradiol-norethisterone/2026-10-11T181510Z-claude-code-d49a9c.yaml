@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17alpha-ethynylestradiol-norethisterone
+  path: kb/combinations/17alpha-ethynylestradiol-norethisterone.yaml
+session:
+  id: 2026-10-11T181510Z-claude-code-d49a9c
+  timestamp: '2026-10-11T18:15:10Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17alpha-ethynylestradiol / norethisterone'
+  details: |
+    Curated from DailyMed setid 054917fa-573b-4b16-a719-ece6c0909656 v4 (norethindrone acetate and ethinyl estradiol tablets and ferrous fumarate tablets). 29 claims: pregnancy prevention, moderate acne vulgaris (TREATS, acne BROADER, age 15+, unbound menarche life stage and prior-therapy restriction) and 27 contraindications. Cholestatic jaundice of pregnancy bound to HP Jaundice BROADER because the grounding store anchors cholestatic jaundice on obstructive jaundice and blocks MONDO intrahepatic cholestasis of pregnancy; abnormal genital bleeding bound to HP Abnormal bleeding BROADER; hepatic carcinomas to carcinoma of liver and intrahepatic biliary tract BROADER. No attributions. Not curated: the thrombotic heading and the hepatitis C co-administration.

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17alpha-ethynylestradiol-ethynodiol
+  path: kb/combinations/17alpha-ethynylestradiol-ethynodiol.yaml
+session:
+  id: 2026-10-11T181512Z-claude-code-2cb0a6
+  timestamp: '2026-10-11T18:15:12Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17alpha-ethynylestradiol / ethynodiol'
+  details: |
+    Curated from DailyMed setid 96a73786-22b1-457e-be73-80b699996d40 v14 (Kelnor 1/35), an older-format label. 16 claims: pregnancy prevention and 15 contraindications. Carcinoma of the female reproductive organs left unbound because the validator's carcinoma anchor rejects MONDO female reproductive organ cancer. Jaundice with prior oral contraceptive use specialised to CHEBI oral contraceptive. Not curated: the hepatitis C co-administration. No attributions.

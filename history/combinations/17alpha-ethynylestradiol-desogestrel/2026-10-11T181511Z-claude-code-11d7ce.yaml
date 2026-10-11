@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17alpha-ethynylestradiol-desogestrel
+  path: kb/combinations/17alpha-ethynylestradiol-desogestrel.yaml
+session:
+  id: 2026-10-11T181511Z-claude-code-11d7ce
+  timestamp: '2026-10-11T18:15:11Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17alpha-ethynylestradiol / desogestrel'
+  details: |
+    Curated from DailyMed setid 4a8f278f-f505-4537-8deb-74e8927df8c6 v105 (Isibloom), an older-format label. 22 claims: pregnancy prevention and 21 contraindications, one per listed condition or coordination member. The blood-pressure threshold item is one Hypertension claim (BROADER). Not curated: major surgery with prolonged immobilization (a procedure, not a condition), hypersensitivity to the product's own components, and the hepatitis C co-administration. No attributions.

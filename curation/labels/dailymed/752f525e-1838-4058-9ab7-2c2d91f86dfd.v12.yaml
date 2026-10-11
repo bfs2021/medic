@@ -1,0 +1,32 @@
+setid: 752f525e-1838-4058-9ab7-2c2d91f86dfd
+version: 12
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/752f525e-1838-4058-9ab7-2c2d91f86dfd.xml
+xml_sha256: 39d8865a0c875a3cd38ec9ceb966b13fe34c10ff1f254bc907b42758bb1fae9e
+retrieved: '2026-10-11'
+title: Kurvelo&trade; (levonorgestrel and ethinyl estradiol tablets USP, 0.15 mg/30 mcg)Rx only
+product_name: Kurvelo
+active_moieties:
+- ETHINYL ESTRADIOL
+- LEVONORGESTREL
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Kurvelo is indicated for use by females of reproductive potential to prevent pregnancy.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Kurvelo is contraindicated in females who are known to have the following conditions: A high risk
+    of arterial or venous thrombotic diseases. Examples include women who are known to: Smoke, if over
+    age 35 [see BOXED WARNING and WARNINGS (1) ]. Have current or history of deep vein thrombosis or pulmonary
+    embolism [see WARNINGS (1) ] . Have cerebrovascular disease [see WARNINGS (1) ] . Have coronary artery
+    disease [see WARNINGS (1) ] . Have thrombogenic valvular or thrombogenic rhythm diseases of the heart
+    (for example, subacute bacterial endocarditis with valvular disease, or atrial fibrillation) [see
+    WARNINGS (1) ] . Have inherited or acquired hypercoagulopathies [see WARNINGS (1) ] . Have uncontrolled
+    hypertension or hypertension with vascular disease [see WARNINGS (3) ] . Have diabetes mellitus and
+    are over age 35, diabetes mellitus with hypertension or vascular disease or other end-organ damage,
+    or diabetes mellitus of >20 years duration [see WARNINGS (7) ] . Have headaches with focal neurological
+    symptoms, migraine headaches with aura, or over age 35 with any migraine headaches [see WARNINGS (8)
+    ] . Current diagnosis of, or history of, breast cancer, which may be hormone-sensitive. Liver tumors,
+    acute viral hepatitis, or severe (decompensated) cirrhosis [see WARNINGS ( 2 )] . Use of Hepatitis
+    C drug combinations containing ombitasvir/paritaprevir/ritonavir, with or without dasabuvir, due to
+    the potential for ALT elevations [see WARNINGS ( 5 )] . Undiagnosed abnormal uterine bleeding [see
+    WARNINGS ( 9 )] .'
