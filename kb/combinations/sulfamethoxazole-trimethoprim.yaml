@@ -1,0 +1,347 @@
+id: MEDICNE:combo-4ade0de7-ce1b-54c2-ac1b-11aead535f9c
+name: sulfamethoxazole / trimethoprim
+ingredients:
+- id: CHEBI:9332
+  label: sulfamethoxazole
+- id: CHEBI:45924
+  label: trimethoprim
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 518cc045-a12b-f08f-e063-6394a90acb0c
+    version: 1
+    title: Sulfamethoxazole and Trimethoprim Tablets, USP
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=518cc045-a12b-f08f-e063-6394a90acb0c
+  product_name: Sulfamethoxazole and Trimethoprim
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: urinary tract infections
+      term:
+        id: MONDO:0005247
+        label: bacterial urinary tract infection
+      binding: NARROWER
+    quote: >-
+      For the treatment of urinary tract infections due to susceptible strains of the following
+      organisms: Escherichia coli, Klebsiella species, Enterobacter species, Morganella morganii,
+      Proteus mirabilis and Proteus vulgaris.
+    explanation: >-
+      "For the treatment of urinary tract infections" under the Urinary Tract Infections heading
+      gives TREATS; "due to susceptible strains of the following organisms" restricts it to
+      infections by the listed bacteria.
+    status: DRAFT
+    notes: >-
+      Bound NARROWER to MONDO bacterial urinary tract infection: every listed organism is a
+      bacterium, which justifies the more specific term. The organisms themselves have no slot
+      (no causative-organism qualifier). The grounding store maps "urinary tract infections" to HP
+      Recurrent urinary tract infections (HP:0000010), which adds a recurrence the label does not
+      state; that row looks wrong. "It is recommended that initial episodes of uncomplicated
+      urinary tract infections be treated with a single effective antibacterial agent rather than
+      the combination" is usage advice and makes no claim. Product-level, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: acute otitis media
+      term:
+        id: HP:0000371
+        label: Acute otitis media
+      binding: EXACT
+    quote: >-
+      For the treatment of acute otitis media in pediatric patients due to susceptible strains of
+      Streptococcus pneumoniae or Haemophilus influenzae when in the judgment of the physician
+      sulfamethoxazole and trimethoprim offers some advantage over the use of other antimicrobial
+      agents.
+    life_stage:
+      text: pediatric patients
+      term:
+        id: HsapDv:0000264
+        label: pediatric stage
+      binding: EXACT
+    explanation: >-
+      "For the treatment of acute otitis media in pediatric patients" gives TREATS, restricted to
+      pediatric patients; "due to susceptible strains of Streptococcus pneumoniae or Haemophilus
+      influenzae" names the organisms, and the physician-judgement clause is a usage condition.
+    status: DRAFT
+    notes: >-
+      HP Acute otitis media agrees with the grounding store (MONDO infectious otitis media
+      MONDO:0024330 also carries "acute otitis Media" as an exact synonym). The causative
+      organisms have no slot. "are not indicated for prophylactic or prolonged administration in
+      otitis media at any age" is negated and makes no claim; the limited-data sentence for
+      patients under two years is a precaution. Product-level, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: acute exacerbations of chronic bronchitis
+      term_gap: >-
+        searched MONDO "exacerbation", "acute exacerbation", "acute bronchitis", "chronic
+        bronchitis"; HP "exacerbation": no term for an exacerbation of chronic bronchitis. The
+        chronic bronchitis the words also name is recorded as the disease context.
+    quote: >-
+      Acute Exacerbations of Chronic Bronchitis in Adults For the treatment of acute exacerbations of chronic bronchitis due to susceptible strains of
+      Streptococcus pneumoniae or Haemophilus influenzae when a physician deems that
+      sulfamethoxazole and trimethoprim tablets could offer some advantage over the use of a single
+      antimicrobial agent.
+    disease_context:
+      text: chronic bronchitis
+      term:
+        id: MONDO:0005607
+        label: chronic bronchitis
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: Adults
+    explanation: >-
+      "For the treatment of acute exacerbations of chronic bronchitis" gives TREATS with the
+      exacerbation as the object and chronic bronchitis as its disease context; the heading
+      "Acute Exacerbations of Chronic Bronchitis in Adults" restricts it to adults. The organisms
+      and the physician-judgement clause qualify it.
+    status: DRAFT
+    notes: >-
+      Object unbound per the skill's exacerbation tie-break, chronic bronchitis as disease context.
+      The grounding store maps the phrase to UMLS:C0856695. The quote runs from the subsection
+      heading into the indication sentence to carry the heading's adult restriction (a
+      span-crossing quote). Product-level, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: enteritis
+      term:
+        id: MONDO:0043579
+        label: enteritis
+      binding: EXACT
+    quote: >-
+      For the treatment of enteritis caused by susceptible strains of Shigella flexneri and Shigella
+      sonnei when antibacterial therapy is indicated.
+    explanation: >-
+      "For the treatment of enteritis caused by susceptible strains of Shigella flexneri and
+      Shigella sonnei" under the Shigellosis heading gives TREATS with enteritis as the object,
+      caused by the two Shigella species.
+    status: DRAFT
+    notes: >-
+      MONDO shigellosis (MONDO:0019345) says what the heading and the organisms say, but it sits
+      under dysentery / large intestine disorder, not under MONDO enteritis (small-intestine
+      inflammation), so binding it to the text "enteritis" would contradict the label's own word;
+      enteritis agrees with the grounding store. The organisms have no slot. A reviewer may prefer
+      shigellosis once a causative-organism slot exists. Product-level, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: documented Pneumocystis jirovecii pneumonia
+      term:
+        id: MONDO:0019121
+        label: pneumocystosis
+      binding: EXACT
+    quote: >-
+      For the treatment of documented Pneumocystis jirovecii pneumonia and for prophylaxis against
+      P. jirovecii pneumonia in individuals who are immunosuppressed and considered to be at an
+      increased risk of developing P. jirovecii pneumonia.
+    explanation: >-
+      "For the treatment of documented Pneumocystis jirovecii pneumonia" gives TREATS; "documented"
+      describes the diagnosis, not a different condition.
+    status: DRAFT
+    notes: >-
+      MONDO pneumocystosis has the exact synonym "Pneumocystis jirovecii pneumonia" and sits under
+      MONDO pneumonia; the grounding store maps the phrase to HP Pneumocystis jirovecii pneumonia
+      (HP:0020102), which is not placed under HP Pneumonia, so the validator rejects it for the
+      abbreviated "P. jirovecii pneumonia" in the next claim and MONDO is used for both. "in individuals who are immunosuppressed" is
+      read as governing only the prophylaxis clause that it follows, so it is not recorded here.
+      The sentence sits in the span that begins with the Shigellosis indication because the label
+      runs the "Pneumocystis jirovecii Pneumonia" heading into it. Product-level, unattributed.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: P. jirovecii pneumonia
+      term:
+        id: MONDO:0019121
+        label: pneumocystosis
+      binding: EXACT
+    quote: >-
+      For the treatment of documented Pneumocystis jirovecii pneumonia and for prophylaxis against
+      P. jirovecii pneumonia in individuals who are immunosuppressed and considered to be at an
+      increased risk of developing P. jirovecii pneumonia.
+    disease_context:
+      text: immunosuppressed
+      term:
+        id: HP:0002721
+        label: Immunodeficiency
+      binding: BROADER
+    explanation: >-
+      "for prophylaxis against P. jirovecii pneumonia" gives PREVENTATIVE_FOR_CONDITION; "in
+      individuals who are immunosuppressed" restricts it to immunosuppressed patients, the
+      disease context.
+    status: DRAFT
+    notes: >-
+      "P. jirovecii" abbreviates Pneumocystis jirovecii; same term as the treatment claim. HP Immunodeficiency (exact synonyms
+      "Decreased immune function", "Immune deficiency") covers "immunosuppressed", which usually
+      means suppression by treatment, so BROADER; no
+      MONDO or HP term names immunosuppression as such (searched MONDO "immunosuppress",
+      "immunocompromised"; HP "immunosuppression", "immunocompromised"). "considered to be at an
+      increased risk of developing P. jirovecii pneumonia" is a risk criterion, not a further
+      condition. Product-level, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: traveler’s diarrhea
+      term:
+        id: HP:0002014
+        label: Diarrhea
+      binding: BROADER
+    quote: >-
+      Traveler's Diarrhea in Adults For the treatment of traveler’s diarrhea due to susceptible
+      strains of enterotoxigenic E. coli.
+    age_range:
+      min_years: 18
+      text: Adults
+    explanation: >-
+      "For the treatment of traveler’s diarrhea due to susceptible strains of enterotoxigenic E.
+      coli" gives TREATS with traveler's diarrhea as the object, caused by enterotoxigenic E. coli;
+      the heading "Traveler's Diarrhea in Adults" restricts it to adults.
+    status: DRAFT
+    notes: >-
+      No traveler's diarrhea term (searched MONDO "travel", "diarrhea", "infectious diarrhea",
+      "enterotoxigenic", "Escherichia coli"; MONDO dysentery has "infectious diarrhea" as a
+      synonym but denotes bloody diarrhea), so HP Diarrhea is bound BROADER. The grounding store
+      maps the phrase to UMLS:C0277528. The quote starts at the subsection heading to carry its
+      adult restriction (a span-crossing quote). Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: sulfonamides
+      term:
+        id: CHEBI:87228
+        label: sulfonamide antibiotic
+      binding: NARROWER
+    quote: >-
+      known hypersensitivity to trimethoprim or sulfonamides
+    explanation: >-
+      Under "are contraindicated in the following situations:", "known hypersensitivity to
+      trimethoprim or sulfonamides" states a drug-allergy contraindication; the sulfonamide class
+      is kept as the agent and trimethoprim, the product's own ingredient, is dropped.
+    status: DRAFT
+    notes: >-
+      Curated as cross-sensitivity: "sulfonamides" is the class, wider than the product's own
+      sulfamethoxazole (as "other sulfonamide-derived drugs" is curated in the
+      hydrochlorothiazide files). "sulfonamides" beside trimethoprim on an antibacterial label
+      means the sulfonamide antibacterials, so CHEBI sulfonamide antibiotic is bound NARROWER than
+      the bare word (CHEBI sulfonamide, CHEBI:35358, is the whole chemical class, thiazides
+      included). Hypersensitivity to trimethoprim (own ingredient) is not curated.
+      drug allergy is NARROWER than the bare word "hypersensitivity", justified by the drug
+      agents. Unattributed: an allergen is not a cause.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: drug-induced immune thrombocytopenia
+      term:
+        id: MONDO:0002048
+        label: thrombocytopenia due to immune destruction
+      binding: BROADER
+    object_specialization:
+    - text: trimethoprim
+      term:
+        id: CHEBI:45924
+        label: trimethoprim
+      binding: EXACT
+    - text: sulfonamides
+      term:
+        id: CHEBI:87228
+        label: sulfonamide antibiotic
+      binding: NARROWER
+    quote: >-
+      history of drug-induced immune thrombocytopenia with use of trimethoprim and/or sulfonamides
+    explanation: >-
+      Under "are contraindicated in the following situations:", "history of drug-induced immune
+      thrombocytopenia with use of trimethoprim and/or sulfonamides" names past drug-induced
+      immune thrombocytopenia, with trimethoprim and sulfonamides as the causing agents.
+    status: DRAFT
+    notes: >-
+      MONDO thrombocytopenia due to immune destruction has the exact synonym "immune
+      thrombocytopenia"; no drug-induced immune thrombocytopenia term exists (searched MONDO
+      "drug-induced thrombocytopenia", "drug-induced immune thrombocytopenia"; HP
+      "thrombocytopenia"), so BROADER, with the agents as specializations ("sulfonamides" bound
+      to sulfonamide antibiotic NARROWER, as in the allergy claim). This is a drug-caused
+      condition, not an allergy, so the product's own trimethoprim is kept as an agent (as the
+      skill directs for "thrombocytopenia with use of trimethoprim"). Not attributed: the
+      ingredient is named only as part of the condition's own agent wording. The grounding store
+      maps "Drug-induced immune thrombocytopenia" to UMLS:C0272290.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: documented megaloblastic anemia due to folate deficiency
+      term:
+        id: MONDO:0001860
+        label: folic acid deficiency anemia
+      binding: EXACT
+    quote: >-
+      documented megaloblastic anemia due to folate deficiency
+    explanation: >-
+      Under "are contraindicated in the following situations:", "documented megaloblastic anemia
+      due to folate deficiency" names folate-deficiency megaloblastic anemia; "documented"
+      describes the diagnosis.
+    status: DRAFT
+    notes: >-
+      MONDO folic acid deficiency anemia has the exact synonym "folate-deficient megaloblastic
+      anemia". The grounding store has sssom:NoTermFound for the phrase and maps "Megaloblastic
+      anemia due to folate deficiency" to UMLS:C0151482. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: marked hepatic damage
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: BROADER
+    quote: >-
+      marked hepatic damage
+    explanation: >-
+      Under "are contraindicated in the following situations:", "marked hepatic damage" names
+      marked liver damage as a contraindicated condition.
+    status: DRAFT
+    notes: >-
+      No liver-damage term (searched MONDO "liver damage", "hepatic damage", "hepatic injury",
+      "liver injury"; HP "liver damage", "hepatic injury", "hepatocellular"; MONDO drug-induced
+      liver injury adds a cause the label does not state, and HP Decreased liver function is a
+      function, not damage), so MONDO liver disorder (exact synonym "hepatic disease") is bound
+      BROADER. The grounding store has sssom:NoTermFound for "Marked hepatic damage".
+      Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe renal insufficiency
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      severe renal insufficiency when renal function status cannot be monitored
+    explanation: >-
+      Under "are contraindicated in the following situations:", "severe renal insufficiency when
+      renal function status cannot be monitored" names severe renal insufficiency as
+      contraindicated when renal function cannot be monitored.
+    status: DRAFT
+    notes: >-
+      HP Renal insufficiency agrees with the grounding store's broadMatch for "Severe renal
+      insufficiency"; it lacks the severity, so BROADER. The condition "when renal function status
+      cannot be monitored" has no slot and stays in the quote. Product-level, unattributed.
+notes: >-
+  Not claimed: the antibacterial-stewardship paragraph at the head of Indications (usage advice);
+  "initial episodes of uncomplicated urinary tract infections be treated with a single effective
+  antibacterial agent" (usage advice); "not indicated for prophylactic or prolonged administration
+  in otitis media" (negated); the under-two-years limited-data sentence (a precaution);
+  hypersensitivity to trimethoprim (own ingredient); "pediatric patients less than 2 months of age"
+  (a population with no condition; the schema needs a condition object); "concomitant
+  administration with dofetilide" (a pure drug interaction, out of scope). The causative organisms
+  of each indication have no slot. No claim is attributed: the label speaks of the product
+  throughout.

@@ -1,0 +1,47 @@
+setid: dd352302-e2fe-4388-b4b0-00b34f6ebe48
+version: 2
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/dd352302-e2fe-4388-b4b0-00b34f6ebe48.xml
+xml_sha256: 273d31b46b5e741dcd9c3954e02cc3f98881a3a5c5595bed82e2d042e1285c85
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use BUDESONIDE AND FORMOTEROL FUMARATE
+  DIHYDRATE INHALATION AEROSOL safely and effectively. See full prescribing information for BUDESONIDE
+  AND FORMOTEROL FUMARATE DIHYDRATE INHALATION AEROSOL. BUDESONIDE and FORMOTEROL FUMARATE DIHYDRATE inhalation
+  aerosol, for oral inhalation use Initial U.S. Approval: 2006'
+product_name: Budesonide and formoterol fumarate dihydrate
+active_moieties:
+- BUDESONIDE
+- FORMOTEROL
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'Budesonide and formoterol fumarate dihydrate inhalation aerosol is a combination product containing
+    a corticosteroid and a long-acting beta 2 -adrenergic agonist indicated for: Treatment of asthma in
+    patients 6 years of age and older. ( 1.1 ) Maintenance treatment of airflow obstruction and reducing
+    exacerbations in patients with chronic obstructive pulmonary disease (COPD) including chronic bronchitis
+    and/or emphysema. ( 1.2 ) Important limitations: Not indicated for the relief of acute bronchospasm.
+    ( 1.1 , 1.2 )'
+  - 1.1 Treatment of Asthma
+  - 'Budesonide and formoterol fumarate dihydrate inhalation aerosol is indicated for the treatment of
+    asthma in patients 6 years of age and older. Budesonide and formoterol fumarate dihydrate inhalation
+    aerosol should be used for patients not adequately controlled on a long-term asthma-control medication
+    such as an inhaled corticosteroid (ICS) or whose disease warrants initiation of treatment with both
+    an inhaled corticosteroid and long-acting beta 2 -adrenergic agonist (LABA). Important Limitations
+    of Use: Budesonide and formoterol fumarate dihydrate inhalation aerosol is NOT indicated for the relief
+    of acute bronchospasm.'
+  - 1.2 Maintenance Treatment of Chronic Obstructive Pulmonary Disease
+  - 'Budesonide and formoterol fumarate dihydrate inhalation aerosol 160/4.5 is indicated for the maintenance
+    treatment of airflow obstruction in patients with chronic obstructive pulmonary disease (COPD) including
+    chronic bronchitis and/or emphysema. Budesonide and formoterol fumarate dihydrate inhalation aerosol
+    160/4.5 is also indicated to reduce exacerbations of COPD. Budesonide and formoterol fumarate dihydrate
+    inhalation aerosol 160/4.5 is the only strength indicated for the treatment of COPD. Important Limitations
+    of Use: Budesonide and formoterol fumarate dihydrate inhalation aerosol is NOT indicated for the relief
+    of acute bronchospasm.'
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'The use of budesonide and formoterol fumarate dihydrate inhalation aerosol is contraindicated in
+    the following conditions: Primary treatment of status asthmaticus or other acute episodes of asthma
+    or COPD where intensive measures are required. Hypersensitivity to any of the ingredients in budesonide
+    and formoterol fumarate dihydrate inhalation aerosol.'
+  - Primary treatment of status asthmaticus or acute episodes of asthma or COPD requiring intensive measures
+    ( 4 ) Hypersensitivity to any of the ingredients in budesonide and formoterol fumarate dihydrate inhalation
+    aerosol ( 4 )

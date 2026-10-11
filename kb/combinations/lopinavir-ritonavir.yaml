@@ -1,0 +1,104 @@
+id: MEDICNE:combo-26a57dfa-68cc-5177-af3e-99a19567542c
+name: lopinavir / ritonavir
+ingredients:
+- id: CHEBI:31781
+  label: lopinavir
+- id: CHEBI:45409
+  label: ritonavir
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 8290add3-4449-4e58-6c97-8fe1eec972e3
+    version: 1702
+    title: 'These highlights do not include all the information needed to use KALETRA safely and effectively.
+      See full prescribing information for KALETRA. KALETRA ® (lopinavir and ritonavir) tablet, for oral
+      use KALETRA ® (lopinavir and ritonavir) oral solution Initial U.S. Approval: 2000'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8290add3-4449-4e58-6c97-8fe1eec972e3
+  product_name: Kaletra
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: HIV-1 infection
+      term:
+        id: MONDO:0005109
+        label: HIV infectious disease
+      binding: BROADER
+    quote: >-
+      KALETRA is indicated in combination with other antiretroviral agents for the treatment of
+      HIV-1 infection in adults and pediatric patients 14 days and older.
+    in_combination_with:
+    - text: other antiretroviral agents
+      term:
+        id: CHEBI:64946
+        label: anti-HIV agent
+      binding: NARROWER
+    age_range:
+      min_years: 0.0383
+      text: 14 days and older
+    explanation: >-
+      "is indicated ... for the treatment of HIV-1 infection" gives TREATS with object HIV-1
+      infection; "in combination with other antiretroviral agents" names the co-therapy; "in
+      adults and pediatric patients 14 days and older" sets the lower age bound at 14 days.
+    status: DRAFT
+    notes: >-
+      Follows the abacavir/lamivudine precedent: no HIV-1-specific MONDO term (searched MONDO
+      "HIV"), so HIV infectious disease is BROADER; the grounding store maps "HIV-1 infection" to
+      UMLS:C2363741. CHEBI has no "antiretroviral" class; anti-HIV agent is NARROWER than
+      "antiretroviral agents", justified by the HIV-1 indication (CHEBI anti-HIV-1 agent
+      CHEBI:64947 also exists; the precedent's class is kept for consistency). min_years 0.0383 is
+      14 days / 365.25; "adults and pediatric patients" together cover every age from that bound.
+      The Limitations of Use (resistance testing guides use) make no claim. Product-level,
+      unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pulmonary arterial hypertension
+      term:
+        id: MONDO:0015924
+        label: pulmonary arterial hypertension
+      binding: EXACT
+    quote: >-
+      PDE5 Inhibitor: sildenafil (Revatio ® ) when used for the treatment of pulmonary arterial
+      hypertension
+    when_coadministered_with:
+    - text: sildenafil
+      term:
+        id: CHEBI:9139
+        label: sildenafil
+      binding: EXACT
+    explanation: >-
+      Under "KALETRA is contraindicated with drugs that are highly dependent on CYP3A for
+      clearance", the entry "sildenafil (Revatio ® ) when used for the treatment of pulmonary
+      arterial hypertension" contraindicates the product with sildenafil in patients treated for
+      pulmonary arterial hypertension, so the condition is the object and sildenafil the
+      co-administered agent.
+    status: DRAFT
+    notes: >-
+      Judgement call: the only entry of the CYP3A list that names a condition. The condition is the
+      co-administered drug's indication (it identifies the Revatio regimen), not a risk of the
+      patient: KALETRA is not contraindicated in PAH without sildenafil, so this edge is only true
+      with its when_coadministered_with qualifier, which an export must keep. It is curated in the
+      shape of the aliskiren-in-diabetes contraindication (condition object, agent in
+      when_coadministered_with); a reviewer may instead treat it as a pure drug interaction and
+      reject it. The governing lead sentence sits earlier in the same span, outside this
+      item-sized quote. Not attributed: the label speaks of KALETRA, not of lopinavir or
+      ritonavir.
+notes: >-
+  Not curated: hypersensitivity "to any of its ingredients, including ritonavir" with its examples
+  (toxic epidermal necrolysis, Stevens-Johnson syndrome, erythema multiforme, urticaria,
+  angioedema), which is allergy to the product's own ingredients; and every other entry of the two
+  co-administration lists (drugs highly dependent on CYP3A: alfuzosin, ranolazine, dronedarone,
+  colchicine, lurasidone, pimozide, dihydroergotamine, ergotamine, methylergonovine, cisapride,
+  elbasvir/grazoprevir, lovastatin, simvastatin, lomitapide, suzetrigine, triazolam, orally
+  administered midazolam; potent CYP3A inducers: apalutamide, rifampin, St. John's Wort), which are
+  pure drug interactions with no condition and are out of scope. INTERACTING_INGREDIENT does not
+  apply: the label names KALETRA, not an ingredient, as the party ("reduced lopinavir plasma
+  concentrations" is a consequence, not co-administration wording). The Limitations of Use make no
+  claim.

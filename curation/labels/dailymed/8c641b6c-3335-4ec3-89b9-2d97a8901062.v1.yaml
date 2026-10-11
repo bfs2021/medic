@@ -1,0 +1,41 @@
+setid: 8c641b6c-3335-4ec3-89b9-2d97a8901062
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/8c641b6c-3335-4ec3-89b9-2d97a8901062.xml
+xml_sha256: 55c8c6c5f13dac9bd36cfcb9149875dcdead542c5004fd1bdccff0dd86071ec8
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use COMBIGAN® safely and effectively.
+  See full prescribing information for COMBIGAN®. COMBIGAN® (brimonidine tartrate/timolol maleate ophthalmic
+  solution) 0.2%/0.5% Initial U.S. Approval: 2007'
+product_name: COMBIGAN
+active_moieties:
+- BRIMONIDINE
+- TIMOLOL
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - COMBIGAN ® (brimonidine tartrate/timolol maleate ophthalmic solution) 0.2%/0.5% is an alpha adrenergic
+    receptor agonist with a beta adrenergic receptor inhibitor indicated for the reduction of elevated
+    intraocular pressure (IOP) in patients with glaucoma or ocular hypertension who require adjunctive
+    or replacement therapy due to inadequately controlled IOP; the IOP-lowering of COMBIGAN ® dosed twice
+    a day was slightly less than that seen with the concomitant administration of 0.5% timolol maleate
+    ophthalmic solution dosed twice a day and 0.2% brimonidine tartrate ophthalmic solution dosed three
+    times per day.
+  - COMBIGAN ® is an alpha adrenergic receptor agonist with a beta adrenergic receptor inhibitor indicated
+    for the reduction of elevated intraocular pressure (IOP) in patients with glaucoma or ocular hypertension
+    who require adjunctive or replacement therapy due to inadequately controlled IOP; the IOP-lowering
+    of COMBIGAN ® dosed twice a day was slightly less than that seen with the concomitant administration
+    of timolol maleate ophthalmic solution, 0.5% dosed twice a day and brimonidine tartrate ophthalmic
+    solution, 0.2% dosed three times per day. ( 1 )
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Bronchial asthma, a history of bronchial asthma, severe chronic obstructive pulmonary disease. ( 4
+    , 5.1 , 5.3 ) Sinus bradycardia, second or third degree atrioventricular block, overt cardiac failure,
+    cardiogenic shock. ( 4 , 5.2 ) Hypersensitivity to any component of this product. ( 4 )
+  - Asthma, COPD COMBIGAN ® is contraindicated in patients with bronchial asthma; a history of bronchial
+    asthma; severe chronic obstructive pulmonary disease (see WARNINGS AND PRECAUTIONS , 5.1 , 5.3 ).
+  - Sinus Bradycardia, AV Block, Cardiac Failure, Cardiogenic Shock COMBIGAN ® is contraindicated in patients
+    with sinus bradycardia; second or third degree atrioventricular block; overt cardiac failure (see
+    WARNINGS AND PRECAUTIONS , 5.2 ); cardiogenic shock.
+  - Hypersensitivity Reactions Local hypersensitivity reactions have occurred following the use of different
+    components of COMBIGAN ® . COMBIGAN ® is contraindicated in patients who have exhibited a hypersensitivity
+    reaction to any component of this medication in the past.

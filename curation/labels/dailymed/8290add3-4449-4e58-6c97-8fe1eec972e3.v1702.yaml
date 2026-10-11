@@ -1,0 +1,45 @@
+setid: 8290add3-4449-4e58-6c97-8fe1eec972e3
+version: 1702
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/8290add3-4449-4e58-6c97-8fe1eec972e3.xml
+xml_sha256: aa77bf8d0ebff2619cecb1bab59e2b24188dc7034bf4bfca715299c3f9ca2519
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use KALETRA safely and effectively.
+  See full prescribing information for KALETRA. KALETRA ® (lopinavir and ritonavir) tablet, for oral use
+  KALETRA ® (lopinavir and ritonavir) oral solution Initial U.S. Approval: 2000'
+product_name: Kaletra
+active_moieties:
+- LOPINAVIR
+- RITONAVIR
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'KALETRA is indicated in combination with other antiretroviral agents for the treatment of HIV-1 infection
+    in adults and pediatric patients 14 days and older. Limitations of Use: Genotypic or phenotypic testing
+    and/or treatment history should guide the use of KALETRA. The number of baseline lopinavir resistance-associated
+    substitutions affects the virologic response to KALETRA [see Microbiology ( 12.4 )] .'
+  - KALETRA is an HIV-1 protease inhibitor indicated in combination with other antiretroviral agents for
+    the treatment of HIV-1 infection in adults and pediatric patients (14 days and older). ( 1 )
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'KALETRA is contraindicated in patients with previously demonstrated clinically significant hypersensitivity
+    (e.g., toxic epidermal necrolysis, Stevens-Johnson syndrome, erythema multiforme, urticaria, angioedema)
+    to any of its ingredients, including ritonavir. KALETRA is contraindicated with drugs that are highly
+    dependent on CYP3A for clearance and for which elevated plasma concentrations are associated with
+    serious and/or life-threatening reactions [see Drug Interactions ( 7.1 ) and Clinical Pharmacology
+    ( 12.3 )] . Alpha 1- Adrenoreceptor Antagonist: alfuzosin Antianginal: ranolazine Antiarrhythmic:
+    dronedarone Anti-gout: colchicine Antipsychotics: lurasidone, pimozide Ergot Derivatives: dihydroergotamine,
+    ergotamine, methylergonovine GI Motility Agent: cisapride Hepatitis C direct acting antiviral: elbasvir/grazoprevir
+    HMG-CoA Reductase Inhibitors: lovastatin, simvastatin Microsomal triglyceride transfer protein (MTTP)
+    Inhibitor: lomitapide Non-opioid Analgesic (selective blocker of Nav1.8 sodium channels): suzetrigine
+    PDE5 Inhibitor: sildenafil (Revatio ® ) when used for the treatment of pulmonary arterial hypertension
+    Sedative/Hypnotics: triazolam, orally administered midazolam KALETRA is contraindicated with drugs
+    that are potent CYP3A inducers where significantly reduced lopinavir plasma concentrations may be
+    associated with the potential for loss of virologic response and possible resistance and cross-resistance
+    [see Drug Interactions ( 7.2 ) and Clinical Pharmacology ( 12.3 )] . Anticancer Agents: apalutamide
+    Antimycobacterial: rifampin Herbal Products: St. John''s Wort (hypericum perforatum)'
+  - Hypersensitivity to KALETRA (e.g., toxic epidermal necrolysis, Stevens-Johnson syndrome, erythema
+    multiforme, urticaria, angioedema) or any of its ingredients, including ritonavir. ( 4 ) Co-administration
+    with drugs highly dependent on CYP3A for clearance and for which elevated plasma levels may result
+    in serious and/or life-threatening events. ( 4 ) Co-administration with potent CYP3A inducers where
+    significantly reduced lopinavir plasma concentrations may be associated with the potential for loss
+    of virologic response and possible resistance and cross resistance. ( 4 )

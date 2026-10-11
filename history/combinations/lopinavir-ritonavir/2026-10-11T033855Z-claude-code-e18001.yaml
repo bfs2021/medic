@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: lopinavir-ritonavir
+  path: kb/combinations/lopinavir-ritonavir.yaml
+session:
+  id: 2026-10-11T033855Z-claude-code-e18001
+  timestamp: '2026-10-11T03:38:55Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: lopinavir / ritonavir'
+  details: |
+    Curated from DailyMed setid 8290add3-4449-4e58-6c97-8fe1eec972e3 v1702 (KALETRA). HIV-1 infection (BROADER HIV infectious disease) with other antiretroviral agents and a 14-day lower age bound. One contraindication: pulmonary arterial hypertension when co-administered with sildenafil (the only CYP3A-list entry naming a condition; flagged for review). Own-ingredient hypersensitivity and all other CYP3A-substrate and inducer entries (pure drug interactions) not curated; nothing attributed.

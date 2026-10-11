@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: sulfamethoxazole-trimethoprim
+  path: kb/combinations/sulfamethoxazole-trimethoprim.yaml
+session:
+  id: 2026-10-11T033854Z-claude-code-91eb2a
+  timestamp: '2026-10-11T03:38:54Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: sulfamethoxazole / trimethoprim'
+  details: |
+    Curated from DailyMed setid 518cc045-a12b-f08f-e063-6394a90acb0c v1. Seven indications (UTI bound NARROWER to bacterial UTI, acute otitis media in pediatric patients, AECB in adults with the exacerbation unbound and chronic bronchitis as disease context, Shigella enteritis bound to enteritis, PJP treatment and prophylaxis in immunosuppressed patients via MONDO pneumocystosis, traveler's diarrhea in adults BROADER HP Diarrhea; the adult restrictions are quoted from the subsection headings) and five contraindications (sulfonamide-antibiotic cross-sensitivity, drug-induced immune thrombocytopenia with trimethoprim/sulfonamides as agents, folate-deficiency megaloblastic anemia, marked hepatic damage BROADER liver disorder, severe renal insufficiency). Not curated: infants under 2 months (no condition), dofetilide (pure interaction), trimethoprim allergy (own ingredient). Causative organisms have no slot; nothing attributed.

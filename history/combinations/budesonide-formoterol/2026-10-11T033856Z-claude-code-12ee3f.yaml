@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: budesonide-formoterol
+  path: kb/combinations/budesonide-formoterol.yaml
+session:
+  id: 2026-10-11T033856Z-claude-code-12ee3f
+  timestamp: '2026-10-11T03:38:56Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: budesonide / formoterol'
+  details: |
+    Curated from DailyMed setid dd352302-e2fe-4388-b4b0-00b34f6ebe48 v2. Asthma (6 years and older), maintenance treatment of airflow obstruction (HP Airway obstruction) in COPD, reduction of COPD exacerbations (unbound object, COPD context), and contraindications for primary treatment of status asthmaticus, other acute episodes of asthma (MONDO acute asthma) and of COPD (unbound, no exacerbation term). Limitations of Use and own-ingredient hypersensitivity not curated; nothing attributed.

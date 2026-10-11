@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dorzolamide-timolol
+  path: kb/combinations/dorzolamide-timolol.yaml
+session:
+  id: 2026-10-11T033854Z-claude-code-42debe
+  timestamp: '2026-10-11T03:38:54Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: dorzolamide / timolol'
+  details: |
+    Curated from DailyMed setid f45cce05-fb47-4607-b68e-5a3d47e7235a v10. Indication bound to HP Ocular hypertension (elevated IOP) with open-angle glaucoma / ocular hypertension as disease contexts and insufficient response to beta-blockers as line_of_therapy. Contraindication lists split per member; the AV-block claims use the inner coordination as text because the validator splits the nested list at the wrong level. Bronchial asthma covers a history of bronchial asthma. Own-ingredient hypersensitivity not curated; nothing attributed.
