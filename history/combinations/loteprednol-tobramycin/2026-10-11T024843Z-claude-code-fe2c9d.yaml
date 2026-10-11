@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: loteprednol-tobramycin
+  path: kb/combinations/loteprednol-tobramycin.yaml
+session:
+  id: 2026-10-11T024843Z-claude-code-fe2c9d
+  timestamp: '2026-10-11T02:48:43Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: loteprednol / tobramycin'
+  details: |
+    Curated from DailyMed setid 3dd9b060-5355-404d-bdf1-09ee8b52a9f5 v18 (ZYLET). Same claim structure as the other steroid/anti-infective ophthalmic files: 11 indication claims, 4 contraindication claims, none attributed (ZYLET is the subject of the indication and contraindication sentences; 'Ocular steroids' and 'an anti-infective component' name roles, not ingredients; the '(tobramycin) is active against' sentence is microbiology, not a claim). The 'such as' examples sit on the site member they name (allergic conjunctivitis and acne rosacea on both conjunctiva members; superficial punctate keratitis (BROADER) and herpes zoster keratitis on cornea; iritis and cyclitis on anterior segment). Herpes zoster keratitis and cyclitis have term_gaps.

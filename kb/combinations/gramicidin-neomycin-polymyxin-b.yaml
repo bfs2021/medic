@@ -1,0 +1,119 @@
+id: MEDICNE:combo-b2c1c2b0-c8b6-56b7-9284-ae73b0bdca8e
+name: gramicidin / neomycin / polymyxin b
+ingredients:
+- id: CHEBI:749506
+  label: gramicidin
+- id: CHEBI:7507
+  label: neomycin
+- id: CHEBI:759086
+  label: polymyxin b
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: e6f8d2f6-adff-4ae1-982c-45562f0a8e28
+    version: 11
+    title: Neomycin and Polymyxin B Sulfates and Gramicidin Ophthalmic Solution, USP
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e6f8d2f6-adff-4ae1-982c-45562f0a8e28
+  product_name: NEOMYCIN AND POLYMYXIN B SULFATES AND GRAMICIDIN
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: superficial infections of the external eye and its adnexa caused by susceptible bacteria
+      member: superficial infections of the external eye caused by susceptible bacteria
+      term:
+        id: MONDO:0043885
+        label: eye infectious disorder
+      binding: BROADER
+    examples:
+    - text: conjunctivitis
+      term:
+        id: MONDO:0006668
+        label: bacterial conjunctivitis
+      binding: NARROWER
+    - text: keratitis
+      term:
+        id: MONDO:0023865
+        label: corneal infection
+      binding: NARROWER
+    - text: keratoconjunctivitis
+      term:
+        id: MONDO:0004768
+        label: keratoconjunctivitis
+      binding: EXACT
+    quote: >-
+      Neomycin and polymyxin B sulfates and gramicidin ophthalmic solution is indicated for the
+      topical treatment of superficial infections of the external eye and its adnexa caused by
+      susceptible bacteria. Such infections encompass conjunctivitis, keratitis and
+      keratoconjunctivitis, blepharitis and blepharoconjunctivitis.
+    explanation: >-
+      "is indicated for the topical treatment of superficial infections of the external eye ...
+      caused by susceptible bacteria" gives TREATS; this claim covers the external-eye member of
+      "the external eye and its adnexa". The next sentence ("Such infections encompass ...") lists
+      the infections covered; the external-eye ones (conjunctivitis, keratitis,
+      keratoconjunctivitis) are recorded as examples.
+    status: DRAFT
+    notes: >-
+      eye infectious disorder is BROADER: MONDO has no bacterial or superficial eye infection term
+      (searched "bacterial eye", "eye infection"). "caused by susceptible bacteria" stays in the
+      object text; there is no causative-organism slot. The examples are bound to their infective
+      forms where MONDO has one (bacterial conjunctivitis; corneal infection, exact synonym
+      "infective keratitis"), NARROWER than the bare words but stated by "Such infections";
+      MONDO's infectious keratoconjunctivitis term is non-human only, so keratoconjunctivitis is
+      bound as written. "topical" is the route, not a qualifier. Product-level sentence ("...
+      ophthalmic solution is indicated"), unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: superficial infections of the external eye and its adnexa caused by susceptible bacteria
+      member: superficial infections of its adnexa caused by susceptible bacteria
+      term:
+        id: MONDO:0005113
+        label: bacterial infectious disease
+      binding: BROADER
+    anatomical_context:
+      text: adnexa
+      term:
+        id: UBERON:0035639
+        label: ocular adnexa
+      binding: EXACT
+    examples:
+    - text: blepharitis
+      term:
+        id: MONDO:0004785
+        label: blepharitis
+      binding: EXACT
+    - text: blepharoconjunctivitis
+      term:
+        id: MONDO:0002307
+        label: blepharoconjunctivitis
+      binding: EXACT
+    quote: >-
+      Neomycin and polymyxin B sulfates and gramicidin ophthalmic solution is indicated for the
+      topical treatment of superficial infections of the external eye and its adnexa caused by
+      susceptible bacteria. Such infections encompass conjunctivitis, keratitis and
+      keratoconjunctivitis, blepharitis and blepharoconjunctivitis.
+    explanation: >-
+      "is indicated for the topical treatment of superficial infections of the external eye and
+      its adnexa caused by susceptible bacteria" gives TREATS; this claim covers the adnexa member
+      ("its adnexa", the adnexa of the eye). The eyelid infections in the next sentence
+      (blepharitis, blepharoconjunctivitis) are recorded as its examples.
+    status: DRAFT
+    notes: >-
+      MONDO has no infection-of-ocular-adnexa term (searched "adnexa", "eye adnexa", "eyelid
+      infection"; eye adnexa disorder is not an infection), so bacterial infectious disease is
+      BROADER, with the ocular adnexa as anatomical context. The two members are bound
+      differently on purpose: for the external eye a site-specific infection term exists (eye
+      infectious disorder, which drops "bacterial"); for the adnexa none does, so the bacterial
+      term is bound and the site is carried by the anatomical context. blepharitis and blepharoconjunctivitis
+      are bound as written: MONDO has no bacterial blepharitis term. Blepharoconjunctivitis also
+      involves the conjunctiva; it is listed here because the eyelid is the adnexal site.
+      Product-level, unattributed. The only contraindication ("hypersensitivity to any of its
+      components") is allergy to the product's own ingredients and is not curated, so this file
+      has no CONTRAINDICATED_IN claims.

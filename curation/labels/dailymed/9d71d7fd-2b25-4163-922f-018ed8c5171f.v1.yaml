@@ -1,0 +1,34 @@
+setid: 9d71d7fd-2b25-4163-922f-018ed8c5171f
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/9d71d7fd-2b25-4163-922f-018ed8c5171f.xml
+xml_sha256: 34cc4a1ec8241a1c80db4392ec8f43d7a0025ffdaa2ccdcd35905b5d8100ebf3
+retrieved: '2026-10-11'
+title: FML-S®(fluorometholone and sulfacetamide sodium ophthalmic suspension, USP) 0.1%/10%
+product_name: ''
+active_moieties:
+- FLUOROMETHOLONE
+- SULFACETAMIDE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - 'FML-S® ophthalmic suspension is indicated for steroid-responsive inflammatory ocular conditions for
+    which a corticosteroid is indicated and where superficial bacterial ocular infection or a risk of
+    bacterial ocular infection exists. Ocular steroids are indicated in inflammatory conditions of the
+    palpebral and bulbar conjunctiva, cornea and anterior segment of the globe, where the inherent risk
+    of steroid use in certain infective conjunctivitides is accepted to obtain a diminution in edema and
+    inflammation. They are also indicated in chronic anterior uveitis and corneal injury from chemical,
+    radiation or thermal burns or penetration of foreign bodies. The use of a combination drug with an
+    anti-infective component is indicated where the risk of superficial ocular infection is high or where
+    there is an expectation that potentially dangerous numbers of bacteria will be present in the eye.
+    The anti-infective drug in this product, sulfacetamide, is active against the following common bacterial
+    eye pathogens: Escherichia coli, Staphylococcus aureus, Streptococcus pneumoniae, Streptococcus (viridans
+    group), Haemophilus influenzae, Klebsiella species, and Enterobacter species. This product does not
+    provide adequate coverage against Neisseria species and Serratia marcescens. A significant percentage
+    of staphylococcal isolates are completely resistant to sulfa drugs.'
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - FML-S® ophthalmic suspension is contraindicated in most viral diseases of the cornea and conjunctiva,
+    including epithelial herpes simplex keratitis (dendritic keratitis), vaccinia and varicella, and also
+    in mycobacterial infection of the eye and fungal diseases of ocular structures. FML-S® ophthalmic
+    suspension is also contraindicated in individuals with known or suspected hypersensitivity to any
+    of the ingredients of this preparation, to sulfonamides and to other corticosteroids.

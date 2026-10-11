@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: fluorometholone-sulfacetamide
+  path: kb/combinations/fluorometholone-sulfacetamide.yaml
+session:
+  id: 2026-10-11T024844Z-claude-code-6bdbb5
+  timestamp: '2026-10-11T02:48:44Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: fluorometholone / sulfacetamide'
+  details: |
+    Curated from DailyMed setid 9d71d7fd-2b25-4163-922f-018ed8c5171f v1 (FML-S). Same claim structure as the other steroid/anti-infective ophthalmic files: 11 indication claims, 5 contraindication claims, none attributed (the sulfacetamide-naming sentence is microbiology, not a claim). Extra contraindication: drug allergy to sulfonamides and to other corticosteroids (cross-sensitivity, CHEBI sulfonamide and corticosteroid as specializations); the own-ingredient hypersensitivity is dropped. The validator's misparse 'corneal injury from chemical radiation' (no comma before 'or penetration') is left uncovered and explained in notes.

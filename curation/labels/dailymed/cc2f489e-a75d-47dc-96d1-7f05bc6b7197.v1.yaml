@@ -1,0 +1,38 @@
+setid: cc2f489e-a75d-47dc-96d1-7f05bc6b7197
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/cc2f489e-a75d-47dc-96d1-7f05bc6b7197.xml
+xml_sha256: bc43ece144e7265c204c0c84da782a8e5c0feec67beafc0e558a88dca233887f
+retrieved: '2026-10-11'
+title: NEOMYCIN and POLYMYXIN B SULFATES and BACITRACIN ZINC with HYDROCORTISONE ACETATE OPHTHALMIC OINTMENT
+product_name: ''
+active_moieties:
+- BACITRACIN
+- HYDROCORTISONE
+- NEOMYCIN
+- POLYMYXIN B
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - 'Neomycin and polymyxin B sulfates and bacitracin zinc with hydrocortisone acetate ophthalmic ointment
+    is indicated for steroid-responsive inflammatory ocular conditions for which a corticosteroid is indicated
+    and where bacterial infection or a risk of bacterial infection exists. Ocular corticosteroids are
+    indicated in inflammatory conditions of the palpebral and bulbar conjunctiva, cornea, and anterior
+    segment of the globe where the inherent risk of corticosteroid use in certain infective conjunctivitides
+    is accepted to obtain a diminution in edema and inflammation. They are also indicated in chronic anterior
+    uveitis and corneal injury from chemical, radiation, or thermal burns, or penetration of foreign bodies.
+    The use of a combination drug with an anti-infective component is indicated where the risk of infection
+    is high or where there is an expectation that potentially dangerous numbers of bacteria will be present
+    in the eye (see CLINICAL PHARMACOLOGY: Microbiology ). The particular anti-infective drugs in this
+    product are active against the following common bacterial eye pathogens: Staphylococcus aureus, streptococci,
+    including Streptococcus pneumoniae, Escherichia coli, Haemophilus influenzae, Klebsiella/Enterobacter
+    species, Neisseria species, and Pseudomonas aeruginosa. The product does not provide adequate coverage
+    against Serratia marcescens.'
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Neomycin and polymyxin B sulfates and bacitracin zinc with hydrocortisone acetate ophthalmic ointment
+    is contraindicated in most viral diseases of the cornea and conjunctiva including: epithelial herpes
+    simplex keratitis (dendritic keratitis), vaccinia and varicella, and also in mycobacterial infection
+    of the eye and fungal diseases of ocular structures. Neomycin and polymyxin B sulfates and bacitracin
+    zinc with hydrocortisone acetate ophthalmic ointment is also contraindicated in individuals who have
+    shown hypersensitivity to any of its components. Hypersensitivity to the antibiotic component occurs
+    at a higher rate than for other components.'

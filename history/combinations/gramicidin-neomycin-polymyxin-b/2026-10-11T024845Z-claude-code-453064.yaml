@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: gramicidin-neomycin-polymyxin-b
+  path: kb/combinations/gramicidin-neomycin-polymyxin-b.yaml
+session:
+  id: 2026-10-11T024845Z-claude-code-453064
+  timestamp: '2026-10-11T02:48:45Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: gramicidin / neomycin / polymyxin b'
+  details: |
+    Curated from DailyMed setid e6f8d2f6-adff-4ae1-982c-45562f0a8e28 v11. Two TREATS claims, one per member of 'superficial infections of the external eye and its adnexa caused by susceptible bacteria' (eye infectious disorder BROADER; bacterial infectious disease BROADER with ocular adnexa as anatomical context); the 'Such infections encompass' list is recorded as examples on the member whose site each names. Product-level, unattributed. The only contraindication is own-ingredient hypersensitivity, so no CONTRAINDICATED_IN claims. Causative organism ('susceptible bacteria') kept in the object text; no slot exists.

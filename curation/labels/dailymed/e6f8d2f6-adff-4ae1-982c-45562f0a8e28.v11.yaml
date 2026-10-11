@@ -1,0 +1,20 @@
+setid: e6f8d2f6-adff-4ae1-982c-45562f0a8e28
+version: 11
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/e6f8d2f6-adff-4ae1-982c-45562f0a8e28.xml
+xml_sha256: 7b5cd4e30dce33b0a622e5c7430b822b111ece3bcf0309a810897a4eb1db952f
+retrieved: '2026-10-11'
+title: Neomycin and Polymyxin B Sulfates and Gramicidin Ophthalmic Solution, USP
+product_name: NEOMYCIN AND POLYMYXIN B SULFATES AND GRAMICIDIN
+active_moieties:
+- GRAMICIDIN
+- NEOMYCIN
+- POLYMYXIN B
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Neomycin and polymyxin B sulfates and gramicidin ophthalmic solution is indicated for the topical
+    treatment of superficial infections of the external eye and its adnexa caused by susceptible bacteria.
+    Such infections encompass conjunctivitis, keratitis and keratoconjunctivitis, blepharitis and blepharoconjunctivitis.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - This product is contraindicated in those persons who have shown hypersensitivity to any of its components.
