@@ -1,0 +1,34 @@
+setid: 8efac46d-d6bb-483a-825d-60bba09d3c17
+version: 3
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/8efac46d-d6bb-483a-825d-60bba09d3c17.xml
+xml_sha256: 9f9a7373cd7e10df505517e5c057e50986684d2936703abfda098f3a25cbc1bb
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use SEGLUROMET safely and effectively.
+  See full prescribing information for SEGLUROMET. SEGLUROMET® (ertugliflozin and metformin hydrochloride)
+  tablets, for oral use Initial U.S. Approval: 2017'
+product_name: SEGLUROMET
+active_moieties:
+- ERTUGLIFLOZIN
+- METFORMIN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - SEGLUROMET ® is indicated as an adjunct to diet and exercise to improve glycemic control in adults
+    with type 2 diabetes mellitus.
+  - 'SEGLUROMET is a combination of ertugliflozin, a sodium glucose co-transporter 2 (SGLT2) inhibitor,
+    and metformin, a biguanide, indicated as an adjunct to diet and exercise to improve glycemic control
+    in adults with type 2 diabetes mellitus. ( 1 ) Limitations of Use: Not for the treatment of type 1
+    diabetes mellitus or diabetic ketoacidosis. It may increase the risk of diabetic ketoacidosis in these
+    patients. ( 1 )'
+  - Limitations of Use Not recommended in patients with type 1 diabetes mellitus. It may increase the
+    risk of diabetic ketoacidosis in these patients [see Warnings and Precautions (5.2) ].
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Hypersensitivity to ertugliflozin, metformin, or any excipient in SEGLUROMET, reactions such as angioedema
+    or anaphylaxis have occurred [see Adverse Reactions (6.2) ]. Patients with severe renal impairment
+    (eGFR less than 30 mL/min/1.73 m 2 ), end stage-renal disease (ESRD), or on dialysis [see Use in Specific
+    Populations (8.6) ] . Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or
+    without coma.
+  - Severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 ), end stage-renal disease, or patients
+    on dialysis. ( 4 , 5.1 , 5.2 ) Metabolic acidosis, including diabetic ketoacidosis. ( 4 , 5.1 ) Hypersensitivity
+    to ertugliflozin, metformin or any excipient. ( 4 )

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: metformin-pioglitazone
+  path: kb/combinations/metformin-pioglitazone.yaml
+session:
+  id: 2026-10-11T184748Z-claude-code-88f08f
+  timestamp: '2026-10-11T18:47:48Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: metformin / pioglitazone'
+  details: |
+    Curated from DailyMed setid f5c534e8-656c-406d-b3dc-b562576ba4eb v2 (ACTOPLUS MET). Product-level type 2 diabetes indication (adults) with the prior-therapy clause as an unbound line_of_therapy; contraindications NYHA Class III and Class IV heart failure (one coordination, one claim per member, heart failure BROADER since no term carries the NYHA class), renal disease and renal dysfunction (one claim per member), and acute or chronic metabolic acidosis (exhaustive pair, diabetic ketoacidosis as example). Own-ingredient hypersensitivity, the iodinated-contrast discontinuation and the causes of renal dysfunction not claimed. Nothing attributed: the label names no component.

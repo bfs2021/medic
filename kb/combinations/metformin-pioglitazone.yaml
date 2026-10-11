@@ -1,0 +1,173 @@
+id: MEDICNE:combo-abe55675-c6c2-57b8-9939-f96a12679fa4
+name: metformin / pioglitazone
+ingredients:
+- id: CHEBI:6801
+  label: metformin
+- id: CHEBI:8228
+  label: pioglitazone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: f5c534e8-656c-406d-b3dc-b562576ba4eb
+    version: 2
+    title: ACTOPLUS MET® (pioglitazone hydrochloride and metformin hydrochloride) tablets
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f5c534e8-656c-406d-b3dc-b562576ba4eb
+  product_name: Actoplus Met
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      ACTOPLUS MET is a thiazolidinedione and biguanide combination product indicated as an adjunct
+      to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus who
+      are already treated with a thiazolidinedione and metformin or who have inadequate glycemic
+      control on a thiazolidinedione alone or metformin alone.
+    age_range:
+      min_years: 18
+      text: adults
+    line_of_therapy:
+      text: who are already treated with a thiazolidinedione and metformin or who have inadequate
+        glycemic control on a thiazolidinedione alone or metformin alone
+      term_gap: line-of-therapy restriction; no configured ontology holds prior-therapy terms
+    explanation: >-
+      "indicated ... to improve glycemic control in adults with type 2 diabetes mellitus" states
+      treatment of type 2 diabetes mellitus; "adults" gives the age bound, and the "who are
+      already treated ... or who have inadequate glycemic control on ... alone" clause restricts
+      the indication to patients with that prior therapy.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject is the product, described by drug class
+      ("a thiazolidinedione and biguanide combination product"), which names no ingredient. "as an
+      adjunct to diet and exercise" names non-drug measures, kept in the quote, not
+      in_combination_with.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Class III or IV heart failure
+      member: Class III heart failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Initiation of ACTOPLUS MET in patients with established New York Heart Association (NYHA)
+      Class III or IV heart failure is contraindicated
+    explanation: >-
+      "Initiation of ACTOPLUS MET in patients with established ... Class III or IV heart failure is
+      contraindicated" states a contraindication in NYHA class III heart failure; this claim covers
+      that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the sentence cites the Boxed Warning, not an ingredient. The
+      object text starts at "Class" because the validator drops the "(NYHA)" parenthesis when it
+      expands members of the longer phrase (known gap); "New York Heart Association (NYHA)" stays
+      in the quote and names the classification. No
+      MONDO or HP term carries the NYHA class (searched HP "NYHA", "class III", "heart failure";
+      MONDO "NYHA", "heart failure"; MONDO advanced heart failure has no NYHA synonym or
+      definition match in the lookup), so heart failure, BROADER. The label contraindicates
+      initiation of the product in these patients; the claim records the condition.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Class III or IV heart failure
+      member: Class IV heart failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Initiation of ACTOPLUS MET in patients with established New York Heart Association (NYHA)
+      Class III or IV heart failure is contraindicated
+    explanation: >-
+      "Initiation of ACTOPLUS MET in patients with established ... Class III or IV heart failure is
+      contraindicated" states a contraindication in NYHA class IV heart failure; this claim covers
+      that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. Heart failure, BROADER, for the reason given on the class III
+      claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Renal disease or renal dysfunction
+      member: Renal disease
+      term:
+        id: MONDO:0005240
+        label: kidney disorder
+      binding: EXACT
+    quote: >-
+      ACTOPLUS MET is contraindicated in patients with: Renal disease or renal dysfunction
+    explanation: >-
+      "ACTOPLUS MET is contraindicated in patients with: Renal disease or renal dysfunction" lists
+      renal disease as a contraindicated condition; this claim covers that member of the
+      coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. MONDO kidney disorder has the exact synonym "renal disease". The
+      creatinine thresholds in the following parenthesis are diagnostic examples, not a separate
+      condition.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Renal disease or renal dysfunction
+      member: renal dysfunction
+      term:
+        id: HP:0012211
+        label: Abnormal renal physiology
+      binding: EXACT
+    quote: >-
+      ACTOPLUS MET is contraindicated in patients with: Renal disease or renal dysfunction
+    explanation: >-
+      "ACTOPLUS MET is contraindicated in patients with: Renal disease or renal dysfunction" lists
+      renal dysfunction as a contraindicated condition; this claim covers that member of the
+      coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. HP Abnormal renal physiology (exact synonym "Abnormal renal
+      function") is what "renal dysfunction" says, as in the glipizide/metformin file of PR #74; HP Renal
+      insufficiency would narrow it to failure. The causes from which renal dysfunction "may also
+      result" (cardiovascular collapse (shock), acute myocardial infarction, septicemia) are not
+      contraindicated conditions of their own, so they are not claimed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or chronic metabolic acidosis
+      term:
+        id: MONDO:0000440
+        label: metabolic acidosis
+      binding: EXACT
+    examples:
+    - text: diabetic ketoacidosis
+      term:
+        id: MONDO:0012819
+        label: diabetic ketoacidosis
+      binding: EXACT
+    quote: >-
+      Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma.
+    explanation: >-
+      Under "ACTOPLUS MET is contraindicated in patients with:", the item "Acute or chronic metabolic
+      acidosis, including diabetic ketoacidosis, with or without coma" lists metabolic acidosis as
+      a contraindicated condition; "Acute or chronic" is an exhaustive pair covering the whole
+      class, and "including diabetic ketoacidosis" names an example.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. One claim for the class (exhaustive pair), diabetic ketoacidosis
+      as a listed example; "with or without coma" does not restrict it.
+notes: >-
+  Not claimed: "Known hypersensitivity to pioglitazone, metformin or any other component of
+  ACTOPLUS MET" (own ingredients); "Diabetic ketoacidosis should be treated with insulin"
+  (treatment advice); the temporary discontinuation for radiologic studies with intravascular
+  iodinated contrast (a procedure, not a condition); the causes of renal dysfunction (shock, acute
+  MI, septicemia). The label has no Limitations of Use paragraph in the printed Indications. Nothing
+  is attributed: the label names no component for any indication or contraindication.

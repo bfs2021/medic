@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: linagliptin-metformin
+  path: kb/combinations/linagliptin-metformin.yaml
+session:
+  id: 2026-10-11T184750Z-claude-code-3d1ff1
+  timestamp: '2026-10-11T18:47:50Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: linagliptin / metformin'
+  details: |
+    Curated from DailyMed setid 5cff87ef-97f9-4e3c-9e06-fd257f3cb3fb v1. Product-level type 2 diabetes indication (adults); contraindications severe renal impairment (HP Renal insufficiency, BROADER) and acute or chronic metabolic acidosis (diabetic ketoacidosis as example). Limitations of Use, own-ingredient hypersensitivity and the reactions reported with linagliptin not claimed. Nothing attributed.

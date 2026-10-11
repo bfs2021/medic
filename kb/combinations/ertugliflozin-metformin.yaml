@@ -1,0 +1,108 @@
+id: MEDICNE:combo-41ebf954-4ad4-513a-86eb-2a3ce62808f7
+name: Ertugliflozin / metformin
+ingredients:
+- id: CHEBI:188719
+  label: Ertugliflozin
+- id: CHEBI:6801
+  label: metformin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 8efac46d-d6bb-483a-825d-60bba09d3c17
+    version: 3
+    title: 'These highlights do not include all the information needed to use SEGLUROMET safely and effectively.
+      See full prescribing information for SEGLUROMET. SEGLUROMET® (ertugliflozin and metformin hydrochloride)
+      tablets, for oral use Initial U.S. Approval: 2017'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8efac46d-d6bb-483a-825d-60bba09d3c17
+  product_name: SEGLUROMET
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      SEGLUROMET ® is indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "SEGLUROMET ® is indicated ... to improve glycemic control in adults with type 2 diabetes mellitus" states treatment of type 2 diabetes mellitus; "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject is the brand name. "as an adjunct to diet and exercise" names non-drug measures, kept in the quote, not in_combination_with.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe renal impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      Patients with severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 ), end stage-renal disease (ESRD), or on dialysis
+    explanation: >-
+      In the Contraindications section, the item "Patients with severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 ), end stage-renal disease (ESRD), or on dialysis" lists severe renal impairment as a contraindicated condition; this claim covers that member of the coordination, the eGFR threshold defining "severe".
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. HP Renal insufficiency is the term for impaired renal function,
+      as in the metformin-combination files of PR #74; no severe-renal-insufficiency term (searched
+      HP "severe renal", "renal impairment"), so BROADER. The object text is the member alone, not the whole coordination with `member`, because the validator reads the eGFR parenthesis as further members (known gap: members that drop parentheses), as in the dapagliflozin/metformin file of PR #74.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: end stage-renal disease (ESRD)
+      term:
+        id: MONDO:0004375
+        label: end stage renal failure
+      binding: EXACT
+    quote: >-
+      Patients with severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 ), end stage-renal
+      disease (ESRD), or on dialysis
+    explanation: >-
+      In the Contraindications section, the item "Patients with severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 ), end stage-renal disease (ESRD), or on dialysis" lists end-stage renal disease as a contraindicated condition; this claim covers
+      that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. MONDO end stage renal failure has the exact synonyms "end stage
+      renal disease" and "ESRD"; the label's hyphen ("stage-renal") is kept verbatim. It is a hyphenation slip for "stage renal", not a narrowing word, so EXACT stands despite the validator's partial-match warning. Object text
+      is the member alone, for the reason given on the severe renal impairment claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or chronic metabolic acidosis
+      term:
+        id: MONDO:0000440
+        label: metabolic acidosis
+      binding: EXACT
+    examples:
+    - text: diabetic ketoacidosis
+      term:
+        id: MONDO:0012819
+        label: diabetic ketoacidosis
+      binding: EXACT
+    quote: >-
+      Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma.
+    explanation: >-
+      In the Contraindications section, the item "Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma" lists metabolic acidosis as a contraindicated condition; "Acute or chronic" is an exhaustive pair covering the whole class, and "including diabetic ketoacidosis" names an example.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. One claim for the class (exhaustive pair), diabetic
+      ketoacidosis as a listed example; "with or without coma" does not restrict it.
+notes: >-
+  Not claimed: the Limitations of Use (type 1 diabetes mellitus, diabetic ketoacidosis);
+  "Hypersensitivity to ertugliflozin, metformin, or any excipient in SEGLUROMET" (own
+  ingredients) and the reactions that "have occurred" (a report, not a contraindicated
+  condition); "on dialysis", the third member of the renal item, which names a treatment the
+  patient receives rather than a condition (procedures are not claim objects), so no claim. The
+  Highlights restate the indication and contraindications. The label names no component for the
+  indication or the curated contraindications, so nothing is attributed.

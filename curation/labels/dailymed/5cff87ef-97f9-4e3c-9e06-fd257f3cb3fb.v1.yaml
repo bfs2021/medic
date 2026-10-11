@@ -1,0 +1,39 @@
+setid: 5cff87ef-97f9-4e3c-9e06-fd257f3cb3fb
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/5cff87ef-97f9-4e3c-9e06-fd257f3cb3fb.xml
+xml_sha256: 45dc2e39f724ae0e6784d15616081747f389c7d9da98be608ddbbc6592be9807
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use LINAGLIPTIN and METFORMIN HYDROCHLORIDE
+  TABLETS safely and effectively. See full prescribing information for LINAGLIPTIN and METFORMIN HYDROCHLORIDE
+  TABLETS. LINAGLIPTIN and METFORMIN HYDROCHLORIDE tablets, for oral use Initial U.S. Approval: 2012'
+product_name: Linagliptin and metformin hydrochloride
+active_moieties:
+- LINAGLIPTIN
+- METFORMIN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Linagliptin and metformin hydrochloride tablets are indicated as an adjunct to diet and exercise to
+    improve glycemic control in adults with type 2 diabetes mellitus. Limitations of Use Linagliptin and
+    metformin hydrochloride tablets are not recommended in patients with type 1 diabetes mellitus. Linagliptin
+    and metformin hydrochloride tablets have not been studied in patients with a history of pancreatitis.
+    It is unknown whether patients with a history of pancreatitis are at an increased risk for the development
+    of pancreatitis while using linagliptin and metformin hydrochloride tablets [see Warnings and Precautions
+    (5.2 )].
+  - Linagliptin and metformin hydrochloride tablets are a combination of linagliptin, a dipeptidyl peptidase-4
+    (DPP-4) inhibitor and metformin hydrochloride (HCl), a biguanide, indicated as an adjunct to diet
+    and exercise to improve glycemic control in adults with type 2 diabetes mellitus ( 1 ) Limitations
+    of Use • Not recommended in patients with type 1 diabetes mellitus ( 1 ) • Has not been studied in
+    patients with a history of pancreatitis ( 1 )
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'Linagliptin and metformin hydrochloride are contraindicated in patients with: • severe renal impairment
+    (eGFR below 30 mL/min/1.73 m 2 ) [see Warnings and Precautions (5.1 )] . • acute or chronic metabolic
+    acidosis, including diabetic ketoacidosis [see Warnings and Precautions (5.1 )]. • hypersensitivity
+    to linagliptin, metformin, or any of the excipients in linagliptin and metformin hydrochloride, reactions
+    such as anaphylaxis, angioedema, exfoliative skin conditions, urticaria, or bronchial hyperreactivity
+    have occurred with linagliptin [see Warnings and Precautions (5.4 ) and Adverse Reactions (6.1 )]
+    .'
+  - Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) ( 4 ) Metabolic acidosis, including diabetic
+    ketoacidosis ( 4 ) Hypersensitivity to linagliptin, metformin, or any of the excipients in linagliptin
+    and metformin hydrochloride ( 4 )

@@ -1,0 +1,31 @@
+setid: f5c534e8-656c-406d-b3dc-b562576ba4eb
+version: 2
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/f5c534e8-656c-406d-b3dc-b562576ba4eb.xml
+xml_sha256: 807673e8187e6bd0e4c7305f2a6b0ce5d540fcb288e5697cfdd6fa59797bf77d
+retrieved: '2026-10-11'
+title: ACTOPLUS MET® (pioglitazone hydrochloride and metformin hydrochloride) tablets
+product_name: Actoplus Met
+active_moieties:
+- METFORMIN
+- PIOGLITAZONE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - ACTOPLUS MET is a thiazolidinedione and biguanide combination product indicated as an adjunct to diet
+    and exercise to improve glycemic control in adults with type 2 diabetes mellitus who are already treated
+    with a thiazolidinedione and metformin or who have inadequate glycemic control on a thiazolidinedione
+    alone or metformin alone.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Initiation of ACTOPLUS MET in patients with established New York Heart Association (NYHA) Class III
+    or IV heart failure is contraindicated (see BOXED WARNING ). In addition, ACTOPLUS MET is contraindicated
+    in patients with: Renal disease or renal dysfunction (e.g., as suggested by serum creatinine levels
+    ≥ 1.5 mg/dL [males], ≥ 1.4 mg/dL [females], or abnormal creatinine clearance) which may also result
+    from conditions such as cardiovascular collapse (shock), acute myocardial infarction, and septicemia
+    (see WARNINGS, Metformin hydrochloride and PRECAUTIONS, General: Metformin hydrochloride ). Known
+    hypersensitivity to pioglitazone, metformin or any other component of ACTOPLUS MET. Acute or chronic
+    metabolic acidosis, including diabetic ketoacidosis, with or without coma. Diabetic ketoacidosis should
+    be treated with insulin. ACTOPLUS MET should be temporarily discontinued in patients undergoing radiologic
+    studies involving intravascular administration of iodinated contrast materials, because use of such
+    products may result in acute alteration of renal function (see PRECAUTIONS, General: Metformin hydrochloride
+    ).'

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: ertugliflozin-metformin
+  path: kb/combinations/ertugliflozin-metformin.yaml
+session:
+  id: 2026-10-11T184750Z-claude-code-9a719e
+  timestamp: '2026-10-11T18:47:50Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: Ertugliflozin / metformin'
+  details: |
+    Curated from DailyMed setid 8efac46d-d6bb-483a-825d-60bba09d3c17 v3 (SEGLUROMET). Product-level type 2 diabetes indication (adults); contraindications severe renal impairment (BROADER) and end-stage renal disease (EXACT) as member-alone texts, and acute or chronic metabolic acidosis (diabetic ketoacidosis as example). 'on dialysis' is a treatment, not a condition, so not claimed; Limitations of Use and own-ingredient hypersensitivity not claimed. Nothing attributed.

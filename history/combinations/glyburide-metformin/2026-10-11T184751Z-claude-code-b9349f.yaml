@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: glyburide-metformin
+  path: kb/combinations/glyburide-metformin.yaml
+session:
+  id: 2026-10-11T184751Z-claude-code-b9349f
+  timestamp: '2026-10-11T18:47:51Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: glyburide / metformin'
+  details: |
+    Curated from DailyMed setid 266fdd0d-de19-d1e4-e063-6394a90a1a64 v1. Product-level type 2 diabetes indication (adults); contraindications severe renal impairment (BROADER) and acute or chronic metabolic acidosis (diabetic ketoacidosis as example). Own-ingredient hypersensitivity and the bosentan co-administration (a drug interaction with no condition) not claimed. Nothing attributed.

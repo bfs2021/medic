@@ -1,0 +1,29 @@
+setid: 266fdd0d-de19-d1e4-e063-6394a90a1a64
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/266fdd0d-de19-d1e4-e063-6394a90a1a64.xml
+xml_sha256: 5ffdc0420b30abf5a1b63064bf42d1648fdc473487e6c74605a6dc0054435665
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use GLYBURIDE AND METFORMIN HYDROCHLORIDE
+  TABLETS safely and effectively. See full prescribing information for GLYBURIDE AND METFORMIN HYDROCHLORIDE
+  TABLETS. GLYBURIDE and METFORMIN HYDROCHLORIDE tablets, for oral use Initial U.S. Approval: 2000'
+product_name: Glyburide and Metformin Hydrochloride
+active_moieties:
+- GLYBURIDE
+- METFORMIN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Glyburide and metformin hydrochloride tablets are indicated as an adjunct to diet and exercise to
+    improve glycemic control in adults with type 2 diabetes mellitus.
+  - Glyburide and metformin hydrochloride tablets are a combination of glyburide, a sulfonylurea, and
+    metformin hydrochloride (HCl), a biguanide, indicated as an adjunct to diet and exercise to improve
+    glycemic control in adults with type 2 diabetes mellitus. (1)
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'Glyburide and metformin hydrochloride tablets are contraindicated in patients with: Severe renal
+    impairment (eGFR below 30 mL/min/1.73 m 2 ) [see Warnings and Precautions (5.1) ]. Hypersensitivity
+    to metformin or glyburide. Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with
+    or without coma. Concomitant administration of bosentan [see Drug Interactions (7) ].'
+  - Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) (4 , 5.1) Hypersensitivity to metformin or
+    glyburide. (4) Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without
+    coma. (4) Concomitant administration of bosentan. (4 , 7)

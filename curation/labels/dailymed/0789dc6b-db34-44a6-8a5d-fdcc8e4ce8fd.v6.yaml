@@ -1,0 +1,50 @@
+setid: 0789dc6b-db34-44a6-8a5d-fdcc8e4ce8fd
+version: 6
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/0789dc6b-db34-44a6-8a5d-fdcc8e4ce8fd.xml
+xml_sha256: 49ba838aa798475abbfd934b071b58aa36685aed48d80c80e5633ad422231b2e
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use AVANDAMET safely and effectively.
+  See full prescribing information for AVANDAMET.AVANDAMET (rosiglitazone maleate and metformin hydrochloride)
+  TabletsInitial U.S. Approval: 2002'
+product_name: AVANDAMET
+active_moieties:
+- METFORMIN
+- ROSIGLITAZONE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'After consultation with a healthcare professional who has considered and advised the patient of the
+    risks and benefits of rosiglitazone, AVANDAMET ® is indicated as an adjunct to diet and exercise to
+    improve glycemic control when treatment with both rosiglitazone and metformin is appropriate in adults
+    with type 2 diabetes mellitus who either are: already taking rosiglitazone, or not already taking
+    rosiglitazone and unable to achieve glycemic control on other diabetes medications and, in consultation
+    with their healthcare provider, have decided not to take pioglitazone (ACTOS ® ) or pioglitazone-containing
+    products (ACTOPLUS MET ® , ACTOPLUS MET XR ® , DUETACT ® ) for medical reasons. Other Important Limitations
+    of Use: Due to its mechanism of action, rosiglitazone is active only in the presence of endogenous
+    insulin. Therefore, AVANDAMET should not be used in patients with type 1 diabetes. Coadministration
+    of AVANDAMET with insulin is not recommended [see Warnings and Precautions (5.2, 5.3)] .'
+  - 'AVANDAMET is a combination antidiabetic product containing a thiazolidinedione and a biguanide. After
+    consultation with a healthcare professional who has considered and advised the patient of the risks
+    and benefits of rosiglitazone, this drug is indicated as an adjunct to diet and exercise to improve
+    glycemic control when treatment with both rosiglitazone and metformin is appropriate in adults with
+    type 2 diabetes mellitus who either are: already taking rosiglitazone, or not already taking rosiglitazone
+    and are unable to achieve glycemic control on other diabetes medications and, in consultation with
+    their healthcare provider, have decided not to take pioglitazone (ACTOS) or pioglitazone-containing
+    products (ACTOPLUS MET ® , ACTOPLUS MET XR ® , DUETACT ® ) for medical reasons. (1) Other Important
+    Limitations of Use: Should not be used in patients with type 1 diabetes or for the treatment of diabetic
+    ketoacidosis. (1) Coadministration with insulin is not recommended. (1, 5.2, 5.3)'
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Initiation in patients with established New York Heart Association (NYHA) Class III or IV heart failure
+    [see Boxed Warning ] . Use in patients with renal disease or renal dysfunction (e.g., as suggested
+    by serum creatinine levels ≥1.5 mg/dL [males], ≥1.4 mg/dL [females], or abnormal creatinine clearance),
+    which may also result from conditions such as cardiovascular collapse (shock), acute myocardial infarction,
+    and septicemia [see Warnings and Precautions (5.1)] . Use in patients with acute or chronic metabolic
+    acidosis, including diabetic ketoacidosis, with or without coma. Use in patients undergoing radiologic
+    studies involving intravascular administration of iodinated contrast materials, because use of such
+    products may result in acute alteration of renal function. AVANDAMET should be temporarily discontinued
+    in these patients. [See Warnings and Precautions (5.1).]
+  - Initiation in patients with established NYHA Class III or IV heart failure. (4) Use in significant
+    renal disease or renal dysfunction. (4) Use in acute or chronic metabolic acidosis. (4) Use in patients
+    undergoing radiologic studies involving intravascular administration of iodinated contrast materials.
+    (4, 5.1)

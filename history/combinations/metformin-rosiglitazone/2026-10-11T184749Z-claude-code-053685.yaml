@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: metformin-rosiglitazone
+  path: kb/combinations/metformin-rosiglitazone.yaml
+session:
+  id: 2026-10-11T184749Z-claude-code-053685
+  timestamp: '2026-10-11T18:47:49Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: metformin / rosiglitazone'
+  details: |
+    Curated from DailyMed setid 0789dc6b-db34-44a6-8a5d-fdcc8e4ce8fd v6 (AVANDAMET). Product-level type 2 diabetes indication (adults); the mixed prior-therapy/decision patient criteria left in notes rather than line_of_therapy. Contraindications NYHA Class III and Class IV heart failure (heart failure BROADER), renal disease and renal dysfunction, and acute or chronic metabolic acidosis (diabetic ketoacidosis as example). Limitations of Use, the iodinated-contrast item and the causes of renal dysfunction not claimed. Nothing attributed.
