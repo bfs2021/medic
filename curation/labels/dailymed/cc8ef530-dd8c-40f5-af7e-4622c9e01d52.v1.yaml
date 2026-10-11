@@ -1,0 +1,38 @@
+setid: cc8ef530-dd8c-40f5-af7e-4622c9e01d52
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/cc8ef530-dd8c-40f5-af7e-4622c9e01d52.xml
+xml_sha256: 8f372540d361fd56f5162a2a7bcce0e751efcaf82def8a688bb114343c674d7f
+retrieved: '2026-10-11'
+title: ZEGERID® with Magnesium Hydroxide (omeprazole/sodium bicarbonate/magnesium hydroxide)
+product_name: ''
+active_moieties:
+- MAGNESIUM HYDROXIDE
+- OMEPRAZOLE
+- SODIUM BICARBONATE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Duodenal Ulcer
+  - ZEGERID with Magnesium Hydroxide is indicated for short-term treatment of active duodenal ulcer. Most
+    patients heal within four weeks. Some patients may require an additional four weeks of therapy.
+  - Gastric Ulcer
+  - ZEGERID with Magnesium Hydroxide is indicated for short-term treatment (4-8 weeks) of active benign
+    gastric ulcer. (See CLINICAL PHARMACOLOGY, Clinical Studies, Gastric Ulcer. )
+  - Treatment of Gastroesophageal Reflux Disease (GERD)
+  - Symptomatic GERD
+  - ZEGERID with Magnesium Hydroxide is indicated for the treatment of heartburn and other symptoms associated
+    with GERD.
+  - Erosive Esophagitis
+  - ZEGERID with Magnesium Hydroxide is indicated for the short-term treatment (4-8 weeks) of erosive
+    esophagitis which has been diagnosed by endoscopy. (See CLINICAL PHARMACOLOGY, Clinical Studies. )
+    The efficacy of ZEGERID with Magnesium Hydroxide used for longer than 8 weeks in these patients has
+    not been established. In the rare instance of a patient not responding to 8 weeks of treatment, it
+    may be helpful to give up to an additional 4 weeks of treatment. If there is recurrence of erosive
+    esophagitis or GERD symptoms (eg, heartburn), additional 4-8 week courses of omeprazole may be considered.
+  - Maintenance of Healing of Erosive Esophagitis
+  - ZEGERID with Magnesium Hydroxide is indicated to maintain healing of erosive esophagitis. Controlled
+    studies do not extend beyond 12 months.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - ZEGERID with Magnesium Hydroxide is contraindicated in patients with known hypersensitivity to any
+    components of the formulation.

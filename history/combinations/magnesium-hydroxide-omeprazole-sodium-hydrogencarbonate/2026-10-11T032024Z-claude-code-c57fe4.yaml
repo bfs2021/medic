@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: magnesium-hydroxide-omeprazole-sodium-hydrogencarbonate
+  path: kb/combinations/magnesium-hydroxide-omeprazole-sodium-hydrogencarbonate.yaml
+session:
+  id: 2026-10-11T032024Z-claude-code-c57fe4
+  timestamp: '2026-10-11T03:20:24Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: magnesium hydroxide / omeprazole / sodium hydrogencarbonate'
+  details: |
+    Curated from DailyMed setid cc8ef530-dd8c-40f5-af7e-4622c9e01d52 v1. Six product-level indication claims (duodenal ulcer, gastric ulcer, heartburn in GERD, GERD symptoms, erosive esophagitis short-term and maintenance), none attributed; the only contraindication is an own-component allergy and is not curated. Erosive esophagitis bound BROADER to esophagitis (no term); heartburn bound to HP Gastroesophageal reflux via its exact synonym.

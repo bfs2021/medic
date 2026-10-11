@@ -1,0 +1,159 @@
+id: MEDICNE:combo-249eeeb2-d215-52d7-8a59-9e519f4267d4
+name: magnesium hydroxide / omeprazole / sodium hydrogencarbonate
+ingredients:
+- id: CHEBI:35149
+  label: magnesium hydroxide
+- id: CHEBI:7772
+  label: omeprazole
+- id: CHEBI:32139
+  label: sodium hydrogencarbonate
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: cc8ef530-dd8c-40f5-af7e-4622c9e01d52
+    version: 1
+    title: ZEGERID® with Magnesium Hydroxide (omeprazole/sodium bicarbonate/magnesium hydroxide)
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cc8ef530-dd8c-40f5-af7e-4622c9e01d52
+  product_name: ''
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: active duodenal ulcer
+      term:
+        id: MONDO:0005412
+        label: duodenal ulcer
+      binding: EXACT
+    quote: >-
+      ZEGERID with Magnesium Hydroxide is indicated for short-term treatment of active duodenal
+      ulcer.
+    explanation: >-
+      "is indicated for short-term treatment of active duodenal ulcer" is treatment of duodenal
+      ulcer; "active" describes the ulcer being treated, "short-term" the course.
+    status: DRAFT
+    notes: >-
+      Product-level claim, unattributed. "Most patients heal within four weeks" and the extra four
+      weeks are dosing guidance. EXACT despite the validator's note on "active": an ulcer under
+      treatment is an active ulcer, and "active" names its phase, not a subtype; no
+      active-duodenal-ulcer term exists (searched MONDO "duodenal ulcer", "peptic ulcer").
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: active benign gastric ulcer
+      term:
+        id: MONDO:0001126
+        label: gastric ulcer
+      binding: EXACT
+    quote: >-
+      ZEGERID with Magnesium Hydroxide is indicated for short-term treatment (4-8 weeks) of active
+      benign gastric ulcer.
+    explanation: >-
+      "is indicated for short-term treatment (4-8 weeks) of active benign gastric ulcer" is
+      treatment of gastric ulcer; "active benign" describes the ulcer (a peptic, not malignant,
+      ulcer), "4-8 weeks" the course.
+    status: DRAFT
+    notes: >-
+      MONDO gastric ulcer is the peptic ulcer of the stomach (exact synonym "peptic ulcer disease
+      of stomach"), which is what "benign gastric ulcer" says, so EXACT despite the validator's
+      note on "active benign": "benign" restates that it is a peptic ulcer, "active" names its
+      phase. Product-level, unattributed.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: heartburn
+      term:
+        id: HP:0002020
+        label: Gastroesophageal reflux
+      binding: EXACT
+    disease_context:
+      text: GERD
+      term:
+        id: MONDO:0007186
+        label: gastroesophageal reflux disease
+      binding: EXACT
+    quote: >-
+      ZEGERID with Magnesium Hydroxide is indicated for the treatment of heartburn and other
+      symptoms associated with GERD.
+    explanation: >-
+      "indicated for the treatment of heartburn and other symptoms associated with GERD" is
+      symptomatic treatment, so AMELIORATES_CONDITION; heartburn is the named symptom and GERD the
+      condition it is associated with (disease context).
+    status: DRAFT
+    notes: >-
+      HP has no separate heartburn term: "Heartburn" is an exact synonym of HP Gastroesophageal
+      reflux, so the symptom is bound there (EXACT by the synonym). The "other symptoms associated
+      with GERD" are a separate claim on GERD itself. HP Gastroesophageal reflux also has "GERD"
+      as an exact synonym, so this claim and the GERD claim land on near-equivalent concepts; HP
+      has no heartburn or pyrosis term of its own (searched HP "heartburn", "pyrosis").
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: GERD
+      term:
+        id: MONDO:0007186
+        label: gastroesophageal reflux disease
+      binding: EXACT
+    quote: >-
+      ZEGERID with Magnesium Hydroxide is indicated for the treatment of heartburn and other
+      symptoms associated with GERD.
+    explanation: >-
+      "the treatment of ... other symptoms associated with GERD" is treatment of symptoms of GERD,
+      so AMELIORATES_CONDITION with GERD as the object.
+    status: DRAFT
+    notes: >-
+      Follows the rule "treatment of symptoms of X" -> AMELIORATES_CONDITION X, with X's own words
+      ("GERD") as the object text, as the PMDD precedent does. The subsection is headed
+      "Symptomatic GERD".
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: erosive esophagitis
+      term:
+        id: MONDO:0001409
+        label: esophagitis
+      binding: BROADER
+    quote: >-
+      ZEGERID with Magnesium Hydroxide is indicated for the short-term treatment (4-8 weeks) of
+      erosive esophagitis which has been diagnosed by endoscopy.
+    explanation: >-
+      "is indicated for the short-term treatment (4-8 weeks) of erosive esophagitis" is treatment
+      of erosive esophagitis; "diagnosed by endoscopy" is a diagnostic requirement, not a
+      different condition.
+    status: DRAFT
+    notes: >-
+      No erosive-esophagitis term (searched MONDO and HP "erosive esophagitis", "reflux
+      esophagitis", "esophagitis"); MONDO esophagitis is the closest broader term. MONDO peptic
+      esophagitis was not chosen: the label does not say the erosions are peptic. The following
+      sentences (efficacy beyond 8 weeks not established; extra 4 weeks; additional courses of
+      omeprazole on recurrence) are negated or dosing guidance and give no claim; "courses of
+      omeprazole" there is a retreatment option, not an attribution of this indication.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: erosive esophagitis
+      term:
+        id: MONDO:0001409
+        label: esophagitis
+      binding: BROADER
+    quote: >-
+      ZEGERID with Magnesium Hydroxide is indicated to maintain healing of erosive esophagitis.
+    explanation: >-
+      "is indicated to maintain healing of erosive esophagitis" is maintenance treatment of
+      erosive esophagitis, which the relation table reads as TREATS.
+    status: DRAFT
+    notes: >-
+      A separate indication (subsection "Maintenance of Healing of Erosive Esophagitis") from the
+      short-term treatment claim; same object, different use. "Controlled studies do not extend
+      beyond 12 months" is a limitation, not a claim.
+notes: >-
+  Every indication is stated for the product ("ZEGERID with Magnesium Hydroxide is indicated"),
+  none for a component, so nothing is attributed. The only contraindication, "known
+  hypersensitivity to any components of the formulation", is an allergy to the product's own
+  ingredients and is not curated, so the file has no contraindication claim. The SPL gives no
+  product name; product_name is left empty.

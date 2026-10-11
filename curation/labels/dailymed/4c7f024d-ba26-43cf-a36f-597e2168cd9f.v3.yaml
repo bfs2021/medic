@@ -1,0 +1,79 @@
+setid: 4c7f024d-ba26-43cf-a36f-597e2168cd9f
+version: 3
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/4c7f024d-ba26-43cf-a36f-597e2168cd9f.xml
+xml_sha256: 61dc8e1e4301b31b87319b833b2d14bd43579c9268819de22da6f09444938445
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use BISMUTH SUBCITRATE POTASSIUM,
+  METRONIDAZOLE AND TETRACYCLINE HYDROCHLORIDE CAPSULES safely and effectively. See full prescribing information
+  for BISMUTH SUBCITRATE POTASSIUM, METRONIDAZOLE AND TETRACYCLINE HYDROCHLORIDE CAPSULES. BISMUTH SUBCITRATE
+  POTASSIUM, METRONIDAZOLE, and TETRACYCLINE HYDROCHLORIDE capsules, for oral useInitial U.S. Approval:
+  2006'
+product_name: Bismuth subcitrate potassium, Metronidazole, Tetracycline hydrochloride
+active_moieties:
+- BISMUTH CATION
+- METRONIDAZOLE
+- TETRACYCLINE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsule is a combination
+    of metronidazole, a nitroimidazole antimicrobial, tetracycline, - a tetracycline class antimicrobial
+    and bismuth subcitrate potassium, indicated for use, in combination with omeprazole, for the treatment
+    of patients with Helicobacter pylori infection and duodenal ulcer disease (active or history of within
+    the past 5 years) to eradicate H. pylori. ( 1.1 ) To reduce the development of drug-resistant bacteria
+    and maintain the effectiveness of bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride
+    capsules and other antibacterial drugs, bismuth subcitrate potassium, metronidazole and tetracycline
+    hydrochloride capsule should be used only to treat or prevent infections that are proven or strongly
+    suspected to be caused by bacteria. ( 1.2 )
+  - 1.1 Eradication of Helicobacter pylori in Patients with Active Duodenal Ulcer or History of Duodenal
+    Ulcer Disease
+  - Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules in combination
+    with omeprazole are indicated for the treatment of patients with Helicobacter pylori infection and
+    duodenal ulcer disease (active or history of within the past 5 years) to eradicate H. pylori . The
+    eradication of Helicobacter pylori has been shown to reduce the risk of duodenal ulcer recurrence.
+  - 1.2 Usage
+  - To reduce the development of drug-resistant bacteria and maintain the effectiveness of bismuth subcitrate
+    potassium, metronidazole and tetracycline hydrochloride capsules and other antibacterial drugs, bismuth
+    subcitrate potassium, metronidazole and tetracycline hydrochloride capsules should be used to treat
+    only indicated infections that are proven or strongly suspected to be caused by susceptible bacteria.
+    When culture and susceptibility information are available, they should be considered in selecting
+    or modifying antibacterial therapy. In the absence of such data, local epidemiology and susceptibility
+    patterns may contribute to the empiric selection of therapy.
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Disulfiram usage within the last two weeks. ( 4.1 , 7.1 ) Alcoholic beverage consumption for at least
+    three days during or after therapy. ( 4.2 , 7.2 ) Patients with Cockayne syndrome. ( 4.3 , 6.3 ) Severe
+    renal impairment. ( 4.4 ) Women who are pregnant. ( 4.5 , 8.1 ) Known hypersensitivity to product
+    components. ( 4.6 )
+  - 4.1 Disulfiram
+  - Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules are contraindicated
+    in patients who have taken disulfiram within the last two weeks. Psychotic reactions have been reported
+    in alcoholic patients who are using metronidazole, a component of bismuth subcitrate potassium, metronidazole
+    and tetracycline hydrochloride capsules, and disulfiram concurrently [see Drug Interactions ( 7.1
+    ) ].
+  - 4.2 Alcohol
+  - Alcoholic beverages or other products containing propylene glycol should not be consumed during and
+    for at least 3 days after therapy with bismuth subcitrate potassium, metronidazole and tetracycline
+    hydrochloride capsules. A disulfiram-like reaction (abdominal cramps, nausea, vomiting, headaches,
+    and flushing) may occur due to the interaction between alcohol or propylene glycol and metronidazole,
+    a component of bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules
+    [see Drug Interactions ( 7.2 ) ].
+  - 4.3 Cockayne Syndrome
+  - Bismuth subcitrate potassium, metronidazole, tetracycline hydrochloride capsules are contraindicated
+    in patients with Cockayne syndrome. Severe irreversible hepatotoxicity/acute liver failure with fatal
+    outcomes have been reported after initiation of metronidazole in patients with Cockayne syndrome [see
+    Adverse Reactions ( 6.3 )].
+  - 4.4 Severe Renal Impairment
+  - Bismuth subcitrate potassium, metronidazole, tetracycline hydrochloride capsules are contraindicated
+    in patients with severe renal impairment. The antianabolic action of the tetracyclines may cause an
+    increase in blood urea nitrogen (BUN) [see Adverse Reactions ( 6.3 ) ]. In patients with significantly
+    impaired renal function, higher serum concentrations of tetracyclines may lead to azotemia, hyperphosphatemia,
+    and acidosis.
+  - 4.5 Pregnancy
+  - Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules are contraindicated
+    during pregnancy [see Use in Specific Populations ( 8.1 ) ].
+  - 4.6 Hypersensitivity Reactions
+  - Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules are contraindicated
+    in patients with known hypersensitivity (e.g. urticaria, erythematous rash, flushing, and fever) to
+    bismuth subcitrate potassium, metronidazole or other nitroimidazole derivatives, or tetracycline [see
+    Adverse Reactions ( 6.3 ) ].

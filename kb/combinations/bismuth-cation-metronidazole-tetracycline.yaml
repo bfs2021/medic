@@ -1,0 +1,193 @@
+id: MEDICNE:combo-5ab1a7c9-33cf-547d-b836-2f766c9610c9
+name: bismuth cation / metronidazole / tetracycline
+ingredients:
+- id: CHEBI:85544
+  label: bismuth cation
+- id: CHEBI:6909
+  label: metronidazole
+- id: CHEBI:27902
+  label: tetracycline
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 4c7f024d-ba26-43cf-a36f-597e2168cd9f
+    version: 3
+    title: 'These highlights do not include all the information needed to use BISMUTH SUBCITRATE POTASSIUM,
+      METRONIDAZOLE AND TETRACYCLINE HYDROCHLORIDE CAPSULES safely and effectively. See full prescribing
+      information for BISMUTH SUBCITRATE POTASSIUM, METRONIDAZOLE AND TETRACYCLINE HYDROCHLORIDE CAPSULES.
+      BISMUTH SUBCITRATE POTASSIUM, METRONIDAZOLE, and TETRACYCLINE HYDROCHLORIDE capsules, for oral useInitial
+      U.S. Approval: 2006'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4c7f024d-ba26-43cf-a36f-597e2168cd9f
+  product_name: Bismuth subcitrate potassium, Metronidazole, Tetracycline hydrochloride
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Helicobacter pylori infection
+      term:
+        id: MONDO:0006781
+        label: Helicobacter pylori infectious disease
+      binding: EXACT
+    disease_context:
+      text: duodenal ulcer disease
+      term:
+        id: MONDO:0005412
+        label: duodenal ulcer
+      binding: EXACT
+    in_combination_with:
+    - text: omeprazole
+      term:
+        id: CHEBI:7772
+        label: omeprazole
+      binding: EXACT
+    quote: >-
+      Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules in
+      combination with omeprazole are indicated for the treatment of patients with Helicobacter
+      pylori infection and duodenal ulcer disease (active or history of within the past 5 years) to
+      eradicate H. pylori .
+    explanation: >-
+      "in combination with omeprazole are indicated for the treatment of patients with
+      Helicobacter pylori infection and duodenal ulcer disease ... to eradicate H. pylori" is
+      treatment of H. pylori infection, in patients who also have duodenal ulcer disease (disease
+      context), with omeprazole as the co-therapy.
+    status: DRAFT
+    notes: >-
+      As the lansoprazole/amoxicillin/clarithromycin precedent: the regimen eradicates H. pylori in
+      patients who also have duodenal ulcer disease ("active or history of within the past 5
+      years"). Product-level claim, unattributed: the label does not assign eradication to any one
+      component. Omeprazole is given separately, not part of the capsule, so it is the
+      in_combination_with co-therapy. No duodenal-ulcer prevention claim: "The eradication of
+      Helicobacter pylori has been shown to reduce the risk of duodenal ulcer recurrence" is a
+      study-result statement, not an indication. "duodenal ulcer disease" is bound EXACT to
+      duodenal ulcer, as in the precedent, despite the validator's note on "disease": the word
+      names no subtype.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Cockayne syndrome
+      term:
+        id: MONDO:0016006
+        label: Cockayne syndrome
+      binding: EXACT
+    quote: >-
+      Bismuth subcitrate potassium, metronidazole, tetracycline hydrochloride capsules are
+      contraindicated in patients with Cockayne syndrome.
+    explanation: >-
+      "are contraindicated in patients with Cockayne syndrome" is a contraindication in Cockayne
+      syndrome.
+    status: DRAFT
+    notes: >-
+      Not attributed, though the next sentence points at metronidazole ("Severe irreversible
+      hepatotoxicity/acute liver failure with fatal outcomes have been reported after initiation of
+      metronidazole in patients with Cockayne syndrome"): it is a separate risk sentence, so under
+      the skill's same-sentence rule it does not attribute this claim. A reviewer may judge it a
+      stated reason.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe renal impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      Bismuth subcitrate potassium, metronidazole, tetracycline hydrochloride capsules are
+      contraindicated in patients with severe renal impairment.
+    explanation: >-
+      "are contraindicated in patients with severe renal impairment" is a contraindication in
+      severe renal impairment.
+    status: DRAFT
+    notes: >-
+      HP Renal insufficiency, as other combination files bind "renal impairment"; BROADER because
+      it lacks "severe". The grounding store's UMLS:C1565489 is in no configured ontology. Not attributed, though the next sentences point at the tetracycline
+      ("The antianabolic action of the tetracyclines may cause an increase in blood urea nitrogen";
+      "higher serum concentrations of tetracyclines may lead to azotemia ..."): they are separate
+      risk sentences naming the drug class, so under the same-sentence rule they do not attribute
+      this claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules are
+      contraindicated during pregnancy
+    explanation: >-
+      "are contraindicated during pregnancy" is a contraindication in pregnancy.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. The Highlights item says "Women who are pregnant."
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other nitroimidazole derivatives
+      term_gap: >-
+        searched CHEBI "nitroimidazole", "nitroimidazoles", "imidazoles": ChEBI has 2-nitroimidazole
+        and 5-nitroimidazole classes but no class for nitroimidazoles as a whole; imidazoles is far
+        broader
+    examples:
+    - text: urticaria
+      term:
+        id: MONDO:0005492
+        label: urticaria
+      binding: EXACT
+    - text: erythematous rash
+      term:
+        id: HP:0000988
+        label: Skin rash
+      binding: BROADER
+    - text: flushing
+      term:
+        id: HP:0031284
+        label: Flushing
+      binding: EXACT
+    - text: fever
+      term:
+        id: HP:0001945
+        label: Fever
+      binding: EXACT
+    quote: >-
+      Bismuth subcitrate potassium, metronidazole and tetracycline hydrochloride capsules are
+      contraindicated in patients with known hypersensitivity (e.g. urticaria, erythematous rash,
+      flushing, and fever) to bismuth subcitrate potassium, metronidazole or other nitroimidazole
+      derivatives, or tetracycline
+    explanation: >-
+      "are contraindicated in patients with known hypersensitivity (e.g. urticaria, erythematous
+      rash, flushing, and fever) to ... metronidazole or other nitroimidazole derivatives" is a
+      contraindication in drug allergy to other nitroimidazoles (cross-sensitivity); urticaria,
+      erythematous rash, flushing and fever are the label's examples of the reactions. Bismuth
+      subcitrate potassium, metronidazole and tetracycline are the product's own.
+    status: DRAFT
+    notes: >-
+      Only the cross-sensitivity to other nitroimidazole derivatives is curated; the specialization
+      is unbound (see its term_gap). 5-nitroimidazole was not used: the label does not restrict
+      the class to 5-nitroimidazoles. Not attributed: the agents are allergens. HP has no
+      erythematous-rash term (searched HP "rash", "erythema"), so Skin rash is BROADER; the
+      grounding store maps "rash" to MONDO exanthem, an equivalent disease-side term, but HP is
+      kept so the reaction examples (flushing, fever) sit in one ontology.
+notes: >-
+  Not curated: "patients who have taken disulfiram within the last two weeks" is a drug
+  interaction with no patient condition (psychotic reactions in alcoholic patients are the risk);
+  "Alcoholic beverages or other products containing propylene glycol should not be consumed" is a
+  co-ingestion restriction with no condition (the disulfiram-like reaction is the risk); "Known
+  hypersensitivity to product components" and hypersensitivity to bismuth subcitrate potassium,
+  metronidazole and tetracycline are allergies to the product's own ingredients. The
+  antibacterial-stewardship "Usage" paragraph (1.2) is usage guidance. The label states several
+  ingredient-specific reasons (metronidazole for Cockayne syndrome, tetracyclines for renal
+  impairment) only in sentences after the contraindication, so nothing is attributed; a reviewer
+  may want those attributions. The Highlights copies restate the full-text claims.

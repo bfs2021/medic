@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: caffeine-ergotamine
+  path: kb/combinations/caffeine-ergotamine.yaml
+session:
+  id: 2026-10-11T032027Z-claude-code-822b63
+  timestamp: '2026-10-11T03:20:27Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: caffeine / ergotamine'
+  details: |
+    Curated from DailyMed setid 3a31ad0c-7bdd-544b-f5df-a99d04cf541c v7. Vascular headache TREATS (abort) and PREVENTATIVE (prevent), bound BROADER to HP Headache because MONDO vascular headache is obsolete. Contraindications: pregnancy, peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic and renal function (nested-phrase text to work around the validator's split), sepsis. CYP3A4-inhibitor contraindication skipped as a pure drug interaction.

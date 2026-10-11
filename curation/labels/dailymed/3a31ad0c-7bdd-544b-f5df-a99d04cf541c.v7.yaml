@@ -1,0 +1,30 @@
+setid: 3a31ad0c-7bdd-544b-f5df-a99d04cf541c
+version: 7
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/3a31ad0c-7bdd-544b-f5df-a99d04cf541c.xml
+xml_sha256: 884556e795389ba91dd778f7f60979e7d850f785b793913d5e688e35c25fe1e9
+retrieved: '2026-10-11'
+title: ERGOTAMINE TARTRATE and CAFFEINE SUPPOSITORIES USP (For Rectal Administration) Rx only
+product_name: MIGERGOT
+active_moieties:
+- CAFFEINE
+- ERGOTAMINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Ergotamine Tartrate and Caffeine Indicated as therapy to abort or prevent vascular headache, e.g.,
+    migraine, migraine variants or so-called “histaminic cephalalgia”.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Coadministration of ergotamine with potent CYP 3A4 inhibitors (ritonavir, nelfinavir, indinavir,
+    erythromycin, clarithromycin, and troleandomycin) has been associated with acute ergot toxicity (ergotism)
+    characterized by vasospasm and ischemia of the extremities (see PRECAUTIONS : Drug Interactions),
+    with some cases resulting in amputation. There have been rare reports of cerebral ischemia in patients
+    on protease inhibitor therapy when ergotamine tartrate and caffeine was coadministered, at least one
+    resulting in death. Because of the increased risk for ergotism and other serious vasospastic adverse
+    events, ergotamine use is contraindicated with these drugs and other potent inhibitors of CYP 3A4
+    (e.g., ketoconazole, itraconazole) (see WARNINGS : CYP 3A4 Inhibitors). Ergotamine tartrate and caffeine
+    may cause fetal harm when administered to pregnant women. Ergotamine tartrate and caffeine is contraindicated
+    in women who are or may become pregnant. If this drug is used during pregnancy or if the patient becomes
+    pregnant while taking this product, the patient should be apprised of the potential hazard to the
+    fetus. Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal
+    function and sepsis. Hypersensitivity to any of the components.'

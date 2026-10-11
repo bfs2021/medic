@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: bismuth-cation-metronidazole-tetracycline
+  path: kb/combinations/bismuth-cation-metronidazole-tetracycline.yaml
+session:
+  id: 2026-10-11T032026Z-claude-code-c2838f
+  timestamp: '2026-10-11T03:20:26Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: bismuth cation / metronidazole / tetracycline'
+  details: |
+    Curated from DailyMed setid 4c7f024d-ba26-43cf-a36f-597e2168cd9f v3. H. pylori treatment with duodenal ulcer disease context and omeprazole as co-therapy (product-level). Contraindications: Cockayne syndrome, severe renal impairment, pregnancy, cross-sensitivity to other nitroimidazoles (unbound class). Ingredient reasons stated only in following sentences, so unattributed. Disulfiram and alcohol items skipped (no condition).
