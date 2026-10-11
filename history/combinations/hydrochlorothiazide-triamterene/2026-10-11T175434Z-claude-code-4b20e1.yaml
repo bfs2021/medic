@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-triamterene
+  path: kb/combinations/hydrochlorothiazide-triamterene.yaml
+session:
+  id: 2026-10-11T175434Z-claude-code-4b20e1
+  timestamp: '2026-10-11T17:54:34Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: hydrochlorothiazide / triamterene'
+  details: |
+    Curated from DailyMed setid 02752dae-30b7-4726-b22b-985b330a2060 v1. Hypertension and edema (per member) in patients who develop hypokalemia on hydrochlorothiazide alone, with hypokalemia as disease context and the monotherapy as line of therapy. Contraindications: hyperkalemia, anuria, acute and chronic renal insufficiency (exhaustive pair), significant renal impairment, cross-sensitivity to other sulfonamide-derived drugs. The class-level Thiazides are indicated in pregnancy sentence is not claimed. All product-level.

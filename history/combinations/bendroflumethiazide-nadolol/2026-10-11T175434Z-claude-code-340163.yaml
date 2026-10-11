@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: bendroflumethiazide-nadolol
+  path: kb/combinations/bendroflumethiazide-nadolol.yaml
+session:
+  id: 2026-10-11T175434Z-claude-code-340163
+  timestamp: '2026-10-11T17:54:34Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: bendroflumethiazide / nadolol'
+  details: |
+    Curated from DailyMed setid d2d226ea-1624-47ee-82bf-e9660b75029f v6. Product-level hypertension indication. Contraindications are written under per-ingredient subheadings with the ingredient as subject, so the nadolol items (bronchial asthma, sinus bradycardia, greater than first degree conduction block split into second- and third-degree AV block NARROWER, cardiogenic shock, overt cardiac failure) and the bendroflumethiazide anuria item are attributed INGREDIENT_SUBJECT; the sulfonamide cross-sensitivity sentence has a pronoun subject and is left unattributed.

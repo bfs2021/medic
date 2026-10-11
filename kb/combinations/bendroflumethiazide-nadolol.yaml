@@ -1,0 +1,249 @@
+id: MEDICNE:combo-e5db7ea7-ae2c-5e00-a670-7be65a1f3dfa
+name: bendroflumethiazide / nadolol
+ingredients:
+- id: CHEBI:3013
+  label: bendroflumethiazide
+- id: CHEBI:7444
+  label: nadolol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: d2d226ea-1624-47ee-82bf-e9660b75029f
+    version: 6
+    title: NADOLOL AND BENDROFLUMETHIAZIDE TABLETS, USP, 40 mg/5 mg AND 80 mg/5 mg
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d2d226ea-1624-47ee-82bf-e9660b75029f
+  product_name: Nadolol and Bendroflumethiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Nadolol and bendroflumethiazide tablets are indicated for the treatment of hypertension, to
+      lower blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "Nadolol and bendroflumethiazide tablets are not indicated for
+      initial therapy of hypertension" (in the same paragraph, not split out as a Limitation of Use
+      span) restricts this claim but produces none. HP Hypertension agrees with the grounding
+      store.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: bronchial asthma
+      term:
+        id: HP:0002099
+        label: Asthma
+      binding: EXACT
+    quote: >-
+      Nadolol is contraindicated in bronchial asthma, sinus bradycardia and greater than first
+      degree conduction block, cardiogenic shock, and overt cardiac failure (see WARNINGS ).
+    attributed_to:
+    - ingredient: CHEBI:7444
+      basis: INGREDIENT_SUBJECT
+      snippet: Nadolol is contraindicated
+      explanation: >-
+        Nadolol is the subject of "is contraindicated", whose list names bronchial asthma; the
+        paragraph sits under the subheading "Nadolol".
+    explanation: >-
+      "Nadolol is contraindicated in bronchial asthma" states the contraindication, the first item
+      of the list.
+    status: DRAFT
+    notes: >-
+      HP Asthma has the exact synonym "Bronchial asthma"; MONDO asthma has no such synonym.
+      Asthma is not an allergy (SKILL rule 3c).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: sinus bradycardia
+      term:
+        id: HP:0001688
+        label: Sinus bradycardia
+      binding: EXACT
+    quote: >-
+      Nadolol is contraindicated in bronchial asthma, sinus bradycardia and greater than first
+      degree conduction block, cardiogenic shock, and overt cardiac failure (see WARNINGS ).
+    attributed_to:
+    - ingredient: CHEBI:7444
+      basis: INGREDIENT_SUBJECT
+      snippet: Nadolol is contraindicated
+      explanation: >-
+        Nadolol is the subject of "is contraindicated", whose list names sinus bradycardia.
+    explanation: >-
+      "Nadolol is contraindicated in ... sinus bradycardia" states the contraindication, an item
+      of the list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: greater than first degree conduction block
+      term:
+        id: HP:0011706
+        label: Second degree atrioventricular block
+      binding: NARROWER
+    quote: >-
+      Nadolol is contraindicated in bronchial asthma, sinus bradycardia and greater than first
+      degree conduction block, cardiogenic shock, and overt cardiac failure (see WARNINGS ).
+    attributed_to:
+    - ingredient: CHEBI:7444
+      basis: INGREDIENT_SUBJECT
+      snippet: Nadolol is contraindicated
+      explanation: >-
+        Nadolol is the subject of "is contraindicated", whose list names greater than first degree
+        conduction block.
+    explanation: >-
+      "Nadolol is contraindicated in ... greater than first degree conduction block" states the
+      contraindication, an item of the list. A conduction block greater than first degree is
+      second- or third-degree atrioventricular block, so this claim binds the second-degree block,
+      NARROWER than the words.
+    status: DRAFT
+    notes: &avnote >-
+      Split into its two degrees (second, third), each bound NARROWER, as in the atenolol/
+      chlorthalidone and metoprolol/hydrochlorothiazide files; no single term says "greater than
+      first degree" (searched MONDO and HP "atrioventricular block", "heart block", "conduction
+      block"). "degree conduction block" is read as the atrioventricular conduction block that the
+      degree grading applies to; HP "conduction block" finds only Motor conduction block (a nerve
+      finding), which is not meant.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: greater than first degree conduction block
+      term:
+        id: HP:0001709
+        label: Third degree atrioventricular block
+      binding: NARROWER
+    quote: >-
+      Nadolol is contraindicated in bronchial asthma, sinus bradycardia and greater than first
+      degree conduction block, cardiogenic shock, and overt cardiac failure (see WARNINGS ).
+    attributed_to:
+    - ingredient: CHEBI:7444
+      basis: INGREDIENT_SUBJECT
+      snippet: Nadolol is contraindicated
+      explanation: >-
+        Nadolol is the subject of "is contraindicated", whose list names greater than first degree
+        conduction block.
+    explanation: >-
+      "Nadolol is contraindicated in ... greater than first degree conduction block" states the
+      contraindication, an item of the list. A conduction block greater than first degree is
+      second- or third-degree atrioventricular block, so this claim binds the third-degree block,
+      NARROWER than the words.
+    status: DRAFT
+    notes: *avnote
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cardiogenic shock
+      term:
+        id: HP:0030149
+        label: Cardiogenic shock
+      binding: EXACT
+    quote: >-
+      Nadolol is contraindicated in bronchial asthma, sinus bradycardia and greater than first
+      degree conduction block, cardiogenic shock, and overt cardiac failure (see WARNINGS ).
+    attributed_to:
+    - ingredient: CHEBI:7444
+      basis: INGREDIENT_SUBJECT
+      snippet: Nadolol is contraindicated
+      explanation: >-
+        Nadolol is the subject of "is contraindicated", whose list names cardiogenic shock.
+    explanation: >-
+      "Nadolol is contraindicated in ... cardiogenic shock" states the contraindication, an item of
+      the list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: overt cardiac failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Nadolol is contraindicated in bronchial asthma, sinus bradycardia and greater than first
+      degree conduction block, cardiogenic shock, and overt cardiac failure (see WARNINGS ).
+    attributed_to:
+    - ingredient: CHEBI:7444
+      basis: INGREDIENT_SUBJECT
+      snippet: Nadolol is contraindicated
+      explanation: >-
+        Nadolol is the subject of "is contraindicated", whose list names overt cardiac failure.
+    explanation: >-
+      "Nadolol is contraindicated in ... overt cardiac failure" states the contraindication, an
+      item of the list; "overt" (clinically manifest) narrows it, so the heart failure term is
+      BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO heart failure has the exact synonym "cardiac failure"; BROADER as in the
+      atenolol/chlorthalidone file.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Bendroflumethiazide is contraindicated in anuria.
+    attributed_to:
+    - ingredient: CHEBI:3013
+      basis: INGREDIENT_SUBJECT
+      snippet: Bendroflumethiazide is contraindicated
+      explanation: >-
+        Bendroflumethiazide is the subject of "is contraindicated in anuria"; the sentence sits
+        under the subheading "Bendroflumethiazide".
+    explanation: >-
+      "Bendroflumethiazide is contraindicated in anuria" states the anuria contraindication.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      It is also contraindicated in patients who have previously demonstrated hypersensitivity to
+      bendroflumethiazide or other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients who have previously demonstrated hypersensitivity to ... other
+      sulfonamide-derived drugs" states a drug-allergy contraindication with other
+      sulfonamide-derived drugs as the agents; bendroflumethiazide, the product's own ingredient,
+      is dropped.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs only; hypersensitivity to
+      bendroflumethiazide (own ingredient) is not curated. ChEBI sulfonamide is the chemical class,
+      broader than "sulfonamide-derived drugs". The subject "It" refers back to bendroflumethiazide
+      (the previous sentence, under the "Bendroflumethiazide" subheading), but the sentence names
+      bendroflumethiazide only as an allergen, so no snippet in it can attribute the claim; left
+      unattributed. A reviewer may add an INGREDIENT_SUBJECT attribution to bendroflumethiazide
+      (CHEBI:3013) if pronoun subjects are accepted.
+notes: >-
+  Old-format (non-PLR) label with no Highlights. The Contraindications section is split under the
+  subheadings "Nadolol" and "Bendroflumethiazide", each paragraph with the ingredient as subject,
+  so the nadolol cardiac/respiratory items and the bendroflumethiazide anuria item are attributed
+  INGREDIENT_SUBJECT. Not claimed: the class-level cardiovascular-outcomes text after the
+  indication (the label says there are no controlled trials demonstrating risk reduction with this
+  product); "not indicated for initial therapy of hypertension" (a limitation, negated);
+  hypersensitivity to bendroflumethiazide (own ingredient). The indication is product-level.

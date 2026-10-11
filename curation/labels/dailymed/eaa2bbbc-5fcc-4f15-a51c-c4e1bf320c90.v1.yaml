@@ -1,0 +1,89 @@
+setid: eaa2bbbc-5fcc-4f15-a51c-c4e1bf320c90
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/eaa2bbbc-5fcc-4f15-a51c-c4e1bf320c90.xml
+xml_sha256: 0e5ac26ee6027561269bc115cec36f05da95a745085b9b32ce9311cd61688c71
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use PRESTALIA® tablets safely and
+  effectively. See full prescribing information for PRESTALIA. PRESTALIA (perindopril arginine and amlodipine)
+  tablets, for oral use. Initial U.S. Approval: 2015'
+product_name: Prestalia
+active_moieties:
+- AMLODIPINE
+- PERINDOPRILAT
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - PRESTALIA contains perindopril arginine, an angiotensin converting enzyme inhibitor, and amlodipine,
+    a dihydropyridine calcium channel blocker, and is indicated for the treatment of hypertension, to
+    lower blood pressure. PRESTALIA may be used in patients whose blood pressure is not adequately controlled
+    on monotherapy. PRESTALIA may be used as initial therapy in patients likely to need multiple drugs
+    to achieve blood pressure goals. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular
+    events, primarily strokes and myocardial infarctions. These benefits have been seen in controlled
+    trials of antihypertensive drugs from a wide variety of pharmacologic classes, including amlodipine
+    and the ACE inhibitor class to which perindopril principally belongs. There are no controlled trials
+    demonstrating risk reduction with PRESTALIA. Control of high blood pressure should be part of comprehensive
+    cardiovascular risk management, including, as appropriate, lipid control, diabetes management, antithrombotic
+    therapy, smoking cessation, exercise, and limited sodium intake. Many patients will require more than
+    one drug to achieve blood pressure goals. For specific advice on goals and management, see published
+    guidelines, such as those of the National High Blood Pressure Education Program's Joint National Committee
+    on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC). Numerous antihypertensive
+    drugs, from a variety of pharmacologic classes and with different mechanisms of action, have been
+    shown in randomized controlled trials to reduce cardiovascular morbidity and mortality, and it can
+    be concluded that it is blood pressure reduction, and not some other pharmacologic property of the
+    drugs, that is largely responsible for those benefits. The largest and most consistent cardiovascular
+    outcome benefit has been a reduction in the risk of stroke, but reductions in myocardial infarction
+    and cardiovascular mortality also have been seen regularly. Elevated systolic or diastolic pressure
+    causes increased cardiovascular risk, and the absolute risk increase per mmHg is greater at higher
+    blood pressures, so that even modest reductions of severe hypertension can provide substantial benefit.
+    Relative risk reduction from blood pressure reduction is similar across populations with varying absolute
+    risk, so the absolute benefit is greater in patients who are at higher risk independent of their hypertension
+    (for example, patients with diabetes or hyperlipidemia), and such patients would be expected to benefit
+    from more aggressive treatment to a lower blood pressure goal. Some antihypertensive drugs have smaller
+    blood pressure effects (as monotherapy) in black patients, and many antihypertensive drugs have additional
+    approved indications and effects (e.g., on angina, heart failure, or diabetic kidney disease). These
+    considerations may guide selection of therapy. In a clinical trial of PRESTALIA, treatment with PRESTALIA
+    14/10 mg did not provide additional antihypertensive effect beyond that achieved with use of amlodipine
+    10 mg in black and diabetic patients [see Clinical Studies (14) ] . The choice of PRESTALIA as initial
+    therapy for hypertension should be based on an assessment of potential benefits and risks including
+    whether the patient is likely to tolerate the starting dose of PRESTALIA. Patients with moderate-to-severe
+    hypertension are at a relatively high risk of cardiovascular events (e.g., stroke, heart attack, and
+    heart failure), kidney failure, and vision problems, so prompt treatment is clinically relevant. Consider
+    the patient's baseline blood pressure, target goal and the incremental likelihood of achieving the
+    goal with a combination product, such as PRESTALIA, versus a monotherapy product when deciding upon
+    initial therapy. Individual blood pressure goals may vary based on the patient's risk. Data from an
+    6-week, active-controlled trial provide estimates of the probability of reaching a target blood pressure
+    with PRESTALIA compared with perindopril erbumine or amlodipine monotherapy [see Clinical Studies
+    (14) ] . Figures 1.a-1.d provide estimates of the likelihood of achieving target clinic systolic and
+    diastolic blood pressure control with PRESTALIA 14/10 mg tablets after 6 weeks, based on baseline
+    systolic and diastolic blood pressure. The curve for each treatment group was estimated by logistic
+    regression modeling and is less well defined in the tails. Figure 1.a Probability of Achieving Systolic
+    Blood Pressure <140 mmHg at Week 6 Figure 1.b Probability of Achieving Systolic Blood Pressure <130
+    mmHg at Week 6 Figure 1.c Probability of Achieving Diastolic Blood Pressure <90 mmHg at Week 6 Figure
+    1.d Probability of Achieving Diastolic Blood Pressure <80 mmHg at Week 6 For example, a patient with
+    a baseline blood pressure of 170/105 mmHg has approximately a 26% likelihood of achieving a goal of
+    <140 mmHg (systolic) and 31% likelihood of achieving <90 mmHg (diastolic) on perindopril erbumine
+    16 mg. The likelihood of achieving these same goals on amlodipine 10 mg is approximately 40% (systolic)
+    and 46% (diastolic). These likelihoods rise to 50% (systolic) and 65% (diastolic) with PRESTALIA 14/10
+    mg.
+  - 'Prestalia is a combination of perindopril, an angiotensin converting enzyme inhibitor, and amlodipine,
+    a dihydropyridine calcium channel blocker, indicated for the treatment of hypertension to lower blood
+    pressure: In patients not adequately controlled with monotherapy ( 1 ). As initial therapy in patients
+    likely to need multiple drugs to achieve their blood pressure goals ( 1 ). Lowering blood pressure
+    reduces the risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial infarctions
+    ( 1 ).'
+  - Figure 1.a
+  - Figure 1.b
+  - Figure 1.c
+  - Figure 1.d
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - PRESTALIA tablets are contraindicated in patients with hereditary or idiopathic angioedema, with or
+    without previous ACE inhibitor treatment, and in patients who are hypersensitive to perindopril, to
+    any other ACE inhibitor, or to amlodipine. Do not co-administer aliskiren with ACE inhibitors, including
+    PRESTALIA, in patients with diabetes. Prestalia is contraindicated in combination with neprilysin
+    inhibitor (e.g., sacubitril). Do not administer Prestalia within 36 hours of switching to or from
+    sacubitril/valsartan, a neprilysin inhibitor [ see Warnings and Precautions (5.2) ] .
+  - History of angioedema, or hypersensitivity to any ACE-inhibitor or to amlodipine ( 4 ). Do not use
+    aliskiren with PRESTALIA in patients with diabetes ( 4 ). Do not take a neprilysin inhibitor with
+    PRESTALIA ( 4 ). Do not administer PRESTALIA within 36 hours of switching to or from sacubitril/valsartan
+    ( 4 ).

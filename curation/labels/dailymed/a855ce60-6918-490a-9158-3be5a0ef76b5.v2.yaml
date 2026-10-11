@@ -1,0 +1,92 @@
+setid: a855ce60-6918-490a-9158-3be5a0ef76b5
+version: 2
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/a855ce60-6918-490a-9158-3be5a0ef76b5.xml
+xml_sha256: 1f3986442f5fd1316b225ed58c47b9581da23d1da9f54909395d580ce5a32def
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use AMLODIPINE and OLMESARTAN MEDOXOMIL
+  TABLETS safely and effectively. See full prescribing information for AMLODIPINE and OLMESARTAN MEDOXOMIL
+  TABLETS. AMLODIPINE and OLMESARTAN MEDOXOMIL tablets, for oral use Initial U.S. Approval: 2007'
+product_name: amlodipine besylate and olmesartan medoxomil
+active_moieties:
+- AMLODIPINE
+- OLMESARTAN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'Amlodipine and olmesartan medoxomil tablets are indicated for the treatment of hypertension, alone
+    or with other antihypertensive agents , to lower blood pressure. Lowering blood pressure reduces the
+    risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial infarctions. These
+    benefits have been seen in controlled trials of antihypertensive drugs from a wide variety of pharmacologic
+    classes including the class to which this drug principally belongs. There are no controlled trials
+    demonstrating risk reduction with amlodipine and olmesartan medoxomil tablets. Control of high blood
+    pressure should be part of comprehensive cardiovascular risk management, including, as appropriate,
+    lipid control, diabetes management, antithrombotic therapy, smoking cessation, exercise, and limited
+    sodium intake. Many patients will require more than one drug to achieve blood pressure goals. For
+    specific advice on goals and management, see published guidelines, such as those of the National High
+    Blood Pressure Education Program’s Joint National Committee on Prevention, Detection, Evaluation,
+    and Treatment of High Blood Pressure (JNC). Numerous antihypertensive drugs, from a variety of pharmacologic
+    classes and with different mechanisms of action, have been shown in randomized controlled trials to
+    reduce cardiovascular morbidity and mortality, and it can be concluded that it is blood pressure reduction,
+    and not some other pharmacologic property of the drugs, that is largely responsible for those benefits.
+    The largest and most consistent cardiovascular outcome benefit has been a reduction in the risk of
+    stroke, but reductions in myocardial infarction and cardiovascular mortality also have been seen regularly.
+    Elevated systolic or diastolic pressure causes increased cardiovascular risk, and the absolute risk
+    increase per mmHg is greater at higher blood pressures, so that even modest reductions of severe hypertension
+    can provide substantial benefit. Relative risk reduction from blood pressure reduction is similar
+    across populations with varying absolute risk, so the absolute benefit is greater in patients who
+    are at higher risk independent of their hypertension (for example, patients with diabetes or hyperlipidemia),
+    and such patients would be expected to benefit from more aggressive treatment to a lower blood pressure
+    goal. Some antihypertensive drugs have smaller blood pressure effects (as monotherapy) in black patients,
+    and many antihypertensive drugs have additional approved indications and effects (e.g., on angina,
+    heart failure, or diabetic kidney disease). These considerations may guide selection of therapy. Amlodipine
+    and olmesartan medoxomil tablets may also be used as initial therapy in patients who are likely to
+    need multiple antihypertensive agents to achieve their blood pressure goals. Patients with moderate
+    or severe hypertension are at relatively high risk for cardiovascular events (such as strokes, heart
+    attacks, and heart failure), kidney failure, and vision problems, so prompt treatment is clinically
+    relevant. The decision to use a combination as initial therapy should be individualized and should
+    be shaped by considerations such as baseline blood pressure, the target goal, and the incremental
+    likelihood of achieving goal with a combination compared to monotherapy. Individual blood pressure
+    goals may vary based upon the patient’s risk. Data from an 8-week, placebo-controlled, parallel-group
+    factorial study [see Clinical Studies (14.1) ] provide estimates of the probability of reaching a
+    blood pressure goal with amlodipine and olmesartan medoxomil tablets compared to amlodipine or olmesartan
+    medoxomil monotherapy. The figures below provide estimates of the likelihood of achieving the targeted
+    systolic or diastolic blood pressure goals with amlodipine and olmesartan medoxomil tablets 10 mg/40
+    mg compared with amlodipine or olmesartan medoxomil monotherapy, based upon baseline systolic or diastolic
+    blood pressure. The curve of each treatment group was estimated by logistic regression modeling from
+    all available data of that treatment group. The right tail of each curve is less reliable because
+    of small numbers of subjects with high baseline blood pressures. Figure 1: Probability of Achieving
+    Systolic Blood Pressure (SBP) <140 mmHg at Week 8 With LOCF Figure 2: Probability of Achieving Diastolic
+    Blood Pressure (DBP) <90 mmHg at Week 8 With LOCF Figure 3: Probability of Achieving Systolic Blood
+    Pressure (SBP) <130 mmHg at Week 8 With LOCF Figure 4: Probability of Achieving Diastolic Blood Pressure
+    (DBP) <80 mmHg at Week 8 With LOCF The figures above provide an approximation of the likelihood of
+    reaching a targeted blood pressure goal (e.g., Week 8 SBP <140 mmHg or <130 mmHg or a DBP <90 mmHg
+    or <80 mmHg) for the high-dose treatment groups evaluated in the study. Amlodipine and olmesartan
+    medoxomil tablets 5 mg/20 mg, the lowest dose combination treatment group, increases the probability
+    of reaching blood pressure goal compared with the highest dose monotherapies, amlodipine 10 mg and
+    olmesartan medoxomil 40 mg. For example, a patient with a baseline blood pressure of 160/100 mmHg
+    has about a 48% likelihood of achieving a goal of <140 mmHg (systolic) and a 51% likelihood of achieving
+    a goal of <90 mmHg (diastolic) on monotherapy with olmesartan medoxomil 40 mg, and about a 46% likelihood
+    of achieving a goal of <140 mmHg (systolic) and a 60% likelihood of achieving a goal of <90 mmHg (diastolic)
+    on monotherapy with amlodipine 10 mg. The likelihood of achieving these same goals increases to 63%
+    (systolic) and 71% (diastolic) on amlodipine and olmesartan medoxomil tablets 5 mg/20 mg, and to 68%
+    (systolic) and 85% (diastolic) on amlodipine and olmesartan medoxomil tablets 10 mg/40 mg.'
+  - Amlodipine and olmesartan medoxomil tablet is a combination of a dihydropyridine calcium channel blocker
+    and an angiotensin II receptor blocker combination product indicated for the treatment of hypertension,
+    alone or with other antihypertensive agents, to lower blood pressure. Lowering blood pressure reduces
+    the risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial infarctions.
+    (1) . Amlodipine and olmesartan medoxomil tablets may also be used as initial therapy in patients
+    likely to need multiple antihypertensive agents to achieve their blood pressure goals (1) .
+  - 'Figure 1: Probability of Achieving Systolic Blood Pressure (SBP) &amp;amp;amp;amp;amp;amp;amp;lt;140
+    mmHg at Week 8 With LOCF'
+  - 'Figure 2: Probability of Achieving Diastolic Blood Pressure (DBP) &amp;amp;amp;amp;amp;amp;amp;lt;90
+    mmHg at Week 8 With LOCF'
+  - 'Figure 3: Probability of Achieving Systolic Blood Pressure (SBP) &amp;amp;amp;amp;amp;amp;amp;lt;130
+    mmHg at Week 8 With LOCF'
+  - 'Figure 4: Probability of Achieving Diastolic Blood Pressure (DBP) &amp;amp;amp;amp;amp;amp;amp;lt;80
+    mmHg at Week 8 With LOCF'
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Do not co-administer aliskiren with amlodipine and olmesartan medoxomil tablets in patients with diabetes
+    [see Drug Interactions (7.2) ].
+  - Do not co-administer aliskiren with amlodipine and olmesartan medoxomil tablets in patients with diabetes
+    (4) .

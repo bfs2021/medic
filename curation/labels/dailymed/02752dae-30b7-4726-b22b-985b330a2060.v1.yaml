@@ -1,0 +1,48 @@
+setid: 02752dae-30b7-4726-b22b-985b330a2060
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/02752dae-30b7-4726-b22b-985b330a2060.xml
+xml_sha256: ce960b747f119bc70fba2b4b53c5921ee3b74630a7ff68bcfb05331699cb8946
+retrieved: '2026-10-11'
+title: ® Tablets
+product_name: Triamterene and Hydrochlorothiazide
+active_moieties:
+- HYDROCHLOROTHIAZIDE
+- TRIAMTERENE
+sections:
+  INDICATIONS:
+  - 'INDICATIONS AND USAGE: This fixed combination drug is not indicated for the initial therapy of edema
+    or hypertension except in individuals in whom the development of hypokalemia cannot be risked. Triamterene
+    and hydrochlorothiazide is indicated for the treatment of hypertension or edema in patients who develop
+    hypokalemia on hydrochlorothiazide alone. Triamterene and hydrochlorothiazide is also indicated for
+    those patients who require a thiazide diuretic and in whom the development of hypokalemia cannot be
+    risked (e.g., patients on concomitant digitalis preparations, or with a history of cardiac arrhythmias,
+    etc.). Triamterene and hydrochlorothiazide may be used alone or in combination with other antihypertensive
+    drugs, such as beta-blockers. Since triamterene and hydrochlorothiazide may enhance the actions of
+    these drugs, dosage adjustments may be necessary.'
+  - 'Usage in Pregnancy: The routine use of diuretics in an otherwise healthy woman is inappropriate and
+    exposes mother and fetus to unnecessary hazard. Diuretics do not prevent development of toxemia of
+    pregnancy, and there is no satisfactory evidence that they are useful in the treatment of developed
+    toxemia. Edema during pregnancy may arise from pathological causes or from the physiologic and mechanical
+    consequences of pregnancy. Thiazides are indicated in pregnancy when edema is due to pathologic causes,
+    just as they are in the absence of pregnancy. Dependent edema in pregnancy, resulting from restriction
+    of venous return by the expanded uterus, is properly treated through elevation of the lower extremities
+    and use of support hose; use of diuretics to lower intravascular volume in this case is illogical
+    and unnecessary. There is hypervolemia during normal pregnancy which is harmful to neither the fetus
+    nor the mother (in the absence of cardiovascular disease), but which is associated with edema, including
+    generalized edema, in the majority of pregnant women. If this edema produces discomfort, increased
+    recumbency will often provide relief. In rare instances, this edema may cause extreme discomfort which
+    is not relieved by rest. In these cases, a short course of diuretics may provide relief and may be
+    appropriate.'
+  CONTRAINDICATIONS:
+  - 'CONTRAINDICATIONS: Hyperkalemia: Triamterene and hydrochlorothiazide should not be used in the presence
+    of elevated serum potassium levels (greater than or equal to 5.5 mEq/liter). If hyperkalemia develops,
+    this drug should be discontinued and a thiazide alone should be substituted.'
+  - 'Antikaliuretic Therapy or Potassium Supplementation: Triamterene and hydrochlorothiazide should not
+    be given to patients receiving other potassium-conserving agents such as spironolactone, amiloride
+    hydrochloride or other formulations containing triamterene. Concomitant potassium supplementation
+    in the form of medication, potassium-containing salt substitute or potassium-enriched diets should
+    also not be used.'
+  - 'Impaired Renal Function: Triamterene and hydrochlorothiazide is contraindicated in patients with
+    anuria, acute and chronic renal insufficiency or significant renal impairment.'
+  - 'Hypersensitivity: Triamterene and hydrochlorothiazide should not be used in patients who are hypersensitive
+    to triamterene or hydrochlorothiazide or other sulfonamide-derived drugs.'

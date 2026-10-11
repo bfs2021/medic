@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-olmesartan
+  path: kb/combinations/amlodipine-olmesartan.yaml
+session:
+  id: 2026-10-11T175420Z-claude-code-f3b57f
+  timestamp: '2026-10-11T17:54:20Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: amlodipine / olmesartan'
+  details: |
+    Curated from DailyMed setid a855ce60-6918-490a-9158-3be5a0ef76b5 v2. Hypertension indication and the aliskiren-in-diabetes contraindication, both product-level; the initial-therapy guidance and class-level cardiovascular-outcomes text are not claimed.

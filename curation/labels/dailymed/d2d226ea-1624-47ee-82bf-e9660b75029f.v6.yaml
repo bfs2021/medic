@@ -1,0 +1,49 @@
+setid: d2d226ea-1624-47ee-82bf-e9660b75029f
+version: 6
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/d2d226ea-1624-47ee-82bf-e9660b75029f.xml
+xml_sha256: 8b848fdca7bd52d16ea2489ccf7a8e44025df332126f7aab7a13c3e5dade629c
+retrieved: '2026-10-11'
+title: NADOLOL AND BENDROFLUMETHIAZIDE TABLETS, USP, 40 mg/5 mg AND 80 mg/5 mg
+product_name: Nadolol and Bendroflumethiazide
+active_moieties:
+- BENDROFLUMETHIAZIDE
+- NADOLOL
+sections:
+  INDICATIONS:
+  - INDICATIONS
+  - Nadolol and bendroflumethiazide tablets are indicated for the treatment of hypertension, to lower
+    blood pressure. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular events,
+    primarily strokes and myocardial infarctions. These benefits have been seen in controlled trials of
+    antihypertensive drugs from a wide variety of pharmacologic classes including the classes to which
+    this drug principally belongs. There are no controlled trials demonstrating risk reduction with nadolol
+    and bendroflumethiazide tablets. Control of high blood pressure should be part of comprehensive cardiovascular
+    risk management, including, as appropriate, lipid control, diabetes management, antithrombotic therapy,
+    smoking cessation, exercise, and limited sodium intake. Many patients will require more than one drug
+    to achieve blood pressure goals. For specific advice on goals and management, see published guidelines,
+    such as those of the National High Blood Pressure Education Program's Joint National Committee on
+    Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC). Numerous antihypertensive
+    drugs, from a variety of pharmacologic classes and with different mechanisms of action, have been
+    shown in randomized controlled trials to reduce cardiovascular morbidity and mortality, and it can
+    be concluded that it is blood pressure reduction, and not some other pharmacologic property of the
+    drugs, that is largely responsible for those benefits. The largest and most consistent cardiovascular
+    outcome benefit has been a reduction in the risk of stroke, but reductions in myocardial infarction
+    and cardiovascular mortality also have been seen regularly. Elevated systolic or diastolic pressure
+    causes increased cardiovascular risk, and the absolute risk increase per mmHg is greater at higher
+    blood pressures, so that even modest reductions of severe hypertension can provide substantial benefit.
+    Relative risk reduction from blood pressure reduction is similar across populations with varying absolute
+    risk, so the absolute benefit is greater in patients who are at higher risk independent of their hypertension
+    (for example, patients with diabetes or hyperlipidemia), and such patients would be expected to benefit
+    from more aggressive treatment to a lower blood pressure goal. Some antihypertensive drugs have smaller
+    blood pressure effects (as monotherapy) in black patients, and many antihypertensive drugs have additional
+    approved indications and effects (e.g., on angina, heart failure, or diabetic kidney disease). These
+    considerations may guide selection of therapy. Nadolol and bendroflumethiazide tablets are not indicated
+    for initial therapy of hypertension. If the fixed combination represents the dose titrated to the
+    individual patient's needs, it may be more convenient than the separate components.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Nadolol
+  - Nadolol is contraindicated in bronchial asthma, sinus bradycardia and greater than first degree conduction
+    block, cardiogenic shock, and overt cardiac failure (see WARNINGS ).
+  - Bendroflumethiazide
+  - Bendroflumethiazide is contraindicated in anuria. It is also contraindicated in patients who have
+    previously demonstrated hypersensitivity to bendroflumethiazide or other sulfonamide-derived drugs.

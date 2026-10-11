@@ -1,0 +1,82 @@
+id: MEDICNE:combo-cea7fb50-7b3d-561c-80a3-443013026ceb
+name: amlodipine / olmesartan
+ingredients:
+- id: CHEBI:2668
+  label: amlodipine
+- id: CHEBI:48416
+  label: olmesartan
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: a855ce60-6918-490a-9158-3be5a0ef76b5
+    version: 2
+    title: 'These highlights do not include all the information needed to use AMLODIPINE and OLMESARTAN
+      MEDOXOMIL TABLETS safely and effectively. See full prescribing information for AMLODIPINE and OLMESARTAN
+      MEDOXOMIL TABLETS. AMLODIPINE and OLMESARTAN MEDOXOMIL tablets, for oral use Initial U.S. Approval:
+      2007'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a855ce60-6918-490a-9158-3be5a0ef76b5
+  product_name: amlodipine besylate and olmesartan medoxomil
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Amlodipine and olmesartan medoxomil tablets are indicated for the treatment of hypertension,
+      alone or with other antihypertensive agents , to lower blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "alone or
+      with other antihypertensive agents" and "to lower blood pressure" qualify use, not the
+      condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "alone or with other antihypertensive agents" makes co-therapy
+      optional, so no in_combination_with. "may also be used as initial therapy in patients who are
+      likely to need multiple antihypertensive agents" widens the setting rather than restricting
+      it, so no line_of_therapy and no separate claim (as in the azilsartan/chlorthalidone file). HP
+      Hypertension agrees with the grounding store; MONDO has no term labelled or exactly
+      synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not co-administer aliskiren with amlodipine and olmesartan medoxomil tablets in patients
+      with diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not co-administer aliskiren with amlodipine and olmesartan medoxomil tablets in patients
+      with diabetes" contraindicates the product in patients with diabetes when given with
+      aliskiren, recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: the sentence speaks of the product by its generic name, which
+      names both ingredients and so attributes to neither. The Highlights restate it.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication ("Lowering blood
+  pressure reduces the risk of fatal and nonfatal cardiovascular events, primarily strokes and
+  myocardial infarctions"; the label itself says "There are no controlled trials demonstrating
+  risk reduction with amlodipine and olmesartan medoxomil tablets"); the initial-therapy guidance,
+  the "moderate or severe hypertension" risk statement and the trial-probability figures (context
+  for choosing therapy, not separate indications). All claims are product-level: the label never
+  assigns an indication or contraindication to amlodipine or olmesartan.

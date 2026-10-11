@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amlodipine-perindoprilat
+  path: kb/combinations/amlodipine-perindoprilat.yaml
+session:
+  id: 2026-10-11T175433Z-claude-code-2965d8
+  timestamp: '2026-10-11T17:54:33Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: amlodipine / perindoprilat'
+  details: |
+    Curated from DailyMed setid eaa2bbbc-5fcc-4f15-a51c-c4e1bf320c90 v1 (PRESTALIA). Hypertension indication; contraindications split per member for hereditary or idiopathic angioedema (idiopathic bound BROADER to HP Angioedema), a separate claim for the wider Highlights item History of angioedema, cross-sensitivity to other ACE inhibitors, and aliskiren in diabetes. All product-level; neprilysin-inhibitor rules are pure drug interactions and not claimed.

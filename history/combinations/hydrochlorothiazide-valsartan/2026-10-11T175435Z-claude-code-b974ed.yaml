@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-valsartan
+  path: kb/combinations/hydrochlorothiazide-valsartan.yaml
+session:
+  id: 2026-10-11T175435Z-claude-code-b974ed
+  timestamp: '2026-10-11T17:54:35Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: hydrochlorothiazide / valsartan'
+  details: |
+    Curated from DailyMed setid d09747f0-029e-4090-949b-e939948249b5 v3. Product-level hypertension indication and aliskiren-in-diabetes contraindication; anuria and cross-sensitivity to other sulfonamide-derived drugs attributed to hydrochlorothiazide (COMPONENT_STATEMENT, Because of the hydrochlorothiazide component).

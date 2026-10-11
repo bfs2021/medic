@@ -1,0 +1,204 @@
+id: MEDICNE:combo-ed190f7d-e3de-5008-b50d-f27adaccc9ff
+name: hydrochlorothiazide / triamterene
+ingredients:
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:9671
+  label: triamterene
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 02752dae-30b7-4726-b22b-985b330a2060
+    version: 1
+    title: ® Tablets
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=02752dae-30b7-4726-b22b-985b330a2060
+  product_name: Triamterene and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension or edema
+      member: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Triamterene and hydrochlorothiazide is indicated for the treatment of hypertension or edema
+      in patients who develop hypokalemia on hydrochlorothiazide alone.
+    disease_context:
+      text: hypokalemia
+      term:
+        id: HP:0002900
+        label: Hypokalemia
+      binding: EXACT
+    line_of_therapy:
+      text: on hydrochlorothiazide alone
+      term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "is indicated for the treatment of hypertension or edema" gives TREATS; this claim covers the
+      member "hypertension". "in patients who develop hypokalemia" restricts it to patients with
+      hypokalemia (disease context), and "on hydrochlorothiazide alone" says the hypokalemia arose
+      on hydrochlorothiazide monotherapy (line of therapy).
+    status: DRAFT
+    notes: &triamnote >-
+      Product-level, unattributed: hydrochlorothiazide is named only as the prior monotherapy, not
+      as the subject or cause of the indication. Unlike the amiloride/hydrochlorothiazide label,
+      the patient restriction here is a single condition, not alternatives, so it is recorded as
+      disease_context and line_of_therapy. HP Hypokalemia is chosen over the grounding store's MONDO
+      potassium deficiency disease, as in the spironolactone/hydrochlorothiazide file.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension or edema
+      member: edema
+      term:
+        id: HP:0000969
+        label: Edema
+      binding: EXACT
+    quote: >-
+      Triamterene and hydrochlorothiazide is indicated for the treatment of hypertension or edema
+      in patients who develop hypokalemia on hydrochlorothiazide alone.
+    disease_context:
+      text: hypokalemia
+      term:
+        id: HP:0002900
+        label: Hypokalemia
+      binding: EXACT
+    line_of_therapy:
+      text: on hydrochlorothiazide alone
+      term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "is indicated for the treatment of hypertension or edema" gives TREATS; this claim covers the
+      member "edema". "in patients who develop hypokalemia" restricts it to patients with
+      hypokalemia (disease context), and "on hydrochlorothiazide alone" says the hypokalemia arose
+      on hydrochlorothiazide monotherapy (line of therapy).
+    status: DRAFT
+    notes: *triamnote
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: elevated serum potassium levels
+      term:
+        id: HP:0002153
+        label: Hyperkalemia
+      binding: EXACT
+    quote: >-
+      Triamterene and hydrochlorothiazide should not be used in the presence of elevated serum
+      potassium levels (greater than or equal to 5.5 mEq/liter).
+    explanation: >-
+      Under the Contraindications heading "Hyperkalemia:", "should not be used in the presence of
+      elevated serum potassium levels" contraindicates the product in hyperkalemia; "(greater than
+      or equal to 5.5 mEq/liter)" gives the threshold.
+    status: DRAFT
+    notes: >-
+      EXACT as in the amiloride/hydrochlorothiazide file: HP Hyperkalemia's exact synonyms
+      ("Increased potassium(1+) level in blood") say the same in other words, and 5.5 mEq/L is the
+      usual definition of hyperkalemia. The threshold has no slot and stays in the quote.
+      Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Triamterene and hydrochlorothiazide is contraindicated in patients with anuria, acute and
+      chronic renal insufficiency or significant renal impairment.
+    explanation: >-
+      "is contraindicated in patients with anuria" states the anuria contraindication, the first
+      item of the list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: acute and chronic renal insufficiency
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: EXACT
+    quote: >-
+      Triamterene and hydrochlorothiazide is contraindicated in patients with anuria, acute and
+      chronic renal insufficiency or significant renal impairment.
+    explanation: >-
+      "contraindicated in patients with ... acute and chronic renal insufficiency": an item of the
+      list. Acute and chronic together cover every renal insufficiency, an exhaustive pair, so the
+      claim is bound to the class term.
+    status: DRAFT
+    notes: >-
+      Exhaustive pair, one claim bound to HP Renal insufficiency, as for "acute or chronic renal
+      insufficiency" in the amiloride/hydrochlorothiazide file. A reviewer who reads the pair as two
+      conditions could split it into MONDO acute kidney injury and HP Chronic kidney disease.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: significant renal impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      Triamterene and hydrochlorothiazide is contraindicated in patients with anuria, acute and
+      chronic renal insufficiency or significant renal impairment.
+    explanation: >-
+      "contraindicated in patients with ... significant renal impairment": an item of the list.
+      Renal insufficiency lacks the severity "significant", so BROADER.
+    status: DRAFT
+    notes: >-
+      HP has no "renal impairment" term (searched HP "renal impairment", "renal insufficiency");
+      Renal insufficiency (reduced kidney performance) is what "renal impairment" says, without the
+      severity, as for "significant impairment of renal excretory function" in the
+      spironolactone/hydrochlorothiazide file.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitive
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Triamterene and hydrochlorothiazide should not be used in patients who are hypersensitive to
+      triamterene or hydrochlorothiazide or other sulfonamide-derived drugs.
+    explanation: >-
+      "should not be used in patients who are hypersensitive to ... other sulfonamide-derived
+      drugs", under the heading "Hypersensitivity:", states a drug-allergy contraindication with
+      other sulfonamide-derived drugs as the agents; triamterene and hydrochlorothiazide, the
+      product's own ingredients, are dropped.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs only. ChEBI sulfonamide is the chemical
+      class, broader than "sulfonamide-derived drugs". Unattributed: the allergens are not causes.
+notes: >-
+  Old-format (non-PLR) label; the SPL title is the fragment "® Tablets" (as the skeleton gave it).
+  Not claimed: "This fixed combination drug is not indicated for the initial therapy of edema or
+  hypertension except in individuals in whom the development of hypokalemia cannot be risked"
+  (a limitation, negated); "also indicated for those patients who require a thiazide diuretic and
+  in whom the development of hypokalemia cannot be risked (e.g., patients on concomitant digitalis
+  preparations, or with a history of cardiac arrhythmias, etc.)" (a population; the label does not
+  say the product prevents hypokalemia, as in the amiloride/hydrochlorothiazide file); "may be
+  used alone or in combination with other antihypertensive drugs, such as beta-blockers" (optional
+  co-therapy); the "Usage in Pregnancy" paragraph, whose indication sentence ("Thiazides are
+  indicated in pregnancy when edema is due to pathologic causes") speaks of the thiazide class,
+  not of this product, and whose other sentences are negated ("Diuretics do not prevent") or say
+  diuretics are unnecessary or "may provide relief"; "should not be given to patients receiving
+  other potassium-conserving agents such as spironolactone, amiloride hydrochloride or other
+  formulations containing triamterene" and the potassium-supplementation sentence (drug and diet
+  interactions with no condition); "If hyperkalemia develops, this drug should be discontinued"
+  (management, restating the hyperkalemia contraindication); hypersensitivity to triamterene or
+  hydrochlorothiazide (own ingredients). All claims are product-level: the label never assigns an
+  indication or contraindication to triamterene or hydrochlorothiazide.
