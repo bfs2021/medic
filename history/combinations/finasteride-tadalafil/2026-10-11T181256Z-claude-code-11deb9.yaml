@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: finasteride-tadalafil
+  path: kb/combinations/finasteride-tadalafil.yaml
+session:
+  id: 2026-10-11T181256Z-claude-code-11deb9
+  timestamp: '2026-10-11T18:12:56Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: finasteride / tadalafil'
+  details: |
+    Curated from DailyMed setid 112bf653-8322-4444-8d4d-03234b11c38c v2 (ENTADFI). AMELIORATES_CONDITION benign prostatic hyperplasia (treatment of signs and symptoms) in men, disease context enlarged prostate (HP Abnormal prostate morphology, BROADER); 26-week duration has no slot. Contraindicated in pregnancy (unbound). Nitrate and GC-stimulator co-use (pure drug interactions) and own-product hypersensitivity not curated. All claims product-level.

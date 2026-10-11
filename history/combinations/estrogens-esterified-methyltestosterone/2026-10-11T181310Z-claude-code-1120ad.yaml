@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: estrogens-esterified-methyltestosterone
+  path: kb/combinations/estrogens-esterified-methyltestosterone.yaml
+session:
+  id: 2026-10-11T181310Z-claude-code-1120ad
+  timestamp: '2026-10-11T18:13:10Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: estrogens, esterified / methyltestosterone'
+  details: |
+    Curated from DailyMed setid d42eeda8-d810-4481-a403-6a3520b9e69a v6. TREATS vasomotor symptoms of menopause in patients not improved by estrogens alone (line of therapy). Product-level contraindications from the first list; severe liver damage, pregnancy and breast-feeding attributed to methyltestosterone (INGREDIENT_SUBJECT) on the lead 'Methyltestosterone should not be used in:'. Negated indication sentences and own-product hypersensitivity not curated.

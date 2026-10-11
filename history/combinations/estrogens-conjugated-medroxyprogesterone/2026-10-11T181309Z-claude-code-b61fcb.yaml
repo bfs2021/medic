@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: estrogens-conjugated-medroxyprogesterone
+  path: kb/combinations/estrogens-conjugated-medroxyprogesterone.yaml
+session:
+  id: 2026-10-11T181309Z-claude-code-b61fcb
+  timestamp: '2026-10-11T18:13:09Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: estrogens, conjugated / medroxyprogesterone'
+  details: |
+    Curated from DailyMed setid 36ec4df9-298d-4b15-9386-7848d217a46c v3 (PREMPRO/PREMPHASE). Indications from the Highlights lead (in women with intact uteri): TREATS vasomotor symptoms (term_gap), TREATS vulvar / vaginal atrophy, PREVENTATIVE postmenopausal osteoporosis; menopause as an unbound life stage. Product-level contraindications from the full-text list, thrombophilic disorders with the protein C / S / antithrombin deficiencies as examples, pregnancy unbound. All claims product-level.

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17beta-estradiol-norethisterone
+  path: kb/combinations/17beta-estradiol-norethisterone.yaml
+session:
+  id: 2026-10-11T181309Z-claude-code-325218
+  timestamp: '2026-10-11T18:13:09Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17beta-estradiol / norethisterone'
+  details: |
+    Curated from DailyMed setid 1521007a-546d-421e-99e1-e10d90c0b090 v1 (estradiol and norethindrone acetate tablets). Indications from the Highlights lead (in a woman with a uterus; sex female, uterus has no slot): TREATS vasomotor symptoms (term_gap) and AMELIORATES_CONDITION vulvar / vaginal atrophy (symptoms of), menopause as an unbound life stage; PREVENTATIVE postmenopausal osteoporosis quoted from the full text because the helper folds the Highlights item into a Limitations of Use span. Abnormal genital bleeding bound to HP Abnormal female reproductive system physiology, BROADER. Nested thrombophilia coordination split into inner coordination and other thrombophilic disorders. All claims product-level.

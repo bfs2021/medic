@@ -1,0 +1,87 @@
+id: MEDICNE:combo-65290937-c179-5e80-b8e0-a09b1b211c33
+name: finasteride / tadalafil
+ingredients:
+- id: CHEBI:5062
+  label: finasteride
+- id: CHEBI:71940
+  label: tadalafil
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 112bf653-8322-4444-8d4d-03234b11c38c
+    version: 2
+    title: 'These highlights do not include all the information needed to use ENTADFI safely and effectively.
+      See full prescribing information for ENTADFI. ENTADFI™ (finasteride and tadalafil) capsules, for
+      oral useInitial U.S. Approval: 2021'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=112bf653-8322-4444-8d4d-03234b11c38c
+  product_name: ENTADFI
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: benign prostatic hyperplasia
+      term:
+        id: MONDO:0010811
+        label: benign prostatic hyperplasia
+      binding: EXACT
+    quote: >-
+      ENTADFI is indicated to initiate treatment of the signs and symptoms of benign prostatic
+      hyperplasia (BPH) in men with an enlarged prostate for up to 26 weeks.
+    disease_context:
+      text: enlarged prostate
+      term:
+        id: HP:0008775
+        label: Abnormal prostate morphology
+      binding: BROADER
+    sex:
+      text: men
+      term:
+        id: PATO:0000384
+        label: male
+      binding: EXACT
+    explanation: >-
+      "indicated to initiate treatment of the signs and symptoms of benign prostatic hyperplasia"
+      is treatment of the symptoms of BPH, so AMELIORATES_CONDITION with BPH as the object; "in
+      men" gives the sex and "with an enlarged prostate" restricts the patients, recorded as the
+      disease context.
+    status: DRAFT
+    notes: >-
+      "Treatment of the signs and symptoms of X" -> AMELIORATES_CONDITION, object X, per the
+      decision table. No HP or MONDO term for an enlarged prostate (searched HP "Prostatomegaly",
+      "enlarged", "prostat"), so its parent HP Abnormal prostate morphology, BROADER. The
+      enlarged prostate is a population restriction close to BPH itself; a reviewer may drop the
+      context as adding nothing. "initiate
+      treatment ... for up to 26 weeks" limits the duration; no slot records a duration, and the
+      26-week Limitations of Use paragraph produces no claim. The Highlights sentence ("ENTADFI is
+      a combination of finasteride, a 5α-reductase inhibitor, and tadalafil, a phosphodiesterase 5
+      (PDE5) inhibitor, and, indicated to ...") names both ingredients by class but assigns the
+      indication to the product, so the claim is unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Pregnancy
+      term_gap: >-
+        searched MONDO "pregnan"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Pregnancy [see Warnings and Precautions ( 5.7 ) and Use in Specific Populations ( 8.1 )] .
+    explanation: >-
+      An item of "ENTADFI is contraindicated in the following situations:": Pregnancy.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. Product-level, unattributed: the Contraindications section gives
+      no reason naming an ingredient.
+notes: >-
+  Not curated: concomitant use of organic nitrates and of guanylate cyclase (GC) stimulators (pure
+  drug interactions, no condition); "known hypersensitivity to finasteride, tadalafil, or to any of the
+  components of ENTADFI" (allergy to the product's own ingredients), and the reactions it lists
+  ("Stevens-Johnson syndrome, exfoliative dermatitis, pruritis, urticaria, and angioedema"), which
+  describe past hypersensitivity reactions rather than contraindicated conditions. The Highlights
+  restate the full-text indication and contraindications.

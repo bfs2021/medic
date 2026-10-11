@@ -1,0 +1,36 @@
+setid: 112bf653-8322-4444-8d4d-03234b11c38c
+version: 2
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/112bf653-8322-4444-8d4d-03234b11c38c.xml
+xml_sha256: 3a0ff04c1f2e0566ec57210ac91b4f445efe09e14441abf3dc50b8c7b2b98577
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use ENTADFI safely and effectively.
+  See full prescribing information for ENTADFI. ENTADFI™ (finasteride and tadalafil) capsules, for oral
+  useInitial U.S. Approval: 2021'
+product_name: ENTADFI
+active_moieties:
+- FINASTERIDE
+- TADALAFIL
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - ENTADFI is indicated to initiate treatment of the signs and symptoms of benign prostatic hyperplasia
+    (BPH) in men with an enlarged prostate for up to 26 weeks. Limitations of Use ENTADFI is not recommended
+    for more than 26 weeks because the incremental benefit of tadalafil decreases from 4 weeks until 26
+    weeks, and the incremental benefit beyond 26 weeks is unknown [see Clinical Studies ( 14 )] .
+  - ENTADFI is a combination of finasteride, a 5α-reductase inhibitor, and tadalafil, a phosphodiesterase
+    5 (PDE5) inhibitor, and, indicated to initiate treatment of the signs and symptoms of benign prostatic
+    hyperplasia (BPH) in men with an enlarged prostate for up to 26 weeks. ( 1 )
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'ENTADFI is contraindicated in the following situations: Concomitant use of any form of organic nitrate,
+    either regularly and/or intermittently. ENTADFI can potentiate the hypotensive effect of nitrates
+    [see Warning and Precautions ( 5.1 , 5.2 ) and Drug Interactions ( 7.1 )] . Patients with known hypersensitivity
+    to finasteride, tadalafil, or to any of the components of ENTADFI. Hypersensitivity reactions have
+    included Stevens-Johnson syndrome, exfoliative dermatitis, pruritis, urticaria, and angioedema [see
+    Warnings and Precautions ( 5.8 ) and Adverse Reactions ( 6.2 )] . Pregnancy [see Warnings and Precautions
+    ( 5.7 ) and Use in Specific Populations ( 8.1 )] . Concomitant use with a guanylate cyclase (GC) stimulator.
+    ENTADFI may potentiate the hypotensive effects of GC stimulators [see Drug Interactions ( 7.1 )] .'
+  - Concomitant use with any form of organic nitrate, either regularly and/or intermittently. ENTADFI
+    can potentiate the hypotensive effect of nitrates. ( 4 ) Known hypersensitivity to ENTADFI or any
+    of its components. ( 4 ) Pregnancy. ( 4 ) Concomitant use with guanylate cyclase (GC) stimulators.
+    ENTADFI may potentiate the hypotensive effects of GC stimulators. ( 4 )
