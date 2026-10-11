@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17alpha-ethynylestradiol-segesterone
+  path: kb/combinations/17alpha-ethynylestradiol-segesterone.yaml
+session:
+  id: 2026-10-11T021452Z-claude-code-e196bd
+  timestamp: '2026-10-11T02:14:52Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17alpha-ethynylestradiol / segesterone'
+  details: |
+    Curated from DailyMed setid eb18194f-2021-41fa-8bdf-31e0c0eb646b v6 (Annovera). One unattributed contraception claim; the thrombotic risk-factor list split per item, including the five-member diabetes item (any diabetes over age 35; with hypertension, vascular disease, other end-organ damage; >20 years duration) and the three-member headache item; liver tumors, acute hepatitis and severe (decompensated) cirrhosis split; hypersensitivity to the product's own components and hepatitis C co-administration not curated; no pregnancy contraindication in this label.

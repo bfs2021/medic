@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17alpha-ethynylestradiol-norgestrel
+  path: kb/combinations/17alpha-ethynylestradiol-norgestrel.yaml
+session:
+  id: 2026-10-11T021451Z-claude-code-c3e723
+  timestamp: '2026-10-11T02:14:51Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17alpha-ethynylestradiol / norgestrel'
+  details: |
+    Curated from DailyMed setid 9c4fac8e-8744-4378-80af-7887de955a51 v1 (Cryselle). One unattributed contraception claim; the thrombotic risk-factor list split per item; 'inherited or acquired coagulopathies' bound as written to MONDO blood coagulation disease (the sibling labels say hypercoagulopathies; flagged for review); hypersensitivity to the product's own components and hepatitis C co-administration not curated.

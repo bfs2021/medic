@@ -1,0 +1,43 @@
+setid: 90240210-0bca-4a55-99dc-19f2b40d8e3f
+version: 9
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/90240210-0bca-4a55-99dc-19f2b40d8e3f.xml
+xml_sha256: 17e280be8a83c7deee997a962d3e567be53b4229d966537e9ba27ae20dbed8d4
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use SPRINTEC safely and effectively.
+  See full prescribing information for SPRINTEC.SPRINTEC® (norgestimate/ethinyl estradiol) tablets, for
+  oral useInitial U.S. Approval: 1989'
+product_name: Sprintec
+active_moieties:
+- ETHINYL ESTRADIOL
+- NORGESTIMATE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Sprintec ® (norgestimate and ethinyl estradiol tablets) is an estrogen/progestin COC, indicated for
+    use by women to prevent pregnancy. ()
+  - 1.1 Oral Contraceptive
+  - Sprintec ® (norgestimate and ethinyl estradiol tablets) is indicated for use by females of reproductive
+    potential to prevent pregnancy [see Clinical Studies ()].
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'Sprintec is contraindicated in females who are known to have or develop the following conditions:
+    • A high risk of arterial or venous thrombotic diseases. Examples include women who are known to:
+    o Smoke, if over age 35 [see and Warnings and Precautions ()] o Have deep vein thrombosis or pulmonary
+    embolism, now or in the past [see Warnings and Precautions ()] o Have inherited or acquired hypercoagulopathies
+    [see Warnings and Precautions ()] o Have cerebrovascular disease [see Warnings and Precautions ()]
+    o Have coronary artery disease [see Warnings and Precautions ()] o Have thrombogenic valvular or thrombogenic
+    rhythm diseases of the heart (for example, subacute bacterial endocarditis with valvular disease,
+    or atrial fibrillation) [see Warnings and Precautions ()] o Have uncontrolled hypertension [see Warnings
+    and Precautions ()] o Have diabetes mellitus with vascular disease [see Warnings and Precautions ()]
+    o Have headaches with focal neurological symptoms or migraine headaches with aura [see Warnings and
+    Precautions ()] ▪ Women over age 35 with any migraine headaches [see Warnings and Precautions ()]
+    • Liver tumors, benign or malignant, or liver disease [see Warnings and Precautions ()] • Undiagnosed
+    abnormal uterine bleeding [see Warnings and Precautions ()] • Pregnancy, because there is no reason
+    to use COCs during pregnancy [see Warnings and Precautions ( ) and Use in Specific Populations ( )]
+    • Current diagnosis of, or history of, breast cancer, which may be hormone-sensitive [see Warnings
+    and Precautions ()] • Use of Hepatitis C drug combinations containing ombitasvir/paritaprevir/ritonavir,
+    with or without dasabuvir, due to the potential for ALT elevations [see Warnings and Precautions ()]'
+  - • A high risk of arterial or venous thrombotic diseases ( 4 ) • Liver tumors or liver disease ( 4
+    ) • Undiagnosed abnormal uterine bleeding ( 4 ) • Pregnancy ( 4 ) • Breast cancer or other estrogen-or
+    progestin-sensitive cancer ( 4 ) • Co-administration with Hepatitis C drug combinations containing
+    ombitasvir/paritaprevir/ritonavir, with or without dasabuvir ( 4 )

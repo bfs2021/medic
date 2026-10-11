@@ -1,0 +1,32 @@
+setid: 9c4fac8e-8744-4378-80af-7887de955a51
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/9c4fac8e-8744-4378-80af-7887de955a51.xml
+xml_sha256: a2d91ae6b36e0b0f2f8570f8a29b79f0f637abf73f9096c965aa6cb4b6e56f15
+retrieved: '2026-10-11'
+title: Cryselle® (norgestrel and ethinyl estradiol tablets USP)
+product_name: Cryselle
+active_moieties:
+- ETHINYL ESTRADIOL
+- NORGESTREL
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Cryselle is indicated for use by females of reproductive potential to prevent pregnancy. In a study
+    of 1,287 women with a total of 11,085 cycles or 852.7 women-years of usage, the pregnancy rate in
+    women age 15 to 40 years was approximately 1 pregnancy per 100 women-years of use.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Cryselle is contraindicated in females who are known to have or develop the following conditions:
+    • A high risk of arterial or venous thrombotic diseases. Examples include women who are known to:
+    o Smoke, if over age 35 o Have deep-vein thrombosis or pulmonary embolism, now or in the past o Have
+    inherited or acquired coagulopathies o Have cerebrovascular disease o Have coronary artery disease
+    o Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial
+    endocarditis with valvular disease or atrial fibrillation) o Have uncontrolled hypertension o Have
+    diabetes mellitus with vascular disease o Headaches with focal neurological symptoms or migraine headaches
+    with aura o Women over age 35 with any migraine headaches • Liver tumors, benign or malignant, or
+    liver disease • Undiagnosed abnormal uterine bleeding • Pregnancy, because there is no reason to use
+    COCs during pregnancy • Current diagnosis or history of breast cancer, which may be hormone sensitive
+    • Hypersensitivity to any of the components of Cryselle Women who are receiving Hepatitis C drug combinations
+    containing ombitasvir/paritaprevir/ritonavir, with or without dasabuvir, due to the potential for
+    ALT elevations (see Warnings , Risk of liver enzyme elevations with concomitant hepatitis c treatment
+    ).'

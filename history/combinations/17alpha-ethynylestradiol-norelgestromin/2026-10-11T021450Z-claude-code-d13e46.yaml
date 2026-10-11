@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: 17alpha-ethynylestradiol-norelgestromin
+  path: kb/combinations/17alpha-ethynylestradiol-norelgestromin.yaml
+session:
+  id: 2026-10-11T021450Z-claude-code-d13e46
+  timestamp: '2026-10-11T02:14:50Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: 17alpha-ethynylestradiol / norelgestromin'
+  details: |
+    Curated from DailyMed setid f7848550-086a-43d8-8ae5-047f4b9e4382 v17 (Xulane). One unattributed contraception claim (the BMI < 30 restriction has no slot and is noted); the thromboembolic risk-factor list split per item; BMI >= 30 kg/m2 bound to HP Increased body mass index BROADER rather than Obesity because the label states a measurement; breast cancer and other estrogen- or progestin-sensitive cancers from the Highlights coordination; hepatitis C co-administration not curated.
