@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: trandolaprilat-verapamil
+  path: kb/combinations/trandolaprilat-verapamil.yaml
+session:
+  id: 2026-10-11T022123Z-claude-code-3aaa92
+  timestamp: '2026-10-11T02:21:23Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: trandolaprilat / verapamil'
+  details: |
+    Curated from DailyMed setid 39bad727-af4c-4d20-933b-7f287e88099a v13. TREATS hypertension; contraindicated in ACE-inhibitor hypersensitivity, severe LV dysfunction, hypotension, cardiogenic shock, sick sinus syndrome, second- and third-degree AV block, atrial flutter/fibrillation with an accessory bypass tract (context unbound, term_gap), angioedema related to ACE-inhibitor treatment, and diabetes with aliskiren. The label assigns items 1-6 to verapamil and the angioedema item to trandolapril, but both attributions are left off because the validator rejects them (numbered-list sentence split; snippet names trandolapril, ingredient grounded as trandolaprilat); notes record the label wording. Flibanserin and neprilysin-inhibitor interactions are out of scope.

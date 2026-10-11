@@ -1,0 +1,38 @@
+setid: 39bad727-af4c-4d20-933b-7f287e88099a
+version: 13
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/39bad727-af4c-4d20-933b-7f287e88099a.xml
+xml_sha256: 252b29f8d8bd1bd2600f81cedfe4de505958af21a78f5d77a5ceb7f16bfde225
+retrieved: '2026-10-11'
+title: Trandolapril and Verapamil Hydrochloride Extended-Release Tablets
+product_name: Trandolapril and Verapamil Hydrochloride
+active_moieties:
+- TRANDOLAPRILAT
+- VERAPAMIL
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Trandolapril and verapamil hydrochloride extended-release tablets are indicated for the treatment
+    of hypertension. This fixed combination drug is not indicated for the initial therapy of hypertension
+    (see DOSAGE AND ADMINISTRATION ). In using trandolapril and verapamil hydrochloride extended-release
+    tablets, consideration should be given to the fact that an angiotensin converting enzyme inhibitor,
+    captopril, has caused agranulocytosis, particularly in patients with renal impairment or collagen
+    vascular disease, and that available data are insufficient to show that trandolapril does not have
+    similar risk (see WARNINGS - Neutropenia/Agranulocytosis ).
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in patients
+    who are hypersensitive to any ACE inhibitor or verapamil. Because of the verapamil component, trandolapril
+    and verapamil hydrochloride extended-release tablets are contraindicated in: 1. Severe left ventricular
+    dysfunction (see WARNINGS ). 2. Hypotension (systolic pressure less than 90 mmHg) or cardiogenic shock.
+    3. Sick sinus syndrome (except in patients with a functioning artificial ventricular pacemaker). 4.
+    Second- or third-degree AV block (except in patients with a functioning artificial ventricular pacemaker).
+    5. Patients with atrial flutter or atrial fibrillation and an accessory bypass tract (e.g. Wolff-Parkinson-White,
+    Lown-Ganong-Levine syndromes) (see WARNINGS ). 6. Patients taking flibanserin (see PRECAUTIONS - Drug
+    Interactions ). Because of the trandolapril component, trandolapril and verapamil hydrochloride extended-release
+    tablets are contraindicated in patients with a history of angioedema related to previous treatment
+    with an angiotensin converting enzyme (ACE) inhibitor. Do not co-administer aliskiren with trandolapril
+    and verapamil hydrochloride extended-release tablets in patients with diabetes (see PRECAUTIONS -
+    Drug Interactions ). Trandolapril and verapamil hydrochloride extended-release tablets are contraindicated
+    in combination with a neprilysin inhibitor (e.g., sacubitril). Do not administer trandolapril and
+    verapamil hydrochloride extended-release tablets within 36 hours of switching to or from sacubitril/valsartan,
+    a neprilysin inhibitor (see WARNINGS ).'

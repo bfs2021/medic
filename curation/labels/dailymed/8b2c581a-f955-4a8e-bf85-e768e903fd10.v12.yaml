@@ -1,0 +1,47 @@
+setid: 8b2c581a-f955-4a8e-bf85-e768e903fd10
+version: 12
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/8b2c581a-f955-4a8e-bf85-e768e903fd10.xml
+xml_sha256: 88a874e62eec3e103ca5c593774227623ff1da5359ef7778a5458bc38d80d1a4
+retrieved: '2026-10-11'
+title: Amiloride Hydrochloride and Hydrochlorothiazide Tablets, USP
+product_name: Amiloride Hydrochloride and Hydrochlorothiazide
+active_moieties:
+- AMILORIDE
+- HYDROCHLOROTHIAZIDE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Amiloride hydrochloride and hydrochlorothiazide tablets are indicated in those patients with hypertension
+    or with congestive heart failure who develop hypokalemia when thiazides or other kaliuretic diuretics
+    are used alone, or in whom maintenance of normal serum potassium levels is considered to be clinically
+    important, e.g., digitalized patients, or patients with significant cardiac arrhythmias. The use of
+    potassium-conserving agents is often unnecessary in patients receiving diuretics for uncomplicated
+    essential hypertension when such patients have a normal diet. Amiloride hydrochloride and hydrochlorothiazide
+    tablets may be used alone or as an adjunct to other antihypertensive drugs, such as methyldopa or
+    beta blockers. Since amiloride hydrochloride and hydrochlorothiazide enhances the action of these
+    agents, dosage adjustments may be necessary to avoid an excessive fall in blood pressure and other
+    unwanted side effects. The fixed combination drug is not indicated for the initial therapy of edema
+    or hypertension except in individuals in whom the development of hypokalemia cannot be risked.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Hyperkalemia
+  - Amiloride hydrochloride and hydrochlorothiazide tablets should not be used in the presence of elevated
+    serum potassium levels (greater than 5.5 mEq per liter).
+  - Antikaliuretic Therapy or Potassium Supplementation
+  - Amiloride hydrochloride and hydrochlorothiazide should not be given to patients receiving other potassium-conserving
+    agents, such as spironolactone or triamterene. Potassium supplementation in the form of medication,
+    potassium-containing salt substitutes or a potassium-rich diet should not be used with this product
+    except in severe and/or refractory cases of hypokalemia. Such concomitant therapy can be associated
+    with rapid increases in serum potassium levels. If potassium supplementation is used, careful monitoring
+    of the serum potassium level is necessary.
+  - Impaired Renal Function
+  - Anuria, acute or chronic renal insufficiency, and evidence of diabetic nephropathy are contraindications
+    to the use of amiloride hydrochloride and hydrochlorothiazide. Patients with evidence of renal function
+    impairment (blood urea nitrogen [BUN] levels over 30 mg per 100 mL or serum creatinine levels over
+    1.5 mg per 100 mL) or diabetes mellitus should not receive the drug without careful, frequent and
+    continuing monitoring of serum electrolytes, creatinine, and BUN levels. Potassium retention associated
+    with the use of an antikaliuretic agent is accentuated in the presence of renal impairment and may
+    result in the rapid development of hyperkalemia.
+  - Hypersensitivity
+  - Amiloride hydrochloride and hydrochlorothiazide tablets is contraindicated in patients who are hypersensitive
+    to this product, or to other sulfonamide-derived drugs.

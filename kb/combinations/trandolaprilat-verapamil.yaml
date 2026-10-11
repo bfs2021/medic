@@ -1,0 +1,307 @@
+id: MEDICNE:combo-2bf33444-b6e9-547f-9986-589be06ca1fb
+name: trandolaprilat / verapamil
+ingredients:
+- id: CHEBI:141521
+  label: trandolaprilat
+- id: CHEBI:9948
+  label: verapamil
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 39bad727-af4c-4d20-933b-7f287e88099a
+    version: 13
+    title: Trandolapril and Verapamil Hydrochloride Extended-Release Tablets
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=39bad727-af4c-4d20-933b-7f287e88099a
+  product_name: Trandolapril and Verapamil Hydrochloride
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Trandolapril and verapamil hydrochloride extended-release tablets are indicated for the
+      treatment of hypertension.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "This fixed combination drug is not indicated for the initial
+      therapy of hypertension" restricts this claim but produces none. HP Hypertension agrees with
+      the grounding store; MONDO has no term labelled or exactly synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitive
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: ACE inhibitor
+      term:
+        id: CHEBI:35457
+        label: EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor
+      binding: EXACT
+    quote: >-
+      Trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in
+      patients who are hypersensitive to any ACE inhibitor or verapamil.
+    explanation: >-
+      "contraindicated in patients who are hypersensitive to any ACE inhibitor" states a
+      drug-allergy contraindication with the ACE-inhibitor class as the agents; verapamil, the
+      product's own ingredient, is dropped.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to "any ACE inhibitor", a class wider than the product's own trandolapril,
+      so it is curated with the class as the specialization; hypersensitivity to verapamil (own
+      ingredient) is not. Unattributed: an allergen is not a cause. ChEBI EC 3.4.15.1
+      (peptidyl-dipeptidase A) inhibitor is the angiotensin-converting-enzyme inhibitor class.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Severe left ventricular dysfunction
+      term:
+        id: HP:0005162
+        label: Abnormal left ventricular function
+      binding: BROADER
+    quote: >-
+      Severe left ventricular dysfunction (see WARNINGS ).
+    explanation: >-
+      Item 1 under "are contraindicated in:" names severe left ventricular dysfunction as a
+      contraindicated condition.
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists.
+      HP Abnormal left ventricular function has the exact synonym "Left ventricular dysfunction";
+      it lacks the severity "Severe", so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hypotension (systolic pressure less than 90 mmHg) or cardiogenic shock
+      member: Hypotension systolic pressure less than 90 mmHg
+      term:
+        id: HP:0002615
+        label: Hypotension
+      binding: BROADER
+    quote: >-
+      Hypotension (systolic pressure less than 90 mmHg) or cardiogenic shock.
+    explanation: >-
+      Item 2 under "are contraindicated in:" names hypotension (defined in parentheses as systolic
+      pressure less than 90 mmHg) as a contraindicated condition; this claim covers that member of
+      the coordination.
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists.
+      The member is written without the label's parentheses, which the validator's member
+      expansion drops. HP Hypotension has no threshold; the label's "systolic pressure less than
+      90 mmHg" defines a specific cut-off, so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hypotension (systolic pressure less than 90 mmHg) or cardiogenic shock
+      member: cardiogenic shock
+      term:
+        id: HP:0030149
+        label: Cardiogenic shock
+      binding: EXACT
+    quote: >-
+      Hypotension (systolic pressure less than 90 mmHg) or cardiogenic shock.
+    explanation: >-
+      Item 2 under "are contraindicated in:" names cardiogenic shock as a contraindicated
+      condition; this claim covers that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists. HP Cardiogenic shock, as in the metoprolol/hydrochlorothiazide file.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Sick sinus syndrome
+      term:
+        id: HP:0011704
+        label: Sick sinus syndrome
+      binding: EXACT
+    quote: >-
+      Sick sinus syndrome (except in patients with a functioning artificial ventricular
+      pacemaker).
+    explanation: >-
+      Item 3 under "are contraindicated in:" names sick sinus syndrome as a contraindicated
+      condition; "except in patients with a functioning artificial ventricular pacemaker" is an
+      exception kept in the quote.
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists.
+      The schema has no slot for an exception, so the pacemaker exception stays in the quote. HP
+      Sick sinus syndrome as in the metoprolol/hydrochlorothiazide file (MONDO sick sinus syndrome
+      MONDO:0001823 also exists).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Second- or third-degree AV block
+      member: Second-degree AV block
+      term:
+        id: MONDO:0000467
+        label: second-degree atrioventricular block
+      binding: EXACT
+    quote: >-
+      Second- or third-degree AV block (except in patients with a functioning artificial
+      ventricular pacemaker).
+    explanation: >-
+      Item 4 under "are contraindicated in:" names second- or third-degree AV block; this claim
+      covers the second-degree member. The pacemaker exception is kept in the quote.
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Second- or third-degree AV block
+      member: third-degree AV block
+      term:
+        id: MONDO:0000468
+        label: third-degree atrioventricular block
+      binding: EXACT
+    quote: >-
+      Second- or third-degree AV block (except in patients with a functioning artificial
+      ventricular pacemaker).
+    explanation: >-
+      Item 4 under "are contraindicated in:" names second- or third-degree AV block; this claim
+      covers the third-degree member. The pacemaker exception is kept in the quote.
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: atrial flutter or atrial fibrillation
+      member: atrial flutter
+      term:
+        id: MONDO:0005310
+        label: atrial flutter
+      binding: EXACT
+    disease_context:
+      text: accessory bypass tract
+      term_gap: >-
+        searched MONDO and HP "accessory", "pre-excitation", "preexcitation": no term for an
+        accessory atrioventricular pathway. HP Ventricular preexcitation (HP:0004309) is the
+        electrophysiological sign the pathway produces, not the pathway itself, so it is not bound.
+    quote: >-
+      Patients with atrial flutter or atrial fibrillation and an accessory bypass tract (e.g.
+      Wolff-Parkinson-White, Lown-Ganong-Levine syndromes) (see WARNINGS ).
+    explanation: >-
+      Item 5 under "are contraindicated in:" names patients with atrial flutter or atrial
+      fibrillation "and an accessory bypass tract"; this claim covers atrial flutter, restricted
+      to patients with an accessory bypass tract (the disease context).
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists.
+      The contraindication holds only with an accessory pathway, so the bypass tract is the
+      disease context, not a separate claim. No term names the anatomical accessory pathway
+      (see term_gap); HP Ventricular preexcitation was considered and left unbound, since it
+      is the sign the pathway produces, not the pathway. The label's examples (Wolff-Parkinson-White syndrome MONDO:0008685,
+      Lown-Ganong-Levine syndrome MONDO:0007174) are examples of the context, not of the claim's
+      object, so they are not recorded in `examples`. MONDO atrial flutter / atrial fibrillation
+      chosen as the disease terms (HP has both too).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: atrial flutter or atrial fibrillation
+      member: atrial fibrillation
+      term:
+        id: MONDO:0004981
+        label: atrial fibrillation
+      binding: EXACT
+    disease_context:
+      text: accessory bypass tract
+      term_gap: >-
+        searched MONDO and HP "accessory", "pre-excitation", "preexcitation": no term for an
+        accessory atrioventricular pathway. HP Ventricular preexcitation (HP:0004309) is the
+        electrophysiological sign the pathway produces, not the pathway itself, so it is not bound.
+    quote: >-
+      Patients with atrial flutter or atrial fibrillation and an accessory bypass tract (e.g.
+      Wolff-Parkinson-White, Lown-Ganong-Levine syndromes) (see WARNINGS ).
+    explanation: >-
+      Item 5 under "are contraindicated in:" names patients with atrial flutter or atrial
+      fibrillation "and an accessory bypass tract"; this claim covers atrial fibrillation,
+      restricted to patients with an accessory bypass tract (the disease context).
+    status: DRAFT
+    notes: >-
+      Unattributed only because the validator cannot read the list: the label assigns items 1-6 to verapamil with the lead "Because of the verapamil component, trandolapril and verapamil hydrochloride extended-release tablets are contraindicated in:", but the numbered items ("in: 1. Severe ...") are split into separate sentences at "1.", so the lead never ends in ":" before the item and the snippet check fails. A reviewer can add a COMPONENT_STATEMENT attribution to verapamil (CHEBI:9948) once the validator handles numbered lists.
+      The contraindication holds only with an accessory pathway, so the bypass tract is the
+      disease context, not a separate claim. No term names the anatomical accessory pathway
+      (see term_gap); HP Ventricular preexcitation was considered and left unbound, since it
+      is the sign the pathway produces, not the pathway. The label's examples (Wolff-Parkinson-White syndrome MONDO:0008685,
+      Lown-Ganong-Levine syndrome MONDO:0007174) are examples of the context, not of the claim's
+      object, so they are not recorded in `examples`. MONDO atrial flutter / atrial fibrillation
+      chosen as the disease terms (HP has both too).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: angioedema
+      term:
+        id: HP:0100665
+        label: Angioedema
+      binding: EXACT
+    object_specialization:
+    - text: angiotensin converting enzyme (ACE) inhibitor
+      term:
+        id: CHEBI:35457
+        label: EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor
+      binding: EXACT
+    quote: >-
+      Because of the trandolapril component, trandolapril and verapamil hydrochloride
+      extended-release tablets are contraindicated in patients with a history of angioedema related
+      to previous treatment with an angiotensin converting enzyme (ACE) inhibitor.
+    explanation: >-
+      "contraindicated in patients with a history of angioedema related to previous treatment with
+      an angiotensin converting enzyme (ACE) inhibitor" states a contraindication in patients with
+      past angioedema, specialised to ACE inhibitors as its cause.
+    status: DRAFT
+    notes: >-
+      Angioedema + specialization ACE inhibitor composes the label's phrase. HP Angioedema chosen
+      over MONDO angioedema (placed under urticaria). The label assigns this contraindication to
+      trandolapril ("Because of the trandolapril component"), but the helper grounds that
+      ingredient to trandolaprilat (CHEBI:141521), the SPL active moiety, and the validator
+      requires the snippet to name "trandolaprilat"; the attribution is therefore left off. A
+      reviewer can add a COMPONENT_STATEMENT attribution to CHEBI:141521 once the validator
+      accepts the prodrug name.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not co-administer aliskiren with trandolapril and verapamil hydrochloride extended-release
+      tablets in patients with diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not co-administer aliskiren with ... in patients with diabetes" contraindicates the
+      product in patients with diabetes when given with aliskiren, recorded as
+      when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. Not attributed: the sentence speaks of the
+      product by name.
+notes: >-
+  The helper grounds the ACE-inhibitor ingredient to trandolaprilat (CHEBI:141521), the SPL active
+  moiety; the label speaks of trandolapril, the prodrug. Not claimed: "not indicated for the
+  initial therapy of hypertension"; the captopril agranulocytosis paragraph in Indications (a
+  warning); hypersensitivity to verapamil (own ingredient); item 6 "Patients taking flibanserin",
+  "contraindicated in combination with a neprilysin inhibitor (e.g., sacubitril)" and the 36-hour
+  sacubitril/valsartan switching rule (pure drug interactions with no condition, out of scope).

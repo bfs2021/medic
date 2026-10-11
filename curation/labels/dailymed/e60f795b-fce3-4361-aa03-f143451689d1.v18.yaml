@@ -1,0 +1,81 @@
+setid: e60f795b-fce3-4361-aa03-f143451689d1
+version: 18
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/e60f795b-fce3-4361-aa03-f143451689d1.xml
+xml_sha256: 56f730904d54d852acf36501c7b8fd18c13a5d9f354c85924efd48341da89879
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use EDARBYCLOR safely and effectively.
+  See full prescribing information for EDARBYCLOR. EDARBYCLOR (azilsartan medoxomil and chlorthalidone)
+  tablets, for oral use Initial U.S. Approval: 2011'
+product_name: Edarbyclor
+active_moieties:
+- AZILSARTAN
+- CHLORTHALIDONE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Edarbyclor is indicated for the treatment of hypertension, to lower blood pressure. Edarbyclor may
+    be used in patients whose blood pressure is not adequately controlled on monotherapy. Edarbyclor may
+    be used as initial therapy if a patient is likely to need multiple drugs to achieve blood pressure
+    goals. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular events, primarily
+    strokes and myocardial infarctions. These benefits have been seen in controlled trials of antihypertensive
+    drugs from a wide variety of pharmacologic classes including thiazide-like diuretics such as chlorthalidone
+    and ARBs such as azilsartan medoxomil. There are no controlled trials demonstrating risk reduction
+    with Edarbyclor. Control of high blood pressure should be part of comprehensive cardiovascular risk
+    management, including, as appropriate, lipid control, diabetes management, antithrombotic therapy,
+    smoking cessation, exercise, and limited sodium intake. Many patients will require more than one drug
+    to achieve blood pressure goals. For specific advice on goals and management of high blood pressure,
+    see published guidelines, such as those of the National High Blood Pressure Education Program's Joint
+    National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC).
+    Numerous antihypertensive drugs, from a variety of pharmacologic classes and with different mechanisms
+    of action, have been shown in randomized controlled trials to reduce cardiovascular morbidity and
+    mortality, and it can be concluded that it is blood pressure reduction, and not some other pharmacologic
+    property of the drugs, that is largely responsible for those benefits. The largest and most consistent
+    cardiovascular outcome benefit has been a reduction in the risk of stroke, but reductions in myocardial
+    infarction and cardiovascular mortality also have been seen regularly. Elevated systolic or diastolic
+    pressure causes increased cardiovascular risk, and the absolute risk increase per mmHg is greater
+    at higher blood pressures, so that even modest reductions of severe hypertension can provide substantial
+    benefit. Relative risk reduction from blood pressure reduction is similar across populations with
+    varying absolute risk, so the absolute benefit is greater in patients who are at higher risk independent
+    of their hypertension (for example, patients with diabetes or hyperlipidemia), and such patients would
+    be expected to benefit from more aggressive treatment to a lower blood pressure goal. Some antihypertensive
+    drugs have smaller blood pressure effects (as monotherapy) in black patients; however, the blood pressure
+    effect of Edarbyclor in blacks is similar to that in non-blacks. Many antihypertensive drugs have
+    additional approved indications and effects (e.g., on angina, heart failure, or diabetic kidney disease).
+    These considerations may guide selection of therapy. The choice of Edarbyclor as initial therapy for
+    hypertension should be based on an assessment of potential benefits and risks including whether the
+    patient is likely to tolerate the starting dose of Edarbyclor. Patients with moderate-to-severe hypertension
+    are at a relatively high risk of cardiovascular events (e.g., stroke, heart attack, and heart failure),
+    kidney failure, and vision problems, so prompt treatment is clinically relevant. Consider the patient's
+    baseline blood pressure, target goal and the incremental likelihood of achieving the goal with a combination
+    product, such as Edarbyclor, versus a monotherapy product when deciding upon initial therapy. Individual
+    blood pressure goals may vary based on the patient's risk. Data from an 8-week, active-controlled,
+    factorial trial provide estimates of the probability of reaching a target blood pressure with Edarbyclor
+    compared with azilsartan medoxomil or chlorthalidone monotherapy [see Clinical Studies (14) ] . Figures
+    1.a-1.d provide estimates of the likelihood of achieving target clinic systolic and diastolic blood
+    pressure control with Edarbyclor 40/25 mg tablets after 8 weeks, based on baseline systolic or diastolic
+    blood pressure. The curve for each treatment group was estimated by logistic regression modeling and
+    is more variable at the tails. Figure 1.a Probability of Achieving Systolic Blood Pressure <140 mmHg
+    at Week 8 Figure 1.b Probability of Achieving Systolic Blood Pressure <130 mmHg at Week 8 Figure 1.c
+    Probability of Achieving Diastolic Blood Pressure <90 mmHg at Week 8 Figure 1.d Probability of Achieving
+    Diastolic Blood Pressure <80 mmHg at Week 8 For example, a patient with a baseline blood pressure
+    of 170/105 mm Hg has approximately a 48% likelihood of achieving a goal of <140 mm Hg (systolic) and
+    48% likelihood of achieving <90 mm Hg (diastolic) on azilsartan medoxomil 80 mg. The likelihood of
+    achieving these same goals on chlorthalidone 25 mg is approximately 51% (systolic) and 40% (diastolic).
+    These likelihoods rise to 85% (systolic) and 85% (diastolic) with Edarbyclor 40/25 mg.
+  - 'Edarbyclor is a combination of azilsartan medoxomil, an angiotensin II receptor blocker (ARB) and
+    chlorthalidone, a thiazide-like diuretic combination product indicated for the treatment of hypertension,
+    to lower blood pressure: In patients not adequately controlled with monotherapy ( 1 ) As initial therapy
+    in patients likely to need multiple drugs to help achieve blood pressure goals ( 1 ) Lowering blood
+    pressure reduces the risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial
+    infarctions ( 1 )'
+  - Figure 1.a
+  - Figure 1.b
+  - Figure 1.c
+  - Figure 1.d
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Edarbyclor is contraindicated in patients with anuria [see Warnings and Precautions (5.3) ]. Do not
+    coadminister aliskiren-containing products with Edarbyclor in patients with diabetes [see Drug Interactions
+    (7) ] .
+  - Anuria ( 4 ) Do not coadminister aliskiren-containing products with Edarbyclor in patients with diabetes
+    ( 4 )

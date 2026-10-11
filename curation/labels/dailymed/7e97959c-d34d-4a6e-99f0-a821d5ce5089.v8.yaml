@@ -1,0 +1,55 @@
+setid: 7e97959c-d34d-4a6e-99f0-a821d5ce5089
+version: 8
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/7e97959c-d34d-4a6e-99f0-a821d5ce5089.xml
+xml_sha256: 0be8eeb7bd5ac81dc5e66062ce5eab4d0d79f5d23765eca05b7ff9d4cdc5d4f9
+retrieved: '2026-10-11'
+title: Quinapril Hydrochloride and Hydrochlorothiazide Tablets, USP Rx Only
+product_name: Quinapril Hydrochloride and Hydrochlorothiazide
+active_moieties:
+- HYDROCHLOROTHIAZIDE
+- QUINAPRILAT
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - 'Hypertension: Quinapril HCl and hydrochlorothiazide tablets, USP are indicated for the treatment
+    of hypertension, to lower blood pressure. Lowering blood pressure reduces the risk of fatal and nonfatal
+    cardiovascular events, primarily strokes and myocardial infarctions. These benefits have been seen
+    in controlled trials of antihypertensive drugs from a wide variety of pharmacologic classes including
+    the class to which this drug principally belongs. There are no controlled trials demonstrating risk
+    reduction with quinapril HCl and hydrochlorothiazide tablets. Control of high blood pressure should
+    be part of comprehensive cardiovascular risk management, including, as appropriate, lipid control,
+    diabetes management, antithrombotic therapy, smoking cessation, exercise, and limited sodium intake.
+    Many patients will require more than one drug to achieve blood pressure goals. For specific advice
+    on goals and management, see published guidelines, such as those of the National High Blood Pressure
+    Education Program’s Joint National Committee on Prevention, Detection, Evaluation, and Treatment of
+    High Blood Pressure (JNC). Numerous antihypertensive drugs, from a variety of pharmacologic classes
+    and with different mechanisms of action, have been shown in randomized controlled trials to reduce
+    cardiovascular morbidity and mortality, and it can be concluded that it is blood pressure reduction,
+    and not some other pharmacologic property of the drugs, that is largely responsible for those benefits.
+    The largest and most consistent cardiovascular outcome benefit has been a reduction in the risk of
+    stroke, but reductions in myocardial infarction and cardiovascular mortality also have been seen regularly.
+    Elevated systolic or diastolic pressure causes increased cardiovascular risk, and the absolute risk
+    increase per mmHg is greater at higher blood pressures, so that even modest reductions of severe hypertension
+    can provide substantial benefit. Relative risk reduction from blood pressure reduction is similar
+    across populations with varying absolute risk, so the absolute benefit is greater in patients who
+    are at higher risk independent of their hypertension (for example, patients with diabetes or hyperlipidemia),
+    and such patients would be expected to benefit from more aggressive treatment to a lower blood pressure
+    goal. Some antihypertensive drugs have smaller blood pressure effects (as monotherapy) in black patients,
+    and many antihypertensive drugs have additional approved indications and effects (e.g., on angina,
+    heart failure, or diabetic kidney disease). These considerations may guide selection of therapy. This
+    fixed combination is not indicated for the initial therapy of hypertension (see DOSAGE AND ADMINISTRATION).
+    In using quinapril HCl and hydrochlorothiazide tablets, consideration should be given to the fact
+    that another angiotensin-converting enzyme inhibitor, captopril, has caused agranulocytosis, particularly
+    in patients with renal impairment or collagen-vascular disease. Available data are insufficient to
+    show that quinapril does not have a similar risk (see WARNINGS: Neutropenia/Agranulocytosis). Angioedema
+    in Black Patients: Black patients receiving ACE inhibitor monotherapy have been reported to have a
+    higher incidence of angioedema compared to non-blacks. It should also be noted that in controlled
+    clinical trials, ACE inhibitors have an effect on blood pressure that is less in black patients than
+    in non-blacks.'
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Quinapril HCl and hydrochlorothiazide tablets are contraindicated in patients who are hypersensitive
+    to quinapril or hydrochlorothiazide and in patients with a history of angioedema related to previous
+    treatment with an ACE inhibitor. Because of the hydrochlorothiazide components, this product is contraindicated
+    in patients with anuria or hypersensitivity to other sulfonamide-derived drugs. Do not co-administer
+    quinapril HCl and hydrochlorothiazide with aliskiren: in patients with diabetes.'

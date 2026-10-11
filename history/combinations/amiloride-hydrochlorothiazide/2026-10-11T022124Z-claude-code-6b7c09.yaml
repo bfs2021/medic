@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amiloride-hydrochlorothiazide
+  path: kb/combinations/amiloride-hydrochlorothiazide.yaml
+session:
+  id: 2026-10-11T022124Z-claude-code-6b7c09
+  timestamp: '2026-10-11T02:21:24Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: amiloride / hydrochlorothiazide'
+  details: |
+    Curated from DailyMed setid 8b2c581a-f955-4a8e-bf85-e768e903fd10 v12. TREATS hypertension and congestive heart failure (coordination members); the hypokalemia patient-selection clauses are alternatives and are not recorded as restrictions. Contraindicated in hyperkalemia (elevated serum potassium), anuria, renal insufficiency (acute or chronic read as an exhaustive pair), diabetic nephropathy and sulfonamide cross-sensitivity. Potassium-conserving-agent and potassium-supplement interactions and the monitor-if-renal-impairment sentence are not curated. All product-level.

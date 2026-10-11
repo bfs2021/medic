@@ -1,0 +1,187 @@
+id: MEDICNE:combo-d4a8f77c-d24c-578d-b98d-d5e10f04a570
+name: amiloride / hydrochlorothiazide
+ingredients:
+- id: CHEBI:2639
+  label: amiloride
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 8b2c581a-f955-4a8e-bf85-e768e903fd10
+    version: 12
+    title: Amiloride Hydrochloride and Hydrochlorothiazide Tablets, USP
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8b2c581a-f955-4a8e-bf85-e768e903fd10
+  product_name: Amiloride Hydrochloride and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension or with congestive heart failure
+      member: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Amiloride hydrochloride and hydrochlorothiazide tablets are indicated in those patients with
+      hypertension or with congestive heart failure who develop hypokalemia when thiazides or other
+      kaliuretic diuretics are used alone, or in whom maintenance of normal serum potassium levels
+      is considered to be clinically important, e.g., digitalized patients, or patients with
+      significant cardiac arrhythmias.
+    explanation: >-
+      "are indicated in those patients with hypertension or with congestive heart failure" states
+      the product is indicated for patients with hypertension; this claim covers that member of the
+      coordination. The rest of the sentence selects which of these patients (see notes).
+    status: DRAFT
+    notes: &amilnote >-
+      Read as TREATS, as "For patients with essential hypertension" is in the
+      spironolactone/hydrochlorothiazide file. The patient-selection clauses ("who develop
+      hypokalemia when thiazides or other kaliuretic diuretics are used alone, or in whom
+      maintenance of normal serum potassium levels is considered to be clinically important") are
+      alternatives, so neither is recorded as a hard restriction (no disease_context hypokalemia,
+      no line_of_therapy). "digitalized patients" and "patients with significant cardiac
+      arrhythmias" are examples of the second alternative, populations rather than claim objects.
+      No PREVENTATIVE_FOR_CONDITION hypokalemia claim: the label does not say the product prevents
+      hypokalemia. Product-level, unattributed. The congestive-heart-failure member is written
+      "with congestive heart failure" because the validator's member expansion keeps the label's
+      "with"; "congestive heart failure" alone is rejected as not a member.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension or with congestive heart failure
+      member: with congestive heart failure
+      term:
+        id: MONDO:0005009
+        label: congestive heart failure
+      binding: EXACT
+    quote: >-
+      Amiloride hydrochloride and hydrochlorothiazide tablets are indicated in those patients with
+      hypertension or with congestive heart failure who develop hypokalemia when thiazides or other
+      kaliuretic diuretics are used alone, or in whom maintenance of normal serum potassium levels
+      is considered to be clinically important, e.g., digitalized patients, or patients with
+      significant cardiac arrhythmias.
+    explanation: >-
+      "are indicated in those patients with hypertension or with congestive heart failure" states
+      the product is indicated for patients with congestive heart failure; this claim covers that
+      member of the coordination. The rest of the sentence selects which of these patients.
+    status: DRAFT
+    notes: *amilnote
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: elevated serum potassium levels
+      term:
+        id: HP:0002153
+        label: Hyperkalemia
+      binding: EXACT
+    quote: >-
+      Amiloride hydrochloride and hydrochlorothiazide tablets should not be used in the presence of
+      elevated serum potassium levels (greater than 5.5 mEq per liter).
+    explanation: >-
+      Under the Contraindications heading "Hyperkalemia", "should not be used in the presence of
+      elevated serum potassium levels" contraindicates the product in hyperkalemia; "(greater than
+      5.5 mEq per liter)" gives the threshold.
+    status: DRAFT
+    notes: >-
+      The section heading over this paragraph is "Hyperkalemia", and the grounding store maps
+      "hyperkalaemia" to UMLS:C0020461, whose label is "Elevated serum potassium levels"; HP
+      Hyperkalemia's exact synonyms ("Increased potassium(1+) level in blood") say the same in
+      other words, so EXACT. Unlike the hypotension claim in the trandolapril/verapamil file
+      (BROADER), the validator does not read the threshold here as narrowing words, and 5.5 mEq/L
+      is the usual definition of hyperkalemia rather than a subset of it. The 5.5 mEq/L threshold has no slot and stays in the
+      quote. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Anuria, acute or chronic renal insufficiency, and evidence of diabetic nephropathy are
+      contraindications to the use of amiloride hydrochloride and hydrochlorothiazide.
+    explanation: >-
+      "Anuria ... are contraindications to the use of amiloride hydrochloride and
+      hydrochlorothiazide" states the anuria contraindication, the first item of the list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: acute or chronic renal insufficiency
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: EXACT
+    quote: >-
+      Anuria, acute or chronic renal insufficiency, and evidence of diabetic nephropathy are
+      contraindications to the use of amiloride hydrochloride and hydrochlorothiazide.
+    explanation: >-
+      "acute or chronic renal insufficiency ... are contraindications": an item of the list.
+      "acute or chronic" together cover every renal insufficiency, an exhaustive pair, so the
+      claim is bound to the class term.
+    status: DRAFT
+    notes: >-
+      Exhaustive pair (acute or chronic), one claim bound to HP Renal insufficiency, which agrees
+      with the grounding store's row for "Renal insufficiency". The store maps the members to
+      UMLS:C1565662 (acute) and UMLS:C0403447 (chronic). A reviewer who reads the pair as two
+      conditions could split it into MONDO acute kidney injury and HP Chronic kidney disease.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetic nephropathy
+      term:
+        id: MONDO:0005016
+        label: diabetic kidney disease
+      binding: EXACT
+    quote: >-
+      Anuria, acute or chronic renal insufficiency, and evidence of diabetic nephropathy are
+      contraindications to the use of amiloride hydrochloride and hydrochlorothiazide.
+    explanation: >-
+      "evidence of diabetic nephropathy ... are contraindications": an item of the list; "evidence
+      of" does not change the condition.
+    status: DRAFT
+    notes: MONDO diabetic kidney disease has the exact synonym "diabetic nephropathy" and agrees with the grounding store.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitive
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Amiloride hydrochloride and hydrochlorothiazide tablets is contraindicated in patients who
+      are hypersensitive to this product, or to other sulfonamide-derived drugs.
+    explanation: >-
+      "contraindicated in patients who are hypersensitive ... to other sulfonamide-derived drugs"
+      states a drug-allergy contraindication with other sulfonamide-derived drugs as the agents;
+      hypersensitivity to "this product" (own ingredients) is dropped.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs only. ChEBI sulfonamide is the chemical
+      class, broader than "sulfonamide-derived drugs". Unattributed: the allergen is not a cause.
+notes: >-
+  Not claimed: "The use of potassium-conserving agents is often unnecessary ..." and "may be used
+  alone or as an adjunct to other antihypertensive drugs" (no condition beyond the indication);
+  "not indicated for the initial therapy of edema or hypertension except ..." (a limitation, and
+  negated); "should not be given to patients receiving other potassium-conserving agents, such as
+  spironolactone or triamterene" and the potassium-supplementation paragraph (drug and diet
+  interactions with no condition; hypokalemia there is the exception, not a contraindication);
+  "Patients with evidence of renal function impairment ... or diabetes mellitus should not receive
+  the drug without careful, frequent and continuing monitoring" (use with monitoring, not a
+  contraindication). All claims are product-level: the label never assigns an indication or
+  contraindication to amiloride or hydrochlorothiazide.
