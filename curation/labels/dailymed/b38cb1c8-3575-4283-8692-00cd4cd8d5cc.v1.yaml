@@ -1,0 +1,24 @@
+setid: b38cb1c8-3575-4283-8692-00cd4cd8d5cc
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/b38cb1c8-3575-4283-8692-00cd4cd8d5cc.xml
+xml_sha256: c9ac8e809a02ae439c3683005d8afb5f1b3968c5d43e4c32c6e8c71f4d41c291
+retrieved: '2026-10-11'
+title: Perrigo All Day Allergy-D Drug Facts
+product_name: All Day Allergy D
+active_moieties:
+- CETIRIZINE
+- PSEUDOEPHEDRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - '• temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+    nose • sneezing • itchy, watery eyes • itching of the nose or throat • nasal congestion • reduces
+    swelling of nasal passages • temporarily relieves sinus congestion and pressure • temporarily restores
+    freer breathing through the nose'
+  CONTRAINDICATIONS:
+  - Do not use
+  - • if you have ever had an allergic reaction to this product or any of its ingredients or to an antihistamine
+    containing hydroxyzine. • if you are now taking a prescription monoamine oxidase inhibitor (MAOI)
+    (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson’s disease), or for
+    2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains an MAOI,
+    ask a doctor or pharmacist before taking this product.

@@ -1,0 +1,29 @@
+setid: DD62A5EB-DD5A-4329-8696-07ACB555AF10
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/DD62A5EB-DD5A-4329-8696-07ACB555AF10.xml
+xml_sha256: 121d95fee58f55209666283910a8b1c9eb778616ca622a8465bdb300e56219ef
+retrieved: '2026-10-11'
+title: PSEUDODINE™ C COUGH SYRUP (Triprolidine Hydrochloride, Pseudoephedrine Hydrochloride & Codeine
+  Phosphate)
+product_name: ''
+active_moieties:
+- CODEINE
+- PSEUDOEPHEDRINE
+- TRIPROLIDINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Pseudodine™ C Cough Syrup is indicated for temporary relief of coughs and upper respiratory symptoms,
+    including nasal congestion, associated with allergy or the common cold.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - 'Pseudodine™ C Cough Syrup is contraindicated under the following conditions:'
+  - Use in Newborn or Premature Infants
+  - This drug should not be used in newborn or premature infants.
+  - Use in Lower Respiratory Disease
+  - Antihistamines should not be used to treat lower respiratory tract symptoms, including asthma.
+  - Hypersensitivity to
+  - (1) codeine phosphate or other narcotics; (2) triprolidine hydrochloride or other antihistamines of
+    similar chemical structure; or (3) sympathomimetic amines, including pseudoephedrine. Sympathomimetic
+    amines are contraindicated in patients with severe hypertension, severe coronary artery disease and
+    in patients on monoamine oxidase (MAO) inhibitor therapy (see PRECAUTIONS, Drug Interactions ).

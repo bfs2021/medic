@@ -1,0 +1,502 @@
+id: MEDICNE:combo-24d3c55b-0549-578b-a4dc-91b7af5797ab
+name: cetirizine / pseudoephedrine
+ingredients:
+- id: CHEBI:3561
+  label: cetirizine
+- id: CHEBI:51209
+  label: pseudoephedrine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: >-
+    https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: b38cb1c8-3575-4283-8692-00cd4cd8d5cc
+    version: 1
+    title: Perrigo All Day Allergy-D Drug Facts
+    url: >-
+      https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b38cb1c8-3575-4283-8692-00cd4cd8d5cc
+  product_name: All Day Allergy D
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: runny nose
+      term:
+        id: HP:0031417
+        label: Rhinorrhea
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "runny nose" is the symptom;
+      HP Rhinorrhea (exact synonym "Runny Nose"). "hay fever or other upper respiratory allergies" names
+      2 conditions; this claim takes the member hay fever as the disease context (one claim per symptom
+      per condition). MONDO seasonal allergic rhinitis has the exact synonym "hay fever".
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: runny nose
+      term:
+        id: HP:0031417
+        label: Rhinorrhea
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: other upper respiratory allergies
+      term:
+        id: MONDO:0000771
+        label: allergic respiratory disease
+      binding: BROADER
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "runny nose" is the symptom;
+      HP Rhinorrhea (exact synonym "Runny Nose"). "hay fever or other upper respiratory allergies" names
+      2 conditions; this claim takes the member other upper respiratory allergies as the disease context
+      (one claim per symptom per condition). MONDO allergic respiratory disease is broader than "upper
+      respiratory allergies" (it also covers the lower airway); no upper-airway allergy term exists beyond
+      allergic rhinitis, which the label names separately as hay fever.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sneezing
+      term:
+        id: HP:0025095
+        label: Sneeze
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "sneezing" is the symptom; HP
+      Sneeze (HP has no "sneezing" synonym; the grounding store maps "sneezing" to UMLS:C0037383 Sneezings).
+      "hay fever or other upper respiratory allergies" names 2 conditions; this claim takes the member
+      hay fever as the disease context (one claim per symptom per condition). MONDO seasonal allergic
+      rhinitis has the exact synonym "hay fever".
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sneezing
+      term:
+        id: HP:0025095
+        label: Sneeze
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: other upper respiratory allergies
+      term:
+        id: MONDO:0000771
+        label: allergic respiratory disease
+      binding: BROADER
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "sneezing" is the symptom; HP
+      Sneeze (HP has no "sneezing" synonym; the grounding store maps "sneezing" to UMLS:C0037383 Sneezings).
+      "hay fever or other upper respiratory allergies" names 2 conditions; this claim takes the member
+      other upper respiratory allergies as the disease context (one claim per symptom per condition).
+      MONDO allergic respiratory disease is broader than "upper respiratory allergies" (it also covers
+      the lower airway); no upper-airway allergy term exists beyond allergic rhinitis, which the label
+      names separately as hay fever.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itchy, watery eyes
+      member: itchy eyes
+      term:
+        id: HP:0033841
+        label: Ocular pruritus
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itchy, watery eyes" names two
+      symptoms; this claim covers the member itchy eyes, with the whole phrase as the object text. HP
+      Ocular pruritus (exact synonym "Itchy eyes"). "hay fever or other upper respiratory allergies" names
+      2 conditions; this claim takes the member hay fever as the disease context (one claim per symptom
+      per condition). MONDO seasonal allergic rhinitis has the exact synonym "hay fever".
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itchy, watery eyes
+      member: itchy eyes
+      term:
+        id: HP:0033841
+        label: Ocular pruritus
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: other upper respiratory allergies
+      term:
+        id: MONDO:0000771
+        label: allergic respiratory disease
+      binding: BROADER
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itchy, watery eyes" names two
+      symptoms; this claim covers the member itchy eyes, with the whole phrase as the object text. HP
+      Ocular pruritus (exact synonym "Itchy eyes"). "hay fever or other upper respiratory allergies" names
+      2 conditions; this claim takes the member other upper respiratory allergies as the disease context
+      (one claim per symptom per condition). MONDO allergic respiratory disease is broader than "upper
+      respiratory allergies" (it also covers the lower airway); no upper-airway allergy term exists beyond
+      allergic rhinitis, which the label names separately as hay fever.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itchy, watery eyes
+      member: watery eyes
+      term:
+        id: HP:0009926
+        label: Epiphora
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itchy, watery eyes" names two
+      symptoms; this claim covers the member watery eyes, with the whole phrase as the object text. HP
+      Epiphora (exact synonym "Watery eyes"). "hay fever or other upper respiratory allergies" names 2
+      conditions; this claim takes the member hay fever as the disease context (one claim per symptom
+      per condition). MONDO seasonal allergic rhinitis has the exact synonym "hay fever".
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itchy, watery eyes
+      member: watery eyes
+      term:
+        id: HP:0009926
+        label: Epiphora
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: other upper respiratory allergies
+      term:
+        id: MONDO:0000771
+        label: allergic respiratory disease
+      binding: BROADER
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itchy, watery eyes" names two
+      symptoms; this claim covers the member watery eyes, with the whole phrase as the object text. HP
+      Epiphora (exact synonym "Watery eyes"). "hay fever or other upper respiratory allergies" names 2
+      conditions; this claim takes the member other upper respiratory allergies as the disease context
+      (one claim per symptom per condition). MONDO allergic respiratory disease is broader than "upper
+      respiratory allergies" (it also covers the lower airway); no upper-airway allergy term exists beyond
+      allergic rhinitis, which the label names separately as hay fever.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itching of the nose or throat
+      member: itching of the nose
+      term:
+        id: HP:0000989
+        label: Pruritus
+      binding: BROADER
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes • itching of the nose or throat
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    anatomical_context:
+      text: nose
+      term:
+        id: UBERON:0000004
+        label: nose
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itching of the nose or throat"
+      coordinates itching of the nose and itching of the throat; this claim covers the member itching
+      of the nose: HP Pruritus (exact synonym "Itching"), broader than nasal itching, with the nose as
+      anatomical context. "hay fever or other upper respiratory allergies" names 2 conditions; this claim
+      takes the member hay fever as the disease context (one claim per symptom per condition). MONDO seasonal
+      allergic rhinitis has the exact synonym "hay fever".
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itching of the nose or throat
+      member: itching of the nose
+      term:
+        id: HP:0000989
+        label: Pruritus
+      binding: BROADER
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes • itching of the nose or throat
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: other upper respiratory allergies
+      term:
+        id: MONDO:0000771
+        label: allergic respiratory disease
+      binding: BROADER
+    anatomical_context:
+      text: nose
+      term:
+        id: UBERON:0000004
+        label: nose
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itching of the nose or throat"
+      coordinates itching of the nose and itching of the throat; this claim covers the member itching
+      of the nose: HP Pruritus (exact synonym "Itching"), broader than nasal itching, with the nose as
+      anatomical context. "hay fever or other upper respiratory allergies" names 2 conditions; this claim
+      takes the member other upper respiratory allergies as the disease context (one claim per symptom
+      per condition). MONDO allergic respiratory disease is broader than "upper respiratory allergies"
+      (it also covers the lower airway); no upper-airway allergy term exists beyond allergic rhinitis,
+      which the label names separately as hay fever.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itching of the nose or throat
+      member: itching of the throat
+      term:
+        id: HP:0000989
+        label: Pruritus
+      binding: BROADER
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes • itching of the nose or throat
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    anatomical_context:
+      text: throat
+      term:
+        id: UBERON:0000341
+        label: throat
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itching of the nose or throat"
+      coordinates itching of the nose and itching of the throat; this claim covers the member itching
+      of the throat: HP Pruritus (exact synonym "Itching"), broader than throat itching, with the throat
+      as anatomical context. "hay fever or other upper respiratory allergies" names 2 conditions; this
+      claim takes the member hay fever as the disease context (one claim per symptom per condition). MONDO
+      seasonal allergic rhinitis has the exact synonym "hay fever".
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: itching of the nose or throat
+      member: itching of the throat
+      term:
+        id: HP:0000989
+        label: Pruritus
+      binding: BROADER
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes • itching of the nose or throat
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: other upper respiratory allergies
+      term:
+        id: MONDO:0000771
+        label: allergic respiratory disease
+      binding: BROADER
+    anatomical_context:
+      text: throat
+      term:
+        id: UBERON:0000341
+        label: throat
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "itching of the nose or throat"
+      coordinates itching of the nose and itching of the throat; this claim covers the member itching
+      of the throat: HP Pruritus (exact synonym "Itching"), broader than throat itching, with the throat
+      as anatomical context. "hay fever or other upper respiratory allergies" names 2 conditions; this
+      claim takes the member other upper respiratory allergies as the disease context (one claim per symptom
+      per condition). MONDO allergic respiratory disease is broader than "upper respiratory allergies"
+      (it also covers the lower airway); no upper-airway allergy term exists beyond allergic rhinitis,
+      which the label names separately as hay fever.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes • itching of the nose or throat • nasal congestion
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: hay fever
+      term:
+        id: MONDO:0005324
+        label: seasonal allergic rhinitis
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "nasal congestion" is the symptom;
+      HP Nasal congestion. "hay fever or other upper respiratory allergies" names 2 conditions; this claim
+      takes the member hay fever as the disease context (one claim per symptom per condition). MONDO seasonal
+      allergic rhinitis has the exact synonym "hay fever".
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    quote: >-
+      temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: • runny
+      nose • sneezing • itchy, watery eyes • itching of the nose or throat • nasal congestion
+    disease_context:
+      text: hay fever or other upper respiratory allergies
+      member: other upper respiratory allergies
+      term:
+        id: MONDO:0000771
+        label: allergic respiratory disease
+      binding: BROADER
+    explanation: >-
+      "temporarily relieves these symptoms due to hay fever or other upper respiratory allergies:" followed
+      by the listed symptom gives AMELIORATES_CONDITION for that symptom. "nasal congestion" is the symptom;
+      HP Nasal congestion. "hay fever or other upper respiratory allergies" names 2 conditions; this claim
+      takes the member other upper respiratory allergies as the disease context (one claim per symptom
+      per condition). MONDO allergic respiratory disease is broader than "upper respiratory allergies"
+      (it also covers the lower airway); no upper-airway allergy term exists beyond allergic rhinitis,
+      which the label names separately as hay fever.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sinus congestion and pressure
+      member: sinus congestion
+      term_gap: >-
+        searched HP/MONDO "sinus congestion", "sinus", "paranasal": no term for sinus congestion (sinusitis
+        names an inflammation, not congestion); the grounding store's UMLS:C0152029 Congestion of nasal
+        sinus is outside the configured ontologies
+    quote: temporarily relieves sinus congestion and pressure
+    explanation: >-
+      "temporarily relieves sinus congestion and pressure" is temporary symptomatic relief (AMELIORATES_CONDITION).
+      "sinus congestion and pressure" coordinates sinus congestion and sinus pressure; this claim covers
+      the member sinus congestion, with the whole phrase as the object text. Its own bullet names no condition,
+      so no context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sinus congestion and pressure
+      member: sinus pressure
+      term_gap: >-
+        searched HP/MONDO "sinus pressure", "sinus", "paranasal": no term for sinus pressure (sinusitis
+        names an inflammation, not the pressure symptom); the grounding store's UMLS:C0848633 is outside
+        the configured ontologies
+    quote: temporarily relieves sinus congestion and pressure
+    explanation: >-
+      "temporarily relieves sinus congestion and pressure" is temporary symptomatic relief (AMELIORATES_CONDITION).
+      "sinus congestion and pressure" coordinates sinus congestion and sinus pressure; this claim covers
+      the member sinus pressure, with the whole phrase as the object text. Its own bullet names no condition,
+      so no context.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: allergic reaction
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: hydroxyzine
+      term:
+        id: CHEBI:5818
+        label: hydroxyzine
+      binding: EXACT
+    quote: >-
+      if you have ever had an allergic reaction to this product or any of its ingredients or to an antihistamine
+      containing hydroxyzine.
+    explanation: >-
+      "Do not use ... if you have ever had an allergic reaction ... to an antihistamine containing hydroxyzine"
+      contraindicates the product after an allergic reaction to hydroxyzine (cross-sensitivity). drug
+      allergy is NARROWER than "allergic reaction", justified by the named drug.
+    status: DRAFT
+    notes: >-
+      The same item's "this product or any of its ingredients" is allergy to the product's own ingredients
+      and is not curated; only hydroxyzine, another agent, is kept as specialization. Not attributed:
+      hydroxyzine is an allergen, not a cause.
+notes: >-
+  OTC Drug Facts label; the Uses text is the indication section and "Do not use" the Contraindications
+  section. Uses is an OTC symptom list under "temporarily relieves these symptoms due to hay fever or
+  other upper respiratory allergies:": one AMELIORATES_CONDITION claim per symptom per named condition
+  (hay fever; other upper respiratory allergies). "temporarily relieves sinus congestion and pressure"
+  is its own bullet naming no condition, so its two members carry no context. "reduces swelling of nasal
+  passages" and "temporarily restores freer breathing through the nose" are effects, not conditions, and
+  are not curated. No use is assigned to an ingredient. Contraindications: the hydroxyzine cross-sensitivity
+  is curated; the own-ingredient allergy in the same item and the MAOI item (a drug interaction, no condition)
+  are not.

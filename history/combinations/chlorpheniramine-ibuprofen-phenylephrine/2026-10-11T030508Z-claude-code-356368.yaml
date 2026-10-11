@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: chlorpheniramine-ibuprofen-phenylephrine
+  path: kb/combinations/chlorpheniramine-ibuprofen-phenylephrine.yaml
+session:
+  id: 2026-10-11T030508Z-claude-code-356368
+  timestamp: '2026-10-11T03:05:08Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: chlorpheniramine / ibuprofen / phenylephrine'
+  details: |
+    Curated from DailyMed setid d40bf078-ee6f-4c64-9c74-e4e770c150bf v4 (Advil Allergy and Congestion Relief). OTC symptom list: 11 symptoms x 3 conditions, every symptom curated with every condition as the label's lead attaches them; sinus pressure unbound. Contraindication: allergic reaction to any other pain reliever/fever reducer (analgesic, antipyretic). Not curated: under-12 age population, heart surgery (procedure), MAOI. Pipeline grounded IBUPROFEN to dexibuprofen; helper and file use CHEBI:5855 ibuprofen.

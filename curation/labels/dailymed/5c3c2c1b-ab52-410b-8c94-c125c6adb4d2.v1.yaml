@@ -1,0 +1,30 @@
+setid: 5c3c2c1b-ab52-410b-8c94-c125c6adb4d2
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/5c3c2c1b-ab52-410b-8c94-c125c6adb4d2.xml
+xml_sha256: 3239ac1432d98702c5a1d9b4dcc6bae33e16f243c42e220a20320b22170dfeae
+retrieved: '2026-10-11'
+title: PROMETHAZINE VC WITH CODEINE SYRUP (PROMETHAZINE HYDROCHLORIDE, USP, PHENYLEPHRINE HYDROCHLORIDE,
+  USP AND CODEINE PHOSPHATE, USP)
+product_name: Promethazine VC With Codeine
+active_moieties:
+- CODEINE
+- PHENYLEPHRINE
+- PROMETHAZINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Promethazine HCl, phenylephrine HCl and codeine phosphate syrup is indicated for the temporary relief
+    of coughs and upper respiratory symptoms, including nasal congestion, associated with allergy or the
+    common cold.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Codeine is contraindicated in patients with a known hypersensitivity to the drug. Promethazine is
+    contraindicated in comatose states, and in individuals known to be hypersensitive or to have had an
+    idiosyncratic reaction to promethazine or to other phenothiazines. The combination of promethazine
+    hydrochloride, phenylephrine hydrochloride and codeine phosphate is contraindicated in pediatric patients
+    less than 6 years of age, because the combination may cause fatal respiratory depression in this age
+    population. Antihistamines and codeine are both contraindicated for use in the treatment of lower
+    respiratory tract symptoms, including asthma. Phenylephrine is contraindicated in patients with hypertension
+    or with peripheral vascular insufficiency (ischemia may result with risk of gangrene or thrombosis
+    of compromised vascular beds). Phenylephrine should not be used in patients known to be hypersensitive
+    to the drug or in those receiving a monoamine oxidase inhibitor (MAOI).

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: codeine-pseudoephedrine-triprolidine
+  path: kb/combinations/codeine-pseudoephedrine-triprolidine.yaml
+session:
+  id: 2026-10-11T030507Z-claude-code-c9732e
+  timestamp: '2026-10-11T03:05:07Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: codeine / pseudoephedrine / triprolidine'
+  details: |
+    Curated from DailyMed setid DD62A5EB-DD5A-4329-8696-07ACB555AF10 v1 (Pseudodine C Cough Syrup). Indications split as in the promethazine VC file. Contraindications: premature infants (HP Premature birth BROADER), cross-sensitivity to narcotics / antihistamines of similar structure / sympathomimetic amines, severe hypertension and severe coronary artery disease (class-level sympathomimetic amines, unattributed). Not curated: newborn, the antihistamine lower respiratory sentence (flagged), own-ingredient hypersensitivities, MAOI therapy.

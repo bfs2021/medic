@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: chlophedianol-mepyramine-phenylephrine
+  path: kb/combinations/chlophedianol-mepyramine-phenylephrine.yaml
+session:
+  id: 2026-10-11T030507Z-claude-code-c6a157
+  timestamp: '2026-10-11T03:05:07Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: chlophedianol / mepyramine / phenylephrine'
+  details: |
+    Curated from DailyMed setid c767a626-a3ce-490c-a511-00749784acab v1 (PRO-CHLO). OTC symptom list: 8 symptoms x 3 conditions (the common cold, hay fever, other upper respiratory allergies -> MONDO allergic respiratory disease BROADER). Label typo 'water eyes' kept verbatim, bound to Epiphora. Hay fever member written without the parenthesis per the validator's member expansion. Only Do-not-use item is an MAOI interaction, not curated.

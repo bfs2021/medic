@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: codeine-phenylephrine-promethazine
+  path: kb/combinations/codeine-phenylephrine-promethazine.yaml
+session:
+  id: 2026-10-11T030506Z-claude-code-bb83a7
+  timestamp: '2026-10-11T03:05:06Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: codeine / phenylephrine / promethazine'
+  details: |
+    Curated from DailyMed setid 5c3c2c1b-ab52-410b-8c94-c125c6adb4d2 v1 (Promethazine VC With Codeine). The indication sentence is split per symptom (coughs; upper respiratory symptoms with nasal congestion as example) and per condition (allergy; the common cold), unattributed. Contraindications: promethazine's comatose states, hypersensitivity and idiosyncratic reaction to phenothiazines (INGREDIENT_SUBJECT promethazine), phenylephrine's hypertension and peripheral vascular insufficiency (INGREDIENT_SUBJECT phenylephrine). Not curated: own-ingredient hypersensitivities, MAOI interaction, under-6 age population, and the antihistamines/codeine lower respiratory tract sentence (a use, left for the reviewer).

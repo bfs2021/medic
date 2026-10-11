@@ -1,0 +1,23 @@
+setid: c767a626-a3ce-490c-a511-00749784acab
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/c767a626-a3ce-490c-a511-00749784acab.xml
+xml_sha256: e550ab64e000c497063946285f35df706fb28444b1946b2049ab5f76c81b5b35
+retrieved: '2026-10-11'
+title: PRO-CHLO LIQUID
+product_name: PRO-CHLO
+active_moieties:
+- CHLOPHEDIANOL
+- PHENYLEPHRINE
+- PYRILAMINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves these symptoms due to the common cold, hay fever (allergic rhinitis) or other
+    upper respiratory allergies: cough due to minor throat and bronchial irritation nasal congestion reduces
+    swelling of nasal passages runny nose sneezing itching of the nose or throat itchy, water eyes'
+  CONTRAINDICATIONS:
+  - Do not use this product
+  - if you are now taking a prescription monoamine oxidase inhibibor (MAOI) (certain drugs for depression,
+    psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI
+    drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before
+    taking this product.

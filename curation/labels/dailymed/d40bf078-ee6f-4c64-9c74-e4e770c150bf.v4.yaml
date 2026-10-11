@@ -1,0 +1,26 @@
+setid: d40bf078-ee6f-4c64-9c74-e4e770c150bf
+version: 4
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/d40bf078-ee6f-4c64-9c74-e4e770c150bf.xml
+xml_sha256: 800f7875d503d3773f704e3c7338a2750475603b814820e458c50cbd4ff7a430
+retrieved: '2026-10-11'
+title: Advil Allergy & Congestion Relief
+product_name: Advil Allergy and Congestion Relief
+active_moieties:
+- CHLORPHENIRAMINE
+- IBUPROFEN
+- PHENYLEPHRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - '• temporarily relieves these symptoms associated with hay fever or other upper respiratory allergies,
+    and the common cold: • runny nose • itchy, watery eyes • itching of the nose or throat • sneezing
+    • nasal congestion • sinus pressure • headache • fever • minor body aches and pains • reduces swelling
+    of the nasal passages • temporarily restores freer breathing through the nose'
+  CONTRAINDICATIONS:
+  - Do not use
+  - • in children under 12 years of age because this product contains too much medication for children
+    under this age • if you have ever had an allergic reaction to any other pain reliever/fever reducer
+    • right before or after heart surgery • if you are now taking a prescription monoamine oxidase inhibitor
+    (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson’s disease),
+    or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains
+    an MAOI, ask a doctor or pharmacist before taking this product.
