@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: phenylephrine-promethazine
+  path: kb/combinations/phenylephrine-promethazine.yaml
+session:
+  id: 2026-10-11T184422Z-claude-code-87017e
+  timestamp: '2026-10-11T18:44:22Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: phenylephrine / promethazine'
+  details: |
+    Curated from DailyMed setid 1b628a38-3557-4fa4-9e08-4c7de40f9d82 v4. Follows codeine-phenylephrine-promethazine.yaml: indication split per condition with nasal congestion as example; promethazine and phenylephrine contraindications attributed by INGREDIENT_SUBJECT; the lower-respiratory-tract-symptoms use restriction, own-ingredient hypersensitivity and the MAOI interaction not curated.

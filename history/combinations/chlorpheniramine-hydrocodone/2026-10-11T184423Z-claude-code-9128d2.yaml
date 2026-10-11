@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: chlorpheniramine-hydrocodone
+  path: kb/combinations/chlorpheniramine-hydrocodone.yaml
+session:
+  id: 2026-10-11T184423Z-claude-code-9128d2
+  timestamp: '2026-10-11T18:44:23Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: chlorpheniramine / hydrocodone'
+  details: |
+    Curated from DailyMed setid eecaa52b-f636-4ae4-a60f-d5e2503ab53b v103. Indication split per symptom and condition with age_range min 18; opioid contraindications curated unattributed (respiratory depression unbound, see term_gap); children under 6 and own-ingredient hypersensitivity not curated.

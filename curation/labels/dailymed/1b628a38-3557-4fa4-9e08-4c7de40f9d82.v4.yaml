@@ -1,0 +1,24 @@
+setid: 1b628a38-3557-4fa4-9e08-4c7de40f9d82
+version: 4
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/1b628a38-3557-4fa4-9e08-4c7de40f9d82.xml
+xml_sha256: 12577b93ff8822193362aa30d88769f9944fa67e9b518ff3f64e8eb1e9ee9796
+retrieved: '2026-10-11'
+title: PROMETHAZINE VC SYRUP (PROMETHAZINE HYDROCHLORIDE, USP AND PHENYLEPHRINE HYDROCHLORIDE, USP)
+product_name: Promethazine VC
+active_moieties:
+- PHENYLEPHRINE
+- PROMETHAZINE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Promethazine hydrochloride and phenylephrine hydrochloride syrup is indicated for the temporary relief
+    of upper respiratory symptoms, including nasal congestion, associated with allergy or the common cold.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Promethazine is contraindicated in comatose states, and in individuals known to be hypersensitive
+    or to have had an idiosyncratic reaction to promethazine or to other phenothiazines. Antihistamines
+    are contraindicated for use in the treatment of lower respiratory tract symptoms, including asthma.
+    Phenylephrine is contraindicated in patients with hypertension or with peripheral vascular insufficiency
+    (ischemia may result with risk of gangrene or thrombosis of compromised vascular beds). Phenylephrine
+    should not be used in patients known to be hypersensitive to the drug or in those receiving a monoamine
+    oxidase inhibitor (MAOI).

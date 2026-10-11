@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: butalbital-caffeine-codeine-paracetamol
+  path: kb/combinations/butalbital-caffeine-codeine-paracetamol.yaml
+session:
+  id: 2026-10-11T184425Z-claude-code-95c960
+  timestamp: '2026-10-11T18:44:25Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: butalbital / caffeine / codeine / paracetamol'
+  details: |
+    Curated from DailyMed setid 00431d9b-fe0b-4aab-9d18-ac6ee6b9d6fe v4. Tension headache as AMELIORATES_CONDITION (management of the symptom complex) with an unbound line_of_therapy; opioid contraindications and porphyria curated unattributed; children under 12, post-tonsillectomy management, MAOI use and own-ingredient hypersensitivity not curated.

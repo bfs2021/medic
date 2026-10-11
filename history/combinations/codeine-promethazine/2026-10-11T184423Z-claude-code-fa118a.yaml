@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: codeine-promethazine
+  path: kb/combinations/codeine-promethazine.yaml
+session:
+  id: 2026-10-11T184423Z-claude-code-fa118a
+  timestamp: '2026-10-11T18:44:23Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: codeine / promethazine'
+  details: |
+    Curated from DailyMed setid df2c24ba-1c88-4ec3-b2a1-801358ec645c v104. Indication split per symptom and condition with age_range min 18; opioid contraindications (respiratory depression unbound because the term check reads depression as mood, asthma split acute/severe, GI obstruction with paralytic ileus example), idiosyncratic reaction to other phenothiazines and hypersensitivity to other opiates (Highlights copy) curated unattributed; children under 12, post-tonsillectomy pain management, MAOI use and own-ingredient hypersensitivity not curated.

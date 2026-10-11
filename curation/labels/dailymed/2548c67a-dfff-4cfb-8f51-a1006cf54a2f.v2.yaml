@@ -1,0 +1,23 @@
+setid: 2548c67a-dfff-4cfb-8f51-a1006cf54a2f
+version: 2
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/2548c67a-dfff-4cfb-8f51-a1006cf54a2f.xml
+xml_sha256: ed60c9a0285dc97da25d3ee7fd20de386d9ca08245af9d5cd958e9d4162b02ad
+retrieved: '2026-10-11'
+title: Tricode AR
+product_name: TricodeAR
+active_moieties:
+- CHLORPHENIRAMINE
+- CODEINE
+- PSEUDOEPHEDRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves these symptoms due to the common cold, hay fever (allergic rhinitis) or other
+    upper respiratory allergies: runny nose sneezing itching of the nose or throat itchy, watery eyes
+    cough due to minor throat and bronchial irritation nasal congestion reduces swelling of nasal passages'
+  CONTRAINDICATIONS:
+  - Do not use this product
+  - if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression,
+    psychiatric, or emotional conditions, or Parkinson's disease), or for 2 weeks after stopping the MAOI
+    drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before
+    taking this product

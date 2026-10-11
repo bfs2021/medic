@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: chlorpheniramine-codeine-pseudoephedrine
+  path: kb/combinations/chlorpheniramine-codeine-pseudoephedrine.yaml
+session:
+  id: 2026-10-11T184424Z-claude-code-fb84d5
+  timestamp: '2026-10-11T18:44:24Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: chlorpheniramine / codeine / pseudoephedrine'
+  details: |
+    Curated from DailyMed setid 2548c67a-dfff-4cfb-8f51-a1006cf54a2f v2 (OTC Drug Facts). One claim per symptom per named condition (24), bound as in chlophedianol-dexchlorpheniramine-pseudoephedrine.yaml; cough is a nested item here so it takes the contexts; reduces swelling of nasal passages and the MAOI Do-not-use item not curated.
