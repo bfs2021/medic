@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: amitriptyline-chlordiazepoxide
+  path: kb/combinations/amitriptyline-chlordiazepoxide.yaml
+session:
+  id: 2026-10-11T032459Z-claude-code-701c37
+  timestamp: '2026-10-11T03:24:59Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: amitriptyline / chlordiazepoxide'
+  details: |
+    Curated from DailyMed setid 66a756f2-ac77-451c-a19a-08896d73b15c v27 (Mylan) because the worklist setid b20dcdb1-50f4-4d49-a50e-be0308962f5b returns 404 from DailyMed and cannot be pinned. 1 TREATS claim (depression, context anxiety, both BROADER) and 3 CONTRAINDICATED_IN claims (drug allergy to benzodiazepines; to tricyclic antidepressants, unbound class; acute recovery phase following MI, BROADER). None attributed. Skipped: MAOI interaction; the first-week symptom-response sentence.

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: carbidopa-l-dopa
+  path: kb/combinations/carbidopa-l-dopa.yaml
+session:
+  id: 2026-10-11T032459Z-claude-code-ef9a85
+  timestamp: '2026-10-11T03:24:59Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: carbidopa / L-dopa'
+  details: |
+    Curated from DailyMed setid 87ab55c9-203d-d595-3e3e-0e38f2f6d9c4 v4. 4 TREATS claims (Parkinson disease; postencephalitic parkinsonism; secondary parkinsonism in the context of carbon monoxide or manganese intoxication), 1 CONTRAINDICATED_IN (narrow-angle glaucoma). Skipped: 'Carbidopa may also reduce nausea and vomiting' (hedged effect statement, not an indication), nonselective MAOI interaction, own-ingredient allergy, negated efficacy sentence.

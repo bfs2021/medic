@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-quinidine
+  path: kb/combinations/dextromethorphan-quinidine.yaml
+session:
+  id: 2026-10-11T032457Z-claude-code-c8bacb
+  timestamp: '2026-10-11T03:24:57Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: dextromethorphan / quinidine'
+  details: |
+    Curated from DailyMed setid 484e0918-3442-49dc-8ccf-177f1f3ee9f3 v29 (NUEDEXTA). 1 TREATS claim (pseudobulbar affect, HP) and 10 CONTRAINDICATED_IN claims: quinine/mefloquine/quinidine-induced thrombocytopenia, hepatitis (drug-induced hepatitis, NARROWER), bone marrow depression (unbound: 'depression' anchors to HP Depression), lupus-like syndrome (drug-induced lupus, NARROWER); drug allergy with quinine and mefloquine (Highlights); prolonged QT, congenital LQTS, torsades de pointes, heart failure, complete AV block. None attributed. Skipped: drug interactions (4.1, 4.3 MAOI, CYP2D6/QT drugs), own-ingredient allergy, high risk of AV block.

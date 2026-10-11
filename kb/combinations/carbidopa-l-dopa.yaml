@@ -1,0 +1,146 @@
+id: MEDICNE:combo-a84d77da-c896-54c4-ab27-9746447efed5
+name: carbidopa / L-dopa
+ingredients:
+- id: CHEBI:3395
+  label: carbidopa
+- id: CHEBI:15765
+  label: L-dopa
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 87ab55c9-203d-d595-3e3e-0e38f2f6d9c4
+    version: 4
+    title: CARBIDOPA AND LEVODOPA TABLETS, USP
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=87ab55c9-203d-d595-3e3e-0e38f2f6d9c4
+  product_name: Carbidopa and Levodopa
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Parkinson's disease
+      term:
+        id: MONDO:0005180
+        label: Parkinson disease
+      binding: EXACT
+    quote: >-
+      Carbidopa and levodopa tablets, USP are indicated in the treatment of Parkinson's disease,
+      post-encephalitic parkinsonism, and symptomatic parkinsonism that may follow carbon monoxide
+      intoxication or manganese intoxication.
+    explanation: >-
+      "indicated in the treatment of Parkinson's disease" is treatment of Parkinson disease, the
+      first item of the sentence's list.
+    status: DRAFT
+    notes: >-
+      Product-level sentence ("Carbidopa and levodopa tablets, USP are indicated"), so unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: post-encephalitic parkinsonism
+      term:
+        id: MONDO:0001945
+        label: postencephalitic Parkinson disease
+      binding: EXACT
+    quote: >-
+      Carbidopa and levodopa tablets, USP are indicated in the treatment of Parkinson's disease,
+      post-encephalitic parkinsonism, and symptomatic parkinsonism that may follow carbon monoxide
+      intoxication or manganese intoxication.
+    explanation: >-
+      "indicated in the treatment of ... post-encephalitic parkinsonism" is treatment of
+      postencephalitic parkinsonism, the second item of the sentence's list.
+    status: DRAFT
+    notes: >-
+      MONDO:0001945 carries the exact synonym "postencephalitic parkinsonism"; the label hyphenates
+      it. Product-level sentence, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: symptomatic parkinsonism
+      term:
+        id: MONDO:0006966
+        label: secondary Parkinson disease
+      binding: EXACT
+    disease_context:
+      text: carbon monoxide intoxication or manganese intoxication
+      member: carbon monoxide intoxication
+      term:
+        id: MONDO:0800373
+        label: carbon monoxide poisoning
+      binding: EXACT
+    quote: >-
+      Carbidopa and levodopa tablets, USP are indicated in the treatment of Parkinson's disease,
+      post-encephalitic parkinsonism, and symptomatic parkinsonism that may follow carbon monoxide
+      intoxication or manganese intoxication.
+    explanation: >-
+      "indicated in the treatment of ... symptomatic parkinsonism that may follow carbon monoxide
+      intoxication" is treatment of secondary parkinsonism, in the context of carbon monoxide
+      intoxication (the first member of "carbon monoxide intoxication or manganese intoxication").
+    status: DRAFT
+    notes: >-
+      "symptomatic parkinsonism" (parkinsonism arising from another cause) is bound to MONDO
+      secondary Parkinson disease, which carries the exact synonym "secondary Parkinsonism". MONDO
+      also has MONDO:0017639 carbon monoxide-induced parkinsonism; it is not used as the object so
+      that the two causes the label names are recorded the same way (there is no manganese-induced
+      parkinsonism term; searched MONDO "manganese-induced", "toxic parkinsonism"). Product-level
+      sentence, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: symptomatic parkinsonism
+      term:
+        id: MONDO:0006966
+        label: secondary Parkinson disease
+      binding: EXACT
+    disease_context:
+      text: carbon monoxide intoxication or manganese intoxication
+      member: manganese intoxication
+      term:
+        id: MONDO:0017638
+        label: manganese poisoning
+      binding: EXACT
+    quote: >-
+      Carbidopa and levodopa tablets, USP are indicated in the treatment of Parkinson's disease,
+      post-encephalitic parkinsonism, and symptomatic parkinsonism that may follow carbon monoxide
+      intoxication or manganese intoxication.
+    explanation: >-
+      "indicated in the treatment of ... symptomatic parkinsonism that may follow ... manganese
+      intoxication" is treatment of secondary parkinsonism, in the context of manganese
+      intoxication (the second member of "carbon monoxide intoxication or manganese
+      intoxication").
+    status: DRAFT
+    notes: >-
+      MONDO:0017638 manganese poisoning carries the exact synonym "manganese intoxication".
+      Product-level sentence, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: narrow-angle glaucoma
+      term:
+        id: MONDO:0001744
+        label: angle-closure glaucoma
+      binding: EXACT
+    quote: >-
+      Carbidopa and levodopa tablets are contraindicated in patients with known hypersensitivity to
+      any component of this drug, and in patients with narrow-angle glaucoma.
+    explanation: >-
+      "are contraindicated ... in patients with narrow-angle glaucoma" is a contraindication in
+      angle-closure glaucoma (exact synonym "narrow-angle glaucoma").
+    status: DRAFT
+    notes: >-
+      Product-level sentence, unattributed. The hypersensitivity clause in the same sentence is an
+      allergy to the product's own components and is not curated.
+notes: >-
+  Not curated: the nonselective MAO inhibitor contraindication (a drug interaction with no
+  condition); "known hypersensitivity to any component of this drug" (allergy to the product's own
+  components); "Carbidopa allows patients treated for Parkinson's disease to use much lower doses of
+  levodopa", "Some patients who responded poorly to levodopa have improved ..." and the
+  decarboxylation sentence (pharmacology, no new condition); "Carbidopa has not been shown to
+  enhance the intrinsic efficacy of levodopa" (negated). "Carbidopa may also reduce nausea and
+  vomiting and permit more rapid titration of levodopa" is not curated: it is hedged, sits in the
+  paragraph explaining why carbidopa is combined with levodopa, and states an effect rather than an
+  indication; an unqualified carbidopa -> nausea edge would overstate it.

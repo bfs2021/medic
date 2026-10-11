@@ -1,0 +1,23 @@
+setid: 0fda7521-a452-4bac-953d-7d464d75ca22
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/0fda7521-a452-4bac-953d-7d464d75ca22.xml
+xml_sha256: 991ab5f9c237aedfbf4511f9bc42653b95f1a6264ad9614857076a5e6d7219ae
+retrieved: '2026-10-11'
+title: Chlordiazepoxide Hydrochloride and Clidinium Bromide Capsules, USP for oral use Rx only
+product_name: Chlordiazepoxide Hydrochloride and Clidinium Bromide
+active_moieties:
+- CHLORDIAZEPOXIDE
+- CLIDINIUM
+sections:
+  INDICATIONS:
+  - 'INDICATIONS AND USAGE:'
+  - Chlordiazepoxide hydrochloride and clidinium bromide capsules are indicated to control emotional and
+    somatic factors in gastrointestinal disorders. Chlordiazepoxide hydrochloride and clidinium bromide
+    capsules may also be used as adjunctive therapy in the treatment of peptic ulcer and in the treatment
+    of the irritable bowel syndrome (irritable colon, spastic colon, mucous colitis) and acute enterocolitis.
+  CONTRAINDICATIONS:
+  - 'CONTRAINDICATIONS:'
+  - Chlordiazepoxide hydrochloride and clidinium bromide capsules are contraindicated in the presence
+    of glaucoma (since the anticholinergic component may produce some degree of mydriasis) and in patients
+    with prostatic hypertrophy and benign bladder neck obstruction. It is contraindicated in patients
+    with known hypersensitivity to chlordiazepoxide hydrochloride and/or clidinium bromide.

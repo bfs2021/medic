@@ -1,0 +1,30 @@
+setid: 66a756f2-ac77-451c-a19a-08896d73b15c
+version: 27
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/66a756f2-ac77-451c-a19a-08896d73b15c.xml
+xml_sha256: 5d968f521be4a910d44fc35f7f57b61c871d75e22b0e2aa8428a56c4a41be3f4
+retrieved: '2026-10-11'
+title: Chlordiazepoxide and Amitriptyline Hydrochloride Tablets, USP 5 mg/12.5 mg and 10 mg/25 mg Rx only
+product_name: Chlordiazepoxide and Amitriptyline Hydrochloride
+active_moieties:
+- AMITRIPTYLINE
+- CHLORDIAZEPOXIDE
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - 'Chlordiazepoxide and amitriptyline hydrochloride tablets are indicated for the treatment of patients
+    with moderate to severe depression associated with moderate to severe anxiety. The therapeutic response
+    to chlordiazepoxide and amitriptyline hydrochloride tablets occurs earlier and with fewer treatment
+    failures than when either amitriptyline or chlordiazepoxide is used alone. Symptoms likely to respond
+    in the first week of treatment include: insomnia, feelings of guilt or worthlessness, agitation, psychic
+    and somatic anxiety, suicidal ideation and anorexia.'
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Chlordiazepoxide and amitriptyline hydrochloride tablets are contraindicated in patients with hypersensitivity
+    to either benzodiazepines or tricyclic antidepressants. It should not be given concomitantly with
+    a monoamine oxidase inhibitor. Hyperpyretic crises, severe convulsions and deaths have occurred in
+    patients receiving a tricyclic antidepressant and a monoamine oxidase inhibitor simultaneously. When
+    it is desired to replace a monoamine oxidase inhibitor with chlordiazepoxide and amitriptyline hydrochloride
+    tablets, a minimum of 14 days should be allowed to elapse after the former is discontinued. Chlordiazepoxide
+    and amitriptyline hydrochloride tablets should then be initiated cautiously with gradual increase
+    in dosage until optimum response is achieved. This drug is contraindicated during the acute recovery
+    phase following myocardial infarction.

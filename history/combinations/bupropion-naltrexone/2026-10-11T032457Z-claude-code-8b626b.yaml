@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: bupropion-naltrexone
+  path: kb/combinations/bupropion-naltrexone.yaml
+session:
+  id: 2026-10-11T032457Z-claude-code-8b626b
+  timestamp: '2026-10-11T03:24:57Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: bupropion / naltrexone'
+  details: |
+    Curated from DailyMed setid 485ff360-32c8-11df-928b-0002a5d5c51b v27 (CONTRAVE). 2 TREATS claims (obesity, overweight; adults) and 11 CONTRAINDICATED_IN claims (uncontrolled hypertension; seizure disorder / history of seizures; bulimia / anorexia nervosa; acute opiate withdrawal; abrupt discontinuation of alcohol, benzodiazepines, barbiturates, antiepileptic drugs, unbound with term_gap). All product-level, none attributed. Skipped: drug-interaction items (other bupropion products, chronic opioid use, MAOIs), own-ingredient allergy, Limitations of Use.

@@ -1,0 +1,54 @@
+setid: 484e0918-3442-49dc-8ccf-177f1f3ee9f3
+version: 29
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/484e0918-3442-49dc-8ccf-177f1f3ee9f3.xml
+xml_sha256: a20b5ef4cbf43151b97a49656be6b8ff94ffe2d71cc70b145150ae8768045b5f
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use NUEDEXTA safely and effectively.
+  See full prescribing information for NUEDEXTA. NUEDEXTA (dextromethorphan hydrobromide and quinidine
+  sulfate) capsules, for oral use Initial U.S. Approval: 2010'
+product_name: NUEDEXTA
+active_moieties:
+- DEXTROMETHORPHAN
+- QUINIDINE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - NUEDEXTA is indicated for the treatment of pseudobulbar affect (PBA). PBA occurs secondary to a variety
+    of otherwise unrelated neurologic conditions, and is characterized by involuntary, sudden, and frequent
+    episodes of laughing and/or crying. PBA episodes typically occur out of proportion or incongruent
+    to the underlying emotional state. PBA is a specific condition, distinct from other types of emotional
+    lability that may occur in patients with neurological disease or injury.
+  - NUEDEXTA is a combination product containing dextromethorphan hydrobromide (an uncompetitive NMDA
+    receptor antagonist and sigma-1 agonist) and quinidine sulfate (a CYP450 2D6 inhibitor) indicated
+    for the treatment of pseudobulbar affect (PBA). ( 1 )
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Concomitant use with quinidine, quinine, or mefloquine. ( 4.1 ) Patients with a history of quinidine,
+    quinine or mefloquine-induced thrombocytopenia, hepatitis, or other hypersensitivity reactions. (
+    4.2 ) Patients with known hypersensitivity to dextromethorphan. ( 4.2 ) Use with an MAOI or within
+    14 days of stopping an MAOI. Allow 14 days after stopping NUEDEXTA before starting an MAOI. ( 4.3
+    ) Prolonged QT interval, congenital long QT syndrome, history suggestive of torsades de pointes, or
+    heart failure. ( 4.4 ) Complete atrioventricular (AV) block without implanted pacemaker, or patients
+    at high risk of complete AV block. ( 4.4 ) Concomitant use with drugs that both prolong QT interval
+    and are metabolized by CYP2D6 (e.g., thioridazine or pimozide). ( 4.4 )
+  - 4.1 Quinidine and Related D rugs
+  - NUEDEXTA contains quinidine, and should not be used concomitantly with other drugs containing quinidine,
+    quinine, or mefloquine.
+  - 4.2 Hypersensitivity
+  - NUEDEXTA is contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or quinidine-induced
+    thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome. NUEDEXTA is also contraindicated
+    in patients with a known hypersensitivity to dextromethorphan (e.g. rash, hives) [ see Warnings and
+    Precautions ( 5.1 ) ] .
+  - 4.3 MAOIs
+  - NUEDEXTA is contraindicated in patients taking monoamine oxidase inhibitors (MAOIs) or in patients
+    who have taken MAOIs within the preceding 14 days, due to the risk of serious and possibly fatal drug
+    interactions, including serotonin syndrome. Allow at least 14 days after stopping NUEDEXTA before
+    starting an MAOI [ see Drug Interactions ( 7.1 ) ] .
+  - 4.4 Cardiovascular
+  - NUEDEXTA is contraindicated in patients with a prolonged QT interval, congenital long QT syndrome
+    or a history suggestive of torsades de pointes, and in patients with heart failure [ see Warnings
+    and Precautions ( 5.3 ) ] . NUEDEXTA is contraindicated in patients receiving drugs that both prolong
+    QT interval and are metabolized by CYP2D6 (e.g., thioridazine and pimozide), as effects on QT interval
+    may be increased [ see Drug Interactions ( 7.2 ) ] . NUEDEXTA is contraindicated in patients with
+    complete atrioventricular (AV) block without implanted pacemakers, or in patients who are at high
+    risk of complete AV block.

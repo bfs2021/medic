@@ -1,0 +1,132 @@
+id: MEDICNE:combo-ad86e563-b784-5f36-ab25-46e3592b77ce
+name: amitriptyline / chlordiazepoxide
+ingredients:
+- id: CHEBI:2666
+  label: amitriptyline
+- id: CHEBI:3611
+  label: chlordiazepoxide
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 66a756f2-ac77-451c-a19a-08896d73b15c
+    version: 27
+    title: Chlordiazepoxide and Amitriptyline Hydrochloride Tablets, USP 5 mg/12.5 mg and 10 mg/25 mg
+      Rx only
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=66a756f2-ac77-451c-a19a-08896d73b15c
+  product_name: Chlordiazepoxide and Amitriptyline Hydrochloride
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: moderate to severe depression
+      term:
+        id: MONDO:0002050
+        label: depressive disorder
+      binding: BROADER
+    disease_context:
+      text: moderate to severe anxiety
+      term:
+        id: HP:0000739
+        label: Anxiety
+      binding: BROADER
+    quote: >-
+      Chlordiazepoxide and amitriptyline hydrochloride tablets are indicated for the treatment of
+      patients with moderate to severe depression associated with moderate to severe anxiety.
+    explanation: >-
+      "indicated for the treatment of patients with moderate to severe depression" is treatment of
+      depression; "associated with moderate to severe anxiety" restricts it to depression with
+      anxiety (disease context).
+    status: DRAFT
+    notes: >-
+      MONDO depressive disorder carries the exact synonym "depression"; "moderate to severe" narrows
+      it, so BROADER (likewise HP Anxiety for the context; MONDO:0011918 anxiety sits under
+      hereditary neurological disease, so HP is used). MONDO:0041086 mixed anxiety and depressive
+      disorder was considered as a single object but names a specific diagnosis the label does not.
+      Product-level sentence, unattributed. The next sentence ("The therapeutic response ... occurs
+      earlier ... than when either amitriptyline or chlordiazepoxide is used alone") compares
+      efficacy and adds no claim. "Symptoms likely to respond in the first week of treatment
+      include: insomnia, feelings of guilt or worthlessness, agitation, psychic and somatic anxiety,
+      suicidal ideation and anorexia" describes the time course of response in the indicated
+      depression; it is not curated as separate symptom indications.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: benzodiazepines
+      term:
+        id: CHEBI:22720
+        label: benzodiazepine
+      binding: EXACT
+    quote: >-
+      Chlordiazepoxide and amitriptyline hydrochloride tablets are contraindicated in patients with
+      hypersensitivity to either benzodiazepines or tricyclic antidepressants.
+    explanation: >-
+      "contraindicated in patients with hypersensitivity to either benzodiazepines or tricyclic
+      antidepressants" is a contraindication in drug allergy; this claim records the first
+      alternative class, benzodiazepines.
+    status: DRAFT
+    notes: >-
+      drug allergy is more specific than the word "hypersensitivity", justified by the drug classes
+      named, so NARROWER. "either ... or" names two alternative allergies, one claim each. CHEBI benzodiazepine is the class of benzodiazepines; chlordiazepoxide is one, but the class is wider than the product's own ingredient, so the cross-sensitivity is curated.
+      Not attributed: the classes are allergens, not causes.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: tricyclic antidepressants
+      term_gap: >-
+        searched CHEBI "tricyclic antidepressant", "tricyclic", "antidepressant": no tricyclic
+        antidepressant class; CHEBI:35469 antidepressant would widen the allergy to every
+        antidepressant
+    quote: >-
+      Chlordiazepoxide and amitriptyline hydrochloride tablets are contraindicated in patients with
+      hypersensitivity to either benzodiazepines or tricyclic antidepressants.
+    explanation: >-
+      "contraindicated in patients with hypersensitivity to either benzodiazepines or tricyclic
+      antidepressants" is a contraindication in drug allergy; this claim records the second
+      alternative class, tricyclic antidepressants.
+    status: DRAFT
+    notes: >-
+      drug allergy is more specific than the word "hypersensitivity", justified by the drug classes
+      named, so NARROWER. "either ... or" names two alternative allergies, one claim each. The class is wider than amitriptyline, the product's own tricyclic, so the cross-sensitivity is curated; the specialization is unbound (see term_gap).
+      Not attributed: the classes are allergens, not causes.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: acute recovery phase following myocardial infarction
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: BROADER
+    quote: >-
+      This drug is contraindicated during the acute recovery phase following myocardial infarction.
+    explanation: >-
+      "contraindicated during the acute recovery phase following myocardial infarction" is a
+      contraindication in the recovery phase of a myocardial infarction.
+    status: DRAFT
+    notes: >-
+      No term for the post-infarction recovery phase (searched MONDO "myocardial infarction");
+      myocardial infarction is broader than "acute recovery phase following" it. Product-level
+      ("This drug"), unattributed.
+notes: >-
+  Curated from DailyMed setid 66a756f2-ac77-451c-a19a-08896d73b15c (Mylan), the one chlordiazepoxide /
+  amitriptyline label DailyMed serves; the worklist setid b20dcdb1-50f4-4d49-a50e-be0308962f5b now
+  returns 404 (its SPL history ends at v6, Aug 2026) and cannot be pinned. Not curated: the MAOI
+  contraindication and its follow-on sentences (a drug interaction with no condition; "Hyperpyretic
+  crises, severe convulsions and deaths have occurred" states a risk).

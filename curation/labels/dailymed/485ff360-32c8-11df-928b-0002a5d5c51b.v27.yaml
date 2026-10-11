@@ -1,0 +1,49 @@
+setid: 485ff360-32c8-11df-928b-0002a5d5c51b
+version: 27
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/485ff360-32c8-11df-928b-0002a5d5c51b.xml
+xml_sha256: 7f462189de637b86286f31221f25ae96209f79354c9938cd405eb6fad5f130bf
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use CONTRAVE® safely and effectively.
+  See full prescribing information for CONTRAVE. CONTRAVE (naltrexone hydrochloride and bupropion hydrochloride)
+  extended-release tablets, for oral use Initial U.S. Approval: 2014'
+product_name: ContraveExtended-Release
+active_moieties:
+- BUPROPION
+- NALTREXONE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - CONTRAVE is indicated in combination with a reduced-calorie diet and increased physical activity to
+    reduce excess body weight and maintain weight reduction long term in adults with obesity or overweight
+    in the presence of at least one weight-related comorbid condition.
+  - 'CONTRAVE is a combination of naltrexone, an opioid antagonist, and bupropion, an aminoketone antidepressant,
+    indicated in combination with a reduced-calorie diet and increased physical activity to reduce excess
+    body weight and maintain weight reduction long term in adults with obesity or overweight in the presence
+    of at least one weight-related comorbid condition. ( 1 ) Limitations of Use: The effect of CONTRAVE
+    on cardiovascular morbidity and mortality has not been established. ( 1 ) Coadministration with other
+    naltrexone-containing products is not recommended. Coadministration with other bupropion-containing
+    products is contraindicated. ( 1 , 4 )'
+  - 'Limitations of Use: The effect of CONTRAVE on cardiovascular morbidity and mortality has not been
+    established. CONTRAVE contains naltrexone and bupropion. Coadministration with other naltrexone-containing
+    products is not recommended. Coadministration with other bupropion-containing products is contraindicated.'
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - CONTRAVE is contraindicated in Uncontrolled hypertension [see Warnings and Precautions (5.5) ] Seizure
+    disorder or a history of seizures [see Warnings and Precautions (5.3) ] Use of other bupropion-containing
+    products (including, but not limited to, WELLBUTRIN, WELLBUTRIN SR, WELLBUTRIN XL, APLENZIN and ZYBAN)
+    Bulimia or anorexia nervosa, which increase the risk for seizure [see Warnings and Precautions (5.3)
+    ] Chronic opioid or opiate agonist (e.g., methadone) or partial agonists (e.g., buprenorphine) use,
+    or acute opiate withdrawal [see Warnings and Precautions (5.4) and Drug Interactions (7.2) ] Patients
+    undergoing an abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and antiepileptic
+    drugs [see Warnings and Precautions (5.3) and Drug Interactions (7.7) ] Concomitant administration
+    of monoamine oxidase inhibitors (MAOI). At least 14 days should elapse between discontinuation of
+    MAOI and initiation of treatment with CONTRAVE. There is an increased risk of hypertensive reactions
+    when CONTRAVE is used concomitantly with MAOIs. Starting CONTRAVE in a patient treated with reversible
+    MAOIs such as linezolid or intravenous methylene blue is also contraindicated [see Dosage and Administration
+    (2.4) , Drug Interactions (7.1) ] Known allergy to bupropion, naltrexone or any other component of
+    CONTRAVE. Anaphylactoid/anaphylactic reactions and Stevens-Johnson syndrome have been reported with
+    bupropion [see Warnings and Precautions (5.6) ]
+  - Uncontrolled hypertension ( 4 ) Seizure disorders, anorexia nervosa or bulimia, or undergoing abrupt
+    discontinuation of alcohol, benzodiazepines, barbiturates, and antiepileptic drugs ( 4 ) Use of other
+    bupropion-containing products ( 4 ) Chronic opioid use ( 4 ) During or within 14 days of taking monoamine
+    oxidase inhibitors (MAOI) ( 4 ) Known allergy to any of the ingredients in CONTRAVE ( 4 )

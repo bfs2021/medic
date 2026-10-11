@@ -1,0 +1,30 @@
+setid: 87ab55c9-203d-d595-3e3e-0e38f2f6d9c4
+version: 4
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/87ab55c9-203d-d595-3e3e-0e38f2f6d9c4.xml
+xml_sha256: bda22474bbfd2368a064a8d7780a3b729861ab9b70b7b968f55e4df428823c89
+retrieved: '2026-10-11'
+title: CARBIDOPA AND LEVODOPA TABLETS, USP
+product_name: Carbidopa and Levodopa
+active_moieties:
+- CARBIDOPA ANHYDROUS
+- LEVODOPA
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Carbidopa and levodopa tablets, USP are indicated in the treatment of Parkinson's disease, post-encephalitic
+    parkinsonism, and symptomatic parkinsonism that may follow carbon monoxide intoxication or manganese
+    intoxication. Carbidopa allows patients treated for Parkinson's disease to use much lower doses of
+    levodopa. Some patients who responded poorly to levodopa have improved on carbidopa and levodopa tablets.
+    This is most likely due to decreased peripheral decarboxylation of levodopa caused by administration
+    of carbidopa rather than by a primary effect of carbidopa on the nervous system. Carbidopa has not
+    been shown to enhance the intrinsic efficacy of levodopa. Carbidopa may also reduce nausea and vomiting
+    and permit more rapid titration of levodopa.
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Nonselective monoamine oxidase (MAO) inhibitors are contraindicated for use with carbidopa and levodopa
+    tablets. These inhibitors must be discontinued at least two weeks prior to initiating therapy with
+    carbidopa and levodopa tablets. Carbidopa and levodopa tablets may be administered concomitantly with
+    the manufacturer's recommended dose of an MAO inhibitor with selectivity for MAO type B (e.g., selegiline
+    HCl) (see PRECAUTIONS, Drug Interactions ). Carbidopa and levodopa tablets are contraindicated in
+    patients with known hypersensitivity to any component of this drug, and in patients with narrow-angle
+    glaucoma.
