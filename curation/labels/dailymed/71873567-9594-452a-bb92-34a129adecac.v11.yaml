@@ -1,0 +1,45 @@
+setid: 71873567-9594-452a-bb92-34a129adecac
+version: 11
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/71873567-9594-452a-bb92-34a129adecac.xml
+xml_sha256: b001a6606acf502ecf5de4d21d86cf736df94b968d1a9ca3d7f926c8e372757e
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use TRIJARDY XR safely and effectively.
+  See full prescribing information for TRIJARDY XR. TRIJARDY® XR (empagliflozin, linagliptin, and metformin
+  hydrochloride extended-release tablets), for oral use Initial U.S. Approval: 2020'
+product_name: Trijardy XR
+active_moieties:
+- EMPAGLIFLOZIN
+- LINAGLIPTIN
+- METFORMIN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - TRIJARDY XR is a combination of empagliflozin, linagliptin, and metformin hydrochloride (HCl) indicated
+    as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus
+    . Empagliflozin is indicated to reduce the risk of cardiovascular (CV) death in adults with type 2
+    diabetes mellitus and established CV disease [see Clinical Studies (14.2) ] .
+  - TRIJARDY XR is a combination of empagliflozin, a sodium-glucose co-transporter 2 (SGLT2) inhibitor,
+    linagliptin, a dipeptidyl peptidase-4 (DPP-4) inhibitor, and metformin hydrochloride (HCl), a biguanide,
+    indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes
+    mellitus. Empagliflozin is indicated to reduce the risk of cardiovascular (CV) death in adults with
+    type 2 diabetes mellitus and established CV disease. ( 1 ) Limitations of Use Not recommended for
+    use to improve glycemic control in patients with type 1 diabetes mellitus. It may increase the risk
+    of diabetic ketoacidosis in these patients. ( 1 ) Has not been studied in patients with a history
+    of pancreatitis. ( 1 )
+  - Limitations of Use TRIJARDY XR is not recommended for use to improve glycemic control in patients
+    with type 1 diabetes mellitus. It may increase the risk of diabetic ketoacidosis in these patients
+    [see Warnings and Precautions (5.2) ] . TRIJARDY XR has not been studied in patients with a history
+    of pancreatitis. It is unknown whether patients with a history of pancreatitis are at an increased
+    risk for the development of pancreatitis while using TRIJARDY XR [see Warnings and Precautions (5.3)
+    ].
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'TRIJARDY XR is contraindicated in patients with: severe renal impairment (eGFR less than 30 mL/min/1.73
+    m 2 ) [see Warnings and Precautions (5.1 , 5.4) and Use in Specific Populations (8.6) ]. acute or
+    chronic metabolic acidosis, including diabetic ketoacidosis [see Warnings and Precautions (5.1) ].
+    hypersensitivity to empagliflozin, linagliptin, metformin HCl or any of the excipients in TRIJARDY
+    XR, reactions such as anaphylaxis, angioedema, exfoliative skin conditions, urticaria, or bronchial
+    hyperreactivity have occurred [see Warnings and Precautions (5.8) and Adverse Reactions (6) ] .'
+  - Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ). ( 4 ) Metabolic acidosis, including diabetic
+    ketoacidosis. ( 4 ) Hypersensitivity to empagliflozin, linagliptin, metformin HCl, or any of the excipients
+    in TRIJARDY XR. ( 4 )

@@ -1,0 +1,64 @@
+setid: eaf135b6-e378-4f62-a1e7-db45e23668c7
+version: 7
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/eaf135b6-e378-4f62-a1e7-db45e23668c7.xml
+xml_sha256: 0808e504de33041fad3347422a87b50d75646efc22810bcfa1e79dbebeb84652
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use DAPAGLIFLOZIN AND METFORMIN
+  HYDROCHLORIDE EXTENDED‑RELEASE TABLETS safely and effectively. See full prescribing information for
+  DAPAGLIFLOZIN AND METFORMIN HYDROCHLORIDE EXTENDED‑RELEASE TABLETS. DAPAGLIFLOZIN AND METFORMIN HYDROCHLORIDE
+  EXTENDED‑RELEASE tablets, for oral useInitial U.S. Approval: 2014'
+product_name: dapagliflozin and metformin hydrochloride
+active_moieties:
+- DAPAGLIFLOZIN
+- METFORMIN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'Dapagliflozin and Metformin HCl extended-release tablets are a combination of dapagliflozin and metformin
+    hydrochloride (HCl) extended-release, indicated as an adjunct to diet and exercise to improve glycemic
+    control in adults and pediatric patients aged 10 years and older with type 2 diabetes mellitus. Dapagliflozin,
+    when used as a component of Dapagliflozin and Metformin HCl extended-release tablets, is indicated
+    in adults with type 2 diabetes mellitus to reduce the risk of: • Sustained eGFR decline, end stage
+    kidney disease, cardiovascular death, and hospitalization for heart failure in patients with chronic
+    kidney disease at risk of progression. • Cardiovascular death, hospitalization for heart failure,
+    and urgent heart failure visit in patients with heart failure. • Hospitalization for heart failure
+    in patients with type 2 diabetes mellitus and either established cardiovascular disease (CVD) or multiple
+    cardiovascular (CV) risk factors. Limitations of Use • Dapagliflozin and Metformin HCl extended-release
+    tablets are not recommended for use to improve glycemic control in patients with type 1 diabetes mellitus
+    [see Warnings and Precautions (5.2) ]. • Because of the metformin HCl component, the use of Dapagliflozin
+    and Metformin HCl extended-release tablets are limited to patients with type 2 diabetes mellitus for
+    all indications. • Dapagliflozin and Metformin HCl extended-release tablets are not recommended for
+    the treatment of chronic kidney disease in patients with polycystic kidney disease or patients requiring
+    or with a recent history of immunosuppressive therapy for kidney disease. Dapagliflozin and Metformin
+    HCl extended-release tablets are not expected to be effective in these populations.'
+  - 'Dapagliflozin and Metformin HCl extended-release tablets are a combination of dapagliflozin, a sodium-glucose
+    cotransporter 2 (SGLT2) inhibitor, and metformin hydrochloride (HCl), a biguanide, indicated as an
+    adjunct to diet and exercise to improve glycemic control in adults and pediatric patients aged 10
+    years and older with type 2 diabetes mellitus. (1) Dapagliflozin when used as a component of Dapagliflozin
+    and Metformin HCl extended-release tablets is indicated in adults with type 2 diabetes mellitus to
+    reduce the risk of: • Sustained eGFR decline, end-stage kidney disease, cardiovascular death, and
+    hospitalization for heart failure in patients with chronic kidney disease at risk of progression.
+    (1) • Cardiovascular death, hospitalization for heart failure, and urgent heart failure visit in patients
+    with heart failure. (1) • Hospitalization for heart failure in patients with type 2 diabetes mellitus
+    and either established cardiovascular disease or multiple cardiovascular risk factors. (1) Limitations
+    of use : • Not recommended for use to improve glycemic control in patients with type 1 diabetes mellitus.
+    (1) • Because of the metformin HCI component, the use of Dapagliflozin and Metformin HCl extended-release
+    tablets are limited to patients with type 2 diabetes mellitus for all indications. (1) • Not recommended
+    for the treatment of chronic kidney disease in patients with polycystic kidney disease or patients
+    requiring or with a recent history of immunosuppressive therapy for the treatment of kidney disease.
+    Dapagliflozin and Metformin HCl extended-release tablets are not expected to be effective in these
+    populations. (1)'
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'Dapagliflozin and Metformin HCl extended-release tablets are contraindicated in patients with: •
+    Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) or end-stage renal disease [see Warnings
+    and Precautions (5.1) ] . • History of a serious hypersensitivity reaction to dapagliflozin, metformin
+    HCl, or any of the excipients in Dapagliflozin and Metformin HCl extended-release tablets. Serious
+    hypersensitivity reactions, including anaphylaxis and angioedema have been reported with dapagliflozin
+    [see Adverse Reactions (6.1) ] . • Acute or chronic metabolic acidosis, including diabetic ketoacidosis,
+    with or without coma. Diabetic ketoacidosis should be treated with insulin [see Warnings and Precautions
+    (5.1) and Warnings and Precautions (5.2) ] .'
+  - • Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) or end-stage renal disease. ( 4 ) • History
+    of serious hypersensitivity to dapagliflozin, metformin HCl, or any of the excipients in Dapagliflozin
+    and Metformin HCl extended-release tablets. ( 4 ) • Metabolic acidosis, including diabetic ketoacidosis.
+    ( 4 )

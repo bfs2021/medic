@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: empagliflozin-metformin
+  path: kb/combinations/empagliflozin-metformin.yaml
+session:
+  id: 2026-10-11T023844Z-claude-code-8be99b
+  timestamp: '2026-10-11T02:38:44Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: empagliflozin / metformin'
+  details: |
+    Curated from DailyMed setid 0fdd0255-0055-65f3-b2c0-db8fbb87beae v23 (SYNJARDY / SYNJARDY XR). Two product-level type 2 diabetes indications, one per formulation (SYNJARDY aged 10 years and older; SYNJARDY XR adults); contraindications severe renal impairment (HP Renal insufficiency, BROADER) and acute or chronic metabolic acidosis (exhaustive pair, diabetic ketoacidosis as example). The empagliflozin-only heart-failure and kidney indications are not yet curated: the subject is 41 characters from its verb once the product name is blanked (the INGREDIENT_SUBJECT check allows 40); the planned claims are listed in the file notes. Cardiovascular death and bare hospitalization treated as outcomes, not conditions.

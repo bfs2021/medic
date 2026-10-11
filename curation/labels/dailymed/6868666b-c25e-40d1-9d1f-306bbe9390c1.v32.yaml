@@ -1,0 +1,48 @@
+setid: 6868666b-c25e-40d1-9d1f-306bbe9390c1
+version: 32
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/6868666b-c25e-40d1-9d1f-306bbe9390c1.xml
+xml_sha256: e37e8a5a3f157b10e1452edb3f818d6690c7c8a910df9234faf5491f516a7f7a
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use INVOKAMET or INVOKAMET XR safely
+  and effectively. See full prescribing information for INVOKAMET or INVOKAMET XR. INVOKAMET® (canagliflozin
+  and metformin hydrochloride) tablets, for oral use INVOKAMET® XR (canagliflozin and metformin hydrochloride)
+  extended-release tablets, for oral use Initial U.S. Approval: 2014'
+product_name: INVOKAMET
+active_moieties:
+- CANAGLIFLOZIN ANHYDROUS
+- METFORMIN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'INVOKAMET INVOKAMET is a combination of canagliflozin and metformin HCl immediate-release indicated
+    as an adjunct to diet and exercise to improve glycemic control in adults and pediatric patients aged
+    10 years and older with type 2 diabetes mellitus. INVOKAMET XR INVOKAMET XR is a combination of canagliflozin
+    and metformin HCl extended-release indicated as an adjunct to diet and exercise to improve glycemic
+    control in adults and pediatric patients aged 10 years and older with type 2 diabetes mellitus. Canagliflozin
+    Canagliflozin, when used as a component of INVOKAMET or INVOKAMET XR, is indicated in adults with
+    type 2 diabetes mellitus to reduce the risk of: Major adverse cardiovascular events (cardiovascular
+    death, nonfatal myocardial infarction and nonfatal stroke) in adults with type 2 diabetes mellitus
+    and established cardiovascular disease (CVD). End-stage kidney disease (ESKD), doubling of serum creatinine,
+    cardiovascular (CV) death, and hospitalization for heart failure in adults with type 2 diabetes mellitus
+    and diabetic nephropathy with albuminuria greater than 300 mg/day. Limitations of Use INVOKAMET or
+    INVOKAMET XR are not recommended for use to improve glycemic control in patients with type 1 diabetes
+    mellitus [see Warnings and Precautions (5.2) ] .'
+  - 'INVOKAMET and INVOKAMET XR are a combination of canagliflozin, a sodium-glucose co-transporter 2
+    (SGLT2) inhibitor, and metformin hydrochloride (HCl), a biguanide, indicated as an adjunct to diet
+    and exercise to improve glycemic control in adults and pediatric patients aged 10 years and older
+    with type 2 diabetes mellitus ( 1 ). Canagliflozin Canagliflozin, when used as a component of INVOKAMET
+    or INVOKAMET XR is indicated in adults with type 2 diabetes mellitus to reduce the risk of: Major
+    adverse cardiovascular events in adults with type 2 diabetes mellitus and established cardiovascular
+    disease ( 1 ). End-stage kidney disease, doubling of serum creatinine, cardiovascular death, and hospitalization
+    for heart failure in adults with type 2 diabetes mellitus and diabetic nephropathy with albuminuria
+    ( 1 ). Limitations of Use: Not recommended for use to improve glycemic control in patients with type
+    1 diabetes mellitus ( 1 ).'
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'INVOKAMET or INVOKAMET XR is contraindicated in patients with: Severe renal impairment (eGFR less
+    than 30 mL/min/1.73 m 2 ) [see Warnings and Precautions (5.1) and Use in Specific Populations (8.6)
+    ] . Acute or chronic metabolic acidosis, including diabetic ketoacidosis [see Warnings and Precautions
+    (5.2) ] . Serious hypersensitivity reaction to canagliflozin or metformin HCl, such as anaphylaxis
+    or angioedema [see Warnings and Precautions (5.7) and Adverse Reactions (6) ] .'
+  - Severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 ) ( 4 ) Metabolic acidosis, including diabetic
+    ketoacidosis ( 4 ) Serious hypersensitivity reaction to canagliflozin or metformin HCl ( 4 )

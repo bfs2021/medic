@@ -1,0 +1,64 @@
+setid: 0fdd0255-0055-65f3-b2c0-db8fbb87beae
+version: 23
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/0fdd0255-0055-65f3-b2c0-db8fbb87beae.xml
+xml_sha256: 5406ea0a830c0ea6ed32c29739eac330180bd60a4e3800cfd3c361848879620c
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use SYNJARDY and SYNJARDY XR safely
+  and effectively. See full prescribing information for SYNJARDY and SYNJARDY XR. SYNJARDY® (empagliflozin
+  and metformin hydrochloride tablets), for oral use SYNJARDY® XR (empagliflozin and metformin hydrochloride
+  extended-release tablets), for oral use Initial U.S. Approval: 2015'
+product_name: Synjardy
+active_moieties:
+- EMPAGLIFLOZIN
+- METFORMIN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'SYNJARDY SYNJARDY is a combination of empagliflozin, a sodium-glucose co-transporter 2 (SGLT2) inhibitor
+    and metformin hydrochloride (HCl) immediate-release, a biguanide, indicated as an adjunct to diet
+    and exercise to improve glycemic control in adults and pediatric patients aged 10 years and older
+    with type 2 diabetes mellitus. SYNJARDY XR SYNJARDY XR is a combination of empagliflozin, a SGLT2
+    inhibitor and metformin HCl extended-release, a biguanide, indicated as an adjunct to diet and exercise
+    to improve glycemic control in adults with type 2 diabetes mellitus . Empagliflozin Empagliflozin,
+    when used as a component of SYNJARDY or SYNJARDY XR, is indicated in adults with type 2 diabetes mellitus
+    to reduce the risk of: Cardiovascular (CV) death in adults with established CV disease. ( 1 ) CV death
+    and hospitalization for heart failure in adults with heart failure. ( 1 ) Sustained decline in eGFR,
+    end-stage kidney disease, CV death, and hospitalization in adults with chronic kidney disease at risk
+    of progression. ( 1 ) Limitations of Use : Not recommended for use to improve glycemic control in
+    patients with type 1 diabetes mellitus. It may increase the risk of diabetic ketoacidosis in these
+    patients. ( 1 ) Because of the metformin HCl component, the use of SYNJARDY or SYNJARDY XR is limited
+    to patients with type 2 diabetes mellitus for all indications. ( 1 ) Empagliflozin, when used as a
+    component of SYNJARDY or SYNJARDY XR, is not recommended for the treatment of chronic kidney disease
+    in patients with polycystic kidney disease or patients requiring or with a recent history of intravenous
+    immunosuppressive therapy or greater than 45 mg of prednisone or equivalent for kidney disease. Empagliflozin
+    is not expected to be effective in these populations. ( 1 )'
+  - SYNJARDY SYNJARDY is a combination of empagliflozin and metformin hydrochloride (HCl) immediate-release
+    indicated as an adjunct to diet and exercise to improve glycemic control in adults and pediatric patients
+    aged 10 years and older with type 2 diabetes mellitus .
+  - SYNJARDY XR SYNJARDY XR is a combination of empagliflozin and metformin HCl extended-release indicated
+    as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus
+    .
+  - 'Empagliflozin Empagliflozin, when used as a component of SYNJARDY or SYNJARDY XR, is indicated in
+    adults with type 2 diabetes mellitus to reduce the risk of: Cardiovascular (CV) death in adults with
+    established CV disease. CV death and hospitalization for heart failure in adults with heart failure.
+    Sustained decline in eGFR, end-stage kidney disease, CV death, and hospitalization in adults with
+    chronic kidney disease at risk of progression.'
+  - Limitations of Use SYNJARDY and SYNJARDY XR are not recommended for use to improve glycemic control
+    in patients with type 1 diabetes mellitus. It may increase the risk of diabetic ketoacidosis in these
+    patients [see Warnings and Precautions (5.2) ] . Because of the metformin HCl component, the use of
+    SYNJARDY or SYNJARDY XR is limited to patients with type 2 diabetes mellitus for all indications.
+    Empagliflozin, when used as a component of SYNJARDY or SYNJARDY XR, is not recommended for the treatment
+    of chronic kidney disease in patients with polycystic kidney disease or patients requiring or with
+    a recent history of intravenous immunosuppressive therapy or greater than 45 mg of prednisone or equivalent
+    for kidney disease [see Clinical Studies (14.5) ] . Empagliflozin is not expected to be effective
+    in these populations.
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'SYNJARDY and SYNJARDY XR are contraindicated in patients with: severe renal impairment (eGFR less
+    than 30 mL/min/1.73 m 2 ) [see Warnings and Precautions (5.1) and Use in Specific Populations (8.6)
+    ]. acute or chronic metabolic acidosis, including diabetic ketoacidosis [see Warnings and Precautions
+    (5.1) ]. hypersensitivity to empagliflozin, metformin HCl or any of the excipients in SYNJARDY or
+    SYNJARDY XR, reactions such as angioedema have occurred [see Warnings and Precautions (5.7) ] .'
+  - Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) ( 4 ) Metabolic acidosis, including diabetic
+    ketoacidosis ( 4 ) Hypersensitivity to empagliflozin, metformin HCl or any of the excipients in SYNJARDY
+    or SYNJARDY XR ( 4 )

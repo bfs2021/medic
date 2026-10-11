@@ -1,0 +1,142 @@
+id: MEDICNE:combo-11137dc0-9a5c-5fb5-8cd2-c01502627eba
+name: empagliflozin / metformin
+ingredients:
+- id: CHEBI:82720
+  label: empagliflozin
+- id: CHEBI:6801
+  label: metformin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 0fdd0255-0055-65f3-b2c0-db8fbb87beae
+    version: 23
+    title: 'These highlights do not include all the information needed to use SYNJARDY and SYNJARDY XR
+      safely and effectively. See full prescribing information for SYNJARDY and SYNJARDY XR. SYNJARDY®
+      (empagliflozin and metformin hydrochloride tablets), for oral use SYNJARDY® XR (empagliflozin and
+      metformin hydrochloride extended-release tablets), for oral use Initial U.S. Approval: 2015'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0fdd0255-0055-65f3-b2c0-db8fbb87beae
+  product_name: Synjardy
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      SYNJARDY is a combination of empagliflozin and metformin hydrochloride (HCl) immediate-release
+      indicated as an adjunct to diet and exercise to improve glycemic control in adults and
+      pediatric patients aged 10 years and older with type 2 diabetes mellitus .
+    age_range:
+      min_years: 10
+      text: aged 10 years and older
+    explanation: >-
+      "indicated ... to improve glycemic control in adults and pediatric patients aged 10 years and
+      older with type 2 diabetes mellitus" states treatment of type 2 diabetes mellitus for
+      SYNJARDY; "aged 10 years and older" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject is the product ("a combination of empagliflozin and
+      metformin hydrochloride"), which names both ingredients only as its contents. "as an adjunct
+      to diet and exercise" names non-drug measures, kept in the quote. The label covers two
+      formulations with different age bounds; this claim is the immediate-release SYNJARDY's.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      SYNJARDY XR is a combination of empagliflozin and metformin HCl extended-release indicated as
+      an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes
+      mellitus .
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "indicated ... to improve glycemic control in adults with type 2 diabetes mellitus" states
+      treatment of type 2 diabetes mellitus for SYNJARDY XR; "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed, as the SYNJARDY claim. Kept as its own claim because the
+      extended-release formulation is indicated for adults only, a narrower context than
+      SYNJARDY's "aged 10 years and older".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe renal impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 )
+    explanation: >-
+      Under "are contraindicated in patients with:", the item "severe renal impairment (eGFR less than
+      30 mL/min/1.73 m 2 )" lists severe renal impairment as a contraindicated condition; the eGFR
+      threshold defines "severe".
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. HP Renal insufficiency is the term for impaired renal function
+      (as for "Renal impairment" in the drospirenone file); no severe-renal-insufficiency term
+      (searched HP "severe renal", "renal impairment"), so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: acute or chronic metabolic acidosis
+      term:
+        id: MONDO:0000440
+        label: metabolic acidosis
+      binding: EXACT
+    examples:
+    - text: diabetic ketoacidosis
+      term:
+        id: MONDO:0012819
+        label: diabetic ketoacidosis
+      binding: EXACT
+    quote: >-
+      acute or chronic metabolic acidosis, including diabetic ketoacidosis
+    explanation: >-
+      Under "are contraindicated in patients with:", the item "acute or chronic metabolic acidosis,
+      including diabetic ketoacidosis" lists metabolic acidosis as a contraindicated condition;
+      "acute or chronic" is an exhaustive pair covering the whole class, and "including diabetic
+      ketoacidosis" names an example.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. One claim for the class (exhaustive pair), diabetic ketoacidosis
+      as a listed example.
+notes: >-
+  Not claimed: the Limitations of Use (type 1 diabetes mellitus and diabetic ketoacidosis there;
+  "Because of the metformin HCl component, the use ... is limited to patients with type 2
+  diabetes mellitus"; chronic kidney disease with polycystic kidney disease or immunosuppressive
+  therapy, "not expected to be effective"); "hypersensitivity to empagliflozin, metformin HCl or any
+  of the excipients" (own ingredients) and "reactions such as angioedema have occurred" (a report,
+  not a contraindicated condition). The Highlights restate the indications and contraindications.
+  The glycemic-control indications and the contraindications are the product's, so none is
+  attributed.
+  NOT YET CURATED: the empagliflozin-only indications under the list lead "Empagliflozin, when
+  used as a component of SYNJARDY or SYNJARDY XR, is indicated in adults with type 2 diabetes
+  mellitus to reduce the risk of:". The label assigns them to empagliflozin, but the validator's
+  INGREDIENT_SUBJECT check allows at most 40 characters between the subject and "is" once the
+  product's name is blanked, and this subject is 41 characters from its verb, so the true
+  attribution cannot pass. Recording them unattributed would state them of the product, crediting
+  metformin with heart-failure and kidney outcomes the label gives to empagliflozin alone, so they
+  are left out until the check accepts the attribution. Planned, each PREVENTATIVE_FOR_CONDITION,
+  age_range adults, attributed to CHEBI:82720 by INGREDIENT_SUBJECT on that lead: (1)
+  "hospitalization for heart failure" (MONDO:0005252 heart failure, BROADER), context "heart
+  failure"; (2) "Sustained decline in eGFR" (HP:0012213 Decreased glomerular filtration rate,
+  BROADER) and "end-stage kidney disease" (MONDO:0004375 end stage renal failure, EXACT), context
+  "chronic kidney disease at risk of progression" (MONDO:0005300 chronic kidney disease).
+  "Cardiovascular (CV) death" / "CV death" is an outcome, not a condition (as "death" in the
+  aspirin/omeprazole file), and the bare "hospitalization" in the kidney item names no condition;
+  neither would be claimed.

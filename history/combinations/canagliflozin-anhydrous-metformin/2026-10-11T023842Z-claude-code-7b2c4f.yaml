@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: canagliflozin-anhydrous-metformin
+  path: kb/combinations/canagliflozin-anhydrous-metformin.yaml
+session:
+  id: 2026-10-11T023842Z-claude-code-7b2c4f
+  timestamp: '2026-10-11T02:38:42Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: canagliflozin anhydrous / metformin'
+  details: |
+    Curated from DailyMed setid 6868666b-c25e-40d1-9d1f-306bbe9390c1 v32 (INVOKAMET / INVOKAMET XR). Product-level type 2 diabetes indication (aged 10 years and older); contraindications severe renal impairment (HP Renal insufficiency, BROADER) and acute or chronic metabolic acidosis (exhaustive pair, diabetic ketoacidosis as example). The canagliflozin-only cardiovascular and kidney indications are not yet curated: the ingredient resolves to CHEBI:750399 canagliflozin anhydrous so the label's plain 'Canagliflozin' never names it, and the subject is 41 characters from its verb (the INGREDIENT_SUBJECT check allows 40); the planned claims are listed in the file notes. Cardiovascular death treated as an outcome, not a condition.

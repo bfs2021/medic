@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dapagliflozin-metformin
+  path: kb/combinations/dapagliflozin-metformin.yaml
+session:
+  id: 2026-10-11T023843Z-claude-code-253659
+  timestamp: '2026-10-11T02:38:43Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: dapagliflozin / metformin'
+  details: |
+    Curated from DailyMed setid eaf135b6-e378-4f62-a1e7-db45e23668c7 v7. Product-level type 2 diabetes indication (aged 10 years and older); contraindications severe renal impairment (HP Renal insufficiency, BROADER), end-stage renal disease, and acute or chronic metabolic acidosis (exhaustive pair, diabetic ketoacidosis as example). The renal coordination is split into two claims whose texts are the members alone, because the validator reads the eGFR parenthesis as members. The dapagliflozin-only kidney and heart-failure indications are not yet curated: the subject is 87 characters from its verb once the product name is blanked (the INGREDIENT_SUBJECT check allows 40); the planned claims are listed in the file notes. Cardiovascular death treated as an outcome, not a condition.
