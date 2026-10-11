@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: naproxen-pseudoephedrine
+  path: kb/combinations/naproxen-pseudoephedrine.yaml
+session:
+  id: 2026-10-11T182924Z-claude-code-3d98dc
+  timestamp: '2026-10-11T18:29:24Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: naproxen / pseudoephedrine'
+  details: |
+    Curated from DailyMed setid 305adca3-cdae-41e5-a10a-99d9dd0fe390 v6 (Sudafed Sinus 12 Hour Pressure plus Pain). OTC symptom list: 6 symptoms (nasal and sinus congestion split) x 2 conditions (cold, flu); the 'sinus' member of 'cold, sinus, and flu symptoms' names a site, not a condition, so gives no context. The cold context is left unbound: the grounding store maps 'cold' to COPD and the validator rejects common cold. Sinus pressure and sinus congestion unbound. Contraindication: allergic reaction to any other pain reliever/fever reducer. Not curated: under-12 age population, heart surgery, MAOI.

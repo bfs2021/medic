@@ -1,0 +1,341 @@
+id: MEDICNE:combo-542a5ac2-05b0-538b-a28c-ec123ad1adfc
+name: naproxen / pseudoephedrine
+ingredients:
+- id: CHEBI:7476
+  label: naproxen
+- id: CHEBI:51209
+  label: pseudoephedrine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 305adca3-cdae-41e5-a10a-99d9dd0fe390
+    version: 6
+    title: Sudafed Sinus 12 Hour Pressure + Pain
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=305adca3-cdae-41e5-a10a-99d9dd0fe390
+  product_name: Sudafed Sinus 12 Hour Pressure plus Pain
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sinus pressure
+      term_gap: 'searched HP and MONDO "sinus pressure", "sinus", "facial pain": no term for sinus pressure (sinusitis
+        names an inflammation, not the pressure symptom); the grounding store''s UMLS:C0848633 is outside the configured
+        ontologies'
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure'
+    disease_context:
+      text: cold, sinus, and flu
+      member: cold
+      term_gap: the intended term is MONDO:0005709 common cold ("cold" in "cold, sinus, and flu symptoms"), but
+        the grounding store maps "cold" to MONDO:0005002 chronic obstructive pulmonary disease (a lexical match
+        on the synonym "COLD"), and the validator rejects common cold as unrelated to that row; left unbound until
+        a human adds a semapv:ManualMappingCuration row "cold" -> MONDO:0005709
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "sinus pressure" is the symptom; no term exists, so it is unbound.
+      "cold, sinus, and flu symptoms" names the conditions the symptoms belong to; this claim takes the member cold
+      as the disease context (one claim per symptom per condition). The middle member "sinus" names an anatomical
+      site, not a condition, and is not a context. "cold" is the common cold; the context is left unbound (see term_gap).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sinus pressure
+      term_gap: 'searched HP and MONDO "sinus pressure", "sinus", "facial pain": no term for sinus pressure (sinusitis
+        names an inflammation, not the pressure symptom); the grounding store''s UMLS:C0848633 is outside the configured
+        ontologies'
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure'
+    disease_context:
+      text: cold, sinus, and flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "sinus pressure" is the symptom; no term exists, so it is unbound.
+      "cold, sinus, and flu symptoms" names the conditions the symptoms belong to; this claim takes the member flu
+      as the disease context (one claim per symptom per condition). The middle member "sinus" names an anatomical
+      site, not a condition, and is not a context.'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: minor body aches and pains
+      term: &id001
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains'
+    disease_context:
+      text: cold, sinus, and flu
+      member: cold
+      term_gap: the intended term is MONDO:0005709 common cold ("cold" in "cold, sinus, and flu symptoms"), but
+        the grounding store maps "cold" to MONDO:0005002 chronic obstructive pulmonary disease (a lexical match
+        on the synonym "COLD"), and the validator rejects common cold as unrelated to that row; left unbound until
+        a human adds a semapv:ManualMappingCuration row "cold" -> MONDO:0005709
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "minor body aches and pains" is mild bodily pain; HP Pain, broader
+      because of "minor" and "body". The "and" joins two words that both name pain (an ache is a pain), so this
+      is one condition, not a coordination of two, and one claim covers it with no member. "cold, sinus, and flu
+      symptoms" names the conditions the symptoms belong to; this claim takes the member cold as the disease context
+      (one claim per symptom per condition). The middle member "sinus" names an anatomical site, not a condition,
+      and is not a context. "cold" is the common cold; the context is left unbound (see term_gap).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: minor body aches and pains
+      term: *id001
+      binding: BROADER
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains'
+    disease_context:
+      text: cold, sinus, and flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "minor body aches and pains" is mild bodily pain; HP Pain, broader
+      because of "minor" and "body". The "and" joins two words that both name pain (an ache is a pain), so this
+      is one condition, not a coordination of two, and one claim covers it with no member. "cold, sinus, and flu
+      symptoms" names the conditions the symptoms belong to; this claim takes the member flu as the disease context
+      (one claim per symptom per condition). The middle member "sinus" names an anatomical site, not a condition,
+      and is not a context.'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term: &id002
+        id: HP:0002315
+        label: Headache
+      binding: EXACT
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache'
+    disease_context:
+      text: cold, sinus, and flu
+      member: cold
+      term_gap: the intended term is MONDO:0005709 common cold ("cold" in "cold, sinus, and flu symptoms"), but
+        the grounding store maps "cold" to MONDO:0005002 chronic obstructive pulmonary disease (a lexical match
+        on the synonym "COLD"), and the validator rejects common cold as unrelated to that row; left unbound until
+        a human adds a semapv:ManualMappingCuration row "cold" -> MONDO:0005709
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "headache" is the symptom; HP Headache. "cold, sinus, and flu symptoms"
+      names the conditions the symptoms belong to; this claim takes the member cold as the disease context (one
+      claim per symptom per condition). The middle member "sinus" names an anatomical site, not a condition, and
+      is not a context. "cold" is the common cold; the context is left unbound (see term_gap).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term: *id002
+      binding: EXACT
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache'
+    disease_context:
+      text: cold, sinus, and flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "headache" is the symptom; HP Headache. "cold, sinus, and flu symptoms"
+      names the conditions the symptoms belong to; this claim takes the member flu as the disease context (one claim
+      per symptom per condition). The middle member "sinus" names an anatomical site, not a condition, and is not
+      a context.'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal and sinus congestion
+      member: nasal congestion
+      term: &id003
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache nasal and sinus congestion'
+    disease_context:
+      text: cold, sinus, and flu
+      member: cold
+      term_gap: the intended term is MONDO:0005709 common cold ("cold" in "cold, sinus, and flu symptoms"), but
+        the grounding store maps "cold" to MONDO:0005002 chronic obstructive pulmonary disease (a lexical match
+        on the synonym "COLD"), and the validator rejects common cold as unrelated to that row; left unbound until
+        a human adds a semapv:ManualMappingCuration row "cold" -> MONDO:0005709
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "nasal and sinus congestion" names 2 symptoms; this claim takes the
+      member nasal congestion, HP Nasal congestion. "cold, sinus, and flu symptoms" names the conditions the symptoms
+      belong to; this claim takes the member cold as the disease context (one claim per symptom per condition).
+      The middle member "sinus" names an anatomical site, not a condition, and is not a context. "cold" is the common
+      cold; the context is left unbound (see term_gap).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal and sinus congestion
+      member: nasal congestion
+      term: *id003
+      binding: EXACT
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache nasal and sinus congestion'
+    disease_context:
+      text: cold, sinus, and flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "nasal and sinus congestion" names 2 symptoms; this claim takes the
+      member nasal congestion, HP Nasal congestion. "cold, sinus, and flu symptoms" names the conditions the symptoms
+      belong to; this claim takes the member flu as the disease context (one claim per symptom per condition). The
+      middle member "sinus" names an anatomical site, not a condition, and is not a context.'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal and sinus congestion
+      member: sinus congestion
+      term_gap: 'searched HP and MONDO "sinus congestion", "nasal obstruction", "sinus": no sinus-congestion term;
+        HP Nasal congestion covers the nose, not the paranasal sinuses; the grounding store''s UMLS:C0152029 Congestion
+        of nasal sinus is outside the configured ontologies'
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache nasal and sinus congestion'
+    disease_context:
+      text: cold, sinus, and flu
+      member: cold
+      term_gap: the intended term is MONDO:0005709 common cold ("cold" in "cold, sinus, and flu symptoms"), but
+        the grounding store maps "cold" to MONDO:0005002 chronic obstructive pulmonary disease (a lexical match
+        on the synonym "COLD"), and the validator rejects common cold as unrelated to that row; left unbound until
+        a human adds a semapv:ManualMappingCuration row "cold" -> MONDO:0005709
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "nasal and sinus congestion" names 2 symptoms; this claim takes the
+      member sinus congestion, which has no term. "cold, sinus, and flu symptoms" names the conditions the symptoms
+      belong to; this claim takes the member cold as the disease context (one claim per symptom per condition).
+      The middle member "sinus" names an anatomical site, not a condition, and is not a context. "cold" is the common
+      cold; the context is left unbound (see term_gap).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal and sinus congestion
+      member: sinus congestion
+      term_gap: 'searched HP and MONDO "sinus congestion", "nasal obstruction", "sinus": no sinus-congestion term;
+        HP Nasal congestion covers the nose, not the paranasal sinuses; the grounding store''s UMLS:C0152029 Congestion
+        of nasal sinus is outside the configured ontologies'
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache nasal and sinus congestion'
+    disease_context:
+      text: cold, sinus, and flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "nasal and sinus congestion" names 2 symptoms; this claim takes the
+      member sinus congestion, which has no term. "cold, sinus, and flu symptoms" names the conditions the symptoms
+      belong to; this claim takes the member flu as the disease context (one claim per symptom per condition). The
+      middle member "sinus" names an anatomical site, not a condition, and is not a context.'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: fever
+      term: &id004
+        id: HP:0001945
+        label: Fever
+      binding: EXACT
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache nasal and sinus congestion (promotes sinus drainage and restores freer breathing through the nose)
+      fever'
+    disease_context:
+      text: cold, sinus, and flu
+      member: cold
+      term_gap: the intended term is MONDO:0005709 common cold ("cold" in "cold, sinus, and flu symptoms"), but
+        the grounding store maps "cold" to MONDO:0005002 chronic obstructive pulmonary disease (a lexical match
+        on the synonym "COLD"), and the validator rejects common cold as unrelated to that row; left unbound until
+        a human adds a semapv:ManualMappingCuration row "cold" -> MONDO:0005709
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "fever" is the symptom; HP Fever. "cold, sinus, and flu symptoms"
+      names the conditions the symptoms belong to; this claim takes the member cold as the disease context (one
+      claim per symptom per condition). The middle member "sinus" names an anatomical site, not a condition, and
+      is not a context. "cold" is the common cold; the context is left unbound (see term_gap).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: fever
+      term: *id004
+      binding: EXACT
+    quote: 'temporarily relieves these cold, sinus, and flu symptoms: sinus pressure minor body aches and pains
+      headache nasal and sinus congestion (promotes sinus drainage and restores freer breathing through the nose)
+      fever'
+    disease_context:
+      text: cold, sinus, and flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these cold, sinus, and flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "fever" is the symptom; HP Fever. "cold, sinus, and flu symptoms"
+      names the conditions the symptoms belong to; this claim takes the member flu as the disease context (one claim
+      per symptom per condition). The middle member "sinus" names an anatomical site, not a condition, and is not
+      a context.'
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: allergic reaction
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: pain reliever/fever reducer
+      member: pain reliever
+      term:
+        id: CHEBI:35480
+        label: analgesic
+      binding: EXACT
+    - text: pain reliever/fever reducer
+      member: fever reducer
+      term:
+        id: CHEBI:35493
+        label: antipyretic
+      binding: EXACT
+    quote: if you have ever had an allergic reaction to any other pain reliever/fever reducer
+    explanation: '"Do not use ... if you have ever had an allergic reaction to any other pain reliever/fever reducer"
+      contraindicates the product after an allergic reaction to another analgesic/antipyretic (cross-sensitivity).
+      drug allergy is NARROWER than "allergic reaction", justified by "to any other pain reliever/fever reducer".'
+    status: DRAFT
+    notes: '"pain reliever/fever reducer" is the OTC name for the analgesic-antipyretic class; it is recorded as
+      two specializations, one per member (analgesic, antipyretic), as in the Advil Allergy and Congestion Relief
+      record. "other" excludes the product''s own analgesic, so this is cross-sensitivity, not an own-ingredient
+      allergy. Not attributed: the agents are allergens.'
+notes: 'OTC Drug Facts label; the Uses text is the indication section and "Do not use" the Contraindications section.
+  Uses is an OTC symptom list under "temporarily relieves these cold, sinus, and flu symptoms:" (the SPL text has
+  lost its bullets; the items are read as sinus pressure, minor body aches and pains, headache, nasal and sinus
+  congestion, fever): one AMELIORATES_CONDITION claim per symptom per named condition. The conditions are the members
+  cold (the common cold) and flu of "cold, sinus, and flu"; "sinus" there names a site, not a disease (the label
+  does not say sinusitis), so it gives no context and the symptoms are not curated with sinusitis. The cold member
+  is left unbound with a term_gap: the grounding store maps "cold" to MONDO:0005002 chronic obstructive pulmonary
+  disease (lexical match on its synonym "COLD"), and the validator then rejects common cold as unrelated; a human
+  should add a semapv:ManualMappingCuration row and bind MONDO:0005709 common cold. "nasal and sinus congestion"
+  is split into its two members. The parenthesis "(promotes sinus drainage and restores freer breathing through
+  the nose)" describes effects, not conditions, and is not curated. No use is assigned to an ingredient by the label,
+  so no claim is attributed. Contraindications curated: the allergic reaction to any other pain reliever/fever reducer.
+  Not curated: "in children under 12 years of age" (an age population with no condition); "right before or after
+  heart surgery" (a procedure, not a condition); the MAOI item ("if you are now taking a prescription monoamine
+  oxidase inhibitor (MAOI) ... or for 2 weeks after stopping the MAOI drug"), a drug interaction with no patient
+  condition (the parenthesis "certain drugs for depression, psychiatric, or emotional conditions, or Parkinson''s
+  disease" describes what MAOIs are used for, not a patient condition).'

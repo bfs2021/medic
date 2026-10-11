@@ -1,0 +1,20 @@
+setid: 52193849-d03a-b61b-e063-6394a90ad277
+version: 2
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/52193849-d03a-b61b-e063-6394a90ad277.xml
+xml_sha256: 246baa70ed49a37a68592fc66347c31e6804c8a557fbfa9d3927b03a2ff9ce19
+retrieved: '2026-10-11'
+title: Acetaminophen and Ibuprofen Tablets-cvs
+product_name: Acetaminophen and Ibuprofen
+active_moieties:
+- ACETAMINOPHEN
+- IBUPROFEN
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves minor aches and pains due to: ■ headache ■ toothache ■ backache ■ menstrual
+    cramps ■ muscular aches ■ minor pain of arthritis'
+  CONTRAINDICATIONS:
+  - Do not use
+  - with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure
+    whether a drug contains acetaminophen, ask a doctor or pharmacist if you have ever had an allergic
+    reaction to acetaminophen or any other pain reliever right before or after heart surgery

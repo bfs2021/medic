@@ -1,0 +1,22 @@
+setid: 0da9ed22-bfb4-d61b-110b-0c7760332a98
+version: 14
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/0da9ed22-bfb4-d61b-110b-0c7760332a98.xml
+xml_sha256: 066f45da017b0ccd38d2f32cadfaa24f9f083057e4e764023acdc39f1b3d134d
+retrieved: '2026-10-11'
+title: Drug Facts
+product_name: ADVIL COLD AND SINUS
+active_moieties:
+- IBUPROFEN
+- PSEUDOEPHEDRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves these symptoms associated with the common cold or flu: headache fever sinus
+    pressure nasal congestion minor body aches and pains'
+  CONTRAINDICATIONS:
+  - Do not use
+  - in children under 12 years of age if you have ever had an allergic reaction to any other pain reliever/fever
+    reducer right before or after heart surgery if you are now taking a prescription monoamine oxidase
+    inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's
+    disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug
+    contains an MAOI, ask a doctor or pharmacist before taking this product.

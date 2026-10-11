@@ -1,0 +1,19 @@
+setid: 4726af84-83c1-456d-995c-f6a8d1583f8b
+version: 7
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/4726af84-83c1-456d-995c-f6a8d1583f8b.xml
+xml_sha256: aa851bff6b70bb3b879d35be2d9e978063197ba05a99729a61c4276848997526
+retrieved: '2026-10-11'
+title: Fexofenadine Hydrochloride and Pseudoephedrine Hydrochloride Extended-Release Tablets USP
+product_name: Fexofenadine Hydrochloride and Pseudoephedrine Hydrochloride
+active_moieties:
+- FEXOFENADINE
+- PSEUDOEPHEDRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves these symptoms due to hay fever or other upper respiratory allergies: runny
+    nose sneezing itchy, watery eyes itching of the nose or throat temporarily relieves nasal congestion
+    due to the common cold, hay fever or other upper respiratory allergies reduces swelling of nasal passages
+    temporarily relieves sinus congestion and pressure temporarily restores freer breathing through the
+    nose'
+  CONTRAINDICATIONS: []

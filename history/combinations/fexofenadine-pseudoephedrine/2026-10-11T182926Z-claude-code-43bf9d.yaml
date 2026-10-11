@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: fexofenadine-pseudoephedrine
+  path: kb/combinations/fexofenadine-pseudoephedrine.yaml
+session:
+  id: 2026-10-11T182926Z-claude-code-43bf9d
+  timestamp: '2026-10-11T18:29:26Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: fexofenadine / pseudoephedrine'
+  details: |
+    Curated from DailyMed setid 4726af84-83c1-456d-995c-f6a8d1583f8b v7 (Fexofenadine HCl and Pseudoephedrine HCl ER Tablets, OTC Drug Facts). Symptom list: 6 symptom members x 2 conditions (hay fever, other upper respiratory allergies); nasal congestion x 3 conditions; sinus congestion and pressure, two members, no context, unbound. No Do not use section on the label, so no contraindications. Effects (nasal-passage swelling, freer breathing) not curated.

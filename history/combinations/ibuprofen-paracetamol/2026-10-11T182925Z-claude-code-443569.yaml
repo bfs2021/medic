@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: ibuprofen-paracetamol
+  path: kb/combinations/ibuprofen-paracetamol.yaml
+session:
+  id: 2026-10-11T182925Z-claude-code-443569
+  timestamp: '2026-10-11T18:29:25Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: ibuprofen / paracetamol'
+  details: |
+    Curated from DailyMed setid 52193849-d03a-b61b-e063-6394a90ad277 v2 (CVS Acetaminophen and Ibuprofen). Uses: minor aches and pains due to six items, one AMELIORATES_CONDITION claim per item (headache, toothache as Pain BROADER, backache, menstrual cramps as Dysmenorrhea, muscular aches as Myalgia, minor pain with arthritis context). Contraindication: allergic reaction to any other pain reliever (analgesic); the own-ingredient allergen acetaminophen dropped. Not curated: other acetaminophen-containing drugs (interaction), heart surgery (procedure). Pipeline grounded IBUPROFEN to dexibuprofen; helper and file use CHEBI:5855 ibuprofen.

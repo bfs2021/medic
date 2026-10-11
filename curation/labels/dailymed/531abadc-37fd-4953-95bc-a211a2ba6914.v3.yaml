@@ -1,0 +1,24 @@
+setid: 531abadc-37fd-4953-95bc-a211a2ba6914
+version: 3
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/531abadc-37fd-4953-95bc-a211a2ba6914.xml
+xml_sha256: b5c69cd07719d9108e88dbabd761e62e4b6b35a38288a2dadc25c7d58aa6908e
+retrieved: '2026-10-11'
+title: Advil Sinus Congestion & Pain Relief
+product_name: Advil Sinus Congestion and Pain Relief
+active_moieties:
+- IBUPROFEN
+- PHENYLEPHRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - '• temporarily relieves these symptoms associated with the common cold or flu: • headache • fever
+    • sinus pressure • nasal congestion • minor body aches and pains • reduces swelling of the nasal passages
+    • temporarily restores freer breathing through the nose'
+  CONTRAINDICATIONS:
+  - Do not use
+  - • in children under 12 years of age because this product contains too much medication for children
+    under this age • if you have ever had an allergic reaction to any other pain reliever/fever reducer
+    • right before or after heart surgery • if you are now taking a prescription monoamine oxidase inhibitor
+    (MAOI) (certain drugs for depression, psychiatric, or emotional conditions, or Parkinson's disease),
+    or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription drug contains
+    an MAOI, ask a doctor or pharmacist before taking this product

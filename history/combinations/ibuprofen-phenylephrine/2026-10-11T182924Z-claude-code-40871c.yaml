@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: ibuprofen-phenylephrine
+  path: kb/combinations/ibuprofen-phenylephrine.yaml
+session:
+  id: 2026-10-11T182924Z-claude-code-40871c
+  timestamp: '2026-10-11T18:29:24Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: ibuprofen / phenylephrine'
+  details: |
+    Curated from DailyMed setid 531abadc-37fd-4953-95bc-a211a2ba6914 v3 (Advil Sinus Congestion and Pain Relief). OTC symptom list: 5 symptoms x 2 conditions (common cold, flu); sinus pressure unbound; nasal-passage swelling and freer breathing are effects, not curated. Contraindication: allergic reaction to any other pain reliever/fever reducer (analgesic, antipyretic). Not curated: under-12 age population, heart surgery (procedure), MAOI (drug interaction). Pipeline grounded IBUPROFEN to dexibuprofen; helper and file use CHEBI:5855 ibuprofen.

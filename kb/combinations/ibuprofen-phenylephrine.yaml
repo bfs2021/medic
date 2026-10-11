@@ -1,0 +1,276 @@
+id: MEDICNE:combo-f682f892-bbf6-508a-89ab-b8622dc81f6e
+name: ibuprofen / phenylephrine
+ingredients:
+- id: CHEBI:5855
+  label: ibuprofen
+- id: CHEBI:8093
+  label: phenylephrine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 531abadc-37fd-4953-95bc-a211a2ba6914
+    version: 3
+    title: Advil Sinus Congestion & Pain Relief
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=531abadc-37fd-4953-95bc-a211a2ba6914
+  product_name: Advil Sinus Congestion and Pain Relief
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term: &id001
+        id: HP:0002315
+        label: Headache
+      binding: EXACT
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache'
+    disease_context:
+      text: the common cold or flu
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "headache" is the symptom; HP Headache. "the
+      common cold or flu" names 2 conditions; this claim takes the member the common cold as the disease context
+      (one claim per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term: *id001
+      binding: EXACT
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache'
+    disease_context:
+      text: the common cold or flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "headache" is the symptom; HP Headache. "the
+      common cold or flu" names 2 conditions; this claim takes the member flu as the disease context (one claim
+      per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: fever
+      term: &id002
+        id: HP:0001945
+        label: Fever
+      binding: EXACT
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever'
+    disease_context:
+      text: the common cold or flu
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "fever" is the symptom; HP Fever. "the common
+      cold or flu" names 2 conditions; this claim takes the member the common cold as the disease context (one claim
+      per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: fever
+      term: *id002
+      binding: EXACT
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever'
+    disease_context:
+      text: the common cold or flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "fever" is the symptom; HP Fever. "the common
+      cold or flu" names 2 conditions; this claim takes the member flu as the disease context (one claim per symptom
+      per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sinus pressure
+      term_gap: 'searched HP and MONDO "sinus pressure", "sinus", "facial pain": no term for sinus pressure (sinusitis
+        names an inflammation, not the pressure symptom); the grounding store''s UMLS:C0848633 is outside the configured
+        ontologies'
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever • sinus
+      pressure'
+    disease_context:
+      text: the common cold or flu
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "sinus pressure" is the symptom; no term exists,
+      so it is unbound. "the common cold or flu" names 2 conditions; this claim takes the member the common cold
+      as the disease context (one claim per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sinus pressure
+      term_gap: 'searched HP and MONDO "sinus pressure", "sinus", "facial pain": no term for sinus pressure (sinusitis
+        names an inflammation, not the pressure symptom); the grounding store''s UMLS:C0848633 is outside the configured
+        ontologies'
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever • sinus
+      pressure'
+    disease_context:
+      text: the common cold or flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "sinus pressure" is the symptom; no term exists,
+      so it is unbound. "the common cold or flu" names 2 conditions; this claim takes the member flu as the disease
+      context (one claim per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal congestion
+      term: &id003
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever • sinus
+      pressure • nasal congestion'
+    disease_context:
+      text: the common cold or flu
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "nasal congestion" is the symptom; HP Nasal congestion.
+      "the common cold or flu" names 2 conditions; this claim takes the member the common cold as the disease context
+      (one claim per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: nasal congestion
+      term: *id003
+      binding: EXACT
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever • sinus
+      pressure • nasal congestion'
+    disease_context:
+      text: the common cold or flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "nasal congestion" is the symptom; HP Nasal congestion.
+      "the common cold or flu" names 2 conditions; this claim takes the member flu as the disease context (one claim
+      per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: minor body aches and pains
+      term: &id004
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever • sinus
+      pressure • nasal congestion • minor body aches and pains'
+    disease_context:
+      text: the common cold or flu
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "minor body aches and pains" is mild bodily pain;
+      HP Pain, broader because of "minor" and "body". The "and" joins two words that both name pain (an ache is
+      a pain), so this is one condition, not a coordination of two, and one claim covers it with no member. "the
+      common cold or flu" names 2 conditions; this claim takes the member the common cold as the disease context
+      (one claim per symptom per condition).'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: minor body aches and pains
+      term: *id004
+      binding: BROADER
+    quote: 'temporarily relieves these symptoms associated with the common cold or flu: • headache • fever • sinus
+      pressure • nasal congestion • minor body aches and pains'
+    disease_context:
+      text: the common cold or flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: '"temporarily relieves these symptoms associated with the common cold or flu:" followed by the
+      listed symptom gives AMELIORATES_CONDITION for that symptom. "minor body aches and pains" is mild bodily pain;
+      HP Pain, broader because of "minor" and "body". The "and" joins two words that both name pain (an ache is
+      a pain), so this is one condition, not a coordination of two, and one claim covers it with no member. "the
+      common cold or flu" names 2 conditions; this claim takes the member flu as the disease context (one claim
+      per symptom per condition).'
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: allergic reaction
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: pain reliever/fever reducer
+      member: pain reliever
+      term:
+        id: CHEBI:35480
+        label: analgesic
+      binding: EXACT
+    - text: pain reliever/fever reducer
+      member: fever reducer
+      term:
+        id: CHEBI:35493
+        label: antipyretic
+      binding: EXACT
+    quote: if you have ever had an allergic reaction to any other pain reliever/fever reducer
+    explanation: '"Do not use ... if you have ever had an allergic reaction to any other pain reliever/fever reducer"
+      contraindicates the product after an allergic reaction to another analgesic/antipyretic (cross-sensitivity).
+      drug allergy is NARROWER than "allergic reaction", justified by "to any other pain reliever/fever reducer".'
+    status: DRAFT
+    notes: '"pain reliever/fever reducer" is the OTC name for the analgesic-antipyretic class; it is recorded as
+      two specializations, one per member (analgesic, antipyretic), as in the Advil Allergy and Congestion Relief
+      record. "other" excludes the product''s own analgesic, so this is cross-sensitivity, not an own-ingredient
+      allergy. Not attributed: the agents are allergens.'
+notes: 'OTC Drug Facts label; the Uses text is the indication section and "Do not use" the Contraindications section.
+  Uses is an OTC symptom list under "temporarily relieves these symptoms associated with the common cold or flu:":
+  one AMELIORATES_CONDITION claim per symptom per named condition (the members the common cold and flu, each recorded
+  as the disease context''s member). "reduces swelling of the nasal passages" and "temporarily restores freer breathing
+  through the nose" are effects, not conditions, and are not curated. No use is assigned to an ingredient by the
+  label, so no claim is attributed. Contraindications curated: the allergic reaction to any other pain reliever/fever
+  reducer. Not curated: "in children under 12 years of age because this product contains too much medication for
+  children under this age" (an age population with no condition); "right before or after heart surgery" (a procedure,
+  not a condition); the MAOI item ("if you are now taking a prescription monoamine oxidase inhibitor (MAOI) ...
+  or for 2 weeks after stopping the MAOI drug"), a drug interaction with no patient condition (the parenthesis "certain
+  drugs for depression, psychiatric, or emotional conditions, or Parkinson''s disease" describes what MAOIs are
+  used for, not a patient condition). The pipeline listed this product''s ibuprofen as dexibuprofen (a combination_split
+  row in mappings/drug_grounding.sssom.tsv maps "IBUPROFEN" to CHEBI:43415 dexibuprofen); the SPL active moiety
+  is IBUPROFEN and the label helper grounds it to CHEBI:5855 ibuprofen, which this file uses.'
