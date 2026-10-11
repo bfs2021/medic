@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: caffeine-mepyramine-paracetamol
+  path: kb/combinations/caffeine-mepyramine-paracetamol.yaml
+session:
+  id: 2026-10-11T182823Z-claude-code-722f9c
+  timestamp: '2026-10-11T18:28:23Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: caffeine / mepyramine / paracetamol'
+  details: |
+    Curated from DailyMed setid de723b85-011c-4014-82a8-e813460e3f12 v8 (Rite Aid MENSTRUAL COMPLETE, OTC). 7 AMELIORATES_CONDITION claims, one per symptom associated with menstrual periods: bloating (Abdominal distention), headache, water-weight gain (unbound: no term for a transient water-weight gain), cramps (Dysmenorrhea, NARROWER, a judgement call over Muscle spasm), backache (Back pain), fatigue, muscle aches (Myalgia); 'menstrual periods' is an unbound disease context (no term for menstruation). No contraindication curated: the acetaminophen item is a drug interaction and the allergy item is to the product's own ingredients. Unattributed.

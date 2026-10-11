@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: brompheniramine-dextromethorphan-phenylephrine
+  path: kb/combinations/brompheniramine-dextromethorphan-phenylephrine.yaml
+session:
+  id: 2026-10-11T182822Z-claude-code-d43a29
+  timestamp: '2026-10-11T18:28:22Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: brompheniramine / dextromethorphan / phenylephrine'
+  details: |
+    Curated from DailyMed setid da91e6b6-32ff-44fd-afce-33ea9549554b v5 (good neighbor pharmacy cold and cough, OTC). 10 AMELIORATES_CONDITION claims: cough occurring with a cold (context unbound: the grounding store maps 'cold' to COPD); nasal congestion per member of 'the common cold, hay fever or other upper respiratory allergies'; runny nose, sneezing, itchy eyes, watery eyes, itching of the nose / throat with hay fever (allergic rhinitis) as context. 'temporarily restores freer breathing through the nose' is a product effect, not curated. No contraindication curated: MAOI use is a drug interaction and 'to make a child sleepy' is a prohibited purpose, not a condition. Unattributed.

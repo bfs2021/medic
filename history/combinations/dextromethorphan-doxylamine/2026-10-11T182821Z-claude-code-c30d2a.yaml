@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: dextromethorphan-doxylamine
+  path: kb/combinations/dextromethorphan-doxylamine.yaml
+session:
+  id: 2026-10-11T182821Z-claude-code-c30d2a
+  timestamp: '2026-10-11T18:28:21Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: dextromethorphan / doxylamine'
+  details: |
+    Curated from DailyMed setid 16637d54-8049-d3ce-e063-6394a90aafc9 v4 (Mucinex Children's Mighty Chews Cough Daytime and Nighttime pack, OTC). 14 AMELIORATES_CONDITION claims: cough as may occur with a cold (stated for both products, curated once; context 'a cold' left unbound because the grounding store maps 'cold' to COPD and the validator rejects common cold), cough with no context ('controls cough to help you get to sleep'), and runny nose, sneezing, itching of the nose / throat, itchy eyes, watery eyes per member of 'hay fever or other upper respiratory allergies'. No Contraindications section. Uses names only brand names, so no attribution.

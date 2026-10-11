@@ -1,0 +1,26 @@
+setid: 432c3ec4-7595-4213-94e3-ce41af91804e
+version: 8
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/432c3ec4-7595-4213-94e3-ce41af91804e.xml
+xml_sha256: 5c399f9302dd0161adfa7907e5d5b63a9ffdaf4c3e09f960f6ad4204366d7614
+retrieved: '2026-10-11'
+title: CVS 44-615-Delisted
+product_name: Congestion and Headache
+active_moieties:
+- ACETAMINOPHEN
+- GUAIFENESIN
+- PHENYLEPHRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves these common cold and flu symptoms: nasal congestion headache minor aches and
+    pains sinus congestion and pressure helps loosen phlegm (mucus) and thin bronchial secretions to rid
+    the bronchial passageways of bothersome mucus and make coughs more productive temporarily reduces
+    fever temporarily promotes nasal and/or sinus drainage'
+  CONTRAINDICATIONS:
+  - Do not use
+  - with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure
+    whether a drug contains acetaminophen, ask a doctor or pharmacist. if you are now taking a prescription
+    monoamine oxidase inhibitor (MAOI) (certain drugs for depression, psychiatric, or emotional conditions,
+    or Parkinson’s disease), or for 2 weeks after stopping the MAOI drug. If you do not know if your prescription
+    drug contains an MAOI, ask a doctor or pharmacist before taking this product. if you have ever had
+    an allergic reaction to this product or any of its ingredients

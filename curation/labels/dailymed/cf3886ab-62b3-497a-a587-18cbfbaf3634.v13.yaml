@@ -1,0 +1,23 @@
+setid: cf3886ab-62b3-497a-a587-18cbfbaf3634
+version: 13
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/cf3886ab-62b3-497a-a587-18cbfbaf3634.xml
+xml_sha256: 3a49bd4656b68b377ba635812f78e18017be9c39f40fb66f1a6c805747ef6880
+retrieved: '2026-10-11'
+title: VanaCof ®
+product_name: VANACOF
+active_moieties:
+- CHLOPHEDIANOL
+- DEXCHLORPHENIRAMINE
+- PSEUDOEPHEDRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'temporarily relieves these symptoms due to the common cold, hay fever (allergic rhinitis) or other
+    upper respiratory allergies: runny nose sneezing itching of the nose or throat itchy, watery eyes
+    nasal congestion reduces swelling of nasal passages cough due to minor throat and bronchial irritation'
+  CONTRAINDICATIONS:
+  - Do not use this product
+  - If you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression,
+    psychiatric, or emotional conditions, or Parkinson’s disease), or for 2 weeks after stopping the MAOI
+    drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before
+    taking this product

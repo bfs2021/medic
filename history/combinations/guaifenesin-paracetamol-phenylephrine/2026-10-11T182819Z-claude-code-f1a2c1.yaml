@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: guaifenesin-paracetamol-phenylephrine
+  path: kb/combinations/guaifenesin-paracetamol-phenylephrine.yaml
+session:
+  id: 2026-10-11T182819Z-claude-code-f1a2c1
+  timestamp: '2026-10-11T18:28:19Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: Guaifenesin / paracetamol / phenylephrine'
+  details: |
+    Curated from DailyMed setid 432c3ec4-7595-4213-94e3-ce41af91804e v8 (CVS Congestion and Headache, OTC). 11 AMELIORATES_CONDITION claims: nasal congestion, headache, minor aches and pains (Pain, BROADER) and sinus congestion and pressure (two members, unbound) per member of 'common cold and flu'; fever from its own Uses bullet with no context. Phlegm-loosening and drainage bullets are product effects, not curated. No contraindication curated: both 'Do not use' interaction items name no condition, and the allergy item is to the product's own ingredients. Unattributed.

@@ -1,0 +1,20 @@
+setid: 16637d54-8049-d3ce-e063-6394a90aafc9
+version: 4
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/16637d54-8049-d3ce-e063-6394a90aafc9.xml
+xml_sha256: fcf2fdd0db6d33f63efb8c7d4996b79419799cb7d91b4db00fbe382e50680b50
+retrieved: '2026-10-11'
+title: Mucinex Childrens Mighty Chews Cough Daytime and Nighttime Value Pack
+product_name: Mucinex Childrens Mighty Chews Cough Daytime and Nighttime Combo Pack
+active_moieties:
+- DEXTROMETHORPHAN
+- DOXYLAMINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'Mucinex Children''s Mighty Chews Cough Daytime: temporarily relieves cough due to minor throat and
+    bronchial irritation as may occur with a cold Mucinex Children''s Mighty Chews Cough Nighttime: ■
+    temporarily relieves cough due to minor throat and bronchial irritation as may occur with a cold ■
+    controls cough to help you get to sleep ■ temporarily relieves these symptoms due to hay fever or
+    other upper respiratory allergies: ■ runny nose ■ sneezing ■ itching of the nose or throat ■ itchy,
+    watery eyes'
+  CONTRAINDICATIONS: []

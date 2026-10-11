@@ -1,0 +1,21 @@
+setid: de723b85-011c-4014-82a8-e813460e3f12
+version: 8
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/de723b85-011c-4014-82a8-e813460e3f12.xml
+xml_sha256: 2fe3939dd5e3ceca25dee9f59005a7dd901a2f76a6ae628478d815f2cfa1ef0e
+retrieved: '2026-10-11'
+title: Rite Aid 44-390
+product_name: MENSTRUAL COMPLETE
+active_moieties:
+- ACETAMINOPHEN
+- CAFFEINE
+- PYRILAMINE
+sections:
+  INDICATIONS:
+  - Uses
+  - 'for the temporary relief of these symptoms associated with menstrual periods: bloating headache water-weight
+    gain cramps backache fatigue muscle aches'
+  CONTRAINDICATIONS:
+  - Do not use
+  - with any other drug containing acetaminophen (prescription or nonprescription). If you are not sure
+    whether a drug contains acetaminophen, ask a doctor or pharmacist. if you have ever had an allergic
+    reaction to this product or any of its ingredients

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: chlophedianol-dexchlorpheniramine-pseudoephedrine
+  path: kb/combinations/chlophedianol-dexchlorpheniramine-pseudoephedrine.yaml
+session:
+  id: 2026-10-11T182820Z-claude-code-af94fe
+  timestamp: '2026-10-11T18:28:20Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: chlophedianol / dexchlorpheniramine / pseudoephedrine'
+  details: |
+    Curated from DailyMed setid cf3886ab-62b3-497a-a587-18cbfbaf3634 v13 (VanaCof, OTC). 22 AMELIORATES_CONDITION claims: runny nose, sneezing, itching of the nose / throat, itchy eyes, watery eyes and nasal congestion, each per member of 'the common cold, hay fever (allergic rhinitis) or other upper respiratory allergies' (common cold EXACT, seasonal allergic rhinitis EXACT, allergic respiratory disease BROADER, as in the sibling PRO-CHLO file); plus cough due to minor throat and bronchial irritation with no context, since the SPL puts it in a separate top-level Uses bullet. 'reduces swelling of nasal passages' is a product effect, not curated. The only 'Do not use' item (MAOI) is a drug interaction, not curated. Unattributed.

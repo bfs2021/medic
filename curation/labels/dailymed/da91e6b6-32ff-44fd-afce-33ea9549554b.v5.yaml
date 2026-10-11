@@ -1,0 +1,24 @@
+setid: da91e6b6-32ff-44fd-afce-33ea9549554b
+version: 5
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/da91e6b6-32ff-44fd-afce-33ea9549554b.xml
+xml_sha256: 1e400f19dbc2627e35594e334399b8da02fced414326fad6a94c2ce103ad1ff5
+retrieved: '2026-10-11'
+title: Amerisource Bergen Cold & Cough Drug Facts
+product_name: good neighbor pharmacy cold and cough
+active_moieties:
+- BROMPHENIRAMINE
+- DEXTROMETHORPHAN
+- PHENYLEPHRINE
+sections:
+  INDICATIONS:
+  - Uses
+  - '• temporarily relieves cough due to minor throat and bronchial irritation occurring with a cold,
+    and nasal congestion due to the common cold, hay fever or other upper respiratory allergies • temporarily
+    relieves these symptoms due to hay fever (allergic rhinitis): • runny nose • sneezing • itchy, watery
+    eyes • itching of the nose or throat • temporarily restores freer breathing through the nose'
+  CONTRAINDICATIONS:
+  - Do not use
+  - • if you are now taking a prescription monoamine oxidase inhibitor (MAOI) (certain drugs for depression,
+    psychiatric or emotional conditions, or Parkinson’s disease), or for 2 weeks after stopping the MAOI
+    drug. If you do not know if your prescription drug contains an MAOI, ask a doctor or pharmacist before
+    taking this product. • to make a child sleepy
