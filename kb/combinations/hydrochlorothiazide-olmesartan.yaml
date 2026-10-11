@@ -1,0 +1,92 @@
+id: MEDICNE:combo-c9a92e3f-26d3-52c4-8921-7258b2fea865
+name: hydrochlorothiazide / olmesartan
+ingredients:
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:48416
+  label: olmesartan
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 77e71a2e-8370-4f7a-a5e4-93d86bd37dad
+    version: 104
+    title: 'These highlights do not include all the information needed to use OLMESARTAN MEDOXOMIL AND
+      HYDROCHLOROTHIAZIDE TABLETS safely and effectively. See full prescribing information for OLMESARTAN
+      MEDOXOMIL AND HYDROCHLOROTHIAZIDE TABLETS. OLMESARTAN MEDOXOMIL AND HYDROCHLOROTHIAZIDE tablets,
+      for oral use Initial U.S. Approval: 2003'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=77e71a2e-8370-4f7a-a5e4-93d86bd37dad
+  product_name: Olmesartan Medoxomil and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Olmesartan medoxomil and hydrochlorothiazide tablets are indicated for the treatment of
+      hypertension, to lower blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "is not indicated for the initial therapy of hypertension"
+      restricts this claim but produces none; "may be used alone, or in combination with other
+      antihypertensive drugs" makes co-therapy optional, so no in_combination_with. HP
+      Hypertension agrees with the grounding store; MONDO has no term labelled or exactly
+      synonymous with "hypertension". The Highlights restate the indication.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      In patients with anuria
+    explanation: >-
+      Under "Olmesartan medoxomil and hydrochlorothiazide tablets are contraindicated:", the item
+      "In patients with anuria" states the anuria contraindication.
+    status: DRAFT
+    notes: Product-level, unattributed. The Highlights restate it ("Anuria (4)").
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      For coadministration with aliskiren in patients with diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      Under "are contraindicated:", the item "For coadministration with aliskiren in patients with
+      diabetes" contraindicates the product in patients with diabetes when given with aliskiren,
+      recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: the item speaks of the product. The Highlights restate it.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication (the label says
+  there are no controlled trials demonstrating risk reduction with this product); "not indicated
+  for the initial therapy of hypertension"; hypersensitivity to any component (own ingredients).
+  All claims are product-level. The Highlights sentence "a combination of olmesartan, an angiotensin II receptor blocker and hydrochlorothiazide, a thiazide diuretic indicated for" has no comma before "indicated", so it could grammatically attach the indication to hydrochlorothiazide; the full text ("Olmesartan medoxomil and hydrochlorothiazide tablets are indicated") makes it the product's, and no attribution is made (unlike the olmesartan/amlodipine/hydrochlorothiazide label,
+  this one has no "Because of the hydrochlorothiazide component" sentence and no sulfonamide
+  cross-sensitivity contraindication).

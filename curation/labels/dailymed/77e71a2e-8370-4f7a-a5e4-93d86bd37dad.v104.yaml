@@ -1,0 +1,57 @@
+setid: 77e71a2e-8370-4f7a-a5e4-93d86bd37dad
+version: 104
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/77e71a2e-8370-4f7a-a5e4-93d86bd37dad.xml
+xml_sha256: 0643bb09c4ee53dc324a2f880b47ffca5927ec678fc4da1c7441b72c62c14bb2
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use OLMESARTAN MEDOXOMIL AND HYDROCHLOROTHIAZIDE
+  TABLETS safely and effectively. See full prescribing information for OLMESARTAN MEDOXOMIL AND HYDROCHLOROTHIAZIDE
+  TABLETS. OLMESARTAN MEDOXOMIL AND HYDROCHLOROTHIAZIDE tablets, for oral use Initial U.S. Approval: 2003'
+product_name: Olmesartan Medoxomil and Hydrochlorothiazide
+active_moieties:
+- HYDROCHLOROTHIAZIDE
+- OLMESARTAN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Olmesartan medoxomil and hydrochlorothiazide tablets are indicated for the treatment of hypertension,
+    to lower blood pressure. Olmesartan medoxomil and hydrochlorothiazide tablets is not indicated for
+    the initial therapy of hypertension [see Dosage and Administration ( 2 )] . Lowering blood pressure
+    reduces the risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial infarctions.
+    These benefits have been seen in controlled trials of antihypertensive drugs from a wide variety of
+    pharmacologic classes including the class to which this drug principally belongs. There are no controlled
+    trials demonstrating risk reduction with olmesartan medoxomil and hydrochlorothiazide tablets. Control
+    of high blood pressure should be part of comprehensive cardiovascular risk management, including,
+    as appropriate, lipid control, diabetes management, antithrombotic therapy, smoking cessation, exercise,
+    and limited sodium intake. Many patients will require more than one drug to achieve blood pressure
+    goals. For specific advice on goals and management, see published guidelines, such as those of the
+    National High Blood Pressure Education Program’s Joint National Committee on Prevention, Detection,
+    Evaluation, and Treatment of High Blood Pressure (JNC). Numerous antihypertensive drugs, from a variety
+    of pharmacologic classes and with different mechanisms of action, have been shown in randomized controlled
+    trials to reduce cardiovascular morbidity and mortality, and it can be concluded that it is blood
+    pressure reduction, and not some other pharmacologic property of the drugs, that is largely responsible
+    for those benefits. The largest and most consistent cardiovascular outcome benefit has been a reduction
+    in the risk of stroke, but reductions in myocardial infarction and cardiovascular mortality also have
+    been seen regularly. Elevated systolic or diastolic pressure causes increased cardiovascular risk,
+    and the absolute risk increase per mmHg is greater at higher blood pressures, so that even modest
+    reductions of severe hypertension can provide substantial benefit. Relative risk reduction from blood
+    pressure reduction is similar across populations with varying absolute risk, so the absolute benefit
+    is greater in patients who are at higher risk independent of their hypertension (for example, patients
+    with diabetes or hyperlipidemia), and such patients would be expected to benefit from more aggressive
+    treatment to a lower blood pressure goal. Some antihypertensive drugs have smaller blood pressure
+    effects (as monotherapy) in black patients, and many antihypertensive drugs have additional approved
+    indications and effects (e.g., on angina, heart failure, or diabetic kidney disease). These considerations
+    may guide selection of therapy. Olmesartan medoxomil and hydrochlorothiazide tablets may be used alone,
+    or in combination with other antihypertensive drugs.
+  - Olmesartan medoxomil and hydrochlorothiazide tablets are a combination of olmesartan, an angiotensin
+    II receptor blocker and hydrochlorothiazide, a thiazide diuretic indicated for the treatment of hypertension,
+    to lower blood pressure. Lowering blood pressure reduces the risk of fatal and nonfatal cardiovascular
+    events, primarily strokes and myocardial infarctions. ( 1 )
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - 'Olmesartan medoxomil and hydrochlorothiazide tablets are contraindicated: In patients with hypersensitivity
+    to any component of olmesartan medoxomil and hydrochlorothiazide tablets [see Adverse Reactions (
+    6.1 , 6.2 )] In patients with anuria [see Warnings and Precautions ( 5.3 ) and Adverse Reactions (
+    6.1)] For coadministration with aliskiren in patients with diabetes [see Drug Interactions ( 7.4 )].'
+  - Hypersensitivity to any component of olmesartan medoxomil and hydrochlorothiazide tablets ( 4 ) Anuria
+    (4) Do not co-administer aliskiren with Olmesartan medoxomil and hydrochlorothiazide tablets in patients
+    with diabetes. ( 4 )

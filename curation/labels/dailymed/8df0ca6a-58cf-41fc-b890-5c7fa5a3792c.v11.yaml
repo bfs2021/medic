@@ -1,0 +1,93 @@
+setid: 8df0ca6a-58cf-41fc-b890-5c7fa5a3792c
+version: 11
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/8df0ca6a-58cf-41fc-b890-5c7fa5a3792c.xml
+xml_sha256: 6a357bf045f114de0c3cc4af2047ae71c9a5816b197dfb192026455bf5b964ba
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use TEKTURNA HCT safely and effectively.
+  See full prescribing information for TEKTURNA HCT. TEKTURNA ® HCT (aliskiren and hydrochlorothiazide)
+  tablets, for oral use Initial U.S. Approval: 2008'
+product_name: Tekturna HCT
+active_moieties:
+- ALISKIREN
+- HYDROCHLOROTHIAZIDE
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - Tekturna HCT is indicated for the treatment of hypertension, to lower blood pressure. Lowering blood
+    pressure reduces the risk of fatal and nonfatal cardiovascular events, primarily strokes and myocardial
+    infarctions. These benefits have been seen in controlled trials of antihypertensive drugs from a wide
+    variety of pharmacologic classes including hydrochlorothiazide (HCTZ). There are no controlled trials
+    demonstrating risk reduction with Tekturna HCT. Control of high blood pressure should be part of comprehensive
+    cardiovascular risk management, including, as appropriate, lipid control, diabetes management, antithrombotic
+    therapy, smoking cessation, exercise, and limited sodium intake. Many patients will require more than
+    1 drug to achieve blood pressure goals. For specific advice on goals and management, see published
+    guidelines, such as those of the National High Blood Pressure Education Program's Joint National Committee
+    on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC). Numerous antihypertensive
+    drugs, from a variety of pharmacologic classes and with different mechanisms of action, have been
+    shown in randomized controlled trials to reduce cardiovascular morbidity and mortality, and it can
+    be concluded that it is blood pressure reduction, and not some other pharmacologic property of the
+    drugs, that is largely responsible for those benefits. The largest and most consistent cardiovascular
+    outcome benefit has been a reduction in the risk of stroke, but reductions in myocardial infarction
+    and cardiovascular mortality have also been seen regularly. Elevated systolic or diastolic pressure
+    causes increased cardiovascular risk, and the absolute risk increase per mmHg is greater at higher
+    blood pressures, so that even modest reductions of severe hypertension can provide substantial benefit.
+    Relative risk reduction from blood pressure reduction is similar across populations with varying absolute
+    risk, so the absolute benefit is greater in patients who are at higher risk independent of their hypertension
+    (e.g., patients with diabetes or hyperlipidemia), and such patients would be expected to benefit from
+    more aggressive treatment to a lower blood pressure goal. Some antihypertensive drugs have smaller
+    blood pressure effects (as monotherapy) in black patients, and many antihypertensive drugs have additional
+    approved indications and effects (e.g., on angina, heart failure, or diabetic kidney disease). These
+    considerations may guide selection of therapy.
+  - 'Tekturna HCT is a combination of aliskiren, a renin inhibitor, and hydrochlorothiazide (HCTZ), a
+    thiazide diuretic, indicated for the treatment of hypertension, to lower blood pressure: In patients
+    not adequately controlled with monotherapy. ( 1 ) As initial therapy in patients likely to need multiple
+    drugs to achieve their blood pressure goals. ( 1 ) Lowering blood pressure reduces the risk of fatal
+    and nonfatal cardiovascular events, primarily strokes and myocardial infarction.'
+  - Add-On Therapy A patient whose blood pressure is not adequately controlled with aliskiren alone or
+    HCTZ alone may be switched to combination therapy with Tekturna HCT. A patient whose blood pressure
+    is controlled with HCTZ alone but who experiences hypokalemia may be switched to combination therapy
+    with Tekturna HCT. A patient who experiences dose-limiting adverse reactions on either component alone
+    may be switched to Tekturna HCT containing a lower dose of that component in combination with the
+    other to achieve similar blood pressure reductions.
+  - Replacement Therapy Tekturna HCT may be substituted for the titrated components.
+  - 'Initial Therapy Tekturna HCT may be used as initial therapy in patients who are likely to need multiple
+    drugs to achieve their blood pressure goals. The choice of Tekturna HCT as initial therapy should
+    be based on an assessment of potential benefits and risks. Patients with Stage 2 hypertension are
+    at a relatively high risk for cardiovascular events (such as strokes, heart attacks, and heart failure),
+    kidney failure, and vision problems, so prompt treatment is clinically relevant. The decision to use
+    a combination as initial therapy should be individualized and should be shaped by considerations such
+    as baseline blood pressure, the target goal, and the incremental likelihood of achieving goal with
+    a combination compared to monotherapy. Individual blood pressure goals may vary based upon the patient''s
+    risk. Data from the high-dose multifactorial study [see Clinical Studies ( 14 )] provide estimates
+    of the probability of reaching a target blood pressure with Tekturna HCT compared to aliskiren or
+    HCTZ monotherapy. Figures 1 – 4 provide estimates of the likelihood of achieving systolic or diastolic
+    blood pressure control with Tekturna HCT 300/25 mg, based upon baseline systolic or diastolic blood
+    pressure. The curve of each treatment group was estimated by logistic regression modeling. The estimated
+    likelihood at the right tail of each curve is less reliable because of small numbers of subjects with
+    high baseline blood pressures. Figure 1: Probability of Achieving Systolic Blood Pressure (SBP) Less
+    Than 140 mmHg Figure 2: Probability of Achieving Systolic Blood Pressure (SBP) Less Than 130 mmHg
+    Figure 3: Probability of Achieving Diastolic Blood Pressure (DBP) Less Than 90 mmHg Figure 4: Probability
+    of Achieving Diastolic Blood Pressure (DBP) Less Than 80 mmHg At all levels of baseline blood pressure,
+    the probability of achieving any given diastolic or systolic goal is greater with the combination
+    than for either monotherapy. For example, the mean baseline msSBP/msDBP for patients participating
+    in this multifactorial study was 154/99 mmHg. A patient with a baseline blood pressure of 154/99 mmHg
+    has about a 62% chance of achieving a goal of less than 140 mmHg (systolic) and 61% chance of achieving
+    less than 90 mmHg (diastolic) on aliskiren alone, and the chance of achieving these goals on HCTZ
+    alone is about 54% (systolic) and 49% (diastolic). The chance of achieving these goals on Tekturna
+    HCT rises to about 77% (systolic) and 74% (diastolic). The chance of achieving these goals on placebo
+    is about 34% (systolic) and 37% (diastolic) [see Dosage and Administration ( 2 ) and Clinical Studies
+    ( 14 )].'
+  - Figure 1
+  - Figure 2
+  - Figure 3
+  - Figure 4
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Do not use aliskiren with ARBs or ACEIs in patients with diabetes [see Warnings and Precautions (
+    5.2 ) and Clinical Studies ( 14.4 )]. Tekturna HCT is contraindicated in patients with known anuria
+    or hypersensitivity to sulfonamide-derived drugs like HCTZ or to any of the components [see Warnings
+    and Precautions ( 5.6 ) and Adverse Reactions ( 6.1 )] . Hypersensitivity reactions may range from
+    urticaria to anaphylaxis.
+  - Do not use with angiotensin receptor blockers (ARBs) or angiotensin- converting enzyme inhibitors
+    (ACEIs) in patients with diabetes. ( 4 ) Anuria ( 4 ) Hypersensitivity to sulfonamide-derived drugs
+    or to any of the components. ( 4 )

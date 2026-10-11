@@ -1,0 +1,137 @@
+id: MEDICNE:combo-41e0989b-5110-5857-af34-1aa9bdc7b22d
+name: hydrochlorothiazide / irbesartan
+ingredients:
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:5959
+  label: irbesartan
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 1898f438-4571-4aab-ae06-9bf1aabf0486
+    version: 15
+    title: 'These highlights do not include all the information needed to use IRBESARTAN AND HYDROCHLOROTHIAZIDE
+      TABLETS safely and effectively. See full prescribing information for IRBESARTAN AND HYDROCHLOROTHIAZIDE
+      TABLETS. IRBESARTAN and HYDROCHLOROTHIAZIDE tablets, for oral use Initial U.S. Approval: 1997'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1898f438-4571-4aab-ae06-9bf1aabf0486
+  product_name: Irbesartan and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Irbesartan and hydrochlorothiazide tablets are indicated for the treatment of hypertension.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. The next sentences say the product "may be used" in patients not
+      adequately controlled on monotherapy and "may also be used as initial therapy" in patients
+      likely to need multiple drugs (the Highlights list both after "indicated for hypertension:").
+      They are alternative settings that together do not restrict the indication, so no
+      line_of_therapy is recorded and no separate claim is made, as in the azilsartan/chlorthalidone file (PR #72). HP Hypertension agrees with the grounding store; MONDO has no term labelled or exactly
+      synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Because of the hydrochlorothiazide component, this product is contraindicated in patients
+      with anuria or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: COMPONENT_STATEMENT
+      snippet: Because of the hydrochlorothiazide component
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide component", assigning both
+        contraindications it lists, anuria among them, to the hydrochlorothiazide component.
+    explanation: >-
+      "this product is contraindicated in patients with anuria" states the anuria contraindication,
+      the first of the sentence's two conditions.
+    status: DRAFT
+    notes: >-
+      Attributed as in the olmesartan/amlodipine/hydrochlorothiazide file. The text is "anuria"
+      alone: the "or" joins two separate contraindications (anuria; sulfonamide hypersensitivity),
+      each curated as its own claim. The Highlights restate it ("Anuria. ( 4 )") without the
+      component wording; the full-text copy is quoted so the snippet sits in the claim's sentence.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Because of the hydrochlorothiazide component, this product is contraindicated in patients
+      with anuria or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: COMPONENT_STATEMENT
+      snippet: Because of the hydrochlorothiazide component
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide component", assigning both
+        contraindications it lists, the sulfonamide cross-sensitivity among them, to the
+        hydrochlorothiazide component.
+    explanation: >-
+      "contraindicated in patients with ... hypersensitivity to other sulfonamide-derived drugs"
+      states a drug-allergy contraindication with other sulfonamide-derived drugs as the agents;
+      "other" excludes the product's own hydrochlorothiazide.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs. Attributed to hydrochlorothiazide on the
+      label's "Because of the hydrochlorothiazide component", not on the allergen. ChEBI
+      sulfonamide is the chemical class, broader than "sulfonamide-derived drugs". The Highlights
+      ("Hypersensitivity to sulfonamide-derived drugs") drop "other".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not coadminister aliskiren with irbesartan and hydrochlorothiazide tablets in patients with
+      diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not coadminister aliskiren with irbesartan and hydrochlorothiazide tablets in patients
+      with diabetes" contraindicates the product in patients with diabetes when given with
+      aliskiren, recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: "irbesartan and hydrochlorothiazide tablets" is the product's own
+      name. The Highlights restate it.
+notes: >-
+  Not claimed: the initial-therapy guidance, the probability-of-goal figures and the "stage 2
+  (moderate or severe) hypertension ... at relatively high risk for cardiovascular events" sentence
+  in Indications (rationale for initial therapy, not separate indications); hypersensitivity to any
+  component of this product (own ingredients).

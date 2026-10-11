@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-losartan
+  path: kb/combinations/hydrochlorothiazide-losartan.yaml
+session:
+  id: 2026-10-11T175137Z-claude-code-27a31b
+  timestamp: '2026-10-11T17:51:37Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: hydrochlorothiazide / losartan'
+  details: |
+    Curated from DailyMed setid 499208e5-21ab-d4fe-e063-6294a90a9a78 v2. Five product-level claims: hypertension; stroke risk reduction in patients with hypertension and left ventricular hypertrophy, recorded once per context condition because disease_context is single-valued (the Black-patient exclusion has no slot); anuria; diabetes with aliskiren.

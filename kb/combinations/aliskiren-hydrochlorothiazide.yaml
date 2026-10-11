@@ -1,0 +1,158 @@
+id: MEDICNE:combo-2b7e84b9-214a-59d8-9ea0-d972285c1b06
+name: aliskiren / hydrochlorothiazide
+ingredients:
+- id: CHEBI:601027
+  label: aliskiren
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 8df0ca6a-58cf-41fc-b890-5c7fa5a3792c
+    version: 11
+    title: 'These highlights do not include all the information needed to use TEKTURNA HCT safely and
+      effectively. See full prescribing information for TEKTURNA HCT. TEKTURNA ® HCT (aliskiren and hydrochlorothiazide)
+      tablets, for oral use Initial U.S. Approval: 2008'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8df0ca6a-58cf-41fc-b890-5c7fa5a3792c
+  product_name: Tekturna HCT
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Tekturna HCT is indicated for the treatment of hypertension, to lower blood pressure.
+    explanation: >-
+      "is indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed ("Tekturna HCT" is the brand name). The Highlights list "In
+      patients not adequately controlled with monotherapy" and "As initial therapy in patients
+      likely to need multiple drugs" after "to lower blood pressure:", and the full text has
+      Add-On, Replacement and Initial Therapy paragraphs. They are alternative settings that
+      together do not restrict the indication, so no line_of_therapy is recorded and no separate
+      claim is made, as in the azilsartan/chlorthalidone file (PR #72). The Add-On paragraph's "controlled
+      with HCTZ alone but who experiences hypokalemia may be switched" is switching guidance, not
+      an indication for hypokalemia. HP Hypertension agrees with the grounding store.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not use aliskiren with ARBs or ACEIs in patients with diabetes
+    when_coadministered_with:
+    - text: ARBs
+      term:
+        id: CHEBI:61016
+        label: angiotensin receptor antagonist
+      binding: EXACT
+    explanation: >-
+      "Do not use aliskiren with ARBs or ACEIs in patients with diabetes" contraindicates
+      aliskiren, and so this aliskiren-containing product, in patients with diabetes when given
+      with an ARB, recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      One claim per co-administered class ("ARBs or ACEIs" are alternatives); each
+      descriptor text is the class's own word, because `member` on a when_coadministered_with
+      descriptor is checked as a condition and rejected. ChEBI angiotensin
+      receptor antagonist is the class ARBs (angiotensin receptor blockers) belong to. The
+      sentence names aliskiren, one of the product's own ingredients, as the party to the
+      co-administration, so it points at aliskiren; it is left unattributed because the
+      validator's co-administration cue does not read "use aliskiren with" (the ingredient sits
+      between "use" and "with"), so INTERACTING_INGREDIENT with this snippet is rejected. The
+      Highlights restate it without naming aliskiren ("Do not use with angiotensin receptor
+      blockers (ARBs) ...").
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not use aliskiren with ARBs or ACEIs in patients with diabetes
+    when_coadministered_with:
+    - text: ACEIs
+      term:
+        id: CHEBI:35457
+        label: EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor
+      binding: EXACT
+    explanation: >-
+      "Do not use aliskiren with ARBs or ACEIs in patients with diabetes" contraindicates
+      aliskiren, and so this aliskiren-containing product, in patients with diabetes when given
+      with an ACE inhibitor, recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Companion of the ARB claim. ChEBI EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor is the
+      angiotensin-converting-enzyme inhibitor class, as in the hydrochlorothiazide/quinaprilat file (PR #72).
+      Unattributed for the same reason as the ARB claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Tekturna HCT is contraindicated in patients with known anuria or hypersensitivity to
+      sulfonamide-derived drugs like HCTZ or to any of the components
+    explanation: >-
+      "Tekturna HCT is contraindicated in patients with known anuria" states the anuria
+      contraindication, the first of the sentence's conditions.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: "Tekturna HCT" is the brand name. "known" describes the
+      patient's awareness, not the condition. The text is "anuria" alone: the "or" joins separate
+      contraindications (anuria; hypersensitivity), as in the other hydrochlorothiazide files.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Tekturna HCT is contraindicated in patients with known anuria or hypersensitivity to
+      sulfonamide-derived drugs like HCTZ or to any of the components
+    explanation: >-
+      "contraindicated in patients with ... hypersensitivity to sulfonamide-derived drugs like HCTZ"
+      states a drug-allergy contraindication with sulfonamide-derived drugs as the agents; HCTZ is
+      given as an example of the class.
+    status: DRAFT
+    notes: >-
+      The label does not write "other", but the class (sulfonamide-derived drugs) reaches beyond
+      the product's own hydrochlorothiazide, so the cross-sensitivity is curated with the class as
+      the agent; "like HCTZ" (own ingredient) and "to any of the components" are not curated.
+      ChEBI sulfonamide is the chemical class, broader than "sulfonamide-derived drugs".
+      Unattributed: HCTZ here is an allergen example, not a stated cause.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication (the label says
+  there are no controlled trials demonstrating risk reduction with Tekturna HCT); the Add-On,
+  Replacement and Initial Therapy paragraphs and the probability-of-goal figures (use guidance,
+  not separate indications); hypersensitivity "to any of the components" (own ingredients); "Hypersensitivity
+  reactions may range from urticaria to anaphylaxis" (describes reactions, contraindicates
+  nothing).

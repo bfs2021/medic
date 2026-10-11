@@ -1,0 +1,64 @@
+setid: 1898f438-4571-4aab-ae06-9bf1aabf0486
+version: 15
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/1898f438-4571-4aab-ae06-9bf1aabf0486.xml
+xml_sha256: 3544280ca36e5c0efc678ba7d38ef6474ddde4edca35fdbef5c475ffa885e5d0
+retrieved: '2026-10-11'
+title: 'These highlights do not include all the information needed to use IRBESARTAN AND HYDROCHLOROTHIAZIDE
+  TABLETS safely and effectively. See full prescribing information for IRBESARTAN AND HYDROCHLOROTHIAZIDE
+  TABLETS. IRBESARTAN and HYDROCHLOROTHIAZIDE tablets, for oral use Initial U.S. Approval: 1997'
+product_name: Irbesartan and Hydrochlorothiazide
+active_moieties:
+- HYDROCHLOROTHIAZIDE
+- IRBESARTAN
+sections:
+  INDICATIONS:
+  - 1 INDICATIONS AND USAGE
+  - 'Irbesartan and hydrochlorothiazide tablets are indicated for the treatment of hypertension. Irbesartan
+    and hydrochlorothiazide tablets may be used in patients whose blood pressure is not adequately controlled
+    on monotherapy. Irbesartan and hydrochlorothiazide tablets may also be used as initial therapy in
+    patients who are likely to need multiple drugs to achieve their blood pressure goals. The choice of
+    irbesartan and hydrochlorothiazide tablets as initial therapy for hypertension should be based on
+    an assessment of potential benefits and risks. Patients with stage 2 (moderate or severe) hypertension
+    are at relatively high risk for cardiovascular events (such as strokes, heart attacks, and heart failure),
+    kidney failure, and vision problems, so prompt treatment is clinically relevant. The decision to use
+    a combination as initial therapy should be individualized and may be shaped by considerations such
+    as the baseline blood pressure, the target goal, and the incremental likelihood of achieving goal
+    with a combination compared with monotherapy. Data from Studies V and VI [see Clinical Studies ( 14.2
+    ) ] provide estimates of the probability of reaching a blood pressure goal with irbesartan and hydrochlorothiazide
+    tablets compared to irbesartan or hydrochlorothiazide (HCTZ) monotherapy. The relationship between
+    baseline blood pressure and achievement of a SeSBP <140 or <130 mmHg or SeDBP <90 or <80 mmHg in patients
+    treated with irbesartan and hydrochlorothiazide tablets compared to patients treated with irbesartan
+    or HCTZ monotherapy are shown in Figures 1a through 2b. Figure 1a: Probability of Achieving SBP <140
+    mmHg in Patients from Initial Therapy Studies V (Week 8) and VI (Week 7)* Figure 1b: Probability of
+    Achieving SBP <130 mmHg in Patients from Initial Therapy Studies V (Week 8) and VI (Week 7)* Figure
+    2a: Probability of Achieving DBP <90 mmHg in Patients from Initial Therapy Studies V (Week 8) and
+    VI (Week 7)* Figure 2b: Probability of Achieving DBP <80 mmHg in Patients from Initial Therapy Studies
+    V (Week 8) and VI (Week 7)* *For all probability curves, patients without blood pressure measurements
+    at Week 7 (Study VI) and Week 8 (Study V) were counted as not reaching goal (intent-to-treat analysis).
+    The above graphs provide a rough approximation of the likelihood of reaching a targeted blood pressure
+    goal (e.g., Week 8 sitting systolic blood pressure ≤140 mmHg) for the treatment groups. The curve
+    of each treatment group in each study was estimated by logistic regression modeling from all available
+    data of that treatment group. The estimated likelihood at the right tail of each curve is less reliable
+    due to small numbers of subjects with high baseline blood pressures. For example, a patient with a
+    blood pressure of 180/105 mmHg has about a 25% likelihood of achieving a goal of <140 mmHg (systolic)
+    and 50% likelihood of achieving <90 mmHg (diastolic) on irbesartan alone (and lower still likelihoods
+    on HCTZ alone). The likelihood of achieving these goals on irbesartan and hydrochlorothiazide tablets
+    rises to about 40% (systolic) or 70% (diastolic).'
+  - 'Irbesartan and hydrochlorothiazide tablets are a combination of irbesartan, an angiotensin II receptor
+    antagonist, and hydrochlorothiazide, a thiazide diuretic, indicated for hypertension: In patients
+    not adequately controlled with monotherapy. ( 1 ) As initial therapy in patients likely to need multiple
+    drugs to achieve their blood pressure goals. ( 1 )'
+  - fig-1a
+  - fig-1b
+  - fig-2a
+  - fig-2b
+  CONTRAINDICATIONS:
+  - 4 CONTRAINDICATIONS
+  - Irbesartan and hydrochlorothiazide tablets are contraindicated in patients who are hypersensitive
+    to any component of this product. Because of the hydrochlorothiazide component, this product is contraindicated
+    in patients with anuria or hypersensitivity to other sulfonamide-derived drugs. Do not coadminister
+    aliskiren with irbesartan and hydrochlorothiazide tablets in patients with diabetes [see Drug Interactions
+    ( 7 ) ] .
+  - • Hypersensitivity to any component of this product. ( 4 ) • Anuria. ( 4 ) • Hypersensitivity to sulfonamide-derived
+    drugs. ( 4 ) • Do not coadminister aliskiren with irbesartan and hydrochlorothiazide tablets in patients
+    with diabetes. ( 4 )

@@ -1,0 +1,148 @@
+id: MEDICNE:combo-93a573f4-c861-5cdc-91e9-8c39af30ef26
+name: hydrochlorothiazide / losartan
+ingredients:
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:6541
+  label: losartan
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 499208e5-21ab-d4fe-e063-6294a90a9a78
+    version: 2
+    title: 'These highlights do not include all the information needed to use LOSARTAN POSTASSIUM AND
+      HYDROCHLOROTHIAZIDE​TABLETS safely and effectively. See full prescribing information for LOSARTAN
+      POTASSIUM AND HYDROCHLOROTHIAZIDE TABLETS. LOSARTAN POTASSIUM AND HYDROCHLOROTHIAZIDE tablets, for
+      oral use Initial U.S. Approval: 1995'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=499208e5-21ab-d4fe-e063-6294a90a9a78
+  product_name: Losartan Potassium and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Losartan potassium and hydrochlorothiazide tablets are indicated for the treatment of
+      hypertension, to lower blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed (1.1 Hypertension). "This fixed dose combination is not indicated
+      for initial therapy of hypertension, except when the hypertension is severe enough ..."
+      restricts this claim but produces none; "may be administered with other antihypertensive
+      agents" makes co-therapy optional. HP Hypertension agrees with the grounding store; MONDO
+      has no term labelled or exactly synonymous with "hypertension". The Highlights restate it.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      Losartan potassium and hydrochlorothiazide tablets are indicated to reduce the risk of stroke
+      in patients with hypertension and left ventricular hypertrophy, but there is evidence that
+      this benefit does not apply to Black patients.
+    disease_context:
+      text: hypertension and left ventricular hypertrophy
+      member: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    explanation: >-
+      "are indicated to reduce the risk of stroke" is prevention of stroke; "in patients with
+      hypertension and left ventricular hypertrophy" gives the population, whose hypertension is
+      this claim's disease context.
+    status: DRAFT
+    notes: >-
+      The population has both conditions together ("and" is conjunctive here, not a list of
+      alternatives). disease_context holds one condition, so the claim is recorded twice, once per
+      condition, each with the whole phrase as text; read together they give the population. The two claims are not independent facts: neither the stroke indication in hypertension without left ventricular hypertrophy nor in left ventricular hypertrophy without hypertension is stated, and a consumer must not read either claim alone. The
+      exclusion "there is evidence that this benefit does not apply to Black patients" has no slot
+      and stays in the quote. MONDO stroke disorder has the exact synonym "stroke", the term the
+      other combination files use. Product-level, unattributed.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      Losartan potassium and hydrochlorothiazide tablets are indicated to reduce the risk of stroke
+      in patients with hypertension and left ventricular hypertrophy, but there is evidence that
+      this benefit does not apply to Black patients.
+    disease_context:
+      text: hypertension and left ventricular hypertrophy
+      member: left ventricular hypertrophy
+      term:
+        id: HP:0001712
+        label: Left ventricular hypertrophy
+      binding: EXACT
+    explanation: >-
+      "are indicated to reduce the risk of stroke" is prevention of stroke; "in patients with
+      hypertension and left ventricular hypertrophy" gives the population, whose left ventricular
+      hypertrophy is this claim's disease context.
+    status: DRAFT
+    notes: >-
+      Companion of the previous claim: the same population (hypertension together with left
+      ventricular hypertrophy), recorded per condition because disease_context holds one. MONDO
+      has no left ventricular hypertrophy term; HP has it exactly. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      In patients with anuria
+    explanation: >-
+      Under "Losartan potassium and hydrochlorothiazide tablets are contraindicated:", the item "In
+      patients with anuria" states the anuria contraindication.
+    status: DRAFT
+    notes: Product-level, unattributed. The Highlights restate it ("Anuria. ( 4 )").
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      For coadministration with aliskiren in patients with diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      Under "are contraindicated:", the item "For coadministration with aliskiren in patients with
+      diabetes" contraindicates the product in patients with diabetes when given with aliskiren,
+      recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: the item speaks of the product. The Highlights restate it.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text in 1.1; "not indicated for initial
+  therapy of hypertension, except when the hypertension is severe enough ..." (a restriction, not
+  an indication); hypersensitivity to any component of this product (own ingredients). All claims are product-level. The Highlights sentence "a combination of losartan, an angiotensin II receptor blocker (ARB) and hydrochlorothiazide, a diuretic indicated for:" has no comma before "indicated", so it could grammatically attach the indications to hydrochlorothiazide; the full text ("Losartan potassium and hydrochlorothiazide tablets are indicated") makes them the product's, and no attribution is made.

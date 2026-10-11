@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: hydrochlorothiazide-lisinopril
+  path: kb/combinations/hydrochlorothiazide-lisinopril.yaml
+session:
+  id: 2026-10-11T175114Z-claude-code-8c9aa6
+  timestamp: '2026-10-11T17:51:14Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: hydrochlorothiazide / lisinopril'
+  details: |
+    Curated from DailyMed setid 52b90789-2902-3ab9-e063-6394a90a5abb v1. Seven claims: hypertension (product-level); angioedema after ACE-inhibitor treatment (HP Angioedema + ACE-inhibitor specialization); hereditary or idiopathic angioedema split per member (MONDO hereditary angioedema EXACT, HP Angioedema BROADER for idiopathic); anuria and other-sulfonamide cross-sensitivity attributed to hydrochlorothiazide on 'Because of the hydrochlorothiazide component'; diabetes with aliskiren. Neprilysin-inhibitor contraindications not curated (pure drug interactions).

@@ -1,0 +1,27 @@
+history_version: 1
+target:
+  kind: combination
+  slug: aliskiren-hydrochlorothiazide
+  path: kb/combinations/aliskiren-hydrochlorothiazide.yaml
+session:
+  id: 2026-10-11T175138Z-claude-code-05781e
+  timestamp: '2026-10-11T17:51:38Z'
+  actors:
+  - type: ai_agent
+    name: claude-code
+    model: claude-opus-5-5
+    agent_tool: claude-code
+links:
+  issues: []
+  prs: []
+  urls:
+  - https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+events:
+- type: CREATE
+  outcome: changed
+  sections:
+  - ingredients
+  - claims
+  summary: 'Create: aliskiren / hydrochlorothiazide'
+  details: |
+    Curated from DailyMed setid 8df0ca6a-58cf-41fc-b890-5c7fa5a3792c v11 (Tekturna HCT). Five product-level claims: hypertension; diabetes with ARBs and diabetes with ACE inhibitors (one claim per co-administered class); anuria; hypersensitivity to sulfonamide-derived drugs (class kept, 'like HCTZ' and 'any of the components' dropped). 'Do not use aliskiren with ARBs or ACEIs' names aliskiren as a party, but INTERACTING_INGREDIENT is rejected by the validator's co-administration cue, so it is left unattributed and noted.

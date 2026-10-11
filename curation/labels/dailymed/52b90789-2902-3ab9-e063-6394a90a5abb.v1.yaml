@@ -1,0 +1,56 @@
+setid: 52b90789-2902-3ab9-e063-6394a90a5abb
+version: 1
+source_url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/52b90789-2902-3ab9-e063-6394a90a5abb.xml
+xml_sha256: 298c1619a5f14d6ad14dd232a8a23b509c859f950c093446189f7b592cccb895
+retrieved: '2026-10-11'
+title: LISINOPRIL AND HYDROCHLOROTHIAZIDE TABLETS USP
+product_name: Lisinopril and Hydrochlorothiazide
+active_moieties:
+- HYDROCHLOROTHIAZIDE
+- LISINOPRIL ANHYDROUS
+sections:
+  INDICATIONS:
+  - INDICATIONS AND USAGE
+  - Lisinopril and hydrochlorothiazide tablets USP are indicated for the treatment of hypertension, to
+    lower blood pressure. Lowering blood pressure lowers the risk of fatal and non-fatal cardiovascular
+    events, primarily strokes and myocardial infarctions. These benefits have been seen in controlled
+    trials of antihypertensive drugs from a wide variety of pharmacologic classes including lisinopril
+    and hydrochlorothiazide. Control of high blood pressure should be part of comprehensive cardiovascular
+    risk management, including, as appropriate, lipid control, diabetes management, antithrombotic therapy,
+    smoking cessation, exercise, and limited sodium intake. Many patients will require more than 1 drug
+    to achieve blood pressure goals. For specific advice on goals and management, see published guidelines,
+    such as those of the National High Blood Pressure Education Program's Joint National Committee on
+    Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC). Numerous antihypertensive
+    drugs, from a variety of pharmacologic classes and with different mechanisms of action, have been
+    shown in randomized controlled trials to reduce cardiovascular morbidity and mortality, and it can
+    be concluded that it is blood pressure reduction, and not some other pharmacologic property of the
+    drugs, that is largely responsible for those benefits. The largest and most consistent cardiovascular
+    outcome benefit has been a reduction in the risk of stroke, but reductions in myocardial infarction
+    and cardiovascular mortality also have been seen regularly. Elevated systolic or diastolic pressure
+    causes increased cardiovascular risk, and the absolute risk increase per mmHg is greater at higher
+    blood pressures, so that even modest reductions of severe hypertension can provide substantial benefit.
+    Relative risk reduction from blood pressure reduction is similar across populations with varying absolute
+    risk, so the absolute benefit is greater in patients who are at higher risk independent of their hypertension
+    (for example, patients with diabetes or hyperlipidemia), and such patients would be expected to benefit
+    from more aggressive treatment to a lower blood pressure goal. Some antihypertensive drugs have smaller
+    blood pressure effects (as monotherapy) in black patients, and many antihypertensive drugs have additional
+    approved indications and effects (eg., on angina, heart failure, or diabetic kidney disease). These
+    considerations may guide selection of therapy. These fixed-dose combinations are not indicated for
+    initial therapy (see DOSAGE AND ADMINISTRATION ). In using lisinopril and hydrochlorothiazide tablets
+    USP, consideration should be given to the fact that an angiotensin converting enzyme inhibitor, captopril,
+    has caused agranulocytosis, particularly in patients with renal impairment or collagen vascular disease,
+    and that available data are insufficient to show that lisinopril does not have a similar risk. (See
+    WARNINGS ). In considering the use of lisinopril and hydrochlorothiazide tablets USP, it should be
+    noted that ACE inhibitors have been associated with a higher rate of angioedema in black than in nonblack
+    patients. (See WARNINGS , Lisinopril ).
+  CONTRAINDICATIONS:
+  - CONTRAINDICATIONS
+  - Lisinopril and hydrochlorothiazide is contraindicated in patients who are hypersensitive to this product
+    and in patients with a history of angioedema related to previous treatment with an angiotensin-converting
+    enzyme inhibitor and in patients with hereditary or idiopathic angioedema. Because of the hydrochlorothiazide
+    component, this product is contraindicated in patients with anuria or hypersensitivity to other sulfonamide-derived
+    drugs. Lisinopril and hydrochlorothiazide is contraindicated in combination with a neprilysin inhibitor
+    (e.g., sacubitril). Do not administer Lisinopril and Hydrochlorothiazide tablets USP within 36 hours
+    of switching to or from sacubitril/valsartan, a neprilysin inhibitor (see WARNINGS ). Do not co-administer
+    aliskiren with lisinopril and hydrochlorothiazide in patients with diabetes (see PRECAUTIONS, Drug
+    Interactions ).
