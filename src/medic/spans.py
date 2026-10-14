@@ -49,6 +49,30 @@ _SOURCE_ROLE = {
 }
 
 
+#: A marker reached through a cross-reference — "[see Limitations of Use (1.2)]", or a bare
+#: "see Limitations of Use below" — points at another section instead of opening one here.
+_LIMITATION_XREF = re.compile(r"(?i)(\[\s*see[^\]]{0,40}|\bsee\s+)$")
+
+
+def _first_limitation_header(body: str):
+    """The first `Limitations of Use` that actually opens a subsection, or None.
+
+    Matching the phrase anywhere treated a pointer to another section as a boundary. On the
+    KABIVEN label that cut the contraindications section at `[see`, leaving 290 characters
+    of shipped text ending mid-bracket and relabelling the following 1,154 characters of
+    ordinary contraindication text as a scope restriction — which is what #100 observed as
+    an unreliable truncation flag, and #65's span work could not see because the phrase
+    really was there.
+
+    Narrow by measurement: of 617 marker occurrences across the corpus's section chunks,
+    exactly 1 is a cross-reference, so the 616 genuine headers are untouched.
+    """
+    for match in _LIMITATION_MARKER.finditer(body):
+        if not _LIMITATION_XREF.search(body[max(0, match.start() - 60):match.start()]):
+            return match
+    return None
+
+
 def _span(role: str, text: str, document: str, section_code: str) -> dict:
     span = {"role": role, "text": text, "document": document}
     if section_code:
@@ -73,7 +97,7 @@ def split_dailymed_section(text: str, *, document: str, section_code: str) -> li
             body = body[len(header):].strip()
             break
 
-    match = _LIMITATION_MARKER.search(body)
+    match = _first_limitation_header(body)
     if match:
         before = body[:match.start()].strip()
         marker = body[match.start():match.end()]
