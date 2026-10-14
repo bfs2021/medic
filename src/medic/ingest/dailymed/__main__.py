@@ -893,6 +893,11 @@ def _process_spl_data(
                     if set_id:
                         evidence_item["original_drug_id"] = set_id
                     evidence_item["original_disease_label"] = disease_name
+                    # How many active moieties the label lists. The extraction runs
+                    # once per ingredient over the same section text, so a count > 1
+                    # means this claim could be a fan-out of a partner's indication
+                    # (#88); the reliability attribution gate reads it.
+                    evidence_item["label_ingredient_count"] = len(drug_names)
                     evidence_item["original_disease_verbatim"] = disease_verbatim
 
                     record.update(
@@ -957,6 +962,7 @@ def _process_spl_data(
                     if set_id:
                         contra_evidence["original_drug_id"] = set_id
                     contra_evidence["original_disease_label"] = disease_name
+                    contra_evidence["label_ingredient_count"] = len(drug_names)
                     contra_evidence["original_disease_verbatim"] = disease_verbatim
 
                     record.update(

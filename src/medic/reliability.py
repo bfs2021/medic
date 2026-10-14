@@ -423,6 +423,37 @@ def _translation_gate(record: dict) -> ReliabilityTier | None:
     return ReliabilityTier.MEDIUM  # machine translation, curator-unreviewed
 
 
+def _attribution_gate(record: dict) -> ReliabilityTier | None:
+    """Could this claim have been mis-attributed to one ingredient of a combination?
+
+    For a multi-ingredient SPL the extraction runs once per ingredient over the same
+    section text, and the prompt never names the ingredient, so every component carries the
+    whole product's indications — esomeprazole for osteoarthritis out of "the naproxen
+    component …", every amino acid in a parenteral-nutrition bag for ileus.
+
+    The audit put a number on it: pairs supported *only* by combination labels are **65%
+    wrong** (40 judged) against 19.5% for pairs with no combination-label support, and 1,101
+    pairs (14%) sit in that slice at HIGH, because the lexical gates all pass — the disease
+    name really is in the text (#88, #91).
+
+    An interim gate, not the fix. Attributing the claim properly needs the extraction to
+    name the ingredient it read; until then this says only "this attestation could be a
+    fan-out", which is worth LOW rather than HIGH. Per assertion, so #61's
+    max-across-assertions fold supplies the "unless a single-ingredient label or another
+    regulator supports it" clause for free.
+
+    Returns ``None`` when the count is absent, which is every non-DailyMed source and every
+    record merged before it was recorded — an unknown must not read as a combination.
+    """
+    counts = [
+        ev.get("label_ingredient_count") for ev in pv.assoc_evidence(record)
+    ]
+    usable = [c for c in counts if isinstance(c, int) and c > 0]
+    if not usable:
+        return None
+    return ReliabilityTier.LOW if min(usable) > 1 else None
+
+
 def _provenance_gate(record: dict) -> ReliabilityTier:
     """Is the claim's provenance verifiable *at all*? (never caps on link format)
 
@@ -540,6 +571,7 @@ def _score_one(record: dict, st: StatementType) -> ReliabilityTier:
         _recognition_gate(record),
         _assertion_gate(record, st),
         _translation_gate(record),
+        _attribution_gate(record),
     ]
     if st == StatementType.DRUG_APPROVAL:
         quality_gates.append(_approval_gate(record))
