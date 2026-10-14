@@ -121,12 +121,49 @@ def extract_active_ingredients(xml_path: str | Path) -> list[str]:
     return sorted(names)
 
 
+#: FDA marketing-category codes (NCI Thesaurus) that mark a label as homeopathic.
+_HOMEOPATHIC_CATEGORIES = frozenset({"C73614"})  # "unapproved homeopathic"
+
+#: Backstop for a label that states its homeopathic status in prose without carrying the
+#: category code. `HPUS` is the Homeopathic Pharmacopoeia of the United States.
+_HOMEOPATHIC_TEXT = re.compile(r"(?i)\b(homeopathic|hpus)\b")
+
+
+def is_homeopathic(root: ET.Element) -> bool:
+    """Does this SPL describe a homeopathic product?
+
+    Homeopathic labels are not regulatory approvals in any useful sense, but they carry an
+    indications section and a long list of "active ingredients", so the per-ingredient
+    extraction fans each one out into drug-disease edges: `coumarin -> fatigue`,
+    `arsenite -> insomnia`, `skim milk -> fatigue`. 235 canonical indication pairs in the
+    2026-10-13 export came from 28 such labels, and several drug nodes (skim milk, silicon
+    dioxide, barium cation) exist for no other reason (#92).
+
+    Decided on the SPL's own marketing category rather than a text match. Over the
+    1,976-label corpus the two signals agree exactly — 28 files, neither alone missing any —
+    so the structured field leads and the prose is only a backstop.
+    """
+    for code in root.iter(f"{{{NS['v3']}}}code"):
+        if (code.get("code") or "") in _HOMEOPATHIC_CATEGORIES:
+            return True
+        if _HOMEOPATHIC_TEXT.search(code.get("displayName") or ""):
+            return True
+    for tag in ("title", "text"):
+        for elem in root.iter(f"{{{NS['v3']}}}{tag}"):
+            chunk = re.sub(r"<[^>]+>", " ", ET.tostring(elem, encoding="unicode"))
+            if _HOMEOPATHIC_TEXT.search(chunk):
+                return True
+    return False
+
+
 def _row_from_spl_root(root: ET.Element) -> dict | None:
     """Build a mined row dict from an already-parsed SPL XML root, or None.
 
-    Returns None when the label has no active ingredient or no
+    Returns None when the label is homeopathic (#92), or has no active ingredient or no
     indications/contraindications text worth keeping.
     """
+    if is_homeopathic(root):
+        return None
     indication_parts = _extract_section_chunks_from_root(root, LOINC_INDICATIONS)
     contra_parts = _extract_section_chunks_from_root(root, LOINC_CONTRAINDICATIONS)
     indications = " ".join(indication_parts)
