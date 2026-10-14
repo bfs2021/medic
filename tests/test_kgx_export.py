@@ -873,8 +873,14 @@ def test_evidence_term_does_not_claim_human_review():
     assert bl.ECO_REGULATORY_LABEL != "ECO:0000218"
 
 
-def test_negation_detected_means_negation_was_found():
-    """It used to encode `a negation check ran`, which was true of every edge."""
+def test_no_exported_edge_reports_a_detected_negation():
+    """`medic_negation_detected` used to encode "a negation check ran", which was true of
+    every edge. It then meant "a negation was found" — and 14 such edges shipped as
+    positive `treats` (#93). Since those are now withheld entirely, the slot can only ever
+    be falsy in the export, and this pins that rather than the old round-trip.
+
+    The verdict itself is not lost: it stays on the claim in `kb/` and in the products.
+    """
     from medic.export.kgx import edges
 
     edge = edges.association_edges(PAIR)[0]
@@ -882,8 +888,7 @@ def test_negation_detected_means_negation_was_found():
 
     assertion = _assertion()
     assertion["assertion"]["flags"] = ["negated_inversion"]
-    flagged = edges.association_edges({**PAIR, "assertions": [assertion]})[0]
-    assert flagged["medic_negation_detected"] is True
+    assert edges.association_edges({**PAIR, "assertions": [assertion]}) == []
 
 
 def test_an_unmapped_source_is_an_error_not_a_skip():

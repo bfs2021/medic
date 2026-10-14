@@ -148,6 +148,36 @@ def _assertion_reliability(
 # ---------------------------------------------------------------------------
 # Indications and contraindications
 # ---------------------------------------------------------------------------
+def _withheld(assertion: dict) -> bool:
+    """Has the pipeline decided the source states this relation *negatively*?
+
+    `negated_inversion` is the one verdict that means "the claim is false as written", and
+    an edge carrying it should not leave here wearing the same predicate as everything
+    else. 14 did in the 2026-10-13 export (#93) — acetylsalicylic acid to acute MI, six
+    antidiabetics to diabetic ketoacidosis ("not for the treatment of diabetic
+    ketoacidosis").
+
+    Dropped rather than flagged with Biolink's `negated` slot: a consumer that ignores the
+    slot sees a positive `treats` edge, which is the same failure as leaving them to read
+    `medic_pair_reliability`. Nothing becomes unauditable — the claims stay in `kb/` and in
+    the products with their reason attached, which is what #66 traded the ingest-time drop
+    for, and a curator can still overturn the verdict through the review store.
+
+    **Deliberately narrower than "drop EXCLUDED pairs".** EXCLUDED is reachable several
+    ways, including an unresolved grounding and a curator's REJECT, and #62 decided that a
+    REJECT should *mark* the edge rather than delete it so the verdict stays observable in
+    the export. Over the current products the two sets are the same 14 assertions, so this
+    narrower rule achieves #93's result without reversing #62. If they ever diverge — a
+    REJECT that is not a negation — whether a human verdict deletes or marks is a policy
+    call, not something to settle by widening a gate.
+
+    Judged per assertion, not per pair, so one source inverting a claim cannot delete
+    another regulator's good attestation of it.
+    """
+    claim = assertion.get("assertion") or {}
+    return "negated_inversion" in (claim.get("flags") or [])
+
+
 def _indication_predicate(status: str) -> str:
     """Biolink reserves an asserted ``treats`` for approved or established use.
 
@@ -182,6 +212,8 @@ def association_edges(
 
     built = []
     for assertion in pv.assoc_assertions(pair):
+        if _withheld(assertion):
+            continue
         regulatory = assertion.get("regulatory_status") or {}
         evidence = assertion.get("evidence") or {}
         claim = assertion.get("assertion") or {}
