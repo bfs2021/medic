@@ -18,6 +18,7 @@ idiosyncrasies of DailyMed vs GRLS vs CDE must not leak into the semantics.
 
 from __future__ import annotations
 
+import re
 import uuid
 
 from medic import product_view as pv
@@ -178,15 +179,33 @@ def _withheld(assertion: dict) -> bool:
     return "negated_inversion" in (claim.get("flags") or [])
 
 
-def _indication_predicate(status: str) -> str:
+#: Product-name tokens that identify a vaccine or toxoid. ATC J07 would be the principled
+#: selector, but it is unpopulated for every one of these drugs (0 of 8,085 pairs), so the
+#: name is all there is. Measured against the corpus rather than guessed: these catch 37
+#: pairs, all genuine vaccine products, and no non-vaccine drug name in the indication
+#: corpus matches.
+#:
+#: Immune globulins are deliberately absent. For `Rho(D) immune globulin -> ectopic
+#: pregnancy` the object is the exposure *setting*, not a condition the product prevents, so
+#: relabelling the predicate would swap one wrong statement for another. That object is
+#: #89's error class and belongs there.
+_VACCINE_TOKENS = re.compile(
+    r"(?i)\b(vaccine|toxoid|capsular polysaccharide|live antigen|purified antigen"
+    r"|surface protein antigen|polysaccharide conjugated)\b"
+)
+
+
+def _indication_predicate(status: str, drug_label: str = "") -> str:
     """Biolink reserves an asserted ``treats`` for approved or established use.
 
     An indication the regulator records as investigational or off-label does not meet that
     bar, so it drops to the grouping predicate rather than overclaiming.
     """
-    if (status or "").upper() == "APPROVED":
-        return bl.INDICATION_PREDICATE
-    return bl.INDICATION_UNAPPROVED_PREDICATE
+    if (status or "").upper() != "APPROVED":
+        return bl.INDICATION_UNAPPROVED_PREDICATE
+    if _VACCINE_TOKENS.search(drug_label or ""):
+        return bl.PREVENTION_PREDICATE
+    return bl.INDICATION_PREDICATE
 
 
 def association_edges(
@@ -225,7 +244,7 @@ def association_edges(
         status = regulatory.get("status") or evidence.get("approval_status") or ""
         predicate = (
             bl.CONTRAINDICATION_PREDICATE if relationship == "CONTRAINDICATION"
-            else _indication_predicate(status)
+            else _indication_predicate(status, pv.assoc_drug_label(pair))
         )
         source = assertion.get("source") or regulatory.get("source") or ""
         authority = regulatory.get("authority") or ""

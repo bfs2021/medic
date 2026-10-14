@@ -154,6 +154,9 @@ INDICATION_PREDICATE = "biolink:treats"
 #: to the grouping predicate rather than overclaiming.
 INDICATION_UNAPPROVED_PREDICATE = "biolink:treats_or_applied_or_studied_to_treat"
 CONTRAINDICATION_PREDICATE = "biolink:contraindicated_in"
+#: A vaccine does not treat the disease it immunises against. Biolink separates the two, and
+#: a graph that conflates them answers "what treats pertussis?" with the vaccine (#99).
+PREVENTION_PREDICATE = "biolink:preventative_for_condition"
 
 #: Real-world use observed in case reports (CURE-ID), which is what ``applied to treat``
 #: means: "actually taken by one or more patients with the intent of treating the condition".
@@ -173,6 +176,7 @@ KNOWLEDGE_LEVELS = {
     INDICATION_PREDICATE: "knowledge_assertion",
     INDICATION_UNAPPROVED_PREDICATE: "not_provided",
     CONTRAINDICATION_PREDICATE: "knowledge_assertion",
+    PREVENTION_PREDICATE: "knowledge_assertion",
     RESEARCH_APPLIED_PREDICATE: "observation",
     RESEARCH_TRIAL_PREDICATE: "observation",
     RESEARCH_STUDIED_PREDICATE: "observation",
