@@ -454,6 +454,23 @@ def _attribution_gate(record: dict) -> ReliabilityTier | None:
     return ReliabilityTier.LOW if min(usable) > 1 else None
 
 
+def _context_gate(record: dict) -> ReliabilityTier | None:
+    """Is the object the population or setting rather than the treated condition?
+
+    The largest single error class: 38 of 291 audited edges (13.1%), half of all MeDIC
+    errors — eplerenone for acute MI out of "heart failure post-MI", posaconazole for AML
+    out of "prophylaxis ... in patients with AML" (#89).
+
+    The verdict is reached at ingest, where the sibling diseases from the same section are
+    in hand; this gate only reads it. LOW rather than EXCLUDED: a preposition is weaker
+    evidence than a deletion needs, and some of these objects are genuinely co-indicated.
+    """
+    for ev in pv.assoc_evidence(record):
+        if ev.get("context_only_disease"):
+            return ReliabilityTier.LOW
+    return None
+
+
 def _provenance_gate(record: dict) -> ReliabilityTier:
     """Is the claim's provenance verifiable *at all*? (never caps on link format)
 
@@ -572,6 +589,7 @@ def _score_one(record: dict, st: StatementType) -> ReliabilityTier:
         _assertion_gate(record, st),
         _translation_gate(record),
         _attribution_gate(record),
+        _context_gate(record),
     ]
     if st == StatementType.DRUG_APPROVAL:
         quality_gates.append(_approval_gate(record))

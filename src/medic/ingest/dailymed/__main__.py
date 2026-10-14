@@ -561,6 +561,24 @@ def _screen_negated_contraindications(
     return [by_name[n] for n in result.kept]
 
 
+def context_only_names(items: list[Extracted], indication_text: str) -> set[str]:
+    """Which extracted names are the population/setting rather than the target (#89).
+
+    Decided across the siblings from one section, which is why it lives at ingest: the
+    merge sees one pair at a time and cannot tell "in patients with AML" from the claim.
+    """
+    from medic.validation.extraction_fidelity import context_only_diseases
+
+    names = [e.name for e in items]
+    flagged = set(context_only_diseases(names, indication_text))
+    # Also try the source's own wording: the canonical name is often absent from the text
+    # while its quote is not, and the cue sits in front of the quote (#64).
+    verbatims = {e.verbatim: e.name for e in items if e.verbatim}
+    for quote in context_only_diseases(list(verbatims), indication_text):
+        flagged.add(verbatims[quote])
+    return flagged
+
+
 def extract_diseases_from_text(
     indication_text: str, *, source: str = "DAILYMED",
     parts: list[str] | None = None,
@@ -853,10 +871,12 @@ def _process_spl_data(
                 try:
                     diseases = extract_diseases_from_text(
                         indications_text, source="DAILYMED", parts=ind_parts)
+                    _context_only = context_only_names(diseases, indications_text)
                 except Exception as exc:
                     logger.warning("Disease extraction failed for setid %s (%s); skipping.",
                                    set_id, exc)
                     diseases = []
+                    _context_only = set()
                 for _extracted in diseases:
                     disease_name, disease_verbatim = (
                         _extracted.name, _extracted.verbatim)
@@ -898,6 +918,12 @@ def _process_spl_data(
                     # means this claim could be a fan-out of a partner's indication
                     # (#88); the reliability attribution gate reads it.
                     evidence_item["label_ingredient_count"] = len(drug_names)
+                    if disease_name in _context_only:
+                        # Named only behind "in patients with" / "associated with" /
+                        # "post" while a sibling is a plain target, so this is the
+                        # setting and the sibling is the claim (#89). Recorded, not
+                        # dropped — a preposition is weak evidence for deleting a row.
+                        evidence_item["context_only_disease"] = True
                     evidence_item["original_disease_verbatim"] = disease_verbatim
 
                     record.update(

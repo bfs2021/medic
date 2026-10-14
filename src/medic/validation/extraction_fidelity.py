@@ -176,6 +176,74 @@ def assertion_negated(
     return negated, len(anchors), reason
 
 
+#: Prepositions that introduce the patient population, a background condition or a
+#: setting rather than the condition being treated. Each is the head of a phrase the audit
+#: found promoted to the object: "in patients with AML", "associated with congenital heart
+#: disease", "post myocardial infarction", "following hip replacement", "due to anemia".
+_CONTEXT_CUES = (
+    "in patients with", "in patients receiving", "in patients undergoing",
+    "in adults with", "in children with", "in subjects with",
+    "associated with", "secondary to", "due to", "related to",
+    "following", "after", "post", "concomitant with", "in combination with",
+    "who have", "with a history of", "at risk of", "at risk for",
+)
+
+#: How far back from an occurrence a cue may sit and still govern it. Long enough for
+#: "in patients receiving chronic", short enough that the previous clause's cue does not
+#: reach across.
+_CONTEXT_WINDOW = 40
+
+
+def _occurrences(phrase: str, text: str) -> list[int]:
+    low, needle = text.lower(), (phrase or "").lower().strip()
+    if not needle:
+        return []
+    out, idx = [], low.find(needle)
+    while idx != -1:
+        out.append(idx)
+        idx = low.find(needle, idx + 1)
+    return out
+
+
+def _is_context_introduced(pos: int, text: str) -> bool:
+    window = text[max(0, pos - _CONTEXT_WINDOW):pos].lower()
+    return any(cue in window for cue in _CONTEXT_CUES)
+
+
+def context_only_diseases(disease_names: list[str], source_text: str) -> list[str]:
+    """Which of these diseases is named only as a population, background or setting?
+
+    38 of 291 audited edges (13.1%) promote the context to the object — the largest single
+    error class, and half of all MeDIC errors (#89). "Prophylaxis of invasive aspergillosis
+    **in patients with** acute myeloid leukemia" yields an edge saying the antifungal treats
+    AML.
+
+    Decided by comparison with the siblings extracted from the same text, which is evidence
+    the ingest holds and the merge does not. A disease whose every occurrence sits behind a
+    context cue, while another extracted disease occurs as a plain target, is the setting and
+    the sibling is the claim. With no plain sibling nothing is returned: a lone "in patients
+    with X" may be all the label says, and there is then no second condition to prefer.
+
+    Reported, never dropped. A preposition is weaker evidence than #66 requires for a
+    destructive verdict, and the reliability gate can say "probably the setting" without
+    deleting the row.
+    """
+    text = source_text or ""
+    plain, context_only = set(), []
+    positions = {name: _occurrences(name, text) for name in disease_names}
+    for name, where in positions.items():
+        if where and any(not _is_context_introduced(p, text) for p in where):
+            plain.add(name)
+    if not plain:
+        return []
+    for name, where in positions.items():
+        if not where or name in plain:
+            continue
+        if all(_is_context_introduced(p, text) for p in where):
+            context_only.append(name)
+    return context_only
+
+
 def _claim_and_limitation_text(
     source_text: str, source: str, parts: list[str] | None = None
 ) -> tuple[str, str]:
