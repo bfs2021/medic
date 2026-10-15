@@ -479,6 +479,120 @@ class Extracted(NamedTuple):
     verbatim: str = ""
 
 
+#: Record separator in the structured extraction format.
+_CLAIM_SEP = "---"
+
+#: The field labels a structured record may carry. Shared by the parser and by the
+#: legacy-format detector, so the two cannot disagree about what counts as structured.
+_CLAIM_FIELDS = frozenset({
+    "target", "predicate", "attributed_to", "basis", "disease_context",
+    "population", "temporal_context", "co_administered_with",
+})
+
+#: Relations the extraction may report, mapped to themselves so an invented one is caught.
+#: Each becomes a Biolink predicate downstream (#99); an unknown value falls back to
+#: `treats` rather than inventing a predicate from whatever the model said.
+_PREDICATES = frozenset({
+    "treats", "prevents", "reduces_risk_of", "maintenance", "diagnoses",
+})
+
+#: How a claim came to be attributed to an ingredient rather than to the product. The
+#: pilot (#88) found these are the only patterns that recur; `product_level` is the default
+#: and by far the commonest, because labels almost never attribute to a component.
+_BASES = frozenset({
+    "component_phrase", "ingredient_subject", "because_of",
+    "when_used_as_component", "subheading", "product_level",
+})
+
+
+class Claim(NamedTuple):
+    """One extracted claim with the context the label attached to it.
+
+    Replaces a bare disease name. The flat list is what promoted the population to the
+    object on 13.1% of edges (#89), dropped the restricting context entirely on a larger
+    share nobody has measured (#90), credited every ingredient of a combination with the
+    whole product's indications (#88), and recorded prevention as treatment (#99).
+
+    ``attributed_to`` is an ingredient name or the literal ``product``. ``basis`` says how
+    that was decided, so a reader can tell an explicit "the naproxen component ..." from
+    the default assumption that the product owns its own claim.
+    """
+
+    target: str
+    target_verbatim: str = ""
+    predicate: str = "treats"
+    attributed_to: str = "product"
+    basis: str = "product_level"
+    disease_context: tuple = ()
+    population: str = ""
+    temporal_context: str = ""
+    co_administered_with: tuple = ()
+
+
+def _split_pairs(value: str) -> list[tuple[str, str]]:
+    """``a :: qa ; b :: qb`` -> [(a, qa), (b, qb)]. A missing quote yields ``""``."""
+    out = []
+    for item in value.split(";"):
+        name, _, verbatim = item.partition(_VERBATIM_SEP)
+        name = name.strip()
+        if name:
+            out.append((name, verbatim.strip()))
+    return out
+
+
+def parse_structured_claims(text: str) -> list[Claim]:
+    """Parse the structured extraction format into :class:`Claim` records.
+
+    One labelled field per line, records separated by ``---``. Lines that are not
+    recognised fields are ignored rather than fatal, because models add commentary and it
+    must not take the record with it.
+
+    A bare ``name :: verbatim`` pipe list still parses, as `treats` claims attributed to
+    the product. The v2 caches hold that form and must keep working until the v3
+    re-extraction has replaced them, or a cache hit crashes the build.
+    """
+    stripped = (text or "").strip()
+    if not stripped or stripped.lower().startswith("none"):
+        return []
+    # Legacy detection by content, not by punctuation: a structured record always has at
+    # least one line whose first token is a known field label. A v2 answer
+    # ("name :: verbatim|name :: verbatim") has none, and it contains colons, so testing
+    # for a colon would misread every one of them.
+    if not any(line.split(":", 1)[0].strip().lower() in _CLAIM_FIELDS
+               for line in stripped.splitlines()):
+        return [Claim(target=e.name, target_verbatim=e.verbatim)
+                for e in _parse_llm_disease_list(stripped)]
+
+    claims: list[Claim] = []
+    for record in stripped.split(_CLAIM_SEP):
+        fields: dict[str, str] = {}
+        for line in record.splitlines():
+            key, sep, value = line.partition(":")
+            key = key.strip().lower()
+            if sep and key in _CLAIM_FIELDS:
+                fields[key] = value.strip()
+        target, _, verbatim = fields.get("target", "").partition(_VERBATIM_SEP)
+        target = target.strip()
+        if not _is_usable_disease_name(target):
+            continue
+        predicate = fields.get("predicate", "treats").strip().lower()
+        basis = fields.get("basis", "product_level").strip().lower()
+        claims.append(Claim(
+            target=target,
+            target_verbatim=verbatim.strip(),
+            predicate=predicate if predicate in _PREDICATES else "treats",
+            attributed_to=fields.get("attributed_to", "product").strip() or "product",
+            basis=basis if basis in _BASES else "product_level",
+            disease_context=tuple(_split_pairs(fields.get("disease_context", ""))),
+            population=fields.get("population", ""),
+            temporal_context=fields.get("temporal_context", ""),
+            co_administered_with=tuple(
+                v.strip() for v in fields.get("co_administered_with", "").split(";")
+                if v.strip()),
+        ))
+    return claims
+
+
 def _parse_llm_disease_list(text: str) -> list[Extracted]:
     """Parse the LLM's pipe-separated disease list, robust to refusal prose.
 
