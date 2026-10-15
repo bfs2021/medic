@@ -13,6 +13,8 @@ empty string".
 
 from __future__ import annotations
 
+import re
+
 from medic import product_view as pv
 from medic.export.kgx import biolink as bl
 from medic.reliability import (
@@ -146,7 +148,7 @@ def disease_node(disease: dict) -> dict | None:
 
     node = {
         "id": disease_id,
-        "name": disease.get("label") or "",
+        "name": deinvert_thesaurus_name(disease.get("label") or ""),
         "category": bl.DISEASE_CATEGORIES,
         "provided_by": [bl.AGGREGATOR],
         "description": disease.get("definition") or "",
@@ -163,11 +165,40 @@ def disease_node(disease: dict) -> dict | None:
 # ---------------------------------------------------------------------------
 # Stubs and assembly
 # ---------------------------------------------------------------------------
+#: An inverted thesaurus heading: "Diseases, Liver", "Pneumonia, Hospital Acquired". MeSH
+#: stores entry terms head-first for alphabetisation, and the UMLS loader turns the stored
+#: form into the node's display name. Recognised rather than guessed at: the part after the
+#: comma must start with a capital, which distinguishes a heading from a list ("asthma,
+#: rhinitis and nasal polyps") or a prose qualifier ("anemia, due to chronic kidney
+#: disease").
+_THESAURUS_INVERSION = re.compile(r"^([A-Z][^,]*?), ([A-Z][A-Za-z0-9 .'-]*)$")
+
+
+def deinvert_thesaurus_name(name: str) -> str:
+    """Read an inverted thesaurus heading the way it is meant to be read (#96).
+
+    66 disease nodes ship names like "Diseases, Liver" (24 edges), "Headaches, Tension"
+    (22) and "Pains, Cancer" (7). Swapping on the comma recovers the natural form. Anything
+    that is not an inversion is returned unchanged, so a list or a qualifier phrase is safe.
+    """
+    match = _THESAURUS_INVERSION.match((name or "").strip())
+    if not match:
+        return name
+    head, modifier = match.group(1), match.group(2)
+    return f"{modifier} {head}"
+
+
 def stub_node(curie: str, name: str = "") -> dict:
-    """A minimal node for an edge endpoint no product describes (spec §4.3)."""
+    """A minimal node for an edge endpoint no product describes (spec §4.3).
+
+    ``name`` is the best label the association knew — which for a CUI whose preferred atoms
+    are all in label-restricted vocabularies is the source literal, the only name we may
+    ship. 91 stubs used by 5,086 edges had none at all, so the node went out as a bare CUI
+    and the audit could not judge the edges at all (#96).
+    """
     return _clean({
         "id": curie,
-        "name": name,
+        "name": deinvert_thesaurus_name(name),
         "category": [bl.category_for_prefix(curie)],
         "provided_by": [bl.AGGREGATOR],
         "medic_stub": True,

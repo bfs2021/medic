@@ -149,6 +149,22 @@ def _assertion_reliability(
 # ---------------------------------------------------------------------------
 # Indications and contraindications
 # ---------------------------------------------------------------------------
+def _source_literal(pair: dict, role: str) -> str:
+    """The source's own wording for an endpoint, as a name of last resort.
+
+    A CUI whose preferred atoms are all in label-restricted vocabularies (MedDRA, ICD-10)
+    has no label we may ship, so its node went out as a bare id: 91 stubs used by 5,086
+    edges, and the audit could not judge those edges at all. The literal the source wrote is
+    already recorded on the mention, and it is the one name that is always available (#96).
+    """
+    for assertion in pv.assoc_assertions(pair):
+        mention = assertion.get(role) or {}
+        literal = (mention.get("original_literal") or "").strip()
+        if literal:
+            return literal
+    return ""
+
+
 def _withheld(assertion: dict) -> bool:
     """Has the pipeline decided the source states this relation *negatively*?
 
@@ -550,8 +566,10 @@ def build_edges(
 
     for pair in [*indications, *contraindications]:
         built.extend(association_edges(pair, review))
-        note(pv.assoc_drug_id(pair), pv.assoc_drug_label(pair))
-        note(pv.assoc_disease_id(pair), pv.assoc_disease_label(pair))
+        note(pv.assoc_drug_id(pair),
+             pv.assoc_drug_label(pair) or _source_literal(pair, "drug"))
+        note(pv.assoc_disease_id(pair),
+             pv.assoc_disease_label(pair) or _source_literal(pair, "disease"))
 
     for record in research:
         built.extend(research_edges(record, review))
