@@ -129,3 +129,41 @@ def test_a_legacy_pipe_list_still_parses():
     claims = parse_structured_claims("epilepsy :: epilepsy|asthma :: asthma")
     assert [c.target for c in claims] == ["epilepsy", "asthma"]
     assert all(c.predicate == "treats" for c in claims)
+
+
+# ---------------------------------------------------------------------------
+# Duplicate claims from the Highlights repetition
+# ---------------------------------------------------------------------------
+def test_identical_claims_are_collapsed():
+    """An SPL states its indications twice — once in Highlights, once in the full section
+    — so the model reports each claim twice. The smoke test saw baclofen return "severe
+    spasticity" twice with identical context, and citalopram "major depressive disorder"
+    twice."""
+    text = ("target: major depressive disorder :: MDD\npredicate: treats\n"
+            "population: adults\n---\n"
+            "target: major depressive disorder :: MDD\npredicate: treats\n"
+            "population: adults")
+    assert len(parse_structured_claims(text)) == 1
+
+
+def test_claims_differing_in_context_are_both_kept():
+    """Two claims on the same disease with different context are two claims, not one —
+    which is the whole point of #90.3's merge key."""
+    text = ("target: severe spasticity :: spasticity\npredicate: treats\n"
+            "disease_context: traumatic brain injury :: TBI\n---\n"
+            "target: severe spasticity :: spasticity\npredicate: treats\n"
+            "disease_context: multiple sclerosis :: MS")
+    claims = parse_structured_claims(text)
+    assert len(claims) == 2
+
+
+def test_claims_differing_only_in_predicate_are_both_kept():
+    text = ("target: stroke :: stroke\npredicate: treats\n---\n"
+            "target: stroke :: stroke\npredicate: prevents")
+    assert len(parse_structured_claims(text)) == 2
+
+
+def test_the_first_occurrence_order_is_preserved():
+    text = ("target: b :: b\npredicate: treats\n---\ntarget: a :: a\npredicate: treats\n"
+            "---\ntarget: b :: b\npredicate: treats")
+    assert [c.target for c in parse_structured_claims(text)] == ["b", "a"]

@@ -52,8 +52,11 @@ PRODUCTS_DIR = Path("products")
 # answers to a different question: they carry no verbatim half and cannot be upgraded
 # without asking again. New files rather than new keys, so the v1 caches stay on disk and a
 # rollback does not have to re-extract anything.
-DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_diseases_v2.json")
-CONTRA_DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_contra_diseases_v2.json")
+# v3 = the structured-claim contract (#88/#89/#90/#99). The prompt asks for seven fields
+# per claim instead of a name and a quote, so a v2 answer cannot be upgraded without asking
+# again. New files, so the v2 answers stay on disk and a rollback re-extracts nothing.
+DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_claims_v3.json")
+CONTRA_DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_contra_claims_v3.json")
 ALLERGEN_CACHE_PATH = Path("cache/enrichment/dailymed_allergen.json")
 
 
@@ -590,7 +593,11 @@ def parse_structured_claims(text: str) -> list[Claim]:
                 v.strip() for v in fields.get("co_administered_with", "").split(";")
                 if v.strip()),
         ))
-    return claims
+    # An SPL states its indications twice — the Highlights block and the full numbered
+    # section — so the model reports each claim twice. Collapsed on the whole record, not
+    # on the target, because two claims about one disease that differ in context or
+    # relation are two claims: that distinction is what #90's merge key rests on.
+    return list(dict.fromkeys(claims))
 
 
 def _parse_llm_disease_list(text: str) -> list[Extracted]:
@@ -640,6 +647,22 @@ def _is_usable_disease_name(name: str) -> bool:
 
 
 
+def _claims_from_cache(entry: dict) -> list[Claim]:
+    """Claims from a cache entry, whichever generation wrote it.
+
+    v3 stores the model's raw answer under ``raw`` so the parser can improve without
+    re-asking. v2 stored ``[[name, verbatim], ...]``, which carries no context and no
+    relation, so those decode to plain `treats` claims attributed to the product — the same
+    thing the old pipeline did with them. The v3 caches are new, so this only matters if a
+    v2 file is pointed at a v3 path by hand.
+    """
+    raw = entry.get("raw")
+    if isinstance(raw, str):
+        return parse_structured_claims(raw)
+    return [Claim(target=e.name, target_verbatim=e.verbatim)
+            for e in _decode_extractions(entry.get("diseases"))]
+
+
 def _encode_extractions(items: list[Extracted]) -> list[list[str]]:
     """Cache form: ``[[name, verbatim], ...]``. JSON has no tuples, and a flat list of
     names could not carry the verbatim half."""
@@ -664,9 +687,9 @@ def _decode_extractions(raw) -> list[Extracted]:
 
 
 def _screen_negated_indications(
-    diseases: list[Extracted], indication_text: str, source: str,
+    diseases: list[Claim], indication_text: str, source: str,
     parts: list[str] | None = None,
-) -> list[Extracted]:
+) -> list[Claim]:
     """Drop extracted 'indications' the source actually negates/excludes (inversions).
 
     Deterministic prevention pass (FAILURE_MODES §4.1-4.2): a disease stated only inside
@@ -686,10 +709,10 @@ def _screen_negated_indications(
     """
     from medic.validation.extraction_fidelity import screen_indications
 
-    by_name = {e.name: e for e in diseases}
+    by_name = {c.target: c for c in diseases}
     result = screen_indications(
-        [e.name for e in diseases], indication_text, source=source, parts=parts,
-        verbatims={e.name: e.verbatim for e in diseases if e.verbatim})
+        [c.target for c in diseases], indication_text, source=source, parts=parts,
+        verbatims={c.target: c.target_verbatim for c in diseases if c.target_verbatim})
     for d in result.dropped:
         logger.warning(
             "Dropping negated 'indication' %r (cue: %r, scope: %s) — source states it "
@@ -763,26 +786,32 @@ def context_only_names(items: list[Extracted], indication_text: str) -> set[str]
 
 def extract_diseases_from_text(
     indication_text: str, *, source: str = "DAILYMED",
-    parts: list[str] | None = None,
-) -> list[Extracted]:
-    """Extract disease names from indication free text via LLM.
+    parts: list[str] | None = None, ingredients: list[str] | None = None,
+) -> list[Claim]:
+    """Extract the label's therapeutic claims, with the context attached to each.
 
-    The raw LLM extraction is cached; a deterministic negation screen then drops any
-    disease the source states negatively (see :func:`_screen_negated_indications`).
+    The raw LLM answer is cached; a deterministic negation screen then drops any claim the
+    source states negatively (see :func:`_screen_negated_indications`).
 
     ``source`` is the ingester calling in (``EMA``, ``PMDA``, ``INDIA``, default
     ``DAILYMED``). It selects how the text is split into typed spans for the screen;
     only SPL sections have recoverable inner structure, so it is a no-op elsewhere.
+
+    ``ingredients`` are the label's active ingredients, shown to the model so it can say
+    which one a claim is attributed to. Without them every component of a combination
+    silently inherits the whole product's indications, which the audit measured at 65%
+    wrong (#88).
     """
     if not indication_text:
         return []
+    ingredient_hint = ", ".join(ingredients or []) or "not stated"
 
     cache = _get_disease_cache()
     key = _text_hash(indication_text)
     cached = cache.get(key)
     if cached is not None:
         return _screen_negated_indications(
-            _decode_extractions(cached.get("diseases")), indication_text, source, parts)
+            _claims_from_cache(cached), indication_text, source, parts)
 
     if should_skip_expensive_calls():
         _note_skipped_uncached("indication")
@@ -791,33 +820,67 @@ def extract_diseases_from_text(
     from medic.llm import llm_call
     text = llm_call(
         (
-            "Extract all diseases mentioned as therapeutic indications from this text.\n"
-            "For each disease return TWO parts separated by '::' —\n"
-            "  <canonical disease name> :: <verbatim substring copied from the text>\n"
-            "The second part MUST be copied character-for-character from the text above, "
-            "including any abbreviation the text uses. Do not normalise or expand it.\n"
-            "Return ONLY a pipe-separated list like: "
-            "name1 :: quote1|name2 :: quote2\n"
-            "If no diseases, return: None\n"
-            "Do not infer diseases - only list those explicitly mentioned.\n"
-            "Do not include contraindicated conditions.\n"
-            "Be specific in the canonical name (e.g., 'type 2 diabetes mellitus' not just "
-            "'diabetes'), but keep the quote exactly as written.\n\n"
-            "Example: if the text says 'reducing the risk of nonfatal MI', return\n"
-            "  myocardial infarction :: MI\n\n"
+            "Extract every therapeutic claim this label makes, with the context it\n"
+            "attaches to each one.\n\n"
+            "Return one record per claim. Separate records with a line containing only ---\n"
+            "Within a record, one field per line, exactly these labels:\n"
+            "  target: <canonical disease name> :: <verbatim substring from the text>\n"
+            "  predicate: one of treats | prevents | reduces_risk_of | maintenance | diagnoses\n"
+            "  attributed_to: the ingredient the text credits, or the word product\n"
+            "  basis: one of component_phrase | ingredient_subject | because_of |\n"
+            "         when_used_as_component | subheading | product_level\n"
+            "  disease_context: <name> :: <verbatim> ; <name> :: <verbatim>   (optional)\n"
+            "  population: <age group, sex, pregnancy, transplant recipient ...>  (optional)\n"
+            "  temporal_context: <post-MI, following hip replacement ...>        (optional)\n"
+            "  co_administered_with: <drug> ; <drug>                             (optional)\n\n"
+            "If there are no therapeutic claims, return: None\n\n"
+            "RULES\n"
+            "1. target is ONLY the condition being treated, prevented or diagnosed. A\n"
+            "   condition the patient must already have, or the setting, goes in\n"
+            "   disease_context — never in target. 'prophylaxis of invasive aspergillosis\n"
+            "   in patients with acute myeloid leukemia' has target invasive aspergillosis\n"
+            "   and disease_context acute myeloid leukemia. 'heart failure post myocardial\n"
+            "   infarction' has target heart failure and temporal_context post myocardial\n"
+            "   infarction. 'PAH associated with congenital heart disease' has target\n"
+            "   pulmonary arterial hypertension and disease_context congenital heart disease.\n"
+            "2. The verbatim after :: MUST be copied character-for-character from the text,\n"
+            "   including any abbreviation the text uses. Do not normalise or expand it.\n"
+            "3. predicate: use prevents for prophylaxis, immunisation and prevention;\n"
+            "   reduces_risk_of for risk reduction; maintenance for maintaining remission or\n"
+            "   preventing recurrence; diagnoses for imaging and diagnostic use.\n"
+            "4. attributed_to: labels almost always credit the PRODUCT, not a component, so\n"
+            "   use product with basis product_level unless the text names an ingredient as\n"
+            "   the subject of the claim. Name an ingredient only for: 'the X component\n"
+            "   ...' (component_phrase); 'X is indicated ...' with X an ingredient\n"
+            "   (ingredient_subject); 'because of X ...' (because_of); 'X, when used as a\n"
+            "   component of ...' (when_used_as_component); a per-ingredient subheading\n"
+            "   (subheading).\n"
+            "5. Do not infer. Only report what the text states.\n"
+            "6. Do not include contraindicated conditions.\n"
+            "7. Be specific in the canonical name ('type 2 diabetes mellitus' not\n"
+            "   'diabetes'), but keep the quote exactly as written.\n\n"
+            "EXAMPLE\n"
+            "Text: 'The naproxen component of VIMOVO is indicated for the relief of signs\n"
+            "and symptoms of osteoarthritis in patients at risk of gastric ulcers.'\n"
+            "target: osteoarthritis :: osteoarthritis\n"
+            "predicate: treats\n"
+            "attributed_to: naproxen\n"
+            "basis: component_phrase\n"
+            "population: patients at risk of gastric ulcers\n\n"
+            f"Ingredients on this label: {ingredient_hint}\n\n"
             f"Text: {indication_text[:3000]}"
         ),
         task="extraction",
         max_tokens=500,
         system="You are a biomedical expert. Extract disease names from drug indication text.",
     )
-    diseases = _parse_llm_disease_list(text)
+    claims = parse_structured_claims(text)
 
-    # Cache the RAW extraction (faithful to the LLM); screen on return.
-    cache.put(key, {"diseases": _encode_extractions(diseases),
-                    "text_prefix": indication_text[:200]})
+    # Cache the RAW answer, not the parse: the parser may improve, and re-parsing a stored
+    # string is free where re-asking is not.
+    cache.put(key, {"raw": text, "text_prefix": indication_text[:200]})
     _checkpoint(cache)
-    return _screen_negated_indications(diseases, indication_text, source, parts)
+    return _screen_negated_indications(claims, indication_text, source, parts)
 
 
 def extract_contraindicated_diseases_from_text(
@@ -1052,7 +1115,8 @@ def _process_spl_data(
             if indications_text:
                 try:
                     diseases = extract_diseases_from_text(
-                        indications_text, source="DAILYMED", parts=ind_parts)
+                        indications_text, source="DAILYMED", parts=ind_parts,
+                        ingredients=drug_names)
                     _context_only = context_only_names(diseases, indications_text)
                 except Exception as exc:
                     logger.warning("Disease extraction failed for setid %s (%s); skipping.",

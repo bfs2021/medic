@@ -182,17 +182,20 @@ def test_extractor_drops_negated_indication_via_cache(monkeypatch):
 
     class _StubCache:
         def get(self, key):
-            # Cache form since #64: [name, verbatim] pairs. A bare list of names still
-            # decodes, with an empty verbatim.
-            return {"diseases": [["hypertension", "hypertension"],
-                                 ["type 1 diabetes", "type 1 diabetes"]]}
+            # Cache form since the structured contract: the model's raw answer, re-parsed
+            # on read so the parser can improve without re-asking.
+            return {"raw": ("target: hypertension :: hypertension\n"
+                            "predicate: treats\n"
+                            "---\n"
+                            "target: type 1 diabetes :: type 1 diabetes\n"
+                            "predicate: treats")}
 
         def put(self, key, value):
             pass
 
     monkeypatch.setattr(dm, "_get_disease_cache", lambda: _StubCache())
     kept = dm.extract_diseases_from_text(text)
-    assert [e.name for e in kept] == ["hypertension"]
+    assert [c.target for c in kept] == ["hypertension"]
 
 
 # ---------------------------------------------------------------------------
