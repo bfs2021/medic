@@ -19,6 +19,7 @@ untracked scratch in the repo root.
 | #99 | `comment_issue99_predicates.md` | ready |
 | #100 | `comment_issue100_truncation.md` | ready |
 | #88, #89, #91 | — | **not written yet**; they share the Phase 1 gate numbers |
+| #95 | — | **not written yet** (ion guard + metabolite rule landed in `a8ac7ed`) |
 
 ```bash
 gh issue comment <n> --repo monarch-initiative/medic --body-file comment_issue<n>_*.md
@@ -45,6 +46,20 @@ open on the tracker; none were closed.
   **Owed:** measure whether any genuinely-cut text remains after `dd624ed`, and add a
   narrower mid-token/unclosed-bracket signal only if it does.
 
+## 2b. Corrections owed to the issues themselves
+
+Two of #95's premises did not survive measurement, and the comment needs to say so:
+
+- "Ground on `activeIngredient` substance names" — those exist on **35 of 1,976** labels, so
+  it is not available. And where both are present the *moiety* is usually the better of the
+  two, because it is the half that strips the salt (`TOBRAMYCIN SULFATE` → `TOBRAMYCIN`).
+- "Salt forms as separate drugs (~197 drug nodes)" — none of those are DailyMed's. By
+  `mention_source`, 561 salt-form nodes come from Orange Book, plus GRLS 27, PMDA 29, CHINA
+  28, EMA 20, EveryCure 11, CDSCO 4. DailyMed contributes zero. That half belongs with #27.
+
+**Still open from #95:** the salt-form nodes above, which need the normalization index
+(#27), not an ingest change.
+
 ## 3. Deferred to later phases (by design, see `plan.md`)
 
 - **Phase 3** — the structured extraction: #88 attribution, #89 target-vs-context, #90
@@ -68,6 +83,13 @@ open on the tracker; none were closed.
   `export-kgx`, `export-sssom`, `export-reliability`, then `validate-all`. Cheap, no LLM.
 - **`specs/2026-10-01-mech-migration-design.md`** — untracked, appeared 1 October, not written
   by me. Asked about it four times, never answered. Left alone through every commit.
+
+## 4b. Rebuild owed
+
+`a8ac7ed` changes what the ingest emits (87 ion moieties dropped, 152 metabolite
+substitutions across 173 labels), so `kb/` and `products/` do not reflect it yet. Needs an
+ingest + merge run — cache-warm, so no LLM calls. Deferred until #94 and #96 land so the
+three Phase 2 changes are rebuilt together rather than three times.
 
 ## 5. Release-note caveats
 
