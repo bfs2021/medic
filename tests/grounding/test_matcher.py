@@ -47,11 +47,24 @@ def test_normalized_when_case_differs(tmp_path):
     assert d.object_id == "MONDO:0007947" and d.grounding_quality == "lexical_exact_normalized"
 
 
-def test_rung_major_exact_label_hp_beats_synonym_mondo(tmp_path):
+def test_vocab_major_synonym_mondo_beats_exact_label_hp(tmp_path):
+    """Inverted deliberately (#96). This used to assert the opposite — that an HP *label*
+    beats a MONDO *exact synonym* — because the loop ran fields outermost and consulted the
+    configured `VOCAB_ORDER` only within one field.
+
+    That is the defect #96 reports: a UMLS/HP label beating a MONDO exact synonym is how
+    `hypertension` grounded to HP:0000822, and UMLS-grounded indication edges were wrong
+    38.6% of the time against 22.1% for MONDO. `VOCAB_ORDER` names MONDO first; the loop now
+    honours it across fields instead of only within one.
+
+    The field order still applies inside the winning vocabulary, and the recorded
+    confidence and `object_match_field` still reflect the field that actually matched, so a
+    synonym win is not written down as a label match.
+    """
     m = _matcher(tmp_path, [
         _r("MONDO:1", "foo bar", field="exactSynonym"),
         _r("HP:2", "foo bar", field="label")])
-    assert _one(m, "foo bar").object_id == "HP:2"
+    assert _one(m, "foo bar").object_id == "MONDO:1"
 
 
 def test_surgery_disease_to_disorder(tmp_path):

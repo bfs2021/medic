@@ -82,8 +82,12 @@ class Matcher:
                 return v
         return None
 
-    def _decide(self, subject, rows, confidence, applied, predicate, match_string):
-        picked = self._vocab_pick(rows)
+    def _of_vocab(self, rows: list[LexRow], vocab: str) -> list[LexRow]:
+        return [r for r in rows if r.source_prefix == vocab]
+
+    def _decide(self, subject, rows, confidence, applied, predicate, match_string,
+                vocab=None):
+        picked = self._of_vocab(rows, vocab) if vocab else self._vocab_pick(rows)
         if not picked:
             return None
         ids = {r.object_id for r in picked}
@@ -101,21 +105,30 @@ class Matcher:
         )
 
     def _try_base(self, subject, value, column, factor):
+        # Vocabulary-major, then field. `VOCAB_ORDER` already prefers CHEBI to DRON, but
+        # running field-major consulted that preference only *within* a field — so a DRON
+        # clinical-drug form matching on its label was reached before a CHEBI substance
+        # matching on an exact synonym, and "Albendazole Tablets" grounded to a dose form
+        # (#94). A dose form is the wrong kind of node for a drug-disease edge, and 69 of
+        # the 717 ids unknown to the Node Normalizer are DRON.
         lookup = self.index.lookup_raw if column == "raw" else self.index.lookup_norm
-        for field in self.fields:
-            d = self._decide(subject, lookup(value, field), _FIELD_CONF[field] * factor,
-                             [], _FIELD_PRED[field], value)
-            if d:
-                return d
+        for vocab in self.index.vocab_order:
+            for field in self.fields:
+                d = self._decide(subject, lookup(value, field),
+                                 _FIELD_CONF[field] * factor, [], _FIELD_PRED[field],
+                                 value, vocab=vocab)
+                if d:
+                    return d
         return None
 
     def _try_rule(self, subject, value, rule_id):
         pred, conf = RULE_PREDICATE[rule_id], RULE_CERTAINTY[rule_id]
-        for field in self.fields:
-            d = self._decide(subject, self.index.lookup_norm(value, field), conf,
-                             [rule_id], pred, value)
-            if d:
-                return d
+        for vocab in self.index.vocab_order:
+            for field in self.fields:
+                d = self._decide(subject, self.index.lookup_norm(value, field), conf,
+                                 [rule_id], pred, value, vocab=vocab)
+                if d:
+                    return d
         return None
 
     def _fuzzy(self, subject, norm):
@@ -129,6 +142,8 @@ class Matcher:
         rows: list[LexRow] = []
         for field in self.fields:
             rows.extend(self.index.lookup_norm_many(cands, field))
+        # Same vocabulary-major preference as the exact paths: the substance wins over the
+        # dose form even when only the dose form matched on a label (#94).
         picked = self._vocab_pick(rows)
         if not picked:
             return None
