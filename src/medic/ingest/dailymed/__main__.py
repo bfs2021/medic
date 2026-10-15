@@ -287,13 +287,81 @@ def _extract_section_chunks_from_root(root: ET.Element, loinc_code: str) -> list
     return _section_chunks(section) if section is not None else []
 
 
+#: An active moiety that is a bare ion or electrolyte. FDA SRS records the counter-ion as
+#: the moiety for salts, so multivitamin, parenteral-nutrition and OTC labels list
+#: `MAGNESIUM CATION`, `CHLORIDE`, `FERROUS CATION` — which then assert indications
+#: (magnesium cation for acid reflux, chloride for anxiety disorder). None is the
+#: therapeutic drug (#95).
+_ION_MOIETY = re.compile(
+    r"(?i)(\b(cation|anion)\b"
+    r"|^(chloride|fluoride|bromide|iodide|bicarbonate|carbonate|hydroxide"
+    r"|phosphate ion|sulfate ion|acetate ion|citrate ion|nitrate|oxide)$)"
+)
+
+#: Words a generic product name adds around the drug: salt formers, hydration states and
+#: the conjunctions joining a combination's components.
+_GENERIC_NOISE = frozenset({
+    "SODIUM", "HYDROCHLORIDE", "SULFATE", "CITRATE", "ACETATE", "PHOSPHATE", "MALEATE",
+    "TARTRATE", "MESYLATE", "BESYLATE", "FUMARATE", "SUCCINATE", "ERBUMINE", "CALCIUM",
+    "POTASSIUM", "MAGNESIUM", "HYDRATE", "MONOHYDRATE", "ANHYDROUS", "DIHYDRATE",
+    "AND", ",",
+})
+
+
+def _generic_stems(root: ET.Element) -> list[str]:
+    """Drug-name stems from `<genericMedicine><name>`, which every SPL carries.
+
+    The generic name is the *dispensed* product — "FOSINOPRIL SODIUM" where the moiety is
+    "FOSINOPRILAT". Salt formers and hydration states are stripped so the stem is
+    comparable to a moiety name; a combination's name is a joined list, so this returns one
+    stem per component.
+    """
+    stems: list[str] = []
+    for g in root.iter(f"{{{NS['v3']}}}genericMedicine"):
+        name = g.find("v3:name", NS)
+        if name is None or not name.text:
+            continue
+        for part in re.split(r",|\bAND\b", name.text.strip().upper()):
+            words = [w for w in part.split() if w not in _GENERIC_NOISE]
+            if words:
+                stems.append(" ".join(words))
+    return stems
+
+
+def _dispensed_name(moiety: str, stems: list[str]) -> str:
+    """The dispensed drug for this moiety, when the moiety is its active metabolite.
+
+    A ramipril label's moiety is RAMIPRILAT and its generic name is RAMIPRIL, so every
+    ramipril indication landed on a node no other resource uses. Derived from the label
+    rather than from a curated prodrug table: when the moiety strictly contains a generic
+    stem, the stem is the drug and the moiety is what the body turns it into. An exact
+    match changes nothing, so a clean moiety (TOBRAMYCIN against TOBRAMYCIN SULFATE) is
+    left alone and the salt is not dragged back in.
+    """
+    for stem in stems:
+        if stem and stem != moiety and stem in moiety:
+            return stem
+    return moiety
+
+
 def _extract_ingredients_from_root(root: ET.Element) -> list[str]:
-    """Extract active ingredients from an already-parsed root element."""
+    """Extract active ingredients from an already-parsed root element.
+
+    Reads `activeMoiety`, which is right for most labels — it strips the salt, so
+    TOBRAMYCIN SULFATE arrives as TOBRAMYCIN. Two corrections for the cases where it is not
+    the dispensed drug: bare ions are dropped, and an active metabolite is resolved back to
+    its prodrug via the label's own generic name (#95).
+    """
+    stems = _generic_stems(root)
     names: set[str] = set()
     for moiety_elem in root.iter(f"{{{NS['v3']}}}activeMoiety"):
         name = moiety_elem.find("v3:name", NS)
-        if name is not None and name.text:
-            names.add(name.text.strip().upper())
+        if name is None or not name.text:
+            continue
+        moiety = name.text.strip().upper()
+        if _ION_MOIETY.search(moiety):
+            continue
+        names.add(_dispensed_name(moiety, stems))
     return sorted(names)
 
 
