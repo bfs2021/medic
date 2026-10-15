@@ -5700,6 +5700,10 @@
     ],
     "text_prefix": "4 CONTRAINDICATIONS Dapagliflozin and Metformin HCl extended-release tablets are contraindicated in patients with: • Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) or end-stage renal disease"
   },
+  "4753bb8bd076dddd": {
+    "diseases": [],
+    "text_prefix": "4 CONTRAINDICATIONS The use of DEFITELIO is contraindicated in the following conditions: • Concomitant administration with systemic anticoagulant or fibrinolytic therapy [see Warnings and Precautions "
+  },
   "47a673bea3384b77": {
     "diseases": [],
     "text_prefix": "4 CONTRAINDICATIONS VEKLURY is contraindicated in patients with a history of clinically significant hypersensitivity reactions to VEKLURY or any components of the product [see Warnings and Precautions"
@@ -6091,6 +6095,10 @@
   "4c05d1a3656951c7": {
     "diseases": [],
     "text_prefix": "4 CONTRAINDICATIONS RAPIVAB is contraindicated in patients with known serious hypersensitivity or anaphylaxis to peramivir or any component of the product. Severe allergic reactions have included anap"
+  },
+  "4c0caece74a21ef6": {
+    "diseases": [],
+    "text_prefix": "4 CONTRAINDICATIONS Do not administer MENVEO to individuals with a severe allergic reaction (e.g., anaphylaxis) to a previous dose of MENVEO, to any component of this vaccine, or to any other diphther"
   },
   "4c14f761f0b9f91c": {
     "diseases": [
@@ -8977,6 +8985,10 @@
       ]
     ],
     "text_prefix": "CONTRAINDICATIONS Molindone Hydrochloride Tablets are contraindicated in severe central nervous system depression (alcohol, barbiturates, narcotics, etc.) or comatose states, and in patients with know"
+  },
+  "7510ec82f293e859": {
+    "diseases": [],
+    "text_prefix": "4 CONTRAINDICATIONS Hypersensitivity, including severe allergic reactions to yeast (a vaccine component), or after a previous dose of GARDASIL. [See Description (11) . ] Hypersensitivity, including se"
   },
   "753acaee44f8baec": {
     "diseases": [
@@ -14812,6 +14824,10 @@
     ],
     "text_prefix": "CONTRAINDICATIONS Contraindicated in acute superficial herpes simplex keratitis, vaccinia, varicella, and most other viral diseases of cornea and conjunctiva; mycobacterial infection of the eye; funga"
   },
+  "cc85a051e50df80a": {
+    "diseases": [],
+    "text_prefix": "CONTRAINDICATIONS None"
+  },
   "cce3047cdc1993c0": {
     "diseases": [
       [
@@ -18293,6 +18309,10 @@
       ]
     ],
     "text_prefix": "CONTRAINDICATIONS Nonselective monoamine oxidase (MAO) inhibitors are contraindicated for use with carbidopa and levodopa tablets. These inhibitors must be discontinued at least two weeks prior to ini"
+  },
+  "ff1055b364fe18bd": {
+    "diseases": [],
+    "text_prefix": "4 CONTRAINDICATIONS FERABRIGHT is contraindicated in patients with known hypersensitivity to ferumoxytol, any of FERABRIGHT’s components, or any other intravenous iron products. Reactions have include"
   },
   "ff2b923752ae50c1": {
     "diseases": [

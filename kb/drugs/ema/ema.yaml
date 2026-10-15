@@ -17996,13 +17996,13 @@
   ema_product_number: EMEA/H/C/002491
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/hyqvia
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00018785
-    grounded_label: Human normal immunoglobulin
+    confidence: 0.765
+    grounded_id: CHEBI:749498
+    grounded_label: human immunoglobulin g
     grounding_quality: lexical_exact
     original_string: human normal immunoglobulin
     subject_id: MEDICNE:57afc241-4624-5a70-94b4-16e6b577f089
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Replacement therapy in adults, children and adolescents (0-18 years)
@@ -18104,12 +18104,12 @@
   mention_id: MEDICNE:57afc241-4624-5a70-94b4-16e6b577f089
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00018785
-    normalized_label: Human normal immunoglobulin
-    original_id: DRON:00018785
+    normalized_id: CHEBI:749498
+    normalized_label: human immunoglobulin g
+    original_id: CHEBI:749498
     tool: medic-normalizer/1
-  normalized_id: DRON:00018785
-  normalized_label: Human normal immunoglobulin
+  normalized_id: CHEBI:749498
+  normalized_label: human immunoglobulin g
   original_literal: human normal immunoglobulin
   product_name: HyQvia
   source: EMA
@@ -24647,13 +24647,13 @@
   ema_product_number: EMEA/H/C/005026
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/inrebic
   grounding:
-    confidence: 1.0
-    grounded_id: DRON:00862672
-    grounded_label: fedratinib
+    confidence: 0.85
+    grounded_id: CHEBI:91408
+    grounded_label: N-tert-butyl-3-[[5-methyl-2-[4-[2-(1-pyrrolidinyl)ethoxy]anilino]-4-pyrimidinyl]amino]benzenesulfonamide
     grounding_quality: lexical_exact
     original_string: fedratinib
     subject_id: MEDICNE:d7bba11c-c0df-50e8-8798-81ec131e2293
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   indication: Inrebic is indicated for the treatment of disease-related splenomegaly
@@ -24670,12 +24670,12 @@
   mention_id: MEDICNE:d7bba11c-c0df-50e8-8798-81ec131e2293
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00862672
-    normalized_label: fedratinib
-    original_id: DRON:00862672
+    normalized_id: CHEBI:91408
+    normalized_label: N-tert-butyl-3-[[5-methyl-2-[4-[2-(1-pyrrolidinyl)ethoxy]anilino]-4-pyrimidinyl]amino]benzenesulfonamide
+    original_id: CHEBI:91408
     tool: medic-normalizer/1
-  normalized_id: DRON:00862672
-  normalized_label: fedratinib
+  normalized_id: CHEBI:91408
+  normalized_label: N-tert-butyl-3-[[5-methyl-2-[4-[2-(1-pyrrolidinyl)ethoxy]anilino]-4-pyrimidinyl]amino]benzenesulfonamide
   original_literal: fedratinib
   product_name: Inrebic
   source: EMA
@@ -34831,13 +34831,13 @@
   ema_product_number: EMEA/H/C/000373
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/hbvaxpro
   grounding:
-    confidence: 0.8
-    grounded_id: DRON:00017209
-    grounded_label: Hepatitis B Vaccine
+    confidence: 0.765
+    grounded_id: CHEBI:757403
+    grounded_label: hepatitis b virus hbsag surface protein antigen
     grounding_quality: lexical_exact_surgery
     original_string: hepatitis B vaccine (recombinant DNA)
     subject_id: MEDICNE:92538ffb-6a08-594d-a6b5-86e5955f9039
-  grounding_confidence: 0.8
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: 5 micrograms HBVaxPro is indicated for active immunisation against hepatitis-B-virus
@@ -34881,12 +34881,12 @@
   mention_id: MEDICNE:92538ffb-6a08-594d-a6b5-86e5955f9039
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00017209
-    normalized_label: Hepatitis B Vaccine
-    original_id: DRON:00017209
+    normalized_id: CHEBI:757403
+    normalized_label: hepatitis b virus hbsag surface protein antigen
+    original_id: CHEBI:757403
     tool: medic-normalizer/1
-  normalized_id: DRON:00017209
-  normalized_label: Hepatitis B Vaccine
+  normalized_id: CHEBI:757403
+  normalized_label: hepatitis b virus hbsag surface protein antigen
   original_literal: hepatitis B vaccine (recombinant DNA)
   product_name: HBVaxPro
   source: EMA
@@ -46833,13 +46833,13 @@
   ema_product_number: EMEA/H/C/005381
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/copiktra
   grounding:
-    confidence: 1.0
-    grounded_id: DRON:00831738
-    grounded_label: duvelisib
+    confidence: 0.85
+    grounded_id: CHEBI:131169
+    grounded_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
     grounding_quality: lexical_exact
     original_string: duvelisib
     subject_id: MEDICNE:fe56182f-a0a3-5375-a069-7b69867c297c
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   indication: Copiktra monotherapy is indicated for the treatment of adult patients
@@ -46856,12 +46856,12 @@
   mention_id: MEDICNE:fe56182f-a0a3-5375-a069-7b69867c297c
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00831738
-    normalized_label: duvelisib
-    original_id: DRON:00831738
+    normalized_id: CHEBI:131169
+    normalized_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
+    original_id: CHEBI:131169
     tool: medic-normalizer/1
-  normalized_id: DRON:00831738
-  normalized_label: duvelisib
+  normalized_id: CHEBI:131169
+  normalized_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
   original_literal: duvelisib
   product_name: Copiktra
   source: EMA
@@ -53973,13 +53973,13 @@
   ema_product_number: EMEA/H/C/000550
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/fendrix
   grounding:
-    confidence: 0.8
-    grounded_id: DRON:00017209
-    grounded_label: Hepatitis B Vaccine
+    confidence: 0.765
+    grounded_id: CHEBI:757403
+    grounded_label: hepatitis b virus hbsag surface protein antigen
     grounding_quality: lexical_exact_surgery
     original_string: hepatitis B (rDNA) vaccine (adjuvanted, adsorbed)
     subject_id: MEDICNE:97ae2999-a7e7-54d6-920c-b0ae8077f46d
-  grounding_confidence: 0.8
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: Fendrix is indicated in adolescents and adults from the age of 15 years
@@ -53996,12 +53996,12 @@
   mention_id: MEDICNE:97ae2999-a7e7-54d6-920c-b0ae8077f46d
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00017209
-    normalized_label: Hepatitis B Vaccine
-    original_id: DRON:00017209
+    normalized_id: CHEBI:757403
+    normalized_label: hepatitis b virus hbsag surface protein antigen
+    original_id: CHEBI:757403
     tool: medic-normalizer/1
-  normalized_id: DRON:00017209
-  normalized_label: Hepatitis B Vaccine
+  normalized_id: CHEBI:757403
+  normalized_label: hepatitis b virus hbsag surface protein antigen
   original_literal: hepatitis B (rDNA) vaccine (adjuvanted, adsorbed)
   product_name: Fendrix
   source: EMA
@@ -54712,13 +54712,13 @@
   ema_product_number: EMEA/H/C/000476
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/dukoral
   grounding:
-    confidence: 0.8
-    grounded_id: DRON:00013575
-    grounded_label: Cholera Vaccine
+    confidence: 0.765
+    grounded_id: CHEBI:753852
+    grounded_label: vibrio cholerae, live attenuated
     grounding_quality: lexical_exact_surgery
     original_string: cholera vaccine (inactivated, oral)
     subject_id: MEDICNE:75152ba1-e3c8-5af5-bf7d-5abc5b0d6c48
-  grounding_confidence: 0.8
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: Dukoral is indicated for active immunisation against disease caused
@@ -54742,12 +54742,12 @@
   mention_id: MEDICNE:75152ba1-e3c8-5af5-bf7d-5abc5b0d6c48
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00013575
-    normalized_label: Cholera Vaccine
-    original_id: DRON:00013575
+    normalized_id: CHEBI:753852
+    normalized_label: vibrio cholerae, live attenuated
+    original_id: CHEBI:753852
     tool: medic-normalizer/1
-  normalized_id: DRON:00013575
-  normalized_label: Cholera Vaccine
+  normalized_id: CHEBI:753852
+  normalized_label: vibrio cholerae, live attenuated
   original_literal: cholera vaccine (inactivated, oral)
   product_name: Dukoral
   source: EMA

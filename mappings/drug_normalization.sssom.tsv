@@ -3026,6 +3026,7 @@ CHEBI:753807	skos:exactMatch	CHEBI:753807	agalsidase beta	semapv:UnspecifiedMatc
 CHEBI:753820	skos:exactMatch	CHEBI:753820	batroxobin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:753822	skos:exactMatch	CHEBI:753822	belladonna	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:753844	skos:exactMatch	CHEBI:753844	crisantaspase	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:753852	skos:exactMatch	CHEBI:753852	vibrio cholerae, live attenuated	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:753863	skos:exactMatch	CHEBI:753863	human menopausal gonadotrophins	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:753883	skos:exactMatch	CHEBI:753883	anise oil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:753890	skos:exactMatch	CHEBI:753890	antivenin (micrurus fulvius)	semapv:UnspecifiedMatching	medic-normalizer/1	identity

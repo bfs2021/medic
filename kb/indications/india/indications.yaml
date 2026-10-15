@@ -366,7 +366,7 @@
   indications_text: Polymorphic light eruption
   pmda: false
   relationship_type: INDICATION
-- drug_disease: DRON:00019004|MONDO:0011786
+- drug_disease: CHEBI:94559|MONDO:0011786
   ema: false
   evidence:
   - approval_date: '20150101'
@@ -384,12 +384,12 @@
   fda: false
   final_normalized_disease_id: MONDO:0011786
   final_normalized_disease_label: allergic rhinitis
-  final_normalized_drug_id: DRON:00019004
-  final_normalized_drug_label: levocetirizine
+  final_normalized_drug_id: CHEBI:94559
+  final_normalized_drug_label: 2-[2-[4-[(R)-(4-chlorophenyl)-phenylmethyl]-1-piperazinyl]ethoxy]acetic acid
   indications_text: For allergic rhinitis and chronic urticaria.
   pmda: false
   relationship_type: INDICATION
-- drug_disease: DRON:00019004|MONDO:0850230
+- drug_disease: CHEBI:94559|MONDO:0850230
   ema: false
   evidence:
   - approval_date: '20150101'
@@ -407,8 +407,8 @@
   fda: false
   final_normalized_disease_id: MONDO:0850230
   final_normalized_disease_label: chronic urticaria
-  final_normalized_drug_id: DRON:00019004
-  final_normalized_drug_label: levocetirizine
+  final_normalized_drug_id: CHEBI:94559
+  final_normalized_drug_label: 2-[2-[4-[(R)-(4-chlorophenyl)-phenylmethyl]-1-piperazinyl]ethoxy]acetic acid
   indications_text: For allergic rhinitis and chronic urticaria.
   pmda: false
   relationship_type: INDICATION
@@ -481,7 +481,7 @@
   indications_text: 1. For treatment of patients with myelodysplastic syndromes (MDS) including previously treated and untreated, de novo and secondary MDS of all French- American-British subtypes(refractory anemia, refractory anemia with ringed sideroblasts, refractory anemia with excess blasts, refractory anemia with excess blasts in transformation, and chronic myelomonocytic leukemia) and intermediate-1, intermediate-2, and high-risk international Prognostic Scoring System groups. 2. For the treatment of adult patients aged 65 yrs and above with newly diagnosed de novo or secondary acute myeloid leukemia, according to WHO classification, who are not candidates for standard induction chemotherapy.
   pmda: false
   relationship_type: INDICATION
-- drug_disease: CHEBI:749378|UMLS:C0002894
+- drug_disease: CHEBI:749378|MONDO:0019454
   ema: false
   evidence:
   - approval_date: '20150101'
@@ -497,8 +497,8 @@
     source_role: PRIMARY
     source_type: REGULATORY
   fda: false
-  final_normalized_disease_id: UMLS:C0002894
-  final_normalized_disease_label: Anemia, Refractory, with Excess of Blasts
+  final_normalized_disease_id: MONDO:0019454
+  final_normalized_disease_label: myelodysplastic syndrome with excess blasts
   final_normalized_drug_id: CHEBI:749378
   final_normalized_drug_label: decitabine
   indications_text: 1. For treatment of patients with myelodysplastic syndromes (MDS) including previously treated and untreated, de novo and secondary MDS of all French- American-British subtypes(refractory anemia, refractory anemia with ringed sideroblasts, refractory anemia with excess blasts, refractory anemia with excess blasts in transformation, and chronic myelomonocytic leukemia) and intermediate-1, intermediate-2, and high-risk international Prognostic Scoring System groups. 2. For the treatment of adult patients aged 65 yrs and above with newly diagnosed de novo or secondary acute myeloid leukemia, according to WHO classification, who are not candidates for standard induction chemotherapy.
@@ -826,7 +826,7 @@
   indications_text: For the Relief of perennial allergic rhinitis in adults & pediatric patients 6 months of age and older.
   pmda: false
   relationship_type: INDICATION
-- drug_disease: CHEBI:72296|UMLS:C0149871
+- drug_disease: CHEBI:72296|HP:0002625
   ema: false
   evidence:
   - approval_date: '20150101'
@@ -842,8 +842,8 @@
     source_role: PRIMARY
     source_type: REGULATORY
   fda: false
-  final_normalized_disease_id: UMLS:C0149871
-  final_normalized_disease_label: Blood clot in a deep vein
+  final_normalized_disease_id: HP:0002625
+  final_normalized_disease_label: Deep venous thrombosis
   final_normalized_drug_id: CHEBI:72296
   final_normalized_drug_label: apixaban
   indications_text: Treatment of deep vein thrombosis (DVT) and pulmonary Embolism (PE), and prevention of Recurrent DVT and PE in adult patients.
@@ -872,7 +872,7 @@
   indications_text: Treatment of deep vein thrombosis (DVT) and pulmonary Embolism (PE), and prevention of Recurrent DVT and PE in adult patients.
   pmda: false
   relationship_type: INDICATION
-- drug_disease: CHEBI:72296|UMLS:C0149871
+- drug_disease: CHEBI:72296|HP:0002625
   ema: false
   evidence:
   - approval_date: '20150101'
@@ -888,8 +888,8 @@
     source_role: PRIMARY
     source_type: REGULATORY
   fda: false
-  final_normalized_disease_id: UMLS:C0149871
-  final_normalized_disease_label: Blood clot in a deep vein
+  final_normalized_disease_id: HP:0002625
+  final_normalized_disease_label: Deep venous thrombosis
   final_normalized_drug_id: CHEBI:72296
   final_normalized_drug_label: apixaban
   indications_text: Treatment of deep vein thrombosis (DVT) and pulmonary Embolism (PE), and prevention of Recurrent DVT and PE in adult patients.
@@ -1125,7 +1125,7 @@
   indications_text: Rivaroxaban 2.5mg tablet, co-administered with Acetylsalicylic acid (ASA) alone or with ASA plus Clopidogrel or Ticlopidine, is indicated for the prevention of atherothrombotic events in adult patients after an acute coronary syndrome (ACS) with elevated cardiac biomarkers.
   pmda: false
   relationship_type: INDICATION
-- drug_disease: CHEBI:6367|UMLS:C0751495
+- drug_disease: CHEBI:6367|HP:0007359
   ema: false
   evidence:
   - approval_date: '20150101'
@@ -1141,8 +1141,8 @@
     source_role: PRIMARY
     source_type: REGULATORY
   fda: false
-  final_normalized_disease_id: UMLS:C0751495
-  final_normalized_disease_label: Focal seizures
+  final_normalized_disease_id: HP:0007359
+  final_normalized_disease_label: Focal-onset seizure
   final_normalized_drug_id: CHEBI:6367
   final_normalized_drug_label: lamotrigine
   indications_text: Add-on therapy for partial and secondary generalised tonic-clonic seizures.
@@ -3241,7 +3241,7 @@
   indications_text: In prevention of stroke and systemic embolism in adult patients with non- valvular atrial fibrillation (NVAF) with one or more risk factors, such as congestive heart failure, hypertension, age ≥ 75 years, diabetes mellitus, prior stroke or transient ischaemic attack(TIA). For the treatment of deep vein thrombosis (DVT) and pulmonary embolism (PE), and for the prevention of recurrent DVT and PE in adults.
   pmda: false
   relationship_type: INDICATION
-- drug_disease: CHEBI:85973|UMLS:C0149871
+- drug_disease: CHEBI:85973|HP:0002625
   ema: false
   evidence:
   - approval_date: '20250220'
@@ -3257,8 +3257,8 @@
     source_role: PRIMARY
     source_type: REGULATORY
   fda: false
-  final_normalized_disease_id: UMLS:C0149871
-  final_normalized_disease_label: Blood clot in a deep vein
+  final_normalized_disease_id: HP:0002625
+  final_normalized_disease_label: Deep venous thrombosis
   final_normalized_drug_id: CHEBI:85973
   final_normalized_drug_label: edoxaban
   indications_text: In prevention of stroke and systemic embolism in adult patients with non- valvular atrial fibrillation (NVAF) with one or more risk factors, such as congestive heart failure, hypertension, age ≥ 75 years, diabetes mellitus, prior stroke or transient ischaemic attack(TIA). For the treatment of deep vein thrombosis (DVT) and pulmonary embolism (PE), and for the prevention of recurrent DVT and PE in adults.

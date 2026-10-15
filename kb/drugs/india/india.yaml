@@ -653,25 +653,28 @@
 - alternate_ids: []
   approval_date: '20150101'
   grounding:
-    confidence: 0.8
-    grounded_id: DRON:00019004
-    grounded_label: levocetirizine
+    confidence: 0.765
+    grounded_id: CHEBI:94559
+    grounded_label: 2-[2-[4-[(R)-(4-chlorophenyl)-phenylmethyl]-1-piperazinyl]ethoxy]acetic
+      acid
     grounding_quality: lexical_exact_surgery
     original_string: Levocetirizine ODS 2.5mg /5mg (Additional dosage form)
     subject_id: MEDICNE:219c7ae9-c230-5610-a734-4d7590f78dd7
-  grounding_confidence: 0.8
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: For allergic rhinitis and chronic urticaria.
   mention_id: MEDICNE:219c7ae9-c230-5610-a734-4d7590f78dd7
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00019004
-    normalized_label: levocetirizine
-    original_id: DRON:00019004
+    normalized_id: CHEBI:94559
+    normalized_label: 2-[2-[4-[(R)-(4-chlorophenyl)-phenylmethyl]-1-piperazinyl]ethoxy]acetic
+      acid
+    original_id: CHEBI:94559
     tool: medic-normalizer/1
-  normalized_id: DRON:00019004
-  normalized_label: levocetirizine
+  normalized_id: CHEBI:94559
+  normalized_label: 2-[2-[4-[(R)-(4-chlorophenyl)-phenylmethyl]-1-piperazinyl]ethoxy]acetic
+    acid
   original_literal: Levocetirizine ODS 2.5mg /5mg (Additional dosage form)
   snippet: For allergic rhinitis and chronic urticaria.
   snippets:

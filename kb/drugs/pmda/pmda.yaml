@@ -5024,13 +5024,13 @@
   brand_names:
   - Vtama Cream 1%
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00975437
-    grounded_label: tapinarof
+    confidence: 0.765
+    grounded_id: CHEBI:215747
+    grounded_label: Benvitimod
     grounding_quality: lexical_exact_normalized
     original_string: TAPINAROF
     subject_id: MEDICNE:d8014a94-a070-55c8-b622-68124926a80c
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: A drug with a new active ingredient indicated for the treatment of atopic
@@ -5039,12 +5039,12 @@
   mention_id: MEDICNE:d8014a94-a070-55c8-b622-68124926a80c
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00975437
-    normalized_label: tapinarof
-    original_id: DRON:00975437
+    normalized_id: CHEBI:215747
+    normalized_label: Benvitimod
+    original_id: CHEBI:215747
     tool: medic-normalizer/1
-  normalized_id: DRON:00975437
-  normalized_label: tapinarof
+  normalized_id: CHEBI:215747
+  normalized_label: Benvitimod
   original_literal: TAPINAROF
   snippet: A drug with a new active ingredient indicated for the treatment of atopic
     dermatitis and plaque psoriasis.
@@ -45866,13 +45866,13 @@
   brand_names:
   - P-Tol Chewable Tab. 250 mg P-Tol Chewable Tab. 500 mg
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00750797
-    grounded_label: sucroferric oxyhydroxide
+    confidence: 0.765
+    grounded_id: CHEBI:758535
+    grounded_label: ferric oxyhydroxide
     grounding_quality: lexical_exact_normalized
     original_string: SUCROFERRIC OXYHYDROXIDE
     subject_id: MEDICNE:2d505372-4bd8-5a4e-9c34-8da4036203f0
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: Drugs with a new active ingredient indicated for the improvement of
@@ -45881,12 +45881,12 @@
   mention_id: MEDICNE:2d505372-4bd8-5a4e-9c34-8da4036203f0
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00750797
-    normalized_label: sucroferric oxyhydroxide
-    original_id: DRON:00750797
+    normalized_id: CHEBI:758535
+    normalized_label: ferric oxyhydroxide
+    original_id: CHEBI:758535
     tool: medic-normalizer/1
-  normalized_id: DRON:00750797
-  normalized_label: sucroferric oxyhydroxide
+  normalized_id: CHEBI:758535
+  normalized_label: ferric oxyhydroxide
   original_literal: SUCROFERRIC OXYHYDROXIDE
   snippet: Drugs with a new active ingredient indicated for the improvement of hyperphosphatemia
     in patients with chronic kidney disease who are receiving dialysis.
@@ -62054,13 +62054,13 @@
   brand_names:
   - Rozerem Tablets 8 mg
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00018794
-    grounded_label: ramelteon
+    confidence: 0.765
+    grounded_id: CHEBI:109549
+    grounded_label: N-[2-[(8S)-2,6,7,8-tetrahydro-1H-cyclopenta[e]benzofuran-8-yl]ethyl]propanamide
     grounding_quality: lexical_exact_normalized
     original_string: RAMELTEON
     subject_id: MEDICNE:3145bbda-8ae9-5f66-9a32-14f1371f61de
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: A drug with a new active ingredient indicated for the improvement of
@@ -62069,12 +62069,12 @@
   mention_id: MEDICNE:3145bbda-8ae9-5f66-9a32-14f1371f61de
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00018794
-    normalized_label: ramelteon
-    original_id: DRON:00018794
+    normalized_id: CHEBI:109549
+    normalized_label: N-[2-[(8S)-2,6,7,8-tetrahydro-1H-cyclopenta[e]benzofuran-8-yl]ethyl]propanamide
+    original_id: CHEBI:109549
     tool: medic-normalizer/1
-  normalized_id: DRON:00018794
-  normalized_label: ramelteon
+  normalized_id: CHEBI:109549
+  normalized_label: N-[2-[(8S)-2,6,7,8-tetrahydro-1H-cyclopenta[e]benzofuran-8-yl]ethyl]propanamide
   original_literal: RAMELTEON
   snippet: A drug with a new active ingredient indicated for the improvement of difficulty
     with sleep onset in insomnia.
@@ -62134,13 +62134,13 @@
   brand_names:
   - Nerbloc Intramuscular Injection 2500 Unit
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:01002958
-    grounded_label: botulinum toxin type B
+    confidence: 0.765
+    grounded_id: CHEBI:749438
+    grounded_label: rimabotulinumtoxinb
     grounding_quality: lexical_exact_normalized
     original_string: BOTULINUM TOXIN TYPE B
     subject_id: MEDICNE:2bc4df91-cc4a-5787-97e7-a52f42984240
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   indication: A drug with a new active ingredient indicated for the treatment of spasmodic
@@ -62149,12 +62149,12 @@
   mention_id: MEDICNE:2bc4df91-cc4a-5787-97e7-a52f42984240
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:01002958
-    normalized_label: botulinum toxin type B
-    original_id: DRON:01002958
+    normalized_id: CHEBI:749438
+    normalized_label: rimabotulinumtoxinb
+    original_id: CHEBI:749438
     tool: medic-normalizer/1
-  normalized_id: DRON:01002958
-  normalized_label: botulinum toxin type B
+  normalized_id: CHEBI:749438
+  normalized_label: rimabotulinumtoxinb
   original_literal: BOTULINUM TOXIN TYPE B
   snippet: A drug with a new active ingredient indicated for the treatment of spasmodic
     torticollis (cervical dystonia).

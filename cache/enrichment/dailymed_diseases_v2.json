@@ -10237,6 +10237,19 @@
     ],
     "text_prefix": "A new combination drug indicated for inhibiting thrombus/embolization formation in the following diseases or post-operations (for use only in patients with a history of gastric ulcer or duodenal ulcer"
   },
+  "2485887356d0faf7": {
+    "diseases": [
+      [
+        "brain cancer",
+        "malignant neoplasms in the brain"
+      ],
+      [
+        "blood-brain barrier disruption",
+        "lesions with a disrupted blood-brain barrier"
+      ]
+    ],
+    "text_prefix": "1 INDICATIONS AND USAGE FERABRIGHT is indicated for magnetic resonance imaging (MRI) of the brain in adults with known or suspected malignant neoplasms in the brain to visualize lesions with a disrupt"
+  },
   "249e9f6d4138e591": {
     "diseases": [
       [
@@ -16574,6 +16587,51 @@
     ],
     "text_prefix": "A drug with a new additional indication and a new dosage for the inhibition of stroke-like episodes in patients with mitochondrial myopathy, encephalopathy, lactic acidosis and stroke-like episodes (M"
   },
+  "3b4f6e301ad04235": {
+    "diseases": [
+      [
+        "cervical cancer",
+        "Cervical, vulvar, vaginal, and anal cancer caused by HPV types 16 and 18"
+      ],
+      [
+        "vulvar cancer",
+        "Cervical, vulvar, vaginal, and anal cancer caused by HPV types 16 and 18"
+      ],
+      [
+        "vaginal cancer",
+        "Cervical, vulvar, vaginal, and anal cancer caused by HPV types 16 and 18"
+      ],
+      [
+        "anal cancer",
+        "Cervical, vulvar, vaginal, and anal cancer caused by HPV types 16 and 18"
+      ],
+      [
+        "genital warts",
+        "Genital warts (condyloma acuminata)"
+      ],
+      [
+        "cervical intraepithelial neoplasia",
+        "Cervical intraepithelial neoplasia (CIN) grade 2/3"
+      ],
+      [
+        "cervical adenocarcinoma in situ",
+        "Cervical adenocarcinoma in situ (AIS)"
+      ],
+      [
+        "vulvar intraepithelial neoplasia",
+        "Vulvar intraepithelial neoplasia (VIN) grade 2 and grade 3"
+      ],
+      [
+        "vaginal intraepithelial neoplasia",
+        "Vaginal intraepithelial neoplasia (VaIN) grade 2 and grade 3"
+      ],
+      [
+        "anal intraepithelial neoplasia",
+        "Anal intraepithelial neoplasia (AIN) grades 1, 2, and 3"
+      ]
+    ],
+    "text_prefix": "1 INDICATIONS AND USAGE GARDASIL is a vaccine indicated in girls and women 9 through 26 years of age for the prevention of the following diseases caused by Human Papillomavirus (HPV) types included in"
+  },
   "3b4f933375e19064": {
     "diseases": [
       [
@@ -17039,6 +17097,27 @@
       ]
     ],
     "text_prefix": "Drugs in new dosage forms indicated for the treatment of diabetes mellitus in cases where insulin therapy is indicated."
+  },
+  "3cc190b0e9f235d5": {
+    "diseases": [
+      [
+        "hepatic veno-occlusive disease",
+        "hepatic veno-occlusive disease (VOD)"
+      ],
+      [
+        "sinusoidal obstruction syndrome",
+        "sinusoidal obstruction syndrome (SOS)"
+      ],
+      [
+        "renal dysfunction",
+        "renal or pulmonary dysfunction"
+      ],
+      [
+        "pulmonary dysfunction",
+        "renal or pulmonary dysfunction"
+      ]
+    ],
+    "text_prefix": "1 INDICATIONS AND USAGE DEFITELIO is indicated for the treatment of adult and pediatric patients with hepatic veno-occlusive disease (VOD), also known as sinusoidal obstruction syndrome (SOS), with re"
   },
   "3ccf0bcbc8cbff56": {
     "diseases": [
@@ -18887,6 +18966,10 @@
       ]
     ],
     "text_prefix": "1 INDICATIONS AND USAGE FANAPT ® is indicated for: Treatment of schizophrenia in adults [see Clinical Studies (14.1) ]. Acute treatment of manic or mixed episodes associated with bipolar I disorder in"
+  },
+  "4408df5b4bb496ae": {
+    "diseases": [],
+    "text_prefix": "1 INDICATIONS AND USAGE PHEXXI is indicated for the prevention of pregnancy in females of reproductive potential for use as an on-demand method of contraception. PHEXXI is a combination of lactic acid"
   },
   "4413435c98df1495": {
     "diseases": [
@@ -55593,6 +55676,19 @@
     ],
     "text_prefix": "1 INDICATIONS AND USAGE MAYZENT is indicated for the treatment of relapsing forms of multiple sclerosis (MS), to include clinically isolated syndrome, relapsing-remitting disease, and active secondary"
   },
+  "c81a099163a0cdfd": {
+    "diseases": [
+      [
+        "Respiratory distress syndrome",
+        "Respiratory Distress Syndrome (RDS)"
+      ],
+      [
+        "Hyaline membrane disease",
+        "hyaline membrane disease"
+      ]
+    ],
+    "text_prefix": "INDICATIONS AND USAGE SURVANTA is indicated for prevention and treatment (“rescue”) of Respiratory Distress Syndrome (RDS) (hyaline membrane disease) in premature infants."
+  },
   "c81d2ce55ef031f1": {
     "diseases": [
       [
@@ -65786,6 +65882,15 @@
       ]
     ],
     "text_prefix": "Reduction of elevated intraocular pressure in chronic open-angle glaucoma and ocular hypertension (as monotherapy or as adjunctive therapy to beta-blockers)."
+  },
+  "ebe47a4c69dfe4f1": {
+    "diseases": [
+      [
+        "invasive meningococcal disease",
+        "invasive meningococcal disease"
+      ]
+    ],
+    "text_prefix": "1 INDICATIONS AND USAGE MENVEO is a vaccine indicated for active immunization to prevent invasive meningococcal disease caused by Neisseria meningitidis serogroups A, C, Y, and W-135 in individuals 2 "
   },
   "ec00742f9f7a86bd": {
     "diseases": [
