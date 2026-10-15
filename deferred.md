@@ -19,7 +19,9 @@ untracked scratch in the repo root.
 | #99 | `comment_issue99_predicates.md` | ready |
 | #100 | `comment_issue100_truncation.md` | ready |
 | #88, #89, #91 | — | **not written yet**; they share the Phase 1 gate numbers |
-| #95 | — | **not written yet** (ion guard + metabolite rule landed in `a8ac7ed`) |
+| #95 | — | **not written yet** (`a8ac7ed`) |
+| #94 | — | **not written yet**; only partly addressed, see below |
+| #96 | — | **not written yet** (`44ac0be`, `0cfdaa2`) |
 
 ```bash
 gh issue comment <n> --repo monarch-initiative/medic --body-file comment_issue<n>_*.md
@@ -60,6 +62,27 @@ Two of #95's premises did not survive measurement, and the comment needs to say 
 **Still open from #95:** the salt-form nodes above, which need the normalization index
 (#27), not an ingest change.
 
+## 2c. #94 is only partly done
+
+Of its three asks, one landed and two did not:
+
+- ✅ **Prefer ChEBI substance over DRON clinical-drug forms** (`44ac0be`). The matcher ran
+  fields outermost so a DRON label beat a ChEBI synonym; it is now vocabulary-major.
+- ❌ **Emit RXCUI/UNII xrefs on every drug node.** All 1,976 SPLs carry a UNII on every
+  active moiety, and `nodes.py` already emits `alternate_ids` as `xref`, so the two ends
+  exist — but DailyMed is an *indication* source and the drug node's identity is built by
+  `drug_merge` from Orange Book / Purple Book / EMA / PMDA / GRLS / CDSCO / CDE / EveryCure.
+  Getting the label's UNII onto the node needs a cross-layer path that does not exist yet.
+  Only 1,092 of 4,323 nodes carry a `unii` today, and from enrichment rather than the label.
+  **This is the half that actually unblocks consumers** — 3,448 assertions (28%) are dropped
+  by anything joining on ids — so it deserves its own design rather than a shortcut.
+- ❌ **Pin ontology versions, or prefer the oldest ChEBI id in the clique.** Untouched.
+  ChEBI and DRON are still fetched unpinned from PURLs, so the same drift recurs on every
+  index rebuild. Related to #27.
+
+Also unaddressed from #96: abbreviations used as display names (DFSP, WARTS). No comma to
+swap, so de-inversion is not the remedy; they need a better label source (#13).
+
 ## 3. Deferred to later phases (by design, see `plan.md`)
 
 - **Phase 3** — the structured extraction: #88 attribution, #89 target-vs-context, #90
@@ -84,12 +107,12 @@ Two of #95's premises did not survive measurement, and the comment needs to say 
 - **`specs/2026-10-01-mech-migration-design.md`** — untracked, appeared 1 October, not written
   by me. Asked about it four times, never answered. Left alone through every commit.
 
-## 4b. Rebuild owed
+## 4b. Rebuilds
 
-`a8ac7ed` changes what the ingest emits (87 ion moieties dropped, 152 metabolite
-substitutions across 173 labels), so `kb/` and `products/` do not reflect it yet. Needs an
-ingest + merge run — cache-warm, so no LLM calls. Deferred until #94 and #96 land so the
-three Phase 2 changes are rebuilt together rather than three times.
+Phase 1's rebuild landed in `fecf1e1`. Phase 2's is running: the ingest changed (87 ion
+moieties dropped, 152 metabolite substitutions across 173 labels) and so did the grounding
+matcher, which re-decides every source's disease grounding — about 177 of 3,545 non-MONDO
+decisions are expected to move toward MONDO or HP.
 
 ## 5. Release-note caveats
 
