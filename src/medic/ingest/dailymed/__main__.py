@@ -218,6 +218,9 @@ def _row_from_spl_root(root: ET.Element) -> dict | None:
             "indications_text_parts": indication_parts,
             "contraindications_text_parts": contra_parts,
             "set_id": set_id,
+            # The UNII the label asserts for each moiety, so the evidence row can carry it
+            # and the export can publish it as a node xref (#94).
+            "unii_by_moiety": unii_by_moiety(root),
         }
     return None
 
@@ -403,6 +406,37 @@ def _extract_ingredients_from_root(root: ET.Element) -> list[str]:
     non_ions = [m for m in moieties if not _ION_MOIETY.search(m)]
     keep = non_ions if non_ions else moieties
     return sorted({_dispensed_name(m, stems) for m in keep})
+
+
+#: OID of the FDA UNII code system, as SPLs declare it on `<activeMoiety><code>`.
+_UNII_CODE_SYSTEM = "2.16.840.1.113883.4.9"
+
+
+def unii_by_moiety(root: ET.Element) -> dict[str, str]:
+    """``{MOIETY NAME: UNII}`` for every active moiety the label codes (#94).
+
+    The identifier is sitting next to the name we already read — the same `<activeMoiety>`
+    element carries `<code code="FYS6T7F842" codeSystem="2.16.840.1.113883.4.9">`. Keyed by
+    the moiety name rather than by the grounded id, because grounding happens later and the
+    name is what both ends of the join have.
+
+    Keyed on the raw moiety name *and* on the dispensed name, so a metabolite row resolved
+    back to its prodrug (`RAMIPRILAT` -> `RAMIPRIL`) still finds a UNII. Both keys point at
+    the moiety's own UNII, which is the identifier the label actually asserts.
+    """
+    stems = _generic_stems(root)
+    out: dict[str, str] = {}
+    for moiety_elem in root.iter(f"{{{NS['v3']}}}activeMoiety"):
+        name = moiety_elem.find("v3:name", NS)
+        code = moiety_elem.find("v3:code", NS)
+        if name is None or not name.text or code is None:
+            continue
+        if code.get("codeSystem") != _UNII_CODE_SYSTEM or not code.get("code"):
+            continue
+        moiety = name.text.strip().upper()
+        out[moiety] = code.get("code")
+        out.setdefault(_dispensed_name(moiety, stems), code.get("code"))
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -1180,6 +1214,7 @@ def _process_spl_data(
         ind_parts = row.get("indications_text_parts")
         contra_parts_row = row.get("contraindications_text_parts")
         set_id: str = row.get("set_id", "")
+        unii_map: dict[str, str] = row.get("unii_by_moiety") or {}
 
         # Ground each drug
         for drug_name in drug_names:
@@ -1250,6 +1285,8 @@ def _process_spl_data(
                         evidence_item["snippet"] = indications_text[:500]
                     # Preserve raw source strings for audit
                     evidence_item["original_drug_label"] = drug_name
+                    if unii_map.get(drug_name):
+                        evidence_item["original_drug_unii"] = unii_map[drug_name]
                     if set_id:
                         evidence_item["original_drug_id"] = set_id
                     evidence_item["original_disease_label"] = disease_name
@@ -1329,6 +1366,8 @@ def _process_spl_data(
                     if contras_text:
                         contra_evidence["snippet"] = contras_text[:500]
                     contra_evidence["original_drug_label"] = drug_name
+                    if unii_map.get(drug_name):
+                        contra_evidence["original_drug_unii"] = unii_map[drug_name]
                     if set_id:
                         contra_evidence["original_drug_id"] = set_id
                     contra_evidence["original_disease_label"] = disease_name

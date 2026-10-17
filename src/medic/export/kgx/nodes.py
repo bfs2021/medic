@@ -46,8 +46,36 @@ def _step(mention: dict, category: str) -> dict:
 # ---------------------------------------------------------------------------
 # Drugs
 # ---------------------------------------------------------------------------
+def unii_by_drug(*products: list[dict]) -> dict[str, str]:
+    """``{drug_id: UNII}`` from the indication and contraindication evidence rows (#94).
+
+    The UNII is asserted by the SPL and recorded at ingest next to `original_drug_label`;
+    this just collects it per grounded drug id so the node builder can publish it as an
+    xref. Read through `product_view`, so it follows the association shape rather than a
+    flat field. Takes already-loaded association *lists*, as `_load_all` hands them over.
+
+    First value wins. A drug whose rows disagree would mean two moieties grounding to one
+    id, which is a grounding question and not something to paper over here by picking a
+    winner — the disagreement stays visible in the evidence rows either way.
+    """
+    out: dict[str, str] = {}
+    for product in products:
+        for assoc in product or []:
+            drug_id = pv.assoc_drug_id(assoc)
+            if not drug_id or drug_id in out:
+                continue
+            for ev in pv.assoc_evidence(assoc):
+                unii = (ev.get("original_drug_unii") or "").strip()
+                if unii:
+                    out[drug_id] = unii
+                    break
+    return out
+
+
 def drug_node(
-    drug: dict, review: StatementReviewStore | None = None
+    drug: dict,
+    review: StatementReviewStore | None = None,
+    unii_by_drug: dict[str, str] | None = None,
 ) -> dict | None:
     """A drug node, or ``None`` when the drug never resolved to a canonical id.
 
@@ -61,6 +89,7 @@ def drug_node(
     identity = drug.get("identity") or {}
     resolution = identity.get("resolution") or {}
     atc = drug.get("atc") or {}
+    unii = (unii_by_drug or {}).get(drug_id, "")
 
     description = " · ".join(
         v for v in (drug.get("drug_class"), drug.get("therapeutic_area"),
@@ -79,7 +108,16 @@ def drug_node(
             *(drug.get("synonyms") or []),
             identity.get("original_literal") or "",
         ]),
-        "xref": _uniq([*(drug.get("alternate_ids") or []), drug.get("drugbank_id") or ""]),
+        # The FDA UNII the label asserts, where an indication row carried one (#94). 717
+        # drug ids (3,448 assertions) are unknown to the SRI Node Normalizer because ChEBI
+        # and DRON are fetched unpinned and mint ids newer than its snapshot, so a consumer
+        # joining on the primary id drops those edges — and they are the biologics. A UNII
+        # is stable and lets the join succeed whatever the primary id turns out to be.
+        "xref": _uniq([
+            *(drug.get("alternate_ids") or []),
+            drug.get("drugbank_id") or "",
+            f"UNII:{unii}" if unii else "",
+        ]),
 
         # chemistry
         "medic_smiles": drug.get("smiles") or "",
@@ -230,6 +268,7 @@ def build_nodes(
     referenced: dict[str, str] | None = None,
     review: StatementReviewStore | None = None,
     disease_store: GroundingStoreView | None = None,
+    unii_by_drug: dict[str, str] | None = None,
 ) -> list[dict]:
     """All nodes, deduplicated and sorted by id.
 
@@ -259,7 +298,7 @@ def build_nodes(
     by_id: dict[str, dict] = {}
 
     for drug in drugs:
-        node = drug_node(drug, review)
+        node = drug_node(drug, review, unii_by_drug)
         if node:
             by_id.setdefault(node["id"], node)
     for disease in diseases:

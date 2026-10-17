@@ -399,6 +399,21 @@ classes:
         description: >-
           Raw drug-name string as the source actually wrote it, before grounding.
           Lets reviewers see what the source said vs. what we mapped it to.
+      original_drug_unii:
+        range: string
+        description: >-
+          FDA UNII for the active moiety this row is about, exactly as the SPL asserts it
+          (`<activeMoiety><code codeSystem="2.16.840.1.113883.4.9">`). Source-asserted, not
+          derived: the label states it, so it is recorded next to `original_drug_label`
+          rather than inferred from the grounded id.
+          Carried so the export can publish it as a drug-node xref. 717 drug ids (3,448
+          assertions, 28%) are unknown to the SRI Node Normalizer because ChEBI and DRON are
+          fetched unpinned and mint ids newer than its snapshot, so anything joining on the
+          primary id drops those edges — and they are the biologics (adalimumab, denosumab,
+          rituximab). A UNII lets a consumer join regardless of how new the primary id is,
+          which also makes the problem self-healing across ontology refreshes rather than
+          something to re-fix each time (#94).
+          Empty for every non-DailyMed source and for rows predating this field.
       original_drug_id:
         range: string
         description: >-

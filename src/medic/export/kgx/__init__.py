@@ -82,7 +82,9 @@ def export_kgx(
         review=review,
     )
     built_nodes = node_builders.build_nodes(
-        products["drugs"], products["diseases"], referenced, review=review
+        products["drugs"], products["diseases"], referenced, review=review,
+        unii_by_drug=node_builders.unii_by_drug(
+            products["indications"], products["contraindications"]),
     )
 
     writer.write_jsonl(built_nodes, exports_dir / NODES_FILE)
