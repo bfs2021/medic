@@ -92,9 +92,24 @@ claim dedup, ingredient threading, qualifier slots on the edge (#90.2), `Claim.p
 Biolink (#99), qualifiers in the merge key (#90.3), #97's contraindication prompt with the
 co-administration split.
 
-**Running**: the paid re-extraction over 1,832 DailyMed labels, ~6 LLM calls/min, so about
-10 hours. Verified on 8 labels first: 24 indications, 5 contraindications, zero extraction
-failures, and all seven claim fields populating from real labels.
+**Running**: the paid re-extraction over 1,832 DailyMed labels, ~13 LLM calls/min. Verified
+on 8 labels first: 24 indications, 5 contraindications, zero extraction failures, and all
+seven claim fields populating from real labels.
+
+**DailyMed needs a second pass after it.** The ion-guard fix (`148aec0`) landed mid-run, so
+the labels in flight were ingested with the old guard and the 24 ion-only drugs — lithium,
+gadolinium contrast, ferric iron, the radiopharmaceuticals — are still missing from its
+output. The re-run is cheap: the cache is keyed on section text, so every answer already
+bought is a hit and only the rescued labels cost anything. Not killed mid-flight because
+`atexit` does not fire on SIGTERM, so a kill would have discarded up to 99 paid answers.
+
+**Latent: the cache key does not include the prompt.** `_text_hash(indication_text)` keys on
+the section text alone, so changing a prompt does not invalidate the answers it produced —
+the v3 namespace was bumped by hand for the structured format. Six contraindication entries
+in the current cache predate #97's rule 7 and so may hold fabricated targets; the
+deterministic guard in `looks_like_disease_name` rejects those, which is the reason it exists
+rather than relying on the prompt. Worth making the key prompt-aware before the next prompt
+change, or the next one needs another manual namespace bump to be safe.
 
 **Not done:**
 
