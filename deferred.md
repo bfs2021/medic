@@ -18,10 +18,12 @@ untracked scratch in the repo root.
 | #93 | `comment_issue93_negated_treats.md` | ready |
 | #99 | `comment_issue99_predicates.md` | ready |
 | #100 | `comment_issue100_truncation.md` | ready |
-| #88, #89, #91 | — | **not written yet**; they share the Phase 1 gate numbers |
-| #95 | — | **not written yet** (`a8ac7ed`) |
-| #94 | — | **not written yet**; only partly addressed, see below |
-| #96 | — | **not written yet** (`44ac0be`, `0cfdaa2`) |
+| #91 | `comment_issue91_reliability.md` | ready |
+| #94 | `comment_issue94_nodenorm.md` | ready |
+| #95 | `comment_issue95_moieties.md` | ready |
+| #96 | `comment_issue96_disease_nodes.md` | ready |
+| #97 | — | **not written yet**; wait for the re-extraction measurement |
+| #88, #89, #90 | — | **not written yet**; they need the re-extraction measurement |
 
 ```bash
 gh issue comment <n> --repo monarch-initiative/medic --body-file comment_issue<n>_*.md
@@ -83,36 +85,52 @@ Of its three asks, one landed and two did not:
 Also unaddressed from #96: abbreviations used as display names (DFSP, WARTS). No comma to
 swap, so de-inversion is not the remedy; they need a better label source (#13).
 
-## 3. Phase 3 — half done, and the claims are inert until the rest lands
+## 3. Phase 3 — code complete; the re-extraction is running
 
-**Done** (`45f1e91`, `d8aeecf`): the `Claim` contract and parser, the structured prompt, the
-v3 cache namespace, claim dedup, ingredient threading. Smoke-tested on ten labels — 42
-claims, 40 findable quotes, 14 of 42 using a non-`treats` predicate, context on 26.
+**Done**: the `Claim` contract and parser, both structured prompts, the v3 cache namespace,
+claim dedup, ingredient threading, qualifier slots on the edge (#90.2), `Claim.predicate` →
+Biolink (#99), qualifiers in the merge key (#90.3), #97's contraindication prompt with the
+co-administration split.
 
-**Not done, in dependency order:**
+**Running**: the paid re-extraction over 1,832 DailyMed labels, ~6 LLM calls/min, so about
+10 hours. Verified on 8 labels first: 24 indications, 5 contraindications, zero extraction
+failures, and all seven claim fields populating from real labels.
 
-1. The merge reads only `Claim.target` and discards the other six fields. Nothing downstream
-   sees a qualifier, so the extraction's new output is currently thrown away.
-2. Qualifier slots on the edge: `disease_context_qualifier`, `population_context_qualifier`,
-   `temporal_context_qualifier`, `sex_qualifier` (#90.2).
-3. `Claim.predicate` → Biolink, replacing the vaccine name-match with the model's own
-   relation (#99's full set), plus `medic_is_diagnostic_agent` from product class.
-4. Qualifiers in the merge key (#90.3) — what resolves the genuinely-both clashes like
-   formoterol/asthma without demoting either side, and so closes the part of #93 I declined.
-5. #97's co-administration clause split, which shares the same prompt.
-6. **The paid re-extraction.** Deliberately not run yet: it would spend the money to produce
-   fields the merge discards.
+**Not done:**
+
+- **EMA / PMDA / India have not been re-extracted.** They call the same extractors and share
+  the v3 cache, keyed by text hash, so their entries are still absent. DailyMed first because
+  it is the largest and the only one with the ingredient threading; the others are the same
+  command with no code change.
+- `just export-*` and the merge have not been re-run against the new extraction yet.
 
 **Still deferred to later phases:**
 - **Phase 4** — recall (#98). Strictly after Phase 3.
 - **Phase 5** — #91: the per-assertion verification question, and giving HIGH a positive
   signal to earn.
 
+### 3b. The first full run emitted zero indications and exited 0
+
+Worth recording because the test suite could not see it. `context_only_names` still declared
+`list[Extracted]` and read `e.name`, while its one caller had moved to `list[Claim]`; the
+caller's `except Exception` logged "skipping" once per label. ~1,900 paid calls, no output,
+exit 0.
+
+Fixed: the signature and body, plus both extraction handlers now re-raise
+`AttributeError`/`TypeError` so a code bug cannot read as a skipped label, plus a tally of
+extraction skips reported at the end of the run.
+
+Two tests written to catch exactly this class had passed. The grep-based one
+(`test_no_ingester_unpacks_name_off_a_claim`) was pinned to the previous instance's variable
+names, and cannot be fixed by a better regex: `e.name` is correct in `_encode_extractions`
+and wrong in `context_only_names`. **Filed `issues/issue_no_type_checker.md`** — no type
+checker runs on this repo, and that is the only thing that distinguishes the two.
+
 ## 4. Owed from earlier work in this thread
 
-- **`atexit` flush gap (#57 follow-up).** Registration is automatic now; flushing at exit is
-  not. A script calling the extractor directly still loses its answers, as a smoke test did.
-  One `atexit.register(flush_all)` closes it. Not filed as an issue.
+- ✅ **`atexit` flush gap (#57 follow-up)** — closed. `atexit.register` on a best-effort
+  wrapper, so a failed write cannot turn a finished build into a failed one. Proven on real
+  data: a six-label smoke script that never flushes now persists all six answers.
 - **`just determinism` covers only the merge.** #57's other "worth doing next": the check
   re-runs the deterministic stage and is structurally unable to see extraction
   non-determinism. Not filed as an issue.
@@ -123,10 +141,26 @@ claims, 40 findable quotes, 14 of 42 using a non-`treats` predicate, context on 
 
 ## 4b. Rebuilds
 
-Phase 1's rebuild landed in `fecf1e1`. Phase 2's is running: the ingest changed (87 ion
-moieties dropped, 152 metabolite substitutions across 173 labels) and so did the grounding
-matcher, which re-decides every source's disease grounding — about 177 of 3,545 non-MONDO
-decisions are expected to move toward MONDO or HP.
+Phase 1's rebuild landed in `fecf1e1`. Phase 2's ran: 87 ion moieties dropped, 152 metabolite
+substitutions across 173 labels, MONDO objects 2,116 → 2,277, #95's named ion/metabolite
+pairs 133 → 25.
+
+Phase 3's re-extraction is running (see §3). After it: the merge, the four exports and
+`validate-all`, then the measurements owed below.
+
+**Measurements owed once it finishes** — each is a claim made in a drafted comment that I
+have deliberately not asserted without the number:
+
+- #94: whether velaglucerase alfa still gets both a DRON and a ChEBI id.
+- #96: whether the four named wrong-sense groundings are gone (`non small cell lung cancer`
+  → tumor-suppressor gene, `skin and soft-tissue infections` → karyomegalic interstitial
+  nephritis, `mpox` → a chemical CUI, `secondary progressive disease` → root `disease`).
+- #91: what HIGH's share of pairs becomes, which is the only honest way to say whether the
+  tier is now worth filtering on.
+- #89/#90: how many edges carry a qualifier, and whether the population-as-target rate moved.
+- #88: whether the attribution fields change the combination-only slice.
+- #97: the contraindication error rate against the 73-case audit.
+- #100: whether any genuinely-cut text remains (also listed in §2).
 
 ## 5. Release-note caveats
 

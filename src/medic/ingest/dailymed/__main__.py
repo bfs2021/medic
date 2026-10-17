@@ -461,6 +461,24 @@ def _note_skipped_uncached(kind: str) -> None:
     _skipped_uncached[kind] = _skipped_uncached.get(kind, 0) + 1
 
 
+#: Labels whose extraction raised and was skipped. Same reasoning as `_skipped_uncached`:
+#: the per-label warning scrolls past in a run that makes thousands of LLM calls, so the
+#: only usable signal is the total, reported once at the end.
+_extraction_failures: dict[str, int] = {}
+
+
+def _note_extraction_failure(kind: str) -> None:
+    _extraction_failures[kind] = _extraction_failures.get(kind, 0) + 1
+
+
+def _report_extraction_failures() -> None:
+    if _extraction_failures:
+        logger.warning(
+            "extraction failed and was skipped for: %s",
+            ", ".join(f"{n} {kind}(s)" for kind, n in sorted(_extraction_failures.items())),
+        )
+
+
 def _raise_if_rows_were_silently_dropped() -> None:
     if not _skipped_uncached:
         return
@@ -792,7 +810,7 @@ def _screen_negated_contraindications(
     return [by_name[n] for n in result.kept]
 
 
-def context_only_names(items: list[Extracted], indication_text: str) -> set[str]:
+def context_only_names(items: list[Claim], indication_text: str) -> set[str]:
     """Which extracted names are the population/setting rather than the target (#89).
 
     Decided across the siblings from one section, which is why it lives at ingest: the
@@ -800,11 +818,11 @@ def context_only_names(items: list[Extracted], indication_text: str) -> set[str]
     """
     from medic.validation.extraction_fidelity import context_only_diseases
 
-    names = [e.name for e in items]
+    names = [c.target for c in items]
     flagged = set(context_only_diseases(names, indication_text))
     # Also try the source's own wording: the canonical name is often absent from the text
     # while its quote is not, and the cue sits in front of the quote (#64).
-    verbatims = {e.verbatim: e.name for e in items if e.verbatim}
+    verbatims = {c.target_verbatim: c.target for c in items if c.target_verbatim}
     for quote in context_only_diseases(list(verbatims), indication_text):
         flagged.add(verbatims[quote])
     return flagged
@@ -1175,9 +1193,17 @@ def _process_spl_data(
                         indications_text, source="DAILYMED", parts=ind_parts,
                         ingredients=drug_names)
                     _context_only = context_only_names(diseases, indications_text)
+                except (AttributeError, TypeError):
+                    # A code bug, not a flaky upstream. This handler used to catch it, and
+                    # a stale type contract (`context_only_names` still reading
+                    # `Extracted.name` off a `Claim`) therefore logged "skipping" once per
+                    # label while the run paid for every LLM call and emitted nothing. A
+                    # build that quietly ships no indications must not look like a success.
+                    raise
                 except Exception as exc:
                     logger.warning("Disease extraction failed for setid %s (%s); skipping.",
                                    set_id, exc)
+                    _note_extraction_failure("indication")
                     diseases = []
                     _context_only = set()
                 for _claim in diseases:
@@ -1257,9 +1283,12 @@ def _process_spl_data(
                 try:
                     contra_diseases = extract_contraindicated_diseases_from_text(
                         contras_text, source="DAILYMED", parts=contra_parts_row)
+                except (AttributeError, TypeError):
+                    raise  # see the indication handler: a code bug must not read as a skip
                 except Exception as exc:
                     logger.warning("Contraindication extraction failed for setid %s (%s); skipping.",
                                    set_id, exc)
+                    _note_extraction_failure("contraindication")
                     contra_diseases = []
                 for _claim in contra_diseases:
                     disease_name, disease_verbatim = (
@@ -1450,6 +1479,7 @@ def main():
     # Fail loudly if the "cheap" path dropped extractions rather than shipping a
     # quietly under-populated build. Runs after the flushes so whatever work *was*
     # done is still persisted.
+    _report_extraction_failures()
     _raise_if_rows_were_silently_dropped()
     try:
         from medic.ingest.dailymed.setid_lookup import (

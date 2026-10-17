@@ -36,13 +36,50 @@ def test_a_claim_has_no_name_attribute():
 
 
 def test_no_ingester_unpacks_name_off_a_claim():
-    """Source-level guard. The loops are integration-only, so this is the cheap net."""
+    """Source-level guard. The loops are integration-only, so this is the cheap net.
+
+    Claim-named variables only. A bare `e.name` cannot be judged by grep: the same
+    expression is correct in `_encode_extractions`, which really does hold `Extracted`, and
+    wrong in `context_only_names`, which does not. `test_context_only_names_accepts_claims`
+    covers that one by calling it, which is the only way to tell the two apart.
+
+    What this still buys: the loops that iterate `_claim` are integration-only and have no
+    other coverage. A type checker would subsume this test — none is configured.
+    """
+    import re
     from pathlib import Path
 
+    stale = re.compile(r"\b_?claims?\b\w*\.(?:name|verbatim)\b")
     offenders = []
-    for path in sorted(Path("src/medic/ingest").rglob("__main__.py")):
+    for path in sorted(Path("src/medic/ingest").rglob("*.py")):
         for n, line in enumerate(path.read_text().splitlines(), 1):
-            if "_extracted.name" in line or "_extracted.verbatim" in line:
-                offenders.append(f"{path}:{n}")
+            if line.lstrip().startswith("#"):
+                continue
+            if stale.search(line):
+                offenders.append(f"{path}:{n}: {line.strip()}")
     assert not offenders, (
-        f"ingester loops still read Extracted's fields off a Claim: {offenders}")
+        "ingest code still reads Extracted's fields off a claim-shaped value:\n"
+        + "\n".join(offenders))
+
+
+def test_context_only_names_accepts_claims():
+    """The real regression. `context_only_names` kept `Extracted`'s signature while its one
+    caller started passing `Claim`, and the caller's `except Exception` logged "skipping"
+    per label — so a full paid DailyMed run emitted zero indications and still exited 0.
+
+    Calling it with the type its caller passes is the whole test.
+    """
+    from medic.ingest.dailymed.__main__ import context_only_names
+
+    text = "for the treatment of invasive aspergillosis in patients with acute myeloid leukemia"
+    flagged = context_only_names(
+        [
+            Claim(target="invasive aspergillosis",
+                  target_verbatim="invasive aspergillosis"),
+            Claim(target="acute myeloid leukemia",
+                  target_verbatim="acute myeloid leukemia"),
+        ],
+        text,
+    )
+    assert "acute myeloid leukemia" in flagged
+    assert "invasive aspergillosis" not in flagged
