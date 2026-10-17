@@ -17,6 +17,7 @@ import re
 
 from medic import product_view as pv
 from medic.export.kgx import biolink as bl
+from medic.grounding_store_view import GroundingStoreView
 from medic.reliability import (
     StatementReviewStore,
     default_review_store,
@@ -205,19 +206,56 @@ def stub_node(curie: str, name: str = "") -> dict:
     })
 
 
+#: Where the disease grounding decisions live. Same path the merge reads.
+DISEASE_GROUNDING_STORE = "mappings/disease_grounding.sssom.tsv"
+
+
+def _default_disease_store() -> GroundingStoreView | None:
+    """The committed disease grounding store, or ``None`` when it is absent.
+
+    ``None`` rather than raising, so a unit test that builds nodes from literals in a temp
+    directory still works. The artefact-level check
+    (`test_restricted_labels_not_published`) is what guarantees the real export consulted it.
+    """
+    from pathlib import Path
+
+    if not Path(DISEASE_GROUNDING_STORE).exists():
+        return None
+    return GroundingStoreView(DISEASE_GROUNDING_STORE, "disease").load()
+
+
 def build_nodes(
     drugs: list[dict],
     diseases: list[dict],
     referenced: dict[str, str] | None = None,
     review: StatementReviewStore | None = None,
+    disease_store: GroundingStoreView | None = None,
 ) -> list[dict]:
     """All nodes, deduplicated and sorted by id.
 
     ``referenced`` maps every id an edge points at to the best label the association knew, so
     endpoints missing from the products become stubs and the graph stays referentially
     closed.
+
+    ``disease_store`` is consulted before a stub is named. #96's source-literal fallback is
+    right for a concept that simply has no label, and wrong for one the grounding store
+    *withholds* a label for: there, every atom naming the concept comes from a vocabulary
+    I-14 rule 2 forbids republishing, and the extraction canonicalises toward that same
+    vocabulary term, so the "source literal" is usually the restricted string itself. It
+    named 102 such concepts — `UMLS:C0024303` "lymphocytic lymphoma", `UMLS:C0234933`
+    "erythema multiforme, severe" — which is the leak `test_restricted_labels_not_published`
+    exists for, arriving by a second route.
+
+    `label_for` distinguishes the two: ``""`` is a decision to publish no name, ``None`` is
+    no opinion. Only the first blocks the fallback.
     """
     review = review or default_review_store()
+    if disease_store is None:
+        disease_store = _default_disease_store()
+    withheld = {
+        curie for curie in (referenced or {})
+        if disease_store is not None and disease_store.label_for(curie) == ""
+    }
     by_id: dict[str, dict] = {}
 
     for drug in drugs:
@@ -231,6 +269,6 @@ def build_nodes(
 
     for curie, label in (referenced or {}).items():
         if curie and curie not in by_id:
-            by_id[curie] = stub_node(curie, label)
+            by_id[curie] = stub_node(curie, "" if curie in withheld else label)
 
     return [by_id[key] for key in sorted(by_id)]

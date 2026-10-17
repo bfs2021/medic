@@ -77,3 +77,40 @@ def test_de_inversion_is_idempotent():
 
 def test_a_stub_name_is_de_inverted_too():
     assert stub_node("MESH:D008107", "Diseases, Liver")["name"] == "Liver Diseases"
+
+
+# ---------------------------------------------------------------------------
+# The source-literal fallback must not republish a withheld label (I-14 rule 2)
+# ---------------------------------------------------------------------------
+def test_a_withheld_concept_gets_no_name_from_the_source_literal():
+    """#96's fallback and I-14 rule 2 collide, and rule 2 wins.
+
+    For a CUI whose every naming atom comes from a label-restricted vocabulary, the
+    grounding store publishes `object_label = ""` — a decision, not a gap. The extraction
+    canonicalises the disease name toward that same vocabulary term, so the "source literal"
+    on the edge is usually the restricted string itself. Naming the stub from it republished
+    102 such labels into `medic_nodes.jsonl`, which is the leak
+    `test_restricted_labels_not_published` was written for, arriving by a second route.
+
+    `label_for` returning "" blocks the fallback; returning None (no opinion) does not.
+    """
+    from medic.export.kgx.nodes import build_nodes
+
+    class _Store:
+        def label_for(self, curie):
+            return "" if curie == "UMLS:C0024303" else None
+
+    nodes = {
+        n["id"]: n for n in build_nodes(
+            [], [],
+            referenced={
+                "UMLS:C0024303": "lymphocytic lymphoma",   # withheld
+                "UMLS:C0009999": "a perfectly publishable name",  # no opinion
+            },
+            disease_store=_Store(),
+        )
+    }
+    assert "name" not in nodes["UMLS:C0024303"], (
+        "named a concept the grounding store withholds a label for")
+    assert nodes["UMLS:C0009999"]["name"] == "a perfectly publishable name", (
+        "the fallback must still work for concepts the store has no opinion about")
