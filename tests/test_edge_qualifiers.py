@@ -1,0 +1,135 @@
+"""The label's context ships as Biolink qualifiers (#90).
+
+Every indication edge was a bare `(drug, treats, disease)` triple, so the context a label
+attaches to a claim went one of two ways: promoted to the object — the 13.1% setting-as-target
+error of #89 — or dropped, which the audit scores as *correct* and so never counted at all.
+
+Biolink already has the slots on the `treats` association, and DAKP populates them on 5,686
+of its 16,655 `treats` edges, so there is consumer precedent in the same graph MeDIC sits
+next to. All five used here are in the pinned 4.3.7 model, which the conformance gate
+checks independently: an un-namespaced edge property that is not a Biolink slot is an error.
+
+`disease_context_qualifier` is the one no source in the graph fills yet.
+"""
+
+from __future__ import annotations
+
+import pytest
+
+from medic.export.kgx import edges, validate
+
+
+def _assertion(**evidence_extra):
+    from tests.test_kgx_export import _assertion as base
+    a = base()
+    ev = a.setdefault("evidence", {})
+    ev.update(evidence_extra)
+    for key in ("drug", "disease"):
+        mention = a.get(key) or {}
+        for step in ((mention.get("resolution") or {}).get("pipeline") or []):
+            if step.get("category") == "GROUNDING":
+                step["output_value"] = mention.get("resolved_id") or "MONDO:0000240"
+                step.setdefault("confidence", 0.99)
+                step.setdefault("confidence_basis", "MEASURED")
+    return a
+
+
+def _edge(**evidence_extra):
+    pair = {"drug_id": "CHEBI:10023", "drug_label": "bosentan",
+            "disease_id": "MONDO:0000240", "disease_label": "PAH",
+            "relationship_type": "INDICATION", "reliability": "HIGH",
+            "assertions": [_assertion(**evidence_extra)]}
+    built = edges.association_edges(pair)
+    assert built, "expected one edge"
+    return built[0]
+
+
+def test_a_disease_context_becomes_a_qualifier():
+    """bosentan -> PAH *associated with* congenital heart disease. Previously the CHD was
+    either the object or gone."""
+    e = _edge(disease_context=["congenital heart disease"])
+    assert e["disease_context_qualifier"] == "congenital heart disease"
+
+
+def test_a_population_becomes_a_qualifier():
+    e = _edge(population_context="adult and pediatric patients")
+    assert e["population_context_qualifier"] == "adult and pediatric patients"
+
+
+def test_a_temporal_context_becomes_a_qualifier():
+    e = _edge(temporal_context="following myocardial infarction")
+    assert e["temporal_context_qualifier"] == "following myocardial infarction"
+
+
+def test_a_sex_restriction_is_routed_to_the_sex_qualifier():
+    """Biolink has a dedicated slot, and DAKP fills it on 1,991 edges. A population that is
+    only a sex belongs there rather than in the general population slot."""
+    e = _edge(population_context="postmenopausal women")
+    assert e["sex_qualifier"] == "women"
+    assert e["population_context_qualifier"] == "postmenopausal women"
+
+
+def test_a_population_without_a_sex_sets_no_sex_qualifier():
+    e = _edge(population_context="adults")
+    assert "sex_qualifier" not in e
+
+
+def test_several_disease_contexts_are_joined_on_one_slot():
+    """Biolink defines `disease_context_qualifier` as single-valued, so a list would be the
+    same discipline violation the export already fixed for primary_knowledge_source."""
+    e = _edge(disease_context=["psoriasis", "Crohn disease"])
+    assert e["disease_context_qualifier"] == "psoriasis, Crohn disease"
+    assert isinstance(e["disease_context_qualifier"], str)
+
+
+def test_co_administration_is_namespaced_not_a_biolink_slot():
+    """Biolink has no co-administration slot on this association, so it goes in the
+    medic_ extension layer rather than being invented as a bare property."""
+    e = _edge(co_administered_with=["methotrexate"])
+    assert e["medic_co_administered_with"] == ["methotrexate"]
+    assert "co_administered_with" not in e
+
+
+def test_an_edge_without_context_carries_no_qualifier_slots():
+    e = _edge()
+    for slot in ("disease_context_qualifier", "population_context_qualifier",
+                 "temporal_context_qualifier", "sex_qualifier"):
+        assert slot not in e
+
+
+def test_the_qualified_edge_passes_the_conformance_gate():
+    """The gate errors on any un-namespaced property that is not a Biolink slot, so this
+    proves the slot names are real rather than plausible."""
+    e = _edge(disease_context=["congenital heart disease"],
+              population_context="postmenopausal women",
+              temporal_context="post-MI",
+              co_administered_with=["methotrexate"])
+    report = validate.check([], [e])
+    unknown = [p for p in report.errors if "not a Biolink slot" in str(p)]
+    assert not unknown, unknown
+
+
+# ---------------------------------------------------------------------------
+# Sex detection must not match inside another word
+# ---------------------------------------------------------------------------
+@pytest.mark.parametrize("population", [
+    # "men" is a substring of both of these. A naive `in` test tags them male.
+    "postmenopausal patients",
+    "patients requiring management of pain",
+    "adults",
+    "pediatric patients aged 3 months to 12 years",
+    "renal transplant recipients",
+])
+def test_a_word_containing_men_is_not_a_sex_restriction(population):
+    e = _edge(population_context=population)
+    assert "sex_qualifier" not in e, f"{population!r} wrongly read as sex-restricted"
+
+
+@pytest.mark.parametrize("population,expected", [
+    ("postmenopausal women", "women"),
+    ("pregnant women", "women"),
+    ("adult males", "men"),
+    ("female patients of childbearing potential", "women"),
+])
+def test_a_real_sex_restriction_is_detected(population, expected):
+    assert _edge(population_context=population)["sex_qualifier"] == expected

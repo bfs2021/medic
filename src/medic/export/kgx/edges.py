@@ -165,6 +165,51 @@ def _source_literal(pair: dict, role: str) -> str:
     return ""
 
 
+#: Sex terms a label uses to restrict a claim. Biolink has a dedicated `sex_qualifier`,
+#: which DAKP fills on 1,991 edges, so a population that names a sex belongs there as well
+#: as in the general population slot — a consumer asking "which claims are sex-restricted?"
+#: should not have to parse prose.
+#: Matched on word boundaries, not as substrings. "men" occurs inside "postmenopausal" and
+#: "management", both of which appear in real population phrases — a naive containment test
+#: tags them male. The female alternatives are tried first so "women" is not read as "men".
+_SEX_PATTERNS = (
+    ("women", re.compile(r"(?i)\b(women|woman|female|females)\b")),
+    ("men", re.compile(r"(?i)\b(men|man|male|males)\b")),
+)
+
+
+def _sex_qualifier(population: str) -> str:
+    for canonical, pattern in _SEX_PATTERNS:
+        if pattern.search(population or ""):
+            return canonical
+    return ""
+
+
+def _claim_qualifiers(evidence: dict) -> dict:
+    """Map the label's recorded context onto Biolink qualifier slots (#90).
+
+    Every indication edge used to be a bare triple, so context was either promoted to the
+    object (#89's 13.1%) or dropped — and the audit scores a dropped context as correct, so
+    that half was never counted. Biolink carries these on the `treats` association and DAKP
+    already populates them on 5,686 of its 16,655 treats edges.
+
+    The disease contexts are joined into one string because Biolink defines the slot as
+    single-valued; shipping a list is the discipline violation this export already fixed
+    once for `primary_knowledge_source`. Co-administration has no Biolink slot on this
+    association, so it stays in the `medic_` extension layer rather than being invented as
+    a bare property — the conformance gate would reject it, correctly.
+    """
+    contexts = [c for c in (evidence.get("disease_context") or []) if c]
+    population = (evidence.get("population_context") or "").strip()
+    return {
+        "disease_context_qualifier": ", ".join(contexts),
+        "population_context_qualifier": population,
+        "temporal_context_qualifier": (evidence.get("temporal_context") or "").strip(),
+        "sex_qualifier": _sex_qualifier(population),
+        "medic_co_administered_with": list(evidence.get("co_administered_with") or []),
+    }
+
+
 def _withheld(assertion: dict) -> bool:
     """Has the pipeline decided the source states this relation *negatively*?
 
@@ -360,6 +405,7 @@ def association_edges(
             "medic_confidence_basis": confidence.get("basis") or "",
             "medic_reliability": _assertion_reliability(pair, assertion, review),
 
+            **_claim_qualifiers(evidence),
             **_mention_properties(drug_mention, "subject"),
             **_mention_properties(disease_mention, "object"),
             **pair_aggregates,
