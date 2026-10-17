@@ -324,10 +324,14 @@ The DailyMed ingest (`src/medic/ingest/dailymed/`) is the primary USA indication
 3. **Extract** — one LLM call per section returns *structured claims*, not bare disease names.
    See §5.8.
 4. Grounds drug names to ChEBI CURIEs and disease names to Mondo CURIEs via the shared grounding cascade.
-   A moiety name that fails to ground is retried with salt-former and hydration words removed
-   (`TENOFOVIR ANHYDROUS` → `TENOFOVIR`). A label none of whose moieties ground contributes
-   nothing at all — the loop skips before extraction — so those are counted and reported as a
-   warning at the end of the run rather than logged at debug level.
+   A label none of whose moieties ground contributes nothing at all — the loop skips before
+   extraction — so those are counted and reported as a warning at the end of the run rather
+   than logged at debug level. 107 distinct moiety names currently never ground, and the
+   common cause is one policy: the string is present in the index only as a `relatedSynonym`,
+   often of several objects at once (`tenofovir` matches three, `thiamine` three). The ingest
+   does **not** retry with a mangled string to get around that — a transform that earns a
+   match belongs in `PreprocessingRuleEnum` and the SSSOM store, so the chain from the
+   label's literal to the published id stays replayable (I-8).
 5. Constructs `IndicationAssociation` records (USA-only evidence per source isolation) with normalized
    drug/disease identifiers, relationship type, raw label text, and setid-derived
    `reference`/`source_document_url` evidence (see §5.6).

@@ -1217,22 +1217,15 @@ def _ground_drug(drug_name: str, grounding_backend: str) -> tuple[str, str]:
         drug_name, mention_id=mint_mention_id(drug_name, "drugs"))
     if result:
         return result.id, result.label
-
-    # Retry without the salt-former and hydration-state words. `TENOFOVIR ANHYDROUS` does
-    # not ground; `TENOFOVIR` does, and they are the same substance — SRS records the
-    # hydration state on the moiety name for some labels. The words come from the same
-    # `_GENERIC_NOISE` set `_generic_stems` already strips, so this adds no new vocabulary
-    # and cannot invent a drug: it only ever removes tokens and re-asks.
-    #
-    # This matters out of proportion to its size because an ungroundable drug does not lose
-    # one row, it loses the whole label: the ingest loop `continue`s before extraction, so
-    # every indication on that SPL goes with it. 7 labels were failing on `ANHYDROUS` alone.
-    stripped = " ".join(w for w in drug_name.split() if w.upper() not in _GENERIC_NOISE)
-    if stripped and stripped != drug_name:
-        result = service.ground_drug_best(
-            stripped, mention_id=mint_mention_id(stripped, "drugs"))
-        if result:
-            return result.id, result.label
+    # No local retry with a mangled string. An earlier version stripped salt/hydration words
+    # here and re-asked, which looked like it fixed `TENOFOVIR ANHYDROUS`. It did not: the
+    # grounder's own `salt_ester_strip` rule already strips "anhydrous", and the match was
+    # rejected because `tenofovir` is in the index only as a `relatedSynonym` of three
+    # different objects. The retry bypassed that judgement and returned a fourth id the
+    # cascade had refused, recorded under a mention minted from the *stripped* string — so
+    # the chain from the label's own literal to the published id was not replayable from the
+    # record, which is exactly what I-8 forbids. A transform that earns a match belongs in
+    # `PreprocessingRuleEnum` and the SSSOM store, not in a caller.
     return "", ""
 
 
