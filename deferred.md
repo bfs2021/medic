@@ -411,3 +411,50 @@ Now covers acquisition breadth with its measured cost, the structured claim cont
 the reliability gates (§5.9), `just audit-regression` (§5.10), the UNII xrefs and the
 reliability export. This is the document external collaborators read, and CLAUDE.md asks for
 it to track pipeline changes.
+
+## 13. Phase 4 rebuild running (started 2026-10-18 00:30)
+
+Acquisition done: **1,976 → 10,835 SPL files** (11,148 setids resolved, 8,859 downloaded, 0
+errors, 1,074 drug names with no SPL match — those are product-style names like "Warfarin
+Sodium Tablets" that DailyMed's `drug_name` search does not match, a separate pre-existing
+gap).
+
+The chained pipeline (`scratchpad/phase4_pipeline.sh`) then runs: DailyMed ingest → merge →
+normalize → 4 exports → `validate-all` + `validate-kgx` → `audit-regression`. EMA/PMDA/India
+are deliberately **not** re-ingested: their kb files are current and unaffected by DailyMed
+acquisition, so re-running them would cost hours for a byte-identical result.
+
+Expect ~6 hours for the ingest at the observed ~33 calls/min.
+
+### Comment drafted, not posted
+
+`comment_issue98_recall.md` — #98 is the recall issue and this is the first comment with a
+real cause for it. Holding the final audit-regression numbers until the rebuild lands, then it
+is ready to post. It also carries the two corrections owed from #89 (thiamine and deferasirox
+were both misdiagnosed) and flags the 573 unnamed-object edges.
+
+Worth noting what #98 already contained: "the drop is not selective — 20 of 76 errors and 37
+of 221 correct pairs, the same rate" and "the drugs with the most lost indications are the
+broad old ones (lidocaine −122, hydrocortisone −82, dexamethasone −73, iodine −83)". Both are
+the signature of a *coverage* loss rather than a filtering change, and both were in the issue
+from the start. The diagnosis was available earlier than I reached it.
+
+## 14. Phase 5 designed, not built
+
+`specs/2026-10-18-assertion-verification-design.md` — the per-assertion verification question
+for #91, with the acceptance criterion stated in advance (HIGH's error rate must fall *and*
+correct-edge retention must not), the caveats from #91's own experiment kept in the design
+rather than a footnote, and the requirement that the gate stay a pure function of record
+fields so `just determinism` keeps meaning something.
+
+## 15. Still owed
+
+- **`just determinism` widening** (#57). Deliberately not attempted while the pipeline is
+  running: it needs two warm-cache ingests to test, which would conflict. The useful widening
+  is to assert a warm-cache ingest is byte-identical across runs, which covers parsing,
+  screening and grounding without paying for LLM calls.
+- **#100 residue measurement.** Needs the rebuilt export; reading products mid-write is unsafe.
+- **The three gold-standard worklists** are not public (§4d). Asked for in the #98 draft.
+- **#94's ontology pinning** and the one-drug-two-ids case (docetaxel still has `CHEBI:4672`
+  and `CHEBI:755540`).
+- **EMA/PMDA/India attribution** — they call the extractors without an ingredient list.
