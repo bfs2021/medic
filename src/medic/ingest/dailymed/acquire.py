@@ -107,8 +107,26 @@ def _is_usa_approved(value) -> bool:
     return str(value).strip().upper() in ("TRUE", "APPROVED", "1")
 
 
-def _most_recent_setid(client: httpx.Client, drug_name: str) -> str | None:
-    """Query the SPL list endpoint and return the most-recent published setid."""
+#: How many SPLs to keep per drug name, newest first.
+#:
+#: This used to be 1 — the endpoint was already queried with ``pagesize=20`` and 19 of the 20
+#: results were thrown away. That is the dominant cause of the recall gap against v1: a drug's
+#: indications are split across manufacturers and formulations, so keeping only the
+#: most-recently-published label keeps whichever subset that one happens to state. Lansoprazole
+#: had 2 labels on disk and asserted exactly one indication, *Helicobacter pylori infection*;
+#: GERD, duodenal ulcer and erosive esophagitis were never in any text we had fetched.
+#:
+#: Measured before changing it (12 drugs, 221 SPLs): 118 distinct indication sections, i.e.
+#: ~9.8 extraction calls per drug rather than 1. Roughly half of a drug's SPLs repeat another's
+#: indication text verbatim, and extraction is cached on the section-text hash, so the cost is
+#: ~10x rather than the 20x the page size suggests.
+DEFAULT_LABELS_PER_DRUG = 20
+
+
+def _setids_for_drug(
+    client: httpx.Client, drug_name: str, keep: int = DEFAULT_LABELS_PER_DRUG
+) -> list[str]:
+    """SPL setids for *drug_name*, most recently published first, at most *keep*."""
     try:
         resp = client.get(
             SPLS_LIST_URL, params={"drug_name": drug_name, "pagesize": 20}
@@ -117,18 +135,27 @@ def _most_recent_setid(client: httpx.Client, drug_name: str) -> str | None:
         payload = resp.json()
     except Exception as e:  # noqa: BLE001 — network/parse errors are expected
         logger.debug("SPL list lookup failed for %r: %s", drug_name, e)
-        return None
+        return []
 
     data = payload.get("data") or []
     if not data:
-        return None
+        return []
 
     def _date(entry: dict) -> str:
         return str(entry.get("published_date") or entry.get("publishing_date") or "")
 
-    data_sorted = sorted(data, key=_date, reverse=True)
-    setid = (data_sorted[0].get("setid") or "").strip()
-    return setid or None
+    out: list[str] = []
+    for entry in sorted(data, key=_date, reverse=True):
+        setid = (entry.get("setid") or "").strip()
+        if setid and setid not in out:
+            out.append(setid)
+    return out[:keep] if keep > 0 else out
+
+
+def _most_recent_setid(client: httpx.Client, drug_name: str) -> str | None:
+    """The single most-recent setid. Kept for callers that want exactly one."""
+    found = _setids_for_drug(client, drug_name, keep=1)
+    return found[0] if found else None
 
 
 def _download_spl_xml(
@@ -155,11 +182,15 @@ def acquire(
     limit: int = 0,
     delay: float = 0.2,
     timeout: float = 30.0,
+    labels_per_drug: int = DEFAULT_LABELS_PER_DRUG,
 ) -> dict:
     """Acquire SPL XML for USA-approved drugs into *data_dir*.
 
     Returns a summary dict with counts. Resumable: setids whose XML already
     exists on disk are not re-downloaded.
+
+    ``labels_per_drug`` keeps that many SPLs per drug name, newest first. 1 restores the old
+    single-label behaviour; see :data:`DEFAULT_LABELS_PER_DRUG` for why it is no longer 1.
     """
     data_dir.mkdir(parents=True, exist_ok=True)
     names = _usa_drug_names(drug_list_path, limit=limit)
@@ -172,27 +203,37 @@ def acquire(
         for i, name in enumerate(names, 1):
             key = name.strip().lower()
             cached = cache.get(key)
-            if cached is not None and cached.get("setid"):
-                setid = cached["setid"]
+            # The cache was written one-setid-per-drug. An entry in that old shape cannot
+            # answer "what are this drug's other labels", so when more than one is wanted it
+            # is re-resolved and rewritten as a list. Without this, every drug already in the
+            # cache would silently keep its single label and the change would do nothing.
+            setids: list[str] = []
+            if cached is not None and isinstance(cached.get("setids"), list):
+                setids = [s for s in cached["setids"] if s]
+                counts["cached_hit"] += 1
+            elif (cached is not None and cached.get("setid")
+                  and labels_per_drug <= 1):
+                setids = [cached["setid"]]
                 counts["cached_hit"] += 1
             elif cached is not None and cached.get("match") == "no_results":
                 counts["no_spl"] += 1
                 continue
             else:
-                setid = _most_recent_setid(client, name)
-                if not setid:
-                    cache.put(key, {"setid": "", "match": "no_results"})
+                setids = _setids_for_drug(client, name, keep=labels_per_drug)
+                if not setids:
+                    cache.put(key, {"setids": [], "match": "no_results"})
                     counts["no_spl"] += 1
                     time.sleep(delay)
                     continue
-                cache.put(key, {"setid": setid})
+                cache.put(key, {"setids": setids})
                 time.sleep(delay)
 
-            counts["resolved"] += 1
-            out_path = data_dir / f"{setid}.xml"
-            if out_path.exists():
-                counts["already_on_disk"] += 1
-            else:
+            counts["resolved"] += len(setids)
+            for setid in setids:
+                out_path = data_dir / f"{setid}.xml"
+                if out_path.exists():
+                    counts["already_on_disk"] += 1
+                    continue
                 ok = _download_spl_xml(client, setid, out_path)
                 if ok:
                     counts["downloaded"] += 1
@@ -225,6 +266,11 @@ def main():
     )
     parser.add_argument("--delay", type=float, default=0.2,
                         help="Seconds to sleep between API requests")
+    parser.add_argument(
+        "--labels-per-drug", type=int, default=DEFAULT_LABELS_PER_DRUG,
+        help=("SPLs to keep per drug, newest first (1 = the old single-label behaviour). "
+              "Each distinct indication section costs one LLM extraction call downstream."),
+    )
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.INFO)
@@ -233,6 +279,7 @@ def main():
         data_dir=args.data_dir,
         limit=args.limit,
         delay=args.delay,
+        labels_per_drug=args.labels_per_drug,
     )
 
 
