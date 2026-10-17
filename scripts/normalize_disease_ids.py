@@ -17,6 +17,7 @@ from pathlib import Path
 
 import yaml
 
+from medic import product_view as pv
 from medic.grounding import get_grounding_service
 from medic.grounding.cache import GroundingCache
 from medic.ingest.common import write_grounding_report
@@ -46,10 +47,16 @@ def normalize_file(
         logger.info("No associations in %s", yaml_path)
         return {}
 
-    # Count non-MONDO before
+    # Count non-MONDO before.
+    #
+    # Read through `product_view`, like every other consumer of a built product. This used
+    # to read `final_normalized_disease_id` directly — a flat field the provenance re-model
+    # removed — so `.get(..., "")` returned "" for every association, "".startswith("MONDO:")
+    # was False for every association, and the step reported 100% non-MONDO on a product
+    # that is 62% MONDO. It then re-grounded against the same absent key and resolved 0 of
+    # 8,541, while logging the no-op as a complete failure.
     non_mondo_before = sum(
-        1 for a in associations
-        if not a.get("final_normalized_disease_id", "").startswith("MONDO:")
+        1 for a in associations if not pv.assoc_disease_id(a).startswith("MONDO:")
     )
     logger.info(
         "%s: %d associations, %d non-MONDO disease IDs",
@@ -60,32 +67,45 @@ def normalize_file(
         logger.info("All disease IDs are already MONDO, nothing to do")
         return {"total": len(associations), "non_mondo_before": 0, "non_mondo_after": 0}
 
-    # Run disease grounding
+    # Run disease grounding against the keys a product association actually carries.
     grounded, report = ground_disease_records(
         associations,
         grounding_service,
         cache,
         source_name,
-        disease_name_key="final_normalized_disease_label",
-        disease_id_key="final_normalized_disease_id",
+        disease_name_key="disease_label",
+        disease_id_key="disease_id",
     )
 
-    # Update drug_disease compound key for re-grounded records
+    # No `drug_disease` compound key is written here. It is derivable from `drug_id` and
+    # `disease_id`, which are both already on the association; nothing downstream reads it;
+    # and `IndicationList` is a closed class, so adding it made `just validate-all` fail on
+    # every association. Writing it from the removed flat fields also meant its value was
+    # the literal "|".
+
+    # `ground_disease_records` is an *ingest*-record function, and it attaches its decision
+    # objects under the slots an ingested IndicationAssociation carries. A merged product
+    # pair does not have those slots — the merge funnels grounding provenance to the
+    # per-assertion level instead — so leaving them here fails validation on a closed class
+    # exactly as `drug_disease` did.
+    #
+    # Dropping them loses no traceability under I-4: `_resolve` writes every grounding and
+    # normalization decision to the SSSOM decision store as a side effect of the call, and
+    # that store, not a copy on the product, is the authoritative record.
     for assoc in grounded:
-        drug_id = assoc.get("final_normalized_drug_id", "")
-        disease_id = assoc.get("final_normalized_disease_id", "")
-        assoc["drug_disease"] = f"{drug_id}|{disease_id}"
+        assoc.pop("disease_grounding", None)
+        assoc.pop("disease_normalization", None)
 
     # Count non-MONDO after
     non_mondo_after = sum(
-        1 for a in grounded
-        if not a.get("final_normalized_disease_id", "").startswith("MONDO:")
+        1 for a in grounded if not pv.assoc_disease_id(a).startswith("MONDO:")
     )
 
     logger.info(
-        "Results: %d already MONDO, %d re-grounded to MONDO, %d newly grounded, "
-        "%d review recommended, %d unresolved (non-MONDO: %d -> %d)",
+        "Results: %d already MONDO, %d re-grounded to MONDO, %d re-grounded to HP, "
+        "%d newly grounded, %d review recommended, %d unresolved (non-MONDO: %d -> %d)",
         report["already_mondo"], report["regrounded_to_mondo"],
+        report.get("regrounded_to_hp", 0),
         report["newly_grounded"], report["review_recommended"],
         report["unresolved"], non_mondo_before, non_mondo_after,
     )

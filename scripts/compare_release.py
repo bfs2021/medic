@@ -134,9 +134,22 @@ def compare_file(old_path: Path, new_path: Path, key_col: str, name: str) -> str
     if not overlap or len(shared_cols) <= 1:
         return "\n".join(lines)
 
-    # Field-by-field comparison
-    old_idx = old.set_index(key_col)
-    new_idx = new.set_index(key_col)
+    # Field-by-field comparison.
+    #
+    # Deduplicate on the key first. `.loc[k, col]` returns a *Series* rather than a scalar
+    # when the key occurs more than once, and the field comparison below then raised
+    # "The truth value of a Series is ambiguous" and took the whole report with it. A
+    # duplicated key also makes "does field X match" ill-posed, so the row count kept is
+    # reported rather than silently resolved.
+    old_dupes = int(old[key_col].astype(str).duplicated().sum())
+    new_dupes = int(new[key_col].astype(str).duplicated().sum())
+    if old_dupes or new_dupes:
+        lines.append(
+            f"> Note: {old_dupes} duplicate `{key_col}` row(s) in the reference and "
+            f"{new_dupes} in the new export; the first row of each key is compared.\n"
+        )
+    old_idx = old.drop_duplicates(subset=[key_col]).set_index(key_col)
+    new_idx = new.drop_duplicates(subset=[key_col]).set_index(key_col)
 
     bool_cols = {c for c in shared_cols if c.startswith(("approved_", "is_"))}
     set_cols = {"alternate_ids", "atc_codes", "source_ingredients",

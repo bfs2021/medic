@@ -385,9 +385,22 @@ def ground_disease_records(
     """
     lexical = isinstance(grounding_service, LexicalCascadeGrounding)
     grounded: list[dict] = []
+    # `regrounded_to_mondo` counts only re-groundings that actually landed on MONDO. The
+    # accept test below admits HP as well, and both outcomes used to increment this one
+    # counter — so the normalization step could report "1,254 re-grounded to MONDO" in the
+    # same line as "non-MONDO: 3229 -> 3229" and neither number was wrong. They were
+    # HP re-groundings.
     counts = {"total_diseases": len(records), "already_mondo": 0,
-              "regrounded_to_mondo": 0, "newly_grounded": 0,
+              "regrounded_to_mondo": 0, "regrounded_to_hp": 0, "newly_grounded": 0,
               "review_recommended": 0, "unresolved": 0}
+
+    def _count_regrounding(new_id: str, had_id: bool) -> None:
+        if not had_id:
+            counts["newly_grounded"] += 1
+        elif new_id.startswith("MONDO:"):
+            counts["regrounded_to_mondo"] += 1
+        else:
+            counts["regrounded_to_hp"] += 1
     unresolved_diseases: list[str] = []
     label_key = disease_name_key.replace("name", "label")
 
@@ -427,10 +440,7 @@ def ground_disease_records(
             record[disease_id_key] = entry["normalized_id"]
             if label_key in record:
                 record[label_key] = entry["normalized_label"]
-            if existing_id:
-                counts["regrounded_to_mondo"] += 1
-            else:
-                counts["newly_grounded"] += 1
+            _count_regrounding(entry["normalized_id"], bool(existing_id))
             grounded.append(record)
             continue
 
@@ -453,10 +463,7 @@ def ground_disease_records(
         record["disease_grounding"] = r.grounding_obj
         if r.normalization_obj is not None:
             record["disease_normalization"] = r.normalization_obj
-        if existing_id:
-            counts["regrounded_to_mondo"] += 1
-        else:
-            counts["newly_grounded"] += 1
+        _count_regrounding(r.effective_id, bool(existing_id))
         grounded.append(record)
 
     if lexical:
