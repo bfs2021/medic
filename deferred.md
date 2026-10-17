@@ -83,13 +83,27 @@ Of its three asks, one landed and two did not:
 Also unaddressed from #96: abbreviations used as display names (DFSP, WARTS). No comma to
 swap, so de-inversion is not the remedy; they need a better label source (#13).
 
-## 3. Deferred to later phases (by design, see `plan.md`)
+## 3. Phase 3 — half done, and the claims are inert until the rest lands
 
-- **Phase 3** — the structured extraction: #88 attribution, #89 target-vs-context, #90
-  Biolink qualifiers, #99 full predicate set + `medic_is_diagnostic_agent` from product
-  class, #97 co-administration clause split. One prompt, one re-extraction.
-- **Phase 3** — qualifiers in the merge key (#90.3), which is what resolves the genuinely-both
-  clashes like formoterol/asthma.
+**Done** (`45f1e91`, `d8aeecf`): the `Claim` contract and parser, the structured prompt, the
+v3 cache namespace, claim dedup, ingredient threading. Smoke-tested on ten labels — 42
+claims, 40 findable quotes, 14 of 42 using a non-`treats` predicate, context on 26.
+
+**Not done, in dependency order:**
+
+1. The merge reads only `Claim.target` and discards the other six fields. Nothing downstream
+   sees a qualifier, so the extraction's new output is currently thrown away.
+2. Qualifier slots on the edge: `disease_context_qualifier`, `population_context_qualifier`,
+   `temporal_context_qualifier`, `sex_qualifier` (#90.2).
+3. `Claim.predicate` → Biolink, replacing the vaccine name-match with the model's own
+   relation (#99's full set), plus `medic_is_diagnostic_agent` from product class.
+4. Qualifiers in the merge key (#90.3) — what resolves the genuinely-both clashes like
+   formoterol/asthma without demoting either side, and so closes the part of #93 I declined.
+5. #97's co-administration clause split, which shares the same prompt.
+6. **The paid re-extraction.** Deliberately not run yet: it would spend the money to produce
+   fields the merge discards.
+
+**Still deferred to later phases:**
 - **Phase 4** — recall (#98). Strictly after Phase 3.
 - **Phase 5** — #91: the per-assertion verification question, and giving HIGH a positive
   signal to earn.
