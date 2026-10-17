@@ -3,6 +3,32 @@
 Thirteen issues, all filed 2026-10-13 against the `medic2@47dd0b7` export, all backed by a
 blind two-reviewer label audit of 300 random indication edges. This sequences them.
 
+## Status as of 2026-10-18
+
+| phase | items | state |
+|---|---|---|
+| 1 — mechanical gates | 1–6 | **done**. HIGH 78.6% → 66.0% of edges |
+| 2 — identifier/node hygiene | 7–9 | **mostly done**. #94's UNII xrefs shipped (1,367 nodes); ontology pinning and the one-drug-two-ids case open |
+| 3 — structured extraction | 10–12 | **done**. 62.9% of edges carry a Biolink qualifier, from 0; 1,115 `preventative_for_condition` and 139 `diagnoses` |
+| 4 — recall (#98) | 13–14 | **in progress**. Cause found and fixed; rebuild running |
+| 5 — reliability tier (#91) | 15 | **designed**, not built — `specs/2026-10-18-assertion-verification-design.md` |
+
+All 16 issue comments were posted on 2026-10-17. `deferred.md` holds the running ledger of
+what was deliberately not done and what is owed.
+
+**The thing this plan got wrong.** It treated recall as a Phase 4 extraction problem to be
+addressed after the prompt was right. The dominant cause turned out to be *acquisition*:
+`acquire._most_recent_setid` fetched 20 setids per drug and kept 1, so a drug's indications
+were whatever its newest label happened to state. Lansoprazole had 2 labels on disk and
+asserted one indication. No prompt or grounding change could have recovered the rest, because
+the text was never fetched. Fixed in `7c49633`; the label set went 1,976 → 10,835.
+
+The second thing it got wrong: the gold standards were to be "wired in as tests **before** the
+prompt changes". They were not, so #88/#89/#97 shipped without the regression set that would
+score them. `src/data/fp_audit.json` is now wired up as `just audit-regression` and scores both
+directions — errors removed *and* correct edges kept, since precision alone improves by
+dropping everything.
+
 ## Substantiation
 
 Every mechanical claim I could check locally holds:
