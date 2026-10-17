@@ -1,12 +1,12 @@
-already_mondo: 1263
+already_mondo: 1265
 newly_grounded: 0
-non_mondo_after: 751
-non_mondo_before: 751
-regrounded_to_hp: 285
+non_mondo_after: 753
+non_mondo_before: 753
+regrounded_to_hp: 286
 regrounded_to_mondo: 0
 review_recommended: 0
-total_diseases: 2014
-unresolved: 466
+total_diseases: 2018
+unresolved: 467
 unresolved_diseases:
 - Diffuse Well Differentiated Lymphocytic Lymphoma
 - Abortion, Threatened
@@ -223,6 +223,7 @@ unresolved_diseases:
 - Renal Insufficiencies
 - UMLS:C1868885 (no name)
 - Prinzmetal's variant angina
+- Toxicoderma
 - Drug-induced ITP
 - Bone Marrow Depression
 - Pain, Postoperative

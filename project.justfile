@@ -611,6 +611,14 @@ export-sssom:
 compare-release release="v1.0.0" output="docs/v1_comparison_report.md":
   uv run python scripts/compare_release.py --release {{release}} --output {{output}}
 
+# Score the export against the external label audit: errors removed AND correct edges kept.
+# The audit file is not vendored (it is licensed with drug-disease-compare) — fetch it with:
+#   gh api repos/kevinschaper/drug-disease-compare/contents/src/data/fp_audit.json \
+#     --jq .content | base64 -d > fp_audit.json
+[group('QC')]
+audit-regression audit="fp_audit.json" show="0":
+  uv run python scripts/audit_regression.py --audit {{audit}} --show-lost {{show}}
+
 # ============== Utility ==============
 
 # List all drugs in the merged drug list

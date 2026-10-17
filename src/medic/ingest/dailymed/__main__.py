@@ -516,6 +516,33 @@ def _note_extraction_failure(kind: str) -> None:
     _extraction_failures[kind] = _extraction_failures.get(kind, 0) + 1
 
 
+#: Moiety names that never grounded, and the labels lost with them.
+#:
+#: An ungroundable drug does not cost one row — the ingest loop `continue`s before the
+#: extraction call, so every indication on that SPL is discarded. That was a `logger.debug`,
+#: which in a run emitting thousands of lines is indistinguishable from silence: 65 of 1,857
+#: mined labels (3.5%) were losing all of their indications this way, including thiamine ->
+#: beriberi, which the external audit lists as a correct edge we no longer assert.
+_ungroundable_drugs: dict[str, int] = {}
+_labels_lost_to_grounding = 0
+
+
+def _note_ungroundable_drug(name: str) -> None:
+    _ungroundable_drugs[name] = _ungroundable_drugs.get(name, 0) + 1
+
+
+def _report_grounding_losses() -> None:
+    if not _ungroundable_drugs:
+        return
+    worst = sorted(_ungroundable_drugs.items(), key=lambda kv: -kv[1])[:10]
+    logger.warning(
+        "%d label(s) lost every indication because no active moiety grounded; "
+        "%d distinct moiety name(s) never grounded. Most frequent: %s",
+        _labels_lost_to_grounding, len(_ungroundable_drugs),
+        ", ".join(f"{n} x{c}" for n, c in worst),
+    )
+
+
 def _report_extraction_failures() -> None:
     if _extraction_failures:
         logger.warning(
@@ -1190,6 +1217,22 @@ def _ground_drug(drug_name: str, grounding_backend: str) -> tuple[str, str]:
         drug_name, mention_id=mint_mention_id(drug_name, "drugs"))
     if result:
         return result.id, result.label
+
+    # Retry without the salt-former and hydration-state words. `TENOFOVIR ANHYDROUS` does
+    # not ground; `TENOFOVIR` does, and they are the same substance — SRS records the
+    # hydration state on the moiety name for some labels. The words come from the same
+    # `_GENERIC_NOISE` set `_generic_stems` already strips, so this adds no new vocabulary
+    # and cannot invent a drug: it only ever removes tokens and re-asks.
+    #
+    # This matters out of proportion to its size because an ungroundable drug does not lose
+    # one row, it loses the whole label: the ingest loop `continue`s before extraction, so
+    # every indication on that SPL goes with it. 7 labels were failing on `ANHYDROUS` alone.
+    stripped = " ".join(w for w in drug_name.split() if w.upper() not in _GENERIC_NOISE)
+    if stripped and stripped != drug_name:
+        result = service.ground_drug_best(
+            stripped, mention_id=mint_mention_id(stripped, "drugs"))
+        if result:
+            return result.id, result.label
     return "", ""
 
 
@@ -1215,13 +1258,18 @@ def _process_spl_data(
         contra_parts_row = row.get("contraindications_text_parts")
         set_id: str = row.get("set_id", "")
         unii_map: dict[str, str] = row.get("unii_by_moiety") or {}
+        grounded_any = False
 
         # Ground each drug
         for drug_name in drug_names:
             drug_id, drug_label = _ground_drug(drug_name, grounding_backend)
             if not drug_id:
+                # Counted, not whispered: this discards the whole label's indications.
+                _note_ungroundable_drug(drug_name)
+                grounded_any = False
                 logger.debug("Could not ground drug: %s", drug_name)
                 continue
+            grounded_any = True
 
             # Allergen/diagnostic check (degrade gracefully on LLM/network error;
             # num_retries in llm_call already handles transient blips)
@@ -1397,6 +1445,12 @@ def _process_spl_data(
                     )
                     contraindication_records.append(record)
 
+        # A label none of whose moieties grounded contributes nothing at all. Tallied here,
+        # at the end of the row, because the inner loop skips before extraction.
+        if drug_names and not grounded_any:
+            global _labels_lost_to_grounding
+            _labels_lost_to_grounding += 1
+
     _flush_dailymed_disease_grounding(grounding_backend)
     return indication_records, contraindication_records
 
@@ -1530,6 +1584,7 @@ def main():
     # quietly under-populated build. Runs after the flushes so whatever work *was*
     # done is still persisted.
     _report_extraction_failures()
+    _report_grounding_losses()
     _raise_if_rows_were_silently_dropped()
     try:
         from medic.ingest.dailymed.setid_lookup import (
