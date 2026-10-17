@@ -9230,6 +9230,7 @@ rdfs literal	LISINOPRIL HYDRATE	MEDICNE:763974d6-4ba2-5280-998d-9180958d282c	sko
 rdfs literal	Lisinopril Tablets	MEDICNE:cd6dd730-bdf8-56e9-87d8-b2e5b25e7e2c	skos:closeMatch	CHEBI:43755	lisinopril	rdfs:label	semapv:LexicalMatching	formulation_strip	lisinopril	0.8000	medic-lexical-grounder
 rdfs literal	lisocabtagene maraleucel	MEDICNE:2837f2d0-7778-58be-818a-1d0b788da7d2	skos:exactMatch	CHEBI:756742	lisocabtagene maraleucel	rdfs:label	semapv:LexicalMatching		lisocabtagene maraleucel	1.0000	medic-lexical-grounder
 rdfs literal	Lispro biphasic insulin	MEDICNE:c7ad0528-612d-564f-bf2d-ce1fe43e473d	skos:exactMatch	sssom:NoTermFound			semapv:LexicalMatching		lispro biphasic insulin	0.0000	medic-lexical-grounder
+rdfs literal	LITHIUM	MEDICNE:af3db647-fb70-5e4f-b6d7-8daf7f604a4c	skos:exactMatch	CHEBI:30145	lithium atom	oio:hasExactSynonym	semapv:LexicalMatching		lithium	0.8550	medic-lexical-grounder
 rdfs literal	Lithium carbonate	MEDICNE:07c5c5fb-2049-5636-843d-75027f3f3679	skos:closeMatch	CHEBI:6504	lithium carbonate	oio:hasRelatedSynonym	semapv:LexicalMatching		Lithium carbonate	0.8500	medic-lexical-grounder
 rdfs literal	Lithium Carbonate Tablets	MEDICNE:af69d586-d0b9-542c-9f0e-ac60572fc484	skos:closeMatch	CHEBI:6504	lithium carbonate	rdfs:label	semapv:LexicalMatching	formulation_strip	lithium carbonate	0.8000	medic-lexical-grounder
 rdfs literal	LITHIUM CATION	MEDICNE:523fe042-2e82-5171-8ede-769ad9d07086	skos:closeMatch	CHEBI:49713	lithium(1+)	oio:hasRelatedSynonym	semapv:LexicalMatching		lithium cation	0.7650	medic-lexical-grounder

@@ -1,10 +1,476 @@
-already_mondo: 3181
+already_mondo: 1263
 newly_grounded: 0
-non_mondo_after: 736
-non_mondo_before: 800
-regrounded_to_mondo: 663
-review_recommended: 136
-total_diseases: 3981
-unresolved: 1
+non_mondo_after: 751
+non_mondo_before: 751
+regrounded_to_hp: 285
+regrounded_to_mondo: 0
+review_recommended: 0
+total_diseases: 2014
+unresolved: 466
 unresolved_diseases:
-- Obtundation
+- Diffuse Well Differentiated Lymphocytic Lymphoma
+- Abortion, Threatened
+- Cerebral aneurysm
+- UMLS:C3267019 (no name)
+- UMLS:C0948807 (no name)
+- UMLS:C1868885 (no name)
+- Hepatocellular Damage
+- UMLS:C0948807 (no name)
+- UMLS:C1868885 (no name)
+- Perforation
+- Toxicoderma
+- Hypervitaminosis
+- UMLS:C1394798 (no name)
+- UMLS:C1394798 (no name)
+- UMLS:C0948807 (no name)
+- UMLS:C1868885 (no name)
+- Pain, Postoperative
+- UMLS:C2363890 (no name)
+- UMLS:C1868885 (no name)
+- Gastric retention
+- Allergy to soy
+- Gastric retention
+- Loss of hypoglycemic warning due to diabetes mellitus
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- UMLS:C0948807 (no name)
+- Diseases, Liver
+- Gestation
+- Renal Insufficiencies
+- UMLS:C1868885 (no name)
+- Gestation
+- Renal Insufficiencies
+- Gastric retention
+- Hepatocellular Damage
+- Asthma, Aspirin-Induced
+- Pyloric obstruction [Ambiguous]
+- Prostatic hypertrophy
+- Antibiotic-Associated Colitis
+- Gestation
+- Vaginal Bleeding
+- Amino Acid Metabolism, Inborn Error
+- Disproportion, Cephalopelvic
+- 'H/O: cesarean section'
+- Amino Acid Metabolism, Inborn Error
+- Amino Acid Metabolism, Inborn Error
+- Hypervitaminosis
+- Amino Acid Metabolism, Inborn Error
+- Amino Acid Metabolism, Inborn Error
+- Amino Acid Metabolism, Inborn Error
+- Diseases, Liver
+- Gestation
+- UMLS:C0948807 (no name)
+- UMLS:C1868885 (no name)
+- Amino Acid Metabolism, Inborn Error
+- UMLS:C2363890 (no name)
+- Amino Acid Metabolism, Inborn Error
+- Hypervitaminosis
+- Hepatocellular Damage
+- Decreased pulmonary function
+- Gestation
+- Gallstone pancreatitis
+- UMLS:C2363890 (no name)
+- Amino Acid Metabolism, Inborn Error
+- Amino Acid Metabolism, Inborn Error
+- Hypervitaminosis
+- Abortion, Missed
+- Diseases, Liver
+- Amino Acid Metabolism, Inborn Error
+- Amino Acid Metabolism, Inborn Error
+- Hypervitaminosis
+- Amino Acid Metabolism, Inborn Error
+- Abortion, Missed
+- Gestation
+- UMLS:C2363890 (no name)
+- Gastric retention
+- Amino Acid Metabolism, Inborn Error
+- Gestation
+- UMLS:C0948807 (no name)
+- Vaginal Bleeding
+- Opioid withdrawal
+- Deaths, Fetal
+- Fetal Bradycardia
+- Amino Acid Metabolism, Inborn Error
+- Amino Acid Metabolism, Inborn Error
+- Gastric retention
+- Hypervitaminosis
+- Gestation
+- Gestation
+- UMLS:C1868885 (no name)
+- UMLS:C4524093 (no name)
+- Renal Insufficiencies
+- Gestation
+- Impaction, Fecal
+- Renal Insufficiencies
+- Gestation
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- Partial obstruction of intestine
+- Amino Acid Metabolism, Inborn Error
+- Gastrointestinal Perforation
+- Intestinal Stricture
+- UMLS:C0948807 (no name)
+- Increased bleeding tendency
+- Acute cellulitis
+- Chronic Kidney Insufficiencies
+- Acute Kidney Insufficiencies
+- Gestation
+- Decompensated cirrhosis of liver
+- Gastric retention
+- Hypervitaminosis
+- Gestation
+- Hepatocellular Damage
+- 'H/O: Deep vein thrombosis'
+- Hypervitaminosis
+- Gestation
+- Pain, Postoperative
+- Hepatocellular Damage
+- Pyloric obstruction [Ambiguous]
+- Renal Insufficiencies
+- Prostatic hypertrophy
+- Gestation
+- Gestation
+- Bone Marrow Depression
+- Gestation
+- Renal Insufficiencies
+- Vaccinia virus
+- Deaths, Fetal
+- Deaths, Fetal
+- Fetal Bradycardia
+- Fetal Bradycardia
+- Hypervitaminosis
+- Amino Acid Metabolism, Inborn Error
+- Hypervitaminosis
+- Gastric retention
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- Idiopathic angioedema
+- Gestation
+- Tympanic Membrane Perforation
+- Peripheral anterior synechiae
+- Vasomotor instability
+- Fetal Harm
+- Gastric retention
+- Bone Marrow Depression
+- Gestation
+- UMLS:C1868885 (no name)
+- Gestation
+- Infection, Reproductive Tract
+- Severe chronic obstructive pulmonary disease
+- UMLS:C1868885 (no name)
+- Decompensated cirrhosis of liver
+- Electrolyte depletion
+- Deaths, Fetal
+- Deaths, Fetal
+- Deaths, Fetal
+- Fetal Bradycardia
+- Fetal Bradycardia
+- Fetal Bradycardia
+- Asthma, Aspirin-Induced
+- Gestation
+- Alcohol Use Disorder
+- Barbiturate withdrawal
+- UMLS:C1868885 (no name)
+- Benzodiazepine withdrawal
+- UMLS:C1868885 (no name)
+- Bone Marrow Depression
+- Acute pelvic inflammatory disease
+- Severe chronic obstructive pulmonary disease
+- Decompensated cardiac failure
+- UMLS:C0948807 (no name)
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- Acute iritis
+- Prostatic hypertrophy
+- Central nervous system depression
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- Prostatic hypertrophy
+- Antibiotic-Associated Colitis
+- Gestation
+- Tympanic Membrane Perforation
+- Toxicoderma
+- Decompensated cirrhosis of liver
+- Decompensated cirrhosis of liver
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- Gastric retention
+- Peripheral anterior synechiae
+- Severe chronic obstructive pulmonary disease
+- Gestation
+- Decompensated cirrhosis of liver
+- Asthma, Aspirin-Induced
+- Gestation
+- Gestation
+- Gestation
+- Urinary outflow obstruction
+- Breast Fed
+- Gestation
+- Asthma, Aspirin-Induced
+- Deaths, Fetal
+- Vaccinia virus
+- Fetal Bradycardia
+- UMLS:C0948807 (no name)
+- Gestation
+- Asthma, Aspirin-Induced
+- Gestation
+- Renal Insufficiencies
+- Gestation
+- Acute gouty arthropathy
+- Hepatocellular Damage
+- History of substance abuse
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- UMLS:C1868885 (no name)
+- Prinzmetal's variant angina
+- Drug-induced ITP
+- Bone Marrow Depression
+- Pain, Postoperative
+- Coronary Occlusion
+- Renal Insufficiencies
+- Severe chronic obstructive pulmonary disease
+- Vitamin D poisoning
+- Gestation
+- Asthma, Aspirin-Induced
+- History of torsades type ventricular tachycardia due to prolonged QT interval
+- UMLS:C0948807 (no name)
+- Recent myocardial infarction
+- UMLS:C1868885 (no name)
+- Asthma, Aspirin-Induced
+- Severe sinus bradycardia
+- Decompensated cardiac failure
+- Gestation
+- Diarrhea, watery
+- Poor Performance Status
+- Diseases, Liver
+- Gestation
+- Gestation
+- Gestation
+- Acute viral hepatitis, unspecified
+- Renal Insufficiencies
+- UMLS:C1868885 (no name)
+- UMLS:C1868885 (no name)
+- Decompensated cirrhosis of liver
+- Asthma, Aspirin-Induced
+- Asthma, Aspirin-Induced
+- Asthma, Aspirin-Induced
+- Asthma, Aspirin-Induced
+- Gestation
+- Gestation
+- Vitamin D poisoning
+- Gestation
+- UMLS:C1868885 (no name)
+- Gestation
+- UMLS:C1868885 (no name)
+- Diseases, Liver
+- Gestation
+- Renal Insufficiencies
+- Renal Insufficiencies
+- UMLS:C1868885 (no name)
+- Gestation
+- Pyloric obstruction [Ambiguous]
+- UMLS:C1868885 (no name)
+- Renal Insufficiencies
+- UMLS:C0948807 (no name)
+- Hepatocellular Damage
+- Severe depression
+- Severe depression
+- UMLS:C0948807 (no name)
+- Gestation
+- UMLS:C1868885 (no name)
+- Gestation
+- Gestation
+- Renal Insufficiencies
+- Gestation
+- Gestation
+- Renal Insufficiencies
+- Chronic Kidney Insufficiencies
+- Decompensated cardiac failure
+- Acute Kidney Insufficiencies
+- Asthma, Aspirin-Induced
+- Gestation
+- Urinary outflow obstruction
+- Renal Insufficiencies
+- Gastric Varix
+- Broncho-Esophageal Fistula
+- Gestation
+- Asthma, Aspirin-Induced
+- Hemorrhage, Uterine
+- Gastrointestinal Perforation
+- Asthma, Aspirin-Induced
+- Renal Insufficiencies
+- Decompensated cardiac failure
+- Toxicoderma
+- UMLS:C0948807 (no name)
+- UMLS:C0948807 (no name)
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- Gestation
+- Allergy to prostaglandin
+- Asthma, Aspirin-Induced
+- UMLS:C0948807 (no name)
+- Moderate Hepatic Insufficiency
+- Decompensated cirrhosis of liver
+- UMLS:C0948807 (no name)
+- Decompensated cardiac failure
+- Gestation
+- UMLS:C0948807 (no name)
+- Moderate Hepatic Insufficiency
+- Gestation
+- Gestation
+- UMLS:C0948807 (no name)
+- Decompensated cardiac failure
+- Fetal Harm
+- Acute Kidney Insufficiencies
+- Gestation
+- Renal Insufficiencies
+- Severe chronic obstructive pulmonary disease
+- Acute viral hepatitis, unspecified
+- UMLS:C1868885 (no name)
+- Deaths, Fetal
+- Fetal Bradycardia
+- UMLS:C0542052 (no name)
+- Recent myocardial infarction
+- Asthma, Aspirin-Induced
+- Gestation
+- Asthma, Aspirin-Induced
+- Asthma, Aspirin-Induced
+- Anemia due to medication
+- Renal Insufficiencies
+- Severe dehydration
+- Gestation
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
+- Deaths, Fetal
+- Fetal Bradycardia
+- Decompensated cardiac failure
+- Gestation
+- Renal Insufficiencies
+- Partial obstruction of intestine
+- Central nervous system depression
+- Gestation
+- UMLS:C1868885 (no name)
+- Tongue swelling
+- Renal Insufficiencies
+- Gestation
+- Gestation
+- Gestation
+- UMLS:C0948807 (no name)
+- Gestation
+- Asthma, Aspirin-Induced
+- Opioid withdrawal
+- UMLS:C1868885 (no name)
+- Gestation
+- Asthma, Aspirin-Induced
+- UMLS:C1394798 (no name)
+- Injury to Liver
+- UMLS:C2363890 (no name)
+- UMLS:C2363890 (no name)
+- Gestation
+- Toxemia
+- Increased blood volume (finding)
+- Aneurysms
+- Recent injury (morphologic abnormality)
+- Neoplasms, Intracranial
+- Gastric retention
+- UMLS:C1394798 (no name)
+- Gestation
+- Hepatocellular Damage
+- 'H/O: Deep vein thrombosis'
+- Gestation
+- Renal Insufficiencies
+- UMLS:C0948807 (no name)
+- UMLS:C0948807 (no name)
+- UMLS:C1868885 (no name)
+- UMLS:C2363890 (no name)
+- Gestation
+- UMLS:C1868885 (no name)
+- UMLS:C0948807 (no name)
+- Gestation
+- Hosts, Immunocompromised
+- UMLS:C0948807 (no name)
+- History of intracranial hemorrhage
+- UMLS:C0948807 (no name)
+- Hypervitaminosis
+- UMLS:C0948807 (no name)
+- Ventriculoperitoneal Shunt
+- UMLS:C0948807 (no name)
+- UMLS:C0948807 (no name)
+- UMLS:C1868885 (no name)
+- UMLS:C1868885 (no name)
+- Renal Insufficiencies
+- UMLS:C0948807 (no name)
+- Gestation
+- UMLS:C3888912 (no name)
+- Gestation
+- Bifascicular Block
+- Tympanic Membrane Perforation
+- UMLS:C0948807 (no name)
+- Gestation
+- Diseases, Liver
+- UMLS:C0948807 (no name)
+- UMLS:C1868885 (no name)
+- Gestation
+- UMLS:C1868885 (no name)
+- Gestation
+- Opioid withdrawal
+- Asthma, Aspirin-Induced
+- Pyloric obstruction [Ambiguous]
+- Prostatic hypertrophy
+- Gestation
+- Asthma, Aspirin-Induced
+- Gastric retention
+- UMLS:C0948807 (no name)
+- Inertia, Uterine
+- Placenta previa centralis
+- Transverse presentation
+- Vitamin D poisoning
+- Hepatocellular Damage
+- Bone Marrow Depression
+- History of substance abuse
+- Hypertensive Crisis
+- Renal Insufficiencies
+- UMLS:C2363890 (no name)
+- Gestation
+- History of substance abuse
+- UMLS:C1868885 (no name)
+- Angor Pectoris
+- UMLS:C0542052 (no name)
+- History of - myocardial infarction
+- Secondary
+- UMLS:C1868885 (no name)
+- Simple Tic
+- Asthma, Aspirin-Induced
+- Renal Insufficiencies
+- Dialyses, Renal
+- Gestation
+- Central nervous system depression
+- Renal Insufficiencies
+- UMLS:C0948807 (no name)
+- UMLS:C1609524 (no name)
+- Pancreatic duct obstruction
+- Absence of gallbladder
+- Mechanical urinary obstruction
+- Chronic pulmonary insufficiency
+- Gestation
+- Retinal Vein Thromboses
+- ACE inhibitor-aggravated angioedema
+- UMLS:C0948807 (no name)
+- Decompensated cirrhosis of liver
+- Acute Kidney Insufficiencies
+- Drug-induced ITP
+- Renal Insufficiencies
+- Gestation
+- Renal Insufficiencies
+- UMLS:C0948807 (no name)
+- Gestation
+- Central nervous system depression
+- Circulatory Collapse
+- Central nervous system depression
+- Gastric retention
+- Inherited
+- Chronic Kidney Insufficiencies
+- Acute Kidney Insufficiencies
+- Poisoning by salicylates NOS
+- Vaginal Bleeding
+- Gestation

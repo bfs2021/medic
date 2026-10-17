@@ -4427,6 +4427,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LITHIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LITHIUM CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": false
