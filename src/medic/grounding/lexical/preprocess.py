@@ -137,6 +137,29 @@ def _r_strip_other(s: str) -> list[tuple[str, str]]:
 # rule_id -> scope (predicate). Rules not listed default to exact.
 _BROAD_RULES = {"strip_leading_other"}
 
+#: Greek letter names as FDA SRS spells them between periods. Closed list: the rule must not
+#: fire on an ordinary abbreviation that happens to sit between periods.
+_GREEK_LETTERS = (
+    "alpha", "beta", "gamma", "delta", "epsilon", "zeta", "eta", "theta", "iota", "kappa",
+    "lambda", "mu", "nu", "xi", "omicron", "pi", "rho", "sigma", "tau", "upsilon", "phi",
+    "chi", "psi", "omega",
+)
+_SRS_GREEK_RE = re.compile(r"\.(" + "|".join(_GREEK_LETTERS) + r")\.", re.I)
+
+
+def _r_srs_greek(s: str) -> list[tuple[str, str]]:
+    """`.alpha.-tocopherol` -> `alpha-tocopherol` (FDA SRS Greek-letter encoding).
+
+    SRS renders Greek letters in substance names as an ASCII-delimited word, so an SPL's
+    active moiety is `.ALPHA.-TOCOPHEROL` where ChEBI's label is `alpha-tocopherol`. The
+    periods are delimiters carrying no meaning, so this is an encoding fix rather than
+    surgery — 89 moiety-name occurrences across 11 distinct names in the current SPL set,
+    of which this recovers 51, four of them onto an exact ontology label.
+    """
+    out = _SRS_GREEK_RE.sub(lambda m: m.group(1).lower(), s)
+    return [(out, "srs_greek_encoding")] if out != s else []
+
+
 _RULES = (
     _r_disease_disorder,
     _r_arabic_roman,
@@ -144,6 +167,7 @@ _RULES = (
     _r_hyphen_type,
     _r_brit_am,
     _r_cell_hyphen,
+    _r_srs_greek,
     _r_strip_other,
 )
 
@@ -436,6 +460,7 @@ RULE_CERTAINTY = {
     "inn_suffix_in_to_ine": 0.90, "inn_z_to_s": 0.88, "inn_ph_to_f": 0.88,
     "inn_ti_to_thi": 0.85, "inn_ae_oe_to_e": 0.90,
     "salt_ester_strip": 0.90, "qualifier_strip": 0.75, "combination_split": 0.92,
+    "srs_greek_encoding": 0.98,
     "formulation_strip": 0.80,
     "cyrillic_transliteration": 0.75,
     "fuzzy_edit1_unique": 0.60,
@@ -455,6 +480,7 @@ RULE_PREDICATE = {
     "inn_ph_to_f": "skos:closeMatch", "inn_ti_to_thi": "skos:closeMatch",
     "inn_ae_oe_to_e": "skos:closeMatch",
     "salt_ester_strip": "skos:closeMatch", "qualifier_strip": "skos:broadMatch",
+    "srs_greek_encoding": "skos:exactMatch",
     "combination_split": "skos:exactMatch", "formulation_strip": "skos:closeMatch",
     "cyrillic_transliteration": "skos:closeMatch",
     "fuzzy_edit1_unique": "skos:closeMatch",

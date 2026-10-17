@@ -346,6 +346,16 @@ enums:
       cell_space_to_hyphen:
         description: "'T cell' -> 'T-cell' (closed token list)."
         annotations: {certainty: 0.97, rule_family: punctuation, predicate: skos:exactMatch}
+      srs_greek_encoding:
+        description: >-
+          FDA SRS writes Greek letters in substance names as an ASCII-delimited word:
+          '.ALPHA.-TOCOPHEROL', '.GAMMA.-AMINOBUTYRIC ACID', '.BETA.-CAROTENE'. Rewrite
+          '.NAME.' to 'name' so the string matches how ontologies spell it
+          ('alpha-tocopherol'). An encoding difference, not a change of meaning — the
+          delimiters carry no information and the letter name is unambiguous — hence a
+          punctuation-family exactMatch. Scoped to the 24 Greek letter names, so it cannot
+          fire on an ordinary abbreviation that happens to sit between periods.
+        annotations: {certainty: 0.98, rule_family: punctuation, predicate: skos:exactMatch}
       # --- family: lexical_surgery (minor semantic surgery) ---
       disease_to_disorder:
         description: "'disease' -> 'disorder'."
