@@ -378,20 +378,31 @@ def _extract_ingredients_from_root(root: ET.Element) -> list[str]:
 
     Reads `activeMoiety`, which is right for most labels — it strips the salt, so
     TOBRAMYCIN SULFATE arrives as TOBRAMYCIN. Two corrections for the cases where it is not
-    the dispensed drug: bare ions are dropped, and an active metabolite is resolved back to
-    its prodrug via the label's own generic name (#95).
+    the dispensed drug: counter-ions are dropped, and an active metabolite is resolved back
+    to its prodrug via the label's own generic name (#95).
+
+    An ion is dropped only when the label has some *other* active moiety. That condition is
+    the whole difference between a counter-ion and a drug: magnesium in a multivitamin rides
+    along with the vitamins, but on a lithium carbonate label LITHIUM CATION is the only
+    moiety there is, and it is the drug. Dropping ions unconditionally deleted 24 labels'
+    worth of real drugs — lithium, the gadolinium MRI contrast agents, ferric iron products,
+    lanthanum carbonate, edrophonium, and the Sr-89 / Rb-82 / Ga-67 / In-111
+    radiopharmaceuticals — each of which is an element or ion administered as itself.
+
+    Decided from the label alone, so it needs no heavy-atom count or GSRS lookup; an atom
+    count would have kept methylene blue but still deleted lithium and silver.
     """
     stems = _generic_stems(root)
-    names: set[str] = set()
+    moieties: list[str] = []
     for moiety_elem in root.iter(f"{{{NS['v3']}}}activeMoiety"):
         name = moiety_elem.find("v3:name", NS)
         if name is None or not name.text:
             continue
-        moiety = name.text.strip().upper()
-        if _ION_MOIETY.search(moiety):
-            continue
-        names.add(_dispensed_name(moiety, stems))
-    return sorted(names)
+        moieties.append(name.text.strip().upper())
+
+    non_ions = [m for m in moieties if not _ION_MOIETY.search(m)]
+    keep = non_ions if non_ions else moieties
+    return sorted({_dispensed_name(m, stems) for m in keep})
 
 
 # ---------------------------------------------------------------------------
