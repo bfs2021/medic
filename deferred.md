@@ -301,3 +301,61 @@ plan.md item 13's 112 audited-correct dropped pairs and ~1,300 recall candidates
 - Phase 5 (#91's per-assertion verification question).
 - #94's ontology pinning and the one-drug-two-ids case (docetaxel still has `CHEBI:4672` and
   `CHEBI:755540`).
+
+## 10. Phase 4 — the dominant cause is acquisition, not extraction
+
+Diagnosing the 55 lost-correct edges disproved both of my earlier hypotheses and found
+something larger.
+
+### Both "prompt drops the target" cases were misdiagnosed
+
+- **thiamine**: not a prompt defect. The 11 shipped thiamine edges come from **BACMIN, a
+  15-ingredient multivitamin** (moiety "THIAMINE ION"), and the objects are its
+  "physiologically stressful conditions" list — #88 fan-out plus #89 context-as-target.
+  **#88's gate catches them all: 11/11 LOW, and all 292 pairs from labels with >5
+  ingredients are LOW.** The beriberi loss is §9's cause 1 (THIAMINE does not ground).
+- **deferasirox**: the extraction is **correct** — `verbatim='chronic iron overload'` with
+  the right context and population, at tier HIGH. It grounds to `UMLS:C1739382`, whose label
+  the store withholds under I-14 rule 2, so the edge ships with an empty disease name. Not
+  lost: invisible. `issues/issue_deferasirox_lost_indication.md` is wrong on its premise and
+  needs rewriting as the labelling problem it is.
+
+**573 edges (4.7%) ship with an unnamed object, across 102 concepts.** They cannot be
+reviewed by anyone and are the cost of I-14 colliding with #96.
+
+### The 55, properly split
+
+| | |
+|---|---|
+| grounding-granularity (pair exists under a related term) | **26** |
+| true losses (no related object at all) | **29** |
+
+Granularity examples, some of which are arguably *ours* being better: Talquetamab — audit
+"plasma cell myeloma", ours "Multiple myeloma" (synonyms); Clozapine — audit "schizophrenia",
+ours "Treatment-refractory schizophrenia"; Minocycline — audit "respiratory tract infectious
+disease", ours "Respiratory tract infection". So the real recall loss is below 25%, and a
+chunk of what remains is a granularity-matching artefact rather than missing knowledge.
+
+### The dominant cause of the true losses: one label per drug
+
+`acquire._most_recent_setid` fetches a page of **20** setids per drug name, sorts by
+published date, and returns **only the most recent**, discarding the other 19. A drug's
+indications are split across manufacturers and formulations, so what we get is whichever
+label happens to be newest.
+
+- `lansoprazole` has **2** labels in `data/raw/dailymed`, and produced exactly one
+  indication: *Helicobacter pylori infection*. GERD, duodenal ulcer and erosive esophagitis
+  are simply not in the text we fetched. (My earlier spot check said lansoprazole→GERD was
+  present; that was **dexlansoprazole** — 'lansoprazole' is a substring of it. Third
+  substring trap of the session.)
+- propranolol, chlorpromazine, varenicline, dalteparin: **1 label each**.
+- 1,976 SPLs against DailyMed's ~150,000.
+
+**Measured cost of keeping all of them** (12 drugs, 221 SPLs fetched): 118 distinct
+indication sections, i.e. **9.8 extraction calls per drug instead of 1**. About 10×, not
+20×, because roughly half of a drug's SPLs share identical indication text and extraction is
+cached on the section-text hash.
+
+This is a spending decision, not a bug fix, so it is Nico's call — see the question put to
+him. A cheaper targeted variant exists: broaden only for drugs whose single label yielded
+0–2 indications, which is where the loss concentrates.
