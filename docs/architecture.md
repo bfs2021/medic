@@ -35,6 +35,15 @@ MeDIC produces 6 core products plus several export formats:
 | **Legacy CSV** | `drug_list_flexible.csv`, `drug_list_stringent.csv`, per-source XLSX/CSV files matching v1.0.0 format | `exports/` | Implemented |
 | **KGX** | Biolink-compliant knowledge graph nodes and edges (JSONL) | `exports/medic_nodes.jsonl`, `exports/medic_edges.jsonl` | Implemented |
 | **SSSOM** | Drug identifier cross-reference mappings in SSSOM format | `exports/medic_drug_mappings.sssom.tsv` | Implemented |
+| **Reliability** | Products flattened to statement rows annotated with the reliability tier, plus the reliable subset | `exports/medic_statements.tsv`, `exports/medic_reliable.tsv` | Implemented |
+
+Drug nodes in the KGX export carry the FDA **UNII** as an `xref` wherever an indication row
+supplied one. ChEBI and DRON are fetched unpinned from PURLs and so mint identifiers newer than
+the SRI Node Normalizer's snapshot; 717 drug ids carrying 3,448 assertions (28%) were unknown
+to it, and they are the biologics. A UNII is stable, so a consumer can join whatever the
+primary id turns out to be, which also makes the problem self-healing across ontology
+refreshes. The identifier is read from the SPL's own `<activeMoiety><code>`, so it is
+source-asserted rather than derived.
 
 ---
 
@@ -288,19 +297,44 @@ The indication pipeline extracts drug-disease associations from regulatory drug 
 
 The DailyMed ingest (`src/medic/ingest/dailymed/`) is the primary USA indication source. The pipeline:
 
-1. **Acquire** — `acquire.py` fetches one representative SPL XML per USA-approved drug from the
-   DailyMed v2 REST API (`spls.json?drug_name=<NAME>` → most-recent setid → `spls/<setid>.xml`),
-   driven by `products/drug_list.yaml`, into `data/raw/dailymed/<setid>.xml`. Resumable; a few hundred
-   MB rather than the tens-of-GB bulk release. Run via `just ingest-dailymed-acquire`.
+1. **Acquire** — `acquire.py` fetches SPL XML for USA-approved drugs from the DailyMed v2 REST
+   API (`spls.json?drug_name=<NAME>` → setids → `spls/<setid>.xml`), driven by
+   `products/drug_list.yaml`, into `data/raw/dailymed/<setid>.xml`. Resumable; a few hundred MB
+   rather than the tens-of-GB bulk release. Run via `just ingest-dailymed-acquire`.
+
+   It keeps **every** SPL per drug name, newest first, up to `--labels-per-drug` (default 20).
+   It previously kept only the most recently published one, and that was the dominant cause of
+   the recall gap against v1: a drug's indications are split across manufacturers and
+   formulations, so one label states an arbitrary subset. `lansoprazole` had two SPLs on disk
+   and asserted exactly one indication — *Helicobacter pylori infection* — while GERD, duodenal
+   ulcer and erosive esophagitis were in text that was never fetched. Cost of the change,
+   measured over 12 drugs and 221 SPLs: 118 distinct indication sections, i.e. ~9.8 extraction
+   calls per drug rather than 1, because roughly half of a drug's SPLs repeat another's
+   indication text verbatim and extraction is cached on the section-text hash.
 2. **Mine** — `mine_spl_labels` parses each SPL XML, pulling the Indications & Usage section
    (LOINC 34067-9) and Contraindications section (LOINC 34070-3) text plus active-moiety names and the
    setid (from the `<setId root=...>` attribute). It also reads bulk-release `*.zip` archives if present.
-3. Extracts structured disease names from the section text using LLM extraction.
+   Per-element chunks are kept alongside the flattened text so the negation screen can scope cues
+   to the element containing them. Homeopathic labels (marketing category `C73614`, or `HPUS` in
+   the text) are skipped here. Active moieties are corrected for two SRS conventions: a bare
+   counter-ion is dropped **when the label has another active moiety** (so lithium, gadolinium
+   contrast agents and the radiopharmaceuticals, whose only moiety is an ion, survive), and an
+   active metabolite is resolved back to its prodrug via the label's own `<genericMedicine>` name
+   (`RAMIPRILAT` → `RAMIPRIL`). The FDA UNII on each `<activeMoiety><code>` is captured here too.
+3. **Extract** — one LLM call per section returns *structured claims*, not bare disease names.
+   See §5.8.
 4. Grounds drug names to ChEBI CURIEs and disease names to Mondo CURIEs via the shared grounding cascade.
+   A moiety name that fails to ground is retried with salt-former and hydration words removed
+   (`TENOFOVIR ANHYDROUS` → `TENOFOVIR`). A label none of whose moieties ground contributes
+   nothing at all — the loop skips before extraction — so those are counted and reported as a
+   warning at the end of the run rather than logged at debug level.
 5. Constructs `IndicationAssociation` records (USA-only evidence per source isolation) with normalized
    drug/disease identifiers, relationship type, raw label text, and setid-derived
    `reference`/`source_document_url` evidence (see §5.6).
 6. Writes per-source YAML to `kb/indications/dailymed/`.
+
+EMA, PMDA and India call the same two extractors, so they receive the structured-claim contract
+of §5.8 — but they do **not** pass an ingredient list, so their claims carry no attribution.
 
 The SPL-XML path is the single DailyMed acquisition path. An empty SPL directory is a hard error
 (the ingester fails loudly, naming `just ingest-dailymed-acquire`) rather than silently degrading to
@@ -321,7 +355,11 @@ Contraindication-specific fields include `is_allergen` and `is_diagnostic_agent`
 The indication merge (`src/medic/merge/on_label_merge.py`):
 
 1. Reads all `kb/indications/<source>/*.yaml` files
-2. Deduplicates by composite key: `(drug_id, disease_id, relationship_type)`
+2. Deduplicates by composite key: `(drug_id, disease_id, relationship_type, context)`, where
+   *context* is the claim's disease/population/temporal qualifiers. Two claims about the same
+   drug and disease that differ in context or relation are two claims, not duplicates — this is
+   what lets formoterol be indicated for asthma *maintenance* and contraindicated in *acute*
+   asthma without either side demoting the other.
 3. Merges evidence and hyperrelations across sources (union)
 4. Sets source flags: `fda`, `ema`, `pmda`
 5. Splits output into:
@@ -360,6 +398,81 @@ For sources where the document URL *is* deterministic (DailyMed via setid, EMA v
 The v1.0.0 pipeline propagated indications down the Mondo disease hierarchy (e.g., a drug approved for "breast cancer" would generate indication records for all subtypes like "breast diffuse large B-cell lymphoma"). This has been intentionally removed.
 
 **Rationale:** In ontology reasoning, annotations travel **up** the hierarchy, not down. If a drug treats a specific subtype, you can infer it treats the parent class — but a drug approved for a broad category is not necessarily indicated for every subtype. Downfilling inflated the indication list with unvalidated associations. Consumers who need hierarchical inference should apply it at query time using the Mondo graph, not bake it into the data.
+
+### 5.8 The structured claim contract
+
+Extraction returns one **claim** per therapeutic statement rather than a flat list of disease
+names. A claim is a `Claim` NamedTuple carrying:
+
+| field | what it holds |
+|---|---|
+| `target` + `target_verbatim` | the condition treated, and the label's own wording for it, copied character-for-character |
+| `predicate` | `treats` \| `prevents` \| `reduces_risk_of` \| `maintenance` \| `diagnoses` |
+| `attributed_to` + `basis` | the ingredient the text credits, or `product`; and how that was decided |
+| `disease_context` | a qualifying condition the patient must already have |
+| `population` | age group, sex, pregnancy, transplant recipient … |
+| `temporal_context` | post-MI, following hip replacement … |
+| `co_administered_with` | drugs the claim is conditioned on |
+
+**Only `target` becomes the edge object.** The rest become Biolink qualifiers on the
+association (`disease_context_qualifier`, `population_context_qualifier`,
+`temporal_context_qualifier`, `sex_qualifier`) or, for co-administration, which Biolink 4.3.7
+does not model on this association, a namespaced `medic_co_administered_with`.
+
+This replaced four separate defects with one prompt change. A flat list of names promoted the
+population or setting to the object, dropped the restricting context entirely, credited every
+ingredient of a combination with the whole product's indications, and recorded prevention as
+treatment. The qualifier half is invisible to a precision audit — a dropped qualifier scores as
+*correct* — so the improvement is only measurable once the rubric counts it.
+
+`attributed_to` defaults to `product` with `basis: product_level`, because labels almost always
+make the product the grammatical subject. An ingredient is named only for the recurring explicit
+patterns: `component_phrase` ("the naproxen component …"), `ingredient_subject`, `because_of`,
+`when_used_as_component`, `subheading`.
+
+Two guards exist because the format itself can induce errors:
+
+- **A clause that names no condition produces no claim.** Pressed to always supply a `target`,
+  a model will invent one — "contraindication in pediatric population" for a pure age
+  restriction. This does not fail loudly: the disease index holds 471 strings matching
+  "contraindicat" (SNOMED procedure concepts), so a fabricated target grounds cleanly and
+  ships looking plausible. There is a prompt rule *and* a deterministic reject in
+  `looks_like_disease_name`.
+- **Token budget is sized for the format.** A structured record is five labelled lines where a
+  pipe-list entry was a few words; at the old limit, long sections truncated mid-record and the
+  parser tolerates a short final record, so claims after the cut vanished silently.
+
+The raw model answer is what gets cached (keyed on the section-text hash), not the parse, so the
+parser can improve without re-asking. Note that the key does **not** include the prompt, so a
+prompt change needs a deliberate cache-namespace bump — `v3` is the current generation.
+
+### 5.9 Reliability gates
+
+`src/medic/reliability.py` scores each statement as the worst of the applicable gates *within*
+an assertion, then takes the **strongest** across the assertions backing a pair, so corroboration
+by a second regulator raises the tier rather than lowering it. Two gates come from the external
+audit:
+
+- **`_attribution_gate`** caps at LOW any assertion from a multi-ingredient label, using the
+  openFDA ingredient count. Pairs supported *only* by combination labels were measured 65%
+  wrong. Interim by construction: it says "this could be a fan-out", not "this is wrong".
+- **`_context_gate`** caps at LOW when the object was judged population-or-setting at ingest,
+  where the sibling diseases from the same section are in hand. LOW rather than excluded,
+  because a preposition is weaker evidence than a deletion needs.
+
+Nothing reaches HIGH by absence of signal: the provenance gate runs on every statement, and an
+empty gate list scores LOW rather than HIGH.
+
+### 5.10 Scoring against the external audit
+
+`just audit-regression` scores the built export against a 300-edge blind label audit, reporting
+**both** directions — errors removed *and* correct edges kept. Precision alone can be improved
+by dropping everything, which is exactly what a one-sided metric would call success.
+
+Matching is by id *and* by normalised label, because an id-only join counts a drug whose primary
+id moved (e.g. `UNII:` → `CHEBI:`) as a lost edge. The audit file is licensed with
+drug-disease-compare and is fetched rather than vendored; the script exits 2 saying so rather
+than appearing to pass without it.
 
 ---
 
