@@ -22,8 +22,12 @@ untracked scratch in the repo root.
 | #94 | `comment_issue94_nodenorm.md` | ready |
 | #95 | `comment_issue95_moieties.md` | ready |
 | #96 | `comment_issue96_disease_nodes.md` | ready |
-| #97 | — | **not written yet**; wait for the re-extraction measurement |
-| #88, #89, #90 | — | **not written yet**; they need the re-extraction measurement |
+| #88 | `comment_issue88_combination.md` | ready |
+| #89 | `comment_issue89_population_target.md` | ready |
+| #90 | `comment_issue90_qualifiers.md` | ready |
+| #97 | `comment_issue97_contraindications.md` | ready |
+
+All 16 are written. None posted.
 
 ```bash
 gh issue comment <n> --repo monarch-initiative/medic --body-file comment_issue<n>_*.md
@@ -85,23 +89,26 @@ Of its three asks, one landed and two did not:
 Also unaddressed from #96: abbreviations used as display names (DFSP, WARTS). No comma to
 swap, so de-inversion is not the remedy; they need a better label source (#13).
 
-## 3. Phase 3 — code complete; the re-extraction is running
+## 3. Phase 3 — complete
 
 **Done**: the `Claim` contract and parser, both structured prompts, the v3 cache namespace,
 claim dedup, ingredient threading, qualifier slots on the edge (#90.2), `Claim.predicate` →
 Biolink (#99), qualifiers in the merge key (#90.3), #97's contraindication prompt with the
 co-administration split.
 
-**Running**: the paid re-extraction over 1,832 DailyMed labels, ~13 LLM calls/min. Verified
-on 8 labels first: 24 indications, 5 contraindications, zero extraction failures, and all
-seven claim fields populating from real labels.
+**Re-extraction done**, all four sources:
 
-**DailyMed needs a second pass after it.** The ion-guard fix (`148aec0`) landed mid-run, so
-the labels in flight were ingested with the old guard and the 24 ion-only drugs — lithium,
-gadolinium contrast, ferric iron, the radiopharmaceuticals — are still missing from its
-output. The re-run is cheap: the cache is keyed on section text, so every answer already
-bought is a hit and only the rescued labels cost anything. Not killed mid-flight because
-`atexit` does not fire on SIGTERM, so a kill would have discarded up to 99 paid answers.
+- **DailyMed** — 1,832 labels, ~6,200 LLM calls, zero extraction failures. Two passes: the
+  ion-guard fix (`148aec0`) landed mid-run, so a second pass picked up the 24 ion-only drugs
+  for **48 calls** against the warm cache (the cache keys on section text, so everything
+  already bought was a hit). Not killed mid-flight, because `atexit` does not fire on
+  SIGTERM and a kill would have discarded up to 99 paid answers. Final: **6,002 indications,
+  2,453 contraindications**. Rescues verified present and correct: `LITHIUM` → bipolar I
+  disorder, `LANTHANUM CATION (3+)` → hyperphosphatemia, `GADOLINIUM CATION (3+)` → Liver
+  Lesion, `FERRIC DERISOMALTOSE` → iron deficiency anemia.
+- **EMA** — 49 min, exit 0. **PMDA** — 31 min, exit 0. **India** — 2.5 min, exit 0 (and that
+  speed is the symptom behind `issues/issue_india_primary_source_recall.md`).
+- Merge, normalization, all four exports and both validations re-run after the fixes in §4c.
 
 **Latent: the cache key does not include the prompt.** `_text_hash(indication_text)` keys on
 the section text alone, so changing a prompt does not invalidate the answers it produced —
@@ -113,11 +120,11 @@ change, or the next one needs another manual namespace bump to be safe.
 
 **Not done:**
 
-- **EMA / PMDA / India have not been re-extracted.** They call the same extractors and share
-  the v3 cache, keyed by text hash, so their entries are still absent. DailyMed first because
-  it is the largest and the only one with the ingredient threading; the others are the same
-  command with no code change.
-- `just export-*` and the merge have not been re-run against the new extraction yet.
+- **EMA / PMDA / India get the structure but not the attribution.** All three call
+  `extract_diseases_from_text` **without** `ingredients=`, so the prompt cannot name an
+  ingredient it was never given: they get #89/#90/#99 (target vs context, qualifiers,
+  predicates) and none of #88. `plan.md` item 10 explicitly included "fix the EMA/India
+  direction too"; that part did not happen, and EMA was re-extracted in this state.
 
 **Still deferred to later phases:**
 - **Phase 4** — recall (#98). Strictly after Phase 3.
@@ -163,19 +170,61 @@ pairs 133 → 25.
 Phase 3's re-extraction is running (see §3). After it: the merge, the four exports and
 `validate-all`, then the measurements owed below.
 
-**Measurements owed once it finishes** — each is a claim made in a drafted comment that I
-have deliberately not asserted without the number:
+**Rebuild complete.** 12,131 edges / 28,727 nodes. `just validate-all` and `just
+validate-kgx` both pass — the first time with the target classes applied, see §4c.
 
-- #94: whether velaglucerase alfa still gets both a DRON and a ChEBI id.
-- #96: whether the four named wrong-sense groundings are gone (`non small cell lung cancer`
-  → tumor-suppressor gene, `skin and soft-tissue infections` → karyomegalic interstitial
-  nephritis, `mpox` → a chemical CUI, `secondary progressive disease` → root `disease`).
-- #91: what HIGH's share of pairs becomes, which is the only honest way to say whether the
-  tier is now worth filtering on.
-- #89/#90: how many edges carry a qualifier, and whether the population-as-target rate moved.
-- #88: whether the attribution fields change the combination-only slice.
-- #97: the contraindication error rate against the 73-case audit.
-- #100: whether any genuinely-cut text remains (also listed in §2).
+Measured:
+
+- **#90 qualifiers: 7,626 of 12,131 edges (62.9%)** carry at least one, from 0. population
+  5,882, disease_context 3,218, temporal 1,173, sex 567, co-administered 1,016.
+- **#99 predicates:** 1,115 `preventative_for_condition`, 139 `diagnoses`, 8,486 `treats`,
+  2,382 `contraindicated_in`. All the non-`treats` ones previously shipped as `treats`.
+- **#91 tiers:** HIGH 78.6% → **66.0%**, LOW 7.6% → **28.3%**, MEDIUM 5.6%.
+- **#96 names:** 0 still in MeSH inverted form (was 66). Unnamed is **102** (was 91) — the
+  source-literal fallback had to be reverted for licensing, see §4c.
+- **#95:** ion drug nodes 16 → 10 (195 → 84 assertions); metabolites 8 → **1** (82 → 4).
+- **#88 attribution:** 634 of 803 `ingredient_subject` rows are single-ingredient labels;
+  only 193 multi-ingredient rows carry an explicit attribution, incl. empagliflozin via
+  `when_used_as_component`.
+
+Answered in the negative, and said so in the comments:
+
+- **#96's four named wrong-sense groundings all persist unchanged.** Three are MONDO ids, so
+  vocabulary ordering cannot help — it is a synonym collision, not a preference problem.
+- **Re-grounding resolves 0 of 3,229 non-MONDO objects to MONDO** (1,254 to HP). Only the
+  merge's xref normalization moves ids toward MONDO (412).
+- **#94's velaglucerase alfa still has both** `CHEBI:747652` and `DRON:00019756`.
+
+**Still owed:**
+
+- #100: whether any genuinely-cut text remains (also §2).
+- #88/#89/#97: the per-case rates, which need the gold standards — see §4d.
+
+### 4c. Two bugs the rebuild's validation caught
+
+- **`normalize-disease-ids` was reading a record shape that no longer exists** (`84237b5`).
+  It reported all 8,541 associations as non-MONDO on a product that is 62% MONDO, resolved
+  0, and stamped `drug_disease: '|'` on every one, which failed the closed class. My earlier
+  "validation is clean" was wrong: `validate-schema` without a target class does not check
+  the closed class, only `validate-all` does.
+- **#96's stub-name fallback was republishing withheld labels** (`e092352`). 102 concepts
+  whose labels the grounding store withholds under I-14 rule 2 got named from the source
+  literal, which for these *is* the restricted string. Caught by
+  `test_restricted_labels_not_published`, the artefact-level test written after the last
+  such leak. Reverted for those concepts; they ship unnamed and their edges stay
+  unjudgeable, which is the cost of the licence boundary.
+
+### 4d. The gold standards were never wired in
+
+`plan.md` says they "should be wired in as tests **before** the prompt changes". They were
+not, and that is why #88, #89 and #97 can report mechanism but not rate:
+
+- `fp_audit.json`, verdict `FP1_setting`, release `new` — 38 population-as-target cases.
+- `contraindication_sample_audit.tsv` — 73 cases, 18 wrong, 12 live.
+- The 102 curated ingredient sets from the abandoned pilot (`curation/combos-*`, #70–#87).
+
+All three are in Kevin's repo. Fetching them is cheap and is the highest-value remaining
+measurement work.
 
 ## 5. Release-note caveats
 
@@ -184,3 +233,39 @@ have deliberately not asserted without the number:
   HIGH gets a positive signal to earn its way back. Any release before then must say HIGH
   became conservative, not that quality fell.
 - The soft-launch subset fell 7,804 → 5,949 for the same reason.
+
+## 6. Spot checks that contradicted the aggregates
+
+Qualifier coverage going 0 → 62.9% looked like unambiguous success. Checking #89's own named
+examples gave 4 of 6:
+
+| example | result |
+|---|---|
+| eplerenone → acute MI | fixed → Congestive heart failure |
+| posaconazole → AML | fixed → Invasive Fungal Infections |
+| bosentan → congenital heart disease | fixed → Pulmonary arterial hypertension |
+| tirzepatide → prediabetes | fixed → Type 2 diabetes, Obesity |
+| basiliximab → kidney transplantation | **0 edges — the drug is gone from the export** |
+| deferasirox → anemia | **degraded** → Cancer, Poor Performance Status; iron overload absent |
+
+Both failures would have read as successes if measured only by the absence of the wrong edge.
+Filed `issues/issue_deferasirox_lost_indication.md`. Basiliximab is a biologic and so most
+likely #94's identifier problem, which is further reason to do #94's xrefs next.
+
+## 7. Issues filed this session (drafts, not posted)
+
+- `issues/issue_no_type_checker.md` — a stale annotation zeroed a full paid build; no type
+  checker runs, and no grep can distinguish the correct `e.name` from the wrong one.
+- `issues/issue_apostrophe_folding_anchors.md` — SPL text uses both apostrophe glyphs (62
+  ASCII vs 52 curly per 600 labels); 33 correct eponym extractions are falsely unlocatable.
+- `issues/issue_india_primary_source_recall.md` — India contributes 112 drugs where v1 had
+  3,118; the CDSCO PDF parser recovers 3.6% and one 139 KB PDF yields zero rows.
+- `issues/issue_deferasirox_lost_indication.md` — above.
+
+## 8. `just compare-release` was broken and is now fixed
+
+It crashed on `The truth value of a Series is ambiguous` (duplicate keys make `.loc` return a
+Series). Fixed in `84237b5`. It is the tool that answers the recall question and it would
+have surfaced the India regression at any point since that switch. Current state against
+v1.0.0: drug curie overlap **41.2%** (1,598 of v1's 3,883), which is the CHEBI-only namespace
+problem our own gap report identified and #94 reports from the consumer side.
