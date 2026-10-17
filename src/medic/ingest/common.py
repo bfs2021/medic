@@ -223,6 +223,18 @@ _REFUSAL_STARTS = (
 _MAX_DISEASE_NAME_WORDS_WITH_PERIOD = 6
 _MAX_DISEASE_NAME_CHARS = 120
 
+#: A target that names the restriction instead of a condition. The structured
+#: contraindication prompt (#97) asks for one record per contraindication, and a clause that
+#: restricts only a population or only a co-administration has no condition to put in
+#: ``target`` — so the model invents one: "contraindication in pediatric population",
+#: "contraindication with concurrent MAOI use". The prompt now says to emit no record for
+#: those, but this stays as the deterministic half, because the failure is silent without it:
+#: the disease vocabulary holds 471 strings containing this token (SNOMED procedure concepts
+#: such as "Procedure contraindicated"), so a fabricated target does not fail grounding
+#: loudly — it matches one of those and ships as a plausible-looking edge. No legitimate
+#: drug-contraindication target is itself named after contraindication.
+_META_RESTRICTION_TOKEN = "contraindicat"
+
 
 def looks_like_disease_name(name: str) -> bool:
     """Defensive filter for LLM disease-extraction output.
@@ -250,6 +262,8 @@ def looks_like_disease_name(name: str) -> bool:
         return False
     lower = name.lower()
     if any(lower.startswith(p) for p in _REFUSAL_STARTS):
+        return False
+    if _META_RESTRICTION_TOKEN in lower:
         return False
     if "." in name and len(name.split()) > _MAX_DISEASE_NAME_WORDS_WITH_PERIOD:
         return False

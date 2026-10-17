@@ -897,7 +897,8 @@ def extract_diseases_from_text(
             f"Text: {indication_text[:3000]}"
         ),
         task="extraction",
-        max_tokens=500,
+        # See the contraindication extractor: the structured format needs the larger budget.
+        max_tokens=1500,
         system="You are a biomedical expert. Extract disease names from drug indication text.",
     )
     claims = parse_structured_claims(text)
@@ -948,39 +949,70 @@ def extract_contraindicated_diseases_from_text(
     from medic.llm import llm_call
     text = llm_call(
         (
-            "Extract all medical conditions or diseases mentioned as "
-            "contraindications in this text. A contraindication is a condition "
-            "that makes a drug inappropriate (e.g., 'patients with active "
-            "infection', 'severe hepatic impairment', 'pregnancy').\n\n"
-            "For each condition return TWO parts separated by '::' —\n"
-            "  <canonical condition name> :: <verbatim substring copied from the text>\n"
-            "The second part MUST be copied character-for-character from the text above, "
-            "including any abbreviation the text uses. Do not normalise or expand it.\n"
-            "Return ONLY a pipe-separated list like: "
-            "name1 :: quote1|name2 :: quote2\n"
-            "If no specific medical conditions are listed (e.g., the section only "
-            "lists hypersensitivity to the drug itself), return: None\n"
-            "Do not infer — only list conditions explicitly mentioned.\n"
-            "Be specific in the canonical name (e.g., 'severe hepatic impairment' not just "
-            "'liver disease'), but keep the quote exactly as written.\n"
-            "Exclude generic hypersensitivity to the drug or excipients — that's "
-            "trivial and not informative.\n"
-            "Exclude pure procedural exclusions (e.g., 'concurrent use of MAOIs') "
-            "unless they describe a medical condition.\n\n"
+            "Extract every contraindication this label states, with the context attached\n"
+            "to each one. A contraindication is a condition that makes the drug\n"
+            "inappropriate.\n\n"
+            "Return one record per contraindication, records separated by a line containing\n"
+            "only ---  Within a record, one field per line, exactly these labels:\n"
+            "  target: <canonical condition name> :: <verbatim substring from the text>\n"
+            "  predicate: treats\n"
+            "  disease_context: <name> :: <verbatim> ; ...   (the qualifying condition)\n"
+            "  population: <age group, sex, pregnancy ...>   (optional)\n"
+            "  co_administered_with: <drug> ; <drug>         (optional)\n\n"
+            "If no specific medical conditions are contraindicated, return: None\n\n"
+            "RULES\n"
+            "1. A CO-ADMINISTRATION clause is not a contraindicated condition. 'do not\n"
+            "   coadminister aliskiren in patients with diabetes' contraindicates the\n"
+            "   combination, not diabetes: put aliskiren in co_administered_with and\n"
+            "   diabetes in disease_context, and do NOT emit diabetes as a target.\n"
+            "   Emit a target only if a condition is contraindicated in its own right.\n"
+            "2. A WARNING is not a contraindication. Skip 'risk-benefit should be\n"
+            "   considered', 'use with caution', 'discontinue if ... occurs', and anything\n"
+            "   describing an adverse reaction rather than a pre-existing condition.\n"
+            "3. KEEP the causal qualifier in the name. 'asthma after taking aspirin or\n"
+            "   other NSAIDs' is NSAID-induced asthma, not asthma — put the full\n"
+            "   qualified condition in target. Likewise 'the syndrome of asthma, rhinitis\n"
+            "   and nasal polyps' is one condition, not three.\n"
+            "4. The verbatim after :: MUST be copied character-for-character from the\n"
+            "   text, including any abbreviation.\n"
+            "5. Exclude generic hypersensitivity to the drug or its excipients.\n"
+            "6. Do not infer. Only report what the text states.\n"
+            "7. A clause that names NO condition produces NO record. 'contraindicated in\n"
+            "   children younger than 12 years' and 'contraindicated with MAOIs' restrict a\n"
+            "   population and a co-administration; neither names a condition, so neither is\n"
+            "   a record. Never invent a target like 'contraindication in pediatric\n"
+            "   population' or 'contraindication with concurrent MAOI use' to carry one.\n"
+            "   target must always be a condition a patient can have.\n\n"
+            "EXAMPLE\n"
+            "Text: 'Do not coadminister aliskiren with ACE inhibitors in patients with\n"
+            "diabetes. Contraindicated in patients with a history of angioedema. Asthma\n"
+            "after taking aspirin or other NSAIDs.'\n"
+            "Correct output:\n"
+            "target: angioedema :: a history of angioedema\n"
+            "predicate: treats\n"
+            "---\n"
+            "target: NSAID-induced asthma :: Asthma after taking aspirin or other NSAIDs\n"
+            "predicate: treats\n\n"
+            "Note what is absent: diabetes is not a record. It is the context of a\n"
+            "co-administration clause, so it contraindicates the aliskiren combination\n"
+            "rather than being contraindicated itself. The ACE inhibitor clause produces no\n"
+            "record of its own either, because it names no condition.\n\n"
             f"Text: {contraindication_text[:3000]}"
         ),
         task="extraction",
-        max_tokens=500,
+        # Sized for the structured format, not the pipe list it replaced. One record runs
+        # five labelled lines where a pipe entry ran a few words, so the old 500 truncated
+        # long contraindication sections mid-record — silently, since the parser tolerates
+        # a short final record. That is #100's failure mode arriving by a second route.
+        max_tokens=1500,
         system=(
             "You are a biomedical expert. Extract the medical conditions named in "
-            "drug contraindication text. Output a pipe-separated list of conditions, "
-            "or 'None' if no specific conditions are present."
+            "drug contraindication text, as labelled records in the format the "
+            "instructions specify, or 'None' if no specific conditions are present."
         ),
     )
-    # One shape for both extractors. The contraindication prompt is still the flat one,
-    # so these are plain `treats`-shaped claims attributed to the product until #97 gives
-    # it the structured form too — but a single type means an ingester loop cannot unpack
-    # the wrong fields, which is exactly what broke when the two diverged.
+    # One shape for both extractors: a single type means an ingester loop cannot unpack the
+    # wrong fields, which is exactly what broke when the two diverged.
     claims = parse_structured_claims(text)
 
     # Cache the RAW answer; the parser may improve and re-parsing a string is free.
