@@ -249,3 +249,55 @@ Series). Fixed in `84237b5`. It is the tool that answers the recall question and
 have surfaced the India regression at any point since that switch. Current state against
 v1.0.0: drug curie overlap **41.2%** (1,598 of v1's 3,883), which is the CHEBI-only namespace
 problem our own gap report identified and #94 reports from the consumer side.
+
+## 9. Phase 4 — recall, in progress
+
+### Scored at last, in both directions
+
+`src/data/fp_audit.json` **is** committed upstream (the TSV worklists the issues link to are
+not — `experiments/out/v2/` is gitignored there). It holds the 300-edge blind audit with a
+verdict per edge, so it scores errors removed *and* correct edges kept. Wired up as
+`just audit-regression` + `scripts/audit_regression.py` (`a1f1572`); the file is fetched, not
+vendored, since it is licensed with drug-disease-compare.
+
+| | |
+|---|---|
+| correct kept | **166/221 (75.1%)** |
+| wrong removed | 58/79 (73.4%) |
+| error rate among survivors | **11.2%** vs 25.6% measured |
+
+**I nearly reported 41% loss of correct edges.** An id-only join counts a drug whose primary
+id moved from `UNII:` to `CHEBI:` as a lost edge. Matching on id *or* normalised label gives
+the real 25%. The harness does both, and the docstring says why.
+
+### Done
+
+- **#94's UNII xrefs** (`9a73efd`). 1,367 drug nodes carry one; every biologic the issue
+  names is covered and spot-checked correct. The identifier was never missing — it is in the
+  same `<activeMoiety>` element the ingest already reads.
+- **A drug that will not ground no longer discards its whole label silently** (`a1f1572`).
+  70 of 1,857 labels (3.8%) were losing every indication under a `logger.debug`; now counted
+  and reported. The salt/hydrate class is recovered by retrying without `_GENERIC_NOISE`
+  words (`TENOFOVIR ANHYDROUS` → `TENOFOVIR`): +10 indications, +5 contraindications, zero
+  LLM cost. This is how thiamine → beriberi was being lost.
+
+### Open — `issues/issue_recall_gap_phase4.md`
+
+The two measured causes of the remaining 55 lost correct edges: 107 moiety names that still
+never ground (a `relatedSynonym` acceptance policy question, a vaccine-antigen modelling
+question, and ions), and the target-replaced-by-its-context prompt defect with two confirmed
+cases (thiamine, deferasirox).
+
+### Still blocked on files we do not have
+
+plan.md item 13's 112 audited-correct dropped pairs and ~1,300 recall candidates, and #97's
+73-case contraindication rate. Worth asking Kevin for the TSVs rather than reconstructing.
+
+### Not started
+
+- Phase 4 item 14: #65's Limitations-of-Use splitting against the worst-hit drugs
+  (lidocaine −122, iodine −83, hydrocortisone −82, dexamethasone −73). Note IODINE appears in
+  the ungroundable list above, so some of that −83 is cause 1, not extraction.
+- Phase 5 (#91's per-assertion verification question).
+- #94's ontology pinning and the one-drug-two-ids case (docetaxel still has `CHEBI:4672` and
+  `CHEBI:755540`).
