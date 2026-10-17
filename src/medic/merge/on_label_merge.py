@@ -566,8 +566,36 @@ def _get_disease_id(record: dict) -> str:
     return record.get("final_normalized_disease_id", "") or record.get("normalized_disease_id", "")
 
 
+def _claim_context_key(record: dict) -> str:
+    """The qualifying context, as part of the pair key (#90.3, #24).
+
+    Two claims that differ only in context are two claims. With context out of the key they
+    collapsed into one association whose qualifiers were whichever record merged first — and
+    formoterol, indicated for asthma *maintenance* and contraindicated for *acute attacks*,
+    became a self-clash on one pair (#93). That is why a clash gate was the wrong
+    instrument: it would have demoted a correct pair instead of telling the two apart.
+
+    Built from the first evidence row, since a record carries one. Contexts are sorted so
+    the key does not depend on the order the model listed them, and the relation is included
+    because prevention and treatment of one disease are different claims (#99).
+    """
+    rows = record.get("evidence") or []
+    ev = rows[0] if rows and isinstance(rows[0], dict) else {}
+    parts = [
+        ",".join(sorted(str(c) for c in (ev.get("disease_context") or []))),
+        (ev.get("population_context") or "").strip(),
+        (ev.get("temporal_context") or "").strip(),
+        (ev.get("claim_predicate") or "").strip().lower(),
+    ]
+    return "|".join(parts) if any(parts) else ""
+
+
 def _pair_key(record: dict) -> str | None:
-    """The canonical pair a record contributes to: drug|disease|relationship, no source."""
+    """The canonical pair a record contributes to: drug|disease|relationship|context.
+
+    Source-free on purpose: two regulators stating the same qualified claim must merge into
+    one pair with two assertions, which is what the corroboration logic rests on (#61).
+    """
     drug_id = _get_drug_id(record)
     disease_id = _get_disease_id(record)
     if not drug_id or not disease_id:
@@ -575,7 +603,9 @@ def _pair_key(record: dict) -> str | None:
     if "Error" in drug_id or "Error" in disease_id:
         logger.warning("Skipping record with error ID: %s / %s", drug_id, disease_id)
         return None
-    return f"{drug_id}|{disease_id}|{record.get('relationship_type', '')}"
+    key = f"{drug_id}|{disease_id}|{record.get('relationship_type', '')}"
+    context = _claim_context_key(record)
+    return f"{key}|{context}" if context else key
 
 
 def _document_for(record: dict, evidence: dict) -> str:

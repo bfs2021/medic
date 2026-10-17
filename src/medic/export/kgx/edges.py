@@ -207,6 +207,16 @@ def _claim_qualifiers(evidence: dict) -> dict:
         "temporal_context_qualifier": (evidence.get("temporal_context") or "").strip(),
         "sex_qualifier": _sex_qualifier(population),
         "medic_co_administered_with": list(evidence.get("co_administered_with") or []),
+        # Kept because two relations share `treats` and two share
+        # `preventative_for_condition`; without this the label's finer distinction is lost.
+        "medic_claim_relation": (
+            (evidence.get("claim_predicate") or "").strip().lower()
+            if (evidence.get("claim_predicate") or "").strip().lower() not in ("", "treats")
+            else ""
+        ),
+        "medic_claim_attributed_to": (evidence.get("claim_attributed_to") or "").strip(),
+        "medic_claim_attribution_basis": (
+            evidence.get("claim_attribution_basis") or "").strip(),
     }
 
 
@@ -256,7 +266,20 @@ _VACCINE_TOKENS = re.compile(
 )
 
 
-def _indication_predicate(status: str, drug_label: str = "") -> str:
+#: The label's relation -> the Biolink predicate. Two collapses are deliberate:
+#: risk reduction *is* prevention, and maintenance of a treated state is still treatment of
+#: the named condition. `medic_claim_relation` keeps the finer distinction the label drew,
+#: so nothing is lost where Biolink has no separate slot.
+_RELATION_PREDICATE = {
+    "treats": bl.INDICATION_PREDICATE,
+    "maintenance": bl.INDICATION_PREDICATE,
+    "prevents": bl.PREVENTION_PREDICATE,
+    "reduces_risk_of": bl.PREVENTION_PREDICATE,
+    "diagnoses": bl.DIAGNOSTIC_PREDICATE,
+}
+
+
+def _indication_predicate(status: str, drug_label: str = "", relation: str = "") -> str:
     """Biolink reserves an asserted ``treats`` for approved or established use.
 
     An indication the regulator records as investigational or off-label does not meet that
@@ -264,6 +287,11 @@ def _indication_predicate(status: str, drug_label: str = "") -> str:
     """
     if (status or "").upper() != "APPROVED":
         return bl.INDICATION_UNAPPROVED_PREDICATE
+    # The label's own account of the relation, when the extraction recorded one (#99).
+    if relation in _RELATION_PREDICATE:
+        return _RELATION_PREDICATE[relation]
+    # Fallback for rows with no recorded relation — which is every row until the
+    # re-extraction lands. Dropping it would regress the vaccine edges already fixed.
     if _VACCINE_TOKENS.search(drug_label or ""):
         return bl.PREVENTION_PREDICATE
     return bl.INDICATION_PREDICATE
@@ -305,7 +333,9 @@ def association_edges(
         status = regulatory.get("status") or evidence.get("approval_status") or ""
         predicate = (
             bl.CONTRAINDICATION_PREDICATE if relationship == "CONTRAINDICATION"
-            else _indication_predicate(status, pv.assoc_drug_label(pair))
+            else _indication_predicate(
+                status, pv.assoc_drug_label(pair),
+                (evidence.get("claim_predicate") or "").strip().lower())
         )
         source = assertion.get("source") or regulatory.get("source") or ""
         authority = regulatory.get("authority") or ""

@@ -157,6 +157,9 @@ CONTRAINDICATION_PREDICATE = "biolink:contraindicated_in"
 #: A vaccine does not treat the disease it immunises against. Biolink separates the two, and
 #: a graph that conflates them answers "what treats pertussis?" with the vaccine (#99).
 PREVENTION_PREDICATE = "biolink:preventative_for_condition"
+#: A contrast agent or radiotracer does not treat the disease it images. The audit found
+#: secretin, flutemetamol, 5-ALA and edotreotide exported as `treats` (#99).
+DIAGNOSTIC_PREDICATE = "biolink:diagnoses"
 
 #: Real-world use observed in case reports (CURE-ID), which is what ``applied to treat``
 #: means: "actually taken by one or more patients with the intent of treating the condition".
@@ -177,6 +180,7 @@ KNOWLEDGE_LEVELS = {
     INDICATION_UNAPPROVED_PREDICATE: "not_provided",
     CONTRAINDICATION_PREDICATE: "knowledge_assertion",
     PREVENTION_PREDICATE: "knowledge_assertion",
+    DIAGNOSTIC_PREDICATE: "knowledge_assertion",
     RESEARCH_APPLIED_PREDICATE: "observation",
     RESEARCH_TRIAL_PREDICATE: "observation",
     RESEARCH_STUDIED_PREDICATE: "observation",
