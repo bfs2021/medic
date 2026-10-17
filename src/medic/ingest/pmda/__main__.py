@@ -40,7 +40,10 @@ def _records_for_approval(
     drug_rec: dict, approval: dict, drug_id: str, drug_label: str, service,
 ) -> tuple[list[dict], bool]:
     """Indication records for ONE approval statement. Returns (records, had_review_url)."""
-    from medic.ingest.dailymed.__main__ import extract_diseases_from_text
+    from medic.ingest.dailymed.__main__ import (
+        extract_diseases_from_text,
+        record_claim_context,
+    )
     from medic.ingest.pmda.review_lookup import lookup_review
 
     ind_text = (approval.get("snippet") or "").strip()
@@ -68,8 +71,8 @@ def _records_for_approval(
         diseases = []
 
     out: list[dict] = []
-    for _extracted in diseases:
-        disease_name, disease_verbatim = _extracted.name, _extracted.verbatim
+    for _claim in diseases:
+        disease_name, disease_verbatim = _claim.target, _claim.target_verbatim
         record: dict = {}
         try:
             disease_id = resolve_disease_onto_record(record, disease_name, service)
@@ -101,6 +104,7 @@ def _records_for_approval(
             "original_disease_label": disease_name,
             "original_disease_verbatim": disease_verbatim,
         }
+        record_claim_context(evidence_item, _claim)
         if original_drug_id:
             evidence_item["original_drug_id"] = original_drug_id
         # Distinguishes the approvals of one ingredient, so the merge treats each as its own
@@ -302,8 +306,8 @@ def _build_pmda_contraindication_records(
         approval_date = drug_rec.get("approval_date", "") or ""
         original_drug_id = (drug_rec.get("yj_code", "") or "").strip() or None
 
-        for _extracted in diseases:
-            disease_name, disease_verbatim = _extracted.name, _extracted.verbatim
+        for _claim in diseases:
+            disease_name, disease_verbatim = _claim.target, _claim.target_verbatim
             record: dict = {}
             try:
                 disease_id = resolve_disease_onto_record(record, disease_name, service)

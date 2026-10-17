@@ -38,7 +38,10 @@ KB_INDICATIONS_DIR = Path("kb/indications/india")
 
 def _build_india_indication_records(grounded_drugs: list[dict], grounding_backend: str) -> list[dict]:
     """Extract structured India indications from grounded drug records."""
-    from medic.ingest.dailymed.__main__ import extract_diseases_from_text
+    from medic.ingest.dailymed.__main__ import (
+        extract_diseases_from_text,
+        record_claim_context,
+    )
 
     service = get_grounding_service(grounding_backend)
     indication_records: list[dict] = []
@@ -64,8 +67,8 @@ def _build_india_indication_records(grounded_drugs: list[dict], grounding_backen
             diseases = []
         if diseases:
             drugs_with_indications += 1
-        for _extracted in diseases:
-            disease_name, disease_verbatim = _extracted.name, _extracted.verbatim
+        for _claim in diseases:
+            disease_name, disease_verbatim = _claim.target, _claim.target_verbatim
             try:
                 result = service.ground_disease_best(disease_name)
             except Exception as e:
@@ -97,6 +100,7 @@ def _build_india_indication_records(grounded_drugs: list[dict], grounding_backen
                 "original_disease_label": disease_name,
                 "original_disease_verbatim": disease_verbatim,
             }
+            record_claim_context(evidence_item, _claim)
             if approval_date:
                 evidence_item["approval_date"] = approval_date
             indication_records.append({

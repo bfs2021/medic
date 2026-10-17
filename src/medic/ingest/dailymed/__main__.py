@@ -159,6 +159,32 @@ def is_homeopathic(root: ET.Element) -> bool:
     return False
 
 
+
+def record_claim_context(evidence: dict, claim) -> None:
+    """Write the label's own account of a claim onto its evidence row.
+
+    What kind of relation it is, who owns it, and the context it is restricted to — the
+    fields the flat disease list could not carry. All declared on `EvidenceItem` and mapped
+    to Biolink qualifiers at export: `disease_context_qualifier`,
+    `population_context_qualifier`, `temporal_context_qualifier` (#88, #89, #90, #99).
+
+    Only non-default values are written, so a plain product-level `treats` claim adds
+    nothing and the products do not grow by a column of constants.
+    """
+    if claim.predicate != "treats":
+        evidence["claim_predicate"] = claim.predicate
+    if claim.attributed_to != "product":
+        evidence["claim_attributed_to"] = claim.attributed_to
+        evidence["claim_attribution_basis"] = claim.basis
+    if claim.disease_context:
+        evidence["disease_context"] = [name for name, _quote in claim.disease_context]
+    if claim.population:
+        evidence["population_context"] = claim.population
+    if claim.temporal_context:
+        evidence["temporal_context"] = claim.temporal_context
+    if claim.co_administered_with:
+        evidence["co_administered_with"] = list(claim.co_administered_with)
+
 def _row_from_spl_root(root: ET.Element) -> dict | None:
     """Build a mined row dict from an already-parsed SPL XML root, or None.
 
@@ -736,9 +762,9 @@ def _screen_negated_indications(
 
 
 def _screen_negated_contraindications(
-    diseases: list[Extracted], contraindication_text: str, source: str,
+    diseases: list[Claim], contraindication_text: str, source: str,
     parts: list[str] | None = None,
-) -> list[Extracted]:
+) -> list[Claim]:
     """The contraindication-side screen, which did not exist at all (issue #59).
 
     Opposite polarity to the indication screen: here "contraindicated in X" is the claim,
@@ -748,10 +774,10 @@ def _screen_negated_contraindications(
     """
     from medic.validation.extraction_fidelity import screen_contraindications
 
-    by_name = {e.name: e for e in diseases}
+    by_name = {c.target: c for c in diseases}
     result = screen_contraindications(
-        [e.name for e in diseases], contraindication_text, source=source, parts=parts,
-        verbatims={e.name: e.verbatim for e in diseases if e.verbatim})
+        [c.target for c in diseases], contraindication_text, source=source, parts=parts,
+        verbatims={c.target: c.target_verbatim for c in diseases if c.target_verbatim})
     for d in result.dropped:
         logger.warning(
             "Dropping non-contraindication %r (cue: %r) — source states the condition is "
@@ -886,7 +912,7 @@ def extract_diseases_from_text(
 def extract_contraindicated_diseases_from_text(
     contraindication_text: str, *, source: str = "DAILYMED",
     parts: list[str] | None = None,
-) -> list[Extracted]:
+) -> list[Claim]:
     """Extract disease names from contraindication free text via LLM.
 
     Sister to `extract_diseases_from_text`, but tuned for contraindication
@@ -913,8 +939,7 @@ def extract_contraindicated_diseases_from_text(
     cached = cache.get(key)
     if cached is not None:
         return _screen_negated_contraindications(
-            _decode_extractions(cached.get("diseases")), contraindication_text,
-            source, parts)
+            _claims_from_cache(cached), contraindication_text, source, parts)
 
     if should_skip_expensive_calls():
         _note_skipped_uncached("contraindication")
@@ -952,17 +977,17 @@ def extract_contraindicated_diseases_from_text(
             "or 'None' if no specific conditions are present."
         ),
     )
-    diseases = _parse_llm_disease_list(text)
+    # One shape for both extractors. The contraindication prompt is still the flat one,
+    # so these are plain `treats`-shaped claims attributed to the product until #97 gives
+    # it the structured form too — but a single type means an ingester loop cannot unpack
+    # the wrong fields, which is exactly what broke when the two diverged.
+    claims = parse_structured_claims(text)
 
-    # Cache the RAW extraction (faithful to the LLM); screen on return.
-    cache.put(
-        key,
-        {"diseases": _encode_extractions(diseases),
-         "text_prefix": contraindication_text[:200]},
-    )
+    # Cache the RAW answer; the parser may improve and re-parsing a string is free.
+    cache.put(key, {"raw": text, "text_prefix": contraindication_text[:200]})
     _checkpoint(cache)
     return _screen_negated_contraindications(
-        diseases, contraindication_text, source, parts)
+        claims, contraindication_text, source, parts)
 
 
 def is_allergen_or_diagnostic(drug_name: str) -> dict:
@@ -1123,9 +1148,9 @@ def _process_spl_data(
                                    set_id, exc)
                     diseases = []
                     _context_only = set()
-                for _extracted in diseases:
+                for _claim in diseases:
                     disease_name, disease_verbatim = (
-                        _extracted.name, _extracted.verbatim)
+                        _claim.target, _claim.target_verbatim)
                     record: dict = {}
                     disease_id, disease_label = _ground_disease(
                         disease_name, grounding_backend, record
@@ -1171,6 +1196,7 @@ def _process_spl_data(
                         # dropped — a preposition is weak evidence for deleting a row.
                         evidence_item["context_only_disease"] = True
                     evidence_item["original_disease_verbatim"] = disease_verbatim
+                    record_claim_context(evidence_item, _claim)
 
                     record.update(
                         {
@@ -1203,9 +1229,9 @@ def _process_spl_data(
                     logger.warning("Contraindication extraction failed for setid %s (%s); skipping.",
                                    set_id, exc)
                     contra_diseases = []
-                for _extracted in contra_diseases:
+                for _claim in contra_diseases:
                     disease_name, disease_verbatim = (
-                        _extracted.name, _extracted.verbatim)
+                        _claim.target, _claim.target_verbatim)
                     record = {}
                     disease_id, disease_label = _ground_disease(
                         disease_name, grounding_backend, record
@@ -1236,6 +1262,7 @@ def _process_spl_data(
                     contra_evidence["original_disease_label"] = disease_name
                     contra_evidence["label_ingredient_count"] = len(drug_names)
                     contra_evidence["original_disease_verbatim"] = disease_verbatim
+                    record_claim_context(contra_evidence, _claim)
 
                     record.update(
                         {

@@ -197,7 +197,10 @@ def _build_ema_indication_records(grounded_drugs: list[dict], grounding_backend:
     (reusing the DailyMed function), grounds each disease to MONDO, and emits an
     indication record with EPAR URL as the regulatory document reference.
     """
-    from medic.ingest.dailymed.__main__ import extract_diseases_from_text
+    from medic.ingest.dailymed.__main__ import (
+        extract_diseases_from_text,
+        record_claim_context,
+    )
     from medic.grounding.factory import get_grounding_service
     from medic.ingest.grounding import flush_disease_grounding, resolve_disease_onto_record
 
@@ -240,9 +243,9 @@ def _build_ema_indication_records(grounded_drugs: list[dict], grounding_backend:
                 diseases = []
             if diseases:
                 drugs_with_indications += 1
-            for _extracted in diseases:
+            for _claim in diseases:
                 disease_name, disease_verbatim = (
-                    _extracted.name, _extracted.verbatim)
+                    _claim.target, _claim.target_verbatim)
                 record: dict = {}
                 try:
                     disease_id = resolve_disease_onto_record(record, disease_name, service)
@@ -265,6 +268,7 @@ def _build_ema_indication_records(grounded_drugs: list[dict], grounding_backend:
                     "original_disease_label": disease_name,
                     "original_disease_verbatim": disease_verbatim,
                 }
+                record_claim_context(evidence_item, _claim)
                 ema_product_number = (drug_rec.get("ema_product_number", "") or "").strip()
                 if ema_product_number:
                     evidence_item["original_drug_id"] = ema_product_number
@@ -354,6 +358,7 @@ def _extract_contraindications(
     """
     from medic.ingest.dailymed.__main__ import (
         extract_contraindicated_diseases_from_text,
+        record_claim_context,
     )
     from medic.ingest.grounding import flush_disease_grounding, resolve_disease_onto_record
 
@@ -421,8 +426,8 @@ def _extract_contraindications(
             )
 
         pdf_url = _PRODUCT_INFO_URL_TEMPLATE.format(slug=slug)
-        for _extracted in diseases:
-            disease_name, disease_verbatim = _extracted.name, _extracted.verbatim
+        for _claim in diseases:
+            disease_name, disease_verbatim = _claim.target, _claim.target_verbatim
             record: dict = {}
             try:
                 disease_id = resolve_disease_onto_record(record, disease_name, service)
@@ -452,6 +457,7 @@ def _extract_contraindications(
                 "reference": epar_url,
                 "source_document_url": pdf_url,
             }
+            record_claim_context(evidence_item, _claim)
             ema_product_number = (drug_rec.get("ema_product_number", "") or "").strip()
             if ema_product_number:
                 evidence_item["original_drug_id"] = ema_product_number
