@@ -3,38 +3,18 @@
 Running ledger for the #88–#100 execution. Anything deliberately not done, blocked, or owed.
 Updated as work lands. Companion to `plan.md`, which holds the sequence.
 
-## 1. Comments drafted, not posted
+## 1. Comments — all posted 2026-10-17
 
-The `gh issue comment` hook blocks me, so every one of these needs Nico to run it. Files are
-untracked scratch in the repo root.
+All 16 are on the tracker: #64, #65, #66, #68, #88, #89, #90, #91, #92, #93, #94, #95, #96,
+#97, #99, #100. The local `comment_issue*.md` drafts were deleted after posting; the text
+lives on the issues now.
 
-| issue | file | state |
-|---|---|---|
-| #64 | `comment_issue64_rebuild.md` | ready |
-| #65 | `comment_issue65_correction2.md` | ready |
-| #66 | `comment_issue66_demote.md` | ready |
-| #68 | `comment_issue68_close.md` | ready |
-| #92 | `comment_issue92_homeopathic.md` | ready |
-| #93 | `comment_issue93_negated_treats.md` | ready |
-| #99 | `comment_issue99_predicates.md` | ready |
-| #100 | `comment_issue100_truncation.md` | ready |
-| #91 | `comment_issue91_reliability.md` | ready |
-| #94 | `comment_issue94_nodenorm.md` | ready |
-| #95 | `comment_issue95_moieties.md` | ready |
-| #96 | `comment_issue96_disease_nodes.md` | ready |
-| #88 | `comment_issue88_combination.md` | ready |
-| #89 | `comment_issue89_population_target.md` | ready |
-| #90 | `comment_issue90_qualifiers.md` | ready |
-| #97 | `comment_issue97_contraindications.md` | ready |
+Two of them are corrections to figures given earlier in this thread: #65's severity (the
+regex counted "is not indicated for" as positive, inflating it) and #68's projection (stated
+three times before settling — 207, then 1,122, then 119).
 
-All 16 are written. None posted.
-
-```bash
-gh issue comment <n> --repo monarch-initiative/medic --body-file comment_issue<n>_*.md
-```
-
-Nothing has been posted for any of #88–#100. Issues #59–#62 and #64–#68 are also all still
-open on the tracker; none were closed.
+**No issue was closed.** #59–#62 and #64–#68 are all still open, and closing is Nico's call,
+not something the comments did.
 
 ## 2. Declined or narrowed on purpose
 
