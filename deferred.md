@@ -359,3 +359,55 @@ cached on the section-text hash.
 This is a spending decision, not a bug fix, so it is Nico's call — see the question put to
 him. A cheaper targeted variant exists: broaden only for drugs whose single label yielded
 0–2 indications, which is where the loss concentrates.
+
+## 11. Two method errors of mine, and what they cost
+
+Recording these because both produced confident wrong answers that survived a while.
+
+### Bypassing I-8 "fixed" a grounding gap that was not a gap
+
+`a1f1572` added a retry in `_ground_drug`: strip salt/hydration words, re-ask. TENOFOVIR
+ANHYDROUS started grounding, so it looked right. Reverted in `8204e0f`.
+
+- It fixed nothing the grounder was not already doing. `salt_ester_strip` is an existing
+  `PreprocessingRuleEnum` rule and `anhydrous` is already in its token list.
+- The real reason the match failed is that `tenofovir` is in the index only as a
+  `relatedSynonym`, of **three** objects. The cascade declined an ambiguous weak match.
+- The retry then returned a *fourth* id the cascade had refused, recorded under a mention
+  minted from the **stripped** string — so the store would show `TENOFOVIR -> CHEBI:45809`
+  with nothing saying the label actually read `TENOFOVIR ANHYDROUS`. Not replayable from the
+  record, which is exactly what I-8 forbids.
+
+The lesson is the one CLAUDE.md already states: a transform that earns a match goes in the
+enum and the SSSOM store, never in a caller. Done properly for the one subclass that was a
+genuine bug — `srs_greek_encoding` (`80c4af2`), 51 occurrences recovered.
+
+### Reimplementing the matcher's logic gave the wrong policy recommendation
+
+I classified ungroundable moieties by reading `match_field` out of the index, concluded the
+fix was "accept unambiguous `relatedSynonym`", and wrote that into the issue. Then I called
+the real grounder over 418 moieties:
+
+| | |
+|---|---|
+| ground successfully | 395 (94.5%) |
+| fail | 23 |
+| — **absent from the index entirely** | **20** |
+| — ambiguous `relatedSynonym` only | 2 |
+| — strong match yet still rejected | 1 |
+
+**Accepting unambiguous `relatedSynonym` recovers zero.** HYDROCORTISONE looked like a
+`relatedSynonym`-only failure in my classification and grounds fine in reality, which is the
+tell that the classification was wrong. The remaining gap is vocabulary coverage — vaccine
+antigen components, ferric/cupric cation, a couple of acids — not match-class policy.
+
+Issue `issues/issue_recall_gap_phase4.md` has been corrected; it previously recommended the
+useless fix.
+
+## 12. Architecture doc brought level (`588d8c3`, `8204e0f`)
+
+It still described one SPL per drug, bare disease-name extraction and a three-part merge key.
+Now covers acquisition breadth with its measured cost, the structured claim contract (§5.8),
+the reliability gates (§5.9), `just audit-regression` (§5.10), the UNII xrefs and the
+reliability export. This is the document external collaborators read, and CLAUDE.md asks for
+it to track pipeline changes.
