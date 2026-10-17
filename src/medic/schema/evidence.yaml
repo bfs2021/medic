@@ -414,6 +414,76 @@ classes:
         range: string
         description: >-
           Source-side disease identifier when the source carries one. Optional.
+      original_disease_verbatim:
+        range: string
+        description: >-
+          The source's own wording for the disease, copied character-for-character from the
+          text the extractor was shown. `original_disease_label` holds the LLM's
+          *canonicalised* name, which 12% of the time appears nowhere in the document — so
+          the negation screen could not locate it and `char_start`/`char_end` could not be
+          computed. This is the half that is present by construction (#64). Empty when the
+          model ignored the format or the answer predates the verbatim contract.
+      label_ingredient_count:
+        range: integer
+        description: >-
+          How many active moieties the source label lists. The extraction runs once per
+          ingredient over the same section text, so a count above 1 means this claim could
+          be a fan-out of a partner ingredient's indication — pairs supported only by
+          multi-ingredient labels are 65% wrong (#88). Read by the reliability attribution
+          gate. Absent for sources that do not publish an ingredient list.
+      context_only_disease:
+        range: boolean
+        description: >-
+          True when this disease is named only behind a context preposition ("in patients
+          with", "associated with", "following") while a sibling disease from the same
+          section is a plain target — so it is the population or setting, not what the drug
+          treats (#89). Decided at ingest, where the siblings are in hand. Recorded rather
+          than acted on destructively; the reliability context gate caps the claim at LOW.
+      claim_predicate:
+        range: string
+        description: >-
+          The relation the label states between drug and target condition — treats,
+          prevents, reduces_risk_of, maintenance or diagnoses. Every indication edge used to
+          ship as `biolink:treats`, so a graph asked "what treats pertussis?" answered with
+          the vaccine (#99). Mapped to a Biolink predicate at export.
+      claim_attributed_to:
+        range: string
+        description: >-
+          The ingredient the label credits with this claim, or the literal `product`. Labels
+          almost never attribute to a component, so `product` is both the default and the
+          commonest value; an ingredient name means the text made it the subject (#88).
+      claim_attribution_basis:
+        range: string
+        description: >-
+          How `claim_attributed_to` was decided — component_phrase, ingredient_subject,
+          because_of, when_used_as_component, subheading or product_level. Lets a reader
+          tell an explicit "the naproxen component ..." from the default assumption that a
+          product owns its own claim.
+      disease_context:
+        range: string
+        multivalued: true
+        description: >-
+          Conditions the patient must already have for this claim to apply — "PAH
+          *associated with* congenital heart disease", "prophylaxis *in patients with* AML".
+          Promoted to the object on 13.1% of edges, the largest single error class, or else
+          dropped entirely (#89, #90). Emitted as Biolink `disease_context_qualifier`.
+      population_context:
+        range: string
+        description: >-
+          The population the claim is restricted to — age group, sex, pregnancy, transplant
+          recipient. Emitted as Biolink `population_context_qualifier` (#90).
+      temporal_context:
+        range: string
+        description: >-
+          Timing or procedural context — "post-MI", "following hip replacement", "after
+          initial 6 months". Emitted as Biolink `temporal_context_qualifier` (#90).
+      co_administered_with:
+        range: string
+        multivalued: true
+        description: >-
+          Drugs the claim is conditioned on being given alongside. Kept off the condition
+          itself because a co-administration clause read as the contraindicated condition is
+          what produces the aliskiren/diabetes self-clashes (#93, #97).
       page_or_section:
         range: string
         description: >-
