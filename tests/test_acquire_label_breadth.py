@@ -126,3 +126,59 @@ def test_a_single_label_run_still_trusts_the_old_cache(tmp_path, monkeypatch):
     counts = aq.acquire(data_dir=tmp_path / "raw", delay=0, labels_per_drug=1)
     assert counts["cached_hit"] == 1
     assert counts["resolved"] == 1
+
+
+# ---------------------------------------------------------------------------
+# Query names: every candidate, generic first
+# ---------------------------------------------------------------------------
+def test_both_the_generic_label_and_the_source_strings_are_queried(tmp_path):
+    """The drug list holds product-style strings that DailyMed's `drug_name` index does not
+    match — "Lansoprazole Enteric-Coated Capsules" returns nothing where "lansoprazole"
+    returns 20 setids. Taking the first `source_ingredients` string and stopping meant 1,074
+    of 2,591 names (41%) resolved to no SPL at all, and lansoprazole's labels were never
+    requested. So broadening to 20 setids per *name* recovered its indications on paper and
+    not in fact.
+
+    The generic label is emitted first because it is what DailyMed indexes; the source
+    strings follow, because a brand or salt spelling occasionally hits where the generic
+    misses.
+    """
+    import yaml
+
+    from medic.ingest.dailymed.acquire import _usa_drug_names
+
+    path = tmp_path / "drug_list.yaml"
+    path.write_text(yaml.dump({"drugs": [{
+        # `drug_label` reads identity.resolved_label, not a flat `label`.
+        "identity": {"resolved_id": "CHEBI:6375", "resolved_label": "lansoprazole"},
+        "source_ingredients": ["Lansoprazole Enteric-Coated Capsules"],
+        "approvals": [{"authority": "FDA", "approved": True}],
+    }]}))
+
+    names = _usa_drug_names(path)
+    assert "lansoprazole" in names, names
+    assert "Lansoprazole Enteric-Coated Capsules" in names, names
+    assert names.index("lansoprazole") < names.index(
+        "Lansoprazole Enteric-Coated Capsules"), "generic name must be tried first"
+
+
+def test_a_name_is_not_queried_twice(tmp_path):
+    """Each extra name is an extra HTTP request, so duplicates must collapse — including
+    across drugs, and case-insensitively, since the query is case-insensitive anyway."""
+    import yaml
+
+    from medic.ingest.dailymed.acquire import _usa_drug_names
+
+    path = tmp_path / "drug_list.yaml"
+    approved = [{"authority": "FDA", "approved": True}]
+    path.write_text(yaml.dump({"drugs": [
+        {"identity": {"resolved_id": "CHEBI:1", "resolved_label": "aspirin"},
+         # Differs from the label only in case: the same query, so it must not be emitted.
+         "source_ingredients": ["ASPIRIN"], "approvals": approved},
+        {"identity": {"resolved_id": "CHEBI:2", "resolved_label": "ibuprofen"},
+         # Shared with the first drug in spirit — a repeat across drugs must also collapse.
+         "source_ingredients": ["aspirin", "IBUPROFEN SODIUM"], "approvals": approved},
+    ]}))
+    names = _usa_drug_names(path)
+    assert sorted(n.lower() for n in names) == [
+        "aspirin", "ibuprofen", "ibuprofen sodium"], names

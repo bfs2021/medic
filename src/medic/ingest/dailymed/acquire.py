@@ -66,10 +66,21 @@ def _get_cache() -> EnrichmentCache:
 
 
 def _usa_drug_names(drug_list_path: Path, limit: int = 0) -> list[str]:
-    """Return distinct USA-approved drug names from the merged drug list.
+    """Return distinct USA-approved drug query names from the merged drug list.
 
-    Prefers the raw ``source_ingredients`` strings (upstream label spelling,
-    best DailyMed query hits) and falls back to ``curie_label``.
+    **Every** candidate name per drug, not one representative. The previous version took the
+    first `source_ingredients` string and `break`ed, on the stated assumption that upstream
+    label spelling gives the best DailyMed hits. For a large minority it gives none: the drug
+    list holds product-style strings like "Lansoprazole Enteric-Coated Capsules", which
+    DailyMed's `drug_name` index does not match, while `curie_label` is "lansoprazole", which
+    it does. 1,074 of 2,591 names (41%) returned no SPL at all, and lansoprazole's 20 labels
+    were never requested — which is why broadening to 20 setids per name recovered its
+    indications on paper and not in fact.
+
+    `curie_label` comes first because the normalized generic name is what DailyMed indexes;
+    the source strings follow, since a brand or salt spelling occasionally hits where the
+    generic misses. Querying both is cheap — list lookups cost no LLM calls, and duplicate
+    setids collapse on the filename.
     """
     if not drug_list_path.exists():
         logger.warning("Merged drug list not found: %s", drug_list_path)
@@ -83,18 +94,17 @@ def _usa_drug_names(drug_list_path: Path, limit: int = 0) -> list[str]:
         if "FDA" not in pv.approved_authorities(d):
             continue
         candidates: list[str] = []
-        ingredients = d.get("source_ingredients") or []
-        if isinstance(ingredients, list):
-            candidates.extend(str(x) for x in ingredients if x)
         label = pv.drug_label(d)
         if label:
             candidates.append(str(label))
+        ingredients = d.get("source_ingredients") or []
+        if isinstance(ingredients, list):
+            candidates.extend(str(x) for x in ingredients if x)
         for name in candidates:
             key = name.strip().lower()
             if key and key not in seen:
                 seen.add(key)
                 names.append(name.strip())
-                break  # one representative name per drug is enough
     if limit > 0:
         names = names[:limit]
     logger.info("Selected %d USA-approved drug names to acquire", len(names))
