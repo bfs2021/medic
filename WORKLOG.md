@@ -127,6 +127,61 @@ measurement scripts so the honest version is the easy one to get — `just audit
 
 ---
 
+## Final scorecard (2026-10-18, pass 5)
+
+Every fix in, full pipeline run, both validations passing.
+
+### Quality — much better
+
+| | v1 (medic-ingest) | now |
+|---|---:|---:|
+| error rate overall | 25.8% | — |
+| **error rate at HIGH** | no usable tier | **5.5%** |
+| audited errors remaining at HIGH | — | **8 of 76** |
+| audited-correct kept | 222 | 177/221 (80.1%) |
+
+Of the 76 audited errors: 56 gone, 13 capped at LOW, 2 MEDIUM, 8 still HIGH. Both error
+classes v2 had *introduced* are closed — `FP1_setting` 28 → 3 at HIGH, `FP6_coingredient`
+15 → 1.
+
+### Volume — much higher
+
+| | before this stretch | now |
+|---|---:|---:|
+| KGX edges | 12,140 | **87,353** |
+| indication pairs | 8,541 | **21,553** |
+| drugs | 4,323 | **4,882** |
+| `preventative_for_condition` | 1,115 | **9,085** |
+| `diagnoses` | 139 | **888** |
+| SPL labels read | 1,976 | **18,261** |
+| India records | 112 | **3,243** |
+
+### Coverage vs v1 — six sources above, two below
+
+```
+[OK ] drug_list_flexible   v1= 3883  now= 4882  (+999)
+[OK ] drug_list_stringent  v1= 2836  now= 3266  (+430)
+[OK ] orangebook           v1= 2666  now= 2725   (+59)
+[OK ] purplebook           v1=  602  now=  642   (+40)
+[OK ] ema                  v1=  949  now=  995   (+46)
+[OK ] russia               v1= 1831  now= 5885 (+4054)
+[LOW] pmda                 v1= 1200  now= 1174   (-26)
+[LOW] india                v1= 3118  now= 2759  (-359)
+```
+
+### The one number that is not Pareto
+
+**Effective v1 drug coverage: 2,520/3,883 (64.9%)** — up from 61.8%, but it means 1,363 of
+v1's drugs are still not in the export *even though we now carry 999 more drugs than v1 did*.
+We have more drugs, but not a superset. By v1's own approval flags the remainder is
+**410 usa, 338 india, 244 russia, 56 japan**.
+
+So the verdict is **near-Pareto, not Pareto**: dramatically better quality, substantially more
+volume, every source but two at or above v1, and a residual set of ~1,363 v1 drugs we do not
+carry. Closing that is source-coverage work, not identity work — the RxNorm addition moved it
+only 1.3 points (+412 drug-list rows, 284 RXCUI nodes), which is the measurement that settles
+the question of whether identifiers were the problem. They were not.
+
 ## Standing state
 
 - **Pass 3** (every fix except RxNorm) running since 09:01 on 18,261 labels.
