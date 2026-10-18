@@ -458,3 +458,63 @@ fields so `just determinism` keeps meaning something.
 - **#94's ontology pinning** and the one-drug-two-ids case (docetaxel still has `CHEBI:4672`
   and `CHEBI:755540`).
 - **EMA/PMDA/India attribution** — they call the extractors without an ingredient list.
+
+## 16. Phase 4 rebuild, pass 1 — results and the bug it exposed
+
+Completed 04:49. Labels 1,976 → **10,835**; 16,204 new LLM calls; every step exit 0;
+`validate-all` and `validate-kgx` both pass.
+
+| | before | pass 1 |
+|---|---:|---:|
+| DailyMed indication records | 6,012 | **34,381** |
+| DailyMed contraindication records | 2,458 | **14,028** |
+| merged indication pairs | 8,541 | **14,770** |
+| merged contraindication pairs | 2,014 | **3,366** |
+| KGX edges | 12,140 | **48,178** |
+| `treats` / `contraindicated_in` | 8,486 / 2,382 | 30,057 / 13,619 |
+| `preventative_for_condition` / `diagnoses` | 1,115 / 139 | 4,021 / 472 |
+| HIGH share | 66.0% | 62.3% |
+
+Audit regression: correct kept **171/221 (77.4%)**, up from 166 (75.1%); wrong removed 56/79
+(70.9%), down from 58; survivor error rate 11.9% against 11.2%.
+
+### Read that audit number carefully
+
+**The audit cannot see the recall this bought.** Its 221 correct edges are a fixed sample of
+pairs that existed in `47dd0b7`; broadening acquisition adds pairs that were never in the
+sample. So the harness measures *retention and precision*, not absolute recall, and a 73%
+increase in pairs moves it by 2.3 points. Both numbers are right and they answer different
+questions. Any claim about recall growth has to come from the pair counts or from Kevin's
+`recall_gap_candidates.tsv`, not from this harness.
+
+### Only 5 of the 55 lost edges came back — and that exposed the real bottleneck
+
+lansoprazole → GERD was still missing. After acquiring 10,835 labels, exactly **2** carried
+LANSOPRAZOLE as an active moiety, and **1 of its 20 setids** was on disk.
+
+Cause: `_usa_drug_names` took the first `source_ingredients` string and `break`ed. The drug
+list holds product-style strings — "Lansoprazole Enteric-Coated Capsules", "… Orally
+Disintegrating Tablets", "… for Injection" — which DailyMed's `drug_name` index does not
+match, while `curie_label` is "lansoprazole", which does and returns 20 setids. **1,074 of
+2,591 names (41%) resolved to no SPL at all**, so those drugs' labels were never requested
+under any name. Broadening to 20 setids per *name* was therefore inert for them.
+
+Fixed in `ad0f3a4`: every candidate is queried, generic label first. 2,591 → **5,008** names.
+Pass 2 is running.
+
+### A trap that cost me a wrong diagnosis
+
+`cache/enrichment/dailymed_setids.json` is written by **two** modules — `acquire` and
+`ingest.dailymed.setid_lookup` — and the latter writes the old single-`setid` shape. Reading
+that file after an ingest shows 1,606 single-setid entries and zero `setids` lists, which
+looks exactly like "the cache migration never ran". It had run; the ingest overwrote the file
+afterwards. Recorded in the commit message too.
+
+### Grounding losses scale with the label set
+
+240 labels (was 70) now lose every indication to ungroundable moieties, across 293 distinct
+names (was 107): DEXTROSE x32, IODINE x31, FERRIC CATION x25, THIAMINE x23, PHENYLBUTYRIC
+ACID x18, TENOFOVIR ANHYDROUS x17. The per-label rate is unchanged, so this is the same
+vocabulary-coverage gap costing proportionally more — and it is now the largest single
+mechanical loss in the pipeline. `issues/issue_recall_gap_phase4.md` holds the three classes
+and what each needs.
