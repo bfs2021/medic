@@ -119,9 +119,17 @@ def fetch_all_pdfs(force: bool = False) -> list[dict]:
     html = fetch_landing_page(force=force)
     entries = extract_pdf_entries(html)
     out = []
+    # The listing carries more entries than distinct years — 39 entries over 32 years at the
+    # time of writing, because some years have a main list plus an "additional approvals"
+    # supplement. Naming purely by year made those collide, so the second download
+    # overwrote the first and the supplement was lost. Suffix the duplicates.
+    used: dict[str, int] = {}
     for entry in entries:
         year = entry["year"] or 0
-        filename = f"india_{year}.pdf" if year else f"india_{abs(hash(entry['url'])) % 10**8}.pdf"
+        stem = f"india_{year}" if year else f"india_{abs(hash(entry['url'])) % 10**8}"
+        n = used.get(stem, 0)
+        used[stem] = n + 1
+        filename = f"{stem}.pdf" if n == 0 else f"{stem}_{n + 1}.pdf"
         dest = RAW_DIR / filename
         try:
             download_pdf(entry["url"], dest, force=force)
