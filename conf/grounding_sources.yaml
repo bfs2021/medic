@@ -9,10 +9,10 @@ diseases:
 drugs:
   - {prefix: CHEBI, loader: obo_json, path: cache/ontologies/chebi.json}
   - {prefix: DRON, loader: obo_json, path: cache/ontologies/dron.json}
-  # RxNorm ingredients, from an OMOP/ATHENA vocabulary download. Only `vocabulary_id ==
-  # RxNorm` is read — the bundle's SNOMED/MedDRA content is licence-gated and deliberately
-  # never touched (see the loader's licensing note and LICENSING.md). Absent file is a
-  # warning, not an error, so a checkout without the download still builds.
-  - {prefix: RXCUI, loader: omop_rxnorm, member: CONCEPT.csv,
-     path: background/omop_vocabulary.zip}
+  # RxNorm ingredients, from a committed table (3 columns, 0.7MB) so the index is
+  # reproducible from a checkout. Regenerate against a newer OMOP/ATHENA release with
+  # scripts/build_rxnorm_table.py; only that script needs the 1GB dump. The table carries
+  # RxNorm content only — the bundle's SNOMED/MedDRA is excluded at extraction time, see
+  # LICENSING.md.
+  - {prefix: RXCUI, loader: omop_rxnorm, path: data/vocab/rxnorm_ingredients.tsv}
   # PR dropped: +15 groundings only (drug names are chemicals, not proteins).

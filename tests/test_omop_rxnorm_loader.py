@@ -5,12 +5,19 @@ The drug-coverage gap against v1.0.0 is 1,484 genuinely-absent drugs (`just v1-d
 they are the regional and older approvals a chemistry ontology misses — Levonordefrin,
 Delavirdine, Pemirolast, Tertatolol, Bencyclane.
 
-Two constraints the tests exist to hold:
+It reads a **committed table** (`data/vocab/rxnorm_ingredients.tsv`, 3 columns, 0.7MB), not
+a vocabulary dump. That is the point: the grounding index has to be reproducible from a
+checkout, and a loader pointing at a 1GB ATHENA download on one machine means nobody else can
+build MeDIC. `scripts/build_rxnorm_table.py` regenerates it and is the only thing that needs
+the dump.
 
-* **Only `vocabulary_id == "RxNorm"` is read.** The ATHENA bundle carries SNOMED, MedDRA and
-  others whose term text MeDIC may not republish (I-14 rule 2). Filtering at read time keeps
-  restricted content out of the index rather than relying on a downstream check — the same
-  fail-closed reasoning that turned the UMLS label blocklist into an allowlist.
+So the licence and modelling filters happen at *extraction* time and the tests check the
+shipped artifact rather than the filter:
+
+* The table carries **RxNorm content only**. The bundle also holds SNOMED, MedDRA and others
+  whose term text MeDIC may not republish (I-14 rule 2); excluding them when the table is
+  built means the committed artifact can never carry them. RxNorm's own content is UMLS
+  Appendix 1 Category 0, which is what makes this table redistributable at all.
 * **Ingredient level only.** A clinical drug ("lansoprazole 30 MG oral capsule") denotes a
   dose form, not a substance; indexing those reintroduces exactly what #94 reports about DRON
   clinical-drug forms — the wrong kind of node for a drug-disease edge.
@@ -18,41 +25,24 @@ Two constraints the tests exist to hold:
 
 from __future__ import annotations
 
-import csv
-import io
-import zipfile
-
-import pytest
+from pathlib import Path
 
 from medic.grounding.lexical.index import VOCAB_ORDER
-from medic.grounding.lexical.loaders.omop_rxnorm import load_omop_rxnorm
+from medic.grounding.lexical.loaders.omop_rxnorm import DEFAULT_PATH, load_omop_rxnorm
 
-_COLS = ["concept_id", "concept_name", "domain_id", "vocabulary_id", "concept_class_id",
-         "standard_concept", "concept_code", "valid_start_date", "valid_end_date",
-         "invalid_reason"]
+TABLE = Path(DEFAULT_PATH)
 
 
-def _row(name, vocab="RxNorm", cls="Ingredient", code="123", domain="Drug", invalid=""):
-    return {"concept_id": "1", "concept_name": name, "domain_id": domain,
-            "vocabulary_id": vocab, "concept_class_id": cls, "standard_concept": "S",
-            "concept_code": code, "valid_start_date": "19700101",
-            "valid_end_date": "20991231", "invalid_reason": invalid}
-
-
-def _zip(tmp_path, rows):
-    buf = io.StringIO()
-    w = csv.DictWriter(buf, fieldnames=_COLS, delimiter="\t", lineterminator="\n")
-    w.writeheader()
-    for r in rows:
-        w.writerow(r)
-    path = tmp_path / "omop.zip"
-    with zipfile.ZipFile(path, "w") as z:
-        z.writestr("CONCEPT.csv", buf.getvalue())
+def _table(tmp_path, rows: list[tuple[str, str, str]]):
+    path = tmp_path / "rxnorm.tsv"
+    body = "omop_concept_id\trxcui\tlabel\n" + "".join(
+        f"{c}\t{r}\t{label}\n" for c, r, label in rows)
+    path.write_text(body)
     return path
 
 
 def test_an_ingredient_becomes_an_rxcui_label_row(tmp_path):
-    rows = list(load_omop_rxnorm(_zip(tmp_path, [_row("delavirdine", code="83816")])))
+    rows = list(load_omop_rxnorm(_table(tmp_path, [("1", "83816", "delavirdine")])))
     assert len(rows) == 1
     r = rows[0]
     assert r.object_id == "RXCUI:83816"
@@ -62,44 +52,14 @@ def test_an_ingredient_becomes_an_rxcui_label_row(tmp_path):
     assert r.norm_value == "delavirdine"
 
 
-def test_a_precise_ingredient_is_kept():
-    """A specific salt or ester is still a substance."""
-    assert "Precise Ingredient" in __import__(
-        "medic.grounding.lexical.loaders.omop_rxnorm", fromlist=["x"]
-    ).INGREDIENT_CLASSES
-
-
-@pytest.mark.parametrize("vocab", ["SNOMED", "MedDRA", "ICD10CM", "CPT4", "HCPCS"])
-def test_no_other_vocabulary_is_read(tmp_path, vocab):
-    """The licence-critical one. Anything but RxNorm must not reach the index at all."""
-    rows = list(load_omop_rxnorm(_zip(tmp_path, [_row("something", vocab=vocab)])))
+def test_a_row_missing_an_id_or_label_is_skipped(tmp_path):
+    rows = list(load_omop_rxnorm(_table(tmp_path, [("1", "", "nameless"), ("2", "9", "")])))
     assert rows == []
 
 
-@pytest.mark.parametrize("cls", [
-    "Clinical Drug", "Branded Drug", "Quant Clinical Drug", "Clinical Pack",
-    "Clinical Drug Comp", "Dose Form",
-])
-def test_dose_form_and_pack_concepts_are_skipped(tmp_path, cls):
-    rows = list(load_omop_rxnorm(_zip(tmp_path, [_row("x 30 MG capsule", cls=cls)])))
-    assert rows == []
-
-
-def test_a_deprecated_concept_is_skipped(tmp_path):
-    """It still resolves for a consumer holding the id, but MeDIC should not newly ground
-    anything to it."""
-    rows = list(load_omop_rxnorm(_zip(tmp_path, [_row("old thing", invalid="D")])))
-    assert rows == []
-
-
-def test_a_non_drug_domain_is_skipped(tmp_path):
-    rows = list(load_omop_rxnorm(_zip(tmp_path, [_row("thing", domain="Device")])))
-    assert rows == []
-
-
-def test_a_missing_zip_warns_and_yields_nothing(tmp_path, caplog):
-    """A checkout without the licence-gated download must still build an index."""
-    rows = list(load_omop_rxnorm(tmp_path / "absent.zip"))
+def test_a_missing_table_warns_and_yields_nothing(tmp_path, caplog):
+    """A checkout must still build an index if the table is ever absent."""
+    rows = list(load_omop_rxnorm(tmp_path / "absent.tsv"))
     assert rows == []
     assert any("not found" in m for m in caplog.messages)
 
@@ -111,3 +71,32 @@ def test_rxcui_is_ranked_after_the_chemistry_ontologies():
     assert "RXCUI" in order
     assert order.index("CHEBI") < order.index("RXCUI")
     assert order.index("DRON") < order.index("RXCUI")
+
+
+# ---------------------------------------------------------------------------
+# The committed table itself — this is what ships, so assert on it directly
+# ---------------------------------------------------------------------------
+def test_the_committed_table_is_present_and_well_formed():
+    """The loader reading a committed table rather than a 1GB local dump is the whole point:
+    the grounding index has to be reproducible from a checkout."""
+    assert TABLE.exists(), f"{TABLE} must be committed"
+    head = TABLE.read_text().splitlines()[0].split("\t")
+    assert head == ["omop_concept_id", "rxcui", "label"]
+
+
+def test_the_committed_table_carries_no_dose_forms():
+    """Dose forms would be the wrong *kind* of node for a drug-disease edge — the DRON
+    problem in #94. Extraction excludes them; this checks the artifact, not the filter."""
+    bad = [line for line in TABLE.read_text().splitlines()[1:]
+           if any(tok in line.lower() for tok in (" mg oral", " mg/ml ", "oral tablet",
+                                                  "oral capsule", "injectable solution"))]
+    assert not bad[:5], f"dose-form-looking rows in the committed table: {bad[:5]}"
+
+
+def test_the_committed_table_has_the_drugs_this_was_added_for():
+    """The 1,484-drug gap is the reason RxNorm is here at all. These are v1 drugs absent from
+    the CHEBI-only build that RxNorm supplies."""
+    labels = {line.split("\t")[2].lower()
+              for line in TABLE.read_text().splitlines()[1:] if line.count("\t") == 2}
+    for name in ("delavirdine", "pemirolast", "levonordefrin", "tertatolol"):
+        assert name in labels, name

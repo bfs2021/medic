@@ -1,41 +1,37 @@
-"""Loader for RxNorm ingredient concepts, streamed from an OMOP/ATHENA vocabulary zip.
+"""Loader for RxNorm ingredient concepts from the committed vocabulary table.
 
-**Why RxNorm.** The drug-coverage gap against v1.0.0 is 1,484 drugs that are genuinely
-absent rather than merely re-identified (`just v1-drug-gap`), and 589 of them were
-identified by RXCUI in v1. 276 of the 1,484 resolve to an RXCUI on an exact ingredient-name
-match, and they are exactly the regional and older approvals the CHEBI cascade misses —
-Levonordefrin, Delavirdine, Pemirolast, Prothipendyl, Tertatolol, Bencyclane. RxNorm also
-indexes the US-label spellings an SPL actually uses, which is where a chemistry ontology is
-weakest.
+**Why RxNorm.** The drug-coverage gap against v1.0.0 is 1,484 drugs that are genuinely absent
+rather than merely re-identified (`just v1-drug-gap`), and 589 of them were identified by
+RXCUI in v1. 276 of the 1,484 resolve to an RXCUI on an exact ingredient-name match, and they
+are exactly the regional and older approvals the CHEBI cascade misses — Levonordefrin,
+Delavirdine, Pemirolast, Prothipendyl, Tertatolol, Bencyclane. RxNorm also indexes the
+US-label spellings an SPL actually uses, which is where a chemistry ontology is weakest.
 
-**Scoped to `vocabulary_id == "RxNorm"`, deliberately.** The ATHENA bundle also carries
-SNOMED, MedDRA and other vocabularies whose term text MeDIC may not republish (I-14 rule 2).
-Filtering here keeps restricted content out of the index entirely rather than relying on a
-downstream check to catch it — the same reasoning that turned the UMLS label blocklist into
-an allowlist.
+**Reads a committed table, not a vocabulary dump.** `data/vocab/rxnorm_ingredients.tsv` holds
+three columns — OMOP concept id, RXCUI, label — for 18,279 ingredient concepts, 0.7MB. The
+grounding index has to be reproducible from a checkout, and a loader pointing at a 1GB ATHENA
+download on one machine is not: nobody else could build MeDIC. `scripts/build_rxnorm_table.py`
+regenerates the table against a newer release and is the only thing that needs the dump.
 
-**Licensing decision (record in LICENSING.md alongside any change here).** RxNorm is produced
-by the US National Library of Medicine. RxNorm's own content — RXCUIs and RxNorm normalized
-names — carries no additional use or redistribution restriction (UMLS licence category 0),
-so ingredient names may be published as `object_label`. This does *not* extend to the other
-vocabularies in the bundle, which is why the filter is on `vocabulary_id` and not on
-`domain_id` alone.
+**What the table deliberately excludes**, decided at extraction time rather than here so the
+committed artifact can never carry it:
 
-**Ingredient level only.** A clinical drug ("lansoprazole 30 MG oral capsule") denotes a dose
-form, not a substance, and indexing those would reintroduce exactly the problem #94 reports
-for DRON clinical-drug forms: the wrong *kind* of node for a drug-disease edge, which nothing
-else in the graph joins to. "Precise Ingredient" is kept because a specific salt or ester is
-still a substance.
-
-CONCEPT.csv is ~1GB inside the zip and is streamed, never extracted.
+* Anything but `vocabulary_id == "RxNorm"`. The ATHENA bundle also carries SNOMED, MedDRA and
+  other vocabularies whose term text MeDIC may not republish (I-14 rule 2). RxNorm's own
+  content is UMLS Appendix 1 Category 0 — no additional restriction — which is what makes
+  this table redistributable at all. See LICENSING.md.
+* Dose forms and packs. A clinical drug ("lansoprazole 30 MG oral capsule") denotes a form,
+  not a substance, and indexing those reintroduces what #94 reports about DRON clinical-drug
+  forms: the wrong kind of node for a drug-disease edge. `Precise Ingredient` is kept, since a
+  specific salt or ester is still a substance.
+* Deprecated concepts. They still resolve for a consumer holding the id, but MeDIC should not
+  newly ground anything to one.
 """
 
 from __future__ import annotations
 
 import csv
-import io
 import logging
-import zipfile
 from collections.abc import Iterator
 from pathlib import Path
 
@@ -44,68 +40,41 @@ from medic.grounding.lexical.preprocess import base_normalize
 
 logger = logging.getLogger(__name__)
 
-#: Substance-level RxNorm classes. Everything else in RxNorm is a dose form or a pack.
-INGREDIENT_CLASSES = frozenset({"Ingredient", "Precise Ingredient"})
-
-#: The one vocabulary in the bundle this loader will read. See the licensing note above.
-VOCABULARY = "RxNorm"
+DEFAULT_PATH = "data/vocab/rxnorm_ingredients.tsv"
 
 
 def load_omop_rxnorm(
-    path: str | Path, member: str = "CONCEPT.csv", prefix: str = "RXCUI",
+    path: str | Path = DEFAULT_PATH, prefix: str = "RXCUI", **_: object,
 ) -> Iterator[LexRow]:
-    """Yield one ``label`` row per valid RxNorm ingredient concept.
+    """Yield one ``label`` row per RxNorm ingredient in the committed table.
 
-    Only labels: RxNorm synonyms live in CONCEPT_SYNONYM.csv, which is a separate 215MB file
-    and a separate licensing assessment, so they are deliberately not pulled in here.
+    Labels only. RxNorm synonyms are a separate 215MB file in the dump and a separate
+    licensing assessment, so they are deliberately not included.
     """
     path = Path(path)
     if not path.exists():
         logger.warning(
-            "OMOP vocabulary zip not found at %s; RxNorm will be absent from the index. "
-            "Download it from athena.ohdsi.org (RxNorm is sufficient; the bundle's other "
-            "vocabularies are not read).", path,
+            "RxNorm table not found at %s; RxNorm will be absent from the index. "
+            "Regenerate it with scripts/build_rxnorm_table.py.", path,
         )
         return
 
-    kept = skipped_vocab = skipped_class = skipped_invalid = skipped_domain = 0
-    with zipfile.ZipFile(path) as zf, zf.open(member) as fh:
-        text = io.TextIOWrapper(fh, encoding="utf-8", errors="replace", newline="")
-        for row in csv.DictReader(text, delimiter="\t"):
-            if row.get("vocabulary_id") != VOCABULARY:
-                skipped_vocab += 1
-                continue
-            if row.get("concept_class_id") not in INGREDIENT_CLASSES:
-                skipped_class += 1
-                continue
-            # A deprecated concept still resolves for a consumer who already has the id, but
-            # MeDIC should not newly ground anything to it.
-            if (row.get("invalid_reason") or "").strip():
-                skipped_invalid += 1
-                continue
-            # RxNorm carries a few ingredient concepts in non-Drug domains (Device, mostly
-            # product-ish entries). Those are not drugs and should not be groundable as one.
-            if row.get("domain_id") != "Drug":
-                skipped_domain += 1
-                continue
-            code = (row.get("concept_code") or "").strip()
-            name = (row.get("concept_name") or "").strip()
-            if not code or not name:
+    kept = 0
+    with path.open(newline="") as fh:
+        for row in csv.DictReader(fh, delimiter="\t"):
+            rxcui = (row.get("rxcui") or "").strip()
+            label = (row.get("label") or "").strip()
+            if not rxcui or not label:
                 continue
             kept += 1
             yield LexRow(
-                object_id=f"{prefix}:{code}",
-                object_label=name,
-                string_value=name,
-                raw_value=name.strip(),
-                norm_value=base_normalize(name),
+                object_id=f"{prefix}:{rxcui}",
+                object_label=label,
+                string_value=label,
+                raw_value=label,
+                norm_value=base_normalize(label),
                 match_field="label",
                 synonym_scope="exact",
                 source_prefix=prefix,
             )
-
-    logger.info(
-        "RxNorm: %d ingredient concepts indexed (skipped %d non-RxNorm, %d non-ingredient, "
-        "%d deprecated, %d non-Drug domain)",
-        kept, skipped_vocab, skipped_class, skipped_invalid, skipped_domain,
-    )
+    logger.info("RxNorm: %d ingredient concepts indexed from %s", kept, path)
