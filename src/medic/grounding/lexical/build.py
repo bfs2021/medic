@@ -20,6 +20,11 @@ def _iter_source(entry: dict):
     elif loader == "icd10cm":
         from medic.grounding.lexical.loaders.icd10cm import load_icd10cm
         yield from load_icd10cm(entry["path"], entry["prefix"])
+    elif loader == "omop_rxnorm":
+        from medic.grounding.lexical.loaders.omop_rxnorm import load_omop_rxnorm
+        yield from load_omop_rxnorm(
+            entry["path"], member=entry.get("member", "CONCEPT.csv"),
+            prefix=entry.get("prefix", "RXCUI"))
     else:
         raise ValueError(f"unknown loader {loader!r}")
 

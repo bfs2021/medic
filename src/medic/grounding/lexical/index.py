@@ -13,7 +13,11 @@ from dataclasses import dataclass
 
 VOCAB_ORDER = {
     "diseases": ["MONDO", "HP", "ICD10CM", "UMLS"],
-    "drugs": ["CHEBI", "DRON", "PR", "UniProt"],
+    # RXCUI last on purpose: it is a clinical-terminology identifier, so CHEBI's chemistry
+    # is preferred wherever it matches, and RxNorm fills the regional and older approvals
+    # the ontologies do not carry. The matcher is vocabulary-major, so this ordering is what
+    # actually decides ties (#94).
+    "drugs": ["CHEBI", "DRON", "PR", "UniProt", "RXCUI"],
 }
 
 COLS = ("object_id", "object_label", "string_value", "raw_value", "norm_value",

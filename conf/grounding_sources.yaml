@@ -9,4 +9,10 @@ diseases:
 drugs:
   - {prefix: CHEBI, loader: obo_json, path: cache/ontologies/chebi.json}
   - {prefix: DRON, loader: obo_json, path: cache/ontologies/dron.json}
+  # RxNorm ingredients, from an OMOP/ATHENA vocabulary download. Only `vocabulary_id ==
+  # RxNorm` is read — the bundle's SNOMED/MedDRA content is licence-gated and deliberately
+  # never touched (see the loader's licensing note and LICENSING.md). Absent file is a
+  # warning, not an error, so a checkout without the download still builds.
+  - {prefix: RXCUI, loader: omop_rxnorm, member: CONCEPT.csv,
+     path: background/omop_vocabulary.zip}
   # PR dropped: +15 groundings only (drug names are chemicals, not proteins).
