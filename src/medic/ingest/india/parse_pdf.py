@@ -21,23 +21,19 @@ import pdfplumber
 
 logger = logging.getLogger(__name__)
 
-#: Table-detection strategies, tried in order, best yield per page wins.
+#: Ruled-border table detection. Deliberately the only strategy.
 #:
-#: "lines" needs ruled cell borders. The CDSCO annual lists are text-aligned tables whose
-#: ruling is partial or absent, so on a sampled page it found 8-13 rows where "text" found
-#: 56-85. The whole India source was producing 112 records against the 3,118 of v1.0.0 —
-#: a 96% shortfall — because every page was being read with the stricter strategy only.
-#:
-#: Both are kept rather than swapping, because "lines" is the more precise of the two where
-#: ruling does exist, and a per-page choice costs one extra extraction call on a few hundred
-#: pages.
-_TABLE_STRATEGIES = (
-    {"vertical_strategy": "lines", "horizontal_strategy": "lines"},
-    {"vertical_strategy": "text", "horizontal_strategy": "text"},
-)
+#: pdfplumber's "text" strategy finds far more raw rows on these pages (56-85 against 8-13)
+#: and every one of them is a fragment: it splits on whitespace alignment and clips at fixed
+#: character positions, so a 2025 page yields names like "&Letermovir Ta" and "240mg and 480"
+#: with the dates lost entirely. More rows, no records. The real shortfall was never the
+#: strategy — it was that continuation pages were being skipped whole (see parse_india_pdf).
+_TABLE_SETTINGS = {
+    "vertical_strategy": "lines",
+    "horizontal_strategy": "lines",
+}
 
-#: Back-compat alias; some callers/tests referenced the single-settings name.
-_TABLE_SETTINGS = _TABLE_STRATEGIES[0]
+_TABLE_STRATEGIES = (_TABLE_SETTINGS,)
 
 
 def _clean_cell(value: str | None) -> str:
@@ -99,17 +95,9 @@ def parse_india_pdf(pdf_path: Path, default_year: int = 0) -> list[dict]:
     carried_cols: dict[str, int] | None = None
     with pdfplumber.open(pdf_path) as pdf:
         for page_idx, page in enumerate(pdf.pages):
-            # Try each strategy and keep the one yielding the most *parsed records* for this
-            # page — not the most raw rows, since a strategy can shred a page into many
-            # unusable fragments. Per page, because one PDF mixes layouts.
-            best: list[dict] = []
-            best_cols: dict[str, int] | None = None
-            for settings in _TABLE_STRATEGIES:
-                got, used = _records_from_tables(
-                    page.extract_tables(settings) or [], page_idx, default_year,
-                    inherited_cols=carried_cols)
-                if len(got) > len(best):
-                    best, best_cols = got, used
+            best, best_cols = _records_from_tables(
+                page.extract_tables(_TABLE_SETTINGS) or [], page_idx, default_year,
+                inherited_cols=carried_cols)
             records.extend(best)
             # A multi-page table repeats its header only on the first page, so continuation
             # pages have none and were skipped whole — which is why only page 1 of each PDF

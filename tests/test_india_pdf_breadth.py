@@ -1,36 +1,31 @@
-"""The CDSCO annual lists are text-aligned tables spanning many pages.
+"""The CDSCO annual lists are multi-page tables; only page one was being read.
 
 India shipped **112** drugs where v1.0.0's `india.csv` had **3,118** — the largest
-single-source regression in the rebuild, and the one Nico flagged as concerning. Two causes,
-both in the PDF reader rather than anywhere downstream:
+single-source regression in the rebuild.
 
-1. **The table strategy required ruled borders.** `vertical_strategy: "lines"` finds 8-13
-   rows on a sampled page where `"text"` finds 56-85, because the ruling in these documents
-   is partial or absent.
-2. **Continuation pages were skipped whole.** A multi-page table repeats its header only on
-   the first page, and a table with no recognised header was `continue`d past — so only page
-   one of each PDF produced anything. india_2019.pdf has 5 pages of ~76 rows and yielded 7
-   records.
+The cause is one line. A multi-page table repeats its header only on the first page, and a
+table with no recognised header was `continue`d past, so every continuation page was
+discarded whole. india_2019.pdf has five pages of ~27 usable rows and yielded 27 records
+total. Carrying the column map forward from the last page that had a header takes the source
+to **1,048 records**, with clean names, complete indications and correct dates.
 
-Fixed: both strategies are tried per page and the better *record* yield wins (not the better
-raw-row yield, since a strategy can shred a page into unusable fragments), and the column map
-from the last page that had a header is carried forward.
+**What did not work, recorded so it is not retried.** pdfplumber's "text" table strategy
+finds far more raw rows on these pages — 56-85 against 8-13 — and every one is a fragment:
+it splits on whitespace alignment and clips at fixed character positions, producing names
+like "&Letermovir Ta" and "240mg and 480" with the dates lost entirely. Selecting the
+strategy by record count actively prefers it, because shredding a page produces more rows.
+That would have shipped 2,133 fragments in place of 112 good records, which is worse than
+the regression it was meant to fix. An existing test (`test_parse_india_pdf_extracts_records`)
+caught it, on the dates.
 
-Result: 112 -> 2,132 records, 1,793 unique drug names, 1,434 carrying an indication. Spot
-checks are genuine pairs — omeprazole -> duodenal ulcer, cidofovir -> CMV retinitis,
-alpelisib -> metastatic breast cancer.
-
-What is still short of v1: ~3,118 vs 2,132. `india_2014.pdf` legitimately contributes zero —
-it is a different document ("Preliminary List of Products Permitted ... for BA/BE Studies")
-with no Indication column at all, so the header check correctly rejects it.
+india_2014.pdf still contributes zero, correctly: it is a different document, a BA/BE
+reference-product list with no Indication column, so the header check rejects it rather than
+coercing it into drug-indication pairs.
 """
 
 from __future__ import annotations
 
-from medic.ingest.india.parse_pdf import (
-    _TABLE_STRATEGIES,
-    _records_from_tables,
-)
+from medic.ingest.india.parse_pdf import _TABLE_SETTINGS, _records_from_tables
 
 _HEADER = ["S.No", "Name of drug", "Indication", "Date of issue"]
 _ROW_A = ["1.", "Alpelisib tablets", "metastatic breast cancer", "04.02.2019"]
@@ -82,12 +77,11 @@ def test_a_table_whose_header_has_no_indication_column_is_rejected():
     assert cols is None
 
 
-def test_both_strategies_are_configured_and_lines_is_tried_first():
-    """`lines` is the more precise where ruling exists, so it keeps priority; `text` is the
-    fallback that recovers the unruled majority."""
-    assert len(_TABLE_STRATEGIES) == 2
-    assert _TABLE_STRATEGIES[0]["vertical_strategy"] == "lines"
-    assert _TABLE_STRATEGIES[1]["vertical_strategy"] == "text"
+def test_only_the_ruled_strategy_is_used():
+    """Pins the decision not to add pdfplumber's "text" strategy. It finds more rows and
+    every one is a fragment; see the module docstring."""
+    assert _TABLE_SETTINGS["vertical_strategy"] == "lines"
+    assert _TABLE_SETTINGS["horizontal_strategy"] == "lines"
 
 
 def test_an_empty_or_header_only_table_yields_nothing():
