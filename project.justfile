@@ -619,6 +619,14 @@ compare-release release="v1.0.0" output="docs/v1_comparison_report.md":
 audit-regression audit="fp_audit.json" show="0":
   uv run python scripts/audit_regression.py --audit {{audit}} --show-lost {{show}}
 
+# How many of a reference release's drugs are genuinely absent vs merely re-identified.
+# The curie overlap `compare-release` prints is an id-string join and reads much worse than
+# reality; this separates "we lost the drug" from "we call it something else".
+# Needs tmp/old_release/, which `just compare-release` downloads.
+[group('QC')]
+v1-drug-gap:
+  uv run python scripts/v1_drug_gap.py
+
 # ============== Utility ==============
 
 # List all drugs in the merged drug list
