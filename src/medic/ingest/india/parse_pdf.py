@@ -21,10 +21,23 @@ import pdfplumber
 
 logger = logging.getLogger(__name__)
 
-_TABLE_SETTINGS = {
-    "vertical_strategy": "lines",
-    "horizontal_strategy": "lines",
-}
+#: Table-detection strategies, tried in order, best yield per page wins.
+#:
+#: "lines" needs ruled cell borders. The CDSCO annual lists are text-aligned tables whose
+#: ruling is partial or absent, so on a sampled page it found 8-13 rows where "text" found
+#: 56-85. The whole India source was producing 112 records against the 3,118 of v1.0.0 —
+#: a 96% shortfall — because every page was being read with the stricter strategy only.
+#:
+#: Both are kept rather than swapping, because "lines" is the more precise of the two where
+#: ruling does exist, and a per-page choice costs one extra extraction call on a few hundred
+#: pages.
+_TABLE_STRATEGIES = (
+    {"vertical_strategy": "lines", "horizontal_strategy": "lines"},
+    {"vertical_strategy": "text", "horizontal_strategy": "text"},
+)
+
+#: Back-compat alias; some callers/tests referenced the single-settings name.
+_TABLE_SETTINGS = _TABLE_STRATEGIES[0]
 
 
 def _clean_cell(value: str | None) -> str:
@@ -83,50 +96,87 @@ def _parse_date(date_str: str, default_year: int = 0) -> str:
 def parse_india_pdf(pdf_path: Path, default_year: int = 0) -> list[dict]:
     """Extract approval records from a single CDSCO annual PDF."""
     records: list[dict] = []
+    carried_cols: dict[str, int] | None = None
     with pdfplumber.open(pdf_path) as pdf:
         for page_idx, page in enumerate(pdf.pages):
-            tables = page.extract_tables(_TABLE_SETTINGS) or []
-            for table in tables:
-                if not table or len(table) < 2:
-                    continue
-                header_idx = None
-                for i, row in enumerate(table[:3]):
-                    if row and _is_header_row(row):
-                        header_idx = i
-                        break
-                if header_idx is None:
-                    continue
-                cols = _identify_columns(table[header_idx])
-                if "name" not in cols or "indication" not in cols:
-                    continue
-                for row in table[header_idx + 1 :]:
-                    if not row or all((c or "").strip() == "" for c in row):
-                        continue
-                    name = _clean_cell(row[cols["name"]] if cols["name"] < len(row) else "")
-                    if not name or name.lower() in ("s.no.", "s.no"):
-                        continue
-                    indication = _clean_cell(
-                        row[cols["indication"]] if cols["indication"] < len(row) else ""
-                    )
-                    date_cell = _clean_cell(
-                        row[cols["date"]] if cols.get("date", -1) < len(row) and cols.get("date", -1) >= 0 else ""
-                    )
-                    approval_date = _parse_date(date_cell, default_year=default_year)
-                    sno = _clean_cell(
-                        row[cols["sno"]] if cols.get("sno", -1) < len(row) and cols.get("sno", -1) >= 0 else ""
-                    )
-                    records.append({
-                        "source": "INDIA",
-                        "source_name": name,
-                        "indication": indication,
-                        "snippet": indication,
-                        "approval_date": approval_date,
-                        "serial_no": sno,
-                        "page_index": page_idx,
-                        "source_year": default_year,
-                    })
+            # Try each strategy and keep the one yielding the most *parsed records* for this
+            # page — not the most raw rows, since a strategy can shred a page into many
+            # unusable fragments. Per page, because one PDF mixes layouts.
+            best: list[dict] = []
+            best_cols: dict[str, int] | None = None
+            for settings in _TABLE_STRATEGIES:
+                got, used = _records_from_tables(
+                    page.extract_tables(settings) or [], page_idx, default_year,
+                    inherited_cols=carried_cols)
+                if len(got) > len(best):
+                    best, best_cols = got, used
+            records.extend(best)
+            # A multi-page table repeats its header only on the first page, so continuation
+            # pages have none and were skipped whole — which is why only page 1 of each PDF
+            # produced anything. Carry the mapping forward.
+            if best_cols:
+                carried_cols = best_cols
     logger.info("Parsed %d records from %s (year=%s)", len(records), pdf_path.name, default_year)
     return records
+
+
+def _records_from_tables(
+    tables: list, page_idx: int, default_year: int,
+    inherited_cols: dict[str, int] | None = None,
+) -> tuple[list[dict], dict[str, int] | None]:
+    """Parse one page's tables into records, and return the column map that worked.
+
+    ``inherited_cols`` is the mapping found on an earlier page of the same PDF, used when a
+    table carries no header of its own — the continuation-page case.
+    """
+    records: list[dict] = []
+    cols_used: dict[str, int] | None = None
+    for table in tables:
+        # Two rows minimum only when a header is expected. With an inherited column map a
+        # single-row continuation table is valid data — the last page of a long table often
+        # carries one row.
+        if not table or len(table) < (1 if inherited_cols else 2):
+            continue
+        header_idx = None
+        for i, row in enumerate(table[:3]):
+            if row and _is_header_row(row):
+                header_idx = i
+                break
+        if header_idx is None:
+            if not inherited_cols:
+                continue
+            cols, first_data = inherited_cols, 0
+        else:
+            cols = _identify_columns(table[header_idx])
+            first_data = header_idx + 1
+        if "name" not in cols or "indication" not in cols:
+            continue
+        cols_used = cols
+        for row in table[first_data:]:
+            if not row or all((c or "").strip() == "" for c in row):
+                continue
+            name = _clean_cell(row[cols["name"]] if cols["name"] < len(row) else "")
+            if not name or name.lower() in ("s.no.", "s.no"):
+                continue
+            indication = _clean_cell(
+                row[cols["indication"]] if cols["indication"] < len(row) else ""
+            )
+            d = cols.get("date", -1)
+            date_cell = _clean_cell(row[d] if 0 <= d < len(row) else "")
+            approval_date = _parse_date(date_cell, default_year=default_year)
+            n = cols.get("sno", -1)
+            sno = _clean_cell(row[n] if 0 <= n < len(row) else "")
+            records.append({
+                "source": "INDIA",
+                "source_name": name,
+                "indication": indication,
+                "snippet": indication,
+                "approval_date": approval_date,
+                "serial_no": sno,
+                "page_index": page_idx,
+                "source_year": default_year,
+            })
+    return records, cols_used
 
 
 def parse_all_pdfs(pdf_dir: Path) -> list[dict]:

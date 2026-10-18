@@ -1201,7 +1201,9 @@ def _ground_disease(
     return disease_id, target["final_normalized_disease_label"]
 
 
-def _ground_drug(drug_name: str, grounding_backend: str) -> tuple[str, str]:
+def _ground_drug(
+    drug_name: str, grounding_backend: str, unii: str = ""
+) -> tuple[str, str]:
     """Ground a drug name to (CURIE, label) via the grounding cascade.
 
     Reuses the process-cached grounding service (via ``_get_grounding_service``) so the
@@ -1217,6 +1219,27 @@ def _ground_drug(drug_name: str, grounding_backend: str) -> tuple[str, str]:
         drug_name, mention_id=mint_mention_id(drug_name, "drugs"))
     if result:
         return result.id, result.label
+
+    # Nothing matched. If the label itself states a UNII for this moiety, use it rather than
+    # dropping the drug — and with it the whole label, since the ingest loop skips before
+    # extraction.
+    #
+    # This is the CURIE-coverage fix. Only 41.2% of v1.0.0's drug curies survive into the
+    # current export and 2,285 of its 3,883 drugs are absent, because the pipeline narrowed to
+    # CHEBI/DRON while v1 identified many drugs by UNII, RXCUI or DRUGBANK. A UNII costs
+    # nothing to obtain (the SPL asserts it on `<activeMoiety><code>`), never changes, and the
+    # SRI Node Normalizer resolves it — so it is a usable identity for a drug the lexical
+    # cascade cannot place, and mappings to CHEBI can follow later.
+    #
+    # Provenance needs no new machinery: with no decision in the grounding store, the merge
+    # already records the chain as `source_asserted` — "the source supplied the identifier and
+    # MeDIC made no grounding decision of its own ... NOT a verified match" — and the
+    # reliability gate caps a source_asserted grounding at MEDIUM. So these ship as
+    # usable-but-unverified rather than masquerading as matched, which is the honest tier for
+    # an id nobody checked.
+    if unii:
+        return f"UNII:{unii}", drug_name.lower()
+
     # No local retry with a mangled string. An earlier version stripped salt/hydration words
     # here and re-asked, which looked like it fixed `TENOFOVIR ANHYDROUS`. It did not: the
     # grounder's own `salt_ester_strip` rule already strips "anhydrous", and the match was
@@ -1255,7 +1278,8 @@ def _process_spl_data(
 
         # Ground each drug
         for drug_name in drug_names:
-            drug_id, drug_label = _ground_drug(drug_name, grounding_backend)
+            drug_id, drug_label = _ground_drug(
+                drug_name, grounding_backend, unii=unii_map.get(drug_name, ""))
             if not drug_id:
                 # Counted, not whispered: this discards the whole label's indications.
                 _note_ungroundable_drug(drug_name)
