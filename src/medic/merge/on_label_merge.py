@@ -11,6 +11,7 @@ from pathlib import Path
 import yaml
 
 from medic import product_view as pv
+from medic.enabler_partners import WRONG_PAIRING, enabler_class
 from medic.grounding_store_view import GroundingStoreView
 from medic.mention import mint_mention_id
 from medic.confidence import corroboration
@@ -1276,6 +1277,16 @@ def _build_disease_provenance(
         if rel == "INDICATION":
             negated, claim_flags = _polarity_flags(
                 raw, check_text, spans, span_index, verbatim)
+    # A class rule, not a text rule: an enabler partner (beta-lactamase inhibitor,
+    # cilastatin, cobicistat) never owns a treatment indication, so an INDICATION on one is
+    # the combination partner's claim credited to the wrong active moiety (FAILURE_MODES
+    # 5.4, #88). The text supports the claim perfectly — for the product. The flag is what
+    # a reader sees; `reliability._enabler_gate` applies the same verdict at score time.
+    drug_mention = assoc.get("drug") if isinstance(assoc.get("drug"), dict) else {}
+    if rel == "INDICATION" and enabler_class(
+            drug_mention.get("resolved_label") or drug_mention.get("original_literal")):
+        if WRONG_PAIRING not in claim_flags:
+            claim_flags.append(WRONG_PAIRING)
     warrant = _warrant_for(warrants or {}, record.get("source") or "", section_code, rel)
     assertion = build_assertion(
         supporting_quote=snippet or raw,

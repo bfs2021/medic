@@ -225,9 +225,12 @@ enums:
       **Which of these the pipeline emits:** `negated_inversion`, `over_extraction` and
       `polarity_unverified` from `on_label_merge._polarity_flags`, `wrong_section` from
       `build_assertion` when the only cue in the quote contradicts the recorded relation.
-      `wrong_pairing` has no detector — deciding which active moiety of a combination label
-      a relation attaches to needs the hyperrelational context pass, not a lexical rule — so
-      it is curator-supplied.
+      `wrong_pairing` has one narrow detector: the enabler-partner class rule
+      (`mappings/enabler_partners.tsv`, #88) flags an INDICATION whose drug is a
+      beta-lactamase inhibitor, cilastatin or cobicistat — ingredients that never own a
+      treatment indication, so the claim is the combination partner's. Deciding which active
+      moiety a relation attaches to in general needs the hyperrelational context pass, not a
+      lexical rule, so outside that class the flag remains curator-supplied.
     permissible_values:
       negated_inversion:
         description: The source states the relation negatively; recording it positively inverts the claim (4.1/4.2).
