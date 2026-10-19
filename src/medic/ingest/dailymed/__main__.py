@@ -55,8 +55,23 @@ PRODUCTS_DIR = Path("products")
 # v3 = the structured-claim contract (#88/#89/#90/#99). The prompt asks for seven fields
 # per claim instead of a name and a quote, so a v2 answer cannot be upgraded without asking
 # again. New files, so the v2 answers stay on disk and a rollback re-extracts nothing.
-DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_claims_v3.json")
-CONTRA_DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_contra_claims_v3.json")
+#: Extraction cache generation. Bumped whenever the prompt changes in a way that would make
+#: a cached answer wrong rather than merely older, because the key is the section-text hash
+#: and does **not** include the prompt — so nothing else invalidates a stale answer.
+#:
+#: v3 -> v4 (2026-10-19). The v3 file was not internally consistent: it accumulated across
+#: roughly five prompt revisions during one long rebuild, including entries written while
+#: `max_tokens` was still 500. At that limit a long indication section truncated mid-record,
+#: and the parser tolerates a short final record, so every claim after the cut vanished
+#: silently — #100's failure arriving by a second route. Raising the limit fixed it forward
+#: and never invalidated the rows already written under it.
+#:
+#: Measured before paying for this: re-extracting 40 of the affected labels recovered 60.3%
+#: of the v1.0.0 pairs they carry — 42.5% as a full target edge (piperacillin -> urinary
+#: tract infection, quazepam -> insomnia, panitumumab -> metastatic colorectal cancer), 17.8%
+#: as a grounded disease context. v3 is kept on disk; nothing paid for is discarded.
+DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_claims_v4.json")
+CONTRA_DISEASE_CACHE_PATH = Path("cache/enrichment/dailymed_contra_claims_v4.json")
 ALLERGEN_CACHE_PATH = Path("cache/enrichment/dailymed_allergen.json")
 
 
