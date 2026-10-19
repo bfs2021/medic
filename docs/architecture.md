@@ -288,10 +288,14 @@ The indication pipeline extracts drug-disease associations from regulatory drug 
 
 The DailyMed ingest (`src/medic/ingest/dailymed/`) is the primary USA indication source. The pipeline:
 
-1. **Acquire** — `acquire.py` fetches one representative SPL XML per USA-approved drug from the
-   DailyMed v2 REST API (`spls.json?drug_name=<NAME>` → most-recent setid → `spls/<setid>.xml`),
-   driven by `products/drug_list.yaml`, into `data/raw/dailymed/<setid>.xml`. Resumable; a few hundred
-   MB rather than the tens-of-GB bulk release. Run via `just ingest-dailymed-acquire`.
+1. **Acquire** — `acquire.py` fetches up to three representative SPL XMLs per USA-approved drug from
+   the DailyMed v2 REST API (`spls.json?drug_name=<NAME>&doctype=<human Rx | human OTC>` → ranked
+   setids → `spls/<setid>.xml`), driven by `products/drug_list.yaml`, into
+   `data/raw/dailymed/<setid>.xml`. Hits are ranked (single-ingredient over combination, Rx over OTC,
+   systemic over topical/ophthalmic, plain over liposomal/extended-release, then most recent) and only
+   labels with an Indications section are kept — "most recent of 20" used to pick ER hydromorphone,
+   liposomal doxorubicin and veterinary ivermectin (#98). Resumable; a few hundred MB rather than the
+   tens-of-GB bulk release. Run via `just ingest-dailymed-acquire`.
 2. **Mine** — `mine_spl_labels` parses each SPL XML, pulling the Indications & Usage section
    (LOINC 34067-9) and Contraindications section (LOINC 34070-3) text plus active-moiety names and the
    setid (from the `<setId root=...>` attribute). It also reads bulk-release `*.zip` archives if present.
