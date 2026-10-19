@@ -2718,7 +2718,7 @@
   grounding:
     components:
     - CHEBI:757077
-    - CHEBI:234517
+    - RXCUI:1999382
     - CHEBI:759626
     confidence: 1.0
     grounded_id: CHEBI:757077
@@ -8192,8 +8192,8 @@
   grounding:
     components:
     - CHEBI:66901
-    - CHEBI:234517
-    - CHEBI:234518
+    - RXCUI:1999382
+    - RXCUI:2256951
     confidence: 1.0
     grounded_id: CHEBI:66901
     grounded_label: ivacaftor
@@ -8908,13 +8908,13 @@
   ema_product_number: EMEA/H/C/003985
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/opdivo
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:231614
-    grounded_label: Nivolumab
+    confidence: 1.0
+    grounded_id: RXCUI:1597876
+    grounded_label: nivolumab
     grounding_quality: lexical_exact
     original_string: nivolumab
     subject_id: MEDICNE:6c54afd6-a6d5-50c8-9606-72fc324a87b5
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Melanoma  Opdivo as monotherapy or in combination with ipilimumab is
@@ -9075,12 +9075,12 @@
   mention_id: MEDICNE:6c54afd6-a6d5-50c8-9606-72fc324a87b5
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:231614
-    normalized_label: Nivolumab
-    original_id: CHEBI:231614
+    normalized_id: RXCUI:1597876
+    normalized_label: nivolumab
+    original_id: RXCUI:1597876
     tool: medic-normalizer/1
-  normalized_id: CHEBI:231614
-  normalized_label: Nivolumab
+  normalized_id: RXCUI:1597876
+  normalized_label: nivolumab
   original_literal: nivolumab
   product_name: Opdivo
   source: EMA
@@ -9654,13 +9654,13 @@
   ema_product_number: EMEA/H/C/005398
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/vazkepa
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:84883
-    grounded_label: ethyl (5Z,8Z,11Z,14Z,17Z)-icosapentaenoate
+    confidence: 1.0
+    grounded_id: RXCUI:1304974
+    grounded_label: icosapent ethyl
     grounding_quality: lexical_exact
     original_string: icosapent ethyl
     subject_id: MEDICNE:e53be527-4b48-5f18-9cd5-0d981a26840b
-  grounding_confidence: 0.765
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Indicated to reduce cardiovascular risk as an adjunct to statin therapy.
@@ -9672,12 +9672,12 @@
   mention_id: MEDICNE:e53be527-4b48-5f18-9cd5-0d981a26840b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:84883
-    normalized_label: ethyl (5Z,8Z,11Z,14Z,17Z)-icosapentaenoate
-    original_id: CHEBI:84883
+    normalized_id: RXCUI:1304974
+    normalized_label: icosapent ethyl
+    original_id: RXCUI:1304974
     tool: medic-normalizer/1
-  normalized_id: CHEBI:84883
-  normalized_label: ethyl (5Z,8Z,11Z,14Z,17Z)-icosapentaenoate
+  normalized_id: RXCUI:1304974
+  normalized_label: icosapent ethyl
   original_literal: icosapent ethyl
   product_name: Vazkepa
   source: EMA
@@ -9773,13 +9773,13 @@
   ema_product_number: EMEA/H/C/004237
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/xerava
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:177804
-    grounded_label: Eravacycline
+    confidence: 1.0
+    grounded_id: RXCUI:2055906
+    grounded_label: eravacycline
     grounding_quality: lexical_exact
     original_string: eravacycline
     subject_id: MEDICNE:01227823-7c09-51a0-a0e3-44fc832f571c
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Xerava is indicated in adolescents from the age of 12 years weighing
@@ -9796,12 +9796,12 @@
   mention_id: MEDICNE:01227823-7c09-51a0-a0e3-44fc832f571c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:177804
-    normalized_label: Eravacycline
-    original_id: CHEBI:177804
+    normalized_id: RXCUI:2055906
+    normalized_label: eravacycline
+    original_id: RXCUI:2055906
     tool: medic-normalizer/1
-  normalized_id: CHEBI:177804
-  normalized_label: Eravacycline
+  normalized_id: RXCUI:2055906
+  normalized_label: eravacycline
   original_literal: eravacycline
   product_name: Xerava
   source: EMA
@@ -10825,13 +10825,13 @@
   ema_product_number: EMEA/H/C/000521
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/lysodren
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:6954
-    grounded_label: Mitotane
+    confidence: 1.0
+    grounded_id: RXCUI:7004
+    grounded_label: mitotane
     grounding_quality: lexical_exact
     original_string: mitotane
     subject_id: MEDICNE:9867d30b-67d9-53df-a15d-4c8838f68f6e
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Symptomatic treatment of advanced (unresectable, metastatic or relapsed)
@@ -10846,12 +10846,12 @@
   mention_id: MEDICNE:9867d30b-67d9-53df-a15d-4c8838f68f6e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6954
-    normalized_label: Mitotane
-    original_id: CHEBI:6954
+    normalized_id: RXCUI:7004
+    normalized_label: mitotane
+    original_id: RXCUI:7004
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6954
-  normalized_label: Mitotane
+  normalized_id: RXCUI:7004
+  normalized_label: mitotane
   original_literal: mitotane
   product_name: Lysodren
   source: EMA
@@ -10862,13 +10862,13 @@
   ema_product_number: EMEA/H/C/005163
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ponvory
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:233412
-    grounded_label: Ponesimod
+    confidence: 1.0
+    grounded_id: RXCUI:2532300
+    grounded_label: ponesimod
     grounding_quality: lexical_exact
     original_string: ponesimod
     subject_id: MEDICNE:d4e0e673-42e5-572a-a9f4-c9524948b6a0
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Ponvory is indicated for the treatment of adult patients with relapsing
@@ -10883,12 +10883,12 @@
   mention_id: MEDICNE:d4e0e673-42e5-572a-a9f4-c9524948b6a0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:233412
-    normalized_label: Ponesimod
-    original_id: CHEBI:233412
+    normalized_id: RXCUI:2532300
+    normalized_label: ponesimod
+    original_id: RXCUI:2532300
     tool: medic-normalizer/1
-  normalized_id: CHEBI:233412
-  normalized_label: Ponesimod
+  normalized_id: RXCUI:2532300
+  normalized_label: ponesimod
   original_literal: ponesimod
   product_name: Ponvory
   source: EMA
@@ -12546,13 +12546,13 @@
   ema_product_number: EMEA/H/C/004835
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/zeposia
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:234516
-    grounded_label: Ozanimod
+    confidence: 1.0
+    grounded_id: RXCUI:2288236
+    grounded_label: ozanimod
     grounding_quality: lexical_exact
     original_string: ozanimod
     subject_id: MEDICNE:797f7591-778b-5599-b392-7570d49b6b84
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Multiple sclerosis  Zeposia is indicated for the treatment of adult
@@ -12573,12 +12573,12 @@
   mention_id: MEDICNE:797f7591-778b-5599-b392-7570d49b6b84
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:234516
-    normalized_label: Ozanimod
-    original_id: CHEBI:234516
+    normalized_id: RXCUI:2288236
+    normalized_label: ozanimod
+    original_id: RXCUI:2288236
     tool: medic-normalizer/1
-  normalized_id: CHEBI:234516
-  normalized_label: Ozanimod
+  normalized_id: RXCUI:2288236
+  normalized_label: ozanimod
   original_literal: ozanimod
   product_name: Zeposia
   source: EMA
@@ -13962,13 +13962,13 @@
   ema_product_number: EMEA/H/C/005825
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ztalmy
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:177658
-    grounded_label: Ganaxolone
+    confidence: 1.0
+    grounded_id: RXCUI:2604689
+    grounded_label: ganaxolone
     grounding_quality: lexical_exact
     original_string: ganaxolone
     subject_id: MEDICNE:47de3ee2-1e2c-53b0-89b6-f5e03d6b691a
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Ztalmy is indicated for the adjunctive treatment of epileptic seizures
@@ -13985,12 +13985,12 @@
   mention_id: MEDICNE:47de3ee2-1e2c-53b0-89b6-f5e03d6b691a
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:177658
-    normalized_label: Ganaxolone
-    original_id: CHEBI:177658
+    normalized_id: RXCUI:2604689
+    normalized_label: ganaxolone
+    original_id: RXCUI:2604689
     tool: medic-normalizer/1
-  normalized_id: CHEBI:177658
-  normalized_label: Ganaxolone
+  normalized_id: RXCUI:2604689
+  normalized_label: ganaxolone
   original_literal: ganaxolone
   product_name: Ztalmy
   source: EMA
@@ -14615,13 +14615,13 @@
   ema_product_number: EMEA/H/C/006658
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/yeytuo
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:234519
-    grounded_label: Lenacapavir
+    confidence: 1.0
+    grounded_id: RXCUI:2625651
+    grounded_label: lenacapavir
     grounding_quality: lexical_exact
     original_string: lenacapavir
     subject_id: MEDICNE:945ed148-f597-5c19-a224-34440781f98c
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Yeytuo tablet is indicated in combination with safer sex practices for
@@ -14657,12 +14657,12 @@
   mention_id: MEDICNE:945ed148-f597-5c19-a224-34440781f98c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:234519
-    normalized_label: Lenacapavir
-    original_id: CHEBI:234519
+    normalized_id: RXCUI:2625651
+    normalized_label: lenacapavir
+    original_id: RXCUI:2625651
     tool: medic-normalizer/1
-  normalized_id: CHEBI:234519
-  normalized_label: Lenacapavir
+  normalized_id: RXCUI:2625651
+  normalized_label: lenacapavir
   original_literal: lenacapavir
   product_name: Yeytuo
   source: EMA
@@ -15355,13 +15355,13 @@
   ema_product_number: EMEA/H/C/004302
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/verzenios
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:233362
-    grounded_label: Abemaciclib
+    confidence: 1.0
+    grounded_id: RXCUI:1946825
+    grounded_label: abemaciclib
     grounding_quality: lexical_exact
     original_string: abemaciclib
     subject_id: MEDICNE:8c1ba5c3-a9a1-5ba2-9f74-abfd83a6c714
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Early Breast Cancer Verzenios in combination with endocrine therapy
@@ -15394,12 +15394,12 @@
   mention_id: MEDICNE:8c1ba5c3-a9a1-5ba2-9f74-abfd83a6c714
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:233362
-    normalized_label: Abemaciclib
-    original_id: CHEBI:233362
+    normalized_id: RXCUI:1946825
+    normalized_label: abemaciclib
+    original_id: RXCUI:1946825
     tool: medic-normalizer/1
-  normalized_id: CHEBI:233362
-  normalized_label: Abemaciclib
+  normalized_id: RXCUI:1946825
+  normalized_label: abemaciclib
   original_literal: abemaciclib
   product_name: Verzenios
   source: EMA
@@ -15714,13 +15714,13 @@
   ema_product_number: EMEA/H/C/001046
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/tepadina
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:9570
-    grounded_label: Thiotepa
+    confidence: 1.0
+    grounded_id: RXCUI:10473
+    grounded_label: thiotepa
     grounding_quality: lexical_exact
     original_string: thiotepa
     subject_id: MEDICNE:7aeea5b1-2df9-5eb1-b48d-ce16ffe1b634
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: 'TEPADINA is indicated, in combination with other chemotherapy medicinal
@@ -15765,12 +15765,12 @@
   mention_id: MEDICNE:7aeea5b1-2df9-5eb1-b48d-ce16ffe1b634
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9570
-    normalized_label: Thiotepa
-    original_id: CHEBI:9570
+    normalized_id: RXCUI:10473
+    normalized_label: thiotepa
+    original_id: RXCUI:10473
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9570
-  normalized_label: Thiotepa
+  normalized_id: RXCUI:10473
+  normalized_label: thiotepa
   original_literal: thiotepa
   product_name: Tepadina
   source: EMA
@@ -16688,15 +16688,15 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/sibnayal
   grounding:
     components:
-    - CHEBI:26216
+    - RXCUI:54993
     - CHEBI:81862
-    confidence: 0.95
-    grounded_id: CHEBI:81862
-    grounded_label: potassium hydrogencarbonate
+    confidence: 1.0
+    grounded_id: RXCUI:54993
+    grounded_label: potassium citrate
     grounding_quality: lexical_exact_surgery
     original_string: potassium citrate;potassium hydrogen carbonate
     subject_id: MEDICNE:26e1148f-465e-5bd0-8cb7-992bf978fdf9
-  grounding_confidence: 0.95
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Sibnayal is indicated for the treatment of distal renal tubular acidosis
@@ -16709,12 +16709,12 @@
   mention_id: MEDICNE:26e1148f-465e-5bd0-8cb7-992bf978fdf9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:81862
-    normalized_label: potassium hydrogencarbonate
-    original_id: CHEBI:81862
+    normalized_id: RXCUI:54993
+    normalized_label: potassium citrate
+    original_id: RXCUI:54993
     tool: medic-normalizer/1
-  normalized_id: CHEBI:81862
-  normalized_label: potassium hydrogencarbonate
+  normalized_id: RXCUI:54993
+  normalized_label: potassium citrate
   original_literal: potassium citrate;potassium hydrogen carbonate
   product_name: Sibnayal
   source: EMA
@@ -17000,13 +17000,13 @@
   ema_product_number: EMEA/H/C/004751
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/trecondi
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:82557
-    grounded_label: Treosulfan
+    confidence: 1.0
+    grounded_id: RXCUI:38508
+    grounded_label: treosulfan
     grounding_quality: lexical_exact
     original_string: treosulfan
     subject_id: MEDICNE:d9abffa1-b7a1-5f56-9c1d-9dc615bf2a30
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Treosulfan in combination with fludarabine is indicated as part of conditioning
@@ -17023,12 +17023,12 @@
   mention_id: MEDICNE:d9abffa1-b7a1-5f56-9c1d-9dc615bf2a30
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:82557
-    normalized_label: Treosulfan
-    original_id: CHEBI:82557
+    normalized_id: RXCUI:38508
+    normalized_label: treosulfan
+    original_id: RXCUI:38508
     tool: medic-normalizer/1
-  normalized_id: CHEBI:82557
-  normalized_label: Treosulfan
+  normalized_id: RXCUI:38508
+  normalized_label: treosulfan
   original_literal: treosulfan
   product_name: Trecondi
   source: EMA
@@ -17844,13 +17844,13 @@
   ema_product_number: EMEA/H/C/004315
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/steglatro
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:188719
-    grounded_label: Ertugliflozin
+    confidence: 1.0
+    grounded_id: RXCUI:1992672
+    grounded_label: ertugliflozin
     grounding_quality: lexical_exact
     original_string: ertugliflozin
     subject_id: MEDICNE:19b3453d-5d57-5a75-9fc3-8bde4bd5f9b0
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Steglatro is indicated in adults aged 18 years and older with type
@@ -17869,12 +17869,12 @@
   mention_id: MEDICNE:19b3453d-5d57-5a75-9fc3-8bde4bd5f9b0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:188719
-    normalized_label: Ertugliflozin
-    original_id: CHEBI:188719
+    normalized_id: RXCUI:1992672
+    normalized_label: ertugliflozin
+    original_id: RXCUI:1992672
     tool: medic-normalizer/1
-  normalized_id: CHEBI:188719
-  normalized_label: Ertugliflozin
+  normalized_id: RXCUI:1992672
+  normalized_label: ertugliflozin
   original_literal: ertugliflozin
   product_name: Steglatro
   source: EMA
@@ -18742,15 +18742,15 @@
   ema_product_number: EMEA/H/C/006251
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/dasatinib-accord-healthcare
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 1.0
+    grounded_id: RXCUI:475342
+    grounded_label: dasatinib
+    grounding_quality: lexical_exact
     original_string: dasatinib
     subject_id: MEDICNE:0da69128-7b42-587c-ada8-064f7d051938
-  grounding_confidence: 0.0
+  grounding_confidence: 1.0
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: 'Dasatinib Accord Healthcare is indicated for the treatment of adult
     patients with:  newly diagnosed Philadelphia chromosome positive (Ph+) chronic
     myelogenous leukaemia (CML) in the chronic phase. chronic, accelerated or blast
@@ -18774,8 +18774,14 @@
       with chemotherapy.'
     product_name: Dasatinib Accord Healthcare
   mention_id: MEDICNE:0da69128-7b42-587c-ada8-064f7d051938
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:475342
+    normalized_label: dasatinib
+    original_id: RXCUI:475342
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:475342
+  normalized_label: dasatinib
   original_literal: dasatinib
   product_name: Dasatinib Accord Healthcare
   source: EMA
@@ -19895,13 +19901,13 @@
   ema_product_number: EMEA/H/C/000363
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/kineret
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:231683
-    grounded_label: Anakinra
+    confidence: 1.0
+    grounded_id: RXCUI:72435
+    grounded_label: anakinra
     grounding_quality: lexical_exact
     original_string: anakinra
     subject_id: MEDICNE:19ebc3a7-df50-5df4-ae80-4416ecba7ab5
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Rheumatoid Arthritis (RA) Kineret is indicated in adults for the treatment
@@ -19957,12 +19963,12 @@
   mention_id: MEDICNE:19ebc3a7-df50-5df4-ae80-4416ecba7ab5
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:231683
-    normalized_label: Anakinra
-    original_id: CHEBI:231683
+    normalized_id: RXCUI:72435
+    normalized_label: anakinra
+    original_id: RXCUI:72435
     tool: medic-normalizer/1
-  normalized_id: CHEBI:231683
-  normalized_label: Anakinra
+  normalized_id: RXCUI:72435
+  normalized_label: anakinra
   original_literal: anakinra
   product_name: Kineret
   source: EMA
@@ -21696,13 +21702,13 @@
   ema_product_number: EMEA/H/C/004213
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/kisqali
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:230905
-    grounded_label: Ribociclib
+    confidence: 1.0
+    grounded_id: RXCUI:1873916
+    grounded_label: ribociclib
     grounding_quality: lexical_exact
     original_string: ribociclib
     subject_id: MEDICNE:4fd01f2d-cae2-56e7-8204-720ed972f476
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Early breast cancerKisqali in combination with an aromatase inhibitor
@@ -21733,12 +21739,12 @@
   mention_id: MEDICNE:4fd01f2d-cae2-56e7-8204-720ed972f476
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:230905
-    normalized_label: Ribociclib
-    original_id: CHEBI:230905
+    normalized_id: RXCUI:1873916
+    normalized_label: ribociclib
+    original_id: RXCUI:1873916
     tool: medic-normalizer/1
-  normalized_id: CHEBI:230905
-  normalized_label: Ribociclib
+  normalized_id: RXCUI:1873916
+  normalized_label: ribociclib
   original_literal: ribociclib
   product_name: Kisqali
   source: EMA
@@ -22274,13 +22280,13 @@
   ema_product_number: EMEA/H/C/000407
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/opatanol
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:7769
-    grounded_label: Olopatadine
+    confidence: 1.0
+    grounded_id: RXCUI:135391
+    grounded_label: olopatadine
     grounding_quality: lexical_exact
     original_string: olopatadine
     subject_id: MEDICNE:3ac82a46-535c-5bcd-99fb-2f5e86102e98
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of ocular signs and symptoms of seasonal allergic conjunctivitis.
@@ -22291,12 +22297,12 @@
   mention_id: MEDICNE:3ac82a46-535c-5bcd-99fb-2f5e86102e98
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:7769
-    normalized_label: Olopatadine
-    original_id: CHEBI:7769
+    normalized_id: RXCUI:135391
+    normalized_label: olopatadine
+    original_id: RXCUI:135391
     tool: medic-normalizer/1
-  normalized_id: CHEBI:7769
-  normalized_label: Olopatadine
+  normalized_id: RXCUI:135391
+  normalized_label: olopatadine
   original_literal: olopatadine
   product_name: Opatanol
   source: EMA
@@ -23592,13 +23598,13 @@
   ema_product_number: EMEA/H/C/005200
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/kerendia
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:747008
-    grounded_label: Finerenone
+    confidence: 1.0
+    grounded_id: RXCUI:2562811
+    grounded_label: finerenone
     grounding_quality: lexical_exact
     original_string: finerenone
     subject_id: MEDICNE:92a3bc1f-1a9a-5763-a9a9-9552a1ba0716
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Kerendia is indicated for the treatment of chronic kidney disease (with
@@ -23613,12 +23619,12 @@
   mention_id: MEDICNE:92a3bc1f-1a9a-5763-a9a9-9552a1ba0716
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:747008
-    normalized_label: Finerenone
-    original_id: CHEBI:747008
+    normalized_id: RXCUI:2562811
+    normalized_label: finerenone
+    original_id: RXCUI:2562811
     tool: medic-normalizer/1
-  normalized_id: CHEBI:747008
-  normalized_label: Finerenone
+  normalized_id: RXCUI:2562811
+  normalized_label: finerenone
   original_literal: finerenone
   product_name: Kerendia
   source: EMA
@@ -23701,13 +23707,13 @@
   ema_product_number: EMEA/H/C/003759
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/intuniv
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:5558
-    grounded_label: Guanfacine
+    confidence: 1.0
+    grounded_id: RXCUI:40114
+    grounded_label: guanfacine
     grounding_quality: lexical_exact
     original_string: guanfacine
     subject_id: MEDICNE:533a84ae-6316-5db9-b46d-456bd5741525
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Intuniv is indicated for the treatment of attention deficit hyperactivity
@@ -23739,12 +23745,12 @@
   mention_id: MEDICNE:533a84ae-6316-5db9-b46d-456bd5741525
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:5558
-    normalized_label: Guanfacine
-    original_id: CHEBI:5558
+    normalized_id: RXCUI:40114
+    normalized_label: guanfacine
+    original_id: RXCUI:40114
     tool: medic-normalizer/1
-  normalized_id: CHEBI:5558
-  normalized_label: Guanfacine
+  normalized_id: RXCUI:40114
+  normalized_label: guanfacine
   original_literal: guanfacine
   product_name: Intuniv
   source: EMA
@@ -24101,15 +24107,15 @@
   ema_product_number: EMEA/H/C/004377
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/entecavir-viatris
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 1.0
+    grounded_id: RXCUI:306266
+    grounded_label: entecavir
+    grounding_quality: lexical_exact
     original_string: entecavir
     subject_id: MEDICNE:d34410b8-9411-5984-a4c0-b3a50f738847
-  grounding_confidence: 0.0
+  grounding_confidence: 1.0
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: 'Entecavir Viatris is indicated for the treatment of chronic hepatitis
     B virus (HBV) infection in adults with:  compensated liver disease and evidence
     of active viral replication, persistently elevated serum alanine aminotransferase
@@ -24185,8 +24191,14 @@
       the decision to initiate treatment in paediatric patients.'
     product_name: Entecavir Accord
   mention_id: MEDICNE:d34410b8-9411-5984-a4c0-b3a50f738847
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:306266
+    normalized_label: entecavir
+    original_id: RXCUI:306266
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:306266
+  normalized_label: entecavir
   original_literal: entecavir
   product_name: Entecavir Viatris (previously Entecavir Mylan)
   source: EMA
@@ -25105,13 +25117,13 @@
   ema_product_number: EMEA/H/C/004761
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/onureg
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:2038
-    grounded_label: 5-azacytidine
+    confidence: 1.0
+    grounded_id: RXCUI:1251
+    grounded_label: azacitidine
     grounding_quality: lexical_exact
     original_string: azacitidine
     subject_id: MEDICNE:721fc1ff-69be-5191-9a2b-44c7b5e985e0
-  grounding_confidence: 0.765
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Onureg is indicated as maintenance therapy in adult patients with acute
@@ -25220,12 +25232,12 @@
   mention_id: MEDICNE:721fc1ff-69be-5191-9a2b-44c7b5e985e0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:2038
-    normalized_label: 5-azacytidine
-    original_id: CHEBI:2038
+    normalized_id: RXCUI:1251
+    normalized_label: azacitidine
+    original_id: RXCUI:1251
     tool: medic-normalizer/1
-  normalized_id: CHEBI:2038
-  normalized_label: 5-azacytidine
+  normalized_id: RXCUI:1251
+  normalized_label: azacitidine
   original_literal: azacitidine
   product_name: Onureg
   source: EMA
@@ -29411,11 +29423,11 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/symkevi
   grounding:
     components:
-    - CHEBI:234517
+    - RXCUI:1999382
     - CHEBI:66901
     confidence: 1.0
-    grounded_id: CHEBI:66901
-    grounded_label: ivacaftor
+    grounded_id: RXCUI:1999382
+    grounded_label: tezacaftor
     grounding_quality: lexical_exact_surgery
     original_string: tezacaftor;ivacaftor
     subject_id: MEDICNE:56e1dbc2-7b19-5051-8b49-2cbe68e382e5
@@ -29441,12 +29453,12 @@
   mention_id: MEDICNE:56e1dbc2-7b19-5051-8b49-2cbe68e382e5
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:66901
-    normalized_label: ivacaftor
-    original_id: CHEBI:66901
+    normalized_id: RXCUI:1999382
+    normalized_label: tezacaftor
+    original_id: RXCUI:1999382
     tool: medic-normalizer/1
-  normalized_id: CHEBI:66901
-  normalized_label: ivacaftor
+  normalized_id: RXCUI:1999382
+  normalized_label: tezacaftor
   original_literal: tezacaftor;ivacaftor
   product_name: Symkevi
   source: EMA
@@ -30406,13 +30418,13 @@
   ema_product_number: EMEA/H/C/005377
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ontozry
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:234112
-    grounded_label: Cenobamate
+    confidence: 1.0
+    grounded_id: RXCUI:2265690
+    grounded_label: cenobamate
     grounding_quality: lexical_exact
     original_string: cenobamate
     subject_id: MEDICNE:36c2fba9-f376-599d-8e28-b2584141f581
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Adjunctive treatment of focal-onset seizures with or without secondary
@@ -30428,12 +30440,12 @@
   mention_id: MEDICNE:36c2fba9-f376-599d-8e28-b2584141f581
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:234112
-    normalized_label: Cenobamate
-    original_id: CHEBI:234112
+    normalized_id: RXCUI:2265690
+    normalized_label: cenobamate
+    original_id: RXCUI:2265690
     tool: medic-normalizer/1
-  normalized_id: CHEBI:234112
-  normalized_label: Cenobamate
+  normalized_id: RXCUI:2265690
+  normalized_label: cenobamate
   original_literal: cenobamate
   product_name: Ontozry
   source: EMA
@@ -30639,13 +30651,13 @@
   ema_product_number: EMEA/H/C/006013
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/krazati
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:233309
-    grounded_label: Adagrasib
+    confidence: 1.0
+    grounded_id: RXCUI:2625882
+    grounded_label: adagrasib
     grounding_quality: lexical_exact
     original_string: adagrasib
     subject_id: MEDICNE:4dff9946-7d79-5042-be53-5f720977fce9
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Krazati as monotherapy is indicated for the treatment of adult patients
@@ -30660,12 +30672,12 @@
   mention_id: MEDICNE:4dff9946-7d79-5042-be53-5f720977fce9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:233309
-    normalized_label: Adagrasib
-    original_id: CHEBI:233309
+    normalized_id: RXCUI:2625882
+    normalized_label: adagrasib
+    original_id: RXCUI:2625882
     tool: medic-normalizer/1
-  normalized_id: CHEBI:233309
-  normalized_label: Adagrasib
+  normalized_id: RXCUI:2625882
+  normalized_label: adagrasib
   original_literal: adagrasib
   product_name: Krazati
   source: EMA
@@ -31967,7 +31979,7 @@
   grounding:
     components:
     - CHEBI:756524
-    - CHEBI:231614
+    - RXCUI:1597876
     confidence: 1.0
     grounded_id: CHEBI:756524
     grounded_label: relatlimab
@@ -32225,11 +32237,11 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/steglujan
   grounding:
     components:
-    - CHEBI:188719
+    - RXCUI:1992672
     - CHEBI:40237
     confidence: 1.0
-    grounded_id: CHEBI:40237
-    grounded_label: sitagliptin
+    grounded_id: RXCUI:1992672
+    grounded_label: ertugliflozin
     grounding_quality: lexical_exact_surgery
     original_string: ertugliflozin;sitagliptin
     subject_id: MEDICNE:90a9eed1-b388-5d7d-af8e-559760b26d34
@@ -32253,12 +32265,12 @@
   mention_id: MEDICNE:90a9eed1-b388-5d7d-af8e-559760b26d34
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:40237
-    normalized_label: sitagliptin
-    original_id: CHEBI:40237
+    normalized_id: RXCUI:1992672
+    normalized_label: ertugliflozin
+    original_id: RXCUI:1992672
     tool: medic-normalizer/1
-  normalized_id: CHEBI:40237
-  normalized_label: sitagliptin
+  normalized_id: RXCUI:1992672
+  normalized_label: ertugliflozin
   original_literal: ertugliflozin;sitagliptin
   product_name: Steglujan
   source: EMA
@@ -32270,11 +32282,11 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/segluromet
   grounding:
     components:
-    - CHEBI:188719
+    - RXCUI:1992672
     - CHEBI:6802
     confidence: 1.0
-    grounded_id: CHEBI:6802
-    grounded_label: metformin hydrochloride
+    grounded_id: RXCUI:1992672
+    grounded_label: ertugliflozin
     grounding_quality: lexical_exact_surgery
     original_string: ertugliflozin;metformin hydrochloride
     subject_id: MEDICNE:9a43757f-e74f-5633-8e24-a43601159e4e
@@ -32301,12 +32313,12 @@
   mention_id: MEDICNE:9a43757f-e74f-5633-8e24-a43601159e4e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6802
-    normalized_label: metformin hydrochloride
-    original_id: CHEBI:6802
+    normalized_id: RXCUI:1992672
+    normalized_label: ertugliflozin
+    original_id: RXCUI:1992672
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6802
-  normalized_label: metformin hydrochloride
+  normalized_id: RXCUI:1992672
+  normalized_label: ertugliflozin
   original_literal: ertugliflozin;metformin hydrochloride
   product_name: Segluromet
   source: EMA
@@ -37000,13 +37012,13 @@
   ema_product_number: EMEA/H/C/000664
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/diacomit
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:228488
-    grounded_label: Stiripentol
+    confidence: 1.0
+    grounded_id: RXCUI:2054968
+    grounded_label: stiripentol
     grounding_quality: lexical_exact
     original_string: stiripentol
     subject_id: MEDICNE:dc860cff-71cd-5a17-981c-3cb94384a728
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Diacomit is indicated for use in conjunction with clobazam and valproate
@@ -37023,12 +37035,12 @@
   mention_id: MEDICNE:dc860cff-71cd-5a17-981c-3cb94384a728
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:228488
-    normalized_label: Stiripentol
-    original_id: CHEBI:228488
+    normalized_id: RXCUI:2054968
+    normalized_label: stiripentol
+    original_id: RXCUI:2054968
     tool: medic-normalizer/1
-  normalized_id: CHEBI:228488
-  normalized_label: Stiripentol
+  normalized_id: RXCUI:2054968
+  normalized_label: stiripentol
   original_literal: stiripentol
   product_name: Diacomit
   source: EMA
@@ -37822,13 +37834,13 @@
   ema_product_number: EMEA/H/C/002583
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/selincro
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:7457
-    grounded_label: Nalmefene
+    confidence: 1.0
+    grounded_id: RXCUI:31479
+    grounded_label: nalmefene
     grounding_quality: lexical_exact
     original_string: nalmefene
     subject_id: MEDICNE:fa53bcb7-6bc1-511b-a40f-84d58b99323f
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Selincro is indicated for the reduction of alcohol consumption in adult
@@ -37851,12 +37863,12 @@
   mention_id: MEDICNE:fa53bcb7-6bc1-511b-a40f-84d58b99323f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:7457
-    normalized_label: Nalmefene
-    original_id: CHEBI:7457
+    normalized_id: RXCUI:31479
+    normalized_label: nalmefene
+    original_id: RXCUI:31479
     tool: medic-normalizer/1
-  normalized_id: CHEBI:7457
-  normalized_label: Nalmefene
+  normalized_id: RXCUI:31479
+  normalized_label: nalmefene
   original_literal: nalmefene
   product_name: Selincro
   source: EMA
@@ -38624,12 +38636,12 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/riltrava-aerosphere
   grounding:
     components:
-    - CHEBI:5147
+    - RXCUI:998038
     - CHEBI:749411
     - CHEBI:3207
     confidence: 1.0
-    grounded_id: CHEBI:749411
-    grounded_label: glycopyrronium
+    grounded_id: RXCUI:998038
+    grounded_label: formoterol fumarate dihydrate
     grounding_quality: lexical_exact_surgery
     original_string: formoterol fumarate dihydrate;glycopyrronium;budesonide
     subject_id: MEDICNE:08fe6192-096b-5866-b02b-b73e55844415
@@ -38654,12 +38666,12 @@
   mention_id: MEDICNE:08fe6192-096b-5866-b02b-b73e55844415
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749411
-    normalized_label: glycopyrronium
-    original_id: CHEBI:749411
+    normalized_id: RXCUI:998038
+    normalized_label: formoterol fumarate dihydrate
+    original_id: RXCUI:998038
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749411
-  normalized_label: glycopyrronium
+  normalized_id: RXCUI:998038
+  normalized_label: formoterol fumarate dihydrate
   original_literal: formoterol fumarate dihydrate;glycopyrronium;budesonide
   product_name: Riltrava Aerosphere
   source: EMA
@@ -38886,15 +38898,15 @@
   ema_product_number: EMEA/H/C/002638
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ibandronic-acid-accord
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 1.0
+    grounded_id: RXCUI:115265
+    grounded_label: ibandronic acid
+    grounding_quality: lexical_exact
     original_string: ibandronic acid
     subject_id: MEDICNE:d4a2ec54-1588-5703-afd7-9506e91f75d0
-  grounding_confidence: 0.0
+  grounding_confidence: 1.0
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: 'Ibandronic acid is indicated in adults for  Prevention of skeletal
     events (pathological fractures, bone complications requiring radiotherapy or surgery)
     in patients with breast cancer and bone metastases. Treatment of tumour induced
@@ -38964,8 +38976,14 @@
       surgery) in patients with breast cancer and bone metastases.
     product_name: Ibandronic Acid Sandoz
   mention_id: MEDICNE:d4a2ec54-1588-5703-afd7-9506e91f75d0
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:115265
+    normalized_label: ibandronic acid
+    original_id: RXCUI:115265
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:115265
+  normalized_label: ibandronic acid
   original_literal: ibandronic acid
   product_name: Ibandronic acid Accord
   source: EMA
@@ -43463,13 +43481,13 @@
   ema_product_number: EMEA/H/C/006044
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/neoatricon
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:4698
-    grounded_label: Dopamine hydrochloride
+    confidence: 1.0
+    grounded_id: RXCUI:82010
+    grounded_label: dopamine hydrochloride
     grounding_quality: lexical_exact
     original_string: dopamine hydrochloride
     subject_id: MEDICNE:abe791b8-7785-5fa6-a9be-e402b05210b7
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of hypotension in haemodynamically unstable neonates, infants
@@ -43482,12 +43500,12 @@
   mention_id: MEDICNE:abe791b8-7785-5fa6-a9be-e402b05210b7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4698
-    normalized_label: Dopamine hydrochloride
-    original_id: CHEBI:4698
+    normalized_id: RXCUI:82010
+    normalized_label: dopamine hydrochloride
+    original_id: RXCUI:82010
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4698
-  normalized_label: Dopamine hydrochloride
+  normalized_id: RXCUI:82010
+  normalized_label: dopamine hydrochloride
   original_literal: dopamine hydrochloride
   product_name: Neoatricon
   source: EMA
@@ -45316,13 +45334,13 @@
   ema_product_number: EMEA/H/C/002622
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/riluzole-zentiva
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:8863
-    grounded_label: Riluzole
+    confidence: 1.0
+    grounded_id: RXCUI:35623
+    grounded_label: riluzole
     grounding_quality: lexical_exact
     original_string: riluzole
     subject_id: MEDICNE:a5ad3fd6-9e5f-56c9-a588-1dacdb0c8a66
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Riluzole Zentiva is indicated to extend life or the time to mechanical
@@ -45371,12 +45389,12 @@
   mention_id: MEDICNE:a5ad3fd6-9e5f-56c9-a588-1dacdb0c8a66
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8863
-    normalized_label: Riluzole
-    original_id: CHEBI:8863
+    normalized_id: RXCUI:35623
+    normalized_label: riluzole
+    original_id: RXCUI:35623
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8863
-  normalized_label: Riluzole
+  normalized_id: RXCUI:35623
+  normalized_label: riluzole
   original_literal: riluzole
   product_name: Riluzole Zentiva
   source: EMA
@@ -46322,7 +46340,7 @@
   grounding:
     components:
     - CHEBI:135398
-    - CHEBI:4903
+    - RXCUI:4124
     confidence: 1.0
     grounded_id: CHEBI:135398
     grounded_label: norelgestromin
@@ -47222,15 +47240,15 @@
   ema_product_number: EMEA/H/C/006116
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/andembry
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 1.0
+    grounded_id: RXCUI:2717169
+    grounded_label: garadacimab
+    grounding_quality: lexical_exact
     original_string: garadacimab
     subject_id: MEDICNE:c7b118d8-a5c4-5c17-9a9f-7ad2d86178cd
-  grounding_confidence: 0.0
+  grounding_confidence: 1.0
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: Andembry is indicated for routine prevention of recurrent attacks of
     hereditary angioedema (HAE) in adult and adolescent patients aged 12 years and
     older.
@@ -47241,8 +47259,14 @@
       and older.
     product_name: Andembry
   mention_id: MEDICNE:c7b118d8-a5c4-5c17-9a9f-7ad2d86178cd
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:2717169
+    normalized_label: garadacimab
+    original_id: RXCUI:2717169
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:2717169
+  normalized_label: garadacimab
   original_literal: garadacimab
   product_name: Andembry
   source: EMA
@@ -47330,13 +47354,13 @@
   ema_product_number: EMEA/H/C/000139
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/benefix
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:754094
-    grounded_label: coagulation factor ix recombinant human
+    confidence: 1.0
+    grounded_id: RXCUI:1300488
+    grounded_label: nonacog alfa
     grounding_quality: lexical_exact
     original_string: nonacog alfa
     subject_id: MEDICNE:e9deffe3-daba-51e9-b201-b0f54202946c
-  grounding_confidence: 0.765
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment and prophylaxis of bleeding in patients with haemophilia B
@@ -47349,12 +47373,12 @@
   mention_id: MEDICNE:e9deffe3-daba-51e9-b201-b0f54202946c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:754094
-    normalized_label: coagulation factor ix recombinant human
-    original_id: CHEBI:754094
+    normalized_id: RXCUI:1300488
+    normalized_label: nonacog alfa
+    original_id: RXCUI:1300488
     tool: medic-normalizer/1
-  normalized_id: CHEBI:754094
-  normalized_label: coagulation factor ix recombinant human
+  normalized_id: RXCUI:1300488
+  normalized_label: nonacog alfa
   original_literal: nonacog alfa
   product_name: BeneFIX
   source: EMA
@@ -47782,13 +47806,13 @@
   ema_product_number: EMEA/H/C/000799
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/torisel
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:79699
-    grounded_label: Temsirolimus
+    confidence: 1.0
+    grounded_id: RXCUI:657797
+    grounded_label: temsirolimus
     grounding_quality: lexical_exact
     original_string: temsirolimus
     subject_id: MEDICNE:913d26cb-371f-5cd6-a801-ae08d187ca27
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Renal-cell carcinoma Torisel is indicated for the first-line treatment
@@ -47807,12 +47831,12 @@
   mention_id: MEDICNE:913d26cb-371f-5cd6-a801-ae08d187ca27
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:79699
-    normalized_label: Temsirolimus
-    original_id: CHEBI:79699
+    normalized_id: RXCUI:657797
+    normalized_label: temsirolimus
+    original_id: RXCUI:657797
     tool: medic-normalizer/1
-  normalized_id: CHEBI:79699
-  normalized_label: Temsirolimus
+  normalized_id: RXCUI:657797
+  normalized_label: temsirolimus
   original_literal: temsirolimus
   product_name: Torisel
   source: EMA
@@ -47913,7 +47937,7 @@
   grounding:
     components:
     - CHEBI:65346
-    - CHEBI:5147
+    - RXCUI:998038
     confidence: 1.0
     grounded_id: CHEBI:65346
     grounded_label: aclidinium
@@ -47987,13 +48011,13 @@
   ema_product_number: EMEA/H/C/006050
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/balversa
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:232556
-    grounded_label: Erdafitinib
+    confidence: 1.0
+    grounded_id: RXCUI:2123125
+    grounded_label: erdafitinib
     grounding_quality: lexical_exact
     original_string: erdafitinib
     subject_id: MEDICNE:4cb667a6-d655-5654-8bfa-ba13c5f8f478
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Balversa as monotherapy is indicated for the treatment of adult patients
@@ -48012,12 +48036,12 @@
   mention_id: MEDICNE:4cb667a6-d655-5654-8bfa-ba13c5f8f478
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:232556
-    normalized_label: Erdafitinib
-    original_id: CHEBI:232556
+    normalized_id: RXCUI:2123125
+    normalized_label: erdafitinib
+    original_id: RXCUI:2123125
     tool: medic-normalizer/1
-  normalized_id: CHEBI:232556
-  normalized_label: Erdafitinib
+  normalized_id: RXCUI:2123125
+  normalized_label: erdafitinib
   original_literal: erdafitinib
   product_name: Balversa
   source: EMA
@@ -48083,7 +48107,7 @@
   grounding:
     components:
     - CHEBI:3207
-    - CHEBI:5147
+    - RXCUI:998038
     confidence: 1.0
     grounded_id: CHEBI:3207
     grounded_label: budesonide
@@ -48204,13 +48228,13 @@
   ema_product_number: EMEA/H/C/001067
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/repaglinide-teva
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:8805
-    grounded_label: Repaglinide
+    confidence: 1.0
+    grounded_id: RXCUI:73044
+    grounded_label: repaglinide
     grounding_quality: lexical_exact
     original_string: repaglinide
     subject_id: MEDICNE:580f8ec8-1fcb-58ce-bc1c-e5e870025428
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Repaglinide is indicated in patients with type-2 diabetes (non-insulin-dependent
@@ -48285,12 +48309,12 @@
   mention_id: MEDICNE:580f8ec8-1fcb-58ce-bc1c-e5e870025428
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8805
-    normalized_label: Repaglinide
-    original_id: CHEBI:8805
+    normalized_id: RXCUI:73044
+    normalized_label: repaglinide
+    original_id: RXCUI:73044
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8805
-  normalized_label: Repaglinide
+  normalized_id: RXCUI:73044
+  normalized_label: repaglinide
   original_literal: repaglinide
   product_name: Repaglinide Teva
   source: EMA
@@ -49477,7 +49501,7 @@
   grounding:
     components:
     - CHEBI:749411
-    - CHEBI:5147
+    - RXCUI:998038
     confidence: 1.0
     grounded_id: CHEBI:749411
     grounded_label: glycopyrronium
@@ -50475,13 +50499,13 @@
   ema_product_number: EMEA/H/C/002644
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/stayveer
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:51450
-    grounded_label: bosentan
-    grounding_quality: lexical_exact_surgery
+    confidence: 1.0
+    grounded_id: RXCUI:498193
+    grounded_label: bosentan monohydrate
+    grounding_quality: lexical_exact
     original_string: bosentan monohydrate
     subject_id: MEDICNE:4fd4e874-e270-52d5-95cf-8d451b966be8
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Treatment of pulmonary arterial hypertension (PAH) to improve exercise
@@ -50507,12 +50531,12 @@
   mention_id: MEDICNE:4fd4e874-e270-52d5-95cf-8d451b966be8
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:51450
-    normalized_label: bosentan
-    original_id: CHEBI:51450
+    normalized_id: RXCUI:498193
+    normalized_label: bosentan monohydrate
+    original_id: RXCUI:498193
     tool: medic-normalizer/1
-  normalized_id: CHEBI:51450
-  normalized_label: bosentan
+  normalized_id: RXCUI:498193
+  normalized_label: bosentan monohydrate
   original_literal: bosentan monohydrate
   product_name: Stayveer
   source: EMA
@@ -51939,13 +51963,13 @@
   ema_product_number: EMEA/H/C/004744
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/palynziq
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:230846
-    grounded_label: Pegvaliase
+    confidence: 1.0
+    grounded_id: RXCUI:2046360
+    grounded_label: pegvaliase
     grounding_quality: lexical_exact
     original_string: pegvaliase
     subject_id: MEDICNE:92e4f2d6-015e-5b5a-8f8c-4331b4f42888
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Palynziq is indicated for the treatment of patients with phenylketonuria
@@ -51962,12 +51986,12 @@
   mention_id: MEDICNE:92e4f2d6-015e-5b5a-8f8c-4331b4f42888
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:230846
-    normalized_label: Pegvaliase
-    original_id: CHEBI:230846
+    normalized_id: RXCUI:2046360
+    normalized_label: pegvaliase
+    original_id: RXCUI:2046360
     tool: medic-normalizer/1
-  normalized_id: CHEBI:230846
-  normalized_label: Pegvaliase
+  normalized_id: RXCUI:2046360
+  normalized_label: pegvaliase
   original_literal: pegvaliase
   product_name: Palynziq
   source: EMA
@@ -52592,13 +52616,13 @@
   ema_product_number: EMEA/H/C/004005
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/cuprior
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:39501
-    grounded_label: 2,2,2-tetramine
+    confidence: 1.0
+    grounded_id: RXCUI:10798
+    grounded_label: trientine
     grounding_quality: lexical_exact
     original_string: trientine
     subject_id: MEDICNE:4d5ec312-72a5-5a60-ba06-991acd314702
-  grounding_confidence: 0.765
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Cuprior is indicated for the treatment of Wilson's disease in adults,
@@ -52611,12 +52635,12 @@
   mention_id: MEDICNE:4d5ec312-72a5-5a60-ba06-991acd314702
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:39501
-    normalized_label: 2,2,2-tetramine
-    original_id: CHEBI:39501
+    normalized_id: RXCUI:10798
+    normalized_label: trientine
+    original_id: RXCUI:10798
     tool: medic-normalizer/1
-  normalized_id: CHEBI:39501
-  normalized_label: 2,2,2-tetramine
+  normalized_id: RXCUI:10798
+  normalized_label: trientine
   original_literal: trientine
   product_name: Cuprior
   source: EMA
@@ -53040,13 +53064,13 @@
   ema_product_number: EMEA/H/C/004138
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/intrarosa
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:28689
-    grounded_label: dehydroepiandrosterone
+    confidence: 1.0
+    grounded_id: RXCUI:3143
+    grounded_label: prasterone
     grounding_quality: lexical_exact
     original_string: prasterone
     subject_id: MEDICNE:ae6010ee-b9fe-55bf-bde6-3b2c8ba0df09
-  grounding_confidence: 0.765
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Intrarosa is indicated for the treatment of vulvar and vaginal atrophy
@@ -53059,12 +53083,12 @@
   mention_id: MEDICNE:ae6010ee-b9fe-55bf-bde6-3b2c8ba0df09
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:28689
-    normalized_label: dehydroepiandrosterone
-    original_id: CHEBI:28689
+    normalized_id: RXCUI:3143
+    normalized_label: prasterone
+    original_id: RXCUI:3143
     tool: medic-normalizer/1
-  normalized_id: CHEBI:28689
-  normalized_label: dehydroepiandrosterone
+  normalized_id: RXCUI:3143
+  normalized_label: prasterone
   original_literal: prasterone
   product_name: Intrarosa
   source: EMA
@@ -53260,13 +53284,13 @@
   ema_product_number: EMEA/H/C/000081
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/betaferon
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:5938
-    grounded_label: Interferon beta-1b
+    confidence: 1.0
+    grounded_id: RXCUI:72257
+    grounded_label: interferon beta-1b
     grounding_quality: lexical_exact
     original_string: interferon beta-1b
     subject_id: MEDICNE:8f14e8dd-715e-5e2c-b289-fd493afde552
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: Betaferon is indicated for the treatment of  patients with a single
@@ -53290,12 +53314,12 @@
   mention_id: MEDICNE:8f14e8dd-715e-5e2c-b289-fd493afde552
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:5938
-    normalized_label: Interferon beta-1b
-    original_id: CHEBI:5938
+    normalized_id: RXCUI:72257
+    normalized_label: interferon beta-1b
+    original_id: RXCUI:72257
     tool: medic-normalizer/1
-  normalized_id: CHEBI:5938
-  normalized_label: Interferon beta-1b
+  normalized_id: RXCUI:72257
+  normalized_label: interferon beta-1b
   original_literal: interferon beta-1b
   product_name: Betaferon
   source: EMA
@@ -53802,13 +53826,13 @@
   ema_product_number: EMEA/H/C/000654
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/luminity
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:31980
-    grounded_label: octafluoropropane
+    confidence: 1.0
+    grounded_id: RXCUI:283753
+    grounded_label: perflutren
     grounding_quality: lexical_exact
     original_string: perflutren
     subject_id: MEDICNE:c18a586b-735f-5886-94b7-890e807586f0
-  grounding_confidence: 0.765
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   indication: This medicinal product is for diagnostic use only. Luminity is an ultrasound
@@ -53844,12 +53868,12 @@
   mention_id: MEDICNE:c18a586b-735f-5886-94b7-890e807586f0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31980
-    normalized_label: octafluoropropane
-    original_id: CHEBI:31980
+    normalized_id: RXCUI:283753
+    normalized_label: perflutren
+    original_id: RXCUI:283753
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31980
-  normalized_label: octafluoropropane
+  normalized_id: RXCUI:283753
+  normalized_label: perflutren
   original_literal: perflutren
   product_name: Luminity
   source: EMA

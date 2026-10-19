@@ -15156,6 +15156,211 @@
   pmda: true
   relationship_type: INDICATION
 - disease_grounding:
+    confidence: 0.9
+    grounded_id: HP:0006536
+    grounded_label: Airway obstruction
+    grounding_quality: lexical_exact
+    original_string: airway obstruction
+    subject_id: MEDICNE:d4cbf9fd-9d6a-5c9f-8ada-37f232f01bfa
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: HP:0006536
+    normalized_label: Airway obstruction
+    original_id: HP:0006536
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:1424883|HP:0006536
+  ema: false
+  evidence:
+  - approval_date: '20140704'
+    approval_status: APPROVED
+    confidence: HIGH
+    disease_context:
+    - chronic obstructive pulmonary disease
+    document_id: PMDA:VILANTEROL TRIFENATATE#117-20140704
+    explanation: PMDA-approved indication; per-product review report
+    jurisdiction: JAPAN
+    original_disease_label: airway obstruction
+    original_disease_verbatim: airway obstructive disorder
+    original_drug_label: VILANTEROL TRIFENATATE
+    population_context: patients when a combination treatment of an inhaled long-acting anticholinergic and a long-acting beta-2 agonist is needed
+    product_id: P201400076
+    reference: https://www.pmda.go.jp/files/000208866.pdf
+    snippet: New combination drugs with a new active ingredient indicated for the relief of symptoms secondary to airway obstructive disorder in chronic obstructive pulmonary disease (chronic bronchitis, emphysema) (when a combination treatment of an inhaled long-acting anticholinergic and a long- acting beta-2 agonist is needed).
+    source_document_url: https://www.pmda.go.jp/files/000208866.pdf
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: HP:0006536
+  final_normalized_disease_label: Airway obstruction
+  final_normalized_drug_id: RXCUI:1424883
+  final_normalized_drug_label: vilanterol trifenatate
+  indications_text: New combination drugs with a new active ingredient indicated for the relief of symptoms secondary to airway obstructive disorder in chronic obstructive pulmonary disease (chronic bronchitis, emphysema) (when a combination treatment of an inhaled long-acting anticholinergic and a long- acting beta-2 agonist is needed).
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
+    confidence: 1.0
+    grounded_id: MONDO:0005002
+    grounded_label: chronic obstructive pulmonary disease
+    grounding_quality: lexical_exact
+    original_string: chronic obstructive pulmonary disease
+    subject_id: MEDICNE:21d2e90f-d938-511f-9a9d-5a078bf97ee4
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: MONDO:0005002
+    normalized_label: chronic obstructive pulmonary disease
+    original_id: MONDO:0005002
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:1424883|MONDO:0005002
+  ema: false
+  evidence:
+  - approval_date: '20161202'
+    approval_status: APPROVED
+    confidence: HIGH
+    document_id: PMDA:VILANTEROL TRIFENATATE#102-20161202
+    explanation: PMDA-approved indication; per-product review report
+    jurisdiction: JAPAN
+    original_disease_label: chronic obstructive pulmonary disease
+    original_disease_verbatim: chronic obstructive pulmonary disease (chronic bronchitis, emphysema)
+    original_drug_label: VILANTEROL TRIFENATATE
+    population_context: patients who require a combination therapy with an inhaled corticosteroid and a long-acting beta-2 agonist
+    product_id: P201400076
+    reference: https://www.pmda.go.jp/files/000208866.pdf
+    snippet: Drugs with a new additional indication and a new dosage for the relief of symptoms in patients with chronic obstructive pulmonary disease (chronic bronchitis, emphysema) (who require a combination therapy with an inhaled corticosteroid and a long-acting beta-2 agonist).
+    source_document_url: https://www.pmda.go.jp/files/000208866.pdf
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: MONDO:0005002
+  final_normalized_disease_label: chronic obstructive pulmonary disease
+  final_normalized_drug_id: RXCUI:1424883
+  final_normalized_drug_label: vilanterol trifenatate
+  indications_text: Drugs with a new additional indication and a new dosage for the relief of symptoms in patients with chronic obstructive pulmonary disease (chronic bronchitis, emphysema) (who require a combination therapy with an inhaled corticosteroid and a long-acting beta-2 agonist).
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
+    confidence: 1.0
+    grounded_id: MONDO:0005002
+    grounded_label: chronic obstructive pulmonary disease
+    grounding_quality: lexical_exact
+    original_string: chronic obstructive pulmonary disease
+    subject_id: MEDICNE:21d2e90f-d938-511f-9a9d-5a078bf97ee4
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: MONDO:0005002
+    normalized_label: chronic obstructive pulmonary disease
+    original_id: MONDO:0005002
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:1424883|MONDO:0005002
+  ema: false
+  evidence:
+  - approval_date: '20190326'
+    approval_status: APPROVED
+    confidence: HIGH
+    disease_context:
+    - chronic bronchitis
+    - emphysema
+    document_id: PMDA:VILANTEROL TRIFENATATE#80-20190326
+    explanation: PMDA-approved indication; per-product review report
+    jurisdiction: JAPAN
+    original_disease_label: chronic obstructive pulmonary disease
+    original_disease_verbatim: chronic obstructive pulmonary disease
+    original_drug_label: VILANTEROL TRIFENATATE
+    population_context: patients who require a combination therapy with an inhaled corticosteroid, a long-acting inhaled anticholinergic agent and a long-acting beta-2 agonist
+    product_id: P201400076
+    reference: https://www.pmda.go.jp/files/000208866.pdf
+    snippet: New combination drugs indicated for the relief of symptoms in patients with chronic obstructive pulmonary disease (chronic bronchitis, emphysema) (who require a combination therapy with an inhaled corticosteroid, a long-acting inhaled anticholinergic agent and a long-acting beta-2 agonist).
+    source_document_url: https://www.pmda.go.jp/files/000208866.pdf
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: MONDO:0005002
+  final_normalized_disease_label: chronic obstructive pulmonary disease
+  final_normalized_drug_id: RXCUI:1424883
+  final_normalized_drug_label: vilanterol trifenatate
+  indications_text: New combination drugs indicated for the relief of symptoms in patients with chronic obstructive pulmonary disease (chronic bronchitis, emphysema) (who require a combination therapy with an inhaled corticosteroid, a long-acting inhaled anticholinergic agent and a long-acting beta-2 agonist).
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
+    confidence: 0.855
+    grounded_id: HP:0002099
+    grounded_label: Asthma
+    grounding_quality: lexical_exact
+    original_string: bronchial asthma
+    subject_id: MEDICNE:622b5bbc-9b53-5f84-81e2-4e499dfc0011
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: HP:0002099
+    normalized_label: Asthma
+    original_id: HP:0002099
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:1424883|HP:0002099
+  ema: false
+  evidence:
+  - approval_date: '20201127'
+    approval_status: APPROVED
+    confidence: HIGH
+    document_id: PMDA:VILANTEROL TRIFENATATE#60-20201127
+    explanation: PMDA-approved indication; per-product review report
+    jurisdiction: JAPAN
+    original_disease_label: bronchial asthma
+    original_disease_verbatim: bronchial asthma
+    original_drug_label: VILANTEROL TRIFENATATE
+    population_context: patients needing combination treatment of an inhaled steroid, a long-acting inhaled anticholinergic agent and a long-acting beta-2 agonist
+    product_id: P201400076
+    reference: https://www.pmda.go.jp/files/000208866.pdf
+    snippet: (1), (2) New combination drugs indicated for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid, a long-acting inhaled anticholinergic agent and a long-acting beta-2 agonist is needed). (3), (4) Drugs with a new indication and a new dosage for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid, a long- acting inhaled anticholinergic agent and a long-acting beta-2 agonist is needed).
+    source_document_url: https://www.pmda.go.jp/files/000208866.pdf
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: HP:0002099
+  final_normalized_disease_label: Asthma
+  final_normalized_drug_id: RXCUI:1424883
+  final_normalized_drug_label: vilanterol trifenatate
+  indications_text: (1), (2) New combination drugs indicated for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid, a long-acting inhaled anticholinergic agent and a long-acting beta-2 agonist is needed). (3), (4) Drugs with a new indication and a new dosage for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid, a long- acting inhaled anticholinergic agent and a long-acting beta-2 agonist is needed).
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
+    confidence: 0.855
+    grounded_id: HP:0002099
+    grounded_label: Asthma
+    grounding_quality: lexical_exact
+    original_string: bronchial asthma
+    subject_id: MEDICNE:622b5bbc-9b53-5f84-81e2-4e499dfc0011
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: HP:0002099
+    normalized_label: Asthma
+    original_id: HP:0002099
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:1424883|HP:0002099
+  ema: false
+  evidence:
+  - approval_date: '20240624'
+    approval_status: APPROVED
+    confidence: HIGH
+    document_id: PMDA:VILANTEROL TRIFENATATE#14-20240624
+    explanation: PMDA-approved indication; per-product review report
+    jurisdiction: JAPAN
+    original_disease_label: bronchial asthma
+    original_disease_verbatim: bronchial asthma
+    original_drug_label: VILANTEROL TRIFENATATE
+    population_context: pediatric
+    product_id: P201400076
+    reference: https://www.pmda.go.jp/files/000208866.pdf
+    snippet: (1) (2) New combination drugs with a new additional pediatric dosage indicated for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid and a long-acting beta-2 agonist is needed). (3) (4) Drugs with a new additional pediatric dosage indicated for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid and a long- acting beta-2 agonist is needed).
+    source_document_url: https://www.pmda.go.jp/files/000208866.pdf
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: HP:0002099
+  final_normalized_disease_label: Asthma
+  final_normalized_drug_id: RXCUI:1424883
+  final_normalized_drug_label: vilanterol trifenatate
+  indications_text: (1) (2) New combination drugs with a new additional pediatric dosage indicated for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid and a long-acting beta-2 agonist is needed). (3) (4) Drugs with a new additional pediatric dosage indicated for the treatment of bronchial asthma (when a combination treatment of an inhaled steroid and a long- acting beta-2 agonist is needed).
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
     confidence: 1.0
     grounded_id: MONDO:0007915
     grounded_label: systemic lupus erythematosus
@@ -32228,7 +32433,7 @@
     normalized_label: Sentinel Lymph Node Mapping
     original_id: UMLS:C1519247
     tool: medic-normalizer/1
-  drug_disease: CHEBI:756179|UMLS:C1519247
+  drug_disease: RXCUI:9903|UMLS:C1519247
   ema: false
   evidence:
   - approval_date: '20230327'
@@ -32250,8 +32455,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C1519247
   final_normalized_disease_label: Sentinel Lymph Node Mapping
-  final_normalized_drug_id: CHEBI:756179
-  final_normalized_drug_label: phytate sodium
+  final_normalized_drug_id: RXCUI:9903
+  final_normalized_drug_label: sodium phytate
   indications_text: A drug with a new route of administration indicated for the sentinel lymph node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and head and neck cancer. A drug with a new indication for the sentinel lymph node mapping and lymphoscintigraphy in vulvar cancer. [Public knowledge-based application]
   pmda: true
   relationship_type: INDICATION
@@ -32268,7 +32473,7 @@
     normalized_label: Lymphoscintigraphy
     original_id: UMLS:C0412375
     tool: medic-normalizer/1
-  drug_disease: CHEBI:756179|UMLS:C0412375
+  drug_disease: RXCUI:9903|UMLS:C0412375
   ema: false
   evidence:
   - approval_date: '20230327'
@@ -32290,8 +32495,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C0412375
   final_normalized_disease_label: Lymphoscintigraphy
-  final_normalized_drug_id: CHEBI:756179
-  final_normalized_drug_label: phytate sodium
+  final_normalized_drug_id: RXCUI:9903
+  final_normalized_drug_label: sodium phytate
   indications_text: A drug with a new route of administration indicated for the sentinel lymph node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and head and neck cancer. A drug with a new indication for the sentinel lymph node mapping and lymphoscintigraphy in vulvar cancer. [Public knowledge-based application]
   pmda: true
   relationship_type: INDICATION
@@ -32308,7 +32513,7 @@
     normalized_label: Sentinel Lymph Node Mapping
     original_id: UMLS:C1519247
     tool: medic-normalizer/1
-  drug_disease: CHEBI:756179|UMLS:C1519247
+  drug_disease: RXCUI:9903|UMLS:C1519247
   ema: false
   evidence:
   - approval_date: '20230327'
@@ -32330,8 +32535,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C1519247
   final_normalized_disease_label: Sentinel Lymph Node Mapping
-  final_normalized_drug_id: CHEBI:756179
-  final_normalized_drug_label: phytate sodium
+  final_normalized_drug_id: RXCUI:9903
+  final_normalized_drug_label: sodium phytate
   indications_text: A drug with a new route of administration indicated for the sentinel lymph node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and head and neck cancer. A drug with a new indication for the sentinel lymph node mapping and lymphoscintigraphy in vulvar cancer. [Public knowledge-based application]
   pmda: true
   relationship_type: INDICATION
@@ -32348,7 +32553,7 @@
     normalized_label: Lymphoscintigraphy
     original_id: UMLS:C0412375
     tool: medic-normalizer/1
-  drug_disease: CHEBI:756179|UMLS:C0412375
+  drug_disease: RXCUI:9903|UMLS:C0412375
   ema: false
   evidence:
   - approval_date: '20230327'
@@ -32370,8 +32575,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C0412375
   final_normalized_disease_label: Lymphoscintigraphy
-  final_normalized_drug_id: CHEBI:756179
-  final_normalized_drug_label: phytate sodium
+  final_normalized_drug_id: RXCUI:9903
+  final_normalized_drug_label: sodium phytate
   indications_text: A drug with a new route of administration indicated for the sentinel lymph node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and head and neck cancer. A drug with a new indication for the sentinel lymph node mapping and lymphoscintigraphy in vulvar cancer. [Public knowledge-based application]
   pmda: true
   relationship_type: INDICATION
@@ -32388,7 +32593,7 @@
     normalized_label: Sentinel Lymph Node Mapping
     original_id: UMLS:C1519247
     tool: medic-normalizer/1
-  drug_disease: CHEBI:756179|UMLS:C1519247
+  drug_disease: RXCUI:9903|UMLS:C1519247
   ema: false
   evidence:
   - approval_date: '20230327'
@@ -32410,8 +32615,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C1519247
   final_normalized_disease_label: Sentinel Lymph Node Mapping
-  final_normalized_drug_id: CHEBI:756179
-  final_normalized_drug_label: phytate sodium
+  final_normalized_drug_id: RXCUI:9903
+  final_normalized_drug_label: sodium phytate
   indications_text: A drug with a new route of administration indicated for the sentinel lymph node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and head and neck cancer. A drug with a new indication for the sentinel lymph node mapping and lymphoscintigraphy in vulvar cancer. [Public knowledge-based application]
   pmda: true
   relationship_type: INDICATION
@@ -32428,7 +32633,7 @@
     normalized_label: Lymphoscintigraphy
     original_id: UMLS:C0412375
     tool: medic-normalizer/1
-  drug_disease: CHEBI:756179|UMLS:C0412375
+  drug_disease: RXCUI:9903|UMLS:C0412375
   ema: false
   evidence:
   - approval_date: '20230327'
@@ -32450,8 +32655,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C0412375
   final_normalized_disease_label: Lymphoscintigraphy
-  final_normalized_drug_id: CHEBI:756179
-  final_normalized_drug_label: phytate sodium
+  final_normalized_drug_id: RXCUI:9903
+  final_normalized_drug_label: sodium phytate
   indications_text: A drug with a new route of administration indicated for the sentinel lymph node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and head and neck cancer. A drug with a new indication for the sentinel lymph node mapping and lymphoscintigraphy in vulvar cancer. [Public knowledge-based application]
   pmda: true
   relationship_type: INDICATION
@@ -32468,7 +32673,7 @@
     normalized_label: Sentinel Lymph Node Mapping
     original_id: UMLS:C1519247
     tool: medic-normalizer/1
-  drug_disease: CHEBI:756179|UMLS:C1519247
+  drug_disease: RXCUI:9903|UMLS:C1519247
   ema: false
   evidence:
   - approval_date: '20230327'
@@ -32490,8 +32695,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C1519247
   final_normalized_disease_label: Sentinel Lymph Node Mapping
-  final_normalized_drug_id: CHEBI:756179
-  final_normalized_drug_label: phytate sodium
+  final_normalized_drug_id: RXCUI:9903
+  final_normalized_drug_label: sodium phytate
   indications_text: A drug with a new route of administration indicated for the sentinel lymph node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and head and neck cancer. A drug with a new indication for the sentinel lymph node mapping and lymphoscintigraphy in vulvar cancer. [Public knowledge-based application]
   pmda: true
   relationship_type: INDICATION
@@ -39715,6 +39920,88 @@
   pmda: true
   relationship_type: INDICATION
 - disease_grounding:
+    confidence: 1.0
+    grounded_id: MONDO:0001754
+    grounded_label: eclampsia
+    grounding_quality: lexical_exact
+    original_string: eclampsia
+    subject_id: MEDICNE:2efe1965-1adb-5da5-83a4-e1e30a4aee98
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: MONDO:0001754
+    normalized_label: eclampsia
+    original_id: MONDO:0001754
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:6574|MONDO:0001754
+  ema: false
+  evidence:
+  - approval_date: '20130325'
+    approval_status: APPROVED
+    claim_predicate: prevents
+    confidence: MEDIUM
+    disease_context:
+    - severe pregnancy-induced hypertension
+    document_id: PMDA:MAGNESIUM SULFATE HYDRATE#137-20130325
+    explanation: PMDA-approved indication; review report not yet linked (search URL fallback)
+    jurisdiction: JAPAN
+    original_disease_label: eclampsia
+    original_disease_verbatim: eclampsia
+    original_drug_label: MAGNESIUM SULFATE HYDRATE
+    population_context: patients with severe pregnancy-induced hypertension
+    reference: https://www.pmda.go.jp/PmdaSearch/iyakuSearch/
+    snippet: Drugs with a new additional indication and a new dosage for the prevention and treatment of eclampsia in patients with severe pregnancy- induced hypertension. [Public knowledge-based application after PAFSC's preliminary assessment]
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: MONDO:0001754
+  final_normalized_disease_label: eclampsia
+  final_normalized_drug_id: RXCUI:6574
+  final_normalized_drug_label: magnesium
+  indications_text: Drugs with a new additional indication and a new dosage for the prevention and treatment of eclampsia in patients with severe pregnancy- induced hypertension. [Public knowledge-based application after PAFSC's preliminary assessment]
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
+    confidence: 1.0
+    grounded_id: MONDO:0001754
+    grounded_label: eclampsia
+    grounding_quality: lexical_exact
+    original_string: eclampsia
+    subject_id: MEDICNE:2efe1965-1adb-5da5-83a4-e1e30a4aee98
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: MONDO:0001754
+    normalized_label: eclampsia
+    original_id: MONDO:0001754
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:6574|MONDO:0001754
+  ema: false
+  evidence:
+  - approval_date: '20130325'
+    approval_status: APPROVED
+    claim_predicate: prevents
+    confidence: MEDIUM
+    disease_context:
+    - severe pregnancy-induced hypertension
+    document_id: PMDA:MAGNESIUM SULFATE HYDRATE#137-20130325
+    explanation: PMDA-approved indication; review report not yet linked (search URL fallback)
+    jurisdiction: JAPAN
+    original_disease_label: eclampsia
+    original_disease_verbatim: eclampsia
+    original_drug_label: MAGNESIUM SULFATE HYDRATE
+    population_context: patients with severe pregnancy-induced hypertension
+    reference: https://www.pmda.go.jp/PmdaSearch/iyakuSearch/
+    snippet: Drugs with a new additional indication and a new dosage for the prevention and treatment of eclampsia in patients with severe pregnancy- induced hypertension. [Public knowledge-based application after PAFSC's preliminary assessment]
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: MONDO:0001754
+  final_normalized_disease_label: eclampsia
+  final_normalized_drug_id: RXCUI:6574
+  final_normalized_drug_label: magnesium
+  indications_text: Drugs with a new additional indication and a new dosage for the prevention and treatment of eclampsia in patients with severe pregnancy- induced hypertension. [Public knowledge-based application after PAFSC's preliminary assessment]
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
     confidence: 0.9
     grounded_id: UMLS:C1142276
     grounded_label: ''
@@ -39750,6 +40037,43 @@
   final_normalized_drug_id: CHEBI:755992
   final_normalized_drug_label: molidustat sodium
   indications_text: Drugs with a new active ingredient indicated for the treatment of renal anemia.
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
+    confidence: 0.9
+    grounded_id: UMLS:C0854521
+    grounded_label: ''
+    grounding_quality: lexical_exact
+    original_string: hypozincemia
+    subject_id: MEDICNE:ccff8f44-e47c-5c24-a128-7e6e1c43f937
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: UMLS:C0854521
+    normalized_label: ''
+    original_id: UMLS:C0854521
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:11416|UMLS:C0854521
+  ema: false
+  evidence:
+  - approval_date: '20210122'
+    approval_status: APPROVED
+    confidence: MEDIUM
+    document_id: PMDA:ZINC ACETATE HYDRATE#55-20210122
+    explanation: PMDA-approved indication; review report not yet linked (search URL fallback)
+    jurisdiction: JAPAN
+    original_disease_label: hypozincemia
+    original_disease_verbatim: hypozincemia
+    original_drug_label: ZINC ACETATE HYDRATE
+    reference: https://www.pmda.go.jp/PmdaSearch/iyakuSearch/
+    snippet: Drugs with a new dosage and a drug in an additional dosage form for the treatment of hypozincemia.
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: UMLS:C0854521
+  final_normalized_disease_label: hypozincemia
+  final_normalized_drug_id: RXCUI:11416
+  final_normalized_drug_label: zinc
+  indications_text: Drugs with a new dosage and a drug in an additional dosage form for the treatment of hypozincemia.
   pmda: true
   relationship_type: INDICATION
 - disease_grounding:
@@ -52038,7 +52362,7 @@
     normalized_label: cystitis
     original_id: MONDO:0006032
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|MONDO:0006032
+  drug_disease: RXCUI:1597608|MONDO:0006032
   ema: false
   evidence:
   - approval_date: '20190108'
@@ -52057,8 +52381,8 @@
   fda: false
   final_normalized_disease_id: MONDO:0006032
   final_normalized_disease_label: cystitis
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A new combination drug with new active ingredients indicated for the treatment of cystitis, pyelonephritis, peritonitis, intra-abdominal abscess, cholecystitis, and liver abscess caused by Zerbaxa- sensitive Streptococcus spp., Escherichia coli, Citrobacter spp., Klebsiella spp., Enterobacter spp., Proteus spp., or Pseudomonas aeruginosa.
   pmda: true
   relationship_type: INDICATION
@@ -52075,7 +52399,7 @@
     normalized_label: pyelonephritis
     original_id: MONDO:0006939
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|MONDO:0006939
+  drug_disease: RXCUI:1597608|MONDO:0006939
   ema: false
   evidence:
   - approval_date: '20190108'
@@ -52094,8 +52418,8 @@
   fda: false
   final_normalized_disease_id: MONDO:0006939
   final_normalized_disease_label: pyelonephritis
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A new combination drug with new active ingredients indicated for the treatment of cystitis, pyelonephritis, peritonitis, intra-abdominal abscess, cholecystitis, and liver abscess caused by Zerbaxa- sensitive Streptococcus spp., Escherichia coli, Citrobacter spp., Klebsiella spp., Enterobacter spp., Proteus spp., or Pseudomonas aeruginosa.
   pmda: true
   relationship_type: INDICATION
@@ -52112,7 +52436,7 @@
     normalized_label: peritonitis
     original_id: MONDO:1010128
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|MONDO:1010128
+  drug_disease: RXCUI:1597608|MONDO:1010128
   ema: false
   evidence:
   - approval_date: '20190108'
@@ -52131,8 +52455,8 @@
   fda: false
   final_normalized_disease_id: MONDO:1010128
   final_normalized_disease_label: peritonitis
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A new combination drug with new active ingredients indicated for the treatment of cystitis, pyelonephritis, peritonitis, intra-abdominal abscess, cholecystitis, and liver abscess caused by Zerbaxa- sensitive Streptococcus spp., Escherichia coli, Citrobacter spp., Klebsiella spp., Enterobacter spp., Proteus spp., or Pseudomonas aeruginosa.
   pmda: true
   relationship_type: INDICATION
@@ -52149,7 +52473,7 @@
     normalized_label: Abdominal Abscess
     original_id: UMLS:C0243001
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|UMLS:C0243001
+  drug_disease: RXCUI:1597608|UMLS:C0243001
   ema: false
   evidence:
   - approval_date: '20190108'
@@ -52168,8 +52492,8 @@
   fda: false
   final_normalized_disease_id: UMLS:C0243001
   final_normalized_disease_label: Abdominal Abscess
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A new combination drug with new active ingredients indicated for the treatment of cystitis, pyelonephritis, peritonitis, intra-abdominal abscess, cholecystitis, and liver abscess caused by Zerbaxa- sensitive Streptococcus spp., Escherichia coli, Citrobacter spp., Klebsiella spp., Enterobacter spp., Proteus spp., or Pseudomonas aeruginosa.
   pmda: true
   relationship_type: INDICATION
@@ -52186,7 +52510,7 @@
     normalized_label: cholecystitis
     original_id: MONDO:0002155
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|MONDO:0002155
+  drug_disease: RXCUI:1597608|MONDO:0002155
   ema: false
   evidence:
   - approval_date: '20190108'
@@ -52205,8 +52529,8 @@
   fda: false
   final_normalized_disease_id: MONDO:0002155
   final_normalized_disease_label: cholecystitis
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A new combination drug with new active ingredients indicated for the treatment of cystitis, pyelonephritis, peritonitis, intra-abdominal abscess, cholecystitis, and liver abscess caused by Zerbaxa- sensitive Streptococcus spp., Escherichia coli, Citrobacter spp., Klebsiella spp., Enterobacter spp., Proteus spp., or Pseudomonas aeruginosa.
   pmda: true
   relationship_type: INDICATION
@@ -52223,7 +52547,7 @@
     normalized_label: Liver abscess
     original_id: HP:0100523
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|HP:0100523
+  drug_disease: RXCUI:1597608|HP:0100523
   ema: false
   evidence:
   - approval_date: '20190108'
@@ -52242,8 +52566,8 @@
   fda: false
   final_normalized_disease_id: HP:0100523
   final_normalized_disease_label: Liver abscess
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A new combination drug with new active ingredients indicated for the treatment of cystitis, pyelonephritis, peritonitis, intra-abdominal abscess, cholecystitis, and liver abscess caused by Zerbaxa- sensitive Streptococcus spp., Escherichia coli, Citrobacter spp., Klebsiella spp., Enterobacter spp., Proteus spp., or Pseudomonas aeruginosa.
   pmda: true
   relationship_type: INDICATION
@@ -52260,7 +52584,7 @@
     normalized_label: Sepsis
     original_id: HP:0100806
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|HP:0100806
+  drug_disease: RXCUI:1597608|HP:0100806
   ema: false
   evidence:
   - approval_date: '20191220'
@@ -52281,8 +52605,8 @@
   fda: false
   final_normalized_disease_id: HP:0100806
   final_normalized_disease_label: Sepsis
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A drug with new additional indications and a new dosage for the treatment of sepsis and pneumonia caused by Serratia and Haemophilus influenzae.
   pmda: true
   relationship_type: INDICATION
@@ -52299,7 +52623,7 @@
     normalized_label: pneumonia
     original_id: MONDO:0005249
     tool: medic-normalizer/1
-  drug_disease: CHEBI:134719|MONDO:0005249
+  drug_disease: RXCUI:1597608|MONDO:0005249
   ema: false
   evidence:
   - approval_date: '20191220'
@@ -52320,8 +52644,8 @@
   fda: false
   final_normalized_disease_id: MONDO:0005249
   final_normalized_disease_label: pneumonia
-  final_normalized_drug_id: CHEBI:134719
-  final_normalized_drug_label: ceftolozane
+  final_normalized_drug_id: RXCUI:1597608
+  final_normalized_drug_label: ceftolozane sulfate
   indications_text: A drug with new additional indications and a new dosage for the treatment of sepsis and pneumonia caused by Serratia and Haemophilus influenzae.
   pmda: true
   relationship_type: INDICATION
@@ -63896,6 +64220,44 @@
   final_normalized_drug_id: CHEBI:755501
   final_normalized_drug_label: etelcalcetide hydrochloride
   indications_text: Drugs with a new active ingredient indicated for the treatment of secondary hyperparathyroidism in patients on hemodialysis.
+  pmda: true
+  relationship_type: INDICATION
+- disease_grounding:
+    confidence: 0.9
+    grounded_id: UMLS:C0854521
+    grounded_label: ''
+    grounding_quality: lexical_exact
+    original_string: hypozincemia
+    subject_id: MEDICNE:ccff8f44-e47c-5c24-a128-7e6e1c43f937
+  disease_normalization:
+    normalization_quality: identity
+    normalized_id: UMLS:C0854521
+    normalized_label: ''
+    original_id: UMLS:C0854521
+    tool: medic-normalizer/1
+  drug_disease: RXCUI:2729665|UMLS:C0854521
+  ema: false
+  evidence:
+  - approval_date: '20170324'
+    approval_status: APPROVED
+    confidence: MEDIUM
+    document_id: PMDA:ZINC ACETATE DIHYDRATE#97-20170324
+    explanation: PMDA-approved indication; review report not yet linked (search URL fallback)
+    jurisdiction: JAPAN
+    original_disease_label: hypozincemia
+    original_disease_verbatim: hypozincemia
+    original_drug_label: ZINC ACETATE DIHYDRATE
+    population_context: not stated
+    reference: https://www.pmda.go.jp/PmdaSearch/iyakuSearch/
+    snippet: Drugs with a new additional indication and a new dosage for the treatment of hypozincemia.
+    source_role: PRIMARY
+    source_type: REGULATORY
+  fda: false
+  final_normalized_disease_id: UMLS:C0854521
+  final_normalized_disease_label: hypozincemia
+  final_normalized_drug_id: RXCUI:2729665
+  final_normalized_drug_label: zinc acetate dihydrate
+  indications_text: Drugs with a new additional indication and a new dosage for the treatment of hypozincemia.
   pmda: true
   relationship_type: INDICATION
 - disease_grounding:

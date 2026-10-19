@@ -1,8 +1,8 @@
-auto_accepted: 2409
+auto_accepted: 2454
 llm_reranked: 0
 review_recommended: 0
 total_drugs: 5885
-unresolved: 3476
+unresolved: 3431
 unresolved_drugs:
 - Ruzam Concentrate
 - Azoxymere bromide
@@ -36,7 +36,6 @@ unresolved_drugs:
 - Badyaga
 - Possibility
 - Iodine + [Potassium Iodide + Polyvinyl Alcohol]
-- Belladonna Leaf Extract + Benzocaine
 - Valerian officinalis rhizomes with roots tincture + Lily of the valley herb tincture
 - Ammonia + Anise Seed Oil
 - Valerian rhizomes with roots
@@ -199,7 +198,6 @@ unresolved_drugs:
 - SEPTILIN® PLUS
 - Household Allergens
 - Urological (Diuretic) Herbal Blend-F
-- Aloe arborescens leaf extract
 - Single-component LM preparations of plant origin (237 items, as listed in the appendix)
 - Single-component LM preparations of mineral origin (130 items—as listed in the appendix)
 - Lactic acid bacteria
@@ -254,14 +252,12 @@ unresolved_drugs:
 - A vaccine to prevent Ebola
 - Castor Bean Seed Oil
 - Marshmallow Root Extract
-- Senna Leaf Extract
 - Decvalinium chloride
 - '[Valerian officinalis rhizomes with roots + Melissa officinalis herb + Peppermint
   leaves] extract'
 - Wormwood Tincture
 - Ethylmethylhydroxypyridine acetylglutamate
 - Hydrolyzed lignin
-- Lysozyme + Pyridoxine
 - Sea Buckthorn (Hippophae rhamnoides) Fruit Oil
 - Ascorbic Acid + Calcium Gluconate + Paracetamol + Rutoside + Phenylephrine and Ascorbic
   Acid + Calcium Gluconate + Paracetamol + Rutoside + Phenylephrine + Phenyramine
@@ -277,7 +273,6 @@ unresolved_drugs:
 - Rhodiola rosea rhizome and root extract
 - Synonym
 - Peppermint Leaf Tincture
-- Belladonna Leaf Extract + Benzocaine + Metamizole Sodium + Sodium Bicarbonate
 - From both sides
 - Colloidal silver
 - Colloidal silicon dioxide
@@ -292,7 +287,6 @@ unresolved_drugs:
 - Prostate extract
 - Levomenthol solution in menthyl valerate + phenobarbital + ethyl bromovalerianate
 - Linden Flowers
-- Dazatinib
 - Synthetic small interfering ribonucleic acid (miRNA) [double-stranded]
 - L-threonyl-L-lysyl-L-prolyl-L-arginyl-L-proline
 - Valerian officinalis rhizomes with roots tincture + camphor + peppermint leaf essential
@@ -310,7 +304,6 @@ unresolved_drugs:
 - Picloxidine
 - Bismuth tripotassium dicitrate
 - Single-strain Lactobacillus rhamnosus probiotic
-- Glycyrrhizic Acid + Phospholipids
 - 7-[N-(4-trifluoromethylbenzoyl)-hydrazinecarbonyl]-tricyclo[3.2.2.0² , 4]non-8-ene-6-carboxylic
   acid
 - Belladonna leaf extract + bismuth tribromophenolate and bismuth oxide complex +
@@ -334,7 +327,6 @@ unresolved_drugs:
 - Proproten®-100
 - Ergoferon®
 - Antibodies to the brain-specific S-100 protein + Antibodies to endothelial NO synthase
-- Iron Sulfate + [Ascorbic Acid]
 - Metabolites of Escherichia coli, Enterococcus faecalis, Lactobacillus acidophilus,
   and Lactobacillus helveticus
 - Purified micronized flavonoid fraction (diosmin + flavonoids expressed as hesperidin)
@@ -361,7 +353,6 @@ unresolved_drugs:
 - The sum of the sodium salts of chlorin e6, chlorin p6, and purpurin 5
 - Sodium daltepariin
 - ARNIGEL®
-- Iron sulfate
 - Calcium Nadroparin
 - Coryphollotropin alfa
 - Sinupret® Extract
@@ -391,7 +382,6 @@ unresolved_drugs:
 - Lanceolate Plantain Leaf Extract + Common Thyme Herb Extract
 - Vaccine for the Prevention of Viral Hepatitis B
 - Ascorbic acid + (wood mallow flowers + lanceolate plantain leaves) extract
-- Iron Sulfate + Folic Acid
 - ORVIS® Rino
 - Polypeptides from the cerebral cortex of cattle
 - Osteogenon
@@ -410,8 +400,6 @@ unresolved_drugs:
 - Sodium fondaparinux
 - Iron [III] hydroxide-sucrose complex
 - Meglumine acridone acetate
-- Potassium chloride + Calcium chloride + Magnesium chloride + Sodium acetate + Sodium
-  chloride + Malic acid
 - Goldsmiths
 - Dysentery bacteriophage
 - Arginyl-alpha-aspartyl-lysyl-valyl-tyrosyl-arginine
@@ -434,13 +422,9 @@ unresolved_drugs:
 - Vaccine for the Prevention of Measles and Mumps
 - Complex sodium chloride solution [potassium chloride + calcium chloride + sodium
   chloride]
-- Potassium chloride + Magnesium chloride + Sodium acetate + Sodium gluconate + Sodium
-  chloride
 - Trentino
-- Glycyrrhizic Acid + Ursodeoxycholic Acid
 - Gangrene antitoxin
 - Vaccine for the Prevention of Q Fever
-- Ibandronic acid
 - Lanceolate Plantain Leaf Extract + Common Thyme Herb Extract + Creeping Thyme Herb
   Extract
 - Vaccine for the prevention of tick-borne encephalitis
@@ -463,7 +447,6 @@ unresolved_drugs:
 - Motherwort Herb Extract
 - Levomenthol Solution in Menthilizalate
 - Populus Compositum CP
-- Entecavir
 - Century Grass + Lovage Roots + Rosemary Leaves
 - Vaccine for the Treatment and Diagnosis of Gonococcal Infection
 - Strumel® T
@@ -505,8 +488,6 @@ unresolved_drugs:
 - Seawater
 - Lemon Balm Leaf Extract + Peppermint Leaf Oil + Motherwort Herb Extract
 - Bifidobacteria + Lactobacilli
-- Potassium chloride + Calcium chloride + Magnesium chloride + Sodium lactate + Sodium
-  chloride + Sorbitol
 - Drospirenone + Ethinylestradiol + [Calcium Levomefolate] and Calcium Levomefolate
 - Maritupir's
 - Piobacteriophage
@@ -534,12 +515,9 @@ unresolved_drugs:
 - Vaccine for the prevention of herpes zoster (recombinant, adjuvanted)
 - At once
 - Normal Human Immunoglobulin [IgG+IgA+IgM]
-- Bifidobacterium longum + Enterococcus faecium
 - A vaccine for the prevention of diphtheria and tetanus (adsorbed), acellular pertussis,
   inactivated poliomyelitis, and Haemophilus influenzae type b (conjugate)
 - Influenza Vaccine [Inactivated] + Azoxymere Bromide
-- Gelatin + Potassium chloride + Calcium chloride + Magnesium chloride + Sodium acetate
-  + Sodium chloride
 - Levomenthol Solution in Menthilizalate + [Dextrose]
 - Ascorbic Acid + Hesperidin Methylchalcone + Hawthorn Root Extract
 - Medicinal dandelion roots
@@ -552,7 +530,6 @@ unresolved_drugs:
 - Bacteriophage coli
 - Leaves of Orthosiphon stamineus (Kidney Tea)
 - Avi-More®
-- Belladonna Leaf Extract
 - Codeine + Sodium Bicarbonate + Terpine Hydrate
 - Ivy Leaf Extract
 - Household allergens
@@ -564,8 +541,6 @@ unresolved_drugs:
   magnesium chloride + sodium acetate + malic acid]
 - Remens®
 - Dioxomethyltetrahydropyrimidine + Chloramphenicol
-- Potassium chloride + Calcium chloride + Magnesium chloride + Sodium acetate + Sodium
-  chloride
 - Dioxomethyltetrahydropyrimidine + Sulfadimethoxine + Trimecaine + Chloramphenicol
 - NAZUFITOL
 - Hemicellulase + Bile Components + Pancreatin
@@ -750,7 +725,6 @@ unresolved_drugs:
 - Trace Element Complex [Parenteral Administration]
 - Posteizan®
 - Berekant
-- Human Placenta Hydrolysate
 - Pentanov®-ICN
 - 1-[2-(1-Methylimidazol-4-yl)ethyl]perhydroazine-2,6-dione
 - Botulinum Toxoid + Tetanus Toxoid
@@ -931,7 +905,6 @@ unresolved_drugs:
 - Tonzilgon® H
 - Liquid Aloe Extract
 - D,L-Gopantenic Acid
-- Belladonna Leaf Extract + Sodium Bicarbonate
 - Passiflora incarnata herb extract
 - Extract of Daurian black cohosh and racemose black cohosh rhizomes with roots
 - Pinosol®
@@ -996,10 +969,8 @@ unresolved_drugs:
 - Samarium, 153Sm oxabifor
 - Rinofluimucil®
 - Yobenguan (123I)
-- Selank®
 - Ureacaps, 14C
 - Sodium potassium hydrocitrate
-- Salvia officinalis leaf extract
 - Rosehip Seed Oil
 - Voice
 - Bearberry Leaf Extract
@@ -1053,11 +1024,9 @@ unresolved_drugs:
 - SAGRIPPIN® HOMEOPATHIC
 - Tenofovir + Elvafavirine + Emtricitabine
 - Sodium parnaparin
-- Lidocaine + Lysozyme + Cetylpyridinium Chloride
 - Enema Wedge
 - Marshmallow Root Extract + Licorice Root Extract + Sodium Bicarbonate
 - Aloe arborescens juice
-- Potassium chloride + Magnesium chloride + Sodium chloride + Sodium fumarate
 - Susteffect® Bioactive
 - ADENOPROSIN®
 - Carrot-like visnaga (toothed ammi) fruit extract
@@ -1125,7 +1094,6 @@ unresolved_drugs:
 - Ruriotokog alpha pegol
 - Viburnum berries
 - Sodium Bemiparin
-- Favilavir+Zinc
 - Liv.52®
 - Kokarnit®
 - Vaccine for the Prevention of Measles, Rubella, and Mumps (Live)
@@ -1233,7 +1201,6 @@ unresolved_drugs:
 - Passiflora EDAS-911
 - Single-component preparations of mineral origin (110 items, as listed in the appendix)
 - 'Bloodroot: Rhizomes and Roots'
-- Belladonna Leaf Extract + Phenylsalicylate
 - Cholagogue Blend No. 3
 - Arfazetin-E
 - Diindolylmethane + [fish oil from cod liver]
@@ -1318,7 +1285,6 @@ unresolved_drugs:
 - Oregano herb
 - Proxipin®
 - Calflon
-- Aloe arborescens Leaf Extract + Ascorbic Acid
 - Common blueberry shoots
 - Redivivo (lycopene) 10% CWS/S-TG
 - UroKam®
@@ -1338,7 +1304,6 @@ unresolved_drugs:
 - Dried aloe extract
 - Dried hop extract
 - (2S)-2-Acetamidopentadienoic acid
-- Glycyrrhizic acid
 - Liquid Thyme Extract
 - Chamomile Liquid Extract
 - Trisol
@@ -1490,7 +1455,6 @@ unresolved_drugs:
 - Marshmallow Root Extract
 - Antithymocyte Immunoglobulin
 - Actiferrin
-- Iron Sulfate + Serine
 - Dexa-Gentamicin
 - Contratubex
 - Blood clotting factors II, IX, and X in combination
@@ -1510,8 +1474,6 @@ unresolved_drugs:
 - Abomin
 - Vaccine for the prevention of viral hepatitis B, diphtheria, and tetanus
 - Adgelon®
-- Potassium chloride + Calcium chloride + Magnesium chloride + Sodium lactate + Sodium
-  chloride
 - Arginyl-alpha-aspartyl-lysyl-valyl-tyrosyl-arginine diacetate
 - Hydroxyaluminum trisulfophthalocyanine
 - Collagenase CC
@@ -1717,7 +1679,6 @@ unresolved_drugs:
 - Proctoit®-GF
 - Choleit-GF
 - Ginseng Compound
-- Belladonna Leaf Extract + Ichthammol
 - A vaccine for the prevention of herpes infections
 - Mucaltin
 - Tambuil extract
@@ -1831,9 +1792,7 @@ unresolved_drugs:
 - Vitex agnus-castus (Vitex agnus-castus)
 - Ethyl {2-[2-(1-methylcarbamimidamido)acetamido]acetate} (2E)-but-2-enedioate
 - Thiozonide citrate
-- Senna Leaf Extract (Calcium Salts of Sennosides A and B)
 - Daurian black cohosh, racemose black cohosh
-- Magnesium chloride
 - 1,4-dimethyl-7-(2-propyl)azulene
 - Common thyme herb
 - Cimicifuga racemosa (Cimicifuga)
@@ -1853,7 +1812,6 @@ unresolved_drugs:
   + aspartyl-glutamyl-proline + lysyl-aspartyl-glutamic acid
 - Anamirta cocculus (Cocculus)/Anamirta cocculus (Cocculus)
 - Main Fuchsin
-- Lysozyme
 - Zincum isovalerianicum (Zincum valerianicum)/Zincum isovalerianicum (Zincum valerianicum)
 - Strychnos ignatii (Ignatia)/Strychnos ignatii (Ignatia)
 - Lachesis
@@ -2246,8 +2204,6 @@ unresolved_drugs:
 - Dentamet
 - Quintasol
 - Kalanchoe juice
-- Camphor Oil
-- Zinc Ointment
 - Sympathetic
 - Sympatil®
 - Coffeinamine
@@ -2679,7 +2635,6 @@ unresolved_drugs:
 - Wind plastic
 - Fungoterbin® Neo
 - Citramon Ultra
-- Bearberry extract
 - The pennywort of a forgotten rhizome and its roots
 - Ringers
 - Hepazolone
@@ -2761,7 +2716,6 @@ unresolved_drugs:
 - Tetraspan 10
 - Codelac® Broncho
 - Phosphogliv® Forte
-- Phospholipids + Glycyrrhizic Acid
 - Dantinorm Baby
 - Entofit Diarro
 - Vicair Avelex
@@ -2960,7 +2914,6 @@ unresolved_drugs:
 - Apizartron
 - McMirror Complex
 - Ferro-Folgamma®
-- Iron Sulfate + Folic Acid + Cyanocobalamin
 - Spazmalgon®
 - Lipofundin MST/LST 20%
 - Lipofundin MST/LST 10%
@@ -3112,7 +3065,6 @@ unresolved_drugs:
 - Vitalipid H for Adults
 - Vitalipid N for Children
 - Maxamine Forte
-- Iron chloride
 - Dextrose + Potassium chloride + Magnesium chloride + Sodium acetate + Sodium gluconate
   + Sodium chloride
 - Tenorox
@@ -3124,7 +3076,6 @@ unresolved_drugs:
 - Tissucol Kit
 - Hexbenidine + Etamivan + Etofilin
 - Strepsils® Plus
-- Iron Sulfate + Serine + Folic Acid
 - Festival
 - Festal®
 - Phytolysin®
@@ -3318,7 +3269,6 @@ unresolved_drugs:
 - Levosin®
 - Total alkaloid content in belladonna
 - Glekomen
-- Potassium chloride + Magnesium chloride + Sodium fumarate + Sodium chloride
 - Valoserdin®
 - Ferrovir®
 - Dried chamomile flowers
@@ -3626,7 +3576,6 @@ unresolved_drugs:
 - Sodium 7-(methylthio)-3-nitro-4-oxo-1,4-dihydro[1,2,4]triazolo[5,1-c][1,2,4]triazine-1-ide
   dihydrate
 - Vianvak®
-- Magnesium lactate dihydrate
 - Pineamin®
 - Recombinant Human Interferon Alpha-2b
 - Epigallocatechin

@@ -9065,15 +9065,15 @@
   - Relvar 100 Ellipta 14 dose Relvar 100 Ellipta 30 dose
   - Anoro Ellipta 7 doses Anoro Ellipta 30 doses
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:1424883
+    grounded_label: vilanterol trifenatate
+    grounding_quality: lexical_exact_normalized
     original_string: VILANTEROL TRIFENATATE
     subject_id: MEDICNE:9d4bc05e-a8a6-5a04-a6b0-4ed38f2de967
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: (1) (2) New combination drugs with a new additional pediatric dosage
     indicated for the treatment of bronchial asthma (when a combination treatment
     of an inhaled steroid and a long-acting beta-2 agonist is needed). (3) (4) Drugs
@@ -9098,8 +9098,14 @@
     anticholinergic and a long- acting beta-2 agonist is needed).
   is_orphan: false
   mention_id: MEDICNE:9d4bc05e-a8a6-5a04-a6b0-4ed38f2de967
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1424883
+    normalized_label: vilanterol trifenatate
+    original_id: RXCUI:1424883
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1424883
+  normalized_label: vilanterol trifenatate
   original_literal: VILANTEROL TRIFENATATE
   snippet: (1) (2) New combination drugs with a new additional pediatric dosage indicated
     for the treatment of bronchial asthma (when a combination treatment of an inhaled
@@ -20939,15 +20945,15 @@
     units (4) HCG Mochida for Injection 10000 units (5) Gonatropin for Injection 5000
     Units ((1) (2) Fuji Pharma Co., Ltd. (3) (4) Mochida Pharmaceutical Co., Ltd
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.6
+    grounded_id: RXCUI:340705
+    grounded_label: human chorionic gonadotropin
+    grounding_quality: lexical_exact_surgery
     original_string: HUMAN CHORIONIC GONADOTROPHIN
     subject_id: MEDICNE:ba12d751-2a16-5f1b-86e9-0215c7453717
-  grounding_confidence: 0.0
+  grounding_confidence: 0.6
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: (1) (2) (3) (4) Drugs with a new route of administration indicated for
     the induction of final follicular maturation and luteinization as part of assisted
     reproductive technology as well as induction of ovulation and luteinization in
@@ -20960,8 +20966,14 @@
     PAFSC's preliminary assessment]
   is_orphan: false
   mention_id: MEDICNE:ba12d751-2a16-5f1b-86e9-0215c7453717
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:340705
+    normalized_label: human chorionic gonadotropin
+    original_id: RXCUI:340705
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:340705
+  normalized_label: human chorionic gonadotropin
   original_literal: HUMAN CHORIONIC GONADOTROPHIN
   snippet: (1) (2) (3) (4) Drugs with a new route of administration indicated for
     the induction of final follicular maturation and luteinization as part of assisted
@@ -21569,13 +21581,13 @@
   brand_names:
   - Techne Phytate Kit
   grounding:
-    confidence: 0.88
-    grounded_id: CHEBI:756179
-    grounded_label: phytate sodium
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.9
+    grounded_id: RXCUI:9903
+    grounded_label: sodium phytate
+    grounding_quality: lexical_exact_normalized
     original_string: SODIUM PHYTATE
     subject_id: MEDICNE:989abb3b-6cfb-5cd9-9ab4-db7de72a2f2e
-  grounding_confidence: 0.88
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: A drug with a new route of administration indicated for the sentinel
@@ -21587,12 +21599,12 @@
   mention_id: MEDICNE:989abb3b-6cfb-5cd9-9ab4-db7de72a2f2e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:756179
-    normalized_label: phytate sodium
-    original_id: CHEBI:756179
+    normalized_id: RXCUI:9903
+    normalized_label: sodium phytate
+    original_id: RXCUI:9903
     tool: medic-normalizer/1
-  normalized_id: CHEBI:756179
-  normalized_label: phytate sodium
+  normalized_id: RXCUI:9903
+  normalized_label: sodium phytate
   original_literal: SODIUM PHYTATE
   snippet: A drug with a new route of administration indicated for the sentinel lymph
     node mapping and lymphoscintigraphy in cervical cancer, uterine neoplasms, and
@@ -26624,23 +26636,29 @@
   - Magsent Injection 100 mL Magnesol for Intravenous Injection 20 mL Magsent Injection
     Syringe 40 mL
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:6574
+    grounded_label: magnesium
+    grounding_quality: lexical_exact_surgery
     original_string: MAGNESIUM SULFATE HYDRATE
     subject_id: MEDICNE:527c4e5d-c551-5c73-9021-ad18e03b9aeb
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: A new combination drug indicated for bowel cleansing preparation for
     colonoscopy. | Drugs with a new additional indication and a new dosage for the
     prevention and treatment of eclampsia in patients with severe pregnancy- induced
     hypertension. [Public knowledge-based application after PAFSC's preliminary assessment]
   is_orphan: false
   mention_id: MEDICNE:527c4e5d-c551-5c73-9021-ad18e03b9aeb
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:6574
+    normalized_label: magnesium
+    original_id: RXCUI:6574
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:6574
+  normalized_label: magnesium
   original_literal: MAGNESIUM SULFATE HYDRATE
   snippet: A new combination drug indicated for bowel cleansing preparation for colonoscopy.
   snippets:
@@ -26709,21 +26727,27 @@
   brand_names:
   - (1) Nobelzin Granules 5% (2) Nobelzin Tablets 25 mg (3) Nobelzin Tablets 50 mg
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:11416
+    grounded_label: zinc
+    grounding_quality: lexical_exact_surgery
     original_string: ZINC ACETATE HYDRATE
     subject_id: MEDICNE:06a1afbb-5a28-5868-925c-834a277f5f81
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: Drugs with a new dosage and a drug in an additional dosage form for
     the treatment of hypozincemia.
   is_orphan: false
   mention_id: MEDICNE:06a1afbb-5a28-5868-925c-834a277f5f81
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:11416
+    normalized_label: zinc
+    original_id: RXCUI:11416
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:11416
+  normalized_label: zinc
   original_literal: ZINC ACETATE HYDRATE
   snippet: Drugs with a new dosage and a drug in an additional dosage form for the
     treatment of hypozincemia.
@@ -34074,9 +34098,9 @@
   - Zerbaxa Combination for Intravenous Drip Infusion
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:134719
-    grounded_label: ceftolozane
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:1597608
+    grounded_label: ceftolozane sulfate
+    grounding_quality: lexical_exact_normalized
     original_string: CEFTOLOZANE SULFATE
     subject_id: MEDICNE:bd55cd2e-f208-5b2a-a558-36cc31df68ca
   grounding_confidence: 0.9
@@ -34092,12 +34116,12 @@
   mention_id: MEDICNE:bd55cd2e-f208-5b2a-a558-36cc31df68ca
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:134719
-    normalized_label: ceftolozane
-    original_id: CHEBI:134719
+    normalized_id: RXCUI:1597608
+    normalized_label: ceftolozane sulfate
+    original_id: RXCUI:1597608
     tool: medic-normalizer/1
-  normalized_id: CHEBI:134719
-  normalized_label: ceftolozane
+  normalized_id: RXCUI:1597608
+  normalized_label: ceftolozane sulfate
   original_literal: CEFTOLOZANE SULFATE
   snippet: A drug with new additional indications and a new dosage for the treatment
     of sepsis and pneumonia caused by Serratia and Haemophilus influenzae.
@@ -42777,21 +42801,27 @@
   - Nobelzin Capsules 25 mg Nobelzin Capsules 50 mg Nobelzin Tablets 25 mg Nobelzin
     Tablets 50 mg
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:2729665
+    grounded_label: zinc acetate dihydrate
+    grounding_quality: lexical_exact_normalized
     original_string: ZINC ACETATE DIHYDRATE
     subject_id: MEDICNE:57cd7c6e-d230-517e-94fa-2e494779bac6
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: Drugs with a new additional indication and a new dosage for the treatment
     of hypozincemia.
   is_orphan: false
   mention_id: MEDICNE:57cd7c6e-d230-517e-94fa-2e494779bac6
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:2729665
+    normalized_label: zinc acetate dihydrate
+    original_id: RXCUI:2729665
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:2729665
+  normalized_label: zinc acetate dihydrate
   original_literal: ZINC ACETATE DIHYDRATE
   snippet: Drugs with a new additional indication and a new dosage for the treatment
     of hypozincemia.
@@ -52355,24 +52385,30 @@
   brand_names:
   - Lipiodol 480 Injection 10 mL
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:5933
+    grounded_label: iodine
+    grounding_quality: lexical_exact_surgery
     original_string: IODINE ADDITION PRODUCTS OF THE ETHYLESTERS OF THE FATTY ACIDS
       OBTAINED FROM POPPYSEED OIL
     subject_id: MEDICNE:7635d634-5bc8-500c-aa60-3ef4b42eb113
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: A drug with a new route of administration and a new dosage for a new
     additional indication for the adjustment of drugs or medical devices. [Public
     knowledge-based application after preliminary assessment by the Pharmaceutical
     Affairs and Food Sanitation Council (PAFSC)]
   is_orphan: false
   mention_id: MEDICNE:7635d634-5bc8-500c-aa60-3ef4b42eb113
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:5933
+    normalized_label: iodine
+    original_id: RXCUI:5933
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:5933
+  normalized_label: iodine
   original_literal: IODINE ADDITION PRODUCTS OF THE ETHYLESTERS OF THE FATTY ACIDS
     OBTAINED FROM POPPYSEED OIL
   snippet: A drug with a new route of administration and a new dosage for a new additional
@@ -55899,13 +55935,13 @@
   brand_names:
   - Kaytwo Syrup 0.2%
   grounding:
-    confidence: 0.6
-    grounded_id: CHEBI:78277
-    grounded_label: menaquinone-4
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.9
+    grounded_id: RXCUI:29495
+    grounded_label: menatetrenone
+    grounding_quality: lexical_exact_normalized
     original_string: MENATETRENONE
     subject_id: MEDICNE:1dc63723-98d4-5cf7-8e8a-86b50b9ac5cb
-  grounding_confidence: 0.6
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: A drug with a new additional indication and a new dosage for the prevention
@@ -55916,12 +55952,12 @@
   mention_id: MEDICNE:1dc63723-98d4-5cf7-8e8a-86b50b9ac5cb
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:78277
-    normalized_label: menaquinone-4
-    original_id: CHEBI:78277
+    normalized_id: RXCUI:29495
+    normalized_label: menatetrenone
+    original_id: RXCUI:29495
     tool: medic-normalizer/1
-  normalized_id: CHEBI:78277
-  normalized_label: menaquinone-4
+  normalized_id: RXCUI:29495
+  normalized_label: menatetrenone
   original_literal: MENATETRENONE
   snippet: A drug with a new additional indication and a new dosage for the prevention
     of vitamin K-deficiency hemorrhage in neonates/infants. [Public knowledge-based
@@ -64643,21 +64679,27 @@
   brand_names:
   - Gonatropin 5000
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.6
+    grounded_id: RXCUI:340705
+    grounded_label: human chorionic gonadotropin
+    grounding_quality: lexical_exact_surgery
     original_string: '[JP] HUMAN CHORIONIC GONADOTROPHIN (EXTRACT FROM HUMAN URINE)'
     subject_id: MEDICNE:0f3548fa-672a-587c-9410-d04bb854fc6b
-  grounding_confidence: 0.0
+  grounding_confidence: 0.6
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   indication: A drug with a new route of administration and a new indication for induction
     of spermatogenesis in male hypogonadotropic hypogonadism. [Expedited review]
   is_orphan: false
   mention_id: MEDICNE:0f3548fa-672a-587c-9410-d04bb854fc6b
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:340705
+    normalized_label: human chorionic gonadotropin
+    original_id: RXCUI:340705
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:340705
+  normalized_label: human chorionic gonadotropin
   original_literal: '[JP] HUMAN CHORIONIC GONADOTROPHIN (EXTRACT FROM HUMAN URINE)'
   snippet: A drug with a new route of administration and a new indication for induction
     of spermatogenesis in male hypogonadotropic hypogonadism. [Expedited review]

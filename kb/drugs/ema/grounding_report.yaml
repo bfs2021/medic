@@ -1,8 +1,8 @@
-auto_accepted: 938
+auto_accepted: 942
 llm_reranked: 0
 review_recommended: 0
 total_drugs: 995
-unresolved: 57
+unresolved: 53
 unresolved_drugs:
 - diphtheria, tetanus, pertussis (acellular, component), hepatitis B (rDNA), poliomyelitis
   (inactivated) and Haemophilus type b conjugate vaccine (adsorbed)
@@ -19,12 +19,10 @@ unresolved_drugs:
 - diphtheria (D), tetanus (T), pertussis (acellular, component) (Pa), hepatitis B
   (rDNA) (HBV), poliomyelitis (inactivated) (IPV) and Haemophilus influenzae type-b
   (Hib) conjugate vaccine (adsorbed)
-- dasatinib
 - pneumococcal polysaccharide conjugate vaccine (13-valent, adsorbed)
 - dengue tetravalent vaccine (live, attenuated)
 - zoonotic influenza vaccine (H5N1) (surface antigen, inactivated, adjuvanted)
 - Ebola Zaire vaccine (rVSV∆G-ZEBOV-GP, live)
-- entecavir
 - ledispavir;sofosbuvir
 - pneumococcal polysaccharide conjugate vaccine (adsorbed)
 - pandemic influenza vaccine (H5N1) (split virion, inactivated, adjuvanted)
@@ -45,7 +43,6 @@ unresolved_drugs:
 - pneumococcal polysaccharide conjugate vaccine (21-valent)
 - diphtheria, tetanus, pertussis (acellular, component), hepatitis B (rDNA), poliomyelitis
   (inactivated) and Haemophilus influenzae type b conjugate vaccine (adsorbed)
-- ibandronic acid
 - measles, mumps, rubella and varicella vaccine (live)
 - Chikungunya vaccine (live)
 - cholera vaccine, oral, live
@@ -59,7 +56,6 @@ unresolved_drugs:
 - pandemic influenza vaccine (H5N1) (surface antigen, inactivated, adjuvanted)
 - ebola vaccine (Ad26.ZEBOV-GP [recombinant])
 - Ebola vaccine (MVA-BN-Filo [recombinant])
-- garadacimab
 - meningococcal groups A, C, W-135 and Y conjugate vaccine
 - zoonotic influenza vaccine (H5N1) (surface antigen, inactivated, adjuvanted, prepared
   in cell cultures)

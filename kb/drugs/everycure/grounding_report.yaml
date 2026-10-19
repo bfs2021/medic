@@ -1,17 +1,16 @@
-auto_accepted: 1806
+auto_accepted: 1917
 llm_reranked: 0
 review_recommended: 0
-total_drugs: 1817
-unresolved: 11
+total_drugs: 1927
+unresolved: 10
 unresolved_drugs:
 - Coagulation factor ix
 - Coagulation factor viii
-- Dasatinib
-- Entecavir
-- Garadacimab
 - Intravesical bacillus calmette-guerin
-- Levacetylleucine
-- Nonoxynol-9
-- Omacetaxine
-- Samarium sm-153 lexidronam
 - Beta-hydroxybutyrate
+- L-glutamate
+- L-aspartate
+- Alpha-lipoic acid
+- Bhb ketone esters
+- Dha
+- Plasmalogens

@@ -1,8 +1,8 @@
-auto_accepted: 530
+auto_accepted: 533
 llm_reranked: 0
 review_recommended: 0
 total_drugs: 642
-unresolved: 112
+unresolved: 109
 unresolved_drugs:
 - Animal Allergens, Standardized Cat Hair
 - Tick-Borne Encephalitis Vaccine
@@ -89,7 +89,6 @@ unresolved_drugs:
   Haemophilus b Conjugate and Hepatitis B Vaccine
 - Antihemophilic Factor (Recombinant), Full Length
 - Rubber Panel Thin-Layer Rapid Use Epicutaneous Patch Test
-- Coagulation Factor Xa (Recombinant), Inactivated-zhzo
 - Immune Globulin Intravenous (Human)-ifas
 - Immune Globulin Intravenous, Human-slra
 - House Dust Mites (Dermatophagoides farinae and Dermatophagoides pteronyssinus) Allergen
@@ -113,7 +112,6 @@ unresolved_drugs:
 - Respiratory Syncytial Virus Vaccine, Adjuvanted
 - Chikungunya Vaccine, Live
 - immune globulin intravenous, human-dira
-- acellular tissue engineered vessel-tyod
 - Pneumococcal 21-valent Conjugate Vaccine
 - acellular nerve allograft-arwx
 - COVID-19 Vaccine, Adjuvanted
@@ -121,6 +119,5 @@ unresolved_drugs:
 - Immune Globulin Intravenous, Human-kthm, 10% Solution
 - etuvetidigene autotemcel
 - atoltivimab, maftivimab, and odesivimab-ebgn
-- garadacimab-gxii
 - denosumab-desu
 - pertuzumab-dpzb

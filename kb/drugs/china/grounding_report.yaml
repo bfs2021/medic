@@ -1,8 +1,8 @@
-auto_accepted: 923
+auto_accepted: 931
 llm_reranked: 0
 review_recommended: 0
 total_drugs: 1521
-unresolved: 598
+unresolved: 590
 unresolved_drugs:
 - Dotebalamide Tablets
 - Valtuxetin Hydrobromide Tablets
@@ -22,7 +22,6 @@ unresolved_drugs:
 - Budesonide Suspension for Inhalation
 - Utavirin Hydrochloride Injection
 - Salmeterol/Beclomethasone Powder for Inhalation
-- Entecavir Tablets
 - Epasthast Tablets
 - Methacalciferol Tablets
 - Dutaxone Soft Gel Capsules
@@ -74,7 +73,6 @@ unresolved_drugs:
 - Diquafosodium Eye Drops
 - D-Heparin Sodium Injection
 - Fudositan Tablets
-- Entecavir and Tenofovir Tablets
 - Metformin and Vigliptin Tablets (II)
 - Compound Amino Acids (15) and Dipeptides (2) Injection
 - Compound Amino Acid Injection (17AA-III)
@@ -99,7 +97,6 @@ unresolved_drugs:
 - Amoxicillin-Sulbactam-Pivampicillin Tablets
 - Cyclosporine Soft Capsules
 - Azithromycin Dry Suspension
-- Potassium Magnesium Aspartate Tablets
 - Racemic Cardocur Capsules
 - Lecardipine Hydrochloride Tablets
 - Fluoxetine Hydrochloride Dispersible Tablets
@@ -114,7 +111,6 @@ unresolved_drugs:
 - Micafenest Sodium for Injection
 - Ticoxalan for Injection
 - Baixiao'an Injection
-- Mustard Oil Tablets
 - Amoxicillin and Potassium Clavulanate Dry Suspension
 - Aximos Capsules
 - Voriconazole Dry Suspension
@@ -153,7 +149,6 @@ unresolved_drugs:
 - Arolol Hydrochloride Tablets
 - Zilaceton Hydrochloride Capsules
 - Etoperibine Hydrochloride Tablets
-- Dasatinib Tablets
 - Clonoxicam Tablets
 - Lotegotin Patch
 - Odaterro Inhalation Spray
@@ -166,7 +161,6 @@ unresolved_drugs:
 - Alfa Calcitriol Tablets
 - Progesterone Soft Gel Capsules
 - Dibingnofin Naloxone Sublingual Tablets
-- Entecavir Capsules
 - Betastine Mesylate Tablets
 - Obiparib Tablet
 - Daratavirin Hydrochloride Tablets
@@ -378,7 +372,6 @@ unresolved_drugs:
 - Desloratadine Dry Suspension
 - Desloratadine Dispersible Tablets
 - Jupurei Zinc Granules
-- Entecavir Capsules
 - Doxorubicin Hydrochloride Liposomal Injection
 - Nimesulide Dispersible Tablets
 - Amlodipine Benzenesulfonate Dispersible Tablets
@@ -535,7 +528,6 @@ unresolved_drugs:
 - Carosulfan Sodium Tablets
 - Omega-3 Triglycerides (2%) / Medium- and Long-Chain Fatty Acid Emulsion / Amino
   Acids (16) / Glucose (30%) Injection
-- Potassium Magnesium Aspartate Injection
 - Medium- to Long-Chain Fatty Acid Emulsion for Injection (C8-24Ve)
 - Clacubim Injection
 - Cefdizine Sodium and Sodium Chloride Injection

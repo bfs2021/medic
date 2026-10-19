@@ -1,26 +1,1473 @@
-auto_accepted: 97
+auto_accepted: 1522
 llm_reranked: 0
 review_recommended: 0
-total_drugs: 112
-unresolved: 15
+total_drugs: 2759
+unresolved: 1237
 unresolved_drugs:
+- Ephedrine Resonate 50mg Tablet
+- Vasolastine Ampoule (2ml)
+- O-Ethoxybenzamide 200mg/500mg Dragees
+- P-Piperidinoethoxy-O- Carbomethoxy Benzophenone Hydrochloride, 5mg/10mg Injection,
+  Tablet & Suppository
+- Benziquinone Guanyl Hydrazone Thiosemicarbazone (Ambazone) 10mg Troches
+- Metronidazole 250mg Oral Tablet & 500mg Vaginal Tablet
+- Triethanalamine Trinitrate Bisphosphate 8mg/16mg Tablets
+- Xylometazoline Nasal drops (0.05% & 0.11% ) solution
+- Isoxsuprine 10mg Tablet & Ampoule
+- Mepenzolate methylbromite 25mg Tablet
+- Pipenzolate methylbromide 5mg Tablet
+- N-Acetyl-Sulphamethoxy Pyridiazine (Pediatric suspension)
+- Chloramphenicol Palmitoyl Glycolate Suspension
+- Sodium-Iron Edetate 55mg Syrup
+- Pipazethate 20mg Dragee & 40mg/ml Drops
+- Edrophonium Chloride (10mg in 1cc) Ampoule
+- 2-Thymyloxy Methyl Glyoxalidine Hcl. (0.05%)
+- Phenelzine Dihydrogen Sulphate Tablet
+- Hamycin Vaginal Tablet & Suspension
+- Pimaricin 50mg Vaginal Tablet
+- Kanamycin Sulphate Vials of 2cc (0.5gm)
+- Prothipendyl Hydrochloride 20mg Dragee
+- Trypsin-Kallikrein Inactivator (5000 k.i.u) Ampoule
+- Sulpha-dimethyl Oxazole (Sulfamoxole) 0.5gm Tablet
+- Ferrous Ethylene Diamine Tetra Acetate Trihydrate, 25mg & 50mg Drops
+- Hexadimethrine Bromide (1.33mg for 100USP units of Heparin) 10mg/ml & 10ml Vials
+- Dexamethasone Sodium Metasulphobenzoate Injection
+- N-N-decamethylene-N-N- decamethylene-bis-amino quinaldine (Salvizol), 0.25mg Loz.
+  & 0.4% Oint.
+- Iron-Sorbitol Citric Acid Complex 2ml Injection
+- Colistin 1.5MU/0.25MU Tablet & 1MU Vial
+- Trithiopara Methoxy Phenyl Propene
+- Polio Virus Vaccine Live (Oral) Sabine strain type- I, II, III (0.1ml)
+- Bromo-Naphthol 250mg Tablet
+- Zinc Glucoheptonate
+- Iron Polymaltose (2ml=100mg Fe) Ampoule
+- Dehydro-Emetine Ampoule
+- Streptokinase-Streptodornase
+- Oral Tablet
+- Sodium Polyhydroxy Aluminium Monocarbonate Hexitol Complex (360mg) Tablet
+- Thioproperazine 1/5/10/25mg Tablet, 0.75% Ampoule
+- Tetrahydro furfuryl salicylate + Ethyl nicotenate + n-Hexyl nicotinate - Ointment
+- Phenylbutazone Sodium Parentral Form
+- Trifluoperazine & Tranylcypromine 1mg/10mg Tablet
+- Chlosal Butamide Ointment/Solution/Dusting Powder
+- Oestradiol Phenyl Propionate 1ml Ampoule
+- Methotrimeprazine (acid maleate) 5/25/100mg Tablet & 25mg/cc Ampoule
+- Dipiprolate 40mg Dragee
+- Dipyridamole (12.5mg) Tablet & (2ml of 10mg) Ampoule
+- Methohexital Sodium 500mg Ampoule & 2.5gm Vial
+- β-pyridyl carbinol Tablet
+- Dimethindene MSaleate Tablet
+- Aluminium Salicylate
+- Furosemide Tablet & Ampoule
+- Orciprenaline Sulphate Tablet, Injection & Solution inhalation.
+- Measles Virus Vaccine Live Attenuated
+- Iso-dihydo-ethaverine chloride
+- Biomycin (of tetracycline)
+- Dibazole
+- Aloe Ext.
+- Erysimiine
+- Haemmacel 500ml bottles
+- Cohorton Ointment
+- Norlestrin Tablet
+- Boplant
+- Lacti syn conc. Ampoule
+- Isopropamide Phenylpropanolamine Hcl. Capsule
+- Xanthinol Nicotinate Ampoule
+- Oxethazine Hcl. (5ml) Gel
+- Iron Dextran Glycoside 100mg (5 & 10ml Ampoule)
+- Oxytetracycline 250mg Ampoule
+- Propranalol Hcl. (10mg/40mg) Tablet & (5mg/5ml & 1mg/ml) Ampoule
+- Salicylazosulphapyridine 0.5mg Tablet
+- Vernase Tablet
+- Injection of Iron Sorbitol Citric Acid Complex
+- Epsilon Amino Caproic Acid
+- Alphachymotrypsin
+- Heparinoid & Hyaluronidase Ointment
+- Methylmercadone (Nifuratel) (200mg) Tablet & (250mg) Vaginal Tablet
+- Deoxyribonuclease 250000 & 100000 Units Vials
+- Thiethylperazine (10mg) Tablet & (10mg/ml) Ampoule
+- Injection
+- Pentazocine (as Lactate) 30mg in 1ml Ampoule (i.v, s.c, i.m)
+- Iron Sorbitol Citric Acid Complex (Injection of colloidal iron)
+- B-Hydroxytheophylline (Bulk)
+- Dextrochlorpheniramine Maleate (2mg) Tablet & (2mg/5ml) Syrup
+- Thiethylperazine Dimalate (10.28mg) Tablet & (10.86mg/ml) Ampoule
+- Hyper Immune Rabies Serum (Potency 1.20 I.U/ml)
+- Quinidine Phenylethyl Barbiturate (0.1gm) Tablet
+- Nalidix Acid 500mg Tablet
+- 3-Phenylazo-2,6- Diaminopyridine (Bulk)
+- Trithioparamethoxy Phenyl Propene (12.5mg) Tablet
+- Trithioparamethoxy Phenyl Propene 12.5mg + Chlopheniramine Maleate 3.0mg Tablet
+- 1-Nicotinylamine-1,2- Diphenylethane (Bulk)
+- Sodium and Maglumine Iothalamate (Meglumine Iothalamate 52% w/v, Sodium Iothalamate
+  26% w/w) - 20ml Ampoule
+- Phenylmethylamine-P-Amino Benzene Sulphonate
+- (25mg/ml) Injection.
+- Phenylmethylamine-P-Amino Benzene Sulphonate (Basic drug)
+- Iron Sorbitol Citric Acid Complex (eq. To Iron) 50mg/ml Injection
+- Guanethidine Sulphate (10mg/ml) Ampoule
+- Calcium Succinate + Iron Edetate Sodium
+- 2-Sulphanilamide-5-Methyl
+- 3-Methyl Pyrantel Tartrate (Veterinary purpose)
+- 3-Methyl Pyrantel Tartrate (4%) Oral Solution (For Veterinary)
+- Trimethoprim – 80mg + Sulmethoxazole - 400
+- Indomethacin 50mg/100mg Suppositories
+- Suspension-Each 5ml contains; Trimethoprim-40mg and Sulphamethoxazole-200mg
+- i)Tablet-Metenolone Acetate- 5mg ii)Depot-Metenolone Enanthate-100mg/ml
+- Polyvinyl Pyrrolidone Iodine
+- Ascerbine
+- Beclotiamine Hydrochloride & Beclotiamine Napadisylate (For Veterinary)
 - 2-Thymyl-oxy-methyl glyoxalidine Hydrochloride 0.05 + Buffered Aqueous Vehicle-
   q.s (Nasal Spray)
 - Epsilon Caproic Acid 250mg/ml Injection
+- P-Aminomethyl Benzoic Acid 50mg/5ml Ampoule
+- Lactobacillus Sporogenes 50/100million Tablet
+- Salbutamol Sulphate B.P
+- Yeast Tannic Acid Compound
+- Pheniramine Maleate Retard Tablet
+- Propranalol Hcl 10mg Tablet & (1ml) Injection
+- Tetranicotinoyl Fructose
+- Tetranicotinoyl Fructose 250mg Tablet
+- Prednisolone IP 10 mg Retard Tablet
+- 3,5 - Dinitro-O-Toluamide (For Veterinary)
+- Marek's Disease Vaccine
+- T.H.U Living (For Veterinary)
+- Prothionamide B.P.
+- Sarcolysin I.P.
+- Marcaine 0.25% with & without adrenaline and Marcaine 0.5% with or without adrenaline
+- Doxepine Hydrochloride 10mg/25mg/50mg Tablet/Dragee/Capsule
+- 2-Bromo-2-Nitropropan-1,3- diol
+- Biperiden Lactate 5mg/ml Ampoule
+- Theophylline Ethanoate of Piperazine (0.25gm) Tablet & (0.125gm/ml) Syrup
+- i)Betadine Solution containing 10% of Povidone Iodine, ii)Betadine Gargle containing
+  0.5% of Povidone Iodine,
+- iii)Betadine Ointment containing 10% of Povidone Iodine.
+- Ferrous Sulphate 160mg Slow Release Tablet
+- Sodium Cromoglucolate
+- Isopropyl Thioimidazolidine 5mg Tablet
+- Mitomycin-C 2mg/Vial
+- Beclomethasone Dipropionate B.P.
+- Trifluperidol Hcl 5mg/5ml Oral Liquid
+- Polyglycolic Acid Sutures
+- Alphachymotrypsin 5mg/vial Injection
+- Pentazocine base (as Hydrochloride) 50mg Tablet
+- Malathion 1% Dusting Powder
+- Aprotinin 100,000 KIU/5ml & 200,000 KIU/10ml Injection
+- Clomiphene Citrate B.P 50mg Tablet
+- Nitrofurantoin BP 100mcg/200mcg Sensitive Disc
+- d-Norgestrel 0.03mg Coated Tablet
+- Sodium Fusidate 20mg/gm Ointment
+- Tretinoin 0.05%/20gm Vanishing Cream
+- Tretinion 0.05% Swab
+- Isoptin Hydrochloride 5mg/2ml Injection
+- Salbutamol Sulphate 2mg/5ml Elixir
+- Bupivacaine hydrochloride 10mg/ml Hyperbaric Solution
+- Virginiamycin obtained from streptomyces virginiae (Veterinary)
+- Extract of Centella Asiatica
+- Lynestrenol B.P 0.5mg Tablet
+- 2-Bromo-2-nitropropan-3-diol
+- Clotrimazole 0.1gm Vaginal Tablet
+- Alphachymotrypsin- 25chg Units Tablet
+- 2% premix contains; 40gm of Virginiamycin, 50% granules per kg (For Veterinary)
+- Sodium Fluoride B.P. 20mg Enteric Coated Tablet
+- Urea (30%) 300mg/ml Solution for Intra Amniotic
+- Use
+- Sodium Chloride 20% Hypertonic saline for intra- amniotic use
+- Pentoxifylline 100mg Dragee
+- Pentoxifylline 100mg/5ml Ampoule
+- Beclomethasone Dipropionate 50mcg MDI
+- Catalin
+- Each vial contains; Cephradine 250mg, 500mg &1gm
+- Metronidazole Benzoate (eq. to of Metronidazole) 125mg/5ml Suspenion
+- Extract of Centella Asiatica 2% / Vial
+- Extract of Centella Asiatica 200mg Tablet
+- Extract of Centella Asiatica 1% Ointment
+- Extract of Centella Asiatica 2% Powder
+- Oxibendazole 1.33% w/w Premix (For Veterinary)
+- Ammosidine Sulphate 500mg/Vial
+- Disodium Cromoglycate 2% Nasal Drops
+- Metoclopromide Monohydrochloride 10mg Tablet
+- Metoclopromide Monohydrochloride 10mg/2ml Injection
+- Elemental Iron in a complex of Iron Polymaltose 50mg/ml Drops
+- Fusafungine Hcl 25mg Aerosol
+- Loxitalmic Acid
+- Norethisterone B.P 0.35mg Tablet
+- 1-(2-tetrahydrofuryl)-5- Fluorouracil
+- Pentoxyfyline Bulk
+- Meglumine & Sodium salt of loxitalanic acid 62.5%
+- Anti-Tetanus activity 500IU + Anti-Diptheria activity 1000IU Immunoglobulin (Human)
+- Orphenedrine Citrate 60mg/2ml Ampoule
+- 2-Pyrrolidone Acetamide
+- 2-Pyrrolidone acetamide- 400mg Capsule
+- 2-Pyrrolidone acetamide- 200mg/2ml Injection
+- Betamethyl Digoxin 0.1mg & 0.5mg Tablet
+- Betamethyl Digoxin 0.6mg Liquid
+- Betamethyl Digoxin 0.1mg Injection
+- N-Phenylethyl Anthranilic Acid 300mg Capsule
+- Miconazole Nitrate 100mg Vaginal Pessary
+- Protein derived from Soya Bean 33.2gm/150gm
+- Flavonoids extracted from Rutacea (Aurantiaceae) containing a standard amount of
+  Diosmin
+- Salcatonin
+- Human Placental Extract Injection
+- Povidone Iodine USP 4% Scrub
+- Amitryptylline Hydrochloride 25mg Tablet
+- Human Follicle Stimulating Hormone (FSH) and Human Leutenising Hormone (LH) Injection
+- Metronidazole IP 2mg/ml I.V Injection
+- Indapamide Hemihydrate 2.5mg Tablet
+- Trichlormethiazide USNF 2mg Tablet
+- Sodium Salt + Methyl Glucamine Salt of Diatrizoate (40:18) Injection
+- Amoxycillin 125mg/1.25ml Paediatric Suspension
+- Allergen Extracts
+- Carboprost Tromethamine 250mcg/ml Sterile Solution
+- Chlorphenoxamine Embonate 17.5mg/5ml Syrup
+- Ifosfamide 200mg/500mg/1gm per Vial
+- Amoxycillin 250mg/500mg/1gm per Vial Injection
+- Synthetic Diosmin 150mg Tablet & Capsule
+- Dicloxocillin Sodium 125mg/250mg Capsule
+- Dioctyl Sodium Sulfosuccinate USP Ear Drops5%
+- Bromhexine Hcl 4mg/5ml Elixir
+- Dicloxocillin Sodium 62.5mg Oral Solution
+- Salbutamol Sulphate B.P 8mg Sustained Release Tablet
+- Levamisole Hydrochloride 15% w/w & 30% w/v Mixture
+- Trypsin + Chymotrypsin 10,000 Armour Units per ml Ointment
+- Quinapyramine Sulphate/Chloride (Bulk)
+- Bumetidine 1mg Tablet
+- Bumetidine 0.25mg/ml Injection
+- Fenpipramide Methobromide and P-Piperidinoethoxy o- carbomethoxy benzophenone Hydrochloride
+  (Bulk)
+- Econazole Nitrate 150mg Vaginal Tablet
+- Plantago Ovate (Isapgol) Seed Husk (IP) and Effervescent Powder
+- Mesterolone 25mgTablet
+- Inactivated Rabies Vaccine (Human diploid cell)
+- Azabiperidol (Bulk)
+- Intralipids Intravenous Fat Emulsion
+- Nitroglycerin Oitnment
+- Cisplatin 10mg/50mg per vial Injection
+- Rosoxacin 150mgCapsule
+- Megaldrate400mg Tablet
+- Measles Mumps & Rubella Vaccine
+- Ethacridine Lactate- 100mg/200mgDragee
+- Trimethoprim 100mgTablet
+- Fenfluramine Hydrochloride 60mgSustained Release Tablet
+- Septopal Beads and Chains
+- Flurazepam (as Hcl) 15mg/30mgCapsule
+- Tinazoline Hcl 0.08% Nasal Drops
+- Praziquantel 600mgTablet
+- Nimustine Hydrochloride 25mg/50mgper vial Injection
+- Centbucridine 0.5%Injection
+- Etomidate2mg/ml Injection
+- Mianserin Hcl 10mg/20mg/30mgTablet
+- Isosorbide Mononitrate 20mg/40mg/10mgTablet
+- Atenolol50mg/100mgTablet
+- Tobramycin 10mg/40mg per ml Injection
+- Monensin Sodium 100gm/200gm per kg Premix (For Veterinary)
+- Cefazolin Sodium 250mg/500mg/1g per vial Injection
+- Diclofenac Sodium USP 25mg/50mgTablet
+- Nadolol40mg/80mgTablet
+- Testosterone Undecanoate 40mgCapsule
+- Dextranomer4gm/6gmSachet
+- Clemastine (as the hydrogen fumerate)0.5mg/5ml Elixir
+- Serratio Peptidase 5mgTablet
+- 100mg/ml Injection
+- Bleomycin Oil Suspension for Injection
+- Ciclopirox Olamine 10mg/1gm Vaginal Cream
+- Captopril 25mg/50mgTablet
+- Ivermectin 10% w/v Concentrate Solution (For Veterinary)
+- Nicergoline 5mg/30mg Dragee/Sugar Coated Tablet
+- Satranidazole150mgTablet
+- Amoscanate250mg Tablet
+- Purified Chick Embryo Cell (PCEC) Tissue Culture Rabies Vaccine
+- Acebutolol5mg/ml Injection
+- Atricurium Dibesylate Injection
+- Pentoxifylline400mg Dragee
+- Infectious Bursal Disease Vaccine Inactivated (For Veterinary)
+- Aspirin DL Lysine 900mg per vial Injection
+- Gugulipid
+- Luprostiol 7.5mg per vial
+- Injection (For Veterinary)
+- Amikacin Sulphate 100mg/250mg/500mg per vial Injection
+- Flutamide 250mgTablet
+- Iopamidol Sterile Solution
+- Iohexol Sterile Solution
+- 10mgper vial Injection
+- Piroxicam 10mgCapsule
+- Tiamulin Hydrogen Fumarate 45% Soluble Granules (For Veterinary)
+- Dextranomer Soluidine Complex Beads
+- Parvo-Virus Vaccine (killed) (For Veterinary)
+- Sucralfate 1gmTablet
+- Canine Distemper Killed Canine Hepatitis Leptorpira Parvo Virus Vaccine (For Veterinary)
+- Tiaprofenic Acid 200mg/300mgTablet
+- Propafenone 70mg/20ml ampoule Injection
+- Reproterol20mg Tablet
+- Reproterol10mg/5ml Syrup
+- 50mg/100mg/200mgTablet
+- Centbutindole 1.5mgTablet
+- Sulprostone 500mcg per ampoule Injection
+- Gugulipid eq. to Guggulsterone 25mgTablet
+- Infectious Coryza Vaccine (Inactivated)(For Veterinary)
+- Tobramycin Sulphate 0.03% per vialOphthalmic Solution
+- Cefotaxime 0.25gm/0.5gm/1gm/2gm per vial Injection
+- Diclofenac Sodium 75mg/3ml ampoule Injection
+- Diltiazam Hcl eq. to 30mg/60mg of Diltiazam Tablet
+- Bromocriptine (as Mesylate) 2.5mg/5mg/10mgTablet
+- Nova-T
+- Neutral Insulin & Insulin Zinc Suspension (Human Insulin) Injection
+- Acyclovir 200mgTablet
+- Cloxacillin Benzathine Intramammary Infusion 500mg (For Veterinary)
+- Reproterol Hcl20mg Tablet
+- Reproterol Hcl 10mg/5ml Elixir
+- Reproterol Hcl 10mg/ml Respirator Solution
+- Reproterol Hcl 0.50mg each metered dose Aerosol
+- Domperidone 30mg Rectal Suppositories
+- Rabies Veterinary Vaccine Inactivated(For Veterinary)
+- Influenza Vaccine Inactivated for Equine(For Veterinary)
+- Ozothine 60mg Tablet
+- Ozothine 60mg/5ml Syrup
+- Buprenorphine 0.2mg Sublingual Tablet
+- Auranofin3mg Capsule
+- Chenodeoxycholic Acid 250mgCapsule
+- Measles (Edmoustan zagreta strain) Mumps and Rubella Vaccine
+- Bezafibrate200mg Tablet
+- Amineptine Hcl100mg Tablet
+- Aztemizole 10mgTablet
+- Budesonide 200mcg MDI Inhaler
+- Penfluridol20mgTablet
+- Etoposide100mg/5ml Injection
+- Etoposide 50mgCapsule
+- Silver Sulphadiazine Ophthalmic Ointment1%
+- Ceftriaxone Sodium 250mg/500mg/1gm per vial Injection
+- Interferon Alpha 2b Injection.
+- Melagenina Lotion
+- Alprazolam 0.25mg/0.5mg/1mgTablet
+- Cefuroxime 250mg/750mg/1.5gm per vial Injection
+- Tertatolol Hcl5mg Tablet
+- Ceftazidime 250mg/500mg/1gm/2gm per vial Injection
+- Cyclosporin Oral Solution/ Concentrate for Injection/Capsule
+- Bolus(For Veterinary)
+- Cephalexin 1gmTablet
+- Gliclazide80mgTablet
+- Rabies Vaccine Inactivated
+- Purified Chick Embryo Cell (PCEC) Rabies Vaccine (HEP flury virus strain)
+- Salinomycin Sodium 6% Premix (For Veterinary)
+- Tripotassium Dicitrato Bismuthate 120mg Chewable Tablet
+- Tripotassium Dicitrate Bismuth 120mg/5ml Suspension
+- Lipoproteins Extracted from Human Placenta 50% Lotion
+- Cefadroxil 125mg/250mg per 5ml Oral Suspension
+- KFD Vaccine (Kyasanur Forest Disease)
+- Carboplatin 50mg/150mg + Mannitol IP 50mg/150mg per vial Injection & Bulk
+- Equine Influenza & Equine Rhino Pneumonnitis Vaccine (For Veterinary)
+- Anti-Rabies Vaccine (Killed virus)(For Veterinary)
+- Parvo Virus Vaccine (Killed) (For Veterinary)
+- Ciprofloxacin Hcl Monohydrate 250mg/500mg/750Tablet
+- Ciprofloxacin Lactate 100mg/50ml & 200mg/100ml Infusion
+- Mesalazine (5-Amino Salicylic Acid) 250mg/400mg Enteric/resin Coated Tablet & 4gm/60ml
+  Rectal Suspension Enema
+- Recombinant Human Tissue Type Plasminogen Activation (Actilyse) 20mg/50mg per vial
+  Injection
+- Piperacillin Sodium 1gm/2gm/3gm/4gm per vial Injection
+- Desmopressin Intranasal Solution/Nasal Solution/Nasal Spray/Injection
+- Nifedipine 20mg Sustained ReleaseTablet
+- Ofloxacin 100mg/200mg/400mgTablet
+- Norfloxacin 0.3% Eye Drops/Ear Drops/Eye Ointment
+- Tinidazole 2mg/ml in 400ml Infusion Bottle & 2mg/ml in
+- 800ml Infusion Bottle (I.V Infusion)
+- Fluoxetine Hcl 20mg/60mg Capsule & Fluoxetine Hcl 20mg/5mlSyrup
+- Ibuprofen 600mg Controlled Release Tablet & Ibuprofen 200mg/300mg/400mg/800mg SR
+  Capsule
+- Pentoxyphylline 400mg SR Tablet
+- Terbutaline Sulphate 10mg/ml Nebulising Solution
+- Amiodarone Hcl 100mg/200mg Tablet & Amiodarone Hcl 150mg/3ml ampoule Injection
+- Ceftizoxime Sodium Sterile 500mg/1000mgeach Vial
+- Cefuroxime Axetil 125mg/250mg/500mgTablet
+- Deltamethrine 12.5gm each litre (For Veterinary)
+- Prazosin Hcl 0.5mg/1mg/2mg/5mgTablet
+- L-Carnitine 330mg Capsule, L- Carnitine 250mg Tablet & L- Carnitine 1gm/10ml Oral
+  Solution
+- Coligen (Escherichia coli bacterin) Vaccine (For Veterinary)
+- 0.499g/0.623g/0.769gper ml
+- Extract of Mycobacterium Vaccal eq. to 100mg/ml proteins Injection (For Veterinary)
+- Loxapine Succinate 5mg/10mg/20mg/50mg Capsule and Loxapine 25mg/ml Oral Concentration
+  Solution
+- Orthoclone Sterile(OKT3)
+- Capsule and Flunarizine Hcl 10mgTablet
+- Salazopyrin 500mg Enteric Coated Tablet
+- Centchroman 30mgTablet
 - Sheep Pox Vaccine (For Veterinary)
 - Buparvaquone 5% w/v Solution for Injection (For
+- Veterinary)
+- i)Kitotifen Fumerate 1mg Tablet ii)Kitotifen Fumerate Syrup iii)Ketotifen Fumerate
+  Nasal Drops
+- i)Pefloxacin Mesylate Dihydrate 400mg Film Coated Tablet ii)Pefloxacin Mesylate
+  Dihydrate 400mg/5ml Injection iii)Pefloxacin Mesylate Dihydrate 400mg I.V Bottles
+  of 100ml/200ml
+- Ofloxacin 100mg/50ml & 200mg/100ml vial Infusion
+- Isosorbide-5-Mononitrate 25mg/50mg/40mg SR Tablet
+- Rabbit Anti Human Thymocyte Immunoglobulin
+- Horse Anti Human Lymphocyte Globulin
+- Selegiline Hcl 5mg Uncoated Tablet
+- Ethamsylate 250mg/2ml ampoule Injection
+- Fusidic Acid Hemihydrate Eye Drops
+- i)Roxithromycin 150mg/300mg Film Coated Tablet ii)Roxithromycin 50mg Kid Tablet
+  iii)Roxithromycin 50mg Dispersible Tablet iv)Roxithromycin 50mg/5ml
+- Dry Syrup
+- Sodium Enoxaparin Low Molecular Weight Heparin 20mg/40mg Injection
+- Metoclopramide Hcl IP 15mg C.R Tablet
+- Ipratropium Bromide 250mcg/ml Respirator Solution
+- Betaxolol Hcl 0.5% w/v per 5ml Ophthalmic Solution
+- Gadopentetic Acid
+- Dimeglumine Salt 469.01mg/ml Injection
+- Pyridoxine Hcl 100mg C.R Tablet
+- Cephacetrile Sodium 235mg in 10gm of suspension Intramammary Infusion (For Veterinary)
+- Feracrylum 1% w/v Solution
+- Oral Polio Vaccine
+- Korsolex Concentrated Instrument Disinfectant
+- Sterillium Rub in Disinfectant for Hands.
+- Bacillocid Special
+- Bacillus Calmette and Geurin
+- (Immucyst, BCG therapeutics) 27mg dry weight per Vaccine
+- Candur P. Parvovirus Vaccine (For Veterinary)
+- Naloxone Hcl 0.02mg/0.4mg/1.0mg per ml (i.v/i.m/s.c) Injection
+- i)Nimodipine 30mg Tablet ii)Nimodipine 10mg/50ml Injection iii)Nimodipine 30mg Soft
+  Gelatin Capsule
+- Hamycin 0.1% per gm Hair Cream
+- Clindamycin Phosphate 1% per
+- gm Topical Gel
+- Itrolan 190 (0.406g/ml), Itrolan 240 (0.513g/ml), Itrolan 300 (0.641g/ml) Injection
+- Pipecuronium Bromide 4mg per vial Injection
+- Cisapride 5mg/10mg/20mg Tablet & Cisapride 1mg/ml Suspension.
+- Ipratropium Bromide 20 mcg Inhaler
+- i)Tramadol Hcl 50mg/100mg Capsule ii)Tramadol Hcl 50mg/ml & 100mg/2ml Injection
+- i)Fluconazole 50mg/100mg/200mg Capsule ii)Fluconazole 2mg/ml 100ml/200ml i.v Injection
+- Purified Vi-Capsular Polysaccharide of Salmonella Typhi 0.025mg + Phenol 1.250mg
+  + Isotonic Buffer Solution q.s 0.5ml (One vaccinating dose of 0.5ml)
+- Capsule/Tablet
+- i)Flecainide Acetate 100mg Tablet ii)Flecainide Acetate 150mg/ml (15ml) Injection
+- Bezafibrate 400mg Film Coated Retard Tablet
+- i)Fluconazole 50mg/100mg/150mg/200mg Capsule/Tablet ii)Fluconazole 2mg/ml i.v Injection
+- i)Secnidazole 500mg Tablet ii)Secnidazole 1gm Film Coated Tablet iii)Secnidazole
+  500mg/15ml Suspension
+- Carbamezepine 200mg/400mg C.R Film Coated Tablet
+- Oral Typhoid Vaccine Caps
+- Paspat Injection
+- Enteric Coated Tablet
+- i)Cetrizine Dihydrochloride 20mg/10mg/5mg Film Coated Tablet ii)Cetrizine DHC 10mg/10ml
+  Syrup iii)Cetrizine DHC 10mg/ml Drops
+- Cumophos 50% (For Veterinary)
+- i)Maduramicin Amonium 10gm ii)Maduramicin Amonium 0.5% (1% Premix) (For Veterinary)
+- Fenfluramine Hcl 60mg S.R Capsule
+- Chelated Amino Acid based minerals
+- Candur-R (Purified Chick Emryo Cell Rabies Vaccine) (For Veterinary)
+- Cefoperazone Sodium 1g/2g per vial Injection
+- Calcitriol 0.5mcg/0.25mcg Soft Gelatin Capsule
+- Calcium loaded sulfonated polystyrene cation exchange resin 0.5gm (eq. to 1.8mEq
+  Ca++) cross linked with 8% divinyl benzene Soft Gelatin Capsule
+- Piribedil 50mg S.R Coated Tablet
+- Filgrastim 48MU (1.6ml) & Filgrastim 30MU (1ml) Injection
+- Colfosceril Palmitate 108mg per vial Injection
+- i)Salmeterol Xinafoate 25mcg Inhaler
+- ii)Salmeterol Xinafoate 50mcg Rotacap
+- i)Enrofloxacin 100mg/50mg per ml Injection ii)Enrofloxacin 50mg/100mg per ml Oral
+  Solution (For Veterinary)
+- Clostridium Botulinum Toxin Type A Hemagglutinin Complex 100 units. Human Serum
+  Albumin 0.5mg + NaCl 0.9mg per vial (i.m) Injection
+- Gadodiamide 287mg/ml Injection eq. to 0.5 m mol (in 10ml vial)
+- i)Ondansetron Hcl Dihydrate 4mg/8mg Film Coated Tablet ii)Ondansetron Hcl Dihydrate
+  4mg/2ml ampoule Injection iii)Ondansetron Hcl Dihydrate 8mg/4ml ampoule Injection
+- Estraderm Transdermal TTS having Estraderm 2mg/4mg/8mg Estradiol.
+- Chandonium Iodide 2mg/ml 2ml ampoule Injection
+- Diclofenac Potassium 50mg Sugar Coated Tablet
+- Calcitriol 1mcg/2mcg per ml Injection
+- i)Vancomycin Hcl 500mg/1000mg per vial Injection ii)Vancomycin Hcl 125mg/250mg Capsule
+- Dihydrotestesterone Gel
+- Collagenase 250 units per gm Ointment
+- i)Azithromycin Dihydrate 250mg Capsule ii)Azithromycin 200mg/50mg per 5ml Suspension
+- i)Terconazole 80mg Vaginal Ovule ii)Terconazole 0.8% Vaginal Cream
+- Paclitaxel 30mg/5ml single dose vial Injection
+- i)Esmolol Hcl 2.5gm/10ml ampoule Injection ii)Esmolol Hcl 100mg/10ml vial Injection
+- Omeprazole Sodium 40mg per vial Injection
+- Medicated Pad with Cetylpyridinium Chloride 0.3% w/w each perforated fresh coloured
+  Self Adhesive Plaster Strip
+- 1,2-Dimethyl-3 Hydroxypyrid- 4-one 250mg/500mg Capsule
+- Haemophilus Type-b Conjugate Vaccine
+- i)Nimesulide 100mg Tablet ii)Nimesulide 50mg/5ml Suspension iii)Nimesulide Transdermal
+  1% Gel iv)Nimesulide 50mg/100mg Suppository
+- Diclofenac Sodium 0.1% (1mg/ml) Ophthalmic Solution Sterile
+- Fortison Liquid/Powder, Pepti-2000 Liquid/Powder
+- i)Ritodrine Hcl 10mg Tablet ii)Ritodrine Hcl USP 10mg/ml
+- Formestane Sterile 250mg (i.m) Depot Injection
+- Clozapine 25mg/100mg Uncoated Tablet
+- i)Clarithromycin 250mg/500mg Tablet ii)Clarithromycin 125mg/250mg per 5ml Paediatric
+  Suspension
+- Terbinafine 250mg Tablet Terbinafine 1% Cream
+- Somatostatin i.v Infusion
+- Podophyllotoxin 0.5% each 3-5ml Topical Solution
+- Nicotine Transdermal Therapeutic System
+- Progesterone Micronized Soft Gelatin Capsule
+- Silymarin 70mg/140mg Sugar Coated Tablet
+- Naproxen 750mg C.R Tablet
+- Terlipressin Acetate1mg per vial Injection
+- i)Salmon Calcitonin 100 IU/ml each ampoule Injection ii)Salmon Calcitonin 400
+- IU/2ml each vial Injection
+- Danofloxacin Mesylate 25mg per ml Injection (For Veterinary)
+- i)Ambroxol Hcl 30mg ii)Ambroxol Hcl 30mg/5ml Liquid iii)Ambroxol Hcl 7.5mg/ml Drops
+- i)Sumatriptan (as Succinate) 100mg/50mg/25mg Film Coated Tablet ii)Sumatriptan as
+  Succinate 6mg/0.5ml Injection
+- Capsule
+- Ketorolac Tromethamine 0.5% Sterile Ophthalmic Solution
+- i)Cefpodoxime Proxetil 100mg Tablet ii)Cefpodoxime Proxetil 40mg/5ml Dry Syrup
+- i)Fluticasone Propionate 0.05% Cream ii)Fluticasone Propionate 0.005% Ointment iii)Fluticasone
+  Propionate 0.05% Nasal Spray
+- Amifostine 500mg per vial Sterile Lyophilised Powder For Injection
+- Piroxicam Betacyclodextrin 20mg Tablet
+- Sulbutiamine 200mg Sugar Coated Tablet
+- Levobunolol Hcl USP 2.5mg/5.0mg per ml Ophthalmic Solution
+- N-butyl Cyanoacrylate 0.5ml Bioadhesive (Liquid adhesive)
+- Indapamide 1.5mg SR Coated Tablet
+- Beriplast (Fibrin Adhesive Glue)
+- Docetaxel Trihydrate 80mg (2ml/vial) and 20mg (0.5ml/vial) with docetaxel solvent
+  6ml & 1.5ml Injection
+- Carteolol Hcl 2% w/v Sterile Ophthalmic Solution
+- Sevoflurane Inhalation
+- Polysachharide Pneumococcal Vaccine (Pneumo 23)
+- i)Fluorometholone 0.1% Ophthalmic Suspension ii)Fluorometholone Forte 0.25% Liquifilm
+  Suspension
+- i)Artemether 80mg per ampoule Injection ii)Artemether 40mg Capsule
+- Amitraz BP 50mg/125mg per ml Emulsifiable Concentrate (For Veterinary)
+- Influenza Vaccine Inactivated (Vaxigrip)
+- Centpropazine 20mg Capsule
+- Glipizide 5mg/10mg GITs Tablet
+- Fish Gut Sutures
+- Artesunate 60mg per ampoule Injection
+- Cypermethrin High Cis 100gm per litre (For Veterinary)
+- 0.125mg/0.250mg/0.500mg Tablet
+- Nicardipine Hcl 40mg/30mg (as pellets) Retard Capsule
+- Naltrexone Hcl 50mg Uncoated Tablet
+- Amoxycillin Trihydrate 750mg Bolus (For Veterinary)
+- i)Ceftibuten 200mg/400mg Capsule ii)Ceftibuten (on reconstitution) 90mg/180mg per
+  5ml Suspension
+- Povidone Iodine IP 5.0% w/v per ml Sterile Ophthalmic Prep Solution
+- Fotemustine Powder 208mg (with solven) per vial i.v Injection
+- Nicorandil 5mg/10mg/20mg Uncoated Tablet
+- Complex 15 Cream
+- i)Ornidazole 500mg Tablet ii)Ornidazole 5mg/ml Infusion (100ml infusion bottle)
+- Arteether 150mg per ampoule i.m Injection
+- Creatine Phosphate 500mg/1gm per vial Injection
+- i)Sodium Picosulphate 5mg/10mg Uncoated Tablet ii)Sodium Picosulphate 5mg/5ml Syrup
+- Tiaprost Trometamol 150mg Injection (For Veterinary)
+- Teicoplanin 100mg/200mg/400mg per vial i.v/i.m Injection
+- Norfloxacin USP 100mg per gm Powder 10% (For Veterinary)
+- Midazolam BP 1mg/ml per vial (5ml/10ml) Injection Midazolam 5mg/ml ampoule Prefilled
+  Syringe
+- Polyvidone 50mg per ml Eye Drops 5%
+- Resperidone 1mg/ml Liquid
+- Diclofenac Diethyl Ammonium 174mg Plaster of 10cm x 15cm dimension
+- Spenglersan Colloid G
+- Adenosine 6mg/2ml ampoule Injection
+- Apramycin Sulphate 50gm in each 100gm.
+- Prednicarbate 2.5mg per gm Cream
+- Serenoa Repens 160mg Lipid Extract Soft Gelatin Capsule
+- Alendronate Sodium 10mg (as alendronic acid) Uncoated Tablet
+- i)Cefpodoxime Proxetil 100mg Tablet ii)Cefpodoxime Proxetil 40mg/5ml Suspension
+- Cefpirome Sulfate 0.25g/0.5g/1.0g/2g per vial Injection
+- Idebenone 30mg Sugar Coated Tablet
+- Doramectin 10mg/ml Injectible Solution 1% (For Veterinary)
+- Solution 1% (For Veterinary)
+- PEG-Electrolytes (iso-osmotic laxative)
+- Monocomponent Insulin Lispro 40 Iu/ml (rDNA origin) per 10ml vial Injection
+- Leuprolide Acetate 3.75mg per vial Depot for Injection
+- i)Lyophillized S.boulardii- 282.5mg Sachet ii)Lyophillized S.boulardii- 282.5mg
+  Capsule
+- Isepamicin Sulfate 100mg/250mg per ml Injection
+- DPT ActHIB Vaccine
+- Fluconazole 0.3% w/v per ml Eye Drops
+- i)Somatropin (rDNA) 4IU/16IU per vial Injection ii)Somatropin (rDNA) 18IU/36IU/72
+  IU per cartridge Injection
+- Hepatitis A (GBM strain) virus-160 antigen unit per 0.5ml dose
+- Clotrimazole IP 100mg Soft Gelatin Pessary
+- Semduramicin Sodium 50gm per kg Premix 5% (For Veterinary)
+- i)Lamivudine 150mg/100mg Uncoated Tablet ii)Lamivudine 50mg/25mg per 5ml Oral Solution
+- Biphenyl Acetic 3.00% w/w per 15gm tube Gel
+- Toltrazuril-2.5gm per 100ml Solution (For Veterinary)
+- Collagen with Gentamicin Implant
+- Propofol 10mg per ml Injection
+- Vericella Vaccine
+- i)Oxybutynin Chloride 2.5mg/5mg Uncoated Tablet ii)Oxybutynin Chloride 2.5mg/5ml
+  Syrup
+- Oxaliplatin 50mg/100mg per vial Freeze Dried Powder for i.v Injection
+- Vindesine Sulphate 1mg/5mg per vial Injection
+- Pantoprazole Sodium Sesquihydrates 40mg/20mg Gastro Resistant Tablet
+- Iron Sucrose Complex i.v Injection
+- Fentanyl Transdermal 10,20,30,40cm2 patch containing 2.5/5.0/7.5/10mg of Fentanyl
+  delivers 25/50/75/100mcg of Fentanyl per hour respectively.
+- Leprosy Immunomodulator Vaccine (based on MW)
+- Meloxicam 7.5mg/15mg Uncoated Tablet
+- Buprenorphine Hcl 0.4mg/2mg Uncoated Tablet
+- Doxazocin Mesylate 1mg/2mg/4mg Uncoated Tablet
+- MMR Vaccine
+- Ketoprofen 30mg Transdermal Patch
+- Topotecan Hcl 4mg/vial Injection Concentrate
+- Diazepam IP 2mg/4mg per ml Rectal Solution
+- Fludarabine Phosphate 50mg (eq. to 39.05mg of fludarbine) per vial i.v Injection
+- Sodium Valporate Freeze Dried Powder 400mg/ml Injection
+- i)Levofloxacin 250mg/500mg Film Coated Tablet ii)Levofloxacin 5mg/ml (in 50ml &
+  100ml) Infusion
+- i)Zuclopenthixol Acetate 50mg/200mg per ml Injection ii)Zuclopenthixol 25mg Film
+  Coated Tablet
+- Hydrocortisone (10% w/w) Enema Foam
+- Prochlorperazine Maleate 3mg Buccal Tablet
+- r-Follicle Stimulating Hormone (FSH)
+- 7.5mg/10mg Suppository
+- i)Topiramate 25mg/50mg/100mg/200mg/ 300mg/400mg Tablet ii)Topiramate 25mg/50mg Sprinkle
+  Capsule
+- i)Eptifibatide 2mg/ml per 10ml vial Injection ii)Eptifibatide 0.75mg/ml per 100ml
+  vial Injection
+- Prazocin GITs 2.5mg Tablet
+- Certoparin Sodium 3000 IU per disposable syringe of 0.3ml
+- solution Injection
+- i)Bambuterol Hcl BP 10mg/20mg Uncoated Tablet ii)Bambuterol Hcl 1mg/ml Oral Suspension
+- '''Biomesh'' GTR barrier (biodegradable)'
+- Bulaquine Compound 80/53
+- Erythromycin 300mg/6ml single pack Intramammary Infusion (For Veterinary)
+- Recombinant Human Erythropoietin (r-Hu Epo)
+- i)Formoterol Fumerate 12mcg Capsule (Rotacap) ii)Formoterol Fumerate 12mcg Inhaler
+- Collagen Fleece
+- i)Nevirapine 200mg Tablet ii)Nevirapine 50mg/5ml Suspension
+- Clotrimazole 10mg Lozenges
+- Levo-Carnitine 1gm per single dose (5ml ampoule) Injection
+- Piroxicam Transdermal Patch 48mg
+- i)Ganciclovir 250mg Capsule ii)Ganciclovir 500mg per vial Injection
+- i)Trapidil 100mg/200mg Capsule ii)Trapidil 50mg/ml Injection
+- Amoxycillin 3H2O 200mg/400mg Dispersible Tablet
+- Combination Vaccine DPT + Hi-b
+- Pantoprazole Sodium 40mg per vial i.v Injection
+- Sodium Dichloro Isocyanurate 35mg/350mg/1.75g/3.5g Tablet
+- r Human Erythropoeitin 1000IU/ml, 2000IU/ml, 3000IU/ml, 4000IU/ml, 10000IU/ml Injection
+- Rofecoxib 12.5mg/25mg Uncoated Tablet
+- Irbesartan 75mg/150mg/300mg Uncoated Tablet
+- Methyl Hydroxy Propyl Cellulose 0.3% Eye Drops
+- i)Granisetron Hcl 1mg/2mg Film Coated Tablet ii)Granisetron Hcl 1mg/ml Injection
+- Trastuzumab 440mg/vial Powder Concentrate Infusion
+- Recombinant Human
+- Amphotericin B (USP) 5mg/ml per 10ml/20ml Lipid Complex Injection
+- Synthetic Salmon Calcitonin 50IU/100IU/200IU Nasal Spray
+- Insulin Lispro Mixtures (rDNA) Injection
+- Levonorgestrel 52mg Sterile Intra Uterine System
+- rDNA Hepatitis B Vaccine
+- (10mcg)
+- Venlafaxine Hcl 25mg/37.5mg/75mg Uncoated Tablet
+- Rofecoxib 12.5mg/25mg per 5ml Oral Suspension
+- Iomeprol corresponding to 300mg/400mg Iodine per ml Injection
+- Venlafaxine Hcl 37.5mg/75mg/150mg S.R Capsule
+- Pioglitazone Hcl 15mg/30mg/45mg Uncoated Tablet
+- Hepatitis B surface antigen (HBsAg) 20mcg/ml,100mcg/100ml, 10mcg/0.5ml per vial
+  Hepatitis-B Vaccine (recombinant)
+- rHuman Erythropoeitin 2000IU/4000IU per vial Injection
+- Didanosine 25mg/50mg/100mg Chewable Tablet
+- Fluticasone Propionate B.P 0.5mg/2.0mg per 2ml Respule
+- Liposomal Doxorubicin Hcl 2mg/ml Pegylated Injection
+- Pravastatin Sodium 10mg/20mg/40mg Uncoated
+- Tablet
+- Beclomethasone Dipropionate 50mcg/100mcg/250mcg Inhaler
+- Recombinant Interferon Alpha- 2b 3mIU/5mIU/10mIU/18mIU/ 25mIU Injection
+- Budesonide 200mcg Aerosol inhalation (Each metered inhalation supplies Budesonide
+  200mcg)
+- Budesonide 100mcg metered actuation inhaler (Each metered inhalation supplies Budesonide
+  100mcg)
+- Budesonide Respules
+- 0.25mg/ml or 0.5mg/ml (2ml single dose unit ampule) containing 0.25mg/ml or 0.5mg/ml
+  suspension in a suspension for nebulisation.
+- Tretinoin 10 mg Soft Gelatin Capsule
+- R-Ondansetron (As Hcl. Dihydrate) (1mg/ml) injection
+- Nalbuphine injection 10mg/20mg per ml.
+- Testosterone cypionate (100mg/200mg) + Cotton seed oil 736/566mg per ml injection
+- Rosiglitazone 1mg + Metofmin Hcl 500mg tablet (additional strength)
+- Loteprednol Etabonate 5mg + Tobramycine 3mg per ml ophthalmic solution
+- Metoprolol (As succinate) 50mg/25mg ER) + Amlodipine 5mg/2.5mg tablet (For additional
+  indication)
+- Ramipril 10mg + HCTZ 12.5mg tablet (additional strength)
+- Rabeprazole Sodium 20mg/10mg with sodium bicarbonate As buffer
+- Levosalbutamol MDI (50mcg/actuation) & Dry Powder inhaler (100mcg/capsule) (New
+  Dosage Form)
+- Etoricoxib 10mg + Methyl salicylate 20mg per gm. of cream
+- ISMN 60mg Sr + Atenolol 50mg/100mg
+- Comb kit of two capsule of Azaranari 150mg each + 1 tablet of Ritonavir 100mg)
+- Mecobalamine 500mcg + Alpha Lipoic acid 100mg soft gelatin capsule
+- Propofol 10mg + Lignocaem 1mg per ml injection
+- Comb pack of 1 bottle of ciprofloxacin Injection (200mg/100ml) & 1 bottle of Ornidazole
+  injection 500mg/100ml)
+- Combi pack of 1 tablet of Residronate sodium (35mg) + 6 tablet of calcium carbonate
+  equivalent to 500mg calcium each
+- Levocetirizem 2Hcl. Dispersible tablet (2.5mg)
+- S(-) Metoprolol (As succinate) 25mg + S(-) Amlodipine (As besylate 2.5/5mg
+- Amlexanox Oral PAste (5%)
+- Cefotaxim (As sodium) 0.5mg/1gm + Sulbactam (As sodium) 250mg/500mg injection (for
+  additional indication)
+- Livetiracetam conc. for infusion 100mg/ml (new dosage form)
+- Eplerstat tablet 50mg
+- Renolazine Extend ReleAse tablet (500mg)
+- Alfuzocin Hcl. ER (10mg) + Dutasteride 0.5mg tablet
+- Tolterodine tartrate ER 4mg + Tamsulocin Hcl. ER 0.4mg tablet
+- Dexrabeprazole Sodium E. coated tablet 5mg/10mg.
+- Phenytoin Sodium E.R (300mg)
+- Cilnidipine Tabs. 5mg, 10mg
+- Azithromycin 500mg + Ambroxol S.R (75mg) Tablet.
+- Exenatide Injection -pre-filled pen (250mcg/ml).
+- Levofloxacin (15mg) + Prednisolone Acetate 10mg per ml eye drops.
+- Mecobalamine 500/1500mcg + Alpha Lipoic Acid 100mg + Inositol 100mg + Folic Acid
+  0.5/1.5mg + Chromium Polynicotinate 65mcg/200mcg+ Selenium Dioxide18/55mcg + Benfotiamine
+  50/150mg capsule
+- Clotrimazole (10mg) + Methyl- prednisolone aceponate 1mg/gm of cream.
+- Levocetirizine Di-HCl mouth dissolving tablets (5mg) (new dosage form).
+- 'VSL # 3 (Probiotic Blend) sachet'
+- Methylcobalamin (500mcg) + Alpha Lipoic Acid (100mg) + Pyridoxine (3mg) + Folic
+  acid (1.5mg) Soft Gelatin Capsule.
+- Halobetasol Propionate (0.5mg) + Salicylic Acid 30mg per gm of ointment.
+- Combipack of 12 tablet of Artesunate (50mg) each + 3 tablet of each containing Sulfadoxine
+  (500mg) + Pyrmethamine (25mg) Tablet. (Addl. Strength)
+- Omeprazole (20mg/40mg)+Sod. Bicarbonate-600mg+ Mg.Hydroxide-700mg .chew tab.
+- Ceftazidine (2gm) + Sulbactam (1gm) Injection ( addl. strength for additional indication).
+- Polyethylin Glycol 400 (0.4%) + Propylene Glycol (0.3%).
+- Resperidone E.R. (long-acting) injection (12.5mg/vial) (addl. strength).
+- Levocetirizine Di-HCl syrup (2.5mg/5ml) (for use in children 2 years and above).
+- R-Sibutramine Capsule (2.5mg/5mg)
+- Sulphur Hexafluoride Powder and solvent for dispersion for injection (45mcg/ml).
+- Cefuroxime-125/250/500mg +Clav.Acid-31.25/62.5/125mg
+- Sucralfate (70mg ) + Metronidazole (10mg) + Povidone Iodine (50mg) per gram of Ointment.
+- Combipack of two tablet of chloroquine phosphate (250mg) each + 14 tablet of Proguanil
+  HCl (100mg) each
+- + Albumin Human 900mg per 20ml.
+- Moxifloxacin HCl (5mg) + Prednisolone Acetate (10mg)per ml. (eye drops)
+- Methylcobalamine (500mcg) + Alpha Lipoic acid (100mg) + Pyridoxine HCl (1.5mg) +
+  Thiamine (2mg) + Calcium Picolinate (200mg) tablet.
+- Methylcobalamin 500mcg+beta carotine- 10.33mg+alpha lipoic acid 100mg+B6 1.5mg+B1
+  2mg & Cr.polynicotinate.
+- Calcium Pidolate equivalent to Calcium 500mg + Vit-D 250 3 IU
+- Cilostazole E.R Tablet (100mg/200mg).
+- Methyl cobalamine 500mcg+folic acid1.5mg+B5- 5mg,+Zn.sulphate 25mg+Cr.Polynicotinate
+  200mcg+selenium- 65mcg+inositol-1.5mg + alpha lipoic acid –100mg capsule
+- Methylcobalamine 500mcg+folic acid1.5mg+ alpha lipoic acid –300mg +Benfothiamine-50mg.
+  capsule
+- Propanol-18 gm+Ethenol(100%)-45gm in 100ml solution
+- Voglibose disp.tab.0.2mg/0.3mg
+- Citicholine(as Sod.)- 200mg/500mg/750mg granules per sachet.
+- Butarphenol tartrate 10mg/ml nasal spray
+- Deferasirox 100mg dis.tablet(addl. strength)
+- Methyl cobalamine 500mcg+folic acid1.5mg+B6- 3mg,+Zn.sulphate 61.8mg+Ca.Pantothenate
+  10mg+ Niacinamide-50mg +chrimium-50mcg capsule
+- Mecobalamin0.5mg + Pyridoxine 50mg + Benfotiamine100mg capsule
+- Methylcobalamine 500mcg+folic acid 1.5mg+ alpha lipoic acid –100mg +B6- 3mg+Thiamine
+  10mg capsule
+- Gatifloxacin (as sequihydrate)- 3mg + Flurbiprofen sod.- 0.3mg/ml eye drops.
+- Sertanidazole-300mg+ Ofloxacin-200mg tablet
+- Combipack of 12 Artesunate – 50mg tablets & 6 Mefloquin- 250mg tablets
+- Pregabalin-75mg/150mg +Methylcobalamine 500mcg cap
+- Doxycycline-100mg +L.bacillus spores-5 billion
+- Cefprozil 250mg/500mg+Clav. Acid-62.5mg /125mg. tab
+- Dextrometharpahan HBr- 10mg+Chlorphenaramine maleate-2mg /5ml syrup.
+- Lornoxicam 8mg /2ml inj.
+- Apomorphine HCL-2mg/3mg Sublingual tablet.
+- Me-salicylate 30% + Menthol 10% + camphor 4% Cream
+- ISMN 30mg SR + Metoprolol Succinate equivalent to metoprolol tartrate 25mg/50mg
+  tablets (Additional Strength)
+- Citicholine Syrup 750mg/5ml
+- Levodopa 200mg + Carbidopa 50mg C.R. tablet
+- Nanocrystalline Silver Gel 0.002%
+- Cefixime 200mg/100mg + Lactic acid bacillus 2.5 billion spores tablet & dispersible
+  tablet
+- D-Trans Fentanyl Metrix system (12mcg/hr.) (Additional Strength)
+- Ceftazidime 500mg + Tobramycin 60mg per vial (Injection)
+- Sodium Valproate 666mg + valproic acid 290mg equivalent as sodium valproate 1000mg
+  C.R. tablet (Additional Strength)
+- Cefepime (as hydrochloride) 2000/1000/500mg + Sulbactam (as sodium) 1000/500/250mg
+  per vial of injection
+- Paclitaxel Nanoparticle Solution for Injection 20mg/ml (Additional indication)
+- Zanamavir inhalation powder 5mg/blister (Additional Indication)
+- Combikit 4 tablets of Alendronate sodium trihydrate equivalent to Alendronic acid
+  70mg each + 24 tablets of Calcium carbonate 1250mg (equivalent to 500mg Calcium)
+  + cholecalciferol- 250IU
+- Sodium Valproate 499.5mg + Valproic acid 217.5mg equivalent as sodium valproate-
+  750mg CR tablet (Additional Strength)
+- Rivastigmine transdermal patch (each patch of 5m2, 10m2,15m2 & 20m2 contain Rivastigmine
+  base 9/18/27/36mg respectively
+- Dextromethorphan Orodispersible strip 5.5mg/11mg
+- Diclofenac sodium 50mg + Dicyclomine HCl 20mg per ml of injection
+- Travoprost 40mcg + Timolol (as Maleate) 5mg per ml of eye drops
+- Amoxicillin 250mg/125mg + Cloxacillin 250mg/125mg + Lactic Acid Bacillus 1.7 Billion
+  spores
+- Amoxicillin 250mg + Lacto- Bacillus 1.7 billion Spores
+- Mecobalamin1500mcg +Alpha Lipoic Acid100mg+Benfothiamine15mg+B63mg+Calcium Pantothenate25mg+Folic
+  Acid 1.5mg+Zinc oxide22.5mg+Chromium picolinate65mcg+Inositol10mcg+Lutein5mg capsule
+- Methylcobalamine 750mcg + Alphalipoic acid 100mg + Benfothiamine 7.5mg + B6 1.5mg
+  + Calcium pantothenate25mg + Nicotinamide 50mg + Folic acid0.75mg capsule
+- Mecobalamin500mcg + Alpha Lipoic Acid200mg + Benfotiamin 10mg + Pyridoxine3mg +
+  Biotin5mg + Folic acid 1.5mg capsule
+- Amoxycillin 250mg + Cloxacillin 250mg + Lactobacillus 2 billion spores capsules
+- Tiotropium (as Tiotropium Bromide Monohydrate) 18mcg + Formoterol Fumarate Dihydro.
+  12mcg + Ciclesomide 400mcg per capsules
+- Metoprolol Succinate Equivalent to Metoprolol Tartrate [ER 25/50mg] + Atorvastatin
+  (As calcium ) 10mg tablets
+- Levocetrizine Di HCl Dispersible tablet 5mg/10mg (New Dosage form)
+- Hyaluronic Acid Salt 25mg + Cross-Linked Hyaluronic acid 25mg per ml in prefilledsyringe
+- Beclomethasone Dipropionate 0.25mg + Econazole 10mg + Neomycin 5mg per gm of Cream
+- Haemodialysis Powder/Liquid Form containing citrate
+- Cefpodoxime 50mg + Clavulanic acid 31.25mg dispersible tablet & dry syrup (Additional
+  strength)
+- Amoxycillin 125mg/250mg/500mg + Lactobacillus 1.66 billion Spores (Capsules)
+- Halobetasol 0.5mg + Miconazole 20mg per gram Cream
+- Hydroquinone 2% + Tretinoin 0.025% (w/w) Momentasone 0.10% Gel
+- Ciclesonide 160mcg/320mcg/Formoterol 12mcg + Tiotropium 18mcg Dry powder inhaler
+- 'VSL # (Combination of lactic acid bacteria (VSL # 3)'
+- Clostimethate Sodium of 1,00,000IU Injection
+- Ramipril 5mg + HCTZ 12.5mg tablets (Additional Strength)
+- Euphorbia Prostrata Dry Extract (ethanolic 80% (v/v) (35-70) :100mg tablet
+- Brimonidine Tartrate Opthalmic solution 0.1% (with purite as preservation 0.005%)
+  (additional strength)
+- Premetrxed disodium injection 100mg/vial (Additional Strength)
+- Omeprazole 20mg/40mg + Sodium bicarbonate 1680mg per sachet powder for oral suspension
+- Mecobalamin 1000mcg+ Alpha Lipoic Acid 200mg+ vitamin B6 3mg + Folic Acid 1.5mg+
+  Inositol 100mg + Benfotiamine 100mg capsule
+- ISMN 30mg SR + Atenolol 50mg tablets (Additional Strength)
+- Ambroxol HCl. 15mg + Guiphenesin 50mg + Terbutalin sulphate 1.25mg + Menthol 2.5mg
+  per 5 ml of syrup
+- Ambroxol HCl 30mg + Guaiphenesin 100mg + Terbutaline sulphate 2.5mg per 10ml Syrup
+- Boswellia Serrata 0.05gm/gm of Cream
+- Nepafenac Opthalmic suspension (1mg/ml)
+- Hylan GF 20 Injection (Synvisc) (Additional Indication)
+- Docetaxel injection conc.
+- Methylcobalamin 1000mcg + Pyridoxine Hcl IP 100mg + Nicotinamide IP 100mg + D-Panthenol
+  IP 50mg per 2 ml of injection
+- Lamivudine 20mg + Stavudine 5mg dispersible tablets (Additional Sgtrength)
+- Diacerin 50mg + Aceclofenac 100mg tablets
+- Rabeprazole sodium Enteric coated pellets 15.4% w/w (20mg/129.83mg)
+- Live freeze-dried lactic acid bacteria and bifidobacteria capsules
+- Silver Wound Dressing
+- Diacerin 50mg + Glucosamine sulphate 500mg tablets.
+- Clostridium Botulinum type-A toxin haemagglutinin complex (Additional Indication)
+- Fluconazole Dispersible tablets 50mg
+- Cefdinir 250mg dispersible tablets & oral suspension 250mg/5ml
+- Aliskiren 150/150/300/300mg + HCTZ 12.5/25/12.5/25mg tablets
+- Desmoprission lyophilisate Oral tablets 60mcg/120mcg/240mcg per tablets
+- Lecithin Liquid (each 5 ml contains lecithin 500mg equivalent to essential phospholipids
+  250mg
+- Benzoyl Peroxide Medicated Solution (each textured pad contains 4.5%/6.5%/8.5% of
+  solution
+- Sodium Chondroitin sulfate 40mg + sodium Hyaluronate 30mg per ml Intraocular Injection
+  (additional strength)
+- Milnacipran Hcl. 25mg/50mg equivalent to Milnacipran free base 21.77 or 43.55 mg.
+  tablet.
+- Doxercalciferol 0.5mcg/2.5mcg Soft Gelatin capsules
+- S(+) Etodolac ER tablets 200mg/300mg
+- Sodium Hyaluronate injectable gel (each 0.6ml. 1ml pre filled syringe contains,
+  sodium Hyaluronate 20mg/ml, 22.5mg/ml
+- Amphotericin B Lipid suspension injection (25mg/vial) with lipid suspension
+- Mecobalamin 0.5mg+ Alpha Lipoic Acid 100mg+ Benfotiamin100mg + Pyridoxine 50mg tablets
+- Methylcobalamin 1500mcg + Alpha Lipoic Acid 200mg + Benfotiamine 50mg + Vit B6 3mg
+  + Biotin 5mg + Folic Acid 1.5mg capsule
+- Amino Acid, Glucose Parentral Solution (Solution for intravenous infusion)
+- Pazufloxacin Mesylate i.v. infusion 300mg/100ml & 500mg/100ml
+- Bacillus Clausii Spores (2 Billion) Capsules (additional dosage form)
+- Gatifloxacin 0.3% + Ketorolac Tramthamine 0.4% eye Drop
+- Cefadroxyl (as monohydrate) 125mg + Clavulanic acid (as potassium) 31.25 per 5ml
+  Syrup (Additional strength)
+- Doxercalciferol (0.5/ 2.5mcg) Soft Gelatin Capsule (Additional Indication)
+- Bromfenac Sodium Eye Drop (0.09%)
+- Citicoline Chewable tablet (500mg)
+- Ferrous Ascorbate + Folic Acid + Zinc FC Tablets (100mg + 1.5 mg + 22.5 mg)
+- 'S-Metoprolol Succinate Oral Solution (Each Ml contains: S-Metoprolol Succinate
+  9.5mg equal to S- Metoprolol Tartrate 10mg)'
+- Doxorubicin HCl Pegylated Liposomal Injection (20/50MG) (Additional Indication)
+- 'Povidone Iodine Sachet (containing Effervescent Granules) Each 2gm Sachet contains:
+  175mg (available iodine 17.5mg)'
+- Metolazone + Spironolactone FC Tablets (2.5/5mg + 50mg)
+- Ixabepilone lyophilized powder inj. 15mg/45mg per vial
+- 'Fluconazole + Zinc Pyrethrone (Each 30/60ml bottle contains: 2% + 1%) Lotion'
+- Citicoline CR Tab 1000mg
+- Etoricoxib roll on Topical Solution 1% v/v
+- Levosulpiride Inj. 25mg/ml, 2ml
+- Ceftiofur Crystalline free acid Suspension equi to Ceftiofur ---- 200 mg(veterinary)
+- Nitrofurantoin SR Tab. 100mg
+- Etoricoxib + PCM (60mg + 500mg) Tablets
+- Paracetamol + Meloxicam + Benzyl Alcohol + Lignocaine (5mg/ml + 150mg/ml + 1% +
+  1% ) Injection
+- Artemether + Lumefantrine (80mg + 480mg/5ml) Dry syrup
+- Pemetrexed disodium500mg / 100mg powder for sol. (Addl.indication )
+- Tylvalosin tartrate oral soluble granules Sachet 62.5% w/w (Veterinary)
+- Bortezomib inj.3.5mg/vial (Additional Indication)
+- Sertaconazole Nitrate Vaginal Tab.500mg
+- Fosfomycin Tromethamine Sachet 3gms
+- Ixabepilone lyophilized powder (additional Indication)
+- Tretinoine Gel as Micro Sphere 0.04% % 0.1%
+- Budesonide + Formoterol (80/160mcg + 4.5mcg) Inhalational Powder (Additional Indication)
+- Diclofenac + Thiocolchicoside (50mg (EC) + 8mg) Capsules
+- Aceclofenac Roll - On 1%
+- Citicoline Troches 200/500mg
+- Amisulpride S.R.Bilayered tablet 200/400mg
+- Atazanavir + Ritonavir(300mg + 100mg) FC Tablets
+- Paclitaxel inj.30/100/300mg vial (Addl. Indication)
+- Montelucast + Desloratidine(10mg + 5mg) FC Tablets
+- Amlodipine + Metoprolol (2.5/5 mg + 25/50mg (ER))Tablets
+- Losartan + HCTZ (100 mg + 25 mg) Tablets
+- Salicylic Acid + Coal Tar + Precipitated Sulphur (3% + 1% + 3%) Ointment
+- Thiocolchicoside + Etoricoxib(4mg + 60 mg) FC Tablets
+- Amoxycillin + Clavulanic acid(1gm + 62.5mg ) FC Tablets
+- Pemetrexed disodium 500mg / 100mg powder for sol. (Addl. Indication)
+- Rifampicin + INH + Piperine (200mg + 300mg + 10mg ) Capsules
+- Amphotericin B Lipid suspension 50mg/ vial (Addl. Strength)
+- Mifepristone + Misoprostol (1 tab of mifepristone 200mg and 4 tab of misoprostol
+  200mcg) Combipack
+- Docetaxel injection concentrate 80mg/2ml, 20mg/0.5ml (Additional Indication )
+- Gemifloxacin + Ambroxol (320mg + 75mg SR) FC Tablets
+- 'N (2)-L-alanyl -L –glutamine concentrate solution for IV infusion Each 100ml contains:
+  N (2)-L-alanyl -L –glutamine .... 20gm'
+- Selamectin Tropical solution (forverterinary use.) 60mg/120mg per ml
+- Methylcobalamin1500mcg + Calcium 200mg + Calcitriol 0.25mcg + Folic Acid1.5mg +
+  Pyridoxine3mg Capsules
+- Liquid Paraffin1.25ml + Milk of Magnesia 3.75ml + Sodium Picosulphate3.33mg per
+  5ml
+- Ranolazine 1000mg ER Tabs (Additional Strength)
+- Hyaluronic acid (cross linked) Pre-filled syringe 18mg/0.6ml and 24mg/0.8ml
+- Nicotine Polacrilex Gum 2mg & 4mg (Addl. Indication)
+- Closantel Injection100mg/ ml (forverterinary use.)
+- Cetrimide15% w/v + Chlorhexidine Gluconate 7.5% v/v + Isopropyl Alcohol 7.5% v/v
+  Concentrate Solution
+- Ketoconazole 2% w/v + Prepared Coal Tar 2% w/v (I.P. 1966) Solution
+- Halobetasol Scalp Approved 0.05% w/v
+- Nicotine (as Polacrilex) Lozenges 2mg & 4mg
+- Tranexamic Acid Tab SR 750mg
+- Anidulafungin Injection (Lyophilized powder) 50mg/100mg per vial
+- Hydroquinone 20mg + Tretinoin 0.25mg + Fluocinolone Acetonide 0.1mg per gm Cream
+- Glibenclamide 5mg + Pioglitazone 15mg + Metformin500mg film coated tablets
+- Cetrizine 5/10mg + Ambroxol 30mg per 5ml syrup
+- Lidocaine Lozenges 200/300mg
+- Calamine 8% + Liquid Paraffin10% lotion
+- Quinapril 20mg + HCTZ 25mg film coated tablet
+- Levodopa 100/100/250 + Carbidopa10/25/25mg mouth dissolving tablet
+- Losartan 100mg+ HCTZ 25 mg tablet
+- Ropivacaine HCl Inj.2/5/7.5/10 mg
+- Butaphosphan 100g + Methyl Hydroxybenzoate 1gm + Cyanocobalamin50 gm Oral powder
+  (Veterinary Drug)
+- Fluticasone furoate Nasal spray 27.5mcg per spray
+- Surgical Sealant
+- Lidocaine Patch 700mg in aqueous base. (50 mg per gram adhesive)
+- Bimatoprost Opthalmic solution 0.03%
+- Mesalamine PR Tablets 1.2gm
+- Theophylline 400mg SR + Montelukast10mg Tablet
+- Hyaluronic Acid Sodium Salt 0.2 gm + Silver Sulfadiazine 1.0 gm/25 gm tube Hyaluronic
+  Acid Sodium Salt 50 mg + Silver Sulfadiazine 1.0 gm/ 100 gm gauze pads impregneted
+  with cream.
+- 'Hyaluronic Acid Sodium Salt (i) Each 15gm tube contains: HyaluronicAcid Sodium
+  Salt 0.2gm/100gm (ii) Sterile Gauze Pads impregnated with cream: Each gauze pad
+  containsHyaluronic Acid Sodium Salt 50/100mg'
+- Ciclesonide 200mcg + Formoterol 6mcg + Tiotropium 9mcg MDI
+- 'Each film coated bilayred tablet contains: Metoprolol 25mg/50mg + Chlorthalidone
+  12.5mg'
+- Milnacipran 25/50mg Caps (Addl. Indication)
+- Lornoxicam SR 16mg Tabs
+- Palonosetron Hcl 0.075mg IV Inj (Addl. Strength)
+- 'Each film coated bilayred tablet contains: Metoprolol 25mg/50mg + Chlorthalidone
+  6.25 mg /12.5mg'
+- Decitabine Lyophilized powder for injection 50mg/20ml vial
+- Each ml contains Calamine 15% w/v + Zinc oxide 5% w/v + Bentonite 3% w/v+Glycerin
+  5%w/v + Sodium citrate 0.05 % w/v lotion
+- 'Each 1000 ml of emulsion contains: Medium chain triglycerides 100 gm + Soya oil
+  80 gm + Omega- 3 acidtriglycerides 20 gm + egg lecithin 12 gm + Glycerl 25 gm +
+  Sodium oleate 0.30 gm + Alpha -tocopherol 0.20 gm +Ascorbypalmitate 0.30 gm + Sodium
+  hydroxide max. 0.06 gm + water for injection 784 gm emulsion for infusion'
+- Clindamycin Phosphate Inj. 150mg/ml & Clindamycin HCl Capsules 150mg/300mg (additional
+  indication)
+- 'Each 15 gm sachet contains: Lactulose 10 gm + Ispaghula husk 3.50 gm granules'
+- CarvedilolTablets 3.125/6.25/12. 5/25mg (additional indication)
+- Bendamustine Hydrochloride Lyophilized powder Injection 100mg/ vial
+- 'Each gm contains: Halobetasol 0.05% w/w + Mupirocin 2.0 % w/w gel'
+- Methadone Hydrochloride 5mg/10mg per ml syrup; 5mg/ 10mg/ 20mg / 40mg tablet
+- Arformoterol (as Tartrate ) 15mcg / 2ml Inhalation Solution
+- Zolmitriptan...5.0% w/v Benzalkonium Chloride NF ... 0.01% w/v Nasal spray
+- Glatiramer Acetate Injection (20mg/ ml) & Pre-filled syringe (20mg/ml)
+- Yttrium-90 Microspheres Injection (Yttrium-90...3GBq (at the time of calibration)
+  per vial)
+- Metoprolol 50/50/25 mg + Atorvastatin20/10/10 mg + Ramipril 10/5/2.5 mg capsules
+- 'Combipack of artesunate table t and FDC Tablet of sulphadoxine + pyrimethamine
+  Composition: A. combipack of 1 stip of 3 tablets ofartesunate 25 mg and 1 strip
+  of 1 tablet of sulphadoxine 125mg+ pyrimethamine 6.25 mg B. combipack of 1 stip
+  of 3 tablets ofartesunate 50 mg and 1 strip of 1 tablet of sulphadoxine 500mg+ pyrimethamine
+  25 mg C. combipack of 1 stip of 3 tablets ofartesunate 100 mg and 1 strip of 2 tablet
+  of sulphadoxine 500mg+ pyrimethamine 25 mg D.combipack of 1 stip of 3 tablets ofartesunate
+  200 mg and 1 strip of 3 tablet of sulphadoxine 500mg+ pyrimethamine 25 mg.'
+- Nevirapine tablet 50 mg for oral suspension mg
+- Colistimethate Sodium powder for solution for injection/infusion 500000IU and 2000000IU
+  (additional Strength)
+- Simvastatin 20 mg + Ramipril 5mg + Atenolol 50 mg + HCTZ 12.5 mg + Aspirin 100 mg
+  (EC Pellets) Capsules
+- Colistimethate Sodium powder for solution for inhalation 500000IU/1000000IU/2000000I
+  U
+- Oxcarbazepine 150/300/600mg Tablet (Addl. Indication
+- Ofloxacin 2mg + Ornidazole 5 mg per ml Infusion
+- Clozapine Tablet200mg (Addl. Strength)
+- Oxymetazoline Hydrochloride Nasal Spray50mcg/0.05%w/w
+- Fluvoxamine Maleate100/150mg ER Tablets
+- Lidocaine Lozenges 200/300mg (Addl. Indication)
+- Risperidone long acting injection (Addl. Indication)
+- Artesunate (25/50/100mg) + Amodiaquine (67.5 mg/135/270mg) bilayerd Tablets
+- 'Buprenorphine Transdermal Patch Each Transdermal Patch having an area of 6.25cm²,
+  12.5cm², and 25cm²contains: Buprenorphine…5mg/10mg/20 mg having release rate of
+  5mcg, 10mcg, 20mcg Buprenorphine per hour respectively(over a period of 7 days).'
+- Metoclopramide (as HCl) 200mg / 400mg per ml Intranasal Solution
+- Cefovecin( as sodium) 80mg/ ml Lyophilised powder for injection (Veterinary)
+- 'Imidacloprid 10% + Moxidectin 1.0% & 2.5% Topical solution (Veterinary) Each pippette
+  contains: (a) 0.4ml, 1.0ml, 2.5ml, 4ml of 10% Imidacloprid and 1.0% moxidectin (b)
+  0.4ml, 0.8ml of 10% Imidacloprid and 2.5% moxidectin'
+- Isoflupredone AcetateSuspension for Injection (2mg per ml) ( For Veterinary)
+- Ambroxol 30 mg+ Terbutaline 2.5 mg + Guaiphenesin 100mg + Menthol 2.5 mg per 5 ml
+  syrup
+- Propofol 10 mg+ Lignocaine 2.5 mg per ml injection
+- Deltamethrin (0.50% m/v) and Piperonyl Butoxide (2.0% m/v) per ml Pour–On Solution
+- Propofol 1% for injection (Additi
+- Ramosetron Hydrochloride Tablets 2.5mcg, 5mcg, 0.1mg & Injecton 0.3mg /2ml
+- '1) Triticum Vulgare Topical Cream Each 100gm of cream contains: Aqueous extract
+  of Triticum Vulgare (dry residue 200mg / 100ml) ..... 15gm 2-phenoxyethanol Eur.
+  Ph.....1gm 2) Triticum Vulgare Vaginal Pessary Each 3.5gm of vaginal pessary contains:
+  Aqueous extract of Triticum Vulgare (dry residue 200mg/ 100ml) .....0.60gm 2-phenoxyethanol
+  Eur. Ph.....0.04gm'
+- Euphorbia Prostrata Dry Extract :100mg tablet (addl. Indication)
+- Euphorbia Prostrata dry extract ethanolic 80%v/v[(35-70):1] cream 1% w/w
+- Lactobacillus Rhammnosus 1 billion cells + Saccharomyces Boulardi 125 mg + Zinc
+  Enriched yeast 20 mg sachets & capsules
+- S (+) Etodolac 150/200/300mg + Paracetamol 500/500/500mg Tablets
+- Tacrolimus Granules for oral suspension 0.2/1 mg per sachet
+- Cinitapride Hydrogen Tartrate ER Tablet 3mg
+- Ketoprofen plaster 30 mg (7cm X 10 cm)
+- Loteprednol etabonate 0.5% w/v + Moxifloxacin 0.5% w/v opthalmic Suspension
+- Diclofenac Diethyl amine transdermal patch 100 mg/37.5 sq cm (Additional Strength)
+- Flurbiprofen plaster 20 mg (7cm X 10cm)
+- Betahistine Di hydrochloride CR capsule 24/32/48mg
+- Gefitinib tab 250mg (Additional Indication)
+- Formoterol 6 mcg + Mometasone furoate 100/200/400mcg Metered dose Inhaler & Dry
+  Powder Inhalation
+- Chlorohexidine Gluconate Mouth wash 0.1%
+- Levodropropizine Eur. Ph. 30mg + Chlorpheniramine maleate IP 2mg per 5 ml Syrup
+- Alpha Lipoic Acid USP 100mg + Methylcobalamin 1500mcg + Vitamin B6 IP 3mg + Folic
+  Acid IP 1.5mg + Benfotiamine 50mg + Biotin USP 5mg + Chromium Picolinate USP Eq.
+  to Chromuim 200mcg Capsule
+- Moxifloxacin HCl BP 0.5% w/v + Bromfenac Sodium 0.09% w/v Eye drop
+- Ferrous Ascorbate 100mg + Folic Acid IP 1.5mg + Cyanocobalamin IP 15mcg + Zinc Sulphate
+  Monohydrate Eq. to Elemental Zinc 22.5mg Tablet
+- S (+) Etodolac 300mg +Thiocolchicoside 8mg Tablet
+- Beclomethasone Dipropionate IP 100mcg + Formoterol Fumarate Dihydrate BP Eq. to
+  Formoterol Fumarate 6 mcg Metered Dose Inhaler
+- Amlodipine Besilate IP Eq. to Amlodipine 5mg + Indapamide USP SR 1.5mg Tablet
+- Metformin HCl IP 500mg + Alpha Lipoic Acid USP 200mg Tablet
+- Paracetamol Chewable Tablet 500 mg. ( Additional Dosage Form)
+- Methylcobalamin 500mcg + Folic Acid IP 1.5mg + Zinc Sulphate IP 25mg + Chromium
+  Polynicotinate 200mcg + Selenium as Sodium Selenite USP 65 mcg + Inositol 100mg
+  + Alpha Lipoic Acid 50mg + Streptococcus faecalis 30 Millions (30 lakh) + Clostridium
+  butyricum 2 Million (20 lakh) + Bacillus mesentericus 1 Million (10 lakh) + Lactic
+  acid bacillus 50 Million (500lakh) Capsule
+- Dextromethorphan Extended Release Oral Suspension 30 mg per 5 ml
+- Paracetamol Fast Release Tablet 500mg (Additional Dosage Form)
+- 'Each bowel preparatory kit contains: One enteric coated tablet Biscodyl IP 5mg
+  & One sachet of powder for reconstitution contains: Polyethylene glycol 3350NF:
+  210gm + Sodium Bicarbonate IP 2.86gm + Sodium Chloride IP 5.6gm + Potassium Chloride
+  IP 0.74gm'
+- Ferric Carboxymaltose equivalent to elemental Iron...50mg/ml Injection
+- Pidotimod Tablet 400 mg/800 mg & Oral Solution 400 mg/800 mg per 7ml
+- Calf lung surfactant Intratracheal Suspension containing Phospholipids.... 35mg
+  (containing 26 mg phosphatidylcholine of which 16mg is disaturated phosphatidylcholine)
+  Proteins....0.65mg (including 0.26mg of surfactant associated proteins B) per ml
+- Gatifloxacin Eye drop 5 mg/ml
+- Ketoprofen Plaster ( Size - 7cm x 10 cm)
+- Adenosylcobalamin 15mcg + Ferrous Ascorbate 100mg + Folic Acid IP 1.5mg + Zinc Sulphate
+  USP Eq. to Elemental Zinc 22.5mg tablet
+- Tioconazole Vaginal Gel 65mg per gm
+- Quetiapen fumarate Sustained Release Tablets 50mg and 100mg (Additional Strength)
+- Asenapine Maleate Sublingual Tablets 5mg/10mg
+- Cefixime Trihydrate IP Eq. to Anhydrous Cefixime 100mg/200mg + Ofloxacin IP 100mg/200mg
+  Dispersible Tablet (Additional dosage form )
+- S-Bupivacaine Hydrochloride Injection 2.5mg/5mg/7.5mg per ml
+- Dexketoprofen 50mg + Dicyclomine 20mg per 2ml Injection
+- Lacosamide Syrup15mg/ml(Additional Dosage Form)
+- Primaquine Tablet 45mg(Additional Strength) transmission
+- Hyaluronic Acid Pre- filled Syringe 30mg/2ml& 60mg/4ml(Additional Strength)
+- Levocetirizine Di-HCl Syrup2.5mg/5ml (Additional Indication)
+- 'Esomeprazole Delayed Release Granules for Oral Suspension: Each 1g sachet contains:
+  Esomeprazole Magnesium I.P(as trihydrate) equivalent to Esomeprazole 10 mg as enteric
+  coated granules (Additional Dosage Form)'
+- Gatifloxacin 0.3% + Loteprednol Etabonate 0.5% + Benzalkonium Chloride 0.01% w/v
+  Opthalmic suspension
+- Diclofenac Colestyramine 145.6 mg
+- corresponding to 75mg Diclofenac Sodium Capsules.
+- Latanoprost 50mcg/ml Ophtalamic Solution (Additional Indication)
+- Clostridium Botulinum Toxin Type-A Injection 100Units/Vial (Additional Indication)
+- 'PROBIO : Each sachet (1g) contains: Total Probiotic.... Not less than 1.25 Billion
+  CFU (Lactobacillus acidophilus, Lactobacillus rhamnosus, Bifidobacterium longum,
+  Saccharomyces boulardii) PROBIO & PREBIO (F)s Each sachet (1g) contains: Probio
+  (CMP 5) Total Probiotic...Not less than 1.25 Billion CFU (Lactobacillus acidophilus,
+  Lactobacillus rhamnosus, Bifidobacterium longum, Saccharomyces boulardii) Fructo
+  Oligo Saccharides .... 100mg 3. PROBIO & PREBIO (D) Each sachet (1.3g) contains:'
+- Probio (CMP 5) Total probiotic... not less than 1.25 billion CFU (Lactobacillus
+  acidophilus, Lactobacillus rhamnosus, Bifidobacterium longum, Saccharomyces boulardii)
+  Fructo Oligo Saccharides...1000mg
+- Silodosin Capsules2mg/4mg/8mg
+- Fexofenadine 120mg + Montelukast 10mg Chewable tablet
+- 'Each Combipack of 21 tablets contains : A) FDC of Norgestrel & Ethinyl estradiol
+  tablets IP Each sugar coated white tablet contains: Norgestrel 0.30mg & Ethinyl
+  estradiol 0.03mg B) 7 tablets of Ferrous Fumarate: Each sugar coated tablet contains
+  : - Ferrous Fumarate 75mg eq. to 24.375mg of ferrous iron'
+- Alpha Lipoic acid 100mg + Folic acid 1.5mg + Methylcobalamin 1500mcg + Pyridoxine
+  Hydrochloride 3mg + Vitamin D3 1000 IU Tablets
+- L Tacrolimus Capsules 0.5mg/1mg/5mg (Additional steroids Indication)
+- Each Combikit contains Part A - One film coated tablet of Tenofovir Disoproxil Fumarate
+  300mg eq. to Tenofovir 245mg + Emtricitabine 200mg. Part B - One film coated tablet
+  of Atazanavir sulphate eq. to Atazanavir 300mg + Ritonavir 100mg
+- Rosuvastatin Calcium eq. to Rosuvastatin 20mg/20mg + Fenofibrate BP 67.5mg/145mg
+  Tablets
+- Clindamycin Phosphate eq. to Clindamycin 1% w/w + Hydrous Benzoyl Peroxide eq. to
+  Anhydrous Benzoyl peroxide 2.5% w/w topical gel
+- Ceftriaxone Sodium eq. to Ceftriaxone Sodium 1000mg/2000mg + Sulbactam Sodium eq.
+  Sulbactam 500mg/1000mg.injection
+- w/v Eye Drops
+- S(-) Amlodipine 2.5mg/5mg + Clopidogrel 75mg/75mg Tablets
+- 'Each Combipack contains: - A) One tablet of Risedronate Sodium - Each film coated
+  tablet contains: Risedronate Sodium (as Risedronate Sodium Hemi-Pentahydrate) -
+  35 mg B) Six Capsules of FDC of Calcitriol +Calcium carbonate + Zinc Each soft gelatin
+  capsule contains : - Calcitriol IP - 0.25mcg Calcium Carbonate IP - 500mg (eq. to
+  elemental calcium 200mg) Zinc (as Zinc Sulphate USP) 7.5 mg'
+- Akiskiren Hemifumarate eq. to Aliskiren 150mg/150mg/300mg/300mg +Amlodipine Besilate
+  IP eq. to Amlodipine 5mg/10mg/5mg/10mg Tablets
+- Ferrous Ascorbate eq. to elemental iron 100mg + Folic acid IP 1.1mg + Methylcobalamin
+  1.5mg +Zinc Sulphate monohydrate IP eq to elemental Zinc 22.5mg Tablets. (Additional
+  strength)
+- Gatifloxacin IP eq. to Gatifloxacin (Anhydrous) 3.0mg + Difluprednate 0.5mg + Benzalkonium
+  Chloride IP (As preservative) 0.01% w/v Eye Drops
+- Alprazolam sublingual tablets 0.5mg/1mg (New dosage form)
+- Diazinon Flea Drops Spot on Dogs 30.0% w/w
+- Dic lofenac Sodium IP (as sustained release
+- Pellets) 100mg + Thiocolchicoside (as sustained release pellets) 16mg Capsule. (New
+  Dosage Form)
+- Ketorolac Tromethamine IP 4.00mg + Olopatadine Hcl eq. to Olopatadine 1.00mg + Benzalkonium
+  Chloride IP 0.05mg Ophthalmic solution
+- Tramadol Hcl IP (As Immediate Release Layer) 50m g + Diclofenac Sodium IP (As Sustained
+  Release Layer) 75mg Tablets
+- Budesonide IP 1mg/0.5mg + Formoterol Fumarate Dihydrate IP eq to Formoterol Fumarate
+  20mcg/20mcg Respirator suspension. (Additional Strength)
+- Ondansetron Fast Dissolving Strips 4mg/8mg (New dosage form)
+- Amlodipine Besilate IP eq.to Amlodipine 10mg/5mg/5mg/5mg/2.5mg + Olmesartan Me doxomil
+  40mg/40mg/20mg/5mg/5mg + Hydrochlorothiazide IP 25mg/12.5mg/12.5mg/12.5mg/12.5mg
+  Tablet
+- Each Combipack contains Part (A) One Strip of FDC of Ramipril + Amlodipine Tablets;-
+  Each uncoated tablet contains Ramipril IP - 5mg, Am lodipine besylate IP eq to Amlodipine
+  5mg B) Each Film coated tablet contains ;- Atorvastatin Calcium IP eq to Atorvastatin
+  10mg/20mg.
+- Rosuvastatin Calcium IP eq to Rosuvastatin 5mg + Ezetimibe 10mg. (Additional Strength)
+- Micafungin sodium for Injection 10mg per vial/50mg per vial (Additional Indication)
+- Dosulepine Hcl 50mg/75mg + Methylcobalamin 1500mcg/1500mcg Tablets
+- Dabigatran Etexilate( as Mesilate) hard gelatin Capsules 75mg/110mg/150mg
+- Cefuroxime Sodium 250mg intramammay infu sion for Veterinary (PFS) (New dosage form)
+- Montelukast Sodium IP eq.to Montelukast 10mg +Olopatadine Hcl 5mg Tablets
+- Crizotinib hard gelatin Capsules 200mg/250mg
+- Amlodipine Besilate IP eq. to Amlodipine 5mg + P erindopril Erbumine BP 8mg Tablets.
+  (Additional Strength).
+- Iron Amino Acid Chelate as Ferrous Bisglycinate (75mg) eq. to Elemental Iron 15mg
+  + F olic acid IP 0.25mg + Vitamin B 12 IP 3.75mcg +Zinc Picolinate (26mg) eq. to
+  Elemental Zinc 5.5mg Syrup
+- Piroxicam Sublingual Tablet 20 mg (Additional Dosage Form)
+- Treatment o Zoledronic Acid 4 mg/100 ml ready to use (RT U) solution for I.V Infusion
+  (Additional Dosage form)
+- Everolirnus Tablet 5 mg/10 mg (Additional Indication)
+- 'Desvenlafaxine extended release tablet (Additional strength) Each film coated extended
+  release tablet contains: Desvenlafaxine succinate 25mg'
+- Budesonide IP 1mg/0.5mg + Formoterol Fumarate Dihydrate IP eq to Formoterol Fumarate
+  20mcg/20mcg Respirator suspension. (Additional Indication)
+- Diclofenac Sodium IP (Enteric coated granules) 50mg + Eperisone Hcl IP (Tablet)
+  50mg Hard Gelatin Capsules. (New Dosage Form)
+- Degarelix for Injection 80mg / 120mg per vial
+- Cephalexin IP (as monohydrate) 200mg + Kanamycin IP (as monosulphate) 100,000 IU
+  Suspension per 10 gm Intramammary Suspension
+- Mucotrol Concentrated Oral Gel Wafer.
+- Ondansetron Hydrochloride Mouth Melting Strips 4mg
+- Paracetamol Bilayer Tablet 1000mg
+- Ketoprofen Plaster 30mg (7cm X 10cm)
+- 'Sterile Solution for Peritoneal Dialysis Each 1000 ml contains: Calcium chloride
+  dihydrate 0.184 g/l + Glycine 0.51 g/l + L- Alanine 0.951 g/l + L- Arginine 1.071
+  g/l + L- Isoleucine 0.85 g/l + L- Histidine 0.714 g/l + L- Leucine 1.02 g/l + L-
+  Lysine (as Hcl) 0.955 g/l + L-Methionine 0.85 g/l + L- Phenylalanine 0.57 g/l +
+  L-Proline 0.595 g/l + L- Serine 0.51 g/l + L- Threonine 0.646 g/l + L-Tryptophan
+  0.27 g/l + L-Tyrosine 0.3 g/l + L-Valine 1.393 g/l + Magnesium chloride hexahydrate
+  0.051 g/l + Sodium chloride 5.38 g/l + Sodium lactate 4.48 g/l'
+- Ethyl esters of iodized fatty acids of poppy seed oil solution for injection 48%.
+- Colesevelam Hydrochloride Tablets 625mg & Sachets for oral suspension 3.75gm/1.875gm.
+- Choline Fenofibrate DR Capsule 45mg/135mg & DR Tablet 45mg/135mg.
+- Trimethoxysilyl Quaternary Ammonium Chloride solution for spray inanimate surfaces
+  for disinfection 0.71%.
+- Imipenem IP (Sterile) eq to anhydrous Imipenem 1 g + Cilastatin Sodium IP (sterile)
+  eq to Cilastatin 1 g Powder for Injection (Additional strength)
+- Megestrol Acetate Oral Suspension 400mg per 10ml (10 & 20mg Sachet)
+- Diclofenac Diethylamine BP 4.64 % w/v Eq. to Diclofenac Sodium IP 4.00 % + Absolute
+  Alcohol IP 10.00 % v/v Topical Solution
+- Diclofenac Diethylamine BP 2.32 % w/v Eq to Diclofenac Sodium 2.00 % w/v + Methyl
+  Salicylate IP 10.00% w/v + Menthol 5.00 % w/v + Absolute Alcohol IP 10.00 % v/v
+  Topical Solution (Additional Strength)
+- Telmisartan 20mg + Amlodipine Besylate Eq. to Amlodipine 2.5mg + Hydrochlorothizide
+  6.25mg Tablets (Additional Strength)
+- Amlodipine besilate IP Eq. to Amlodipine 10mg + Indapamide SR 1.5 mg Tablet (Additional
+  Strength)
+- DabigatranEtexilateMesilateeq to DabigatranEtexilate 75mg/110mg/150mg
+- Cefixime Tablets 200mg &Cefixime Oral Suspension 100mg/5ml
+- Diclofenac Colestyramine 145.6mg Capsule Corresponding to Diclofenac Sodium 75mg
+  (Additional Indication)
+- BetahistineDihydrochloride SR Tablets 24mg/32mg/48mg
+- Palonosetron Melt in Mouth Tablets 0.5mg
+- Iobitridol Solution for Injection Each 100mg solution contain 65.81 g Iobitridolcorressponding
+  mass of Iodine 30gm
+- 'Each sustained release tablet contains: Thiocolchicoside IP 8/16mg + Lornoxicam
+  8/16mg (Additional Strength)'
+- Combination of Lactic Acid Bacteria (VSL#3) Sachet
+- Tolperisone HCl 450mg + Diclofenac Sodium IP100mg SR tablets (Additional Strength)
+- Telmisartan IP 80mg + Hydrochlorothiazide IP 25mg uncoated bilayered tablet (Additional
+  Strength)
+- Carboxy Methyl Cellulose Sodium Lubricant Eye Drops 0.5% w/v (Unit dose pack without
+  preservative)
+- Trimethoxysilyl Quaternary Ammonium Chloride 0.40% hand protectant and sanitizer
+- Iron (III) isomaltoside 1000 solution for injection/infusion 100mg per ml
+- FDC of Aeterolane Malate (150mg) + Piperaquine Phosphate (750mg) Tablet
+- Micronised Purified Flavonoid Fraction of Rutacea 1000 mg (MPFF) Each film coated
+  tablet contains “Diosmin 900mg and Flavonoids expressed as Hesperidine 100mg of
+  Micronised Purified Flavonoid Fraction of
+- Rutaceae 1000mg (MPFF) (Additional strength)
+- 'Artesunate injection. Each combipack contains: "Artesunate for injection 120mg
+  ( Each vial contains Artesunate IP 120mg), Sodium bicarbonate injection IP 5%w/v
+  (Each 2ml ampoule contains: Sodium Bicarbonate IP 5% w/v), Sodium chloride Injection
+  IP 0.9% w/v (Each 10ml ampoule contains: Sodium chloride IP 0.9% w/v)" (Additional
+  strength)'
+- Diclofenac Sodium Sustained Release Tablet (Two layered tablets) 150mg. Each tablet
+  contains Diclofenac Sodium IP-125 mg Slow Release, Diclofenac Sodium IP-25 mg Immediate
+  Release(Additional Dosage Form)
+- Paclitaxel Injection Concentrate for Nanodispersion 100mg and 300mg (Additional
+  Dosage Form)
+- '7'
+- '9'
+- '16'
+- '17'
+- '19'
+- '20'
+- '21'
+- '22'
+- '23'
+- '24'
+- '25'
+- '26'
+- '27'
+- '28'
+- '29'
+- '30'
+- '31'
+- '32'
+- '33'
+- '34'
+- '35'
+- '36'
+- '37'
+- '38'
+- '39'
+- '40'
+- '41'
+- '42'
+- '43'
+- '44'
+- '45'
+- '46'
+- '47'
+- '48'
+- '49'
+- '50'
+- '51'
+- '52'
+- '53'
+- '54'
+- '55'
+- '56'
+- '57'
+- '58'
+- '59'
+- '60'
+- '61'
+- '62'
+- '63'
 - Feracrylum 3% solution
 - Feracrylum 3% gel
 - Etodolac i.m injection 400mg/2ml (Additional dosage form)
+- mg
+- Lixisenatide pre-filled
+- solution for injection
+- 10µg/20 µg
+- 5mg/10mg
+- 0.3mg/0.6mg/0.9mg
+- 20mg
+- Ceritinib 150 mg Hard
+- 20mg/40mg and Bulk
+- tablets
+- Injection 6.75mg/0.9ml
+- and Bulk
+- Ibrutinib Hard gelatin
+- Capsule 140mg
+- Dihydrochloride bulk &
+- Tablet 30mg/60mg
+- soft Capsule
+- Nintedanib soft Gelatin Capsule
+- 2mg/ml injection
+- Fomepizole Bulk & Fomepizole
+- Injection 1.5gm/Ampoule
+- Tofacitinib Tablets 5 mg(Tofacitinib
+- Citrate)
+- mg/Vial
+- Panobinostat Hard Gelatin Capsules
+- lactate)
+- Ophthalmic solution
+- Ibutilide Bulk &amp;
+- 0.1mg/ml
+- Tablet 100mg
+- tablets 50mg/100 mg/200mg
+- 40mg/80mg
+- Fenticonazole Nitrate Vaginal Capsule
+- 600 mg
+- 75mg/100mg/125 mg
+- Phospholipids Fraction from Bovine
+- Lung (surfactant) 50 mg/vial
+- (Dolutegravir Sodium)
+- Bulk
+- Lenvatinib 4mg/10mg Hard Gelatin
+- Capsules (Lenvatinib Mesylate)
+- 2mg/4mg/6mg/8mg/10mg/12mg
+- 40mg/80mg Tablets
+- 0.584mg/ml Cutaneous
+- Spray Solution (Vet.)
+- Dexlansoprazole Delayed
+- Release Capsule 30/60mg &
+- Carfilzomib Sterile
+- Lyophilized Powder for
+- Injection 60mg/vial (50ml
+- vial)
+- Capsules
+- (Dabrafenib Mesylate)
+- (Trametinib Dimethyl
+- (Alectinib Hydrochloride)
+- Hemitartrate Salt)
+- Pasireotide long-acting
+- release 20/40/60mg
+- powder for suspension for
+- injection (Additional
+- Indication) (Pasireotide
+- pamoate)
+- implant
+- '%w/v Ophthalmic'
+- Eprinomectin 0.5% for beef
+- and dairy cattle (vet.)
+- Succinate)
+- 1mg/2mg/3mg/4mg
+- Capsules & Bulk
+- Film coated Tablets
+- (Osimertinib Mesylate)
+- Injection 250 mg/2.5 ml
+- 112.5 mg/250
+- mg/500mg/1000mg/1400
+- Fluticasone Furoate (100
+- mg mcg) and Vilanterol
+- Trifenatate (25 mcg)
+- powder for inhalation
+- Mirabegron Prolonged
+- Release Tablet 25 mg /50
+- mg & Bulk
+- 10 mg/20mg/40mg
+- Tablets 50mg/75mg/100mg
+- 5g/vial
+- Ribociclib 200 mg Film
+- coated Tablets
+- Apremilast bulk & film
+- coated tablets 10 mg/20
+- mg/30 mg
+- 200mg/4ml
+- Benestermycin Intra-
+- mammary suspension (vet.)
+- Dispersible tablets (37.5 mg
+- +187.5 mg
+- 10 mg
 - Tenofovir Alafenamide Hemifumarate Bulk Emtricitabine 200mg/200mg +Tenofovir Alafenamide
   10/25 mg Tablets
+- Cadexomer Iodine Bulk & Powder 100 % w/w (contain 0.9 % w/v Iodine) or cadexomer
+  Iodine Ointment 500 mg (contains 0.9% w/v iodine)
+- Dalfampridine Bulk & Film coated extented release tablet 10 mg
+- Fipronil 50mg/134 mg/268mg/402mg spot on solution for cats and dogs
 - Concentrate of Proteolytic enzyme enriched in Bromelain topical gel
-- Cidofovir dihydrate bulk drug and Cidofovir injection 75 mg/ ml (5 ml single use
-  vial)
+- FDC of Bictegravir, Emtricitabine and Tenofovir alafenamide 50mg/200mg/25mg tablets
+- 400mg, 500mg
+- Algard - R-82 (octyldecyl dimethyl ammonium chloride 6.510 w/w + Dioctyl dimethyl
+  ammonium chloride 2.604% w/w + Didecyl dimethyl ammonium chloride 3.906% w/w + Alkyl
+  dimethyl benzyl ammonium chloride 8.680% w/w
+- Algard HWS-256 (didecyl dimethyl ammonium chloride 10.14% w/w + n-Alkyl dimethyl
+  benzyl ammonium chloride 6.76% w/w
+- Safinamide methane sulphonate bulk drug and Safinamide tablets 50, 100mg
+- Diperoxochloric acid concentrate and Diperoxochloric acid topical solution
+- Genopep bulk and Genopep 0.05% w/w cream
+- Alalevonadifloxacin mesylate bulk and Levonadifloxcin tablets 500mg
+- Levonadifloxacin L-arginine tetrahydrate bulk and Levonadifloxacin injection 800mg/100ml
 - Isavuconazolesulfate 100mg capsules
+- Sucroferric oxyhydroxide bulk and Sucroferric oxyhydroxide chewabale tablet 500mg
+- Hydrogen peroxide 0.5% w/w wipes
+- Remdesivir Injection 5 mg/mL and Remdesivir lyophilised powder for Injection 100
+  mg
+- Propylene glycol 0.6% lubricant eye drops
+- n-alkyl dimethyl benzyl ammonium chloride 0.105% w/w spray
+- Octyl decyl dimethyl ammonium chloride 6.670% spray
+- Cabozantinib (S) - Malate bulk and Cabozantinib tablets 20mg, 40mg and 60mg
+- Tipiracil hydrochloride bulk and FDC of 1) Trifluridine 15mg + Tipiracil 6.14mg
+  and 2) Trifluridine 20mg + Tipiracil 8.19mg
+- Biapenem sterile bulk and Biapenem for injection 300mg
+- Tafamidis soft gelatin capsules 61 mg
 - Gimeracil bulk & Oteracil potassium bulk and Tegafur 15mg/20mg, Gimeracil 4.35mg/5.8mg
   and Oteracil 11.8mg/15.8mg capsules
 - Topiroxostat tablets 20mg, 40mg and 60mg and bulk
+- Polyhexamethylene guanidine hydrochloride 1.000 lit
+- Nirmatrelvir bulk and Combipack of Nirmatrelvir 300mg tablets (2x150mg tablets)
+  and Ritonavir tablets 100mg
+- 'rdESAT-6 bulk; rCFP-10 bulk and rdESAT-6 and rCFP-10 (Cy-Tb) injection - Each vial
+  (10 dose vial, single dose of 0.1ml) contains: rdESAT- 6:0.05 mcg; rCFP-10: 0.05
+  mcg'
+- Sitagliptin Fentanil Phaohate Tablet 35 mg, 70 mg, 140 g
 - Fesoteroterodine Fumarate Extended Release Tablets 4mg and 8mg and Fesoteroterodine
   Fumarate Bulk
 - Cannabidiol Bulk Drug, Cannabidiol Oral
+- Solution 100mg/ml
+- 3-(trimethoxysilyl)propyl dimethyl octadecylammonum chloride , Benzalkonium chloride,
+  &Didecyl Dimethyl ammonium chloride
+- Ibuprofen Sodium Dihydrate Bulk Drug, Ibuprofen Sodium Dihydrate 256/512mg Tablet
+- Polmacoxib Bulk Drug, Polmacoxib Capsule 2mg
+- Amines, N- C10-16-alkyl trimethylenedi-, reaction products with chloro acetic acid
+  1.0000% w/w
+- Squaric Acid 0.748 mg/ml&Squaric Acid 1.745 mg/ml Solution (Spray)
+- Dalbavancin Hydrochloride Bulk Drug, Dalbavancin Injection 500mg
+- LobeglitazoneSulfate 0.5mg+Glimepiride 1mg Tablets
+- Sovateltide Bulk Drug &Sovateltide Injection 30 µg
+- Lifitegrast Bulk drug &Lifitegrast Ophthalmic Solution 5%w/v
+- Plecanatide Bulk Drug&Plecanatide Tablets 3mg
+- Treprostinil Bulk Drug andTreprostinil Solution for infusion 1mg/ml & 10mg/ml
+- Icaridin API and Icaridin 20% w/v Spray
+- Lasmiditan Hemisuccinate Bulk Drug & Lasmiditan Tablet 50mg/100mg
+- rdESAT-6 and rCFP-10 (Cy-Tb) injection (Additional indication)
+- Nelarabine bulk drug & Nelarabine Injection 250mg/50ml(5mg/ml)
+- Enmetazobactam bulk drug & Cefipime 2gm and Enmetazobactam 500mg Dry powder for
+  injection
+- Methenamine Hippurate bulk drug &Methenamine Hippurate Tablets USP 1gm
+- Sodium Phenylbutyrate USP bulk drug& Sodium Phenylbutyrate Oral Powder USP
+- Tedizolid Phosphate Bulk & Tedizolid Phosphate Tablets 200mg
+- Pimavanserin Tartrate Bulk & Pimavanserin Capsules 34 mg
+- Elagolix Sodium Bulk & Elagolix tablets 150mg and Elagolix tablets 200 mg
+- Ferumoxytol Bulk Drug &Ferumoxytol Injection 510 mg Elemental Iron/17mL(30mg/mL)
+- Lumateperone Tosylate Bulk Drug & Lumateperone capsules 42 mg
+- Trelagliptin Succinate Bulk & Trelagliptin Tablets 25 mg, 50 mg, and 100 mg
+- T ucatinib hemiethanolate bulk drug & Tucatinib tablets 50 mg and 150 mg
+- Linaclotide Bulk Drug & Linaclotide Capsule 72 mcg & Linaclotide Capsule 145 mcg
+- Siponimod Hemifumarate Bulk Drug & Siponimod Tablets 0.25 mg/1mg/2mg
+- FDC of Relugolix, Estradiol and Norethindrone Acetate Tablets (40 mg+ 1 mg+ 0.5mg)
+- Lutetium Lu-177 Vipivotide Tetraxetan solution for injection or infusion 1000MBq/m
+  L – reg.
+- Stamicis 1mg kit for Radiopharmaceutical Preparation

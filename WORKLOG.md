@@ -279,3 +279,38 @@ CURIE on the Biolink slot with the full set on `medic_disease_context_ids` / `_l
   becomes CURIE-reachable. The grounding itself costs no LLM calls.
 - Decide whether to bump the extraction cache namespace: cached rows keep their old context
   values (including "pathologic causes") until their text is re-extracted.
+
+### Lever 2 measured — and my projection was wrong
+
+Warm re-ingest, **zero LLM calls**:
+
+| | |
+|---|---:|
+| evidence rows carrying a disease context | 18,643 |
+| rows with ≥1 grounded CURIE | **13,951 (74.8%)** |
+| context names grounded | 18,590 of 25,822 (**72.0%**) |
+| **v1-only pairs now reachable by a grounded context** | **287 of 7,217 (4.0%)** |
+
+**I framed Lever 2 as recovering 2,266 pairs (31.4%). It recovered 287 (4.0%).** The 2,266
+was the share of v1-only pairs whose disease appears *somewhere* in label text we hold —
+anywhere, including inside the target phrase or an unrelated sentence. That is an upper bound
+on text presence, not an estimate of what grounding the context recovers, and presenting it
+as the latter was my error. The remainder needs a paid re-extraction (~18,000 sections),
+because cached answers predate the new prompt rule, and its yield is unknown.
+
+The 287 are the right rows — precisely where v1 promoted a context to the object:
+`Baclofen -> multiple sclerosis`, `Albuterol -> asthma`,
+`Verapamil -> Wolff-Parkinson-White syndrome`, `Prednisolone -> Stevens-Johnson syndrome`.
+
+The durable value of Lever 2 is therefore structural rather than recall: 18,590 contexts that
+are now searchable CURIEs instead of free text, and an export that satisfies
+`disease_context_qualifier`'s actual Biolink range (`disease`) rather than only its name.
+
+The guard behaved correctly on the narrow cases: `pathologic myopia` and `pathological
+hypersecretory conditions` are real conditions and survived, because it matches whole-string
+categories only.
+
+**Revised recommendation.** Lever 3 (reclassify the 1,052 downfill/more-specific pairs) is
+now clearly the best remaining move: ~14.5% of the apparent gap, a scripting change, no LLM
+spend. Lever 1 is 10.4% for ~35,000 calls. Lever 2's remaining share needs re-extraction and
+is unquantified.

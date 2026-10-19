@@ -744,7 +744,7 @@
   grounding:
     components:
     - CHEBI:3207
-    - CHEBI:5147
+    - RXCUI:998038
     confidence: 0.9
     grounded_id: CHEBI:3207
     grounded_label: budesonide
@@ -1628,19 +1628,25 @@
   application_number: 014349|018683
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:53750
+    grounded_label: nonoxynol-9
+    grounding_quality: lexical_exact_normalized
     original_string: NONOXYNOL-9
     subject_id: MEDICNE:28ac43ff-bb5c-5e55-93c8-967f16a405d7
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:28ac43ff-bb5c-5e55-93c8-967f16a405d7
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:53750
+    normalized_label: nonoxynol-9
+    original_id: RXCUI:53750
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:53750
+  normalized_label: nonoxynol-9
   original_literal: NONOXYNOL-9
   source: ORANGEBOOK
   source_name: NONOXYNOL-9
@@ -3790,19 +3796,25 @@
   application_number: 018312|208010
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:1889
+    grounded_label: calcifediol
+    grounding_quality: lexical_exact_normalized
     original_string: CALCIFEDIOL
     subject_id: MEDICNE:4c897bd6-e7fc-5b0f-a6e6-60bc8d998f11
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:4c897bd6-e7fc-5b0f-a6e6-60bc8d998f11
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1889
+    normalized_label: calcifediol
+    original_id: RXCUI:1889
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1889
+  normalized_label: calcifediol
   original_literal: CALCIFEDIOL
   source: ORANGEBOOK
   source_name: CALCIFEDIOL
@@ -7316,25 +7328,25 @@
   application_number: '211155'
   approval_date: '20180924'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00831738
-    grounded_label: duvelisib
+    confidence: 0.765
+    grounded_id: CHEBI:131169
+    grounded_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
     grounding_quality: lexical_exact_normalized
     original_string: DUVELISIB
     subject_id: MEDICNE:fe56182f-a0a3-5375-a069-7b69867c297c
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:fe56182f-a0a3-5375-a069-7b69867c297c
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00831738
-    normalized_label: duvelisib
-    original_id: DRON:00831738
+    normalized_id: CHEBI:131169
+    normalized_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
+    original_id: CHEBI:131169
     tool: medic-normalizer/1
-  normalized_id: DRON:00831738
-  normalized_label: duvelisib
+  normalized_id: CHEBI:131169
+  normalized_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
   original_literal: DUVELISIB
   source: ORANGEBOOK
   source_name: DUVELISIB
@@ -7368,25 +7380,25 @@
   application_number: 218808|218820
   approval_date: '20241213'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:01063379
-    grounded_label: crinecerfont
+    confidence: 0.765
+    grounded_id: CHEBI:34969
+    grounded_label: SSR 125543
     grounding_quality: lexical_exact_normalized
     original_string: CRINECERFONT
     subject_id: MEDICNE:b9d305a7-7910-5e98-8129-97086a5ae204
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:b9d305a7-7910-5e98-8129-97086a5ae204
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:01063379
-    normalized_label: crinecerfont
-    original_id: DRON:01063379
+    normalized_id: CHEBI:34969
+    normalized_label: SSR 125543
+    original_id: CHEBI:34969
     tool: medic-normalizer/1
-  normalized_id: DRON:01063379
-  normalized_label: crinecerfont
+  normalized_id: CHEBI:34969
+  normalized_label: SSR 125543
   original_literal: CRINECERFONT
   source: ORANGEBOOK
   source_name: CRINECERFONT
@@ -8513,9 +8525,9 @@
   approval_date: '19820101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:4868
-    grounded_label: estramustine
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:4090
+    grounded_label: estramustine phosphate sodium
+    grounding_quality: lexical_exact_normalized
     original_string: ESTRAMUSTINE PHOSPHATE SODIUM
     subject_id: MEDICNE:bd78a93f-879e-5ac4-bc65-f1e3ea49491c
   grounding_confidence: 0.9
@@ -8525,12 +8537,12 @@
   mention_id: MEDICNE:bd78a93f-879e-5ac4-bc65-f1e3ea49491c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4868
-    normalized_label: estramustine
-    original_id: CHEBI:4868
+    normalized_id: RXCUI:4090
+    normalized_label: estramustine phosphate sodium
+    original_id: RXCUI:4090
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4868
-  normalized_label: estramustine
+  normalized_id: RXCUI:4090
+  normalized_label: estramustine phosphate sodium
   original_literal: ESTRAMUSTINE PHOSPHATE SODIUM
   source: ORANGEBOOK
   source_name: ESTRAMUSTINE PHOSPHATE SODIUM
@@ -10423,9 +10435,9 @@
   approval_date: '20000821'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:18332
-    grounded_label: L-thyroxine
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:40144
+    grounded_label: levothyroxine sodium
+    grounding_quality: lexical_exact_normalized
     original_string: LEVOTHYROXINE SODIUM
     subject_id: MEDICNE:60ca8e86-fdf4-52e9-84ad-a953d4d6806a
   grounding_confidence: 0.9
@@ -10435,12 +10447,12 @@
   mention_id: MEDICNE:60ca8e86-fdf4-52e9-84ad-a953d4d6806a
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:18332
-    normalized_label: L-thyroxine
-    original_id: CHEBI:18332
+    normalized_id: RXCUI:40144
+    normalized_label: levothyroxine sodium
+    original_id: RXCUI:40144
     tool: medic-normalizer/1
-  normalized_id: CHEBI:18332
-  normalized_label: L-thyroxine
+  normalized_id: RXCUI:40144
+  normalized_label: levothyroxine sodium
   original_literal: LEVOTHYROXINE SODIUM
   source: ORANGEBOOK
   source_name: LEVOTHYROXINE SODIUM
@@ -10868,9 +10880,9 @@
   approval_date: '19820101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:76230
-    grounded_label: meclofenamic acid(1-)
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:6677
+    grounded_label: meclofenamate sodium
+    grounding_quality: lexical_exact_normalized
     original_string: MECLOFENAMATE SODIUM
     subject_id: MEDICNE:6f982cbb-eb91-5a65-9cc7-914ea6a5efd7
   grounding_confidence: 0.9
@@ -10880,12 +10892,12 @@
   mention_id: MEDICNE:6f982cbb-eb91-5a65-9cc7-914ea6a5efd7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:76230
-    normalized_label: meclofenamic acid(1-)
-    original_id: CHEBI:76230
+    normalized_id: RXCUI:6677
+    normalized_label: meclofenamate sodium
+    original_id: RXCUI:6677
     tool: medic-normalizer/1
-  normalized_id: CHEBI:76230
-  normalized_label: meclofenamic acid(1-)
+  normalized_id: RXCUI:6677
+  normalized_label: meclofenamate sodium
   original_literal: MECLOFENAMATE SODIUM
   source: ORANGEBOOK
   source_name: MECLOFENAMATE SODIUM
@@ -12999,19 +13011,25 @@
   application_number: 017589
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:19143
+    grounded_label: beta carotene
+    grounding_quality: lexical_exact_normalized
     original_string: BETA CAROTENE
     subject_id: MEDICNE:67868029-5151-5586-9b4e-0944a80b93c7
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:67868029-5151-5586-9b4e-0944a80b93c7
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:19143
+    normalized_label: beta carotene
+    original_id: RXCUI:19143
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:19143
+  normalized_label: beta carotene
   original_literal: BETA CAROTENE
   source: ORANGEBOOK
   source_name: BETA CAROTENE
@@ -13963,25 +13981,25 @@
   application_number: 011073|020381|040378|076250|076378|081134|083115|083136|083180|083203|083271|083305|083306|083453|083525|083718|083823|084237|085172|090446|090860|090892|200484|201273|203285|203578|203742|203899|204178|204934|207726|209156|209236|212017|213090|214428
   approval_date: '19820101'
   grounding:
-    confidence: 0.6
-    grounded_id: CHEBI:94510
-    grounded_label: 3-[[oxo(pyridin-4-yl)methyl]hydrazo]-N-(phenylmethyl)propanamide
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.9
+    grounded_id: RXCUI:7393
+    grounded_label: niacin
+    grounding_quality: lexical_exact_normalized
     original_string: NIACIN
     subject_id: MEDICNE:cfe9c3c2-0dc1-5d57-b0b4-4517f5ed3797
-  grounding_confidence: 0.6
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:cfe9c3c2-0dc1-5d57-b0b4-4517f5ed3797
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:94510
-    normalized_label: 3-[[oxo(pyridin-4-yl)methyl]hydrazo]-N-(phenylmethyl)propanamide
-    original_id: CHEBI:94510
+    normalized_id: RXCUI:7393
+    normalized_label: niacin
+    original_id: RXCUI:7393
     tool: medic-normalizer/1
-  normalized_id: CHEBI:94510
-  normalized_label: 3-[[oxo(pyridin-4-yl)methyl]hydrazo]-N-(phenylmethyl)propanamide
+  normalized_id: RXCUI:7393
+  normalized_label: niacin
   original_literal: NIACIN
   source: ORANGEBOOK
   source_name: NIACIN
@@ -13989,25 +14007,25 @@
   application_number: '218709'
   approval_date: '20240426'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:01049442
-    grounded_label: mavorixafor
+    confidence: 0.765
+    grounded_id: CHEBI:138865
+    grounded_label: AMD 070
     grounding_quality: lexical_exact_normalized
     original_string: MAVORIXAFOR
     subject_id: MEDICNE:3ae033c9-45f4-5c28-a9f1-f58fea35e502
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:3ae033c9-45f4-5c28-a9f1-f58fea35e502
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:01049442
-    normalized_label: mavorixafor
-    original_id: DRON:01049442
+    normalized_id: CHEBI:138865
+    normalized_label: AMD 070
+    original_id: CHEBI:138865
     tool: medic-normalizer/1
-  normalized_id: DRON:01049442
-  normalized_label: mavorixafor
+  normalized_id: CHEBI:138865
+  normalized_label: AMD 070
   original_literal: MAVORIXAFOR
   source: ORANGEBOOK
   source_name: MAVORIXAFOR
@@ -16853,25 +16871,25 @@
   application_number: '215272'
   approval_date: '20220523'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00975437
-    grounded_label: tapinarof
+    confidence: 0.765
+    grounded_id: CHEBI:215747
+    grounded_label: Benvitimod
     grounding_quality: lexical_exact_normalized
     original_string: TAPINAROF
     subject_id: MEDICNE:d8014a94-a070-55c8-b622-68124926a80c
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:d8014a94-a070-55c8-b622-68124926a80c
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00975437
-    normalized_label: tapinarof
-    original_id: DRON:00975437
+    normalized_id: CHEBI:215747
+    normalized_label: Benvitimod
+    original_id: CHEBI:215747
     tool: medic-normalizer/1
-  normalized_id: DRON:00975437
-  normalized_label: tapinarof
+  normalized_id: CHEBI:215747
+  normalized_label: Benvitimod
   original_literal: TAPINAROF
   source: ORANGEBOOK
   source_name: TAPINAROF
@@ -17583,7 +17601,7 @@
   grounding:
     components:
     - CHEBI:755949
-    - DRON:00723488
+    - CHEBI:753609
     - CHEBI:752944
     - CHEBI:166975
     confidence: 0.9
@@ -17613,9 +17631,9 @@
   approval_date: '20150901'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:90908
-    grounded_label: rolapitant
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:1673367
+    grounded_label: rolapitant hydrochloride
+    grounding_quality: lexical_exact_normalized
     original_string: ROLAPITANT HYDROCHLORIDE
     subject_id: MEDICNE:5700c184-9b66-553c-ab1c-afca72d28302
   grounding_confidence: 0.9
@@ -17625,12 +17643,12 @@
   mention_id: MEDICNE:5700c184-9b66-553c-ab1c-afca72d28302
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90908
-    normalized_label: rolapitant
-    original_id: CHEBI:90908
+    normalized_id: RXCUI:1673367
+    normalized_label: rolapitant hydrochloride
+    original_id: RXCUI:1673367
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90908
-  normalized_label: rolapitant
+  normalized_id: RXCUI:1673367
+  normalized_label: rolapitant hydrochloride
   original_literal: ROLAPITANT HYDROCHLORIDE
   source: ORANGEBOOK
   source_name: ROLAPITANT HYDROCHLORIDE
@@ -18677,7 +18695,7 @@
     - CHEBI:29073
     - CHEBI:15956
     - CHEBI:754405
-    - DRON:01002938
+    - CHEBI:27373
     - CHEBI:28934
     - CHEBI:27470
     - CHEBI:17154
@@ -18823,25 +18841,25 @@
   application_number: 011963
   approval_date: '19820101'
   grounding:
-    confidence: 0.6
-    grounded_id: CHEBI:59849
-    grounded_label: ecothiopate iodide
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.9
+    grounded_id: RXCUI:3740
+    grounded_label: echothiophate iodide
+    grounding_quality: lexical_exact_normalized
     original_string: ECHOTHIOPHATE IODIDE
     subject_id: MEDICNE:6b780083-d506-5be3-ad2f-ba3fb76b1b5e
-  grounding_confidence: 0.6
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:6b780083-d506-5be3-ad2f-ba3fb76b1b5e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59849
-    normalized_label: ecothiopate iodide
-    original_id: CHEBI:59849
+    normalized_id: RXCUI:3740
+    normalized_label: echothiophate iodide
+    original_id: RXCUI:3740
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59849
-  normalized_label: ecothiopate iodide
+  normalized_id: RXCUI:3740
+  normalized_label: echothiophate iodide
   original_literal: ECHOTHIOPHATE IODIDE
   source: ORANGEBOOK
   source_name: ECHOTHIOPHATE IODIDE
@@ -18993,7 +19011,7 @@
     - CHEBI:32588
     - CHEBI:32139
     - CHEBI:26710
-    - CHEBI:26708
+    - RXCUI:1299926
     confidence: 0.9
     grounded_id: CHEBI:749517
     grounded_label: polyethylene glycol 3350
@@ -19231,19 +19249,28 @@
   application_number: '219792'
   approval_date: '20251103'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:2642208
+    - RXCUI:1372538
+    confidence: 0.9
+    grounded_id: RXCUI:2642208
+    grounded_label: doxecitine
+    grounding_quality: lexical_exact_surgery
     original_string: DOXECITINE; DOXRIBTIMINE
     subject_id: MEDICNE:1e4c7fff-5485-5c77-8738-b70ceb6daf91
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:1e4c7fff-5485-5c77-8738-b70ceb6daf91
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:2642208
+    normalized_label: doxecitine
+    original_id: RXCUI:2642208
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:2642208
+  normalized_label: doxecitine
   original_literal: DOXECITINE; DOXRIBTIMINE
   source: ORANGEBOOK
   source_name: DOXECITINE; DOXRIBTIMINE
@@ -19530,9 +19557,9 @@
   approval_date: '19850830'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:26216
-    grounded_label: potassium atom
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:54993
+    grounded_label: potassium citrate
+    grounding_quality: lexical_exact_normalized
     original_string: POTASSIUM CITRATE
     subject_id: MEDICNE:419e9a26-c1bb-5fb0-bf4b-ce9f94b04b01
   grounding_confidence: 0.9
@@ -19542,12 +19569,12 @@
   mention_id: MEDICNE:419e9a26-c1bb-5fb0-bf4b-ce9f94b04b01
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:26216
-    normalized_label: potassium atom
-    original_id: CHEBI:26216
+    normalized_id: RXCUI:54993
+    normalized_label: potassium citrate
+    original_id: RXCUI:54993
     tool: medic-normalizer/1
-  normalized_id: CHEBI:26216
-  normalized_label: potassium atom
+  normalized_id: RXCUI:54993
+  normalized_label: potassium citrate
   original_literal: POTASSIUM CITRATE
   source: ORANGEBOOK
   source_name: POTASSIUM CITRATE
@@ -20170,25 +20197,28 @@
   application_number: 021497|021498|213820|214844|218701
   approval_date: '20021122'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00015413
-    grounded_label: nitazoxanide
+    confidence: 0.765
+    grounded_id: CHEBI:94807
+    grounded_label: acetic acid [2-[[(5-nitro-2-thiazolyl)amino]-oxomethyl]phenyl]
+      ester
     grounding_quality: lexical_exact_normalized
     original_string: NITAZOXANIDE
     subject_id: MEDICNE:259ff198-e1e0-5509-9822-7170bf169b8e
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:259ff198-e1e0-5509-9822-7170bf169b8e
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00015413
-    normalized_label: nitazoxanide
-    original_id: DRON:00015413
+    normalized_id: CHEBI:94807
+    normalized_label: acetic acid [2-[[(5-nitro-2-thiazolyl)amino]-oxomethyl]phenyl]
+      ester
+    original_id: CHEBI:94807
     tool: medic-normalizer/1
-  normalized_id: DRON:00015413
-  normalized_label: nitazoxanide
+  normalized_id: CHEBI:94807
+  normalized_label: acetic acid [2-[[(5-nitro-2-thiazolyl)amino]-oxomethyl]phenyl]
+    ester
   original_literal: NITAZOXANIDE
   source: ORANGEBOOK
   source_name: NITAZOXANIDE
@@ -20222,19 +20252,25 @@
   application_number: '219132'
   approval_date: '20240924'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:2375522
+    grounded_label: levacetylleucine
+    grounding_quality: lexical_exact_normalized
     original_string: LEVACETYLLEUCINE
     subject_id: MEDICNE:314ea7e3-580b-55dc-a761-ccb5a9e2d3a8
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:314ea7e3-580b-55dc-a761-ccb5a9e2d3a8
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:2375522
+    normalized_label: levacetylleucine
+    original_id: RXCUI:2375522
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:2375522
+  normalized_label: levacetylleucine
   original_literal: LEVACETYLLEUCINE
   source: ORANGEBOOK
   source_name: LEVACETYLLEUCINE
@@ -21773,19 +21809,28 @@
   application_number: 018509
   approval_date: '19850807'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32139
+    - RXCUI:37578
+    confidence: 0.9
+    grounded_id: RXCUI:37578
+    grounded_label: tartaric acid
+    grounding_quality: lexical_exact_surgery
     original_string: SODIUM BICARBONATE; TARTARIC ACID
     subject_id: MEDICNE:42ed82ec-e3e9-5106-ad83-114b7b6a5fe9
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:42ed82ec-e3e9-5106-ad83-114b7b6a5fe9
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:37578
+    normalized_label: tartaric acid
+    original_id: RXCUI:37578
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:37578
+  normalized_label: tartaric acid
   original_literal: SODIUM BICARBONATE; TARTARIC ACID
   source: ORANGEBOOK
   source_name: SODIUM BICARBONATE; TARTARIC ACID
@@ -22558,9 +22603,9 @@
   approval_date: '19960614'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:80630
-    grounded_label: irinotecan
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:153329
+    grounded_label: irinotecan hydrochloride
+    grounding_quality: lexical_exact_normalized
     original_string: IRINOTECAN HYDROCHLORIDE
     subject_id: MEDICNE:4524904f-d98f-5c2f-9abc-f7d5b349b1c7
   grounding_confidence: 0.9
@@ -22570,12 +22615,12 @@
   mention_id: MEDICNE:4524904f-d98f-5c2f-9abc-f7d5b349b1c7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:80630
-    normalized_label: irinotecan
-    original_id: CHEBI:80630
+    normalized_id: RXCUI:153329
+    normalized_label: irinotecan hydrochloride
+    original_id: RXCUI:153329
     tool: medic-normalizer/1
-  normalized_id: CHEBI:80630
-  normalized_label: irinotecan
+  normalized_id: RXCUI:153329
+  normalized_label: irinotecan hydrochloride
   original_literal: IRINOTECAN HYDROCHLORIDE
   source: ORANGEBOOK
   source_name: IRINOTECAN HYDROCHLORIDE
@@ -22690,31 +22735,26 @@
   application_number: 018725
   approval_date: '19821129'
   grounding:
-    components:
-    - CHEBI:3312
-    - CHEBI:32588
-    - CHEBI:32954
-    - CHEBI:26710
-    confidence: 0.9
-    grounded_id: CHEBI:32588
-    grounded_label: potassium chloride
+    confidence: 0.8
+    grounded_id: RXCUI:1895
+    grounded_label: calcium
     grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM ACETATE; SODIUM
       CHLORIDE
     subject_id: MEDICNE:a997cfa9-f136-596c-b5af-45fc60e27a4d
-  grounding_confidence: 0.9
+  grounding_confidence: 0.8
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:a997cfa9-f136-596c-b5af-45fc60e27a4d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32588
-    normalized_label: potassium chloride
-    original_id: CHEBI:32588
+    normalized_id: RXCUI:1895
+    normalized_label: calcium
+    original_id: RXCUI:1895
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32588
-  normalized_label: potassium chloride
+  normalized_id: RXCUI:1895
+  normalized_label: calcium
   original_literal: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM ACETATE; SODIUM CHLORIDE
   source: ORANGEBOOK
   source_name: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM ACETATE; SODIUM CHLORIDE
@@ -23433,20 +23473,31 @@
   application_number: 017673|017789
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:749563
+    - RXCUI:6579
+    - CHEBI:131527
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:749563
+    grounded_label: amino acids
+    grounding_quality: lexical_exact_surgery
     original_string: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM PHOSPHATE, DIBASIC;
       SODIUM CHLORIDE
     subject_id: MEDICNE:9bbf25ef-5101-5e46-b7a6-33609423b033
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:9bbf25ef-5101-5e46-b7a6-33609423b033
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:749563
+    normalized_label: amino acids
+    original_id: CHEBI:749563
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:749563
+  normalized_label: amino acids
   original_literal: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM PHOSPHATE, DIBASIC;
     SODIUM CHLORIDE
   source: ORANGEBOOK
@@ -23456,20 +23507,32 @@
   application_number: 017673|019437
   approval_date: '20021025'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:749563
+    - RXCUI:6579
+    - CHEBI:32588
+    - CHEBI:26710
+    - RXCUI:236719
+    confidence: 0.9
+    grounded_id: CHEBI:749563
+    grounded_label: amino acids
+    grounding_quality: lexical_exact_surgery
     original_string: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM CHLORIDE;
       SODIUM PHOSPHATE, DIBASIC
     subject_id: MEDICNE:6071198f-9420-5a0b-ae57-04c1b9a8478f
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:6071198f-9420-5a0b-ae57-04c1b9a8478f
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:749563
+    normalized_label: amino acids
+    original_id: CHEBI:749563
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:749563
+  normalized_label: amino acids
   original_literal: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM CHLORIDE;
     SODIUM PHOSPHATE, DIBASIC
   source: ORANGEBOOK
@@ -23479,20 +23542,32 @@
   application_number: 019437
   approval_date: '19860403'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:749563
+    - RXCUI:6579
+    - CHEBI:32588
+    - CHEBI:131527
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:749563
+    grounded_label: amino acids
+    grounding_quality: lexical_exact_surgery
     original_string: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; POTASSIUM
       PHOSPHATE, DIBASIC; SODIUM CHLORIDE
     subject_id: MEDICNE:9edbaccd-d565-5ceb-bba5-dd55d95d3f13
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:9edbaccd-d565-5ceb-bba5-dd55d95d3f13
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:749563
+    normalized_label: amino acids
+    original_id: CHEBI:749563
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:749563
+  normalized_label: amino acids
   original_literal: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; POTASSIUM
     PHOSPHATE, DIBASIC; SODIUM CHLORIDE
   source: ORANGEBOOK
@@ -23852,9 +23927,9 @@
   approval_date: '19820101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:45652
-    grounded_label: succinylcholine
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:3565
+    grounded_label: succinylcholine chloride
+    grounding_quality: lexical_exact_normalized
     original_string: SUCCINYLCHOLINE CHLORIDE
     subject_id: MEDICNE:2315e4a1-e7e4-5189-b188-1534a5511d3f
   grounding_confidence: 0.9
@@ -23864,12 +23939,12 @@
   mention_id: MEDICNE:2315e4a1-e7e4-5189-b188-1534a5511d3f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:45652
-    normalized_label: succinylcholine
-    original_id: CHEBI:45652
+    normalized_id: RXCUI:3565
+    normalized_label: succinylcholine chloride
+    original_id: RXCUI:3565
     tool: medic-normalizer/1
-  normalized_id: CHEBI:45652
-  normalized_label: succinylcholine
+  normalized_id: RXCUI:3565
+  normalized_label: succinylcholine chloride
   original_literal: SUCCINYLCHOLINE CHLORIDE
   source: ORANGEBOOK
   source_name: SUCCINYLCHOLINE CHLORIDE
@@ -24218,19 +24293,28 @@
   application_number: 012125|084697|084850|085010|088388|089517
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:132889
+    - CHEBI:6760
+    confidence: 0.9
+    grounded_id: RXCUI:132889
+    grounded_label: levonordefrin
+    grounding_quality: lexical_exact_surgery
     original_string: LEVONORDEFRIN; MEPIVACAINE HYDROCHLORIDE
     subject_id: MEDICNE:15eb8aa5-0caf-56d6-b118-39346f2ae7e2
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:15eb8aa5-0caf-56d6-b118-39346f2ae7e2
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:132889
+    normalized_label: levonordefrin
+    original_id: RXCUI:132889
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:132889
+  normalized_label: levonordefrin
   original_literal: LEVONORDEFRIN; MEPIVACAINE HYDROCHLORIDE
   source: ORANGEBOOK
   source_name: LEVONORDEFRIN; MEPIVACAINE HYDROCHLORIDE
@@ -24586,7 +24670,7 @@
     - CHEBI:29073
     - CHEBI:15956
     - CHEBI:754405
-    - DRON:01002938
+    - CHEBI:27373
     - CHEBI:28934
     - CHEBI:27470
     - CHEBI:17154
@@ -28217,19 +28301,25 @@
   application_number: 019309|075456|075458|075571|075578|075634|078687
   approval_date: '19880209'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:3829
+    grounded_label: enalaprilat
+    grounding_quality: lexical_exact_normalized
     original_string: ENALAPRILAT
     subject_id: MEDICNE:7925d61b-5faf-5839-b1b3-05f7b016235b
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:7925d61b-5faf-5839-b1b3-05f7b016235b
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:3829
+    normalized_label: enalaprilat
+    original_id: RXCUI:3829
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:3829
+  normalized_label: enalaprilat
   original_literal: ENALAPRILAT
   source: ORANGEBOOK
   source_name: ENALAPRILAT
@@ -29875,25 +29965,25 @@
   application_number: 019841|019862
   approval_date: '19921229'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00014041
-    grounded_label: Indium IN-111 Chloride
+    confidence: 0.765
+    grounded_id: CHEBI:749368
+    grounded_label: indium in 111 chloride
     grounding_quality: lexical_exact_normalized
     original_string: INDIUM IN-111 CHLORIDE
     subject_id: MEDICNE:d334f2b9-c8ed-5370-80b4-09e20a472024
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:d334f2b9-c8ed-5370-80b4-09e20a472024
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00014041
-    normalized_label: Indium IN-111 Chloride
-    original_id: DRON:00014041
+    normalized_id: CHEBI:749368
+    normalized_label: indium in 111 chloride
+    original_id: CHEBI:749368
     tool: medic-normalizer/1
-  normalized_id: DRON:00014041
-  normalized_label: Indium IN-111 Chloride
+  normalized_id: CHEBI:749368
+  normalized_label: indium in 111 chloride
   original_literal: INDIUM IN-111 CHLORIDE
   source: ORANGEBOOK
   source_name: INDIUM IN-111 CHLORIDE
@@ -30264,20 +30354,26 @@
   application_number: 018899|019718|020742|075503|091387
   approval_date: '19831031'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:1895
+    grounded_label: calcium
+    grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
       ACETATE; SODIUM CHLORIDE; SODIUM CITRATE
     subject_id: MEDICNE:8edecbf9-950c-51be-830b-8f5dad6c91f7
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:8edecbf9-950c-51be-830b-8f5dad6c91f7
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1895
+    normalized_label: calcium
+    original_id: RXCUI:1895
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1895
+  normalized_label: calcium
   original_literal: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
     ACETATE; SODIUM CHLORIDE; SODIUM CITRATE
   source: ORANGEBOOK
@@ -30422,20 +30518,26 @@
   application_number: 017378|017586|017637|018252|018406|019024|019326|019711|215370|215371
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:6574
+    grounded_label: magnesium
+    grounding_quality: lexical_exact_surgery
     original_string: MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM ACETATE; SODIUM
       CHLORIDE; SODIUM GLUCONATE
     subject_id: MEDICNE:a6cd2b6a-087c-50be-b945-e5b56115e37c
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:a6cd2b6a-087c-50be-b945-e5b56115e37c
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:6574
+    normalized_label: magnesium
+    original_id: RXCUI:6574
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:6574
+  normalized_label: magnesium
   original_literal: MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM ACETATE; SODIUM
     CHLORIDE; SODIUM GLUCONATE
   source: ORANGEBOOK
@@ -30687,31 +30789,26 @@
   application_number: 016682|017641|018023|018417|018494|018681|018921|019416|019485|019632|019933|209338
   approval_date: '19820101'
   grounding:
-    components:
-    - CHEBI:3312
-    - CHEBI:32588
-    - CHEBI:26710
-    - CHEBI:75228
-    confidence: 0.9
-    grounded_id: CHEBI:32588
-    grounded_label: potassium chloride
+    confidence: 0.8
+    grounded_id: RXCUI:1895
+    grounded_label: calcium
     grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM CHLORIDE; SODIUM
       LACTATE
     subject_id: MEDICNE:45a9074e-e8e1-5d57-a682-fe906345b598
-  grounding_confidence: 0.9
+  grounding_confidence: 0.8
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:45a9074e-e8e1-5d57-a682-fe906345b598
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32588
-    normalized_label: potassium chloride
-    original_id: CHEBI:32588
+    normalized_id: RXCUI:1895
+    normalized_label: calcium
+    original_id: RXCUI:1895
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32588
-  normalized_label: potassium chloride
+  normalized_id: RXCUI:1895
+  normalized_label: calcium
   original_literal: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM CHLORIDE; SODIUM
     LACTATE
   source: ORANGEBOOK
@@ -31094,7 +31191,7 @@
     - CHEBI:29073
     - CHEBI:15956
     - CHEBI:754405
-    - DRON:01002938
+    - CHEBI:27373
     - CHEBI:28934
     - CHEBI:27470
     - CHEBI:17154
@@ -31139,7 +31236,7 @@
     - CHEBI:29073
     - CHEBI:15956
     - CHEBI:754405
-    - DRON:01002938
+    - CHEBI:27373
     - CHEBI:28934
     - CHEBI:27470
     - CHEBI:17154
@@ -31180,21 +31277,40 @@
   application_number: 018933
   approval_date: '19850808'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:29073
+    - CHEBI:15956
+    - CHEBI:754405
+    - CHEBI:27373
+    - CHEBI:28934
+    - CHEBI:27470
+    - CHEBI:17154
+    - CHEBI:16709
+    - CHEBI:756254
+    - RXCUI:10454
+    - CHEBI:12777
+    - CHEBI:33234
+    confidence: 0.9
+    grounded_id: CHEBI:754405
+    grounded_label: cyanocobalamin
+    grounding_quality: lexical_exact_surgery
     original_string: ASCORBIC ACID; BIOTIN; CYANOCOBALAMIN; DEXPANTHENOL; ERGOCALCIFEROL;
       FOLIC ACID; NIACINAMIDE; PYRIDOXINE; RIBOFLAVIN 5'-PHOSPHATE SODIUM; THIAMINE;
       VITAMIN A; VITAMIN E
     subject_id: MEDICNE:c271b1e6-f035-5817-805c-2ea7da0468ca
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:c271b1e6-f035-5817-805c-2ea7da0468ca
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:754405
+    normalized_label: cyanocobalamin
+    original_id: CHEBI:754405
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:754405
+  normalized_label: cyanocobalamin
   original_literal: ASCORBIC ACID; BIOTIN; CYANOCOBALAMIN; DEXPANTHENOL; ERGOCALCIFEROL;
     FOLIC ACID; NIACINAMIDE; PYRIDOXINE; RIBOFLAVIN 5'-PHOSPHATE SODIUM; THIAMINE;
     VITAMIN A; VITAMIN E
@@ -32958,20 +33074,33 @@
   application_number: '207026'
   approval_date: '20150113'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:3312
+    - RXCUI:6579
+    - CHEBI:32588
+    - CHEBI:32139
+    - CHEBI:26710
+    - CHEBI:37586
+    confidence: 0.9
+    grounded_id: RXCUI:6579
+    grounded_label: magnesium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
       BICARBONATE; SODIUM CHLORIDE; SODIUM PHOSPHATE
     subject_id: MEDICNE:78903887-9fe8-5f85-b83a-4f8970765890
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:78903887-9fe8-5f85-b83a-4f8970765890
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:6579
+    normalized_label: magnesium chloride
+    original_id: RXCUI:6579
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:6579
+  normalized_label: magnesium chloride
   original_literal: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
     BICARBONATE; SODIUM CHLORIDE; SODIUM PHOSPHATE
   source: ORANGEBOOK
@@ -33140,20 +33269,26 @@
   application_number: 017438
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:1895
+    grounded_label: calcium
+    grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
       ACETATE; SODIUM CHLORIDE; SODIUM LACTATE
     subject_id: MEDICNE:95edec65-3130-5b36-8b5a-46267a920cd8
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:95edec65-3130-5b36-8b5a-46267a920cd8
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1895
+    normalized_label: calcium
+    original_id: RXCUI:1895
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1895
+  normalized_label: calcium
   original_literal: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
     ACETATE; SODIUM CHLORIDE; SODIUM LACTATE
   source: ORANGEBOOK
@@ -33652,19 +33787,29 @@
   application_number: 008592
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:132889
+    - CHEBI:8431
+    - CHEBI:749105
+    confidence: 0.9
+    grounded_id: RXCUI:132889
+    grounded_label: levonordefrin
+    grounding_quality: lexical_exact_surgery
     original_string: LEVONORDEFRIN; PROCAINE HYDROCHLORIDE; PROPOXYCAINE HYDROCHLORIDE
     subject_id: MEDICNE:3fa65e90-e15f-5a1c-8294-f9d953a8d8d0
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:3fa65e90-e15f-5a1c-8294-f9d953a8d8d0
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:132889
+    normalized_label: levonordefrin
+    original_id: RXCUI:132889
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:132889
+  normalized_label: levonordefrin
   original_literal: LEVONORDEFRIN; PROCAINE HYDROCHLORIDE; PROPOXYCAINE HYDROCHLORIDE
   source: ORANGEBOOK
   source_name: LEVONORDEFRIN; PROCAINE HYDROCHLORIDE; PROPOXYCAINE HYDROCHLORIDE
@@ -33776,29 +33921,25 @@
   application_number: 016693|017635|018156|018251|018462|018495|018721|020002
   approval_date: '19820101'
   grounding:
-    components:
-    - CHEBI:3312
-    - CHEBI:32588
-    - CHEBI:26710
-    confidence: 0.9
-    grounded_id: CHEBI:32588
-    grounded_label: potassium chloride
+    confidence: 0.8
+    grounded_id: RXCUI:1895
+    grounded_label: calcium
     grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM CHLORIDE
     subject_id: MEDICNE:a9e78384-c77a-5ed2-bff6-12a4b38ef1d5
-  grounding_confidence: 0.9
+  grounding_confidence: 0.8
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:a9e78384-c77a-5ed2-bff6-12a4b38ef1d5
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32588
-    normalized_label: potassium chloride
-    original_id: CHEBI:32588
+    normalized_id: RXCUI:1895
+    normalized_label: calcium
+    original_id: RXCUI:1895
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32588
-  normalized_label: potassium chloride
+  normalized_id: RXCUI:1895
+  normalized_label: calcium
   original_literal: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM CHLORIDE
   source: ORANGEBOOK
   source_name: CALCIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM CHLORIDE
@@ -34807,20 +34948,26 @@
   application_number: 018895|019399
   approval_date: '19840720'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:1895
+    grounded_label: calcium
+    grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
       ACETATE; SODIUM CHLORIDE
     subject_id: MEDICNE:ef8a7f18-d83a-504d-9dc1-fee00922f787
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:ef8a7f18-d83a-504d-9dc1-fee00922f787
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1895
+    normalized_label: calcium
+    original_id: RXCUI:1895
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1895
+  normalized_label: calcium
   original_literal: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
     ACETATE; SODIUM CHLORIDE
   source: ORANGEBOOK
@@ -34853,20 +35000,32 @@
   application_number: 017493|020173|020177
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:749563
+    - RXCUI:6579
+    - CHEBI:131527
+    - CHEBI:32954
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:749563
+    grounded_label: amino acids
+    grounding_quality: lexical_exact_surgery
     original_string: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM PHOSPHATE, DIBASIC;
       SODIUM ACETATE; SODIUM CHLORIDE
     subject_id: MEDICNE:0b6a9b5c-8417-51c0-9c97-e4359693265c
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:0b6a9b5c-8417-51c0-9c97-e4359693265c
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:749563
+    normalized_label: amino acids
+    original_id: CHEBI:749563
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:749563
+  normalized_label: amino acids
   original_literal: AMINO ACIDS; MAGNESIUM CHLORIDE; POTASSIUM PHOSPHATE, DIBASIC;
     SODIUM ACETATE; SODIUM CHLORIDE
   source: ORANGEBOOK
@@ -34876,25 +35035,25 @@
   application_number: '016717'
   approval_date: '19820101'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00013757
-    grounded_label: invert sugar
+    confidence: 0.765
+    grounded_id: CHEBI:749573
+    grounded_label: sugar, invert
     grounding_quality: lexical_exact_normalized
     original_string: INVERT SUGAR
     subject_id: MEDICNE:da5abb73-099d-5e4b-96d6-264cee356a20
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:da5abb73-099d-5e4b-96d6-264cee356a20
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00013757
-    normalized_label: invert sugar
-    original_id: DRON:00013757
+    normalized_id: CHEBI:749573
+    normalized_label: sugar, invert
+    original_id: CHEBI:749573
     tool: medic-normalizer/1
-  normalized_id: DRON:00013757
-  normalized_label: invert sugar
+  normalized_id: CHEBI:749573
+  normalized_label: sugar, invert
   original_literal: INVERT SUGAR
   source: ORANGEBOOK
   source_name: INVERT SUGAR
@@ -35298,21 +35457,41 @@
   application_number: '020176'
   approval_date: '19931229'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:29073
+    - CHEBI:15956
+    - CHEBI:754405
+    - CHEBI:28934
+    - CHEBI:27470
+    - CHEBI:17154
+    - CHEBI:7916
+    - CHEBI:18067
+    - CHEBI:16709
+    - CHEBI:17015
+    - RXCUI:10454
+    - CHEBI:17616
+    - CHEBI:33234
+    confidence: 0.9
+    grounded_id: CHEBI:754405
+    grounded_label: cyanocobalamin
+    grounding_quality: lexical_exact_surgery
     original_string: ASCORBIC ACID; BIOTIN; CYANOCOBALAMIN; ERGOCALCIFEROL; FOLIC
       ACID; NIACINAMIDE; PANTOTHENIC ACID; PHYTONADIONE; PYRIDOXINE; RIBOFLAVIN; THIAMINE;
       VITAMIN A PALMITATE; VITAMIN E
     subject_id: MEDICNE:cac64c01-b8ae-5309-8542-cb8670d66fda
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:cac64c01-b8ae-5309-8542-cb8670d66fda
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:754405
+    normalized_label: cyanocobalamin
+    original_id: CHEBI:754405
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:754405
+  normalized_label: cyanocobalamin
   original_literal: ASCORBIC ACID; BIOTIN; CYANOCOBALAMIN; ERGOCALCIFEROL; FOLIC ACID;
     NIACINAMIDE; PANTOTHENIC ACID; PHYTONADIONE; PYRIDOXINE; RIBOFLAVIN; THIAMINE;
     VITAMIN A PALMITATE; VITAMIN E
@@ -36084,21 +36263,41 @@
   application_number: '021265'
   approval_date: '20010221'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:29073
+    - CHEBI:15956
+    - CHEBI:28940
+    - CHEBI:754405
+    - CHEBI:27373
+    - CHEBI:27470
+    - CHEBI:17154
+    - CHEBI:16709
+    - CHEBI:17015
+    - RXCUI:10454
+    - CHEBI:756366
+    - CHEBI:12777
+    - CHEBI:28384
+    confidence: 0.9
+    grounded_id: CHEBI:754405
+    grounded_label: cyanocobalamin
+    grounding_quality: lexical_exact_surgery
     original_string: ASCORBIC ACID; BIOTIN; CHOLECALCIFEROL; CYANOCOBALAMIN; DEXPANTHENOL;
       FOLIC ACID; NIACINAMIDE; PYRIDOXINE; RIBOFLAVIN; THIAMINE; TOCOPHEROL ACETATE;
       VITAMIN A; VITAMIN K
     subject_id: MEDICNE:29bf3906-22b3-5693-8a34-5713fba448c9
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:29bf3906-22b3-5693-8a34-5713fba448c9
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:754405
+    normalized_label: cyanocobalamin
+    original_id: CHEBI:754405
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:754405
+  normalized_label: cyanocobalamin
   original_literal: ASCORBIC ACID; BIOTIN; CHOLECALCIFEROL; CYANOCOBALAMIN; DEXPANTHENOL;
     FOLIC ACID; NIACINAMIDE; PYRIDOXINE; RIBOFLAVIN; THIAMINE; TOCOPHEROL ACETATE;
     VITAMIN A; VITAMIN K
@@ -36192,7 +36391,7 @@
     - CHEBI:29073
     - CHEBI:15956
     - CHEBI:754405
-    - DRON:01002938
+    - CHEBI:27373
     - CHEBI:28934
     - CHEBI:27470
     - CHEBI:17154
@@ -36913,19 +37112,25 @@
   application_number: 018233|018632|018801|018802|019077|019633|019869|077393|088400|089099|089100|206369|209689|211188|211222|212735|217341|217536
   approval_date: '19820101'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:107129
+    grounded_label: sterile water
+    grounding_quality: lexical_exact_surgery
     original_string: STERILE WATER FOR INJECTION
     subject_id: MEDICNE:19716897-6c73-51fa-9ddc-9a92e754402a
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:19716897-6c73-51fa-9ddc-9a92e754402a
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:107129
+    normalized_label: sterile water
+    original_id: RXCUI:107129
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:107129
+  normalized_label: sterile water
   original_literal: STERILE WATER FOR INJECTION
   source: ORANGEBOOK
   source_name: STERILE WATER FOR INJECTION
@@ -38712,19 +38917,28 @@
   application_number: '203975'
   approval_date: '20131218'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:79040
+    - RXCUI:1424883
+    confidence: 0.9
+    grounded_id: CHEBI:79040
+    grounded_label: umeclidinium bromide
+    grounding_quality: lexical_exact_surgery
     original_string: UMECLIDINIUM BROMIDE; VILANTEROL TRIFENATATE
     subject_id: MEDICNE:a09d0a83-4280-5ec8-8cd1-9addbac32450
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:a09d0a83-4280-5ec8-8cd1-9addbac32450
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:79040
+    normalized_label: umeclidinium bromide
+    original_id: CHEBI:79040
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:79040
+  normalized_label: umeclidinium bromide
   original_literal: UMECLIDINIUM BROMIDE; VILANTEROL TRIFENATATE
   source: ORANGEBOOK
   source_name: UMECLIDINIUM BROMIDE; VILANTEROL TRIFENATATE
@@ -38784,19 +38998,28 @@
   application_number: '204275'
   approval_date: '20130510'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:74899
+    - RXCUI:1424883
+    confidence: 0.9
+    grounded_id: CHEBI:74899
+    grounded_label: fluticasone furoate
+    grounding_quality: lexical_exact_surgery
     original_string: FLUTICASONE FUROATE; VILANTEROL TRIFENATATE
     subject_id: MEDICNE:ee1d8a6c-47b9-5511-b832-ebcb5fc3f215
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:ee1d8a6c-47b9-5511-b832-ebcb5fc3f215
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:74899
+    normalized_label: fluticasone furoate
+    original_id: CHEBI:74899
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:74899
+  normalized_label: fluticasone furoate
   original_literal: FLUTICASONE FUROATE; VILANTEROL TRIFENATATE
   source: ORANGEBOOK
   source_name: FLUTICASONE FUROATE; VILANTEROL TRIFENATATE
@@ -38908,19 +39131,29 @@
   application_number: '209482'
   approval_date: '20170918'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:74899
+    - CHEBI:79040
+    - RXCUI:1424883
+    confidence: 0.9
+    grounded_id: CHEBI:74899
+    grounded_label: fluticasone furoate
+    grounding_quality: lexical_exact_surgery
     original_string: FLUTICASONE FUROATE; UMECLIDINIUM BROMIDE; VILANTEROL TRIFENATATE
     subject_id: MEDICNE:8197053d-3ece-5fc6-9929-e346273578c5
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:8197053d-3ece-5fc6-9929-e346273578c5
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:74899
+    normalized_label: fluticasone furoate
+    original_id: CHEBI:74899
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:74899
+  normalized_label: fluticasone furoate
   original_literal: FLUTICASONE FUROATE; UMECLIDINIUM BROMIDE; VILANTEROL TRIFENATATE
   source: ORANGEBOOK
   source_name: FLUTICASONE FUROATE; UMECLIDINIUM BROMIDE; VILANTEROL TRIFENATATE
@@ -40543,11 +40776,11 @@
   approval_date: '20141219'
   grounding:
     components:
-    - CHEBI:134719
+    - RXCUI:1597608
     - CHEBI:85192
     confidence: 0.9
-    grounded_id: CHEBI:134719
-    grounded_label: ceftolozane
+    grounded_id: RXCUI:1597608
+    grounded_label: ceftolozane sulfate
     grounding_quality: lexical_exact_surgery
     original_string: CEFTOLOZANE SULFATE; TAZOBACTAM SODIUM
     subject_id: MEDICNE:c08f3039-beef-52e9-bfd7-b43bb4aa9c45
@@ -40558,12 +40791,12 @@
   mention_id: MEDICNE:c08f3039-beef-52e9-bfd7-b43bb4aa9c45
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:134719
-    normalized_label: ceftolozane
-    original_id: CHEBI:134719
+    normalized_id: RXCUI:1597608
+    normalized_label: ceftolozane sulfate
+    original_id: RXCUI:1597608
     tool: medic-normalizer/1
-  normalized_id: CHEBI:134719
-  normalized_label: ceftolozane
+  normalized_id: RXCUI:1597608
+  normalized_label: ceftolozane sulfate
   original_literal: CEFTOLOZANE SULFATE; TAZOBACTAM SODIUM
   source: ORANGEBOOK
   source_name: CEFTOLOZANE SULFATE; TAZOBACTAM SODIUM
@@ -40649,29 +40882,25 @@
   application_number: 022372|202511|204135|204553|206431|209941|212903|213924|215469
   approval_date: '20100805'
   grounding:
-    components:
-    - CHEBI:32599
-    - CHEBI:32036
-    - CHEBI:32149
-    confidence: 0.9
-    grounded_id: CHEBI:32599
-    grounded_label: magnesium sulfate
+    confidence: 0.8
+    grounded_id: RXCUI:6574
+    grounded_label: magnesium
     grounding_quality: lexical_exact_surgery
     original_string: MAGNESIUM SULFATE; POTASSIUM SULFATE; SODIUM SULFATE
     subject_id: MEDICNE:8e7c7092-7750-557a-b7dd-199f07d3cfa9
-  grounding_confidence: 0.9
+  grounding_confidence: 0.8
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:8e7c7092-7750-557a-b7dd-199f07d3cfa9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32599
-    normalized_label: magnesium sulfate
-    original_id: CHEBI:32599
+    normalized_id: RXCUI:6574
+    normalized_label: magnesium
+    original_id: RXCUI:6574
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32599
-  normalized_label: magnesium sulfate
+  normalized_id: RXCUI:6574
+  normalized_label: magnesium
   original_literal: MAGNESIUM SULFATE; POTASSIUM SULFATE; SODIUM SULFATE
   source: ORANGEBOOK
   source_name: MAGNESIUM SULFATE; POTASSIUM SULFATE; SODIUM SULFATE
@@ -41492,9 +41721,9 @@
   approval_date: '19820101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:7470
-    grounded_label: Naphazoline
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:82054
+    grounded_label: naphazoline hydrochloride
+    grounding_quality: lexical_exact_normalized
     original_string: NAPHAZOLINE HYDROCHLORIDE
     subject_id: MEDICNE:9b4fe2dd-8157-599a-b3f5-eb4e4653f9b0
   grounding_confidence: 0.9
@@ -41504,12 +41733,12 @@
   mention_id: MEDICNE:9b4fe2dd-8157-599a-b3f5-eb4e4653f9b0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:7470
-    normalized_label: Naphazoline
-    original_id: CHEBI:7470
+    normalized_id: RXCUI:82054
+    normalized_label: naphazoline hydrochloride
+    original_id: RXCUI:82054
     tool: medic-normalizer/1
-  normalized_id: CHEBI:7470
-  normalized_label: Naphazoline
+  normalized_id: RXCUI:82054
+  normalized_label: naphazoline hydrochloride
   original_literal: NAPHAZOLINE HYDROCHLORIDE
   source: ORANGEBOOK
   source_name: NAPHAZOLINE HYDROCHLORIDE
@@ -41836,9 +42065,9 @@
   approval_date: '20050324'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:240107
-    grounded_label: bromfenac
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:47364
+    grounded_label: bromfenac sodium
+    grounding_quality: lexical_exact_normalized
     original_string: BROMFENAC SODIUM
     subject_id: MEDICNE:a1643f95-70dc-5976-bce9-c46d2b2e8ce3
   grounding_confidence: 0.9
@@ -41848,12 +42077,12 @@
   mention_id: MEDICNE:a1643f95-70dc-5976-bce9-c46d2b2e8ce3
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:240107
-    normalized_label: bromfenac
-    original_id: CHEBI:240107
+    normalized_id: RXCUI:47364
+    normalized_label: bromfenac sodium
+    original_id: RXCUI:47364
     tool: medic-normalizer/1
-  normalized_id: CHEBI:240107
-  normalized_label: bromfenac
+  normalized_id: RXCUI:47364
+  normalized_label: bromfenac sodium
   original_literal: BROMFENAC SODIUM
   source: ORANGEBOOK
   source_name: BROMFENAC SODIUM
@@ -42388,11 +42617,11 @@
   approval_date: '19940608'
   grounding:
     components:
-    - CHEBI:7470
+    - RXCUI:82054
     - CHEBI:31990
     confidence: 0.9
-    grounded_id: CHEBI:7470
-    grounded_label: Naphazoline
+    grounded_id: RXCUI:82054
+    grounded_label: naphazoline hydrochloride
     grounding_quality: lexical_exact_surgery
     original_string: NAPHAZOLINE HYDROCHLORIDE; PHENIRAMINE MALEATE
     subject_id: MEDICNE:7c1f8512-fa13-529f-b0da-5599a3461520
@@ -42403,12 +42632,12 @@
   mention_id: MEDICNE:7c1f8512-fa13-529f-b0da-5599a3461520
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:7470
-    normalized_label: Naphazoline
-    original_id: CHEBI:7470
+    normalized_id: RXCUI:82054
+    normalized_label: naphazoline hydrochloride
+    original_id: RXCUI:82054
     tool: medic-normalizer/1
-  normalized_id: CHEBI:7470
-  normalized_label: Naphazoline
+  normalized_id: RXCUI:82054
+  normalized_label: naphazoline hydrochloride
   original_literal: NAPHAZOLINE HYDROCHLORIDE; PHENIRAMINE MALEATE
   source: ORANGEBOOK
   source_name: NAPHAZOLINE HYDROCHLORIDE; PHENIRAMINE MALEATE
@@ -42827,7 +43056,7 @@
   grounding:
     components:
     - CHEBI:749272
-    - CHEBI:7470
+    - RXCUI:82054
     confidence: 0.9
     grounded_id: CHEBI:749272
     grounded_label: antazoline phosphate
@@ -43390,19 +43619,29 @@
   application_number: 021910
   approval_date: '20060726'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:6579
+    - CHEBI:32139
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: RXCUI:6579
+    grounded_label: magnesium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: MAGNESIUM CHLORIDE; SODIUM BICARBONATE; SODIUM CHLORIDE
     subject_id: MEDICNE:ff25f53b-d57c-5e44-94c0-154814899df2
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:ff25f53b-d57c-5e44-94c0-154814899df2
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:6579
+    normalized_label: magnesium chloride
+    original_id: RXCUI:6579
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:6579
+  normalized_label: magnesium chloride
   original_literal: MAGNESIUM CHLORIDE; SODIUM BICARBONATE; SODIUM CHLORIDE
   source: ORANGEBOOK
   source_name: MAGNESIUM CHLORIDE; SODIUM BICARBONATE; SODIUM CHLORIDE
@@ -43592,19 +43831,25 @@
   application_number: 207987|214988|217845|219400|219444|219569
   approval_date: '20180621'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:1310469
+    grounded_label: dehydrated alcohol
+    grounding_quality: lexical_exact_normalized
     original_string: DEHYDRATED ALCOHOL
     subject_id: MEDICNE:295496f5-24cd-5cfe-a5c0-a85b5a4ea4cd
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:295496f5-24cd-5cfe-a5c0-a85b5a4ea4cd
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1310469
+    normalized_label: dehydrated alcohol
+    original_id: RXCUI:1310469
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1310469
+  normalized_label: dehydrated alcohol
   original_literal: DEHYDRATED ALCOHOL
   source: ORANGEBOOK
   source_name: DEHYDRATED ALCOHOL
@@ -44204,25 +44449,25 @@
   application_number: '209607'
   approval_date: '20180730'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00827257
-    grounded_label: iobenguane I-131
+    confidence: 0.765
+    grounded_id: CHEBI:135997
+    grounded_label: iobenguane (131I)
     grounding_quality: lexical_exact_normalized
     original_string: IOBENGUANE I-131
     subject_id: MEDICNE:0e3eb822-264c-5406-ad34-81cb16d090a9
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:0e3eb822-264c-5406-ad34-81cb16d090a9
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00827257
-    normalized_label: iobenguane I-131
-    original_id: DRON:00827257
+    normalized_id: CHEBI:135997
+    normalized_label: iobenguane (131I)
+    original_id: CHEBI:135997
     tool: medic-normalizer/1
-  normalized_id: DRON:00827257
-  normalized_label: iobenguane I-131
+  normalized_id: CHEBI:135997
+  normalized_label: iobenguane (131I)
   original_literal: IOBENGUANE I-131
   source: ORANGEBOOK
   source_name: IOBENGUANE I-131
@@ -44464,19 +44709,25 @@
   application_number: 020638|201276|202501
   approval_date: '19960626'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:83171
+    grounded_label: cidofovir
+    grounding_quality: lexical_exact_normalized
     original_string: CIDOFOVIR
     subject_id: MEDICNE:d1ade408-d4d1-5825-b65f-7ca0da206a2e
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:d1ade408-d4d1-5825-b65f-7ca0da206a2e
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:83171
+    normalized_label: cidofovir
+    original_id: RXCUI:83171
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:83171
+  normalized_label: cidofovir
   original_literal: CIDOFOVIR
   source: ORANGEBOOK
   source_name: CIDOFOVIR
@@ -44851,25 +45102,25 @@
   application_number: '200655'
   approval_date: '20191010'
   grounding:
-    confidence: 0.6
-    grounded_id: CHEBI:49166
-    grounded_label: 6-((18)F)fluoro-L-dopa
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.9
+    grounded_id: RXCUI:2571853
+    grounded_label: fluorodopa F-18
+    grounding_quality: lexical_exact_normalized
     original_string: FLUORODOPA F-18
     subject_id: MEDICNE:0520442b-a5ac-5184-820e-9597379001ae
-  grounding_confidence: 0.6
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:0520442b-a5ac-5184-820e-9597379001ae
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:49166
-    normalized_label: 6-((18)F)fluoro-L-dopa
-    original_id: CHEBI:49166
+    normalized_id: RXCUI:2571853
+    normalized_label: fluorodopa F-18
+    original_id: RXCUI:2571853
     tool: medic-normalizer/1
-  normalized_id: CHEBI:49166
-  normalized_label: 6-((18)F)fluoro-L-dopa
+  normalized_id: RXCUI:2571853
+  normalized_label: fluorodopa F-18
   original_literal: FLUORODOPA F-18
   source: ORANGEBOOK
   source_name: FLUORODOPA F-18
@@ -45013,7 +45264,7 @@
     - CHEBI:15956
     - CHEBI:28940
     - CHEBI:754405
-    - DRON:01002938
+    - CHEBI:27373
     - CHEBI:27470
     - CHEBI:17154
     - CHEBI:30961
@@ -46767,19 +47018,25 @@
   application_number: 021797|021798|202122|205740|205824|206217|206226|206294|206652|206672|206745|206872|208195|208721|208782|211978|212106|212126|212201|216857
   approval_date: '20050329'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:306266
+    grounded_label: entecavir
+    grounding_quality: lexical_exact_normalized
     original_string: ENTECAVIR
     subject_id: MEDICNE:d34410b8-9411-5984-a4c0-b3a50f738847
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:d34410b8-9411-5984-a4c0-b3a50f738847
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:306266
+    normalized_label: entecavir
+    original_id: RXCUI:306266
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:306266
+  normalized_label: entecavir
   original_literal: ENTECAVIR
   source: ORANGEBOOK
   source_name: ENTECAVIR
@@ -46817,9 +47074,9 @@
   approval_date: '20250116'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:40237
-    grounded_label: sitagliptin
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:2716481
+    grounded_label: sitagliptin hydrochloride
+    grounding_quality: lexical_exact_normalized
     original_string: SITAGLIPTIN HYDROCHLORIDE
     subject_id: MEDICNE:9786249d-4b16-5c35-801f-9c67831c169e
   grounding_confidence: 0.9
@@ -46829,12 +47086,12 @@
   mention_id: MEDICNE:9786249d-4b16-5c35-801f-9c67831c169e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:40237
-    normalized_label: sitagliptin
-    original_id: CHEBI:40237
+    normalized_id: RXCUI:2716481
+    normalized_label: sitagliptin hydrochloride
+    original_id: RXCUI:2716481
     tool: medic-normalizer/1
-  normalized_id: CHEBI:40237
-  normalized_label: sitagliptin
+  normalized_id: RXCUI:2716481
+  normalized_label: sitagliptin hydrochloride
   original_literal: SITAGLIPTIN HYDROCHLORIDE
   source: ORANGEBOOK
   source_name: SITAGLIPTIN HYDROCHLORIDE
@@ -47763,20 +48020,26 @@
   application_number: 018608|075323|214623
   approval_date: '19820226'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:1895
+    grounded_label: calcium
+    grounding_quality: lexical_exact_surgery
     original_string: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
       CHLORIDE
     subject_id: MEDICNE:2ac989c4-fc63-5e72-a9f2-9823bcc1b806
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:2ac989c4-fc63-5e72-a9f2-9823bcc1b806
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1895
+    normalized_label: calcium
+    original_id: RXCUI:1895
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1895
+  normalized_label: calcium
   original_literal: CALCIUM CHLORIDE; MAGNESIUM CHLORIDE; POTASSIUM CHLORIDE; SODIUM
     CHLORIDE
   source: ORANGEBOOK
@@ -49006,9 +49269,9 @@
   approval_date: '19870727'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:3002
-    grounded_label: beclomethasone dipropionate
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:253156
+    grounded_label: beclomethasone dipropionate monohydrate
+    grounding_quality: lexical_exact_normalized
     original_string: BECLOMETHASONE DIPROPIONATE MONOHYDRATE
     subject_id: MEDICNE:ae39ed3d-e940-57ef-abdc-05bfcad3e417
   grounding_confidence: 0.9
@@ -49018,12 +49281,12 @@
   mention_id: MEDICNE:ae39ed3d-e940-57ef-abdc-05bfcad3e417
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3002
-    normalized_label: beclomethasone dipropionate
-    original_id: CHEBI:3002
+    normalized_id: RXCUI:253156
+    normalized_label: beclomethasone dipropionate monohydrate
+    original_id: RXCUI:253156
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3002
-  normalized_label: beclomethasone dipropionate
+  normalized_id: RXCUI:253156
+  normalized_label: beclomethasone dipropionate monohydrate
   original_literal: BECLOMETHASONE DIPROPIONATE MONOHYDRATE
   source: ORANGEBOOK
   source_name: BECLOMETHASONE DIPROPIONATE MONOHYDRATE
@@ -49196,19 +49459,25 @@
   application_number: '218571'
   approval_date: '20251212'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:2730302
+    grounded_label: etripamil
+    grounding_quality: lexical_exact_normalized
     original_string: ETRIPAMIL
     subject_id: MEDICNE:88978ce8-1aed-5273-8aef-306fbce0d112
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:88978ce8-1aed-5273-8aef-306fbce0d112
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:2730302
+    normalized_label: etripamil
+    original_id: RXCUI:2730302
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:2730302
+  normalized_label: etripamil
   original_literal: ETRIPAMIL
   source: ORANGEBOOK
   source_name: ETRIPAMIL
@@ -49938,9 +50207,9 @@
   approval_date: '19931110'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:135679
-    grounded_label: levocabastine
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:1294532
+    grounded_label: levocabastine hydrochloride
+    grounding_quality: lexical_exact_normalized
     original_string: LEVOCABASTINE HYDROCHLORIDE
     subject_id: MEDICNE:2d1d5358-c1d3-5025-82ae-e3c298a92a7b
   grounding_confidence: 0.9
@@ -49950,12 +50219,12 @@
   mention_id: MEDICNE:2d1d5358-c1d3-5025-82ae-e3c298a92a7b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:135679
-    normalized_label: levocabastine
-    original_id: CHEBI:135679
+    normalized_id: RXCUI:1294532
+    normalized_label: levocabastine hydrochloride
+    original_id: RXCUI:1294532
     tool: medic-normalizer/1
-  normalized_id: CHEBI:135679
-  normalized_label: levocabastine
+  normalized_id: RXCUI:1294532
+  normalized_label: levocabastine hydrochloride
   original_literal: LEVOCABASTINE HYDROCHLORIDE
   source: ORANGEBOOK
   source_name: LEVOCABASTINE HYDROCHLORIDE
@@ -52188,9 +52457,9 @@
   approval_date: '19820101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:30145
-    grounded_label: lithium atom
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:52105
+    grounded_label: lithium citrate
+    grounding_quality: lexical_exact_normalized
     original_string: LITHIUM CITRATE
     subject_id: MEDICNE:0e0fa30f-8480-54a4-ab7b-dc3b9682f561
   grounding_confidence: 0.9
@@ -52200,12 +52469,12 @@
   mention_id: MEDICNE:0e0fa30f-8480-54a4-ab7b-dc3b9682f561
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:30145
-    normalized_label: lithium atom
-    original_id: CHEBI:30145
+    normalized_id: RXCUI:52105
+    normalized_label: lithium citrate
+    original_id: RXCUI:52105
     tool: medic-normalizer/1
-  normalized_id: CHEBI:30145
-  normalized_label: lithium atom
+  normalized_id: RXCUI:52105
+  normalized_label: lithium citrate
   original_literal: LITHIUM CITRATE
   source: ORANGEBOOK
   source_name: LITHIUM CITRATE
@@ -60531,9 +60800,9 @@
   approval_date: '20241107'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:52172
-    grounded_label: nilotinib
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:2698561
+    grounded_label: nilotinib tartrate
+    grounding_quality: lexical_exact_normalized
     original_string: NILOTINIB TARTRATE
     subject_id: MEDICNE:7990daec-b74c-598d-b92e-6fea83ef14d6
   grounding_confidence: 0.9
@@ -60543,12 +60812,12 @@
   mention_id: MEDICNE:7990daec-b74c-598d-b92e-6fea83ef14d6
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:52172
-    normalized_label: nilotinib
-    original_id: CHEBI:52172
+    normalized_id: RXCUI:2698561
+    normalized_label: nilotinib tartrate
+    original_id: RXCUI:2698561
     tool: medic-normalizer/1
-  normalized_id: CHEBI:52172
-  normalized_label: nilotinib
+  normalized_id: RXCUI:2698561
+  normalized_label: nilotinib tartrate
   original_literal: NILOTINIB TARTRATE
   source: ORANGEBOOK
   source_name: NILOTINIB TARTRATE
@@ -60718,19 +60987,25 @@
   application_number: 021986|202103|203180|211094|213383|214350|216099|216261|216547|217217|218719
   approval_date: '20060628'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:475342
+    grounded_label: dasatinib
+    grounding_quality: lexical_exact_normalized
     original_string: DASATINIB
     subject_id: MEDICNE:0da69128-7b42-587c-ada8-064f7d051938
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:0da69128-7b42-587c-ada8-064f7d051938
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:475342
+    normalized_label: dasatinib
+    original_id: RXCUI:475342
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:475342
+  normalized_label: dasatinib
   original_literal: DASATINIB
   source: ORANGEBOOK
   source_name: DASATINIB
@@ -61484,25 +61759,25 @@
   application_number: '208711'
   approval_date: '20190213'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00845275
-    grounded_label: triclabendazole
+    confidence: 0.765
+    grounded_id: CHEBI:94759
+    grounded_label: 6-chloro-5-(2,3-dichlorophenoxy)-2-(methylthio)-1H-benzimidazole
     grounding_quality: lexical_exact_normalized
     original_string: TRICLABENDAZOLE
     subject_id: MEDICNE:7a832408-affd-545f-b1ae-ba02aabf627a
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:7a832408-affd-545f-b1ae-ba02aabf627a
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00845275
-    normalized_label: triclabendazole
-    original_id: DRON:00845275
+    normalized_id: CHEBI:94759
+    normalized_label: 6-chloro-5-(2,3-dichlorophenoxy)-2-(methylthio)-1H-benzimidazole
+    original_id: CHEBI:94759
     tool: medic-normalizer/1
-  normalized_id: DRON:00845275
-  normalized_label: triclabendazole
+  normalized_id: CHEBI:94759
+  normalized_label: 6-chloro-5-(2,3-dichlorophenoxy)-2-(methylthio)-1H-benzimidazole
   original_literal: TRICLABENDAZOLE
   source: ORANGEBOOK
   source_name: TRICLABENDAZOLE
@@ -65680,25 +65955,25 @@
   application_number: 011961
   approval_date: '19820101'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00010126
-    grounded_label: isocarboxazid
+    confidence: 0.765
+    grounded_id: CHEBI:93635
+    grounded_label: 5-methyl-N'-(phenylmethyl)-3-isoxazolecarbohydrazide
     grounding_quality: lexical_exact_normalized
     original_string: ISOCARBOXAZID
     subject_id: MEDICNE:37de3fc4-d37f-5b1e-985e-689cddb01c76
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:37de3fc4-d37f-5b1e-985e-689cddb01c76
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00010126
-    normalized_label: isocarboxazid
-    original_id: DRON:00010126
+    normalized_id: CHEBI:93635
+    normalized_label: 5-methyl-N'-(phenylmethyl)-3-isoxazolecarbohydrazide
+    original_id: CHEBI:93635
     tool: medic-normalizer/1
-  normalized_id: DRON:00010126
-  normalized_label: isocarboxazid
+  normalized_id: CHEBI:93635
+  normalized_label: 5-methyl-N'-(phenylmethyl)-3-isoxazolecarbohydrazide
   original_literal: ISOCARBOXAZID
   source: ORANGEBOOK
   source_name: ISOCARBOXAZID
@@ -68701,25 +68976,25 @@
   application_number: '013615'
   approval_date: '19820101'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00011382
-    grounded_label: piperacetazine
+    confidence: 0.765
+    grounded_id: CHEBI:92293
+    grounded_label: 1-[10-[3-[4-(2-hydroxyethyl)-1-piperidinyl]propyl]-2-phenothiazinyl]ethanone
     grounding_quality: lexical_exact_normalized
     original_string: PIPERACETAZINE
     subject_id: MEDICNE:d108ef7d-1b6a-545c-bfbf-eaeeca0840fc
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: DISCN
   mention_id: MEDICNE:d108ef7d-1b6a-545c-bfbf-eaeeca0840fc
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00011382
-    normalized_label: piperacetazine
-    original_id: DRON:00011382
+    normalized_id: CHEBI:92293
+    normalized_label: 1-[10-[3-[4-(2-hydroxyethyl)-1-piperidinyl]propyl]-2-phenothiazinyl]ethanone
+    original_id: CHEBI:92293
     tool: medic-normalizer/1
-  normalized_id: DRON:00011382
-  normalized_label: piperacetazine
+  normalized_id: CHEBI:92293
+  normalized_label: 1-[10-[3-[4-(2-hydroxyethyl)-1-piperidinyl]propyl]-2-phenothiazinyl]ethanone
   original_literal: PIPERACETAZINE
   source: ORANGEBOOK
   source_name: PIPERACETAZINE
@@ -68779,25 +69054,25 @@
   application_number: 021782|091610|091693|211567|212650|213186|213815|215243|215435|215972|216209
   approval_date: '20050722'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00018794
-    grounded_label: ramelteon
+    confidence: 0.765
+    grounded_id: CHEBI:109549
+    grounded_label: N-[2-[(8S)-2,6,7,8-tetrahydro-1H-cyclopenta[e]benzofuran-8-yl]ethyl]propanamide
     grounding_quality: lexical_exact_normalized
     original_string: RAMELTEON
     subject_id: MEDICNE:3145bbda-8ae9-5f66-9a32-14f1371f61de
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:3145bbda-8ae9-5f66-9a32-14f1371f61de
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00018794
-    normalized_label: ramelteon
-    original_id: DRON:00018794
+    normalized_id: CHEBI:109549
+    normalized_label: N-[2-[(8S)-2,6,7,8-tetrahydro-1H-cyclopenta[e]benzofuran-8-yl]ethyl]propanamide
+    original_id: CHEBI:109549
     tool: medic-normalizer/1
-  normalized_id: DRON:00018794
-  normalized_label: ramelteon
+  normalized_id: CHEBI:109549
+  normalized_label: N-[2-[(8S)-2,6,7,8-tetrahydro-1H-cyclopenta[e]benzofuran-8-yl]ethyl]propanamide
   original_literal: RAMELTEON
   source: ORANGEBOOK
   source_name: RAMELTEON
@@ -69800,29 +70075,25 @@
   application_number: '213135'
   approval_date: '20201110'
   grounding:
-    components:
-    - CHEBI:32599
-    - CHEBI:32588
-    - CHEBI:32149
-    confidence: 0.9
-    grounded_id: CHEBI:32599
-    grounded_label: magnesium sulfate
+    confidence: 0.8
+    grounded_id: RXCUI:6574
+    grounded_label: magnesium
     grounding_quality: lexical_exact_surgery
     original_string: MAGNESIUM SULFATE; POTASSIUM CHLORIDE; SODIUM SULFATE
     subject_id: MEDICNE:ecde3805-7a8a-58b6-b8ad-a4bf13f0ae64
-  grounding_confidence: 0.9
+  grounding_confidence: 0.8
   grounding_service: lexical
   grounding_status: accepted
   marketing_status_usa: RX
   mention_id: MEDICNE:ecde3805-7a8a-58b6-b8ad-a4bf13f0ae64
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32599
-    normalized_label: magnesium sulfate
-    original_id: CHEBI:32599
+    normalized_id: RXCUI:6574
+    normalized_label: magnesium
+    original_id: RXCUI:6574
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32599
-  normalized_label: magnesium sulfate
+  normalized_id: RXCUI:6574
+  normalized_label: magnesium
   original_literal: MAGNESIUM SULFATE; POTASSIUM CHLORIDE; SODIUM SULFATE
   source: ORANGEBOOK
   source_name: MAGNESIUM SULFATE; POTASSIUM CHLORIDE; SODIUM SULFATE

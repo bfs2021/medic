@@ -5983,18 +5983,27 @@
   - Р N003472/01
   approval_date: '19700804'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:314517
+    - CHEBI:116735
+    confidence: 0.9
+    grounded_id: RXCUI:314517
+    grounded_label: belladonna leaf extract
+    grounding_quality: lexical_exact_surgery
     original_string: Belladonna Leaf Extract + Benzocaine
     subject_id: MEDICNE:00e0a61e-50b8-5c32-8ef4-49607f5e7231
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:00e0a61e-50b8-5c32-8ef4-49607f5e7231
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:314517
+    normalized_label: belladonna leaf extract
+    original_id: RXCUI:314517
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:314517
+  normalized_label: belladonna leaf extract
   original_literal: Белладонны листьев экстракт+Бензокаин
   original_name_ru: Белладонны листьев экстракт+Бензокаин
   source: RUSSIA
@@ -23322,24 +23331,24 @@
   - Р N002742/02
   approval_date: '20060908'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00012287
-    grounded_label: chamomile flowers
+    confidence: 0.765
+    grounded_id: CHEBI:753833
+    grounded_label: chamomile
     grounding_quality: lexical_exact_normalized
     original_string: Chamomile Flowers
     subject_id: MEDICNE:6513826d-87c3-5170-b96b-74b79d8ac606
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:6513826d-87c3-5170-b96b-74b79d8ac606
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00012287
-    normalized_label: chamomile flowers
-    original_id: DRON:00012287
+    normalized_id: CHEBI:753833
+    normalized_label: chamomile
+    original_id: CHEBI:753833
     tool: medic-normalizer/1
-  normalized_id: DRON:00012287
-  normalized_label: chamomile flowers
+  normalized_id: CHEBI:753833
+  normalized_label: chamomile
   original_literal: Ромашки цветки
   original_name_ru: Ромашки цветки
   source: RUSSIA
@@ -25335,18 +25344,24 @@
   - ЛСР-007787/09
   approval_date: '20091005'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 1.0
+    grounded_id: RXCUI:1422928
+    grounded_label: Aloe arborescens leaf extract
+    grounding_quality: lexical_exact
     original_string: Aloe arborescens leaf extract
     subject_id: MEDICNE:e31de5f3-c410-5401-aee0-2fc318b97c48
-  grounding_confidence: 0.0
+  grounding_confidence: 1.0
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:e31de5f3-c410-5401-aee0-2fc318b97c48
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1422928
+    normalized_label: Aloe arborescens leaf extract
+    original_id: RXCUI:1422928
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1422928
+  normalized_label: Aloe arborescens leaf extract
   original_literal: Алоэ древовидного листьев экстракт
   original_name_ru: Алоэ древовидного листьев экстракт
   source: RUSSIA
@@ -28266,24 +28281,24 @@
   - Р N001153/02
   approval_date: '20070814'
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:32321
-    grounded_label: alpha-Tocopherol acetate
+    confidence: 1.0
+    grounded_id: RXCUI:1046243
+    grounded_label: alpha-tocopherol acetate
     grounding_quality: lexical_exact
     original_string: alpha-tocopherol acetate
     subject_id: MEDICNE:45e1fa5f-0ebd-53db-98e5-54404131730b
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:45e1fa5f-0ebd-53db-98e5-54404131730b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32321
-    normalized_label: alpha-Tocopherol acetate
-    original_id: CHEBI:32321
+    normalized_id: RXCUI:1046243
+    normalized_label: alpha-tocopherol acetate
+    original_id: RXCUI:1046243
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32321
-  normalized_label: alpha-Tocopherol acetate
+  normalized_id: RXCUI:1046243
+  normalized_label: alpha-tocopherol acetate
   original_literal: альфа-токоферола ацетат
   original_name_ru: альфа-токоферола ацетат
   source: RUSSIA
@@ -38075,25 +38090,24 @@
   - ФС-001626
   approval_date: '20100330'
   grounding:
-    confidence: 0.6
-    grounded_id: CHEBI:45809
-    grounded_label: '[2-(6-AMINO-9H-PURIN-9-YL)-1-METHYLETHOXY]METHYLPHOSPHONIC ACID'
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.9
+    grounded_id: RXCUI:117466
+    grounded_label: tenofovir
+    grounding_quality: lexical_exact_normalized
     original_string: Tenofovir
     subject_id: MEDICNE:fe1b1ab9-4a1a-54e6-ab58-a42b1cd88385
-  grounding_confidence: 0.6
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:fe1b1ab9-4a1a-54e6-ab58-a42b1cd88385
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:45809
-    normalized_label: '[2-(6-AMINO-9H-PURIN-9-YL)-1-METHYLETHOXY]METHYLPHOSPHONIC
-      ACID'
-    original_id: CHEBI:45809
+    normalized_id: RXCUI:117466
+    normalized_label: tenofovir
+    original_id: RXCUI:117466
     tool: medic-normalizer/1
-  normalized_id: CHEBI:45809
-  normalized_label: '[2-(6-AMINO-9H-PURIN-9-YL)-1-METHYLETHOXY]METHYLPHOSPHONIC ACID'
+  normalized_id: RXCUI:117466
+  normalized_label: tenofovir
   original_literal: Тенофовир
   original_name_ru: Тенофовир
   source: RUSSIA
@@ -39536,24 +39550,24 @@
   - ЛСР-007164/09
   approval_date: '20090529'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00017898
-    grounded_label: superoxide dismutase
+    confidence: 0.765
+    grounded_id: CHEBI:753504
+    grounded_label: orgotein
     grounding_quality: lexical_exact_normalized
     original_string: Superoxide Dismutase
     subject_id: MEDICNE:1a3d5c60-e783-5265-9081-72cf99131291
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:1a3d5c60-e783-5265-9081-72cf99131291
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00017898
-    normalized_label: superoxide dismutase
-    original_id: DRON:00017898
+    normalized_id: CHEBI:753504
+    normalized_label: orgotein
+    original_id: CHEBI:753504
     tool: medic-normalizer/1
-  normalized_id: DRON:00017898
-  normalized_label: superoxide dismutase
+  normalized_id: CHEBI:753504
+  normalized_label: orgotein
   original_literal: Супероксиддисмутаза
   original_name_ru: Супероксиддисмутаза
   source: RUSSIA
@@ -41282,18 +41296,24 @@
   - ЛС-001420
   approval_date: '20110525'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:485853
+    grounded_label: Senna leaf extract
+    grounding_quality: lexical_exact_normalized
     original_string: Senna Leaf Extract
     subject_id: MEDICNE:b2a6b5ba-25b2-5771-908b-00ec390ae6e7
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:b2a6b5ba-25b2-5771-908b-00ec390ae6e7
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:485853
+    normalized_label: Senna leaf extract
+    original_id: RXCUI:485853
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:485853
+  normalized_label: Senna leaf extract
   original_literal: Сенны листьев экстракт
   original_name_ru: Сенны листьев экстракт
   source: RUSSIA
@@ -44133,18 +44153,27 @@
   - П N014179/01-2002
   approval_date: '20080506'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:1426865
+    - CHEBI:16709
+    confidence: 0.9
+    grounded_id: RXCUI:1426865
+    grounded_label: lysozyme
+    grounding_quality: lexical_exact_surgery
     original_string: Lysozyme + Pyridoxine
     subject_id: MEDICNE:877f6c14-3f1b-56f4-b597-1138ec557dc3
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:877f6c14-3f1b-56f4-b597-1138ec557dc3
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1426865
+    normalized_label: lysozyme
+    original_id: RXCUI:1426865
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1426865
+  normalized_label: lysozyme
   original_literal: Лизоцим+Пиридоксин
   original_name_ru: Лизоцим+Пиридоксин
   source: RUSSIA
@@ -46382,26 +46411,26 @@
   grounding:
     components:
     - CHEBI:63577
-    - CHEBI:45809
+    - RXCUI:117466
     - CHEBI:119486
-    confidence: 0.85
-    grounded_id: CHEBI:63577
-    grounded_label: lamivudine
+    confidence: 0.9
+    grounded_id: RXCUI:117466
+    grounded_label: tenofovir
     grounding_quality: lexical_exact_surgery
     original_string: Lamivudine + Tenofovir + Efavirenz
     subject_id: MEDICNE:f045bcd6-6bbb-571b-a4da-1baaea49b0df
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:f045bcd6-6bbb-571b-a4da-1baaea49b0df
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:63577
-    normalized_label: lamivudine
-    original_id: CHEBI:63577
+    normalized_id: RXCUI:117466
+    normalized_label: tenofovir
+    original_id: RXCUI:117466
     tool: medic-normalizer/1
-  normalized_id: CHEBI:63577
-  normalized_label: lamivudine
+  normalized_id: RXCUI:117466
+  normalized_label: tenofovir
   original_literal: Ламивудин+Тенофовир+Эфавиренз
   original_name_ru: Ламивудин+Тенофовир+Эфавиренз
   source: RUSSIA
@@ -47258,19 +47287,30 @@
   - Р N000833/01
   approval_date: '20081027'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:314517
+    - CHEBI:116735
+    - CHEBI:59033
+    - CHEBI:32139
+    confidence: 0.9
+    grounded_id: RXCUI:314517
+    grounded_label: belladonna leaf extract
+    grounding_quality: lexical_exact_surgery
     original_string: Belladonna Leaf Extract + Benzocaine + Metamizole Sodium + Sodium
       Bicarbonate
     subject_id: MEDICNE:d0903daa-d5ed-5f3a-83d9-49c522034199
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:d0903daa-d5ed-5f3a-83d9-49c522034199
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:314517
+    normalized_label: belladonna leaf extract
+    original_id: RXCUI:314517
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:314517
+  normalized_label: belladonna leaf extract
   original_literal: Белладонны листьев экстракт+Бензокаин+Метамизол натрия+Натрия
     гидрокарбонат
   original_name_ru: Белладонны листьев экстракт+Бензокаин+Метамизол натрия+Натрия
@@ -49046,24 +49086,24 @@
   - ФС-001297
   approval_date: '20080314'
   grounding:
-    confidence: 0.8
-    grounded_id: DRON:00012287
-    grounded_label: chamomile flowers
+    confidence: 0.765
+    grounded_id: CHEBI:753833
+    grounded_label: chamomile
     grounding_quality: lexical_exact_surgery
     original_string: Chamomile (Matricaria) Flowers
     subject_id: MEDICNE:62b855da-2ca9-50af-8245-2d065a9cc4b7
-  grounding_confidence: 0.8
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:62b855da-2ca9-50af-8245-2d065a9cc4b7
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00012287
-    normalized_label: chamomile flowers
-    original_id: DRON:00012287
+    normalized_id: CHEBI:753833
+    normalized_label: chamomile
+    original_id: CHEBI:753833
     tool: medic-normalizer/1
-  normalized_id: DRON:00012287
-  normalized_label: chamomile flowers
+  normalized_id: CHEBI:753833
+  normalized_label: chamomile
   original_literal: Ромашки аптечной цветки
   original_name_ru: Ромашки аптечной цветки
   source: RUSSIA
@@ -49785,18 +49825,24 @@
   - ФС-002438
   approval_date: '20080129'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.88
+    grounded_id: RXCUI:475342
+    grounded_label: dasatinib
+    grounding_quality: lexical_exact_surgery
     original_string: Dazatinib
     subject_id: MEDICNE:0dae1a2e-30c6-5743-8ef3-0f26cd22a41b
-  grounding_confidence: 0.0
+  grounding_confidence: 0.88
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:0dae1a2e-30c6-5743-8ef3-0f26cd22a41b
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:475342
+    normalized_label: dasatinib
+    original_id: RXCUI:475342
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:475342
+  normalized_label: dasatinib
   original_literal: Дазатиниб
   original_name_ru: Дазатиниб
   source: RUSSIA
@@ -52628,18 +52674,27 @@
   - Р N002528/02
   approval_date: '20070712'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:26143
+    - CHEBI:16247
+    confidence: 0.9
+    grounded_id: RXCUI:26143
+    grounded_label: glycyrrhizic acid
+    grounding_quality: lexical_exact_surgery
     original_string: Glycyrrhizic Acid + Phospholipids
     subject_id: MEDICNE:27d8bcdf-3722-5d0c-b4cd-56f8c5decbc7
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:27d8bcdf-3722-5d0c-b4cd-56f8c5decbc7
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:26143
+    normalized_label: glycyrrhizic acid
+    original_id: RXCUI:26143
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:26143
+  normalized_label: glycyrrhizic acid
   original_literal: Глицирризиновая кислота+Фосфолипиды
   original_name_ru: Глицирризиновая кислота+Фосфолипиды
   source: RUSSIA
@@ -55679,18 +55734,27 @@
   - П N011414/01
   approval_date: '20100507'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:90176
+    - CHEBI:85467
+    confidence: 0.9
+    grounded_id: RXCUI:90176
+    grounded_label: iron
+    grounding_quality: lexical_exact_surgery
     original_string: Iron Sulfate + [Ascorbic Acid]
     subject_id: MEDICNE:8d60563f-b8bf-5eec-a89a-789d5227f6ee
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:8d60563f-b8bf-5eec-a89a-789d5227f6ee
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:90176
+    normalized_label: iron
+    original_id: RXCUI:90176
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:90176
+  normalized_label: iron
   original_literal: Железа сульфат+[Аскорбиновая кислота]
   original_name_ru: Железа сульфат+[Аскорбиновая кислота]
   source: RUSSIA
@@ -57576,24 +57640,24 @@
   - ФС-000464
   approval_date: '20060811'
   grounding:
-    confidence: 1.0
-    grounded_id: DRON:00016359
-    grounded_label: Ginkgo biloba leaf extract
+    confidence: 0.85
+    grounded_id: CHEBI:753434
+    grounded_label: ginkgo
     grounding_quality: lexical_exact
     original_string: Ginkgo biloba leaf extract
     subject_id: MEDICNE:9267f4de-f04c-55c8-8eb0-ca2a72966ead
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:9267f4de-f04c-55c8-8eb0-ca2a72966ead
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00016359
-    normalized_label: Ginkgo biloba leaf extract
-    original_id: DRON:00016359
+    normalized_id: CHEBI:753434
+    normalized_label: ginkgo
+    original_id: CHEBI:753434
     tool: medic-normalizer/1
-  normalized_id: DRON:00016359
-  normalized_label: Ginkgo biloba leaf extract
+  normalized_id: CHEBI:753434
+  normalized_label: ginkgo
   original_literal: Гинкго двулопастного листьев экстракт
   original_name_ru: Гинкго двулопастного листьев экстракт
   source: RUSSIA
@@ -58466,24 +58530,24 @@
   - ФС-001907
   approval_date: '20051028'
   grounding:
-    confidence: 0.6
-    grounded_id: CHEBI:748116
-    grounded_label: lipoic acid, alpha
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.9
+    grounded_id: RXCUI:6417
+    grounded_label: thioctic acid
+    grounding_quality: lexical_exact_normalized
     original_string: Thioctic acid
     subject_id: MEDICNE:7944c941-f3ff-5854-a6a7-aff2cc6551a1
-  grounding_confidence: 0.6
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:7944c941-f3ff-5854-a6a7-aff2cc6551a1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:748116
-    normalized_label: lipoic acid, alpha
-    original_id: CHEBI:748116
+    normalized_id: RXCUI:6417
+    normalized_label: thioctic acid
+    original_id: RXCUI:6417
     tool: medic-normalizer/1
-  normalized_id: CHEBI:748116
-  normalized_label: lipoic acid, alpha
+  normalized_id: RXCUI:6417
+  normalized_label: thioctic acid
   original_literal: Тиоктовая кислота
   original_name_ru: Тиоктовая кислота
   source: RUSSIA
@@ -60766,18 +60830,24 @@
   - ФС-000816
   approval_date: '20071126'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:90176
+    grounded_label: iron
+    grounding_quality: lexical_exact_surgery
     original_string: Iron sulfate
     subject_id: MEDICNE:9b56b498-2259-5135-a8b8-a82b7359863f
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:9b56b498-2259-5135-a8b8-a82b7359863f
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:90176
+    normalized_label: iron
+    original_id: RXCUI:90176
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:90176
+  normalized_label: iron
   original_literal: Железа сульфат
   original_name_ru: Железа сульфат
   source: RUSSIA
@@ -63590,7 +63660,7 @@
   grounding:
     components:
     - CHEBI:68606
-    - CHEBI:45809
+    - RXCUI:117466
     - CHEBI:31536
     confidence: 0.9
     grounded_id: CHEBI:68606
@@ -64809,18 +64879,27 @@
   - ЛС-000300
   approval_date: '20100726'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:90176
+    - CHEBI:27470
+    confidence: 0.9
+    grounded_id: RXCUI:90176
+    grounded_label: iron
+    grounding_quality: lexical_exact_surgery
     original_string: Iron Sulfate + Folic Acid
     subject_id: MEDICNE:bc0c2c17-7b44-5496-8524-168cdde45756
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:bc0c2c17-7b44-5496-8524-168cdde45756
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:90176
+    normalized_label: iron
+    original_id: RXCUI:90176
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:90176
+  normalized_label: iron
   original_literal: Железа сульфат+Фолиевая кислота
   original_name_ru: Железа сульфат+Фолиевая кислота
   source: RUSSIA
@@ -68692,19 +68771,32 @@
   - ЛС-001825
   approval_date: '20120425'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32588
+    - CHEBI:86158
+    - RXCUI:6579
+    - CHEBI:32954
+    - CHEBI:26710
+    - CHEBI:6650
+    confidence: 0.9
+    grounded_id: CHEBI:32588
+    grounded_label: potassium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: Potassium chloride + Calcium chloride + Magnesium chloride +
       Sodium acetate + Sodium chloride + Malic acid
     subject_id: MEDICNE:64b4da8b-cef8-53e7-8cae-8f4c71f5cccd
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:64b4da8b-cef8-53e7-8cae-8f4c71f5cccd
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:32588
+    normalized_label: potassium chloride
+    original_id: CHEBI:32588
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:32588
+  normalized_label: potassium chloride
   original_literal: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия ацетат+Натрия
     хлорид+Яблочная кислота
   original_name_ru: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия ацетат+Натрия
@@ -71951,9 +72043,9 @@
   approval_date: '20060119'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:18332
-    grounded_label: L-thyroxine
-    grounding_quality: lexical_exact_surgery
+    grounded_id: RXCUI:40144
+    grounded_label: levothyroxine sodium
+    grounding_quality: lexical_exact_normalized
     original_string: Levothyroxine sodium
     subject_id: MEDICNE:abb42f66-bc4f-527e-a294-a501c77cc9a7
   grounding_confidence: 0.9
@@ -71962,12 +72054,12 @@
   mention_id: MEDICNE:abb42f66-bc4f-527e-a294-a501c77cc9a7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:18332
-    normalized_label: L-thyroxine
-    original_id: CHEBI:18332
+    normalized_id: RXCUI:40144
+    normalized_label: levothyroxine sodium
+    original_id: RXCUI:40144
     tool: medic-normalizer/1
-  normalized_id: CHEBI:18332
-  normalized_label: L-thyroxine
+  normalized_id: RXCUI:40144
+  normalized_label: levothyroxine sodium
   original_literal: Левотироксин натрия
   original_name_ru: Левотироксин натрия
   source: RUSSIA
@@ -72530,19 +72622,31 @@
   - П N014661/01-2002
   approval_date: '20090123'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32588
+    - RXCUI:6579
+    - CHEBI:32954
+    - CHEBI:84997
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:32588
+    grounded_label: potassium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: Potassium chloride + Magnesium chloride + Sodium acetate + Sodium
       gluconate + Sodium chloride
     subject_id: MEDICNE:b8234151-2c60-576d-a8fe-bb4c43ad689d
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:b8234151-2c60-576d-a8fe-bb4c43ad689d
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:32588
+    normalized_label: potassium chloride
+    original_id: CHEBI:32588
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:32588
+  normalized_label: potassium chloride
   original_literal: Калия хлорид+Магния хлорид+Натрия ацетат+Натрия глюконат+Натрия
     хлорид
   original_name_ru: Калия хлорид+Магния хлорид+Натрия ацетат+Натрия глюконат+Натрия
@@ -72757,18 +72861,27 @@
   - ЛП-№(001227)-(РГ-RU)
   approval_date: '20191203'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:26143
+    - CHEBI:9907
+    confidence: 0.9
+    grounded_id: RXCUI:26143
+    grounded_label: glycyrrhizic acid
+    grounding_quality: lexical_exact_surgery
     original_string: Glycyrrhizic Acid + Ursodeoxycholic Acid
     subject_id: MEDICNE:c9cac619-293a-5aad-bc45-96789ce3b8f9
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:c9cac619-293a-5aad-bc45-96789ce3b8f9
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:26143
+    normalized_label: glycyrrhizic acid
+    original_id: RXCUI:26143
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:26143
+  normalized_label: glycyrrhizic acid
   original_literal: Глицирризиновая кислота+Урсодезоксихолевая кислота
   original_name_ru: Глицирризиновая кислота+Урсодезоксихолевая кислота
   source: RUSSIA
@@ -73619,18 +73732,24 @@
   - ФС-002093
   approval_date: '20060303'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:115265
+    grounded_label: ibandronic acid
+    grounding_quality: lexical_exact_normalized
     original_string: Ibandronic acid
     subject_id: MEDICNE:2faa9ae5-36f9-5556-a718-a9edaa0d8554
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:2faa9ae5-36f9-5556-a718-a9edaa0d8554
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:115265
+    normalized_label: ibandronic acid
+    original_id: RXCUI:115265
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:115265
+  normalized_label: ibandronic acid
   original_literal: Ибандроновая кислота
   original_name_ru: Ибандроновая кислота
   source: RUSSIA
@@ -76901,18 +77020,24 @@
   - ФС-001644
   approval_date: '20070410'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:306266
+    grounded_label: entecavir
+    grounding_quality: lexical_exact_normalized
     original_string: Entecavir
     subject_id: MEDICNE:648afee3-b3ce-5a52-9ec3-571c48022286
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:648afee3-b3ce-5a52-9ec3-571c48022286
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:306266
+    normalized_label: entecavir
+    original_id: RXCUI:306266
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:306266
+  normalized_label: entecavir
   original_literal: Энтекавир
   original_name_ru: Энтекавир
   source: RUSSIA
@@ -77949,26 +78074,26 @@
   approval_date: '20110929'
   grounding:
     components:
-    - CHEBI:45809
+    - RXCUI:117466
     - CHEBI:31536
-    confidence: 0.85
-    grounded_id: CHEBI:31536
-    grounded_label: emtricitabine
+    confidence: 0.9
+    grounded_id: RXCUI:117466
+    grounded_label: tenofovir
     grounding_quality: lexical_exact_surgery
     original_string: Tenofovir + Emtricitabine
     subject_id: MEDICNE:070ae9f4-1305-5579-8dd3-5d117367295b
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:070ae9f4-1305-5579-8dd3-5d117367295b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31536
-    normalized_label: emtricitabine
-    original_id: CHEBI:31536
+    normalized_id: RXCUI:117466
+    normalized_label: tenofovir
+    original_id: RXCUI:117466
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31536
-  normalized_label: emtricitabine
+  normalized_id: RXCUI:117466
+  normalized_label: tenofovir
   original_literal: Тенофовир+Эмтрицитабин
   original_name_ru: Тенофовир+Эмтрицитабин
   source: RUSSIA
@@ -82935,19 +83060,32 @@
   application_number: ЛП-№(002383)-(РГ-RU)
   approval_date: '20230522'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32588
+    - CHEBI:86158
+    - RXCUI:6579
+    - CHEBI:75228
+    - CHEBI:26710
+    - CHEBI:30911
+    confidence: 0.9
+    grounded_id: CHEBI:32588
+    grounded_label: potassium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: Potassium chloride + Calcium chloride + Magnesium chloride +
       Sodium lactate + Sodium chloride + Sorbitol
     subject_id: MEDICNE:59271bbc-6b65-56b4-8edf-feea7f4f424a
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:59271bbc-6b65-56b4-8edf-feea7f4f424a
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:32588
+    normalized_label: potassium chloride
+    original_id: CHEBI:32588
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:32588
+  normalized_label: potassium chloride
   original_literal: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия лактат+Натрия
     хлорид+Сорбитол
   original_name_ru: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия лактат+Натрия
@@ -84045,26 +84183,26 @@
   grounding:
     components:
     - CHEBI:66901
-    - CHEBI:234517
-    - CHEBI:234518
-    confidence: 0.9
-    grounded_id: CHEBI:66901
-    grounded_label: ivacaftor
+    - RXCUI:1999382
+    - RXCUI:2256951
+    confidence: 1.0
+    grounded_id: RXCUI:1999382
+    grounded_label: tezacaftor
     grounding_quality: lexical_exact_surgery
     original_string: Ivacaftor + tezacaftor + elexacaftor and ivacaftor
     subject_id: MEDICNE:07e097f1-5c3e-58ce-bfc3-dc2eab4326b9
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:07e097f1-5c3e-58ce-bfc3-dc2eab4326b9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:66901
-    normalized_label: ivacaftor
-    original_id: CHEBI:66901
+    normalized_id: RXCUI:1999382
+    normalized_label: tezacaftor
+    original_id: RXCUI:1999382
     tool: medic-normalizer/1
-  normalized_id: CHEBI:66901
-  normalized_label: ivacaftor
+  normalized_id: RXCUI:1999382
+  normalized_label: tezacaftor
   original_literal: Ивакафтор+Тезакафтор+Элексакафтор и Ивакафтор
   original_name_ru: Ивакафтор+Тезакафтор+Элексакафтор и Ивакафтор
   source: RUSSIA
@@ -85300,24 +85438,24 @@
   - П N016179/01
   approval_date: '20080328'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00012870
-    grounded_label: antithrombin III
+    confidence: 0.765
+    grounded_id: CHEBI:753528
+    grounded_label: antithrombin iii human
     grounding_quality: lexical_exact_normalized
     original_string: Antithrombin III
     subject_id: MEDICNE:4c12265e-d6be-50e6-aabd-3cb756655ac0
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:4c12265e-d6be-50e6-aabd-3cb756655ac0
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00012870
-    normalized_label: antithrombin III
-    original_id: DRON:00012870
+    normalized_id: CHEBI:753528
+    normalized_label: antithrombin iii human
+    original_id: CHEBI:753528
     tool: medic-normalizer/1
-  normalized_id: DRON:00012870
-  normalized_label: antithrombin III
+  normalized_id: CHEBI:753528
+  normalized_label: antithrombin iii human
   original_literal: Антитромбин III
   original_name_ru: Антитромбин III
   source: RUSSIA
@@ -88243,24 +88381,24 @@
   application_number: ЛП-№(003143)-(РГ-RU)
   approval_date: '20230907'
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:232556
-    grounded_label: Erdafitinib
+    confidence: 1.0
+    grounded_id: RXCUI:2123125
+    grounded_label: erdafitinib
     grounding_quality: lexical_exact
     original_string: erdafitinib
     subject_id: MEDICNE:029e8566-6526-5feb-80d2-62dd5ffa5e30
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:029e8566-6526-5feb-80d2-62dd5ffa5e30
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:232556
-    normalized_label: Erdafitinib
-    original_id: CHEBI:232556
+    normalized_id: RXCUI:2123125
+    normalized_label: erdafitinib
+    original_id: RXCUI:2123125
     tool: medic-normalizer/1
-  normalized_id: CHEBI:232556
-  normalized_label: Erdafitinib
+  normalized_id: RXCUI:2123125
+  normalized_label: erdafitinib
   original_literal: Эрдафитиниб
   original_name_ru: Эрдафитиниб
   source: RUSSIA
@@ -88329,18 +88467,27 @@
   - П N013677/01
   approval_date: '20110608'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - DRON:00020179
+    - RXCUI:1943794
+    confidence: 1.0
+    grounded_id: DRON:00020179
+    grounded_label: Bifidobacterium longum
+    grounding_quality: lexical_exact_surgery
     original_string: Bifidobacterium longum + Enterococcus faecium
     subject_id: MEDICNE:7e81a158-0d31-55af-bb03-1b6644996e5f
-  grounding_confidence: 0.0
+  grounding_confidence: 1.0
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:7e81a158-0d31-55af-bb03-1b6644996e5f
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: DRON:00020179
+    normalized_label: Bifidobacterium longum
+    original_id: DRON:00020179
+    tool: medic-normalizer/1
+  normalized_id: DRON:00020179
+  normalized_label: Bifidobacterium longum
   original_literal: Бифидобактерии лонгум+Энтерококкус фэциум
   original_name_ru: Бифидобактерии лонгум+Энтерококкус фэциум
   source: RUSSIA
@@ -88539,19 +88686,32 @@
   application_number: ЛП-№(003180)-(РГ-RU)
   approval_date: '20230914'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:5291
+    - CHEBI:32588
+    - CHEBI:86158
+    - RXCUI:6579
+    - CHEBI:32954
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:5291
+    grounded_label: gelatin
+    grounding_quality: lexical_exact_surgery
     original_string: Gelatin + Potassium chloride + Calcium chloride + Magnesium chloride
       + Sodium acetate + Sodium chloride
     subject_id: MEDICNE:80c29347-8871-5cfc-9c7d-c485740ca42a
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:80c29347-8871-5cfc-9c7d-c485740ca42a
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:5291
+    normalized_label: gelatin
+    original_id: CHEBI:5291
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:5291
+  normalized_label: gelatin
   original_literal: Желатин+Калия хлорид+Кальция хлорид+Магния хлорид+Натрия ацетат+Натрия
     хлорид
   original_name_ru: Желатин+Калия хлорид+Кальция хлорид+Магния хлорид+Натрия ацетат+Натрия
@@ -90305,18 +90465,24 @@
   - Р N001488/01
   approval_date: '20070529'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:314517
+    grounded_label: belladonna leaf extract
+    grounding_quality: lexical_exact_normalized
     original_string: Belladonna Leaf Extract
     subject_id: MEDICNE:72d32dcd-e6d7-5071-87e2-da7b54856676
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:72d32dcd-e6d7-5071-87e2-da7b54856676
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:314517
+    normalized_label: belladonna leaf extract
+    original_id: RXCUI:314517
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:314517
+  normalized_label: belladonna leaf extract
   original_literal: Белладонны листьев экстракт
   original_name_ru: Белладонны листьев экстракт
   source: RUSSIA
@@ -91116,19 +91282,31 @@
   - Р N003902/01
   approval_date: '20080410'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32588
+    - CHEBI:86158
+    - RXCUI:6579
+    - CHEBI:32954
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:32588
+    grounded_label: potassium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: Potassium chloride + Calcium chloride + Magnesium chloride +
       Sodium acetate + Sodium chloride
     subject_id: MEDICNE:f858c6a2-8ced-5391-882f-8a9c16d79fbe
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:f858c6a2-8ced-5391-882f-8a9c16d79fbe
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:32588
+    normalized_label: potassium chloride
+    original_id: CHEBI:32588
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:32588
+  normalized_label: potassium chloride
   original_literal: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия ацетат+Натрия
     хлорид
   original_name_ru: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия ацетат+Натрия
@@ -92714,26 +92892,26 @@
   approval_date: '20091102'
   grounding:
     components:
-    - DRON:00018226
+    - CHEBI:753965
     - CHEBI:27974
-    confidence: 1.0
-    grounded_id: DRON:00018226
-    grounded_label: Lactobacillus acidophilus
+    confidence: 0.85
+    grounded_id: CHEBI:753965
+    grounded_label: lactobacillus acidophilus
     grounding_quality: lexical_exact_surgery
     original_string: Lactobacillus acidophilus + Estriol
     subject_id: MEDICNE:5bd254c2-bbe3-5832-a4be-dae8068ca7c6
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:5bd254c2-bbe3-5832-a4be-dae8068ca7c6
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00018226
-    normalized_label: Lactobacillus acidophilus
-    original_id: DRON:00018226
+    normalized_id: CHEBI:753965
+    normalized_label: lactobacillus acidophilus
+    original_id: CHEBI:753965
     tool: medic-normalizer/1
-  normalized_id: DRON:00018226
-  normalized_label: Lactobacillus acidophilus
+  normalized_id: CHEBI:753965
+  normalized_label: lactobacillus acidophilus
   original_literal: Лактобактерии ацидофильные+Эстриол
   original_name_ru: Лактобактерии ацидофильные+Эстриол
   source: RUSSIA
@@ -95392,24 +95570,24 @@
   - Р N003279/01
   approval_date: '20060310'
   grounding:
-    confidence: 1.0
-    grounded_id: DRON:00018226
-    grounded_label: Lactobacillus acidophilus
+    confidence: 0.85
+    grounded_id: CHEBI:753965
+    grounded_label: lactobacillus acidophilus
     grounding_quality: lexical_exact
     original_string: Lactobacillus acidophilus
     subject_id: MEDICNE:536e495d-d2b2-581f-a990-8e88ce513786
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:536e495d-d2b2-581f-a990-8e88ce513786
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00018226
-    normalized_label: Lactobacillus acidophilus
-    original_id: DRON:00018226
+    normalized_id: CHEBI:753965
+    normalized_label: lactobacillus acidophilus
+    original_id: CHEBI:753965
     tool: medic-normalizer/1
-  normalized_id: DRON:00018226
-  normalized_label: Lactobacillus acidophilus
+  normalized_id: CHEBI:753965
+  normalized_label: lactobacillus acidophilus
   original_literal: Лактобактерии ацидофильные
   original_name_ru: Лактобактерии ацидофильные
   source: RUSSIA
@@ -100694,25 +100872,25 @@
   grounding:
     components:
     - CHEBI:39448
-    - CHEBI:32313
-    confidence: 0.9
-    grounded_id: CHEBI:32313
-    grounded_label: Zinc undecylenate
+    - RXCUI:89748
+    confidence: 1.0
+    grounded_id: RXCUI:89748
+    grounded_label: zinc undecylenate
     grounding_quality: lexical_exact_surgery
     original_string: Undecylenic acid + zinc undecylenate
     subject_id: MEDICNE:53ef5c54-bc3f-59e1-abe0-6615be272f4d
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:53ef5c54-bc3f-59e1-abe0-6615be272f4d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32313
-    normalized_label: Zinc undecylenate
-    original_id: CHEBI:32313
+    normalized_id: RXCUI:89748
+    normalized_label: zinc undecylenate
+    original_id: RXCUI:89748
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32313
-  normalized_label: Zinc undecylenate
+  normalized_id: RXCUI:89748
+  normalized_label: zinc undecylenate
   original_literal: Ундециленовая кислота+Ундециленат цинка
   original_name_ru: Ундециленовая кислота+Ундециленат цинка
   source: RUSSIA
@@ -106582,18 +106760,24 @@
   application_number: ЛП-№(006794)-(РГ-RU)
   approval_date: '20240905'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:1329960
+    grounded_label: human placenta hydrolysate
+    grounding_quality: lexical_exact_normalized
     original_string: Human Placenta Hydrolysate
     subject_id: MEDICNE:ca6b4d79-dfc3-5fe3-8169-2769bf2f0953
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:ca6b4d79-dfc3-5fe3-8169-2769bf2f0953
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1329960
+    normalized_label: human placenta hydrolysate
+    original_id: RXCUI:1329960
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1329960
+  normalized_label: human placenta hydrolysate
   original_literal: Гидролизат плаценты человека
   original_name_ru: Гидролизат плаценты человека
   source: RUSSIA
@@ -109950,7 +110134,7 @@
     components:
     - CHEBI:749677
     - CHEBI:17015
-    - CHEBI:748116
+    - RXCUI:6417
     confidence: 0.9
     grounded_id: CHEBI:749677
     grounded_label: cocarboxylase
@@ -120207,18 +120391,27 @@
   - Р N001192/01
   approval_date: '20080718'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:314517
+    - CHEBI:32139
+    confidence: 0.9
+    grounded_id: RXCUI:314517
+    grounded_label: belladonna leaf extract
+    grounding_quality: lexical_exact_surgery
     original_string: Belladonna Leaf Extract + Sodium Bicarbonate
     subject_id: MEDICNE:73b3eebd-3be2-55e9-84e7-d5c7b9ad6a9b
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:73b3eebd-3be2-55e9-84e7-d5c7b9ad6a9b
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:314517
+    normalized_label: belladonna leaf extract
+    original_id: RXCUI:314517
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:314517
+  normalized_label: belladonna leaf extract
   original_literal: Белладонны листьев экстракт+Натрия гидрокарбонат
   original_name_ru: Белладонны листьев экстракт+Натрия гидрокарбонат
   source: RUSSIA
@@ -125064,18 +125257,24 @@
   - ЛСР-003339/09
   approval_date: '20090430'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.6
+    grounded_id: RXCUI:2049928
+    grounded_label: selank
+    grounding_quality: lexical_exact_surgery
     original_string: Selank®
     subject_id: MEDICNE:9fd03bc2-522d-5305-8d60-e189c8c6876d
-  grounding_confidence: 0.0
+  grounding_confidence: 0.6
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:9fd03bc2-522d-5305-8d60-e189c8c6876d
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:2049928
+    normalized_label: selank
+    original_id: RXCUI:2049928
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:2049928
+  normalized_label: selank
   original_literal: Селанк®
   original_name_ru: Селанк®
   source: RUSSIA
@@ -125207,18 +125406,24 @@
   - ЛСР-005823/09
   approval_date: '20090717'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 1.0
+    grounded_id: RXCUI:2697461
+    grounded_label: Salvia officinalis leaf extract
+    grounding_quality: lexical_exact
     original_string: Salvia officinalis leaf extract
     subject_id: MEDICNE:afa6f14f-1c37-568b-b1b0-f310e31c6b9e
-  grounding_confidence: 0.0
+  grounding_confidence: 1.0
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:afa6f14f-1c37-568b-b1b0-f310e31c6b9e
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:2697461
+    normalized_label: Salvia officinalis leaf extract
+    original_id: RXCUI:2697461
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:2697461
+  normalized_label: Salvia officinalis leaf extract
   original_literal: Шалфея лекарственного листьев экстракт
   original_name_ru: Шалфея лекарственного листьев экстракт
   source: RUSSIA
@@ -125914,25 +126119,25 @@
   grounding:
     components:
     - DRON:00018213
-    - CHEBI:9574
-    confidence: 0.9
-    grounded_id: DRON:00018213
-    grounded_label: fibrinogen
+    - RXCUI:10528
+    confidence: 1.0
+    grounded_id: RXCUI:10528
+    grounded_label: thrombin
     grounding_quality: lexical_exact_surgery
     original_string: Fibrinogen + thrombin
     subject_id: MEDICNE:fdc664e0-0cc5-5781-8972-78a8df9018e3
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:fdc664e0-0cc5-5781-8972-78a8df9018e3
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00018213
-    normalized_label: fibrinogen
-    original_id: DRON:00018213
+    normalized_id: RXCUI:10528
+    normalized_label: thrombin
+    original_id: RXCUI:10528
     tool: medic-normalizer/1
-  normalized_id: DRON:00018213
-  normalized_label: fibrinogen
+  normalized_id: RXCUI:10528
+  normalized_label: thrombin
   original_literal: Фибриноген+тромбин
   original_name_ru: Фибриноген+тромбин
   source: RUSSIA
@@ -127021,25 +127226,25 @@
     components:
     - CHEBI:754975
     - CHEBI:63577
-    - CHEBI:45809
-    confidence: 0.85
-    grounded_id: CHEBI:754975
-    grounded_label: doravirine
+    - RXCUI:117466
+    confidence: 0.9
+    grounded_id: RXCUI:117466
+    grounded_label: tenofovir
     grounding_quality: lexical_exact_surgery
     original_string: Doravirine + Lamivudine + Tenofovir
     subject_id: MEDICNE:5c5a66f7-0b54-57a8-a728-714f2d27009a
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:5c5a66f7-0b54-57a8-a728-714f2d27009a
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:754975
-    normalized_label: doravirine
-    original_id: CHEBI:754975
+    normalized_id: RXCUI:117466
+    normalized_label: tenofovir
+    original_id: RXCUI:117466
     tool: medic-normalizer/1
-  normalized_id: CHEBI:754975
-  normalized_label: doravirine
+  normalized_id: RXCUI:117466
+  normalized_label: tenofovir
   original_literal: Доравирин+Ламивудин+Тенофовир
   original_name_ru: Доравирин+Ламивудин+Тенофовир
   source: RUSSIA
@@ -127404,27 +127609,27 @@
   approval_date: '20160719'
   grounding:
     components:
-    - CHEBI:45809
+    - RXCUI:117466
     - CHEBI:31536
     - CHEBI:119486
-    confidence: 0.85
-    grounded_id: CHEBI:31536
-    grounded_label: emtricitabine
+    confidence: 0.9
+    grounded_id: RXCUI:117466
+    grounded_label: tenofovir
     grounding_quality: lexical_exact_surgery
     original_string: Tenofovir + Emtricitabine + Efavirenz
     subject_id: MEDICNE:fd4581ae-8353-5a59-a035-c5b7642755a9
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:fd4581ae-8353-5a59-a035-c5b7642755a9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31536
-    normalized_label: emtricitabine
-    original_id: CHEBI:31536
+    normalized_id: RXCUI:117466
+    normalized_label: tenofovir
+    original_id: RXCUI:117466
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31536
-  normalized_label: emtricitabine
+  normalized_id: RXCUI:117466
+  normalized_label: tenofovir
   original_literal: Тенофовир+Эмтрицитабин+Эфавиренз
   original_name_ru: Тенофовир+Эмтрицитабин+Эфавиренз
   source: RUSSIA
@@ -128580,18 +128785,28 @@
   - ЛП-№(011577)-(РГ-RU)
   approval_date: '20200317'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:6456
+    - RXCUI:1426865
+    - CHEBI:32915
+    confidence: 0.9
+    grounded_id: RXCUI:1426865
+    grounded_label: lysozyme
+    grounding_quality: lexical_exact_surgery
     original_string: Lidocaine + Lysozyme + Cetylpyridinium Chloride
     subject_id: MEDICNE:a980912d-a3f4-5878-bede-7d2a657aa2da
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:a980912d-a3f4-5878-bede-7d2a657aa2da
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1426865
+    normalized_label: lysozyme
+    original_id: RXCUI:1426865
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1426865
+  normalized_label: lysozyme
   original_literal: Лидокаин+Лизоцим+Цетилпиридиния хлорид
   original_name_ru: Лидокаин+Лизоцим+Цетилпиридиния хлорид
   source: RUSSIA
@@ -128836,19 +129051,30 @@
   - Р N000600/01
   approval_date: '20070730'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32588
+    - RXCUI:6579
+    - CHEBI:26710
+    - CHEBI:115156
+    confidence: 0.9
+    grounded_id: CHEBI:32588
+    grounded_label: potassium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: Potassium chloride + Magnesium chloride + Sodium chloride + Sodium
       fumarate
     subject_id: MEDICNE:f7401bb2-0aef-5dbb-8fb7-dec6b31528f6
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:f7401bb2-0aef-5dbb-8fb7-dec6b31528f6
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:32588
+    normalized_label: potassium chloride
+    original_id: CHEBI:32588
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:32588
+  normalized_label: potassium chloride
   original_literal: Калия хлорид+Магния хлорид+Натрия хлорид+Натрия фумарат
   original_name_ru: Калия хлорид+Магния хлорид+Натрия хлорид+Натрия фумарат
   source: RUSSIA
@@ -132535,24 +132761,24 @@
   application_number: ЛП-№(012526)-(РГ-RU)
   approval_date: '20251120'
   grounding:
-    confidence: 0.8
-    grounded_id: DRON:00017209
-    grounded_label: Hepatitis B Vaccine
+    confidence: 0.765
+    grounded_id: CHEBI:757403
+    grounded_label: hepatitis b virus hbsag surface protein antigen
     grounding_quality: lexical_exact_surgery
     original_string: Hepatitis B Vaccine (recombinant DNA, adsorbed)
     subject_id: MEDICNE:4f4b4178-1f59-5926-921d-2d42b3399315
-  grounding_confidence: 0.8
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:4f4b4178-1f59-5926-921d-2d42b3399315
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00017209
-    normalized_label: Hepatitis B Vaccine
-    original_id: DRON:00017209
+    normalized_id: CHEBI:757403
+    normalized_label: hepatitis b virus hbsag surface protein antigen
+    original_id: CHEBI:757403
     tool: medic-normalizer/1
-  normalized_id: DRON:00017209
-  normalized_label: Hepatitis B Vaccine
+  normalized_id: CHEBI:757403
+  normalized_label: hepatitis b virus hbsag surface protein antigen
   original_literal: Вакцина для профилактики гепатита B (рДНК, адсорбированная)
   original_name_ru: Вакцина для профилактики гепатита B (рДНК, адсорбированная)
   source: RUSSIA
@@ -132825,18 +133051,27 @@
   - ЛП-№(012645)-(РГ-RU)
   approval_date: '20230801'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:134722
+    - RXCUI:11416
+    confidence: 0.9
+    grounded_id: RXCUI:11416
+    grounded_label: zinc
+    grounding_quality: lexical_exact_surgery
     original_string: Favilavir+Zinc
     subject_id: MEDICNE:3ead9fae-f582-5dc6-999f-3134fee8f5b1
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:3ead9fae-f582-5dc6-999f-3134fee8f5b1
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:11416
+    normalized_label: zinc
+    original_id: RXCUI:11416
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:11416
+  normalized_label: zinc
   original_literal: Фавипиравир+Цинк
   original_name_ru: Фавипиравир+Цинк
   source: RUSSIA
@@ -138275,18 +138510,27 @@
   - Р N000759/01
   approval_date: '20080623'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:314517
+    - CHEBI:34918
+    confidence: 0.9
+    grounded_id: RXCUI:314517
+    grounded_label: belladonna leaf extract
+    grounding_quality: lexical_exact_surgery
     original_string: Belladonna Leaf Extract + Phenylsalicylate
     subject_id: MEDICNE:72a91da1-7fc5-5eaf-9ea8-f99db4b290de
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:72a91da1-7fc5-5eaf-9ea8-f99db4b290de
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:314517
+    normalized_label: belladonna leaf extract
+    original_id: RXCUI:314517
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:314517
+  normalized_label: belladonna leaf extract
   original_literal: Белладонны листьев экстракт+Фенилсалицилат
   original_name_ru: Белладонны листьев экстракт+Фенилсалицилат
   source: RUSSIA
@@ -142505,18 +142749,27 @@
   application_number: ЛСР-001053/08
   approval_date: '20080226'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:1422928
+    - CHEBI:22652
+    confidence: 0.9
+    grounded_id: RXCUI:1422928
+    grounded_label: Aloe arborescens leaf extract
+    grounding_quality: lexical_exact_surgery
     original_string: Aloe arborescens Leaf Extract + Ascorbic Acid
     subject_id: MEDICNE:2edaa8cb-9976-5d71-bf2e-678dacd07f3e
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:2edaa8cb-9976-5d71-bf2e-678dacd07f3e
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1422928
+    normalized_label: Aloe arborescens leaf extract
+    original_id: RXCUI:1422928
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1422928
+  normalized_label: Aloe arborescens leaf extract
   original_literal: Алоэ древовидного листьев экстракт+Аскорбиновая кислота
   original_name_ru: Алоэ древовидного листьев экстракт+Аскорбиновая кислота
   source: RUSSIA
@@ -143357,18 +143610,24 @@
   - ЛСР-005922/08
   approval_date: '20070807'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:26143
+    grounded_label: glycyrrhizic acid
+    grounding_quality: lexical_exact_normalized
     original_string: Glycyrrhizic acid
     subject_id: MEDICNE:e64ecd17-abd5-58ca-a886-33b6239a4c73
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:e64ecd17-abd5-58ca-a886-33b6239a4c73
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:26143
+    normalized_label: glycyrrhizic acid
+    original_id: RXCUI:26143
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:26143
+  normalized_label: glycyrrhizic acid
   original_literal: Глицирризиновая кислота
   original_name_ru: Глицирризиновая кислота
   source: RUSSIA
@@ -149051,26 +149310,26 @@
   grounding:
     components:
     - CHEBI:754695
-    - DRON:00016359
+    - CHEBI:753434
     - CHEBI:755197
-    confidence: 1.0
-    grounded_id: DRON:00016359
-    grounded_label: Ginkgo biloba leaf extract
+    confidence: 0.9
+    grounded_id: CHEBI:755197
+    grounded_label: troxerutin
     grounding_quality: lexical_exact_surgery
     original_string: Heptaminol + Ginkgo biloba leaf extract + Troxerutin
     subject_id: MEDICNE:6112a662-61a4-5dee-b052-8d063c286e91
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:6112a662-61a4-5dee-b052-8d063c286e91
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00016359
-    normalized_label: Ginkgo biloba leaf extract
-    original_id: DRON:00016359
+    normalized_id: CHEBI:755197
+    normalized_label: troxerutin
+    original_id: CHEBI:755197
     tool: medic-normalizer/1
-  normalized_id: DRON:00016359
-  normalized_label: Ginkgo biloba leaf extract
+  normalized_id: CHEBI:755197
+  normalized_label: troxerutin
   original_literal: Гептаминол+Гинкго двулопастного листьев экстракт+Троксерутин
   original_name_ru: Гептаминол+Гинкго двулопастного листьев экстракт+Троксерутин
   source: RUSSIA
@@ -150888,18 +151147,27 @@
   - П N015041/03
   approval_date: '20081010'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:90176
+    - CHEBI:17822
+    confidence: 0.95
+    grounded_id: CHEBI:17822
+    grounded_label: serine
+    grounding_quality: lexical_exact_surgery
     original_string: Iron Sulfate + Serine
     subject_id: MEDICNE:dd2e4786-f285-5e95-a087-df602857fbf5
-  grounding_confidence: 0.0
+  grounding_confidence: 0.95
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:dd2e4786-f285-5e95-a087-df602857fbf5
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:17822
+    normalized_label: serine
+    original_id: CHEBI:17822
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:17822
+  normalized_label: serine
   original_literal: Железа сульфат+Серин
   original_name_ru: Железа сульфат+Серин
   source: RUSSIA
@@ -152142,19 +152410,31 @@
   application_number: Р N000077/01
   approval_date: '20120127'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32588
+    - CHEBI:86158
+    - RXCUI:6579
+    - CHEBI:75228
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:32588
+    grounded_label: potassium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: Potassium chloride + Calcium chloride + Magnesium chloride +
       Sodium lactate + Sodium chloride
     subject_id: MEDICNE:c531e036-f00a-5054-81dd-b6f585230d6a
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:c531e036-f00a-5054-81dd-b6f585230d6a
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:32588
+    normalized_label: potassium chloride
+    original_id: CHEBI:32588
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:32588
+  normalized_label: potassium chloride
   original_literal: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия лактат+Натрия
     хлорид
   original_name_ru: Калия хлорид+Кальция хлорид+Магния хлорид+Натрия лактат+Натрия
@@ -159109,18 +159389,27 @@
   application_number: Р N003145/01
   approval_date: '20091125'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:314517
+    - CHEBI:753936
+    confidence: 0.9
+    grounded_id: RXCUI:314517
+    grounded_label: belladonna leaf extract
+    grounding_quality: lexical_exact_surgery
     original_string: Belladonna Leaf Extract + Ichthammol
     subject_id: MEDICNE:f646a5cc-63b5-5953-bb0f-ba02ccfacf51
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:f646a5cc-63b5-5953-bb0f-ba02ccfacf51
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:314517
+    normalized_label: belladonna leaf extract
+    original_id: RXCUI:314517
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:314517
+  normalized_label: belladonna leaf extract
   original_literal: Белладонны листьев экстракт+Ихтаммол
   original_name_ru: Белладонны листьев экстракт+Ихтаммол
   source: RUSSIA
@@ -164348,18 +164637,24 @@
   application_number: ФС-001141
   approval_date: '20150713'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:485853
+    grounded_label: Senna leaf extract
+    grounding_quality: lexical_exact_surgery
     original_string: Senna Leaf Extract (Calcium Salts of Sennosides A and B)
     subject_id: MEDICNE:fa191b30-5dbe-5596-977d-3b57411b2b22
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:fa191b30-5dbe-5596-977d-3b57411b2b22
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:485853
+    normalized_label: Senna leaf extract
+    original_id: RXCUI:485853
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:485853
+  normalized_label: Senna leaf extract
   original_literal: Сенны листьев экстракт (Сеннозидов А и В кальциевые соли)
   original_name_ru: Сенны листьев экстракт (Сеннозидов А и В кальциевые соли)
   source: RUSSIA
@@ -164634,18 +164929,24 @@
   application_number: ФС-001289
   approval_date: '20151202'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:6579
+    grounded_label: magnesium chloride
+    grounding_quality: lexical_exact_normalized
     original_string: Magnesium chloride
     subject_id: MEDICNE:c45fa55e-6578-54d6-9a03-a450d5bfbd39
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:c45fa55e-6578-54d6-9a03-a450d5bfbd39
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:6579
+    normalized_label: magnesium chloride
+    original_id: RXCUI:6579
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:6579
+  normalized_label: magnesium chloride
   original_literal: Магния хлорид
   original_name_ru: Магния хлорид
   source: RUSSIA
@@ -165702,18 +166003,24 @@
   application_number: ФС-001821
   approval_date: '20181108'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:1426865
+    grounded_label: lysozyme
+    grounding_quality: lexical_exact_normalized
     original_string: Lysozyme
     subject_id: MEDICNE:eaffb5af-428d-5f7a-bf56-952cbd206124
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:eaffb5af-428d-5f7a-bf56-952cbd206124
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1426865
+    normalized_label: lysozyme
+    original_id: RXCUI:1426865
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1426865
+  normalized_label: lysozyme
   original_literal: Лизоцим
   original_name_ru: Лизоцим
   source: RUSSIA
@@ -172576,24 +172883,24 @@
   application_number: ЛП-001040
   approval_date: '20111021'
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:9142
-    grounded_label: silver(1+) sulfadiazinate
+    confidence: 1.0
+    grounded_id: RXCUI:9793
+    grounded_label: silver sulfadiazine
     grounding_quality: lexical_exact
     original_string: silver sulfadiazine
     subject_id: MEDICNE:8031f003-dd2f-5f28-a4c3-6eeb51d6d0b0
-  grounding_confidence: 0.765
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:8031f003-dd2f-5f28-a4c3-6eeb51d6d0b0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9142
-    normalized_label: silver(1+) sulfadiazinate
-    original_id: CHEBI:9142
+    normalized_id: RXCUI:9793
+    normalized_label: silver sulfadiazine
+    original_id: RXCUI:9793
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9142
-  normalized_label: silver(1+) sulfadiazinate
+  normalized_id: RXCUI:9793
+  normalized_label: silver sulfadiazine
   original_literal: сульфадиазин серебра
   original_name_ru: сульфадиазин серебра
   source: RUSSIA
@@ -175828,24 +176135,24 @@
   application_number: ЛП-001607
   approval_date: '20120323'
   grounding:
-    confidence: 1.0
-    grounded_id: DRON:00730845
-    grounded_label: C1 esterase inhibitor
+    confidence: 0.85
+    grounded_id: CHEBI:753329
+    grounded_label: conestat alfa
     grounding_quality: lexical_exact
     original_string: C1 esterase inhibitor
     subject_id: MEDICNE:d87d7043-8709-5e83-a5eb-8e44dea641fb
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:d87d7043-8709-5e83-a5eb-8e44dea641fb
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00730845
-    normalized_label: C1 esterase inhibitor
-    original_id: DRON:00730845
+    normalized_id: CHEBI:753329
+    normalized_label: conestat alfa
+    original_id: CHEBI:753329
     tool: medic-normalizer/1
-  normalized_id: DRON:00730845
-  normalized_label: C1 esterase inhibitor
+  normalized_id: CHEBI:753329
+  normalized_label: conestat alfa
   original_literal: С1-эстеразы ингибитор
   original_name_ru: С1-эстеразы ингибитор
   source: RUSSIA
@@ -180372,12 +180679,12 @@
   approval_date: '20180625'
   grounding:
     components:
-    - CHEBI:45809
+    - RXCUI:117466
     - CHEBI:31536
     - CHEBI:119486
     confidence: 0.9
-    grounded_id: CHEBI:119486
-    grounded_label: efavirenz
+    grounded_id: RXCUI:117466
+    grounded_label: tenofovir
     grounding_quality: lexical_exact_surgery
     original_string: Tenofovir + Emtricitabine + Efavirenz [combination]
     subject_id: MEDICNE:7be7baed-441f-5d57-94a3-9e16e6aca084
@@ -180387,12 +180694,12 @@
   mention_id: MEDICNE:7be7baed-441f-5d57-94a3-9e16e6aca084
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:119486
-    normalized_label: efavirenz
-    original_id: CHEBI:119486
+    normalized_id: RXCUI:117466
+    normalized_label: tenofovir
+    original_id: RXCUI:117466
     tool: medic-normalizer/1
-  normalized_id: CHEBI:119486
-  normalized_label: efavirenz
+  normalized_id: RXCUI:117466
+  normalized_label: tenofovir
   original_literal: Тенофовир+Эмтрицитабин+Эфавиренз [набор]
   original_name_ru: Тенофовир+Эмтрицитабин+Эфавиренз [набор]
   source: RUSSIA
@@ -181161,24 +181468,24 @@
   application_number: ЛП-006862
   approval_date: '20210319'
   grounding:
-    confidence: 1.0
-    grounded_id: DRON:00831738
-    grounded_label: duvelisib
+    confidence: 0.85
+    grounded_id: CHEBI:131169
+    grounded_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
     grounding_quality: lexical_exact
     original_string: duvelisib
     subject_id: MEDICNE:3f7dd3a2-f885-52d2-ba50-d9ee05da9e05
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:3f7dd3a2-f885-52d2-ba50-d9ee05da9e05
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00831738
-    normalized_label: duvelisib
-    original_id: DRON:00831738
+    normalized_id: CHEBI:131169
+    normalized_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
+    original_id: CHEBI:131169
     tool: medic-normalizer/1
-  normalized_id: DRON:00831738
-  normalized_label: duvelisib
+  normalized_id: CHEBI:131169
+  normalized_label: 8-chloro-2-phenyl-3-[(1S)-1-(7H-purin-6-ylamino)ethyl]-1-isoquinolinone
   original_literal: Дувелисиб
   original_name_ru: Дувелисиб
   source: RUSSIA
@@ -183005,24 +183312,24 @@
   application_number: ЛП-№(004433)-(РГ-RU)
   approval_date: '20240126'
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:7452
-    grounded_label: Naftifine hydrochloride
+    confidence: 1.0
+    grounded_id: RXCUI:91293
+    grounded_label: naftifine hydrochloride
     grounding_quality: lexical_exact
     original_string: naftifine hydrochloride
     subject_id: MEDICNE:19a4e91b-75ce-5493-bf42-eddbd5866b64
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:19a4e91b-75ce-5493-bf42-eddbd5866b64
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:7452
-    normalized_label: Naftifine hydrochloride
-    original_id: CHEBI:7452
+    normalized_id: RXCUI:91293
+    normalized_label: naftifine hydrochloride
+    original_id: RXCUI:91293
     tool: medic-normalizer/1
-  normalized_id: CHEBI:7452
-  normalized_label: Naftifine hydrochloride
+  normalized_id: RXCUI:91293
+  normalized_label: naftifine hydrochloride
   original_literal: нафтифина гидрохлорид
   original_name_ru: нафтифина гидрохлорид
   source: RUSSIA
@@ -184401,18 +184708,24 @@
   - Р N002531/01-2003
   approval_date: '20081009'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:1297880
+    grounded_label: camphor oil
+    grounding_quality: lexical_exact_normalized
     original_string: Camphor Oil
     subject_id: MEDICNE:adb39d4c-a353-5071-beb5-9fa5fa99c626
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:adb39d4c-a353-5071-beb5-9fa5fa99c626
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:1297880
+    normalized_label: camphor oil
+    original_id: RXCUI:1297880
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:1297880
+  normalized_label: camphor oil
   original_literal: Камфорное масло
   original_name_ru: Камфорное масло
   source: RUSSIA
@@ -184434,18 +184747,24 @@
   - ЛСР-002193/08
   approval_date: '20080328'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.8
+    grounded_id: RXCUI:11416
+    grounded_label: zinc
+    grounding_quality: lexical_exact_surgery
     original_string: Zinc Ointment
     subject_id: MEDICNE:7082acc2-a6e9-5a0a-8260-076d64fab022
-  grounding_confidence: 0.0
+  grounding_confidence: 0.8
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:7082acc2-a6e9-5a0a-8260-076d64fab022
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:11416
+    normalized_label: zinc
+    original_id: RXCUI:11416
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:11416
+  normalized_label: zinc
   original_literal: Цинковая мазь
   original_name_ru: Цинковая мазь
   source: RUSSIA
@@ -194410,24 +194729,24 @@
   application_number: ЛС-002671
   approval_date: '20111226'
   grounding:
-    confidence: 1.0
-    grounded_id: DRON:00014060
-    grounded_label: Rauwolfia alkaloids
+    confidence: 0.85
+    grounded_id: CHEBI:755639
+    grounded_label: rauwolfia serpentina
     grounding_quality: lexical_exact
     original_string: Rauwolfia alkaloids
     subject_id: MEDICNE:df0143e7-f7ef-5835-96db-2fd3458de91b
-  grounding_confidence: 1.0
+  grounding_confidence: 0.85
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:df0143e7-f7ef-5835-96db-2fd3458de91b
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00014060
-    normalized_label: Rauwolfia alkaloids
-    original_id: DRON:00014060
+    normalized_id: CHEBI:755639
+    normalized_label: rauwolfia serpentina
+    original_id: CHEBI:755639
     tool: medic-normalizer/1
-  normalized_id: DRON:00014060
-  normalized_label: Rauwolfia alkaloids
+  normalized_id: CHEBI:755639
+  normalized_label: rauwolfia serpentina
   original_literal: Раувольфии алкалоиды
   original_name_ru: Раувольфии алкалоиды
   source: RUSSIA
@@ -199916,18 +200235,24 @@
   application_number: ЛСР-004880/09
   approval_date: '20090619'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.6
+    grounded_id: RXCUI:259404
+    grounded_label: barberry extract
+    grounding_quality: lexical_exact_surgery
     original_string: Bearberry extract
     subject_id: MEDICNE:66428621-e68e-5e5d-b336-a6a5332a6779
-  grounding_confidence: 0.0
+  grounding_confidence: 0.6
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:66428621-e68e-5e5d-b336-a6a5332a6779
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:259404
+    normalized_label: barberry extract
+    original_id: RXCUI:259404
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:259404
+  normalized_label: barberry extract
   original_literal: Толокнянки экстракт
   original_name_ru: Толокнянки экстракт
   source: RUSSIA
@@ -202965,18 +203290,27 @@
   - Р N002528/02
   approval_date: '20070712'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:16247
+    - RXCUI:26143
+    confidence: 0.9
+    grounded_id: RXCUI:26143
+    grounded_label: glycyrrhizic acid
+    grounding_quality: lexical_exact_surgery
     original_string: Phospholipids + Glycyrrhizic Acid
     subject_id: MEDICNE:53005c64-2a38-5a7e-a3b8-e85d831561a6
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:53005c64-2a38-5a7e-a3b8-e85d831561a6
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:26143
+    normalized_label: glycyrrhizic acid
+    original_id: RXCUI:26143
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:26143
+  normalized_label: glycyrrhizic acid
   original_literal: Фосфолипиды+Глицирризиновая кислота
   original_name_ru: Фосфолипиды+Глицирризиновая кислота
   source: RUSSIA
@@ -208126,12 +208460,12 @@
   approval_date: '20100827'
   grounding:
     components:
-    - DRON:00016359
+    - CHEBI:753434
     - CHEBI:754695
     - CHEBI:755197
     confidence: 1.0
-    grounded_id: DRON:00016359
-    grounded_label: Ginkgo biloba leaf extract
+    grounded_id: CHEBI:754695
+    grounded_label: heptaminol
     grounding_quality: lexical_exact_surgery
     original_string: Ginkgo biloba leaf extract + heptaminol + troxerutin
     subject_id: MEDICNE:e2dd8522-e9a5-5153-be37-51e5fede1c81
@@ -208141,12 +208475,12 @@
   mention_id: MEDICNE:e2dd8522-e9a5-5153-be37-51e5fede1c81
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00016359
-    normalized_label: Ginkgo biloba leaf extract
-    original_id: DRON:00016359
+    normalized_id: CHEBI:754695
+    normalized_label: heptaminol
+    original_id: CHEBI:754695
     tool: medic-normalizer/1
-  normalized_id: DRON:00016359
-  normalized_label: Ginkgo biloba leaf extract
+  normalized_id: CHEBI:754695
+  normalized_label: heptaminol
   original_literal: Гинкго двулопастного листьев экстракт+гептаминол+троксерутин
   original_name_ru: Гинкго двулопастного листьев экстракт+гептаминол+троксерутин
   source: RUSSIA
@@ -210075,18 +210409,28 @@
   application_number: П N012666/01
   approval_date: '20060811'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:90176
+    - CHEBI:27470
+    - CHEBI:754405
+    confidence: 0.9
+    grounded_id: RXCUI:90176
+    grounded_label: iron
+    grounding_quality: lexical_exact_surgery
     original_string: Iron Sulfate + Folic Acid + Cyanocobalamin
     subject_id: MEDICNE:af61d09b-7972-5f95-8e31-c48b3037e18a
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:af61d09b-7972-5f95-8e31-c48b3037e18a
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:90176
+    normalized_label: iron
+    original_id: RXCUI:90176
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:90176
+  normalized_label: iron
   original_literal: Железа сульфат+Фолиевая кислота+Цианокобаламин
   original_name_ru: Железа сульфат+Фолиевая кислота+Цианокобаламин
   source: RUSSIA
@@ -210924,24 +211268,24 @@
   application_number: П N012966/01
   approval_date: '20120110'
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:755773
-    grounded_label: magnesium orotate
-    grounding_quality: lexical_exact_surgery
+    confidence: 1.0
+    grounded_id: RXCUI:1926471
+    grounded_label: magnesium orotate dihydrate
+    grounding_quality: lexical_exact
     original_string: magnesium orotate dihydrate
     subject_id: MEDICNE:5fa375e0-76cf-55cf-a58d-2efe43f6c6bd
-  grounding_confidence: 0.9
+  grounding_confidence: 1.0
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:5fa375e0-76cf-55cf-a58d-2efe43f6c6bd
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:755773
-    normalized_label: magnesium orotate
-    original_id: CHEBI:755773
+    normalized_id: RXCUI:1926471
+    normalized_label: magnesium orotate dihydrate
+    original_id: RXCUI:1926471
     tool: medic-normalizer/1
-  normalized_id: CHEBI:755773
-  normalized_label: magnesium orotate
+  normalized_id: RXCUI:1926471
+  normalized_label: magnesium orotate dihydrate
   original_literal: магния оротата дигидрат
   original_name_ru: магния оротата дигидрат
   source: RUSSIA
@@ -215824,24 +216168,24 @@
   application_number: П N014540/01-2002
   approval_date: '20090209'
   grounding:
-    confidence: 0.9
-    grounded_id: DRON:00018589
-    grounded_label: drotrecogin alfa
+    confidence: 0.765
+    grounded_id: CHEBI:753962
+    grounded_label: drotrecogin alfa (activated)
     grounding_quality: lexical_exact_normalized
     original_string: Drotrecogin alfa [activated]
     subject_id: MEDICNE:1fb8dce3-cea6-5f78-b953-4121031fb4f3
-  grounding_confidence: 0.9
+  grounding_confidence: 0.765
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:1fb8dce3-cea6-5f78-b953-4121031fb4f3
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00018589
-    normalized_label: drotrecogin alfa
-    original_id: DRON:00018589
+    normalized_id: CHEBI:753962
+    normalized_label: drotrecogin alfa (activated)
+    original_id: CHEBI:753962
     tool: medic-normalizer/1
-  normalized_id: DRON:00018589
-  normalized_label: drotrecogin alfa
+  normalized_id: CHEBI:753962
+  normalized_label: drotrecogin alfa (activated)
   original_literal: Дротрекогин альфа [активированный]
   original_name_ru: Дротрекогин альфа [активированный]
   source: RUSSIA
@@ -216333,18 +216677,24 @@
   application_number: П N014662/01
   approval_date: '20080721'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:90176
+    grounded_label: iron
+    grounding_quality: lexical_exact_surgery
     original_string: Iron chloride
     subject_id: MEDICNE:372895a3-c364-5d77-81d7-337293d6ad4d
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:372895a3-c364-5d77-81d7-337293d6ad4d
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:90176
+    normalized_label: iron
+    original_id: RXCUI:90176
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:90176
+  normalized_label: iron
   original_literal: Железа хлорид
   original_name_ru: Железа хлорид
   source: RUSSIA
@@ -216832,18 +217182,28 @@
   application_number: П N014776/01
   approval_date: '20081208'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - RXCUI:90176
+    - CHEBI:17822
+    - CHEBI:27470
+    confidence: 0.95
+    grounded_id: CHEBI:17822
+    grounded_label: serine
+    grounding_quality: lexical_exact_surgery
     original_string: Iron Sulfate + Serine + Folic Acid
     subject_id: MEDICNE:26514f43-5e91-5d97-b3f6-3865aec1555e
-  grounding_confidence: 0.0
+  grounding_confidence: 0.95
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:26514f43-5e91-5d97-b3f6-3865aec1555e
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:17822
+    normalized_label: serine
+    original_id: CHEBI:17822
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:17822
+  normalized_label: serine
   original_literal: Железа сульфат+Серин+Фолиевая кислота
   original_name_ru: Железа сульфат+Серин+Фолиевая кислота
   source: RUSSIA
@@ -219746,8 +220106,8 @@
   approval_date: '20090716'
   grounding:
     confidence: 0.88
-    grounded_id: DRON:00016266
-    grounded_label: fusafungin
+    grounded_id: CHEBI:754077
+    grounded_label: fusafungine
     grounding_quality: lexical_exact_surgery
     original_string: Fuzafungin
     subject_id: MEDICNE:c920c990-6195-50b0-9f3b-57ba80a910e7
@@ -219757,12 +220117,12 @@
   mention_id: MEDICNE:c920c990-6195-50b0-9f3b-57ba80a910e7
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00016266
-    normalized_label: fusafungin
-    original_id: DRON:00016266
+    normalized_id: CHEBI:754077
+    normalized_label: fusafungine
+    original_id: CHEBI:754077
     tool: medic-normalizer/1
-  normalized_id: DRON:00016266
-  normalized_label: fusafungin
+  normalized_id: CHEBI:754077
+  normalized_label: fusafungine
   original_literal: Фузафунгин
   original_name_ru: Фузафунгин
   source: RUSSIA
@@ -223957,19 +224317,30 @@
   application_number: Р N000600/01
   approval_date: '20070730'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    components:
+    - CHEBI:32588
+    - RXCUI:6579
+    - CHEBI:115156
+    - CHEBI:26710
+    confidence: 0.9
+    grounded_id: CHEBI:32588
+    grounded_label: potassium chloride
+    grounding_quality: lexical_exact_surgery
     original_string: Potassium chloride + Magnesium chloride + Sodium fumarate + Sodium
       chloride
     subject_id: MEDICNE:a800e0dd-de59-5a11-acc5-e79c0394fb09
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:a800e0dd-de59-5a11-acc5-e79c0394fb09
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: CHEBI:32588
+    normalized_label: potassium chloride
+    original_id: CHEBI:32588
+    tool: medic-normalizer/1
+  normalized_id: CHEBI:32588
+  normalized_label: potassium chloride
   original_literal: Калия хлорид+Магния хлорид+Натрия фумарат+Натрия хлорид
   original_name_ru: Калия хлорид+Магния хлорид+Натрия фумарат+Натрия хлорид
   source: RUSSIA
@@ -233936,18 +234307,24 @@
   application_number: ФС-000293
   approval_date: '20111221'
   grounding:
-    confidence: 0.0
-    grounded_id: null
-    grounded_label: null
-    grounding_quality: unresolved
+    confidence: 0.9
+    grounded_id: RXCUI:6574
+    grounded_label: magnesium
+    grounding_quality: lexical_exact_surgery
     original_string: Magnesium lactate dihydrate
     subject_id: MEDICNE:dbb20284-8adf-5aaf-b9dc-f6c8c5c30388
-  grounding_confidence: 0.0
+  grounding_confidence: 0.9
   grounding_service: lexical
-  grounding_status: unresolved
+  grounding_status: accepted
   mention_id: MEDICNE:dbb20284-8adf-5aaf-b9dc-f6c8c5c30388
-  normalized_id: ''
-  normalized_label: ''
+  normalization:
+    normalization_quality: identity
+    normalized_id: RXCUI:6574
+    normalized_label: magnesium
+    original_id: RXCUI:6574
+    tool: medic-normalizer/1
+  normalized_id: RXCUI:6574
+  normalized_label: magnesium
   original_literal: Магния лактата дигидрат
   original_name_ru: Магния лактата дигидрат
   source: RUSSIA
