@@ -198,3 +198,84 @@ the question of whether identifiers were the problem. They were not.
 - `just determinism` widening; the #100 residue measurement.
 - Phase 5 (#91's verification gate) is designed, not built:
   `specs/2026-10-18-assertion-verification-design.md`.
+
+---
+
+## Lever 2 implemented (2026-10-19) — `749dc06`
+
+### The precise v1 comparison, at last
+
+v1.0.0's release assets carry only drug lists, which is why every earlier comparison stopped
+at the drug level. Its **grounded** pair lists are on `main`:
+`medi/indications/data/08_reporting/indications_medi_coverage/matrix_indication_list.xlsx`
+(11,071 pairs) and `matrix_contraindication_list.xlsx` (3,981), each with a final normalized
+drug id and disease id.
+
+| | indications | contraindications |
+|---|---:|---:|
+| v1 | 11,071 | 3,981 |
+| now | 21,553 | 4,433 |
+| exact | 2,877 | 786 |
+| re-qualified (same pair, different id) | 977 | 179 |
+| **v1 only** | **7,217** | **3,016** |
+| new only | 13,213 | 3,266 |
+
+Weighted by ground truth, against the audit's v1-era sample: **89.6% of v1's audited errors
+are gone** (69/77) and **52.7% of its audited-correct pairs are retained** (117/222).
+
+**A correction I owe the record.** I had been quoting 80.1% correct-edge retention. That is
+retention of pairs sampled from the project's *own* later build (medic2 @47dd0b7) — the
+rebuild measured against itself, not against v1. The v1 figure is 52.7%. The two are not
+interchangeable and I reported the flattering one in a Pareto context.
+
+### Why the 7,217 are missing — diagnosed, not assumed
+
+Against the Mondo subclass graph v1 itself used (`mondo_edges.tsv` on `main`, 38,242 edges):
+
+| | pairs | share |
+|---|---:|---:|
+| unrelated in the hierarchy | 3,668 | 50.8% |
+| we assert nothing for that drug | 2,497 | 34.6% |
+| **we assert an ancestor — v1 downfill artifact** | **703** | **9.7%** |
+| **we assert a descendant — we are more specific** | **349** | **4.8%** |
+
+The last 1,052 (14.5%) are **not losses**: §5.7 records that v1 propagated indications *down*
+the Mondo hierarchy and that this was removed deliberately, and the 349 are cases where our
+object is finer than v1's. Reclassifying them lifts retention from 34.8% to roughly 44%
+before any recall work.
+
+And against the label text we hold: **2,266 (31.4%) name a disease that is already there** —
+the recoverable share, and Lever 2's target.
+
+### Three levers, filed
+
+- `issues/issue_lever1_historical_dailymed.md` — v1's archived DailyMed corpus (50,628 rows,
+  on `main`). I first scoped this at 38%; measured against the snapshot itself only **749
+  pairs (10.4%)** are cleanly recoverable, for ~35,000 LLM calls. Each file is two columns —
+  no setid, no date, no marketing category — so no resolvable reference, no homeopathic
+  filter, and degraded negation scope. Needs a SPEC §9 decision.
+- `issues/issue_lever2_ground_disease_context.md` — implemented, below.
+- `issues/issue_lever3_classify_remaining_v1_gap.md` — teach the comparison scripts the Mondo
+  hierarchy so deliberate removals stop reading as regressions.
+
+### What Lever 2 did
+
+Biolink types `disease_context_qualifier` as **`disease`** — a class, not a string — so the
+export had been putting a joined sentence into a slot typed for an entity. A test pins the
+range so a future retype fails loudly.
+
+Prompt rule 0 requires each named condition verbatim; `is_generic_context` rejects
+"pathologic causes" and kin inside the parser, because a prompt rule is not a guarantee;
+`ground_context_names` resolves each context through the existing cascade, positional with
+`""` on failure so a grounding miss costs the CURIE and not the fact; the export emits the
+CURIE on the Biolink slot with the full set on `medic_disease_context_ids` / `_labels`.
+`disease_context_ids` declared on the closed `EvidenceItem` first.
+
+1,245 tests pass, lint clean.
+
+### Owed
+
+- Re-ingest to populate `disease_context_ids`, then measure the share of the 2,266 that
+  becomes CURIE-reachable. The grounding itself costs no LLM calls.
+- Decide whether to bump the extraction cache namespace: cached rows keep their old context
+  values (including "pathologic causes") until their text is re-extracted.
