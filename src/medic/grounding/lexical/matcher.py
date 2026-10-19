@@ -53,6 +53,32 @@ _FIELD_PRED = {"label": "skos:exactMatch", "exactSynonym": "skos:exactMatch",
                "relatedSynonym": "skos:closeMatch"}
 _FIELD_CONF = {"label": 1.0, "exactSynonym": 0.95, "relatedSynonym": 0.85}
 
+# Bare inorganic cations / elements. For 'sodium chloride', 'magnesium sulfate', 'ferrous
+# sulfate' the salt IS the drug: stripping the anion would ground saline to the sodium
+# element, which is the ion problem #95 part 1 is about. `_salt_parent` never resolves one
+# of these as a parent.
+_INORGANIC_CATIONS = frozenset({
+    "sodium", "disodium", "potassium", "calcium", "magnesium", "zinc", "lithium", "iron",
+    "ferrous", "ferric", "ammonium", "aluminum", "aluminium", "silver", "bismuth", "copper",
+    "cupric", "cuprous", "manganese", "selenium", "chromium", "strontium", "barium", "gold",
+    "gallium", "lanthanum", "cerium", "zirconium", "titanium", "cobalt", "nickel",
+    "platinum", "mercury", "arsenic", "radium", "thallium", "caesium", "cesium", "rubidium",
+})
+
+
+def _is_bare_cation(stripped: str) -> bool:
+    """Is every token of the stripped string an inorganic cation / element word?
+
+    Usually a single token ('sodium'). ``salt_variants`` yields every strip stage, so for
+    'calcium acetate hydrate' the bare 'calcium' is skipped and the matcher moves on to
+    'calcium acetate', which is the drug. A '<cation> <anion>' residue with the anion
+    outside the salt list ('sodium bicarbonate dihydrate' -> 'sodium bicarbonate') is a
+    real drug and a fine parent. The all-tokens form also covers double cations such as
+    'ferric ammonium' (from 'ferric ammonium citrate').
+    """
+    toks = stripped.split()
+    return bool(toks) and all(t in _INORGANIC_CATIONS for t in toks)
+
 
 def quality_of(d: GroundingDecision) -> str:
     if d.predicate_id == NO_TERM or d.object_id == NO_TERM:
@@ -166,10 +192,9 @@ class Matcher:
                 d = self._try_rule(subject, v.string, v.applied[0])
                 if d:
                     return d
-            for v in salt_variants(s):
-                d = self._try_rule(subject, v.string, "salt_ester_strip")
-                if d:
-                    return d
+            d = self._salt_parent(subject, s)
+            if d:
+                return d
         else:                                                    # tier 4: disease qualifier
             for v in qualifier_variants(s):
                 d = self._try_rule(subject, v.string, "qualifier_strip")
@@ -194,8 +219,19 @@ class Matcher:
         decision carries the rule: closeMatch, certainty 0.90, surgery-grade quality. When
         only the salt exists in the index ('risedronate sodium', 'carphenazine maleate')
         this returns None and the exact salt match below stands, unchanged.
+
+        Inorganic salts are the exception: for 'sodium chloride', 'potassium chloride',
+        'magnesium sulfate', 'calcium acetate', 'ferrous sulfate' the salt is the moiety and
+        the stripped residue is a bare cation that ChEBI also carries, so a strip would send
+        saline to the sodium element. ``_is_bare_cation`` keeps those on the exact tiers.
+
+        Also the tier-4 salt rung of ``_ladder`` (for the normalized, formulation-stripped
+        and transliterated strings), so the cation guard applies there too: an inorganic
+        salt the index lacks verbatim must not fall through to its element either.
         """
         for v in salt_variants(norm):
+            if _is_bare_cation(v.string):
+                continue
             d = self._try_rule(subject, v.string, "salt_ester_strip")
             if d:
                 return d

@@ -103,6 +103,39 @@ def test_drug_salt_prefers_parent_over_exact_salt_entry(tmp_path):
     assert d.grounding_quality == "lexical_exact_surgery"
 
 
+def test_drug_inorganic_salt_is_not_stripped_to_the_element(tmp_path):
+    # The salt IS the drug: saline must not become the sodium element even though ChEBI
+    # has 'sodium' (#95 part 1).
+    m = _matcher(tmp_path, [_r("CHEBI:26710", "sodium chloride"), _r("CHEBI:26708", "sodium"),
+                            _r("CHEBI:32599", "magnesium sulfate"),
+                            _r("CHEBI:25107", "magnesium")], entity="drugs")
+    for name, oid in (("sodium chloride", "CHEBI:26710"), ("magnesium sulfate", "CHEBI:32599")):
+        d = _one(m, name)
+        assert d.object_id == oid
+        assert d.subject_preprocessing == []
+        assert d.predicate_id == "skos:exactMatch" and d.grounding_quality == "lexical_exact"
+    d = _one(m, "MAGNESIUM SULFATE")
+    assert d.object_id == "CHEBI:32599" and d.grounding_quality == "lexical_exact_normalized"
+
+
+def test_drug_inorganic_hydrate_strips_to_the_salt_not_the_element(tmp_path):
+    # 'calcium acetate hydrate' -> 'calcium acetate' -> 'calcium': the first strip is a
+    # legitimate parent, the second is a bare cation and must be skipped.
+    m = _matcher(tmp_path, [_r("CHEBI:3310", "calcium acetate"), _r("CHEBI:22984", "calcium")],
+                 entity="drugs")
+    d = _one(m, "calcium acetate hydrate")
+    assert d.object_id == "CHEBI:3310" and d.subject_preprocessing == ["salt_ester_strip"]
+    assert _one(m, "calcium acetate").object_id == "CHEBI:3310"
+
+
+def test_drug_inorganic_salt_absent_from_index_does_not_fall_to_element(tmp_path):
+    # The guard also covers the tier-4 ladder rung: 'potassium chloride' with no verbatim
+    # entry stays unresolved rather than grounding to the potassium element.
+    m = _matcher(tmp_path, [_r("CHEBI:26216", "potassium")], entity="drugs")
+    assert _one(m, "potassium chloride").object_id is None
+    assert _one(m, "Potassium Chloride 20mEq Tablet").object_id is None
+
+
 def test_drug_salt_without_parent_keeps_exact_salt_match(tmp_path):
     # Only the salt exists (risedronate sodium, carphenazine maleate): unchanged behaviour.
     m = _matcher(tmp_path, [_r("CHEBI:72994", "risedronate sodium")], entity="drugs")
