@@ -44,6 +44,23 @@ def _license_block() -> dict:
     }
 
 
+def _grounding_ontologies() -> dict:
+    """The pinned ontology releases the drug and disease ids were grounded against.
+
+    A consumer reconciling MONDO or CHEBI ids needs to know which release minted them —
+    an id obsoleted or merged after that release is not a defect in the graph. Read from
+    the pin table, not from the on-disk index: the index is a gitignored cache that may
+    predate the pins, whereas the config is what the next build will use.
+    """
+    from medic.grounding.lexical.sources import pinned_ontologies
+
+    try:
+        pins = pinned_ontologies()
+    except (OSError, ValueError, KeyError):  # config unreadable — never fail an export
+        return {}
+    return {name: {"version": pin.version, "url": pin.url} for name, pin in pins.items()}
+
+
 def content_metadata(nodes: list[dict], edges: list[dict], build_date: str = "") -> dict:
     """Counts a consumer needs before deciding whether to ingest the graph."""
     by_category: Counter = Counter()
@@ -59,6 +76,7 @@ def content_metadata(nodes: list[dict], edges: list[dict], build_date: str = "")
         ),
         "medic_version": medic_release(),
         "biolink_version": bl.BIOLINK_VERSION,
+        "grounding_ontologies": _grounding_ontologies(),
         "build_date": build_date,
         "aggregator_knowledge_source": bl.AGGREGATOR,
         "license": _license_block(),

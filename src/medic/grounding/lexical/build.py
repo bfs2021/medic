@@ -4,11 +4,14 @@ from __future__ import annotations
 
 import sqlite3
 
-import yaml
-
 from medic.grounding.lexical.index import COLS, LexicalIndex
 from medic.grounding.lexical.loaders.obo_json import load_obo_json
 from medic.grounding.lexical.loaders.umls import load_umls
+from medic.grounding.lexical.sources import (
+    load_sources,
+    ontology_for_source,
+    pinned_ontologies,
+)
 
 
 def _iter_source(entry: dict):
@@ -25,13 +28,30 @@ def _iter_source(entry: dict):
 
 
 def build_index(entity_type: str, sources_conf: str, out_db: str) -> int:
-    with open(sources_conf) as fh:
-        entries = yaml.safe_load(fh)[entity_type]
+    entries = load_sources(sources_conf)[entity_type]
+    pins = pinned_ontologies(sources_conf)
     con = sqlite3.connect(out_db)
     con.execute("PRAGMA journal_mode=OFF")
     con.execute("PRAGMA synchronous=OFF")
     con.execute("DROP TABLE IF EXISTS lex")
     con.execute(f"CREATE TABLE lex ({', '.join(c + ' TEXT' for c in COLS)})")
+    # Which release of each ontology this index was compiled from. An index is a derived
+    # artefact that outlives the download it came from; without this nobody can say which
+    # term set a grounding decision was made against (#94).
+    con.execute("DROP TABLE IF EXISTS meta")
+    con.execute("CREATE TABLE meta (prefix TEXT, ontology TEXT, version TEXT, url TEXT)")
+    for entry in entries:
+        name = ontology_for_source(entry)
+        if name is None:
+            continue
+        if name not in pins:
+            raise ValueError(
+                f"{sources_conf}: source {entry.get('prefix')!r} names ontology {name!r}, "
+                f"which has no pin under `ontologies:`"
+            )
+        pin = pins[name]
+        con.execute("INSERT INTO meta VALUES (?, ?, ?, ?)",
+                    (entry["prefix"], name, pin.version, pin.url))
     insert = f"INSERT INTO lex VALUES ({', '.join('?' * len(COLS))})"
     n = 0
     for entry in entries:
@@ -50,6 +70,22 @@ def build_index(entity_type: str, sources_conf: str, out_db: str) -> int:
     con.commit()
     con.close()
     return n
+
+
+def index_meta(db_path: str) -> list[dict]:
+    """The ontology releases an index was compiled from (empty for an index built before
+    the ``meta`` table existed — those are exactly the builds with unknown versions)."""
+    con = sqlite3.connect(db_path)
+    try:
+        has_meta = con.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='meta'").fetchone()
+        if not has_meta:
+            return []
+        rows = con.execute(
+            "SELECT prefix, ontology, version, url FROM meta ORDER BY prefix").fetchall()
+    finally:
+        con.close()
+    return [dict(zip(("prefix", "ontology", "version", "url"), r)) for r in rows]
 
 
 def open_index(entity_type: str, db_path: str) -> LexicalIndex:
