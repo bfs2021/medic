@@ -481,7 +481,24 @@ classes:
           Conditions the patient must already have for this claim to apply — "PAH
           *associated with* congenital heart disease", "prophylaxis *in patients with* AML".
           Promoted to the object on 13.1% of edges, the largest single error class, or else
-          dropped entirely (#89, #90). Emitted as Biolink `disease_context_qualifier`.
+          dropped entirely (#89, #90). The source's own wording, kept verbatim.
+      disease_context_ids:
+        range: uriorcurie
+        multivalued: true
+        description: >-
+          The grounded CURIE for each `disease_context` name, in the same order where it
+          resolved. Biolink gives `disease_context_qualifier` the range **`disease`** — a
+          class, not a string — so a free-text context is not conformant to the slot's own
+          range, only to its name, which is all the conformance gate checks.
+          This is also the larger half of a recall gap rather than a tidiness point. Of
+          7,217 v1.0.0 indication pairs the current build does not assert, 2,266 (31.4%)
+          name a disease that is present in label text we already hold: v1 published
+          `polythiazide -> congestive heart failure` as a bare `treats` edge, which is its
+          own `FP1_setting` error, while the label says "edema associated with congestive
+          heart failure". Recording the context as a CURIE makes that fact findable —
+          searchable by `MONDO:0005009` — without re-asserting the claim v1 got wrong.
+          Empty where a context did not ground; the name is still kept in `disease_context`,
+          so nothing is lost by a grounding failure.
       population_context:
         range: string
         description: >-

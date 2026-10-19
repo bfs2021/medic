@@ -160,7 +160,36 @@ def is_homeopathic(root: ET.Element) -> bool:
 
 
 
-def record_claim_context(evidence: dict, claim) -> None:
+def ground_context_names(names, grounding_backend: str) -> list[str]:
+    """Ground each `disease_context` name to a CURIE, "" where it did not resolve.
+
+    Biolink gives `disease_context_qualifier` the range **`disease`** — a class, not a
+    string — so a free-text context satisfies the slot's *name* but not its range, which is
+    all the conformance gate can check. Grounding it makes the export correct against the
+    pinned model and, more importantly, findable: 2,266 of the 7,217 v1.0.0 indication pairs
+    the current build does not assert name a disease that is already in label text we hold,
+    and most of those are contexts nobody can search for.
+
+    Positional with the names, so a reader can line the two lists up; "" rather than a gap
+    keeps that alignment when one fails. The name is never discarded — a grounding failure
+    costs the CURIE, not the fact.
+    """
+    out: list[str] = []
+    for name in names or ():
+        try:
+            cid, _label = _ground_disease(name, grounding_backend, {})
+        except (AttributeError, TypeError):
+            raise
+        except Exception as exc:  # noqa: BLE001 — a context must not fail the row
+            logger.debug("context grounding failed for %r: %s", name, exc)
+            cid = ""
+        out.append(cid or "")
+    return out
+
+
+def record_claim_context(
+    evidence: dict, claim, grounding_backend: str = "",
+) -> None:
     """Write the label's own account of a claim onto its evidence row.
 
     What kind of relation it is, who owns it, and the context it is restricted to — the
@@ -170,6 +199,10 @@ def record_claim_context(evidence: dict, claim) -> None:
 
     Only non-default values are written, so a plain product-level `treats` claim adds
     nothing and the products do not grow by a column of constants.
+
+    ``grounding_backend`` enables CURIE grounding of the disease contexts
+    (`disease_context_ids`). Biolink's `disease_context_qualifier` has range `disease`, so
+    the CURIE is what the slot actually wants; the names stay regardless.
     """
     if claim.predicate != "treats":
         evidence["claim_predicate"] = claim.predicate
@@ -177,7 +210,14 @@ def record_claim_context(evidence: dict, claim) -> None:
         evidence["claim_attributed_to"] = claim.attributed_to
         evidence["claim_attribution_basis"] = claim.basis
     if claim.disease_context:
-        evidence["disease_context"] = [name for name, _quote in claim.disease_context]
+        names = [name for name, _quote in claim.disease_context]
+        evidence["disease_context"] = names
+        # Ground them where a backend is available. Opt-in by parameter so a caller without
+        # one still records the names rather than nothing.
+        if grounding_backend:
+            ids = ground_context_names(names, grounding_backend)
+            if any(ids):
+                evidence["disease_context_ids"] = ids
     if claim.population:
         evidence["population_context"] = claim.population
     if claim.temporal_context:
@@ -648,6 +688,35 @@ class Claim(NamedTuple):
     co_administered_with: tuple = ()
 
 
+#: Context values that name no condition. The prompt forbids them, this drops them anyway.
+#:
+#: Asked for the qualifying condition, a model will sometimes return the *category* of
+#: condition instead of the conditions themselves. Polythiazide's label names congestive
+#: heart failure and hepatic cirrhosis; what came back was "pathologic causes". A generic
+#: value is worse than none: it grounds to nothing, occupies the slot that should carry a
+#: real disease, and hides the fact that the label named something specific.
+#:
+#: Same two-part shape as #97's fabricated-target guard — a prompt rule plus a deterministic
+#: reject — because a prompt rule alone is not a guarantee.
+_GENERIC_CONTEXT = re.compile(
+    r"(?i)^(the\s+)?("
+    r"pathologic(al)?\s+(causes?|conditions?|states?)"
+    r"|various\s+(causes?|conditions?|forms?|etiolog\w+)"
+    r"|underlying\s+(disease|condition|cause)s?"
+    r"|other\s+(causes?|conditions?)"
+    r"|certain\s+conditions?"
+    r"|associated\s+conditions?"
+    r"|any\s+(cause|condition)s?"
+    r"|unspecified|miscellaneous|idiopathic causes?"
+    r")\.?$"
+)
+
+
+def is_generic_context(name: str) -> bool:
+    """Whether a `disease_context` value names a category rather than a condition."""
+    return bool(_GENERIC_CONTEXT.match((name or "").strip()))
+
+
 def _split_pairs(value: str) -> list[tuple[str, str]]:
     """``a :: qa ; b :: qb`` -> [(a, qa), (b, qb)]. A missing quote yields ``""``."""
     out = []
@@ -702,7 +771,9 @@ def parse_structured_claims(text: str) -> list[Claim]:
             predicate=predicate if predicate in _PREDICATES else "treats",
             attributed_to=fields.get("attributed_to", "product").strip() or "product",
             basis=basis if basis in _BASES else "product_level",
-            disease_context=tuple(_split_pairs(fields.get("disease_context", ""))),
+            disease_context=tuple(
+                (n, q) for n, q in _split_pairs(fields.get("disease_context", ""))
+                if not is_generic_context(n)),
             population=fields.get("population", ""),
             temporal_context=fields.get("temporal_context", ""),
             co_administered_with=tuple(
@@ -951,6 +1022,12 @@ def extract_diseases_from_text(
             "  co_administered_with: <drug> ; <drug>                             (optional)\n\n"
             "If there are no therapeutic claims, return: None\n\n"
             "RULES\n"
+            "0. disease_context must NAME each condition the text names, verbatim. Never a\n"
+            "   category or a summary: 'edema associated with congestive heart failure,\n"
+            "   hepatic cirrhosis' has disease_context 'congestive heart failure :: congestive\n"
+            "   heart failure ; hepatic cirrhosis :: hepatic cirrhosis' — NOT 'pathologic\n"
+            "   causes', NOT 'various causes', NOT 'underlying disease'. If the text names no\n"
+            "   condition, leave disease_context out entirely.\n"
             "1. target is ONLY the condition being treated, prevented or diagnosed. A\n"
             "   condition the patient must already have, or the setting, goes in\n"
             "   disease_context — never in target. 'prophylaxis of invasive aspergillosis\n"
@@ -1367,7 +1444,7 @@ def _process_spl_data(
                         # dropped — a preposition is weak evidence for deleting a row.
                         evidence_item["context_only_disease"] = True
                     evidence_item["original_disease_verbatim"] = disease_verbatim
-                    record_claim_context(evidence_item, _claim)
+                    record_claim_context(evidence_item, _claim, grounding_backend)
 
                     record.update(
                         {
@@ -1438,7 +1515,7 @@ def _process_spl_data(
                     contra_evidence["original_disease_label"] = disease_name
                     contra_evidence["label_ingredient_count"] = len(drug_names)
                     contra_evidence["original_disease_verbatim"] = disease_verbatim
-                    record_claim_context(contra_evidence, _claim)
+                    record_claim_context(contra_evidence, _claim, grounding_backend)
 
                     record.update(
                         {

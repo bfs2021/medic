@@ -193,16 +193,25 @@ def _claim_qualifiers(evidence: dict) -> dict:
     that half was never counted. Biolink carries these on the `treats` association and DAKP
     already populates them on 5,686 of its 16,655 treats edges.
 
-    The disease contexts are joined into one string because Biolink defines the slot as
-    single-valued; shipping a list is the discipline violation this export already fixed
-    once for `primary_knowledge_source`. Co-administration has no Biolink slot on this
+    The slot is single-valued in Biolink, so only the first grounded context goes on it and
+    the full set goes on the namespaced `medic_disease_context_ids` / `_labels`; shipping a
+    list on the Biolink slot is the discipline violation this export already fixed once for
+    `primary_knowledge_source`. Co-administration has no Biolink slot on this
     association, so it stays in the `medic_` extension layer rather than being invented as
     a bare property — the conformance gate would reject it, correctly.
     """
     contexts = [c for c in (evidence.get("disease_context") or []) if c]
+    context_ids = [c for c in (evidence.get("disease_context_ids") or []) if c]
     population = (evidence.get("population_context") or "").strip()
     return {
-        "disease_context_qualifier": ", ".join(contexts),
+        # Biolink types this slot `disease` — a class, not a string — so the CURIE is what it
+        # actually wants, and a free-text value satisfies only the slot's name. The grounded
+        # id goes here when there is one; the label falls back otherwise, because losing the
+        # context entirely because it did not ground would be worse than an untyped value.
+        # Human-readable names always stay on `medic_disease_context_labels`.
+        "disease_context_qualifier": context_ids[0] if context_ids else ", ".join(contexts),
+        "medic_disease_context_ids": context_ids,
+        "medic_disease_context_labels": contexts,
         "population_context_qualifier": population,
         "temporal_context_qualifier": (evidence.get("temporal_context") or "").strip(),
         "sex_qualifier": _sex_qualifier(population),

@@ -268,7 +268,7 @@ def _build_ema_indication_records(grounded_drugs: list[dict], grounding_backend:
                     "original_disease_label": disease_name,
                     "original_disease_verbatim": disease_verbatim,
                 }
-                record_claim_context(evidence_item, _claim)
+                record_claim_context(evidence_item, _claim, grounding_backend)
                 ema_product_number = (drug_rec.get("ema_product_number", "") or "").strip()
                 if ema_product_number:
                     evidence_item["original_drug_id"] = ema_product_number
@@ -457,7 +457,7 @@ def _extract_contraindications(
                 "reference": epar_url,
                 "source_document_url": pdf_url,
             }
-            record_claim_context(evidence_item, _claim)
+            record_claim_context(evidence_item, _claim, grounding_backend)
             ema_product_number = (drug_rec.get("ema_product_number", "") or "").strip()
             if ema_product_number:
                 evidence_item["original_drug_id"] = ema_product_number

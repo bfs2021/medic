@@ -38,6 +38,7 @@ PRIMARY_PDF = Path("data/raw/pmda/primary/pmda_approvals.pdf")
 
 def _records_for_approval(
     drug_rec: dict, approval: dict, drug_id: str, drug_label: str, service,
+    grounding_backend: str = "",
 ) -> tuple[list[dict], bool]:
     """Indication records for ONE approval statement. Returns (records, had_review_url)."""
     from medic.ingest.dailymed.__main__ import (
@@ -104,7 +105,7 @@ def _records_for_approval(
             "original_disease_label": disease_name,
             "original_disease_verbatim": disease_verbatim,
         }
-        record_claim_context(evidence_item, _claim)
+        record_claim_context(evidence_item, _claim, grounding_backend)
         if original_drug_id:
             evidence_item["original_drug_id"] = original_drug_id
         # Distinguishes the approvals of one ingredient, so the merge treats each as its own
@@ -180,7 +181,7 @@ def _build_pmda_indication_records(grounded_drugs: list[dict], grounding_backend
         for approval in approvals:
             approvals_seen += 1
             records, had_url = _records_for_approval(
-                drug_rec, approval, drug_id, drug_label, service)
+                drug_rec, approval, drug_id, drug_label, service, grounding_backend)
             if had_url:
                 with_review_url += 1
             if records:
