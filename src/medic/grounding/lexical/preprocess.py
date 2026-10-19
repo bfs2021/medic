@@ -180,17 +180,23 @@ _SALT_RE = re.compile(r"\s+(" + "|".join(_SALTS) + r")$", re.I)
 
 
 def salt_variants(normalized: str) -> list[Variant]:
-    """Strip trailing salt/ester/hydrate words to reach the active moiety (drugs)."""
+    """Strip trailing salt/ester/hydrate words to reach the active moiety (drugs).
+
+    One variant per strip stage, most-stripped first: 'calcium acetate hydrate' ->
+    ['calcium', 'calcium acetate']. The matcher wants the shortest residue (the moiety)
+    and only falls back to a longer one when the shorter is a bare inorganic cation or
+    does not resolve.
+    """
+    stages: list[str] = []
     s = normalized
-    stripped = False
     while True:
         new = _SALT_RE.sub("", s).strip()
         if new == s or not new:
             break
-        s, stripped = new, True
-    if stripped and s != normalized:
-        return [Variant(string=s, applied=["salt_ester_strip"], scope="close")]
-    return []
+        s = new
+        stages.append(s)
+    return [Variant(string=x, applied=["salt_ester_strip"], scope="close")
+            for x in reversed(stages)]
 
 
 # --- disease qualifier stripping (rule id: qualifier_strip, predicate broadMatch) ----
