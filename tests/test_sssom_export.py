@@ -158,17 +158,74 @@ def test_justification_does_not_claim_a_match_that_never_ran(tmp_path, monkeypat
     assert "semapv:LexicalMatching" not in text
 
 
-def test_source_xrefs_never_become_exact_matches(tmp_path, monkeypatch):
+def _mapping_rows(path) -> dict[tuple[str, str], str]:
+    """``(subject_id, object_id) -> predicate`` for every mapping row in the file."""
+    out = {}
+    for line in path.read_text().splitlines():
+        if line.startswith("#") or line.startswith("subject_id"):
+            continue
+        subject_id, _label, predicate, object_id, *_ = line.split("\t")
+        out[(subject_id, object_id)] = predicate
+    return out
+
+
+XREF_DRUGS = [{
+    "identity": {"resolved_id": "CHEBI:10023", "resolved_label": "voriconazole"},
+    "alternate_ids": ["DRUGBANK:DB00582", "UNII:JFU09I87TR"],
+    "source_xrefs": ["CHEMBL.COMPOUND:CHEMBL638", "GTOPDB:6853", "RXCUI:121243",
+                     "UNII:JFU09I87TR", "PHAROS:RMWVQW96R8LU", "pt:VORICONAZOLE"],
+}]
+
+
+def test_source_xrefs_are_close_matches_and_alternate_ids_stay_exact(tmp_path, monkeypatch):
     """`source_xrefs` are cross-references a source holds (PHAROS, matched by label; an
-    RxNorm approximate match), not identities MeDIC established. They ship in KGX `xref`
-    and must not be promoted to the strongest claim SSSOM has."""
-    drugs = [{
-        "identity": {"resolved_id": "CHEBI:10023", "resolved_label": "voriconazole"},
-        "alternate_ids": ["DRUGBANK:DB00582"],
-        "source_xrefs": ["CHEMBL.COMPOUND:CHEMBL638", "UNII:JFU09I87TR", "RXCUI:121243"],
-    }]
-    text = _write_export(tmp_path, monkeypatch, drugs).read_text()
-    rows = [ln for ln in text.splitlines() if ln.startswith("CHEBI:")]
-    assert len(rows) == 1 and "DRUGBANK:DB00582" in rows[0]
-    for xref in drugs[0]["source_xrefs"]:
-        assert xref not in text
+    RxNorm approximate match), not identities MeDIC established. They stay in the file —
+    moving the slot must not silently drop ~9.5k published rows — but at `skos:closeMatch`,
+    never promoted to the strongest claim SSSOM has. `alternate_ids` is exactMatch as before."""
+    rows = _mapping_rows(_write_export(tmp_path, monkeypatch, XREF_DRUGS))
+    assert rows[("CHEBI:10023", "DRUGBANK:DB00582")] == "skos:exactMatch"
+    assert rows[("CHEBI:10023", "chembl.compound:CHEMBL638")] == "skos:closeMatch"
+    assert rows[("CHEBI:10023", "iuphar.ligand:6853")] == "skos:closeMatch"
+    assert rows[("CHEBI:10023", "rxnorm:121243")] == "skos:closeMatch"
+    assert rows[("CHEBI:10023", "PHAROS:RMWVQW96R8LU")] == "skos:closeMatch"
+    assert not [o for (_s, o) in rows if o.startswith("pt:")]   # still not an identifier
+
+
+def test_an_object_in_both_slots_is_asserted_once_at_the_stronger_predicate(
+    tmp_path, monkeypatch
+):
+    path = _write_export(tmp_path, monkeypatch, XREF_DRUGS)
+    assert _mapping_rows(path)[("CHEBI:10023", "unii:JFU09I87TR")] == "skos:exactMatch"
+    assert path.read_text().count("unii:JFU09I87TR") == 1
+
+
+def test_close_match_rows_parse_as_sssom_with_the_same_columns(tmp_path, monkeypatch):
+    from sssom.parsers import parse_sssom_table
+
+    msdf = parse_sssom_table(str(_write_export(tmp_path, monkeypatch, XREF_DRUGS)))
+    close = msdf.df[msdf.df["predicate_id"] == "skos:closeMatch"]
+    assert len(close) == 4
+    assert set(close["mapping_justification"]) == {"semapv:UnspecifiedMatching"}
+    assert set(close["subject_label"]) == {"voriconazole"}
+
+
+def test_the_everycure_precedent_still_holds_with_source_xrefs(tmp_path, monkeypatch):
+    """The untrusted EveryCure id is filtered out of `alternate_ids` by the merge; the
+    closeMatch channel must not become a back door for it. `source_xrefs` is only ever
+    written by the PHAROS and RxNorm enrichments, so a merged record never carries the
+    EveryCure id there — and the exporter never reads `everycure_id` itself."""
+    from medic.merge.drug_merge import _merge_group
+
+    merged = _merge_group("CHEBI:749610", [{
+        "source": "EVERYCURE", "source_name": "Ofatumumab", "original_literal": "Ofatumumab",
+        "everycure_id": "CHEBI:28887", "normalized_id": "CHEBI:749610",
+        "normalized_label": "ofatumumab",
+        "alternate_ids": ["CHEBI:28887", "DRUGBANK:DB06650"],
+        "source_xrefs": ["UNII:M95KG522R0"],
+    }])
+    assert "CHEBI:28887" not in merged["alternate_ids"]
+    assert merged["source_xrefs"] == ["UNII:M95KG522R0"]
+    rows = _mapping_rows(_write_export(tmp_path, monkeypatch, [merged]))
+    assert ("CHEBI:749610", "CHEBI:28887") not in rows
+    assert rows[("CHEBI:749610", "DRUGBANK:DB06650")] == "skos:exactMatch"
+    assert rows[("CHEBI:749610", "unii:M95KG522R0")] == "skos:closeMatch"
