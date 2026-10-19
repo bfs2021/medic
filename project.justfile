@@ -786,12 +786,14 @@ gh-release version draft="true":
 
 robot_img := "obolibrary/odkfull"
 
-# Download the OBO ontologies used by the grounding index into cache/ontologies/
+# Download the OBO ontologies used by the grounding index into cache/ontologies/.
+# Each one is the release pinned in conf/grounding_sources.yaml (`ontologies:`), never the
+# floating PURL — bump the pin there to move to a newer release.
 [group('grounding')]
 download-grounding-ontologies:
   mkdir -p cache/ontologies
-  for o in mondo hp chebi dron; do \
-    curl -sL -o cache/ontologies/$o.json http://purl.obolibrary.org/obo/$o.json; done
+  uv run python -m medic.grounding.lexical.sources | while read -r o url; do \
+    echo "$o <- $url"; curl -fsSL -o cache/ontologies/$o.json "$url"; done
 
 # Convert a large OWL (e.g. PR) to OBO Graph JSON with robot (docker). Usage:
 #   just owl-to-json http://purl.obolibrary.org/obo/pr.owl cache/ontologies/pr.json

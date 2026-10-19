@@ -1,12 +1,37 @@
 # Sources for building the offline lexical index.
 # OBO vocabs are downloaded from their PURLs into cache/ontologies/.
 # Licensed/non-OBO vocabs use local files (see background/ and the report).
+#
+# `ontologies` pins the release of every OBO vocab the index is built from. The unversioned
+# PURL (http://purl.obolibrary.org/obo/<ont>.json) resolves to whatever is current on the
+# day it is fetched, so two builds a month apart ground against different term sets and
+# nothing records which (#94). `just download-grounding-ontologies` reads these pins, the
+# index build stamps them into the index's `meta` table, and the KGX content metadata
+# reports them. Bump a pin deliberately, in its own commit, and rebuild the index.
+#
+# URL patterns: mondo, hp and dron serve versioned OBO Graph JSON from the release PURL
+# (http://purl.obolibrary.org/obo/<ont>/releases/<date>/<ont>.json). ChEBI does not use
+# dated releases; its archive PURL is http://purl.obolibrary.org/obo/chebi/<rel>/chebi.json.
+ontologies:
+  mondo:
+    version: "2026-10-06"
+    url: http://purl.obolibrary.org/obo/mondo/releases/2026-10-06/mondo.json
+  hp:
+    version: "2026-09-01"
+    url: http://purl.obolibrary.org/obo/hp/releases/2026-09-01/hp.json
+  chebi:
+    version: "255"
+    url: http://purl.obolibrary.org/obo/chebi/255/chebi.json
+  dron:
+    version: "2026-09-19"
+    url: http://purl.obolibrary.org/obo/dron/releases/2026-09-19/dron.json
+
 diseases:
-  - {prefix: MONDO, loader: obo_json, path: cache/ontologies/mondo.json}
-  - {prefix: HP, loader: obo_json, path: cache/ontologies/hp.json}
+  - {prefix: MONDO, loader: obo_json, path: cache/ontologies/mondo.json, ontology: mondo}
+  - {prefix: HP, loader: obo_json, path: cache/ontologies/hp.json, ontology: hp}
   - {prefix: UMLS, loader: umls, path: background/umls-2021AA-mrconso.zip, member: MRCONSO.RRF}
   # ICD10CM dropped: redundant with UMLS (which carries ICD10CM as a source SAB); +64 groundings only.
 drugs:
-  - {prefix: CHEBI, loader: obo_json, path: cache/ontologies/chebi.json}
-  - {prefix: DRON, loader: obo_json, path: cache/ontologies/dron.json}
+  - {prefix: CHEBI, loader: obo_json, path: cache/ontologies/chebi.json, ontology: chebi}
+  - {prefix: DRON, loader: obo_json, path: cache/ontologies/dron.json, ontology: dron}
   # PR dropped: +15 groundings only (drug names are chemicals, not proteins).
