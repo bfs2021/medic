@@ -1,7 +1,16 @@
 """SSSOM export: generates drug identifier cross-reference mappings.
 
-Produces exports/medic_drug_mappings.sssom.tsv with exact matches
-from the primary identifier to all other coding schemes.
+Produces exports/medic_drug_mappings.sssom.tsv from the primary identifier to all other
+coding schemes, at two strengths:
+
+* ``alternate_ids`` -> ``skos:exactMatch``. Ids MeDIC's own resolution established (the
+  pre-normalization id, what the grounder returned).
+* ``source_xrefs`` -> ``skos:closeMatch``. Cross-references copied from an enrichment
+  source's record — PHAROS synonyms found by *label*, the RxNorm ingredient RxCUI found by
+  *approximate* match. A source holds them for the entity it matched to this drug's name;
+  MeDIC did not verify the identity, so they are not asserted as exact. They were formerly
+  in ``alternate_ids`` and shipped as exactMatch; the weaker predicate keeps them in the
+  file rather than dropping ~9.5k rows when the slot moved (#94).
 """
 
 import logging
@@ -51,6 +60,10 @@ EXPORTABLE_PREFIXES = frozenset({
     "chembl.compound", "drugcentral", "iuphar.ligand", "umls", "PHAROS",
 })
 
+EXACT_MATCH = "skos:exactMatch"
+CLOSE_MATCH = "skos:closeMatch"
+
+
 def normalize_object_id(raw: str) -> str | None:
     """A raw `alternate_ids` entry as a usable CURIE, or ``None`` if it is not one.
 
@@ -85,6 +98,15 @@ def normalize_object_id(raw: str) -> str | None:
     if standard not in EXPORTABLE_PREFIXES and prefix not in EXPORTABLE_PREFIXES:
         return None
     return f"{standard if standard in EXPORTABLE_PREFIXES else prefix}:{local}"
+
+
+def _as_list(value) -> list[str]:
+    """A product slot as a list: absent -> ``[]``, a ``|``-joined string -> its parts."""
+    if not value:
+        return []
+    if isinstance(value, str):
+        return [x.strip() for x in value.split("|") if x.strip()]
+    return [str(x) for x in value if x]
 
 
 def _curie_map(prefixes: set[str]) -> dict[str, str]:
@@ -189,7 +211,8 @@ def export_sssom() -> None:
 
     drugs = data.get("drugs", []) if isinstance(data, dict) else data
 
-    rows: list[tuple[str, str, str]] = []
+    # (subject_id, subject_label, predicate, object_id)
+    rows: set[tuple[str, str, str, str]] = set()
     dropped: dict[str, int] = {}
     for drug in drugs:
         primary_id = pv.drug_id(drug)
@@ -205,21 +228,33 @@ def export_sssom() -> None:
         if drugbank_id:
             alt_ids = [*alt_ids, f"DRUGBANK:{drugbank_id}"]
 
-        for alt_id in alt_ids:
-            if alt_id == primary_id:
-                continue
-            object_id = normalize_object_id(alt_id)
-            if object_id is None:
-                key = alt_id.partition(":")[0] or "<no prefix>"
-                dropped[key] = dropped.get(key, 0) + 1
-                continue
-            if object_id != primary_id:
-                rows.append((primary_id, primary_label, object_id))
+        exact_objects: set[str] = set()
+        for predicate, raw_ids in (
+            (EXACT_MATCH, alt_ids),
+            (CLOSE_MATCH, _as_list(drug.get("source_xrefs"))),
+        ):
+            for raw_id in raw_ids:
+                if raw_id == primary_id:
+                    continue
+                object_id = normalize_object_id(raw_id)
+                if object_id is None:
+                    key = raw_id.partition(":")[0] or "<no prefix>"
+                    dropped[key] = dropped.get(key, 0) + 1
+                    continue
+                if object_id == primary_id:
+                    continue
+                # The same object in both slots is asserted once, at the stronger predicate.
+                if predicate == EXACT_MATCH:
+                    exact_objects.add(object_id)
+                elif object_id in exact_objects:
+                    continue
+                rows.add((primary_id, primary_label, predicate, object_id))
 
     # Deduplicated and ordered, so the file is a set rather than a log of the walk and two
     # builds of the same products are byte-identical.
-    rows = sorted(set(rows))
-    prefixes = {r[2].partition(":")[0] for r in rows} | {r[0].partition(":")[0] for r in rows}
+    ordered = sorted(rows)
+    prefixes = ({r[3].partition(":")[0] for r in ordered}
+                | {r[0].partition(":")[0] for r in ordered})
 
     output_path = EXPORTS_DIR / "medic_drug_mappings.sssom.tsv"
     with open(output_path, "w") as f:
@@ -228,12 +263,12 @@ def export_sssom() -> None:
             "subject_id\tsubject_label\tpredicate_id\tobject_id\tobject_label\t"
             "mapping_justification\n"
         )
-        for subject_id, subject_label, object_id in rows:
+        for subject_id, subject_label, predicate, object_id in ordered:
             # `semapv:UnspecifiedMatching`, not `LexicalMatching`: these are cross-references
             # copied from a source's own field. Nothing lexical was compared, and claiming a
             # method that never ran misrepresents how the mapping was arrived at.
             f.write(
-                f"{subject_id}\t{subject_label}\tskos:exactMatch\t"
+                f"{subject_id}\t{subject_label}\t{predicate}\t"
                 f"{object_id}\t\tsemapv:UnspecifiedMatching\n"
             )
 
@@ -243,7 +278,7 @@ def export_sssom() -> None:
             sum(dropped.values()),
             ", ".join(f"{k}={v}" for k, v in sorted(dropped.items(), key=lambda x: -x[1])),
         )
-    logger.info("Exported %d mappings to %s", len(rows), output_path)
+    logger.info("Exported %d mappings to %s", len(ordered), output_path)
 
 
 def main():
