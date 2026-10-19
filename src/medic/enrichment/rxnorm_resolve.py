@@ -33,8 +33,10 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+from medic import product_view as pv
 from medic.curie_utils import get_prefix
 from medic.enrichment.cache import EnrichmentCache
+from medic.enrichment.source_xrefs import add_source_xrefs
 from medic.grounding.store import (
     NO_TERM,
     RXNORM_RULE,
@@ -107,18 +109,40 @@ def _approximate_best_rxcui(term: str) -> tuple[str, float] | None:
     return rxcui, score
 
 
-def _ingredient_names(rxcui: str) -> list[str]:
-    """Clean ingredient (IN) names related to an RxCUI, in RxNav order."""
+def _ingredient_concepts(rxcui: str) -> list[tuple[str, str]]:
+    """``(name, rxcui)`` of every clean ingredient (IN) concept related to an RxCUI.
+
+    In RxNav order. The ingredient's *own* RxCUI is what gets published as a cross-reference
+    of the drug it re-grounds to: the product-string RxCUI from ``approximateTerm`` can be a
+    clinical drug or a brand, which is a different entity from the ingredient node.
+    """
     url = RXNAV_BASE + f"rxcui/{rxcui}/related.json?tty=IN"
     data = _http_get_json(url)
     groups = (data.get("relatedGroup") or {}).get("conceptGroup") or []
-    names: list[str] = []
+    concepts: list[tuple[str, str]] = []
     for g in groups:
         for c in g.get("conceptProperties", []) or []:
             name = c.get("name")
             if name:
-                names.append(name)
-    return names
+                concepts.append((name, str(c.get("rxcui") or "")))
+    return concepts
+
+
+def _ingredient_names(rxcui: str) -> list[str]:
+    """Clean ingredient (IN) names related to an RxCUI, in RxNav order."""
+    return [name for name, _ in _ingredient_concepts(rxcui)]
+
+
+def _is_complete(cached: dict | None) -> bool:
+    """Whether a cache entry carries everything the current code records.
+
+    Entries written before ingredient RxCUIs were kept have ``kept`` ingredients but no
+    ``ingredient_rxcuis``; those are backfilled with one ``related.json`` call rather than
+    invalidated wholesale, so the resumable cache stays resumable.
+    """
+    if cached is None:
+        return False
+    return not cached.get("kept") or "ingredient_rxcuis" in cached
 
 
 def rxnav_resolve(term: str, cache: EnrichmentCache) -> dict:
@@ -129,7 +153,17 @@ def rxnav_resolve(term: str, cache: EnrichmentCache) -> dict:
     Network errors and no-match are cached as empty results so reruns stay resumable.
     """
     cached = cache.get(term)
+    if _is_complete(cached):
+        return cached
     if cached is not None:
+        # Backfill: the ingredient RxCUIs for an entry that predates them.
+        try:
+            concepts = _ingredient_concepts(cached["rxcui"]) if cached.get("rxcui") else []
+            kept = set(cached.get("kept") or [])
+            cached["ingredient_rxcuis"] = {n: r for n, r in concepts if n in kept and r}
+            cache.put(term, cached)
+        except Exception as exc:
+            logger.warning("RxNav ingredient backfill failed for %r: %s", term, exc)
         return cached
 
     result: dict = {"rxcui": None, "score": None, "ingredients": [], "kept": []}
@@ -137,9 +171,13 @@ def rxnav_resolve(term: str, cache: EnrichmentCache) -> dict:
         best = _approximate_best_rxcui(term)
         if best is not None:
             rxcui, score = best
-            ings = _ingredient_names(rxcui)
+            concepts = _ingredient_concepts(rxcui)
+            ings = [name for name, _ in concepts]
             kept = [i for i in ings if ingredient_supported_by_source(term, i)]
-            result = {"rxcui": rxcui, "score": score, "ingredients": ings, "kept": kept}
+            result = {
+                "rxcui": rxcui, "score": score, "ingredients": ings, "kept": kept,
+                "ingredient_rxcuis": {n: r for n, r in concepts if n in kept and r},
+            }
     except Exception as exc:  # network / parse failure -> cache empty, keep going
         logger.warning("RxNav resolve failed for %r: %s", term, exc)
         result["error"] = str(exc)
@@ -206,7 +244,7 @@ def resolve_residue(
     proposed = 0
 
     for term in unresolved:
-        was_cached = cache.get(term) is not None
+        was_cached = _is_complete(cache.get(term))
         res = rxnav_resolve(term, cache)
         if not was_cached and cache.get(term) is not None:
             time.sleep(rate_limit_s)
@@ -234,6 +272,9 @@ def resolve_residue(
                     "rxcui": res.get("rxcui"),
                     "ingredients": [g[0] for g in grounds],
                     "object_ids": [g[1] for g in grounds],
+                    "ingredient_rxcuis": [
+                        (res.get("ingredient_rxcuis") or {}).get(g[0]) for g in grounds
+                    ],
                 }
             )
             if store is not None:
@@ -270,6 +311,56 @@ def enrich_rxnorm_resolve(
         return {"residue": len(unresolved), "rxnav_ingredient_hits": 0,
                 "proposed": 0, "proposed_all_chebi": 0, "recovered": [], "skipped": True}
     return resolve_residue(unresolved, ground_drug, **kwargs)
+
+
+def rxcui_xrefs_by_object(
+    store: LiteralMappingStore, cache: EnrichmentCache
+) -> dict[str, set[str]]:
+    """``object_id -> {"RXCUI:<id>", ...}`` for every RxNorm-proposed grounding.
+
+    Joins the two things this module writes: the proposal rows in the grounding store
+    (subject string -> ingredient ``match_string`` -> ``object_id``) and the cache (subject
+    string -> each kept ingredient's own RxCUI). The RxCUI is attached to the *ingredient's*
+    object, never the product string's, so a combination's components each get their own.
+    Entries without ``ingredient_rxcuis`` (pre-backfill cache) contribute nothing.
+    """
+    out: dict[str, set[str]] = {}
+    for d in store.all_rows():
+        if RXNORM_RULE not in d.subject_preprocessing or not d.object_id or not d.match_string:
+            continue
+        res = cache.get(d.subject_label) or {}
+        rxcui = (res.get("ingredient_rxcuis") or {}).get(d.match_string)
+        if rxcui:
+            out.setdefault(d.object_id, set()).add(f"RXCUI:{rxcui}")
+    return out
+
+
+def enrich_rxcui_xrefs(
+    drugs: list[dict],
+    store: LiteralMappingStore | None = None,
+    cache: EnrichmentCache | None = None,
+) -> int:
+    """Attach ``RXCUI:`` cross-references to the drugs RxNorm resolution grounded.
+
+    Offline: reads the grounding store and the resolver cache that an earlier
+    ``rxnorm_resolve`` pass wrote; makes no network call, so it runs under
+    ``MEDIC_SKIP_EXPENSIVE_CALLS`` too. Returns the number of drugs touched.
+    """
+    if store is None:
+        store = LiteralMappingStore(GROUNDING_STORE, "drugs")
+        store.load()
+    cache = cache or EnrichmentCache(CACHE_PATH)
+    by_object = rxcui_xrefs_by_object(store, cache)
+    if not by_object:
+        return 0
+    touched = 0
+    for drug in drugs:
+        xrefs = by_object.get(pv.drug_id(drug))
+        if xrefs:
+            add_source_xrefs(drug, xrefs)
+            touched += 1
+    logger.info("Attached RXCUI cross-references to %d drugs", touched)
+    return touched
 
 
 def collect_residue(store: LiteralMappingStore) -> list[str]:
@@ -336,9 +427,11 @@ def main(argv: list[str] | None = None) -> None:
 __all__ = [
     "RXNORM_JUSTIFICATION",
     "collect_residue",
+    "enrich_rxcui_xrefs",
     "enrich_rxnorm_resolve",
     "ingredient_supported_by_source",
     "resolve_residue",
+    "rxcui_xrefs_by_object",
     "rxnav_resolve",
 ]
 

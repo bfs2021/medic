@@ -46,16 +46,18 @@ def test_rxnav_resolve_keeps_only_guarded_ingredients(monkeypatch, tmp_path):
         return ("999", 20.0)
 
     def fake_ings(rxcui):
-        return ["ephedrine", "menthol"]  # menthol is a spurious approximate match
+        # menthol is a spurious approximate match
+        return [("ephedrine", "3966"), ("menthol", "6750")]
 
     monkeypatch.setattr(rr, "_approximate_best_rxcui", fake_best)
-    monkeypatch.setattr(rr, "_ingredient_names", fake_ings)
+    monkeypatch.setattr(rr, "_ingredient_concepts", fake_ings)
 
     cache = EnrichmentCache(tmp_path / "rx.json")
     out = rr.rxnav_resolve("Ephedrine Sulphide 75mg Capsule", cache)
 
     assert out["kept"] == ["ephedrine"]  # menthol dropped by the guard
     assert out["ingredients"] == ["ephedrine", "menthol"]
+    assert out["ingredient_rxcuis"] == {"ephedrine": "3966"}  # only the kept one
     assert len(calls) == 1
 
 
@@ -67,7 +69,7 @@ def test_rxnav_resolve_is_cached(monkeypatch, tmp_path):
         return ("1", 30.0)
 
     monkeypatch.setattr(rr, "_approximate_best_rxcui", fake_best)
-    monkeypatch.setattr(rr, "_ingredient_names", lambda r: ["aspirin"])
+    monkeypatch.setattr(rr, "_ingredient_concepts", lambda r: [("aspirin", "1191")])
 
     cache = EnrichmentCache(tmp_path / "rx.json")
     rr.rxnav_resolve("aspirin 500mg tablet", cache)
@@ -178,3 +180,108 @@ def test_enrich_honours_skip_flag(monkeypatch):
     report = rr.enrich_rxnorm_resolve(["anything"], _grounder({}))
     assert report["skipped"] is True
     assert report["proposed"] == 0
+
+
+# --- RXCUI cross-references onto the drugs that re-grounded (#94) -------------
+
+
+def test_a_cache_entry_without_ingredient_rxcuis_is_backfilled_not_refetched(
+    monkeypatch, tmp_path
+):
+    """The cache predates ingredient RxCUIs; one related.json call fills them in."""
+    best_calls, related_calls = [], []
+    monkeypatch.setattr(
+        rr, "_approximate_best_rxcui", lambda t: best_calls.append(t) or ("999", 1.0)
+    )
+    monkeypatch.setattr(
+        rr, "_ingredient_concepts",
+        lambda r: related_calls.append(r) or [("acetic acid", "168"), ("water", "11295")],
+    )
+    cache = EnrichmentCache(tmp_path / "rx.json")
+    cache.put("ACETIC ACID, GLACIAL", {
+        "rxcui": "999", "score": 17.9, "ingredients": ["acetic acid"], "kept": ["acetic acid"],
+    })
+
+    out = rr.rxnav_resolve("ACETIC ACID, GLACIAL", cache)
+    assert out["ingredient_rxcuis"] == {"acetic acid": "168"}
+    assert best_calls == []           # approximateTerm is not re-run
+    assert related_calls == ["999"]
+    rr.rxnav_resolve("ACETIC ACID, GLACIAL", cache)
+    assert related_calls == ["999"]   # and the backfill happens once
+
+
+def test_an_entry_with_nothing_kept_is_complete_without_rxcuis(monkeypatch, tmp_path):
+    monkeypatch.setattr(rr, "_ingredient_concepts", lambda r: pytest_fail())
+    cache = EnrichmentCache(tmp_path / "rx.json")
+    cache.put("Sheep Pox Vaccine", {"rxcui": "1", "score": 1.0, "ingredients": [], "kept": []})
+    assert rr.rxnav_resolve("Sheep Pox Vaccine", cache)["kept"] == []
+
+
+def pytest_fail():
+    raise AssertionError("must not call the network for a complete entry")
+
+
+def _proposal_store(tmp_path):
+    from medic.grounding.store import LiteralMappingStore
+
+    store = LiteralMappingStore(str(tmp_path / "drug_grounding.sssom.tsv"), "drugs")
+    store.load()
+    store.record_subject(
+        "ACETIC ACID, GLACIAL; HYDROCORTISONE",
+        rr._proposal_rows(
+            "ACETIC ACID, GLACIAL; HYDROCORTISONE",
+            [("acetic acid", "CHEBI:15366", "acetic acid"),
+             ("hydrocortisone", "CHEBI:17650", "cortisol")],
+            20.0,
+        ),
+    )
+    return store
+
+
+def test_rxcui_goes_to_each_ingredient_object_not_the_product_string(tmp_path):
+    """The product string's RxCUI is a clinical drug; the ingredients' own RxCUIs are
+    what the CHEBI nodes they re-grounded to can be joined on."""
+    store = _proposal_store(tmp_path)
+    cache = EnrichmentCache(tmp_path / "rx.json")
+    cache.put("ACETIC ACID, GLACIAL; HYDROCORTISONE", {
+        "rxcui": "1234567", "score": 20.0,
+        "ingredients": ["acetic acid", "hydrocortisone"],
+        "kept": ["acetic acid", "hydrocortisone"],
+        "ingredient_rxcuis": {"acetic acid": "168", "hydrocortisone": "5492"},
+    })
+
+    assert rr.rxcui_xrefs_by_object(store, cache) == {
+        "CHEBI:15366": {"RXCUI:168"},
+        "CHEBI:17650": {"RXCUI:5492"},
+    }
+
+
+def test_enrich_rxcui_xrefs_writes_source_xrefs_not_alternate_ids(tmp_path):
+    store = _proposal_store(tmp_path)
+    cache = EnrichmentCache(tmp_path / "rx.json")
+    cache.put("ACETIC ACID, GLACIAL; HYDROCORTISONE", {
+        "rxcui": "1234567", "score": 20.0, "ingredients": ["acetic acid"],
+        "kept": ["acetic acid"], "ingredient_rxcuis": {"acetic acid": "168"},
+    })
+    drugs = [
+        {"identity": {"resolved_id": "CHEBI:15366", "resolved_label": "acetic acid"},
+         "alternate_ids": ["DRUGBANK:DB03166"], "source_xrefs": ["UNII:Q40Q9N063P"]},
+        {"identity": {"resolved_id": "CHEBI:17650", "resolved_label": "cortisol"}},
+    ]
+
+    assert rr.enrich_rxcui_xrefs(drugs, store=store, cache=cache) == 1
+    assert drugs[0]["source_xrefs"] == ["RXCUI:168", "UNII:Q40Q9N063P"]
+    assert drugs[0]["alternate_ids"] == ["DRUGBANK:DB03166"]
+    assert "source_xrefs" not in drugs[1]      # cache predates rxcuis for this one -> nothing
+
+
+def test_enrich_rxcui_xrefs_is_a_no_op_without_a_store_or_cache(tmp_path):
+    from medic.grounding.store import LiteralMappingStore
+
+    store = LiteralMappingStore(str(tmp_path / "missing.tsv"), "drugs")
+    store.load()
+    drug = {"identity": {"resolved_id": "CHEBI:15366", "resolved_label": "acetic acid"}}
+    assert rr.enrich_rxcui_xrefs(
+        [drug], store=store, cache=EnrichmentCache(tmp_path / "missing.json")
+    ) == 0
+    assert "source_xrefs" not in drug

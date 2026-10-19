@@ -156,3 +156,19 @@ def test_justification_does_not_claim_a_match_that_never_ran(tmp_path, monkeypat
     text = _write_export(tmp_path, monkeypatch, DRUGS).read_text()
     assert "semapv:UnspecifiedMatching" in text
     assert "semapv:LexicalMatching" not in text
+
+
+def test_source_xrefs_never_become_exact_matches(tmp_path, monkeypatch):
+    """`source_xrefs` are cross-references a source holds (PHAROS, matched by label; an
+    RxNorm approximate match), not identities MeDIC established. They ship in KGX `xref`
+    and must not be promoted to the strongest claim SSSOM has."""
+    drugs = [{
+        "identity": {"resolved_id": "CHEBI:10023", "resolved_label": "voriconazole"},
+        "alternate_ids": ["DRUGBANK:DB00582"],
+        "source_xrefs": ["CHEMBL.COMPOUND:CHEMBL638", "UNII:JFU09I87TR", "RXCUI:121243"],
+    }]
+    text = _write_export(tmp_path, monkeypatch, drugs).read_text()
+    rows = [ln for ln in text.splitlines() if ln.startswith("CHEBI:")]
+    assert len(rows) == 1 and "DRUGBANK:DB00582" in rows[0]
+    for xref in drugs[0]["source_xrefs"]:
+        assert xref not in text
