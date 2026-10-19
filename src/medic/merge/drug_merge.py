@@ -167,6 +167,7 @@ def _merge_group(drug_id: str, records: list[dict], rules_lookup=None) -> dict:
     """
     all_ingredients = []
     all_alt_ids = set()
+    all_source_xrefs = set()
     marketing_statuses = []
     evidence_items = []
     label = ""
@@ -308,6 +309,13 @@ def _merge_group(drug_id: str, records: list[dict], rules_lookup=None) -> dict:
             all_alt_ids.update(str(x) for x in alt if x and str(x) not in rec_components)
         elif isinstance(alt, str) and alt and alt not in rec_components:
             all_alt_ids.add(alt)
+        # Source-copied cross-references (see Drug.source_xrefs). Unioned like alternate_ids;
+        # no component filter is needed because nothing writes components here.
+        xrefs = rec.get("source_xrefs", [])
+        if isinstance(xrefs, list):
+            all_source_xrefs.update(str(x) for x in xrefs if x)
+        elif isinstance(xrefs, str) and xrefs:
+            all_source_xrefs.add(xrefs)
 
         # Use first non-empty label
         if not label:
@@ -361,6 +369,8 @@ def _merge_group(drug_id: str, records: list[dict], rules_lookup=None) -> dict:
         "source_ingredients": all_ingredients if all_ingredients else [],
         "alternate_ids": sorted(all_alt_ids) if all_alt_ids else [],
     }
+    if all_source_xrefs:
+        drug["source_xrefs"] = sorted(all_source_xrefs)
 
     if evidence_items:
         drug["evidence"] = evidence_items
@@ -505,12 +515,14 @@ def merge_drugs(
     from medic.enrichment.combination import detect_combinations
     from medic.enrichment.pharos import enrich_pharos
     from medic.enrichment.rxnorm_extension import enrich_rxnorm_extension
+    from medic.enrichment.rxnorm_resolve import enrich_rxcui_xrefs
 
     enrich_atc_smiles(drug_list)
     classify_drugs(drug_list)
     detect_combinations(drug_list)
     enrich_pharos(drug_list)
     enrich_rxnorm_extension(drug_list)
+    enrich_rxcui_xrefs(drug_list)
 
     # Nest the ATC fields into one object and collapse the boolean is_* tags into a
     # single features[] list (v2.0 shape; the flat fields stay additively until rebuild).

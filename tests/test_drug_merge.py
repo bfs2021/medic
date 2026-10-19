@@ -161,3 +161,28 @@ def test_merge_funnels_applied_rules_onto_grounding_step():
     assert steps[0]["category"] == "EXTRACTION"
     g = next(s for s in steps if s["category"] == "GROUNDING")
     assert g["applied_rules"] == ["formulation_strip"]
+
+
+def test_merge_unions_source_xrefs_like_alternate_ids():
+    """A record-level `source_xrefs` list survives the merge, deduplicated across records,
+    and does not leak into `alternate_ids` (which the SSSOM export publishes as exactMatch)."""
+    base = {"normalized_id": "CHEBI:15365", "normalized_label": "aspirin",
+            "grounding_confidence": 0.98, "grounding_status": "accepted"}
+    records = [
+        {**base, "source": "ORANGEBOOK", "source_name": "ASPIRIN",
+         "alternate_ids": ["DRUGBANK:DB00945"], "source_xrefs": ["UNII:R16CO5Y76E"]},
+        {**base, "source": "EMA", "source_name": "ACETYLSALICYLIC ACID",
+         "source_xrefs": ["UNII:R16CO5Y76E", "PUBCHEM.COMPOUND:2244"]},
+    ]
+    drug = _merge_group("CHEBI:15365", records)
+    assert drug["source_xrefs"] == ["PUBCHEM.COMPOUND:2244", "UNII:R16CO5Y76E"]
+    assert drug["alternate_ids"] == ["DRUGBANK:DB00945"]
+
+
+def test_merge_omits_source_xrefs_when_no_record_has_any():
+    drug = _merge_group("CHEBI:15365", [
+        {"source": "EMA", "source_name": "ASPIRIN", "normalized_id": "CHEBI:15365",
+         "normalized_label": "aspirin", "grounding_confidence": 0.98,
+         "grounding_status": "accepted"},
+    ])
+    assert "source_xrefs" not in drug

@@ -76,7 +76,15 @@ def drug_node(
             *(drug.get("synonyms") or []),
             identity.get("original_literal") or "",
         ]),
-        "xref": _uniq([*(drug.get("alternate_ids") or []), drug.get("drugbank_id") or ""]),
+        # `alternate_ids` are ids MeDIC's own resolution established; `source_xrefs` are
+        # cross-references copied from an enrichment source (PHAROS, RxNorm). Both are
+        # `xref` here — Biolink's loose cross-reference — but only the first set is a
+        # SSSOM exactMatch (see Drug.source_xrefs in the schema).
+        "xref": _uniq([
+            *(drug.get("alternate_ids") or []),
+            *(drug.get("source_xrefs") or []),
+            drug.get("drugbank_id") or "",
+        ]),
 
         # chemistry
         "medic_smiles": drug.get("smiles") or "",

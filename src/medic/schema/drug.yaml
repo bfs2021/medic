@@ -229,7 +229,18 @@ classes:
       alternate_ids:
         range: string
         multivalued: true
-        description: All other known identifiers for this drug
+        description: >-
+          Other identifiers MeDIC's own resolution established for this drug (the
+          pre-normalization id, ids the grounder returned). Published as skos:exactMatch
+          in the SSSOM export.
+      source_xrefs:
+        range: string
+        multivalued: true
+        description: >-
+          Cross-references copied from an enrichment source's record for this drug
+          (PHAROS synonyms matched by label, the RxNorm ingredient RXCUI), as
+          Biolink-prefixed CURIEs. Weaker than alternate_ids: exported as KGX xref,
+          never as a SSSOM exactMatch.
       drugbank_id:
         range: string
         description: DrugBank identifier
