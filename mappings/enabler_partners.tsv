@@ -1,0 +1,18 @@
+# license: https://creativecommons.org/licenses/by/4.0/
+# comment: Ingredients that never own a treatment indication on their own: they ship only as the enabling partner of another active moiety, so an INDICATION attributed to one of them is the partner's indication credited to the wrong component of a combination label (#88, FAILURE_MODES 5.4 wrong_pairing). Names are INNs and their salt forms; no upstream content is reproduced. Ritonavir is deliberately absent: it is both a pharmacokinetic booster and a treatment at full dose, and a name cannot tell the two apart. Contraindications on these drugs are real and are not affected by this list.
+name	class	note
+avibactam	beta_lactamase_inhibitor	partner of ceftazidime (Avycaz/Zavicefta), aztreonam (Emblaveo)
+avibactam sodium	beta_lactamase_inhibitor	salt form of avibactam
+tazobactam	beta_lactamase_inhibitor	partner of piperacillin (Zosyn), ceftolozane (Zerbaxa)
+tazobactam sodium	beta_lactamase_inhibitor	salt form of tazobactam
+sulbactam	beta_lactamase_inhibitor	partner of ampicillin (Unasyn), durlobactam (Xacduro)
+sulbactam sodium	beta_lactamase_inhibitor	salt form of sulbactam
+clavulanate	beta_lactamase_inhibitor	partner of amoxicillin (Augmentin), ticarcillin (Timentin)
+clavulanic acid	beta_lactamase_inhibitor	free-acid name of clavulanate
+potassium clavulanate	beta_lactamase_inhibitor	salt form of clavulanate, cation first
+clavulanate potassium	beta_lactamase_inhibitor	salt form of clavulanate, cation last
+vaborbactam	beta_lactamase_inhibitor	partner of meropenem (Vabomere)
+relebactam	beta_lactamase_inhibitor	partner of imipenem/cilastatin (Recarbrio)
+cilastatin	dehydropeptidase_inhibitor	renal dehydropeptidase-I inhibitor; partner of imipenem (Primaxin, Recarbrio)
+cilastatin sodium	dehydropeptidase_inhibitor	salt form of cilastatin
+cobicistat	pk_booster	CYP3A inhibitor with no antiviral activity; partner of elvitegravir, darunavir, atazanavir
