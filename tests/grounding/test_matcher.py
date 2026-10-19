@@ -89,6 +89,65 @@ def test_drug_salt_strip(tmp_path):
     assert d.predicate_id == "skos:closeMatch"
 
 
+def test_drug_salt_prefers_parent_over_exact_salt_entry(tmp_path):
+    # ChEBI has both 'fentanyl citrate' and 'fentanyl'. Before #95 the exact tier matched
+    # the salt verbatim and the strip rule never fired; the parent moiety must win.
+    m = _matcher(tmp_path, [_r("CHEBI:119915", "fentanyl"),
+                            _r("CHEBI:31602", "fentanyl citrate")], entity="drugs")
+    d = _one(m, "FENTANYL CITRATE")
+    assert d.object_id == "CHEBI:119915"
+    assert d.subject_preprocessing == ["salt_ester_strip"]
+    assert d.predicate_id == "skos:closeMatch"
+    assert d.confidence == 0.90
+    # surgery-grade, not an exact quality: reliability may not auto-score it HIGH
+    assert d.grounding_quality == "lexical_exact_surgery"
+
+
+def test_drug_salt_without_parent_keeps_exact_salt_match(tmp_path):
+    # Only the salt exists (risedronate sodium, carphenazine maleate): unchanged behaviour.
+    m = _matcher(tmp_path, [_r("CHEBI:72994", "risedronate sodium")], entity="drugs")
+    d = _one(m, "risedronate sodium")
+    assert d.object_id == "CHEBI:72994"
+    assert d.subject_preprocessing == []
+    assert d.predicate_id == "skos:exactMatch"
+    assert d.grounding_quality == "lexical_exact"
+    d = _one(m, "RISEDRONATE SODIUM")
+    assert d.object_id == "CHEBI:72994" and d.grounding_quality == "lexical_exact_normalized"
+
+
+def test_drug_two_salts_collapse_to_one_parent(tmp_path):
+    m = _matcher(tmp_path, [_r("CHEBI:6904", "metoprolol"),
+                            _r("CHEBI:6906", "metoprolol tartrate"),
+                            _r("CHEBI:6905", "metoprolol succinate")], entity="drugs")
+    tart = _one(m, "METOPROLOL TARTRATE")
+    succ = _one(m, "METOPROLOL SUCCINATE")
+    assert tart.object_id == succ.object_id == "CHEBI:6904"
+    assert tart.subject_preprocessing == succ.subject_preprocessing == ["salt_ester_strip"]
+
+
+def test_drug_salt_parent_first_per_combination_component(tmp_path):
+    # Orange Book multi-ingredient strings go through the split; each component gets the
+    # same parent-first treatment, and a component with no parent keeps its salt id.
+    m = _matcher(tmp_path, [_r("CHEBI:6904", "metoprolol"),
+                            _r("CHEBI:6906", "metoprolol tartrate"),
+                            _r("CHEBI:3654", "chlorthalidone")], entity="drugs")
+    ds = m.ground("CHLORTHALIDONE; METOPROLOL TARTRATE")
+    by_id = {d.object_id: d for d in ds}
+    assert set(by_id) == {"CHEBI:3654", "CHEBI:6904"}
+    assert by_id["CHEBI:6904"].subject_preprocessing == ["salt_ester_strip", "combination_split"]
+    assert by_id["CHEBI:3654"].subject_preprocessing == ["combination_split"]
+
+
+def test_disease_salt_like_word_is_unaffected(tmp_path):
+    # salt stripping is drugs-only: a disease label ending in a salt word still matches
+    # verbatim even when a shorter label exists.
+    m = _matcher(tmp_path, [_r("MONDO:8", "hypersensitivity to sodium"),
+                            _r("MONDO:9", "hypersensitivity to")])
+    d = _one(m, "hypersensitivity to sodium")
+    assert d.object_id == "MONDO:8"
+    assert d.subject_preprocessing == [] and d.grounding_quality == "lexical_exact"
+
+
 def test_disease_qualifier_strip_broadmatch(tmp_path):
     m = _matcher(tmp_path, [_r("MONDO:7", "plaque psoriasis")])
     d = _one(m, "moderate to severe plaque psoriasis")

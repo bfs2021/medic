@@ -1,6 +1,9 @@
 """Match cascade: tiered, rung-major / vocab-minor, ambiguity -> unresolved.
 
 Tier order (per atomic literal), first single-id hit wins:
+  0 [drugs] salt -> parent   -> closeMatch      (only when the literal ends in a salt word
+                                                 and the stripped parent resolves; see
+                                                 ``_salt_parent``)
   1 exact (raw)              -> exactMatch
   2 base-normalized          -> exactMatch
   3 surgery variants         -> per-rule predicate
@@ -178,9 +181,33 @@ class Matcher:
                 return d
         return self._fuzzy(subject, s)                           # tier 6: fuzzy edit-1
 
+    def _salt_parent(self, subject, norm):
+        """[drugs] Resolve a salt form to its parent moiety *before* the exact tiers.
+
+        ChEBI carries its own entry for most salts ('fentanyl citrate' CHEBI:31602 beside
+        'fentanyl' CHEBI:119915), so tier 1/2 matched the salt verbatim and the tier-4
+        ``salt_ester_strip`` rule never got a turn: 863 salt-form drug nodes sat next to
+        their parents in the KGX export, 617 of them duplicating a parent that was also a
+        node (#95). The active moiety is what MeDIC means by a drug (DailyMed already grounds
+        on ``activeMoiety``), so when the literal ends in a salt word and the stripped
+        parent resolves (exact or normalized, via ``lookup_norm``), the parent wins and the
+        decision carries the rule: closeMatch, certainty 0.90, surgery-grade quality. When
+        only the salt exists in the index ('risedronate sodium', 'carphenazine maleate')
+        this returns None and the exact salt match below stands, unchanged.
+        """
+        for v in salt_variants(norm):
+            d = self._try_rule(subject, v.string, "salt_ester_strip")
+            if d:
+                return d
+        return None
+
     def _single(self, subject: str) -> GroundingDecision:
         trimmed = " ".join(subject.split())
         norm = base_normalize(subject)
+        if self.is_drug:                                         # tier 0: salt -> parent
+            d = self._salt_parent(subject, norm)
+            if d:
+                return d
         d = self._try_base(subject, trimmed, "raw", 1.0)          # tier 1: exact
         if d:
             return d
