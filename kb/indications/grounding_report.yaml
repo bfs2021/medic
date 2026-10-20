@@ -1,26 +1,30 @@
-already_mondo: 2569
+already_mondo: 2601
 newly_grounded: 0
-non_mondo_after: 1864
-non_mondo_before: 1864
-regrounded_to_hp: 731
+non_mondo_after: 1886
+non_mondo_before: 1886
+regrounded_to_hp: 736
 regrounded_to_mondo: 0
 review_recommended: 0
-total_diseases: 4433
-unresolved: 1133
+total_diseases: 4487
+unresolved: 1150
 unresolved_diseases:
 - Diffuse Well Differentiated Lymphocytic Lymphoma
 - Diffuse Well Differentiated Lymphocytic Lymphoma
 - Diffuse Well Differentiated Lymphocytic Lymphoma
 - Abortion, Threatened
-- Gestation
+- Abortion, Threatened
 - Cerebral aneurysm
+- Cerebral aneurysm
+- Cerebral aneurysm
+- UMLS:C3267019 (no name)
+- UMLS:C3267019 (no name)
 - UMLS:C3267019 (no name)
 - Gastric retention
 - UMLS:C0948807 (no name)
 - Moderate Hepatic Insufficiency
 - UMLS:C0948807 (no name)
 - UMLS:C0948807 (no name)
-- History of transient ischemic attack
+- Moderate Hepatic Insufficiency
 - UMLS:C1868885 (no name)
 - UMLS:C0749249 (no name)
 - Hepatocellular Damage
@@ -29,8 +33,10 @@ unresolved_diseases:
 - Asthma, Aspirin-Induced
 - UMLS:C1868885 (no name)
 - Gastrointestinal Perforation
+- Gastrointestinal Perforation
+- Gastrointestinal Perforation
 - Perforation
-- Cholinesterase 2 Deficiency
+- Perforation
 - Toxicoderma
 - Toxicoderma
 - Pain, Postoperative
@@ -41,28 +47,25 @@ unresolved_diseases:
 - Deglutition disorder
 - Esophageal Perforations
 - Colonic Obstruction
+- History of pheochromocytoma
 - UMLS:C0948807 (no name)
 - UMLS:C1868885 (no name)
 - Pain, Postoperative
 - UMLS:C2363890 (no name)
 - Gestation
+- Gestation
 - Acute viral hepatitis, unspecified
 - Decompensated cirrhosis of liver
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
-- UMLS:C1868885 (no name)
 - Gastric retention
-- Allergy to soy
 - Oxygen Deficiency
 - Gastric retention
 - Loss of hypoglycemic warning due to diabetes mellitus
 - UMLS:C0948807 (no name)
 - Renal Insufficiencies
-- Rilpivirine
 - Gestation
 - UMLS:C0948807 (no name)
-- Gestation
-- Gestation
 - Gestation
 - UMLS:C0948807 (no name)
 - Diseases, Liver
@@ -77,8 +80,10 @@ unresolved_diseases:
 - Renal Insufficiencies
 - Inherited
 - UMLS:C0948807 (no name)
+- Moderate Hepatic Insufficiency
 - Gestation
 - Renal Insufficiencies
+- UMLS:C1868885 (no name)
 - Gastric retention
 - UMLS:C0948807 (no name)
 - Moderate Hepatic Insufficiency
@@ -91,18 +96,19 @@ unresolved_diseases:
 - Immunosuppression
 - Gestation
 - Gestation
+- Gestation
 - Fetal Bradycardia
-- Disorder characterized by fever
 - Vaginal Bleeding
 - Amino Acid Metabolism, Inborn Error
 - Prosthesis, Penile
+- Prosthesis, Penile
+- Cell Traits, Sickle
 - Cell Traits, Sickle
 - Disproportion, Cephalopelvic
-- Disproportion, Cephalopelvic
 - Previous cesarean section (disorder)
-- Grand multiparity NOS
 - 'H/O: cesarean section'
 - Amino Acid Metabolism, Inborn Error
+- Poor progression in labor
 - Amino Acid Metabolism, Inborn Error
 - Hypervitaminosis
 - Amino Acid Metabolism, Inborn Error
@@ -133,7 +139,6 @@ unresolved_diseases:
 - Hemochromatoses
 - Hypervitaminosis
 - Hepatocellular Damage
-- Decreased pulmonary function
 - Gestation
 - Gallstone pancreatitis
 - UMLS:C2363890 (no name)
@@ -144,10 +149,7 @@ unresolved_diseases:
 - Abortion, Missed
 - Diseases, Liver
 - Gestation
-- 'H/O: Deep vein thrombosis'
-- History of - myocardial infarction
-- History of thrombophlebitis
-- UMLS:C3544094 (no name)
+- Gestation
 - Amino Acid Metabolism, Inborn Error
 - Amino Acid Metabolism, Inborn Error
 - Hemochromatoses
@@ -158,22 +160,29 @@ unresolved_diseases:
 - Breast Fed
 - Gestation
 - Gestation
+- Gestation
+- Gestation
+- Gestation
 - UMLS:C2363890 (no name)
 - Hypochloremic alkalosis
 - Toxic colitis (disorder)
 - Gastric retention
 - Amino Acid Metabolism, Inborn Error
 - Hypervitaminosis
+- wounds
 - Skin Diseases, Viral
 - Tympanic Membrane Perforation
 - Gestation
 - UMLS:C0948807 (no name)
 - UMLS:C1868885 (no name)
+- Gestation
 - Vaginal Bleeding
 - Opioid withdrawal
 - Vitamin D poisoning
 - Deaths, Fetal
+- Deaths, Fetal
 - Gestation
+- Fetal Bradycardia
 - Fetal Bradycardia
 - Amino Acid Metabolism, Inborn Error
 - Amino Acid Metabolism, Inborn Error
@@ -194,15 +203,13 @@ unresolved_diseases:
 - Hemochromatoses
 - Hypervitaminosis
 - UMLS:C1868885 (no name)
-- UMLS:C4524093 (no name)
+- Reduced renal function
 - Renal Insufficiencies
 - Gestation
 - Renal Insufficiencies
-- Gestation
+- Decompensated cardiac failure
 - Gestation
 - UMLS:C0948807 (no name)
-- UMLS:C0948807 (no name)
-- Renal Insufficiencies
 - Renal Insufficiencies
 - Partial obstruction of intestine
 - Amino Acid Metabolism, Inborn Error
@@ -211,8 +218,9 @@ unresolved_diseases:
 - Intestinal Stricture
 - UMLS:C0948807 (no name)
 - Stenoses
-- Bladder Perforation
 - Increased bleeding tendency
+- valvular regurgitation NOS
+- Infections
 - Acute cellulitis
 - Hemochromatoses
 - Chronic Kidney Insufficiencies
@@ -221,9 +229,10 @@ unresolved_diseases:
 - Breast Fed
 - Gestation
 - Gestation
-- Gestation
 - Decompensated cirrhosis of liver
 - UMLS:C0948807 (no name)
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
 - Renal Insufficiencies
 - Hypertensive Crisis
 - History of pheochromocytoma
@@ -233,6 +242,9 @@ unresolved_diseases:
 - Gestation
 - Gestation
 - Gestation
+- Gestation
+- Gestation
+- Hepatocellular Damage
 - Hepatocellular Damage
 - 'H/O: Deep vein thrombosis'
 - Hemochromatoses
@@ -248,6 +260,7 @@ unresolved_diseases:
 - Gestation
 - Gestation
 - Gestation
+- Fetal Harm
 - Bone Marrow Depression
 - Gestation
 - Gestation
@@ -255,17 +268,15 @@ unresolved_diseases:
 - Viral resistance
 - Hemochromatoses
 - Diseases, Liver
-- Gestation
 - Renal Insufficiencies
 - UMLS:C0948807 (no name)
 - Recent myocardial infarction
 - Circulatory Collapse
-- Vaccinia virus
+- Brain Injuries, Traumatic
+- Brain Injuries, Traumatic
 - Deaths, Fetal
 - Deaths, Fetal
 - Deaths, Fetal
-- Deaths, Fetal
-- Fetal Bradycardia
 - Fetal Bradycardia
 - Fetal Bradycardia
 - Fetal Bradycardia
@@ -277,9 +288,11 @@ unresolved_diseases:
 - Gastric retention
 - Gastric retention
 - UMLS:C2747793 (no name)
+- UMLS:C0235410 (no name)
 - Gastroparesis due to diabetes mellitus
 - Gastric retention
 - Renal Insufficiencies
+- Increased risk of malignancy
 - UMLS:C0948807 (no name)
 - Renal Insufficiencies
 - Angor Pectoris
@@ -292,6 +305,7 @@ unresolved_diseases:
 - Severe dehydration
 - Progressive heart failure
 - Idiopathic angioedema
+- Gestation
 - Gestation
 - History of substance abuse
 - Heat Cramps
@@ -308,12 +322,15 @@ unresolved_diseases:
 - Gestation
 - Fetal Harm
 - Fetal Harm
+- Toxic colitis (disorder)
 - Gastric retention
 - Renal Insufficiencies
 - Bone Marrow Depression
 - Peptic Ulcer Hemorrhage
 - Toxicoderma
 - Toxicoderma
+- Renal Insufficiencies
+- Renal Insufficiencies
 - Renal Insufficiencies
 - Renal Insufficiencies
 - Renal Insufficiencies
@@ -327,7 +344,6 @@ unresolved_diseases:
 - Severe chronic obstructive pulmonary disease
 - Adhesive pericarditis
 - UMLS:C1868885 (no name)
-- Pleural fibrosis
 - Breast Fed
 - Gestation
 - Decompensated cirrhosis of liver
@@ -340,6 +356,7 @@ unresolved_diseases:
 - Deaths, Fetal
 - Deaths, Fetal
 - Hemorrhages
+- Chondrolysis of articular cartilage
 - Fetal Bradycardia
 - Fetal Bradycardia
 - Fetal Bradycardia
@@ -352,23 +369,26 @@ unresolved_diseases:
 - Gestation
 - Gestation
 - Gestation
-- Gestation
 - Fetal Harm
-- Alcohol Use Disorder
+- Fetal Harm
 - Alcohol Use Disorder
 - Alcohol Use Disorder
 - Alcohol Use Disorder
 - Alcohol Use Disorder
 - Gestation
 - Drinks alcohol
+- Alcohol Withdrawal Seizures
+- Barbiturate withdrawal
+- Barbiturate withdrawal
 - Barbiturate withdrawal
 - Barbiturate withdrawal
 - UMLS:C1868885 (no name)
 - Benzodiazepine withdrawal
 - Benzodiazepine withdrawal
 - Benzodiazepine withdrawal
-- Urinary outflow obstruction
-- Cholinesterase 2 Deficiency
+- Benzodiazepine withdrawal
+- Sedative withdrawal
+- Gestation
 - Adhesive pericarditis
 - UMLS:C1868885 (no name)
 - Renal Insufficiencies
@@ -378,12 +398,12 @@ unresolved_diseases:
 - Renal Insufficiencies
 - Decompensated cardiac failure
 - UMLS:C0948807 (no name)
+- Gestation
 - UMLS:C0948807 (no name)
 - Renal Insufficiencies
 - Allergy to cefpodoxime
 - Acute iritis
 - Prostatic hypertrophy
-- Gestation
 - Gestation
 - Gestation
 - Circulatory Collapse
@@ -392,14 +412,11 @@ unresolved_diseases:
 - UMLS:C1868885 (no name)
 - Central nervous system depression
 - UMLS:C0948807 (no name)
+- Renal Insufficiencies
 - UMLS:C0948807 (no name)
 - UMLS:C0948807 (no name)
-- UMLS:C0948807 (no name)
 - Renal Insufficiencies
 - Renal Insufficiencies
-- Renal Insufficiencies
-- Renal Insufficiencies
-- Infancy (function)
 - Prostatic hypertrophy
 - Antibiotic-Associated Colitis
 - Gestation
@@ -421,12 +438,8 @@ unresolved_diseases:
 - Breast Fed
 - Gestation
 - Gestation
-- Gestation
-- Gestation
 - Decompensated cirrhosis of liver
 - Asthma, Aspirin-Induced
-- Gestation
-- Gestation
 - Gestation
 - Gestation
 - Gestation
@@ -441,32 +454,37 @@ unresolved_diseases:
 - Breast Fed
 - Gestation
 - Primary hypercholesterolemia
+- Allergy to sulfonamide
 - Asthma, Aspirin-Induced
 - Deaths, Fetal
 - Vaccinia virus
 - Fetal Bradycardia
 - Decompensated cardiac failure
 - UMLS:C0948807 (no name)
+- Moderate Hepatic Insufficiency
 - Asthma, Aspirin-Induced
+- Breast Fed
 - Breast Fed
 - Gestation
 - Gestation
 - Diseases, Liver
-- Gestation
 - Asthma, Aspirin-Induced
 - Renal Insufficiencies
 - Deaths, Fetal
+- Gestation
+- Gestation
 - Gestation
 - Teratogenesis
 - Chronic Liver Disease
 - Non-Neoplastic Disease
 - Bloodstream Infection
+- Bloodstream Infection
 - Renal Insufficiencies
 - UMLS:C1868885 (no name)
-- UMLS:C1868885 (no name)
 - Gestation
 - Gestation
-- Not Known
+- Gestation
+- Hepatitis C virus
 - History of pheochromocytoma
 - Acute gouty arthropathy
 - Hepatocellular Damage
@@ -479,6 +497,7 @@ unresolved_diseases:
 - UMLS:C1868885 (no name)
 - Prinzmetal's variant angina
 - Multiple Trauma
+- AIDS-related Kaposi sarcoma
 - AIDS-related Kaposi sarcoma
 - Solid Tumor
 - Drug-induced ITP
@@ -500,6 +519,7 @@ unresolved_diseases:
 - Acute Kidney Insufficiencies
 - Acute Kidney Insufficiencies
 - Coronary Occlusion
+- Generalized rash
 - Renal Insufficiencies
 - Severe chronic obstructive pulmonary disease
 - Vitamin D poisoning
@@ -507,26 +527,21 @@ unresolved_diseases:
 - wounds
 - Gestation
 - Gestation
-- Gestation
 - Asthma, Aspirin-Induced
-- History of torsades type ventricular tachycardia due to prolonged QT interval
 - UMLS:C0948807 (no name)
 - Recent myocardial infarction
 - Asthma, Aspirin-Induced
 - UMLS:C1868885 (no name)
-- Asthma, Aspirin-Induced
 - Severe sinus bradycardia
 - Decompensated cardiac failure
-- Gestation
 - UMLS:C0854268 (no name)
 - Gestation
 - Infancy (function)
 - Diarrhea, watery
+- Renal Insufficiencies
 - Poor Performance Status
 - Diseases, Liver
 - Diseases, Liver
-- Diseases, Liver
-- Gestation
 - Gestation
 - Gestation
 - Gestation
@@ -537,16 +552,17 @@ unresolved_diseases:
 - Gestation
 - Hepatitis C virus
 - Hepatitis C virus
+- Hepatitis C virus
+- Hepatitis C virus
 - Acute viral hepatitis, unspecified
 - Acute viral hepatitis, unspecified
 - Acute viral hepatitis, unspecified
-- Not Known
-- Tobacco Smoking
-- UMLS:C0948807 (no name)
 - Renal Insufficiencies
 - Renal Insufficiencies
 - Decompensated cirrhosis of liver
 - Decompensated cirrhosis of liver
+- UMLS:C1868885 (no name)
+- UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
@@ -555,18 +571,16 @@ unresolved_diseases:
 - nursing
 - Gestation
 - Decompensated cirrhosis of liver
-- Fetal Harm
 - Asthma, Aspirin-Induced
 - Asthma, Aspirin-Induced
 - Asthma, Aspirin-Induced
 - Asthma, Aspirin-Induced
+- Diseases, Liver
 - Gestation
 - Gestation
 - Hepatocellular Damage
 - UMLS:C0948807 (no name)
-- Gestation
-- UMLS:C0948807 (no name)
-- Renal Insufficiencies
+- Late pregnancy
 - Asthma, Aspirin-Induced
 - Rilpivirine
 - Gestation
@@ -575,8 +589,8 @@ unresolved_diseases:
 - Gestation
 - Gestation
 - Gestation
-- Gestation
 - Hypofunction, Adrenal Gland
+- Device, Intrauterine
 - Gestation
 - Gestation
 - Vitamin D poisoning
@@ -585,16 +599,19 @@ unresolved_diseases:
 - Gestation
 - Gestation
 - Gestation
-- Tobacco Smoking
+- UMLS:C1868885 (no name)
+- UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - Gestation
 - Gestation
 - Gestation
+- Diseases, Liver
 - Gestation
 - Gestation
 - Gestation
-- Hepatitis C virus
+- Gestation
+- UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - Diseases, Liver
@@ -603,33 +620,34 @@ unresolved_diseases:
 - Gestation
 - Hepatitis C virus
 - Hepatitis C virus
+- Hepatitis C virus
+- Hepatitis C virus
+- UMLS:C0948807 (no name)
 - Renal Insufficiencies
 - Renal Insufficiencies
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
+- UMLS:C1868885 (no name)
 - Gestation
 - Gestation
+- Gestation
+- Gestation
+- Pregnancy, Planned
 - congenital defects
 - Fetal Harm
 - Pyloric obstruction [Ambiguous]
 - UMLS:C0948807 (no name)
 - UMLS:C1868885 (no name)
-- Personal History of Coronary Artery Disease
 - Renal Insufficiencies
 - UMLS:C0948807 (no name)
 - Hepatocellular Damage
 - Severe depression
-- Severe depression
 - Gestation
-- UMLS:C0854268 (no name)
 - UMLS:C0948807 (no name)
-- UMLS:C0740304 (no name)
 - Gestation
 - Gestation
-- ACE inhibitor-aggravated angioedema
 - Hypertensive Crisis
 - UMLS:C1868885 (no name)
-- Prinzmetal's variant angina
 - Gestation
 - Gestation
 - Gestation
@@ -641,6 +659,7 @@ unresolved_diseases:
 - Renal Insufficiencies
 - Gestation
 - Infections
+- Infections
 - Gestation
 - Renal Insufficiencies
 - Renal Insufficiencies
@@ -648,40 +667,39 @@ unresolved_diseases:
 - Decompensated cardiac failure
 - Acute Kidney Insufficiencies
 - Asthma, Aspirin-Induced
-- Labor, Premature Obstetric
+- Gestation
 - Gestation
 - Gestation
 - Urinary outflow obstruction
+- Breast Fed
 - Renal Insufficiencies
+- Asthma, Aspirin-Induced
 - Asthma, Aspirin-Induced
 - Gastric Varix
 - Broncho-Esophageal Fistula
 - Gestation
 - Gestation
 - Gestation
-- Gestation
-- Gestation
 - Ventricular Dysfunction
 - Ventricular Dysfunction
-- UMLS:C0948807 (no name)
 - UMLS:C0948807 (no name)
 - Asthma, Aspirin-Induced
 - Renal Insufficiencies
-- Renal Insufficiencies
+- UMLS:C3203680 (no name)
+- UMLS:C3888904 (no name)
 - Renal Insufficiencies
 - Anaphylactoid
+- Anaphylactoid
 - Diseases, Liver
+- UMLS:C1868885 (no name)
 - Asthma, Aspirin-Induced
 - Deaths, Fetal
-- Hemorrhages
-- Gestation
-- Hemorrhage, Uterine
+- Deaths, Fetal
 - Gastrointestinal Perforation
 - Fetal Bradycardia
-- Perforation
+- Fetal Bradycardia
 - Asthma, Aspirin-Induced
 - Renal Insufficiencies
-- High risk of bleeding
 - High risk of bleeding
 - High risk of bleeding
 - High risk of bleeding
@@ -690,11 +708,9 @@ unresolved_diseases:
 - Decompensated cardiac failure
 - Toxicoderma
 - UMLS:C0948807 (no name)
-- Gestation
-- UMLS:C1394798 (no name)
+- Moderate Hepatic Insufficiency
 - UMLS:C1394798 (no name)
 - Renal Insufficiencies
-- UMLS:C0948807 (no name)
 - UMLS:C0948807 (no name)
 - Renal Insufficiencies
 - Gestation
@@ -711,34 +727,34 @@ unresolved_diseases:
 - Secondary
 - Secondary
 - Decompensated cardiac failure
-- Renal Insufficiencies
 - Gestation
 - UMLS:C0948807 (no name)
 - Moderate Hepatic Insufficiency
 - Gestation
+- Gestation
 - Bone Marrow Depression
-- Acute urticaria
-- Mucosal Ulcer
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
 - Rilpivirine
 - Gestation
 - Fetal Harm
 - Gestation
 - Gestation
+- Gestation
 - UMLS:C0948807 (no name)
-- Fetal Harm
 - Decompensated cardiac failure
 - Gestation
 - Fetal Harm
 - Fetal Harm
 - Acute Kidney Insufficiencies
 - Gestation
-- Gestation
+- Fetal Harm
 - Disease, Coronary Heart
 - Gestation
 - Renal Insufficiencies
+- Fetal Harm
 - Severe chronic obstructive pulmonary disease
 - Diseases, Liver
-- Gestation
 - Gestation
 - Hepatitis C virus
 - Acute viral hepatitis, unspecified
@@ -754,37 +770,39 @@ unresolved_diseases:
 - Acquired thrombophilia
 - Deaths, Fetal
 - Deaths, Fetal
+- Deaths, Fetal
+- Fetal Bradycardia
 - Fetal Bradycardia
 - Fetal Bradycardia
 - Acute ulcerative colitis
-- (2S,4S,5S,7S)-5-Amino-N-(2-carbamoyl-2-methylpropyl)-4-hydroxy-2-isopropyl-7-(4-methoxy-3-(3-methoxypropoxy)benzyl)-8-methylnonamide
-- Asthma, Aspirin-Induced
 - UMLS:C0542052 (no name)
 - Recent myocardial infarction
 - Asthma, Aspirin-Induced
 - Gestation
 - Gestation
 - Gestation
-- UMLS:C0948807 (no name)
 - Asthma, Aspirin-Induced
-- Gestation
 - Asthma, Aspirin-Induced
 - UMLS:C1868885 (no name)
 - Decreased pulmonary function
+- Opiate Overdose
 - UMLS:C0856984 (no name)
 - UMLS:C0948807 (no name)
 - Renal Insufficiencies
 - Anemia due to medication
+- Bronchial Hyperreactivity
 - Renal Insufficiencies
-- History of substance abuse
+- Abuse, Drug
 - Pareses
 - UMLS:C0234972 (no name)
 - Severe dehydration
 - Renal Insufficiencies
 - Gestation
 - Gestation
+- Gestation
 - UMLS:C0948807 (no name)
 - History of intracranial hemorrhage
+- Bronchial Hyperreactivity
 - Renal Insufficiencies
 - Gestation
 - Fetal Harm
@@ -796,11 +814,11 @@ unresolved_diseases:
 - Gestation
 - Gestation
 - Renal Insufficiencies
-- Ototoxicity
 - Partial obstruction of intestine
 - Central nervous system depression
 - Tympanic Membrane Perforation
 - Gestation
+- UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
 - Tongue swelling
@@ -808,32 +826,39 @@ unresolved_diseases:
 - Deaths, Fetal
 - Fetal Bradycardia
 - Gestation
-- Gestation
+- Fetal Harm
 - Asthma, Aspirin-Induced
+- Toxicoderma
+- UMLS:C0948807 (no name)
+- Renal Insufficiencies
 - Gestation
 - UMLS:C0948807 (no name)
 - Gestation
 - Gestation
-- Gestation
 - Asthma, Aspirin-Induced
+- Gestation
 - Opioid withdrawal
 - Gestation
 - UMLS:C1868885 (no name)
 - Gestation
+- Silent myocardial ischemia
+- Late pregnancy
 - UMLS:C0948807 (no name)
 - Asthma, Aspirin-Induced
 - Rilpivirine
 - UMLS:C1868885 (no name)
 - Tachyarrhythmias
+- Secondary carnitine deficiency
 - Suspected malignancy
 - UMLS:C1868885 (no name)
 - Gestation
-- Acute pelvic inflammatory disease
+- Gestation
 - Puerperal Endometritis
 - Postabortal Endometritis
 - UMLS:C1394798 (no name)
 - Injury to Liver
 - UMLS:C0854121 (no name)
+- UMLS:C2363890 (no name)
 - UMLS:C2363890 (no name)
 - UMLS:C2363890 (no name)
 - Gestation
@@ -846,8 +871,8 @@ unresolved_diseases:
 - Neoplasms, Intracranial
 - Toxic colitis (disorder)
 - Gastric retention
-- Acute bronchospasm
 - UMLS:C1394798 (no name)
+- Gestation
 - Gestation
 - Gestation
 - Gestation
@@ -856,15 +881,18 @@ unresolved_diseases:
 - 'H/O: Deep vein thrombosis'
 - Critical Illness
 - Critical Illness
+- Critical Illness
+- Diseases, Liver
 - Gestation
 - Gestation
 - Gestation
-- 'H/O: Deep vein thrombosis'
+- Gestation
 - UMLS:C0948807 (no name)
 - UMLS:C0948807 (no name)
 - Gestation
 - Renal Insufficiencies
 - UMLS:C0948807 (no name)
+- Hosts, Immunocompromised
 - UMLS:C0948807 (no name)
 - UMLS:C1868885 (no name)
 - Vaccinia virus
@@ -876,8 +904,6 @@ unresolved_diseases:
 - UMLS:C1868885 (no name)
 - Asthma, Aspirin-Induced
 - UMLS:C0948807 (no name)
-- Gestation
-- Hosts, Immunocompromised
 - UMLS:C0948807 (no name)
 - History of - cerebrovascular accident
 - UMLS:C1868885 (no name)
@@ -896,12 +922,11 @@ unresolved_diseases:
 - Renal Insufficiencies
 - UMLS:C0948807 (no name)
 - Gestation
-- UMLS:C3888912 (no name)
 - Gestation
 - Vaccinia virus
 - Tympanic Membrane Perforation
-- Ototoxicity
 - Tobacco amblyopia
+- Bifascicular Block
 - Bifascicular Block
 - Bifascicular Block
 - Tympanic Membrane Perforation
@@ -909,17 +934,11 @@ unresolved_diseases:
 - Gestation
 - Poor progression in labor
 - Poor progression in labor
-- Diseases, Liver
-- Diseases, Liver
-- Diseases, Liver
 - Gestation
 - Gestation
 - Gestation
 - Gestation
 - Gestation
-- Gestation
-- Gestation
-- UMLS:C0948807 (no name)
 - UMLS:C0948807 (no name)
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
@@ -929,11 +948,8 @@ unresolved_diseases:
 - Gestation
 - Gestation
 - Gestation
-- Gestation
 - UMLS:C1868885 (no name)
 - UMLS:C1868885 (no name)
-- Gestation
-- Gestation
 - Gestation
 - Fetal Harm
 - Fetal Harm
@@ -945,33 +961,32 @@ unresolved_diseases:
 - Asthma, Aspirin-Induced
 - Gastric retention
 - Decreased pulmonary function
-- Decreased pulmonary function
 - UMLS:C0948807 (no name)
 - Inertia, Uterine
 - Disproportion, Cephalopelvic
 - Disproportion, Cephalopelvic
 - Funic Presentation
 - Placenta previa centralis
-- Placenta previa centralis
 - Hypertonic uterine activity
+- Prolapsed Cord
+- Prolapsed Cord
 - Transverse presentation
 - Transverse presentation
-- Rilpivirine
 - Vitamin D poisoning
 - Hepatocellular Damage
 - Bone Marrow Depression
-- Gestation
 - History of substance abuse
 - UMLS:C1868885 (no name)
 - Hypertensive Crisis
-- Hypertensive Crisis
-- Hypertensive Crisis
 - Circulatory Collapse
-- Excite
 - Renal Insufficiencies
 - UMLS:C2363890 (no name)
+- Abuse, Drug
 - Gestation
 - Gestation
+- Gestation
+- Gestation
+- 'H/O: cardiovascular disease'
 - History of substance abuse
 - UMLS:C1868885 (no name)
 - Angor Pectoris
@@ -989,9 +1004,8 @@ unresolved_diseases:
 - Renal Insufficiencies
 - Renal Insufficiencies
 - Renal Insufficiencies
-- Ototoxicity
+- Renal Insufficiencies
 - Idiopathic methemoglobinemia
-- Gestation
 - Gestation
 - Central nervous system depression
 - Renal Insufficiencies
@@ -1006,42 +1020,38 @@ unresolved_diseases:
 - Pancreatic duct obstruction
 - Absence of gallbladder
 - Mechanical urinary obstruction
-- Chronic pulmonary insufficiency
 - Tympanic Membrane Perforation
 - Gestation
 - Gestation
 - Gestation
 - Gestation
-- Gestation
-- Retinal Vein Thromboses
 - Retinal Vein Thromboses
 - ACE inhibitor-aggravated angioedema
 - Idiopathic angioedema
 - Injury, Eye
 - Central nervous system depression
-- UMLS:C0740304 (no name)
 - UMLS:C0948807 (no name)
 - Asthma, Aspirin-Induced
 - nursing
 - Gestation
 - Decompensated cirrhosis of liver
-- Fetal Harm
 - Eplerenone
 - Acute Kidney Insufficiencies
 - Allergy to trimethoprim
 - Allergy to sulfadiazine
 - Drug-induced ITP
 - Asthma, Aspirin-Induced
-- Renal Insufficiencies
+- 'H/O: liver disease'
+- History of headache
 - Gestation
 - Gestation
 - Fetal Harm
-- Gestation
+- Rudimentary rib
+- Fetal Harm
 - Tympanic Membrane Perforation
 - Tocolysis
 - Renal Insufficiencies
 - UMLS:C0948807 (no name)
-- Cholinesterase 2 Deficiency
 - Gestation
 - Gestation
 - Gestation
@@ -1059,9 +1069,13 @@ unresolved_diseases:
 - Renal Insufficiencies
 - Acute Kidney Insufficiencies
 - Gestation
+- Gestation
+- UMLS:C0854268 (no name)
+- UMLS:C0854268 (no name)
 - Poisoning by salicylates NOS
 - Gallstone pancreatitis
 - UMLS:C1262272 (no name)
+- Gestation
 - Vaginal Bleeding
 - Gestation
 - Hypervitaminosis
@@ -1073,8 +1087,10 @@ unresolved_diseases:
 - Esophageal Perforations
 - Peritoneal cavity free air
 - Gastrointestinal Perforation
+- Gastrointestinal Perforation
 - Colonic Obstruction
 - Small Intestinal Obstruction
+- Acute gastrointestinal hemorrhage
 - Acute gastrointestinal hemorrhage
 - Ischemia
 - Acute cellulitis
@@ -1083,7 +1099,6 @@ unresolved_diseases:
 - Toxicoderma
 - Overload, Iron
 - Breast Fed
-- Gestation
 - Gestation
 - Mechanical urinary obstruction
 - Impaction, Fecal
@@ -1094,11 +1109,14 @@ unresolved_diseases:
 - Gallstone pancreatitis
 - Deaths, Fetal
 - Fetal Bradycardia
+- Idiopathic angioedema
 - Amino Acid Metabolism, Inborn Error
+- Deaths, Fetal
 - Deaths, Fetal
 - Deaths, Fetal
 - Injuries, Wounds
 - Acute pelvic inflammatory disease
+- Fetal Bradycardia
 - Fetal Bradycardia
 - Fetal Bradycardia
 - Right to left cardiac shunt
@@ -1107,13 +1125,10 @@ unresolved_diseases:
 - Disseminated malignant neoplasm without specification of site
 - UMLS:C0853602 (no name)
 - UMLS:C1112429 (no name)
-- Allergic Reactions
-- Allergic Reactions
 - Immunosuppression
 - Gestation
 - Gestation
 - Disorder characterized by fever
-- Allergic Reactions
 - Immunosuppression
 - Gestation
 - Gestation
@@ -1122,8 +1137,8 @@ unresolved_diseases:
 - Severe dehydration
 - UMLS:C1868885 (no name)
 - UMLS:C1736167 (no name)
+- Allergic Reactions
 - Infections
-- Gestation
 - Gestation
 - Gestation
 - Hepatocellular Damage
@@ -1132,12 +1147,14 @@ unresolved_diseases:
 - Gestation
 - Disorder characterized by fever
 - Gestation
-- Diarrhea, watery
+- 'H/O: Deep vein thrombosis'
 - Immunosuppression
 - Gestation
 - Gestation
 - Disorder characterized by fever
+- Allergic Reactions
 - Gestation
+- Allergic Reactions
 - Intestinal Stricture
 - Stenoses
 - UMLS:C3665853 (no name)

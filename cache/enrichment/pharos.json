@@ -523,6 +523,9 @@
   "CHEBI:132975": {
     "pharos_ids": []
   },
+  "CHEBI:133007": {
+    "pharos_ids": []
+  },
   "CHEBI:133008": {
     "pharos_ids": []
   },
@@ -591,6 +594,9 @@
   "CHEBI:133538": {
     "pharos_ids": []
   },
+  "CHEBI:133804": {
+    "pharos_ids": []
+  },
   "CHEBI:133809": {
     "pharos_ids": [
       "ChEMBL:CHEMBL712",
@@ -603,6 +609,9 @@
     ]
   },
   "CHEBI:133833": {
+    "pharos_ids": []
+  },
+  "CHEBI:133876": {
     "pharos_ids": []
   },
   "CHEBI:134677": {
@@ -908,10 +917,16 @@
   "CHEBI:134845": {
     "pharos_ids": []
   },
+  "CHEBI:134868": {
+    "pharos_ids": []
+  },
   "CHEBI:134876": {
     "pharos_ids": []
   },
   "CHEBI:134888": {
+    "pharos_ids": []
+  },
+  "CHEBI:134891": {
     "pharos_ids": []
   },
   "CHEBI:134892": {
@@ -921,6 +936,9 @@
     "pharos_ids": []
   },
   "CHEBI:134897": {
+    "pharos_ids": []
+  },
+  "CHEBI:134914": {
     "pharos_ids": []
   },
   "CHEBI:134923": {
@@ -1150,6 +1168,9 @@
   "CHEBI:135278": {
     "pharos_ids": []
   },
+  "CHEBI:135283": {
+    "pharos_ids": []
+  },
   "CHEBI:135285": {
     "pharos_ids": [
       "ChEMBL:CHEMBL142703",
@@ -1284,6 +1305,9 @@
     "pharos_ids": []
   },
   "CHEBI:135448": {
+    "pharos_ids": []
+  },
+  "CHEBI:135472": {
     "pharos_ids": []
   },
   "CHEBI:135499": {
@@ -1463,6 +1487,12 @@
       "unii:7AXV542LZ4"
     ]
   },
+  "CHEBI:135615": {
+    "pharos_ids": []
+  },
+  "CHEBI:135616": {
+    "pharos_ids": []
+  },
   "CHEBI:135622": {
     "pharos_ids": []
   },
@@ -1617,6 +1647,9 @@
   "CHEBI:135744": {
     "pharos_ids": []
   },
+  "CHEBI:135746": {
+    "pharos_ids": []
+  },
   "CHEBI:135752": {
     "pharos_ids": []
   },
@@ -1648,6 +1681,9 @@
   "CHEBI:135762": {
     "pharos_ids": []
   },
+  "CHEBI:135764": {
+    "pharos_ids": []
+  },
   "CHEBI:135780": {
     "pharos_ids": []
   },
@@ -1660,6 +1696,15 @@
       "PubChem:6918178",
       "pt:HALOBETASOL PROPIONATE",
       "unii:91A0K1TY3Z"
+    ]
+  },
+  "CHEBI:135790": {
+    "pharos_ids": [
+      "DrugCentral:1067",
+      "LyCHI:WL44GUFMQYDS",
+      "PHAROS:WL44GUFMQYDS",
+      "pt:ESTRIOL SUCCINATE",
+      "unii:AS13K2DY03"
     ]
   },
   "CHEBI:135791": {
@@ -1763,6 +1808,9 @@
     "pharos_ids": []
   },
   "CHEBI:135884": {
+    "pharos_ids": []
+  },
+  "CHEBI:135885": {
     "pharos_ids": []
   },
   "CHEBI:135888": {
@@ -2483,6 +2531,9 @@
       "unii:K9P6MC7092"
     ]
   },
+  "CHEBI:145370": {
+    "pharos_ids": []
+  },
   "CHEBI:145371": {
     "pharos_ids": [
       "ChEMBL:CHEMBL3187723",
@@ -2610,6 +2661,9 @@
   "CHEBI:149520": {
     "pharos_ids": []
   },
+  "CHEBI:149566": {
+    "pharos_ids": []
+  },
   "CHEBI:149601": {
     "pharos_ids": [
       "ChEMBL:CHEMBL3545313",
@@ -2640,6 +2694,9 @@
     ]
   },
   "CHEBI:15356": {
+    "pharos_ids": []
+  },
+  "CHEBI:15361": {
     "pharos_ids": []
   },
   "CHEBI:15365": {
@@ -2705,6 +2762,9 @@
       "unii:TE7660XO1C"
     ]
   },
+  "CHEBI:15440": {
+    "pharos_ids": []
+  },
   "CHEBI:15443": {
     "pharos_ids": []
   },
@@ -2767,6 +2827,9 @@
       "PubChem:6437380"
     ]
   },
+  "CHEBI:15611": {
+    "pharos_ids": []
+  },
   "CHEBI:15640": {
     "pharos_ids": []
   },
@@ -2793,11 +2856,23 @@
       "PubChem:3229,28230148"
     ]
   },
+  "CHEBI:15727": {
+    "pharos_ids": []
+  },
   "CHEBI:15729": {
     "pharos_ids": []
   },
   "CHEBI:15741": {
     "pharos_ids": []
+  },
+  "CHEBI:15746": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL23194",
+      "Guide to Pharmacology:710",
+      "LyCHI:9A2KG497S5ZP",
+      "PHAROS:9A2KG497S5ZP",
+      "PubChem:1103"
+    ]
   },
   "CHEBI:15765": {
     "pharos_ids": [
@@ -2811,6 +2886,17 @@
     ]
   },
   "CHEBI:157785": {
+    "pharos_ids": []
+  },
+  "CHEBI:15843": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL267484",
+      "LyCHI:KQR28J1FQR7Y",
+      "PHAROS:KQR28J1FQR7Y",
+      "PubChem:5312542"
+    ]
+  },
+  "CHEBI:15846": {
     "pharos_ids": []
   },
   "CHEBI:15854": {
@@ -2837,6 +2923,9 @@
   "CHEBI:15904": {
     "pharos_ids": []
   },
+  "CHEBI:15927": {
+    "pharos_ids": []
+  },
   "CHEBI:15936": {
     "pharos_ids": []
   },
@@ -2852,6 +2941,9 @@
     ]
   },
   "CHEBI:15956": {
+    "pharos_ids": []
+  },
+  "CHEBI:15971": {
     "pharos_ids": []
   },
   "CHEBI:16015": {
@@ -2890,6 +2982,9 @@
     "pharos_ids": []
   },
   "CHEBI:161680": {
+    "pharos_ids": []
+  },
+  "CHEBI:16171": {
     "pharos_ids": []
   },
   "CHEBI:16196": {
@@ -2948,8 +3043,22 @@
   "CHEBI:16336": {
     "pharos_ids": []
   },
+  "CHEBI:16337": {
+    "pharos_ids": []
+  },
+  "CHEBI:16344": {
+    "pharos_ids": []
+  },
   "CHEBI:16347": {
     "pharos_ids": []
+  },
+  "CHEBI:16349": {
+    "pharos_ids": [
+      "Guide to Pharmacology:722",
+      "LyCHI:QF7RS3QQH7FH",
+      "PHAROS:QF7RS3QQH7FH",
+      "PubChem:9750"
+    ]
   },
   "CHEBI:16359": {
     "pharos_ids": [
@@ -2965,7 +3074,13 @@
   "CHEBI:16382": {
     "pharos_ids": []
   },
+  "CHEBI:16414": {
+    "pharos_ids": []
+  },
   "CHEBI:16436": {
+    "pharos_ids": []
+  },
+  "CHEBI:16452": {
     "pharos_ids": []
   },
   "CHEBI:16467": {
@@ -3001,6 +3116,14 @@
   "CHEBI:16551": {
     "pharos_ids": []
   },
+  "CHEBI:16581": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL253363",
+      "LyCHI:MDBHY4GGM2Y3",
+      "PHAROS:MDBHY4GGM2Y3",
+      "PubChem:8955"
+    ]
+  },
   "CHEBI:16586": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1046",
@@ -3012,6 +3135,18 @@
       "pt:AMINOCAPROIC ACID",
       "unii:U6F3787206"
     ]
+  },
+  "CHEBI:16610": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL19612",
+      "Guide to Pharmacology:2390",
+      "LyCHI:FLBC2PSAPDXM",
+      "PHAROS:FLBC2PSAPDXM",
+      "PubChem:1102"
+    ]
+  },
+  "CHEBI:16643": {
+    "pharos_ids": []
   },
   "CHEBI:16664": {
     "pharos_ids": []
@@ -3038,6 +3173,9 @@
     ]
   },
   "CHEBI:166881": {
+    "pharos_ids": []
+  },
+  "CHEBI:16695": {
     "pharos_ids": []
   },
   "CHEBI:166975": {
@@ -3102,6 +3240,12 @@
       "pt:MONOMETHYL FUMARATE",
       "unii:45IUB1PX8R"
     ]
+  },
+  "CHEBI:16749": {
+    "pharos_ids": []
+  },
+  "CHEBI:16750": {
+    "pharos_ids": []
   },
   "CHEBI:16755": {
     "pharos_ids": [
@@ -3221,6 +3365,9 @@
       "unii:GAN16C9B8O"
     ]
   },
+  "CHEBI:16857": {
+    "pharos_ids": []
+  },
   "CHEBI:168630": {
     "pharos_ids": []
   },
@@ -3239,7 +3386,13 @@
   "CHEBI:16870": {
     "pharos_ids": []
   },
+  "CHEBI:16898": {
+    "pharos_ids": []
+  },
   "CHEBI:16899": {
+    "pharos_ids": []
+  },
+  "CHEBI:16908": {
     "pharos_ids": []
   },
   "CHEBI:16914": {
@@ -3274,6 +3427,14 @@
   "CHEBI:169727": {
     "pharos_ids": []
   },
+  "CHEBI:16977": {
+    "pharos_ids": [
+      "Guide to Pharmacology:720",
+      "LyCHI:G5LBCJF3K3WF",
+      "PHAROS:G5LBCJF3K3WF",
+      "PubChem:5950"
+    ]
+  },
   "CHEBI:16988": {
     "pharos_ids": []
   },
@@ -3284,6 +3445,9 @@
     "pharos_ids": []
   },
   "CHEBI:17015": {
+    "pharos_ids": []
+  },
+  "CHEBI:17020": {
     "pharos_ids": []
   },
   "CHEBI:17026": {
@@ -3304,16 +3468,41 @@
   "CHEBI:17076": {
     "pharos_ids": []
   },
+  "CHEBI:17115": {
+    "pharos_ids": [
+      "Guide to Pharmacology:726",
+      "LyCHI:Z2WBU93255RU",
+      "PHAROS:Z2WBU93255RU",
+      "PubChem:5951"
+    ]
+  },
   "CHEBI:17126": {
     "pharos_ids": []
   },
   "CHEBI:17141": {
     "pharos_ids": []
   },
+  "CHEBI:17148": {
+    "pharos_ids": [
+      "Guide to Pharmacology:2388",
+      "LyCHI:21CR1KKJK2U9",
+      "PHAROS:21CR1KKJK2U9",
+      "PubChem:1045"
+    ]
+  },
   "CHEBI:17151": {
     "pharos_ids": []
   },
   "CHEBI:17154": {
+    "pharos_ids": []
+  },
+  "CHEBI:17191": {
+    "pharos_ids": []
+  },
+  "CHEBI:17196": {
+    "pharos_ids": []
+  },
+  "CHEBI:17203": {
     "pharos_ids": []
   },
   "CHEBI:17231": {
@@ -3347,6 +3536,9 @@
       "unii:2DI9HA706A"
     ]
   },
+  "CHEBI:17268": {
+    "pharos_ids": []
+  },
   "CHEBI:17272": {
     "pharos_ids": []
   },
@@ -3361,6 +3553,14 @@
   },
   "CHEBI:172948": {
     "pharos_ids": []
+  },
+  "CHEBI:17295": {
+    "pharos_ids": [
+      "Guide to Pharmacology:3313",
+      "LyCHI:1URK5VUHX2R2",
+      "PHAROS:1URK5VUHX2R2",
+      "PubChem:6140"
+    ]
   },
   "CHEBI:172961": {
     "pharos_ids": []
@@ -3408,10 +3608,25 @@
       "unii:3XMK78S47O"
     ]
   },
+  "CHEBI:17351": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL267476,CHEMBL3122088",
+      "DrugCentral:3323",
+      "Guide to Pharmacology:1052",
+      "LyCHI:441TNZQ7HKW4",
+      "PHAROS:441TNZQ7HKW4",
+      "PubChem:5280450,23684895",
+      "pt:LINOLEIC ACID",
+      "unii:9KJL21T0QJ"
+    ]
+  },
   "CHEBI:17376": {
     "pharos_ids": []
   },
   "CHEBI:173854": {
+    "pharos_ids": []
+  },
+  "CHEBI:17394": {
     "pharos_ids": []
   },
   "CHEBI:17401": {
@@ -3420,10 +3635,21 @@
   "CHEBI:174162": {
     "pharos_ids": []
   },
+  "CHEBI:17431": {
+    "pharos_ids": [
+      "Guide to Pharmacology:4127",
+      "LyCHI:5H91Y5RSD32B",
+      "PHAROS:5H91Y5RSD32B",
+      "PubChem:199"
+    ]
+  },
   "CHEBI:174358": {
     "pharos_ids": []
   },
   "CHEBI:17439": {
+    "pharos_ids": []
+  },
+  "CHEBI:174442": {
     "pharos_ids": []
   },
   "CHEBI:174690": {
@@ -3449,6 +3675,9 @@
     "pharos_ids": []
   },
   "CHEBI:17561": {
+    "pharos_ids": []
+  },
+  "CHEBI:17562": {
     "pharos_ids": []
   },
   "CHEBI:17579": {
@@ -3483,6 +3712,9 @@
     "pharos_ids": []
   },
   "CHEBI:17616": {
+    "pharos_ids": []
+  },
+  "CHEBI:17621": {
     "pharos_ids": []
   },
   "CHEBI:17630": {
@@ -3559,6 +3791,9 @@
     "pharos_ids": []
   },
   "CHEBI:177060": {
+    "pharos_ids": []
+  },
+  "CHEBI:17724": {
     "pharos_ids": []
   },
   "CHEBI:177453": {
@@ -3658,6 +3893,9 @@
       "PubChem:137278711"
     ]
   },
+  "CHEBI:17822": {
+    "pharos_ids": []
+  },
   "CHEBI:17823": {
     "pharos_ids": [
       "ChEMBL:CHEMBL846",
@@ -3681,6 +3919,9 @@
     ]
   },
   "CHEBI:178699": {
+    "pharos_ids": []
+  },
+  "CHEBI:17883": {
     "pharos_ids": []
   },
   "CHEBI:17895": {
@@ -3712,6 +3953,12 @@
     ]
   },
   "CHEBI:17948": {
+    "pharos_ids": []
+  },
+  "CHEBI:17968": {
+    "pharos_ids": []
+  },
+  "CHEBI:17976": {
     "pharos_ids": []
   },
   "CHEBI:17987": {
@@ -3757,6 +4004,9 @@
       "pt:NICARDIPINE",
       "unii:CZ5312222S"
     ]
+  },
+  "CHEBI:18095": {
+    "pharos_ids": []
   },
   "CHEBI:181016": {
     "pharos_ids": []
@@ -3863,6 +4113,12 @@
   "CHEBI:18303": {
     "pharos_ids": []
   },
+  "CHEBI:18315": {
+    "pharos_ids": []
+  },
+  "CHEBI:18323": {
+    "pharos_ids": []
+  },
   "CHEBI:18332": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1624",
@@ -3891,6 +4147,9 @@
     "pharos_ids": []
   },
   "CHEBI:183784": {
+    "pharos_ids": []
+  },
+  "CHEBI:183808": {
     "pharos_ids": []
   },
   "CHEBI:183811": {
@@ -4094,6 +4353,9 @@
   "CHEBI:201404": {
     "pharos_ids": []
   },
+  "CHEBI:201423": {
+    "pharos_ids": []
+  },
   "CHEBI:201431": {
     "pharos_ids": []
   },
@@ -4174,6 +4436,9 @@
     "pharos_ids": []
   },
   "CHEBI:218755": {
+    "pharos_ids": []
+  },
+  "CHEBI:22063": {
     "pharos_ids": []
   },
   "CHEBI:2208": {
@@ -4411,7 +4676,16 @@
       "unii:31TZ62FO8F"
     ]
   },
+  "CHEBI:22984": {
+    "pharos_ids": []
+  },
+  "CHEBI:230239": {
+    "pharos_ids": []
+  },
   "CHEBI:230352": {
+    "pharos_ids": []
+  },
+  "CHEBI:230430": {
     "pharos_ids": []
   },
   "CHEBI:230470": {
@@ -4668,6 +4942,9 @@
   "CHEBI:233047": {
     "pharos_ids": []
   },
+  "CHEBI:233149": {
+    "pharos_ids": []
+  },
   "CHEBI:23316": {
     "pharos_ids": [
       "Guide to Pharmacology:6327",
@@ -4860,6 +5137,9 @@
   "CHEBI:24267": {
     "pharos_ids": []
   },
+  "CHEBI:24301": {
+    "pharos_ids": []
+  },
   "CHEBI:2453": {
     "pharos_ids": []
   },
@@ -5009,6 +5289,9 @@
       "unii:YU55MQ3IZY"
     ]
   },
+  "CHEBI:26125": {
+    "pharos_ids": []
+  },
   "CHEBI:261649": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1120",
@@ -5041,6 +5324,9 @@
     "pharos_ids": []
   },
   "CHEBI:2628": {
+    "pharos_ids": []
+  },
+  "CHEBI:26288": {
     "pharos_ids": []
   },
   "CHEBI:2636": {
@@ -5188,6 +5474,9 @@
       "unii:CK833KGX7E"
     ]
   },
+  "CHEBI:26806": {
+    "pharos_ids": []
+  },
   "CHEBI:2682": {
     "pharos_ids": []
   },
@@ -5273,6 +5562,9 @@
   "CHEBI:27363": {
     "pharos_ids": []
   },
+  "CHEBI:27372": {
+    "pharos_ids": []
+  },
   "CHEBI:27373": {
     "pharos_ids": []
   },
@@ -5289,6 +5581,9 @@
     ]
   },
   "CHEBI:2739": {
+    "pharos_ids": []
+  },
+  "CHEBI:27432": {
     "pharos_ids": []
   },
   "CHEBI:27436": {
@@ -5347,6 +5642,9 @@
     ]
   },
   "CHEBI:27569": {
+    "pharos_ids": []
+  },
+  "CHEBI:27585": {
     "pharos_ids": []
   },
   "CHEBI:27594": {
@@ -5525,6 +5823,9 @@
   "CHEBI:28119": {
     "pharos_ids": []
   },
+  "CHEBI:28171": {
+    "pharos_ids": []
+  },
   "CHEBI:28177": {
     "pharos_ids": [
       "ChEMBL:CHEMBL190",
@@ -5572,6 +5873,9 @@
       "PHAROS:92UQ9WMQ4CL4",
       "PubChem:5585"
     ]
+  },
+  "CHEBI:28364": {
+    "pharos_ids": []
   },
   "CHEBI:28417": {
     "pharos_ids": []
@@ -5627,6 +5931,9 @@
       "unii:E90NZP2L9U"
     ]
   },
+  "CHEBI:28548": {
+    "pharos_ids": []
+  },
   "CHEBI:28569": {
     "pharos_ids": []
   },
@@ -5654,6 +5961,9 @@
     ]
   },
   "CHEBI:28621": {
+    "pharos_ids": []
+  },
+  "CHEBI:28661": {
     "pharos_ids": []
   },
   "CHEBI:28669": {
@@ -5708,6 +6018,9 @@
       "PubChem:31703,443939"
     ]
   },
+  "CHEBI:28757": {
+    "pharos_ids": []
+  },
   "CHEBI:2877": {
     "pharos_ids": []
   },
@@ -5757,6 +6070,9 @@
       "PubChem:222528"
     ]
   },
+  "CHEBI:28837": {
+    "pharos_ids": []
+  },
   "CHEBI:28864": {
     "pharos_ids": []
   },
@@ -5789,6 +6105,9 @@
     ]
   },
   "CHEBI:28901": {
+    "pharos_ids": []
+  },
+  "CHEBI:28908": {
     "pharos_ids": []
   },
   "CHEBI:28915": {
@@ -6196,6 +6515,12 @@
   "CHEBI:30797": {
     "pharos_ids": []
   },
+  "CHEBI:30805": {
+    "pharos_ids": []
+  },
+  "CHEBI:30813": {
+    "pharos_ids": []
+  },
   "CHEBI:3082": {
     "pharos_ids": [
       "ChEMBL:CHEMBL423",
@@ -6217,6 +6542,9 @@
       "PubChem:23663870"
     ]
   },
+  "CHEBI:30839": {
+    "pharos_ids": []
+  },
   "CHEBI:3084": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1482",
@@ -6228,6 +6556,9 @@
       "pt:BETHANECHOL",
       "unii:004F72P8F4"
     ]
+  },
+  "CHEBI:30849": {
+    "pharos_ids": []
   },
   "CHEBI:3085": {
     "pharos_ids": []
@@ -6441,6 +6772,9 @@
   "CHEBI:31252": {
     "pharos_ids": []
   },
+  "CHEBI:31260": {
+    "pharos_ids": []
+  },
   "CHEBI:31263": {
     "pharos_ids": []
   },
@@ -6451,6 +6785,9 @@
       "PHAROS:BHMB6JY1WWND",
       "PubChem:8478"
     ]
+  },
+  "CHEBI:31266": {
+    "pharos_ids": []
   },
   "CHEBI:31268": {
     "pharos_ids": []
@@ -6602,6 +6939,9 @@
   "CHEBI:31349": {
     "pharos_ids": []
   },
+  "CHEBI:31351": {
+    "pharos_ids": []
+  },
   "CHEBI:31353": {
     "pharos_ids": []
   },
@@ -6678,6 +7018,9 @@
       "pt:CICLESONIDE",
       "unii:S59502J185"
     ]
+  },
+  "CHEBI:31398": {
+    "pharos_ids": []
   },
   "CHEBI:31399": {
     "pharos_ids": [
@@ -6878,6 +7221,9 @@
   "CHEBI:31518": {
     "pharos_ids": []
   },
+  "CHEBI:31519": {
+    "pharos_ids": []
+  },
   "CHEBI:31520": {
     "pharos_ids": []
   },
@@ -6933,6 +7279,9 @@
     ]
   },
   "CHEBI:31530": {
+    "pharos_ids": []
+  },
+  "CHEBI:31532": {
     "pharos_ids": []
   },
   "CHEBI:31536": {
@@ -7330,6 +7679,9 @@
   "CHEBI:31731": {
     "pharos_ids": []
   },
+  "CHEBI:31735": {
+    "pharos_ids": []
+  },
   "CHEBI:31739": {
     "pharos_ids": []
   },
@@ -7648,6 +8000,9 @@
   "CHEBI:31992": {
     "pharos_ids": []
   },
+  "CHEBI:32007": {
+    "pharos_ids": []
+  },
   "CHEBI:32010": {
     "pharos_ids": []
   },
@@ -7688,6 +8043,9 @@
     "pharos_ids": []
   },
   "CHEBI:32036": {
+    "pharos_ids": []
+  },
+  "CHEBI:32038": {
     "pharos_ids": []
   },
   "CHEBI:3205": {
@@ -8097,6 +8455,14 @@
   },
   "CHEBI:32286": {
     "pharos_ids": []
+  },
+  "CHEBI:32288": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2107687",
+      "LyCHI:ZMF3WFHQ7CDT",
+      "PHAROS:ZMF3WFHQ7CDT",
+      "PubChem:559589"
+    ]
   },
   "CHEBI:3229": {
     "pharos_ids": []
@@ -8531,7 +8897,13 @@
   "CHEBI:34535": {
     "pharos_ids": []
   },
+  "CHEBI:34536": {
+    "pharos_ids": []
+  },
   "CHEBI:34546": {
+    "pharos_ids": []
+  },
+  "CHEBI:34553": {
     "pharos_ids": []
   },
   "CHEBI:34582": {
@@ -8651,6 +9023,9 @@
   "CHEBI:3489": {
     "pharos_ids": []
   },
+  "CHEBI:34894": {
+    "pharos_ids": []
+  },
   "CHEBI:3490": {
     "pharos_ids": []
   },
@@ -8730,6 +9105,9 @@
     "pharos_ids": []
   },
   "CHEBI:35017": {
+    "pharos_ids": []
+  },
+  "CHEBI:35020": {
     "pharos_ids": []
   },
   "CHEBI:3503": {
@@ -9365,6 +9743,9 @@
       "unii:J60AR2IKIC"
     ]
   },
+  "CHEBI:37684": {
+    "pharos_ids": []
+  },
   "CHEBI:3770": {
     "pharos_ids": []
   },
@@ -9542,6 +9923,9 @@
     "pharos_ids": []
   },
   "CHEBI:39214": {
+    "pharos_ids": []
+  },
+  "CHEBI:39361": {
     "pharos_ids": []
   },
   "CHEBI:39448": {
@@ -10049,6 +10433,18 @@
   "CHEBI:43830": {
     "pharos_ids": []
   },
+  "CHEBI:43871": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL541388,CHEMBL38380",
+      "DrugCentral:1132",
+      "Guide to Pharmacology:5181",
+      "LyCHI:PR7RKZVNN5TC",
+      "PHAROS:PR7RKZVNN5TC",
+      "PubChem:657249,3547",
+      "pt:FASUDIL",
+      "unii:Q0CH43PGXS"
+    ]
+  },
   "CHEBI:4388": {
     "pharos_ids": []
   },
@@ -10502,6 +10898,18 @@
       "LyCHI:MCV61RRRWNWZ",
       "PHAROS:MCV61RRRWNWZ",
       "PubChem:5430"
+    ]
+  },
+  "CHEBI:45980": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL95,CHEMBL1677,CHEMBL1337960",
+      "DrugCentral:2551",
+      "Guide to Pharmacology:6687",
+      "LyCHI:5L7ZPW8RPXA9",
+      "PHAROS:5L7ZPW8RPXA9",
+      "PubChem:1935,135504745,6420002",
+      "pt:TACRINE",
+      "unii:4VX7YNB537"
     ]
   },
   "CHEBI:46035": {
@@ -11162,6 +11570,9 @@
       "unii:51086HBW8G"
     ]
   },
+  "CHEBI:4828": {
+    "pharos_ids": []
+  },
   "CHEBI:48296": {
     "pharos_ids": []
   },
@@ -11293,6 +11704,9 @@
     "pharos_ids": []
   },
   "CHEBI:4877": {
+    "pharos_ids": []
+  },
+  "CHEBI:4878": {
     "pharos_ids": []
   },
   "CHEBI:4882": {
@@ -11942,6 +12356,9 @@
   "CHEBI:50687": {
     "pharos_ids": []
   },
+  "CHEBI:50688": {
+    "pharos_ids": []
+  },
   "CHEBI:50690": {
     "pharos_ids": []
   },
@@ -12155,6 +12572,9 @@
     ]
   },
   "CHEBI:5089": {
+    "pharos_ids": []
+  },
+  "CHEBI:50904": {
     "pharos_ids": []
   },
   "CHEBI:5091": {
@@ -12743,6 +13163,9 @@
   "CHEBI:52251": {
     "pharos_ids": []
   },
+  "CHEBI:52683": {
+    "pharos_ids": []
+  },
   "CHEBI:52712": {
     "pharos_ids": []
   },
@@ -12809,6 +13232,9 @@
     "pharos_ids": []
   },
   "CHEBI:534": {
+    "pharos_ids": []
+  },
+  "CHEBI:53488": {
     "pharos_ids": []
   },
   "CHEBI:53492": {
@@ -13032,6 +13458,18 @@
   },
   "CHEBI:5551": {
     "pharos_ids": []
+  },
+  "CHEBI:5553": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL420",
+      "DrugCentral:3952",
+      "Guide to Pharmacology:5443",
+      "LyCHI:DLJGCQBZ9NJB",
+      "PHAROS:DLJGCQBZ9NJB",
+      "PubChem:5702063",
+      "pt:GUANABENZ",
+      "unii:GGD30112WC"
+    ]
   },
   "CHEBI:5554": {
     "pharos_ids": []
@@ -13344,6 +13782,9 @@
   "CHEBI:59040": {
     "pharos_ids": []
   },
+  "CHEBI:59116": {
+    "pharos_ids": []
+  },
   "CHEBI:59120": {
     "pharos_ids": []
   },
@@ -13457,6 +13898,9 @@
   "CHEBI:59477": {
     "pharos_ids": []
   },
+  "CHEBI:59495": {
+    "pharos_ids": []
+  },
   "CHEBI:5950": {
     "pharos_ids": []
   },
@@ -13538,10 +13982,16 @@
   "CHEBI:59602": {
     "pharos_ids": []
   },
+  "CHEBI:59640": {
+    "pharos_ids": []
+  },
   "CHEBI:59664": {
     "pharos_ids": []
   },
   "CHEBI:59693": {
+    "pharos_ids": []
+  },
+  "CHEBI:59695": {
     "pharos_ids": []
   },
   "CHEBI:59704": {
@@ -13557,6 +14007,9 @@
     "pharos_ids": []
   },
   "CHEBI:59729": {
+    "pharos_ids": []
+  },
+  "CHEBI:59730": {
     "pharos_ids": []
   },
   "CHEBI:59732": {
@@ -13577,6 +14030,9 @@
     ]
   },
   "CHEBI:59782": {
+    "pharos_ids": []
+  },
+  "CHEBI:59784": {
     "pharos_ids": []
   },
   "CHEBI:59788": {
@@ -13860,6 +14316,9 @@
   "CHEBI:6109": {
     "pharos_ids": []
   },
+  "CHEBI:61159": {
+    "pharos_ids": []
+  },
   "CHEBI:61176": {
     "pharos_ids": []
   },
@@ -13953,6 +14412,9 @@
       "unii:8KQ660G60G"
     ]
   },
+  "CHEBI:61909": {
+    "pharos_ids": []
+  },
   "CHEBI:61995": {
     "pharos_ids": []
   },
@@ -13968,6 +14430,9 @@
     ]
   },
   "CHEBI:62268": {
+    "pharos_ids": []
+  },
+  "CHEBI:62312": {
     "pharos_ids": []
   },
   "CHEBI:62964": {
@@ -14736,6 +15201,9 @@
   "CHEBI:6447": {
     "pharos_ids": []
   },
+  "CHEBI:64482": {
+    "pharos_ids": []
+  },
   "CHEBI:645509": {
     "pharos_ids": []
   },
@@ -14750,6 +15218,9 @@
       "pt:LIDOCAINE",
       "unii:98PI200987"
     ]
+  },
+  "CHEBI:64583": {
+    "pharos_ids": []
   },
   "CHEBI:64628": {
     "pharos_ids": [
@@ -14891,6 +15362,9 @@
       "pt:MIRABEGRON",
       "unii:MVR3JL3B2V"
     ]
+  },
+  "CHEBI:65350": {
+    "pharos_ids": []
   },
   "CHEBI:6538": {
     "pharos_ids": [
@@ -15352,6 +15826,9 @@
       "unii:03V657ZD3V"
     ]
   },
+  "CHEBI:6805": {
+    "pharos_ids": []
+  },
   "CHEBI:6806": {
     "pharos_ids": []
   },
@@ -15700,6 +16177,17 @@
       "PubChem:132971",
       "pt:ABIRATERONE",
       "unii:G819A456D0"
+    ]
+  },
+  "CHEBI:68643": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1756",
+      "DrugCentral:1066",
+      "LyCHI:SHP4SGGPKTCQ",
+      "PHAROS:SHP4SGGPKTCQ",
+      "PubChem:259329",
+      "pt:ESTRAMUSTINE PHOSPHATE",
+      "unii:MUZ9585Y7B"
     ]
   },
   "CHEBI:68646": {
@@ -16339,6 +16827,12 @@
   "CHEBI:71428": {
     "pharos_ids": []
   },
+  "CHEBI:71464": {
+    "pharos_ids": []
+  },
+  "CHEBI:71466": {
+    "pharos_ids": []
+  },
   "CHEBI:71647": {
     "pharos_ids": []
   },
@@ -16554,6 +17048,9 @@
     "pharos_ids": []
   },
   "CHEBI:73732": {
+    "pharos_ids": []
+  },
+  "CHEBI:73788": {
     "pharos_ids": []
   },
   "CHEBI:73927": {
@@ -16860,6 +17357,9 @@
   "CHEBI:748025": {
     "pharos_ids": []
   },
+  "CHEBI:74803": {
+    "pharos_ids": []
+  },
   "CHEBI:748035": {
     "pharos_ids": []
   },
@@ -16936,6 +17436,9 @@
   "CHEBI:748268": {
     "pharos_ids": []
   },
+  "CHEBI:748292": {
+    "pharos_ids": []
+  },
   "CHEBI:748315": {
     "pharos_ids": []
   },
@@ -16997,6 +17500,9 @@
     "pharos_ids": []
   },
   "CHEBI:748576": {
+    "pharos_ids": []
+  },
+  "CHEBI:748623": {
     "pharos_ids": []
   },
   "CHEBI:748655": {
@@ -17132,6 +17638,9 @@
   "CHEBI:749044": {
     "pharos_ids": []
   },
+  "CHEBI:749058": {
+    "pharos_ids": []
+  },
   "CHEBI:749064": {
     "pharos_ids": []
   },
@@ -17167,6 +17676,9 @@
     "pharos_ids": []
   },
   "CHEBI:749216": {
+    "pharos_ids": []
+  },
+  "CHEBI:749217": {
     "pharos_ids": []
   },
   "CHEBI:749220": {
@@ -17580,6 +18092,9 @@
     "pharos_ids": []
   },
   "CHEBI:749367": {
+    "pharos_ids": []
+  },
+  "CHEBI:749368": {
     "pharos_ids": []
   },
   "CHEBI:749369": {
@@ -18069,6 +18584,9 @@
       "PHAROS:interferon beta-1a"
     ]
   },
+  "CHEBI:749519": {
+    "pharos_ids": []
+  },
   "CHEBI:749520": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1201506",
@@ -18285,6 +18803,9 @@
       "PHAROS:infliximab"
     ]
   },
+  "CHEBI:749573": {
+    "pharos_ids": []
+  },
   "CHEBI:749574": {
     "pharos_ids": []
   },
@@ -18469,6 +18990,9 @@
   "CHEBI:749612": {
     "pharos_ids": []
   },
+  "CHEBI:749658": {
+    "pharos_ids": []
+  },
   "CHEBI:749677": {
     "pharos_ids": []
   },
@@ -18501,6 +19025,9 @@
   "CHEBI:749719": {
     "pharos_ids": []
   },
+  "CHEBI:749720": {
+    "pharos_ids": []
+  },
   "CHEBI:749728": {
     "pharos_ids": []
   },
@@ -18510,6 +19037,9 @@
   "CHEBI:749768": {
     "pharos_ids": []
   },
+  "CHEBI:749786": {
+    "pharos_ids": []
+  },
   "CHEBI:749789": {
     "pharos_ids": []
   },
@@ -18517,6 +19047,15 @@
     "pharos_ids": []
   },
   "CHEBI:749811": {
+    "pharos_ids": []
+  },
+  "CHEBI:749813": {
+    "pharos_ids": []
+  },
+  "CHEBI:749814": {
+    "pharos_ids": []
+  },
+  "CHEBI:749816": {
     "pharos_ids": []
   },
   "CHEBI:749830": {
@@ -18538,6 +19077,9 @@
     "pharos_ids": []
   },
   "CHEBI:749871": {
+    "pharos_ids": []
+  },
+  "CHEBI:749877": {
     "pharos_ids": []
   },
   "CHEBI:749899": {
@@ -18744,6 +19286,9 @@
       "PHAROS:vedolizumab"
     ]
   },
+  "CHEBI:750171": {
+    "pharos_ids": []
+  },
   "CHEBI:750182": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1779710",
@@ -18811,6 +19356,9 @@
   "CHEBI:750271": {
     "pharos_ids": []
   },
+  "CHEBI:750278": {
+    "pharos_ids": []
+  },
   "CHEBI:750301": {
     "pharos_ids": []
   },
@@ -18821,6 +19369,12 @@
     "pharos_ids": []
   },
   "CHEBI:750322": {
+    "pharos_ids": []
+  },
+  "CHEBI:750343": {
+    "pharos_ids": []
+  },
+  "CHEBI:750351": {
     "pharos_ids": []
   },
   "CHEBI:750359": {
@@ -19016,6 +19570,12 @@
       "PHAROS:insulin detemir"
     ]
   },
+  "CHEBI:751042": {
+    "pharos_ids": []
+  },
+  "CHEBI:751333": {
+    "pharos_ids": []
+  },
   "CHEBI:7514": {
     "pharos_ids": [
       "ChEMBL:CHEMBL54126,CHEMBL211471",
@@ -19027,6 +19587,12 @@
       "pt:NEOSTIGMINE",
       "unii:3982TWQ96G"
     ]
+  },
+  "CHEBI:751429": {
+    "pharos_ids": []
+  },
+  "CHEBI:751487": {
+    "pharos_ids": []
   },
   "CHEBI:751529": {
     "pharos_ids": []
@@ -19086,6 +19652,9 @@
   "CHEBI:751611": {
     "pharos_ids": []
   },
+  "CHEBI:751728": {
+    "pharos_ids": []
+  },
   "CHEBI:751729": {
     "pharos_ids": []
   },
@@ -19116,6 +19685,9 @@
   "CHEBI:752029": {
     "pharos_ids": []
   },
+  "CHEBI:752031": {
+    "pharos_ids": []
+  },
   "CHEBI:752093": {
     "pharos_ids": []
   },
@@ -19123,6 +19695,9 @@
     "pharos_ids": []
   },
   "CHEBI:752127": {
+    "pharos_ids": []
+  },
+  "CHEBI:752252": {
     "pharos_ids": []
   },
   "CHEBI:75228": {
@@ -19137,6 +19712,9 @@
   "CHEBI:752348": {
     "pharos_ids": []
   },
+  "CHEBI:75237": {
+    "pharos_ids": []
+  },
   "CHEBI:752415": {
     "pharos_ids": []
   },
@@ -19149,7 +19727,13 @@
   "CHEBI:75247": {
     "pharos_ids": []
   },
+  "CHEBI:752498": {
+    "pharos_ids": []
+  },
   "CHEBI:75250": {
+    "pharos_ids": []
+  },
+  "CHEBI:752556": {
     "pharos_ids": []
   },
   "CHEBI:752585": {
@@ -19262,6 +19846,9 @@
     "pharos_ids": []
   },
   "CHEBI:752944": {
+    "pharos_ids": []
+  },
+  "CHEBI:752954": {
     "pharos_ids": []
   },
   "CHEBI:752989": {
@@ -19468,6 +20055,9 @@
   "CHEBI:753440": {
     "pharos_ids": []
   },
+  "CHEBI:753454": {
+    "pharos_ids": []
+  },
   "CHEBI:753470": {
     "pharos_ids": []
   },
@@ -19478,6 +20068,9 @@
     "pharos_ids": []
   },
   "CHEBI:753475": {
+    "pharos_ids": []
+  },
+  "CHEBI:753504": {
     "pharos_ids": []
   },
   "CHEBI:753505": {
@@ -19518,6 +20111,9 @@
     "pharos_ids": []
   },
   "CHEBI:753608": {
+    "pharos_ids": []
+  },
+  "CHEBI:753609": {
     "pharos_ids": []
   },
   "CHEBI:753618": {
@@ -19635,7 +20231,13 @@
   "CHEBI:753822": {
     "pharos_ids": []
   },
+  "CHEBI:753833": {
+    "pharos_ids": []
+  },
   "CHEBI:753844": {
+    "pharos_ids": []
+  },
+  "CHEBI:753852": {
     "pharos_ids": []
   },
   "CHEBI:753863": {
@@ -19671,6 +20273,9 @@
   "CHEBI:753962": {
     "pharos_ids": []
   },
+  "CHEBI:753965": {
+    "pharos_ids": []
+  },
   "CHEBI:753967": {
     "pharos_ids": []
   },
@@ -19686,6 +20291,9 @@
     ]
   },
   "CHEBI:753993": {
+    "pharos_ids": []
+  },
+  "CHEBI:754003": {
     "pharos_ids": []
   },
   "CHEBI:754020": {
@@ -19709,6 +20317,9 @@
     "pharos_ids": []
   },
   "CHEBI:754062": {
+    "pharos_ids": []
+  },
+  "CHEBI:754077": {
     "pharos_ids": []
   },
   "CHEBI:754090": {
@@ -19795,6 +20406,9 @@
       "PubChem:9828911"
     ]
   },
+  "CHEBI:754695": {
+    "pharos_ids": []
+  },
   "CHEBI:754773": {
     "pharos_ids": []
   },
@@ -19839,6 +20453,9 @@
   "CHEBI:754938": {
     "pharos_ids": []
   },
+  "CHEBI:754941": {
+    "pharos_ids": []
+  },
   "CHEBI:754951": {
     "pharos_ids": [
       "ChEMBL:CHEMBL2336071",
@@ -19850,6 +20467,9 @@
       "pt:SIPONIMOD",
       "unii:RR6P8L282I"
     ]
+  },
+  "CHEBI:754961": {
+    "pharos_ids": []
   },
   "CHEBI:754965": {
     "pharos_ids": []
@@ -20081,6 +20701,9 @@
       "pt:APALUTAMIDE",
       "unii:4T36H88UA7"
     ]
+  },
+  "CHEBI:755200": {
+    "pharos_ids": []
   },
   "CHEBI:755216": {
     "pharos_ids": []
@@ -20531,6 +21154,9 @@
   "CHEBI:755773": {
     "pharos_ids": []
   },
+  "CHEBI:755774": {
+    "pharos_ids": []
+  },
   "CHEBI:755778": {
     "pharos_ids": [
       "ChEMBL:CHEMBL3707290",
@@ -20539,6 +21165,9 @@
       "PHAROS:somapacitan",
       "PubChem:122197536"
     ]
+  },
+  "CHEBI:755787": {
+    "pharos_ids": []
   },
   "CHEBI:755788": {
     "pharos_ids": []
@@ -20612,6 +21241,9 @@
       "PubChem:24764487"
     ]
   },
+  "CHEBI:755879": {
+    "pharos_ids": []
+  },
   "CHEBI:755907": {
     "pharos_ids": [
       "ChEMBL:CHEMBL3833307",
@@ -20675,6 +21307,9 @@
   "CHEBI:755942": {
     "pharos_ids": []
   },
+  "CHEBI:755946": {
+    "pharos_ids": []
+  },
   "CHEBI:755949": {
     "pharos_ids": []
   },
@@ -20729,6 +21364,9 @@
   "CHEBI:756076": {
     "pharos_ids": []
   },
+  "CHEBI:756083": {
+    "pharos_ids": []
+  },
   "CHEBI:756114": {
     "pharos_ids": []
   },
@@ -20750,6 +21388,9 @@
   "CHEBI:756121": {
     "pharos_ids": []
   },
+  "CHEBI:756137": {
+    "pharos_ids": []
+  },
   "CHEBI:756147": {
     "pharos_ids": []
   },
@@ -20769,6 +21410,9 @@
     "pharos_ids": []
   },
   "CHEBI:756179": {
+    "pharos_ids": []
+  },
+  "CHEBI:756195": {
     "pharos_ids": []
   },
   "CHEBI:756252": {
@@ -21208,6 +21852,9 @@
   "CHEBI:757020": {
     "pharos_ids": []
   },
+  "CHEBI:757023": {
+    "pharos_ids": []
+  },
   "CHEBI:757024": {
     "pharos_ids": []
   },
@@ -21314,6 +21961,9 @@
     "pharos_ids": []
   },
   "CHEBI:757121": {
+    "pharos_ids": []
+  },
+  "CHEBI:757125": {
     "pharos_ids": []
   },
   "CHEBI:757127": {
@@ -22069,6 +22719,9 @@
   "CHEBI:758132": {
     "pharos_ids": []
   },
+  "CHEBI:758133": {
+    "pharos_ids": []
+  },
   "CHEBI:758141": {
     "pharos_ids": []
   },
@@ -22237,6 +22890,9 @@
   "CHEBI:758940": {
     "pharos_ids": []
   },
+  "CHEBI:758958": {
+    "pharos_ids": []
+  },
   "CHEBI:758962": {
     "pharos_ids": []
   },
@@ -22348,6 +23004,9 @@
   "CHEBI:759493": {
     "pharos_ids": []
   },
+  "CHEBI:75958": {
+    "pharos_ids": []
+  },
   "CHEBI:7596": {
     "pharos_ids": [
       "ChEMBL:CHEMBL2097081",
@@ -22372,6 +23031,9 @@
     "pharos_ids": []
   },
   "CHEBI:759736": {
+    "pharos_ids": []
+  },
+  "CHEBI:759737": {
     "pharos_ids": []
   },
   "CHEBI:759741": {
@@ -22804,6 +23466,14 @@
       "PubChem:2442"
     ]
   },
+  "CHEBI:77053": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL12131",
+      "LyCHI:SDZNMMPYWU9G",
+      "PHAROS:SDZNMMPYWU9G",
+      "PubChem:42574"
+    ]
+  },
   "CHEBI:77069": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1902981",
@@ -22851,6 +23521,9 @@
   "CHEBI:77278": {
     "pharos_ids": []
   },
+  "CHEBI:77289": {
+    "pharos_ids": []
+  },
   "CHEBI:7731": {
     "pharos_ids": []
   },
@@ -22871,6 +23544,14 @@
   },
   "CHEBI:77568": {
     "pharos_ids": []
+  },
+  "CHEBI:77572": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL415324",
+      "LyCHI:55MN3LU3PTY1",
+      "PHAROS:55MN3LU3PTY1",
+      "PubChem:5282230"
+    ]
   },
   "CHEBI:77573": {
     "pharos_ids": []
@@ -23078,6 +23759,9 @@
   "CHEBI:78292": {
     "pharos_ids": []
   },
+  "CHEBI:78300": {
+    "pharos_ids": []
+  },
   "CHEBI:78320": {
     "pharos_ids": []
   },
@@ -23223,6 +23907,17 @@
   },
   "CHEBI:78671": {
     "pharos_ids": []
+  },
+  "CHEBI:7868": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1495",
+      "DrugCentral:2026",
+      "LyCHI:BL1C9KDNW95J",
+      "PHAROS:BL1C9KDNW95J",
+      "PubChem:4642",
+      "pt:OXYPHENCYCLIMINE",
+      "unii:4V44H1O8XI"
+    ]
   },
   "CHEBI:7869": {
     "pharos_ids": []
@@ -23517,6 +24212,9 @@
   "CHEBI:8049": {
     "pharos_ids": []
   },
+  "CHEBI:80555": {
+    "pharos_ids": []
+  },
   "CHEBI:8059": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1744",
@@ -23585,6 +24283,9 @@
       "pt:PHENOXYBENZAMINE",
       "unii:0TTZ664R7Z"
     ]
+  },
+  "CHEBI:80774": {
+    "pharos_ids": []
   },
   "CHEBI:8078": {
     "pharos_ids": []
@@ -23665,6 +24366,9 @@
     "pharos_ids": []
   },
   "CHEBI:81579": {
+    "pharos_ids": []
+  },
+  "CHEBI:81712": {
     "pharos_ids": []
   },
   "CHEBI:81722": {
@@ -24211,6 +24915,14 @@
       "PHAROS:conjugated estrogens"
     ]
   },
+  "CHEBI:8397": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL24072",
+      "LyCHI:BK1VCG1S7UY6",
+      "PHAROS:BK1VCG1S7UY6",
+      "PubChem:9801"
+    ]
+  },
   "CHEBI:8404": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1194",
@@ -24682,6 +25394,9 @@
     "pharos_ids": []
   },
   "CHEBI:85984": {
+    "pharos_ids": []
+  },
+  "CHEBI:85989": {
     "pharos_ids": []
   },
   "CHEBI:85990": {
@@ -25841,6 +26556,9 @@
   "CHEBI:9328": {
     "pharos_ids": []
   },
+  "CHEBI:9329": {
+    "pharos_ids": []
+  },
   "CHEBI:9331": {
     "pharos_ids": []
   },
@@ -26162,6 +26880,9 @@
   "CHEBI:94510": {
     "pharos_ids": []
   },
+  "CHEBI:94521": {
+    "pharos_ids": []
+  },
   "CHEBI:9453": {
     "pharos_ids": [
       "ChEMBL:CHEMBL17157",
@@ -26384,6 +27105,9 @@
     "pharos_ids": []
   },
   "CHEBI:94767": {
+    "pharos_ids": []
+  },
+  "CHEBI:94770": {
     "pharos_ids": []
   },
   "CHEBI:94789": {
@@ -27379,6 +28103,9 @@
   "DRON:00016359": {
     "pharos_ids": []
   },
+  "DRON:00016690": {
+    "pharos_ids": []
+  },
   "DRON:00016704": {
     "pharos_ids": []
   },
@@ -27589,6 +28316,9 @@
   "DRON:00020153": {
     "pharos_ids": []
   },
+  "DRON:00020179": {
+    "pharos_ids": []
+  },
   "DRON:00020180": {
     "pharos_ids": []
   },
@@ -27625,13 +28355,25 @@
   "DRON:00027972": {
     "pharos_ids": []
   },
+  "DRON:00030118": {
+    "pharos_ids": []
+  },
   "DRON:00030291": {
     "pharos_ids": []
   },
   "DRON:00030318": {
     "pharos_ids": []
   },
+  "DRON:00034480": {
+    "pharos_ids": []
+  },
+  "DRON:00042360": {
+    "pharos_ids": []
+  },
   "DRON:00723866": {
+    "pharos_ids": []
+  },
+  "DRON:00724343": {
     "pharos_ids": []
   },
   "DRON:00730818": {
@@ -27661,6 +28403,9 @@
   "DRON:00731245": {
     "pharos_ids": []
   },
+  "DRON:00731349": {
+    "pharos_ids": []
+  },
   "DRON:00731369": {
     "pharos_ids": []
   },
@@ -27674,6 +28419,9 @@
     "pharos_ids": []
   },
   "DRON:00731669": {
+    "pharos_ids": []
+  },
+  "DRON:00731678": {
     "pharos_ids": []
   },
   "DRON:00731680": {
@@ -27733,16 +28481,28 @@
   "DRON:00750966": {
     "pharos_ids": []
   },
+  "DRON:00751162": {
+    "pharos_ids": []
+  },
   "DRON:00751175": {
     "pharos_ids": []
   },
   "DRON:00751185": {
     "pharos_ids": []
   },
+  "DRON:00751330": {
+    "pharos_ids": []
+  },
   "DRON:00751382": {
     "pharos_ids": []
   },
+  "DRON:00751399": {
+    "pharos_ids": []
+  },
   "DRON:00751568": {
+    "pharos_ids": []
+  },
+  "DRON:00751587": {
     "pharos_ids": []
   },
   "DRON:00751793": {
@@ -27755,6 +28515,9 @@
     "pharos_ids": []
   },
   "DRON:00751909": {
+    "pharos_ids": []
+  },
+  "DRON:00751924": {
     "pharos_ids": []
   },
   "DRON:00752003": {
@@ -27821,6 +28584,9 @@
     "pharos_ids": []
   },
   "DRON:00775091": {
+    "pharos_ids": []
+  },
+  "DRON:00777569": {
     "pharos_ids": []
   },
   "DRON:00827257": {
@@ -32057,6 +32823,9 @@
   "RXCUI:1000001": {
     "pharos_ids": []
   },
+  "RXCUI:1000104": {
+    "pharos_ids": []
+  },
   "RXCUI:1010600": {
     "pharos_ids": []
   },
@@ -32070,6 +32839,29 @@
     "pharos_ids": []
   },
   "RXCUI:1043561": {
+    "pharos_ids": []
+  },
+  "RXCUI:104592": {
+    "pharos_ids": []
+  },
+  "RXCUI:1046243": {
+    "pharos_ids": []
+  },
+  "RXCUI:10473": {
+    "pharos_ids": [
+      "Guide to Pharmacology:7622",
+      "LyCHI:UR3FXJZP9BKM",
+      "PHAROS:UR3FXJZP9BKM",
+      "PubChem:5453"
+    ]
+  },
+  "RXCUI:10528": {
+    "pharos_ids": []
+  },
+  "RXCUI:107129": {
+    "pharos_ids": []
+  },
+  "RXCUI:10798": {
     "pharos_ids": []
   },
   "RXCUI:1087257": {
@@ -32100,6 +32892,9 @@
     "pharos_ids": []
   },
   "RXCUI:1116105": {
+    "pharos_ids": []
+  },
+  "RXCUI:11416": {
     "pharos_ids": []
   },
   "RXCUI:1144759": {
@@ -32158,6 +32953,18 @@
   },
   "RXCUI:1152459": {
     "pharos_ids": []
+  },
+  "RXCUI:115265": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL997",
+      "DrugCentral:1404",
+      "Guide to Pharmacology:3059",
+      "LyCHI:R4XFHQG7PJRN",
+      "PHAROS:R4XFHQG7PJRN",
+      "PubChem:146015366,60852",
+      "pt:IBANDRONIC ACID",
+      "unii:UMD7G2653W"
+    ]
   },
   "RXCUI:1152781": {
     "pharos_ids": []
@@ -32396,8 +33203,23 @@
   "RXCUI:1165845": {
     "pharos_ids": []
   },
+  "RXCUI:117466": {
+    "pharos_ids": []
+  },
   "RXCUI:1177828": {
     "pharos_ids": []
+  },
+  "RXCUI:1191": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL25",
+      "DrugCentral:74",
+      "Guide to Pharmacology:4139",
+      "LyCHI:NNQ793F142LD",
+      "PHAROS:NNQ793F142LD",
+      "PubChem:2244",
+      "pt:ASPIRIN",
+      "unii:R16CO5Y76E"
+    ]
   },
   "RXCUI:1235141": {
     "pharos_ids": []
@@ -32423,6 +33245,17 @@
   "RXCUI:1246308": {
     "pharos_ids": []
   },
+  "RXCUI:1251": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1489",
+      "DrugCentral:25",
+      "LyCHI:APQ4TYS6L28M",
+      "PHAROS:APQ4TYS6L28M",
+      "PubChem:9444",
+      "pt:AZACITIDINE",
+      "unii:M801H13NRU"
+    ]
+  },
   "RXCUI:1251579": {
     "pharos_ids": []
   },
@@ -32435,10 +33268,36 @@
   "RXCUI:1293409": {
     "pharos_ids": []
   },
+  "RXCUI:1294532": {
+    "pharos_ids": []
+  },
   "RXCUI:1294893": {
     "pharos_ids": []
   },
+  "RXCUI:1297880": {
+    "pharos_ids": []
+  },
+  "RXCUI:1299782": {
+    "pharos_ids": []
+  },
+  "RXCUI:1300488": {
+    "pharos_ids": []
+  },
   "RXCUI:1304557": {
+    "pharos_ids": []
+  },
+  "RXCUI:1304974": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2095209",
+      "DrugCentral:1413",
+      "LyCHI:9DHMW384W173",
+      "PHAROS:9DHMW384W173",
+      "PubChem:9831415",
+      "pt:ICOSAPENT ETHYL",
+      "unii:6GC8A4PAYH"
+    ]
+  },
+  "RXCUI:1305520": {
     "pharos_ids": []
   },
   "RXCUI:1306288": {
@@ -32447,11 +33306,43 @@
   "RXCUI:1306289": {
     "pharos_ids": []
   },
+  "RXCUI:1309396": {
+    "pharos_ids": []
+  },
+  "RXCUI:1310469": {
+    "pharos_ids": []
+  },
   "RXCUI:1310501": {
     "pharos_ids": []
   },
+  "RXCUI:132889": {
+    "pharos_ids": []
+  },
+  "RXCUI:1329960": {
+    "pharos_ids": []
+  },
+  "RXCUI:135391": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1189432",
+      "DrugCentral:1986",
+      "LyCHI:9FTSSX8XH9P4",
+      "PHAROS:9FTSSX8XH9P4",
+      "PubChem:25271818",
+      "pt:OLOPATADINE",
+      "unii:D27V6190PM"
+    ]
+  },
   "RXCUI:1359105": {
     "pharos_ids": []
+  },
+  "RXCUI:1360631": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL233248",
+      "Guide to Pharmacology:2420",
+      "LyCHI:2FBFWFN6LTMH",
+      "PHAROS:2FBFWFN6LTMH",
+      "PubChem:5971"
+    ]
   },
   "RXCUI:1367436": {
     "pharos_ids": []
@@ -32486,7 +33377,16 @@
   "RXCUI:1422082": {
     "pharos_ids": []
   },
+  "RXCUI:1422928": {
+    "pharos_ids": []
+  },
+  "RXCUI:1424883": {
+    "pharos_ids": []
+  },
   "RXCUI:1424887": {
+    "pharos_ids": []
+  },
+  "RXCUI:1426865": {
     "pharos_ids": []
   },
   "RXCUI:1429358": {
@@ -32495,7 +33395,16 @@
   "RXCUI:1431102": {
     "pharos_ids": []
   },
+  "RXCUI:1431738": {
+    "pharos_ids": []
+  },
+  "RXCUI:1433764": {
+    "pharos_ids": []
+  },
   "RXCUI:1441388": {
+    "pharos_ids": []
+  },
+  "RXCUI:1482634": {
     "pharos_ids": []
   },
   "RXCUI:1483547": {
@@ -32513,7 +33422,13 @@
   "RXCUI:152770": {
     "pharos_ids": []
   },
+  "RXCUI:153329": {
+    "pharos_ids": []
+  },
   "RXCUI:1545147": {
+    "pharos_ids": []
+  },
+  "RXCUI:1546446": {
     "pharos_ids": []
   },
   "RXCUI:1546884": {
@@ -32549,13 +33464,27 @@
   "RXCUI:1597376": {
     "pharos_ids": []
   },
+  "RXCUI:1597608": {
+    "pharos_ids": []
+  },
   "RXCUI:1597615": {
     "pharos_ids": []
+  },
+  "RXCUI:1597876": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2108738",
+      "DrugCentral:4923",
+      "LyCHI:nivolumab",
+      "PHAROS:nivolumab"
+    ]
   },
   "RXCUI:1599800": {
     "pharos_ids": []
   },
   "RXCUI:1599801": {
+    "pharos_ids": []
+  },
+  "RXCUI:1599831": {
     "pharos_ids": []
   },
   "RXCUI:1600704": {
@@ -32571,6 +33500,12 @@
     "pharos_ids": []
   },
   "RXCUI:1603837": {
+    "pharos_ids": []
+  },
+  "RXCUI:1605064": {
+    "pharos_ids": []
+  },
+  "RXCUI:164": {
     "pharos_ids": []
   },
   "RXCUI:1655050": {
@@ -32606,6 +33541,9 @@
   "RXCUI:1670307": {
     "pharos_ids": []
   },
+  "RXCUI:1673367": {
+    "pharos_ids": []
+  },
   "RXCUI:1716094": {
     "pharos_ids": []
   },
@@ -32621,10 +33559,19 @@
   "RXCUI:175184": {
     "pharos_ids": []
   },
+  "RXCUI:177906": {
+    "pharos_ids": []
+  },
+  "RXCUI:1790539": {
+    "pharos_ids": []
+  },
   "RXCUI:1790637": {
     "pharos_ids": []
   },
   "RXCUI:1793094": {
+    "pharos_ids": []
+  },
+  "RXCUI:1793925": {
     "pharos_ids": []
   },
   "RXCUI:1798281": {
@@ -32666,10 +33613,45 @@
   "RXCUI:1870305": {
     "pharos_ids": []
   },
+  "RXCUI:1873916": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3545110",
+      "DrugCentral:5218",
+      "Guide to Pharmacology:7383",
+      "LyCHI:93PVAMNLUQ8U",
+      "PHAROS:93PVAMNLUQ8U",
+      "PubChem:44631912",
+      "pt:RIBOCICLIB",
+      "unii:TK8ERE8P56"
+    ]
+  },
+  "RXCUI:1889": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1040",
+      "DrugCentral:464",
+      "LyCHI:J8GAN3BTLYGV",
+      "PHAROS:J8GAN3BTLYGV",
+      "PubChem:5283731",
+      "pt:CALCIFEDIOL ANHYDROUS",
+      "unii:T0WXW8F54E"
+    ]
+  },
+  "RXCUI:1895": {
+    "pharos_ids": []
+  },
+  "RXCUI:19143": {
+    "pharos_ids": []
+  },
   "RXCUI:192254": {
     "pharos_ids": []
   },
   "RXCUI:1925495": {
+    "pharos_ids": []
+  },
+  "RXCUI:1926471": {
+    "pharos_ids": []
+  },
+  "RXCUI:1927283": {
     "pharos_ids": []
   },
   "RXCUI:1927882": {
@@ -32686,6 +33668,18 @@
   },
   "RXCUI:1945037": {
     "pharos_ids": []
+  },
+  "RXCUI:1946825": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3301610",
+      "DrugCentral:5259",
+      "Guide to Pharmacology:7382",
+      "LyCHI:H4AZXTM5LZTU",
+      "PHAROS:H4AZXTM5LZTU",
+      "PubChem:46220502",
+      "pt:ABEMACICLIB",
+      "unii:60UAB198HK"
+    ]
   },
   "RXCUI:197382": {
     "pharos_ids": []
@@ -32711,7 +33705,28 @@
   "RXCUI:198449": {
     "pharos_ids": []
   },
+  "RXCUI:1989795": {
+    "pharos_ids": []
+  },
+  "RXCUI:1989818": {
+    "pharos_ids": []
+  },
+  "RXCUI:1992672": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1770248",
+      "DrugCentral:5270",
+      "Guide to Pharmacology:8376",
+      "LyCHI:NHG4URM73JQB",
+      "PHAROS:NHG4URM73JQB",
+      "PubChem:44814423",
+      "pt:ERTUGLIFLOZIN",
+      "unii:6C282481IP"
+    ]
+  },
   "RXCUI:1992681": {
+    "pharos_ids": []
+  },
+  "RXCUI:1992863": {
     "pharos_ids": []
   },
   "RXCUI:1998620": {
@@ -32722,6 +33737,18 @@
   },
   "RXCUI:199864": {
     "pharos_ids": []
+  },
+  "RXCUI:1999382": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3544914",
+      "DrugCentral:5276",
+      "Guide to Pharmacology:10199",
+      "LyCHI:J4BJ26SGQ4NJ",
+      "PHAROS:J4BJ26SGQ4NJ",
+      "PubChem:46199646",
+      "pt:TEZACAFTOR",
+      "unii:8RW88Y506K"
+    ]
   },
   "RXCUI:1999664": {
     "pharos_ids": []
@@ -32741,10 +33768,73 @@
   "RXCUI:200367": {
     "pharos_ids": []
   },
+  "RXCUI:203168": {
+    "pharos_ids": []
+  },
   "RXCUI:203439": {
     "pharos_ids": []
   },
+  "RXCUI:2043313": {
+    "pharos_ids": []
+  },
+  "RXCUI:2043854": {
+    "pharos_ids": []
+  },
+  "RXCUI:2045125": {
+    "pharos_ids": []
+  },
+  "RXCUI:2045614": {
+    "pharos_ids": []
+  },
+  "RXCUI:2046138": {
+    "pharos_ids": []
+  },
+  "RXCUI:2046360": {
+    "pharos_ids": []
+  },
+  "RXCUI:2046361": {
+    "pharos_ids": []
+  },
+  "RXCUI:2048018": {
+    "pharos_ids": []
+  },
+  "RXCUI:2049928": {
+    "pharos_ids": []
+  },
+  "RXCUI:2053449": {
+    "pharos_ids": []
+  },
+  "RXCUI:2054077": {
+    "pharos_ids": []
+  },
+  "RXCUI:2054968": {
+    "pharos_ids": []
+  },
+  "RXCUI:2055640": {
+    "pharos_ids": []
+  },
+  "RXCUI:2055654": {
+    "pharos_ids": []
+  },
+  "RXCUI:2055906": {
+    "pharos_ids": []
+  },
   "RXCUI:2055981": {
+    "pharos_ids": []
+  },
+  "RXCUI:2056690": {
+    "pharos_ids": []
+  },
+  "RXCUI:2057198": {
+    "pharos_ids": []
+  },
+  "RXCUI:2058825": {
+    "pharos_ids": []
+  },
+  "RXCUI:2058868": {
+    "pharos_ids": []
+  },
+  "RXCUI:2059218": {
     "pharos_ids": []
   },
   "RXCUI:208601": {
@@ -32756,10 +33846,52 @@
   "RXCUI:2099131": {
     "pharos_ids": []
   },
+  "RXCUI:2099305": {
+    "pharos_ids": []
+  },
+  "RXCUI:2102692": {
+    "pharos_ids": []
+  },
+  "RXCUI:2103476": {
+    "pharos_ids": []
+  },
+  "RXCUI:2103477": {
+    "pharos_ids": []
+  },
+  "RXCUI:2103478": {
+    "pharos_ids": []
+  },
+  "RXCUI:2103479": {
+    "pharos_ids": []
+  },
+  "RXCUI:2103480": {
+    "pharos_ids": []
+  },
+  "RXCUI:2104331": {
+    "pharos_ids": []
+  },
+  "RXCUI:2104603": {
+    "pharos_ids": []
+  },
+  "RXCUI:2107051": {
+    "pharos_ids": []
+  },
+  "RXCUI:2107316": {
+    "pharos_ids": []
+  },
   "RXCUI:2108921": {
     "pharos_ids": []
   },
   "RXCUI:2109031": {
+    "pharos_ids": []
+  },
+  "RXCUI:2109054": {
+    "pharos_ids": []
+  },
+  "RXCUI:2110604": {
+    "pharos_ids": []
+  },
+  "RXCUI:2117869": {
     "pharos_ids": []
   },
   "RXCUI:2119698": {
@@ -32768,10 +33900,28 @@
   "RXCUI:2119712": {
     "pharos_ids": []
   },
+  "RXCUI:2121417": {
+    "pharos_ids": []
+  },
   "RXCUI:2122515": {
     "pharos_ids": []
   },
   "RXCUI:2122519": {
+    "pharos_ids": []
+  },
+  "RXCUI:2123125": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3545376",
+      "DrugCentral:5327",
+      "Guide to Pharmacology:9039",
+      "LyCHI:YQ15HNNJQ6JG",
+      "PHAROS:YQ15HNNJQ6JG",
+      "PubChem:67462786",
+      "pt:ERDAFITINIB",
+      "unii:890E37NHMV"
+    ]
+  },
+  "RXCUI:2123180": {
     "pharos_ids": []
   },
   "RXCUI:215122": {
@@ -32783,7 +33933,16 @@
   "RXCUI:216317": {
     "pharos_ids": []
   },
+  "RXCUI:2166132": {
+    "pharos_ids": []
+  },
   "RXCUI:216653": {
+    "pharos_ids": []
+  },
+  "RXCUI:2174091": {
+    "pharos_ids": []
+  },
+  "RXCUI:2174802": {
     "pharos_ids": []
   },
   "RXCUI:2184139": {
@@ -32792,16 +33951,31 @@
   "RXCUI:220144": {
     "pharos_ids": []
   },
+  "RXCUI:2204916": {
+    "pharos_ids": []
+  },
   "RXCUI:2205091": {
     "pharos_ids": []
   },
   "RXCUI:2205092": {
     "pharos_ids": []
   },
+  "RXCUI:221175": {
+    "pharos_ids": []
+  },
   "RXCUI:2257008": {
     "pharos_ids": []
   },
+  "RXCUI:2260702": {
+    "pharos_ids": []
+  },
   "RXCUI:2262022": {
+    "pharos_ids": []
+  },
+  "RXCUI:2262421": {
+    "pharos_ids": []
+  },
+  "RXCUI:2262543": {
     "pharos_ids": []
   },
   "RXCUI:2264183": {
@@ -32810,7 +33984,37 @@
   "RXCUI:2264366": {
     "pharos_ids": []
   },
+  "RXCUI:2265690": {
+    "pharos_ids": []
+  },
+  "RXCUI:2266523": {
+    "pharos_ids": []
+  },
+  "RXCUI:2267574": {
+    "pharos_ids": []
+  },
+  "RXCUI:2268037": {
+    "pharos_ids": []
+  },
+  "RXCUI:2268306": {
+    "pharos_ids": []
+  },
+  "RXCUI:22694": {
+    "pharos_ids": []
+  },
   "RXCUI:227192": {
+    "pharos_ids": []
+  },
+  "RXCUI:2274802": {
+    "pharos_ids": []
+  },
+  "RXCUI:2280730": {
+    "pharos_ids": []
+  },
+  "RXCUI:2282019": {
+    "pharos_ids": []
+  },
+  "RXCUI:2283045": {
     "pharos_ids": []
   },
   "RXCUI:2285813": {
@@ -32819,16 +34023,66 @@
   "RXCUI:2287005": {
     "pharos_ids": []
   },
+  "RXCUI:2288236": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3707247",
+      "DrugCentral:5383",
+      "Guide to Pharmacology:8709",
+      "LyCHI:52N431XZ1CF5",
+      "PHAROS:52N431XZ1CF5",
+      "PubChem:52938427",
+      "pt:OZANIMOD",
+      "unii:Z80293URPV"
+    ]
+  },
+  "RXCUI:2289225": {
+    "pharos_ids": []
+  },
+  "RXCUI:23043": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201749",
+      "DrugCentral:3142",
+      "LyCHI:1Q8SWN1ZS33F",
+      "PHAROS:1Q8SWN1ZS33F",
+      "PubChem:443936",
+      "pt:DIFLUPREDNATE",
+      "unii:S8A06QG2QE"
+    ]
+  },
+  "RXCUI:233386": {
+    "pharos_ids": []
+  },
+  "RXCUI:235779": {
+    "pharos_ids": []
+  },
+  "RXCUI:235851": {
+    "pharos_ids": []
+  },
+  "RXCUI:2360530": {
+    "pharos_ids": []
+  },
   "RXCUI:2360580": {
     "pharos_ids": []
   },
   "RXCUI:236782": {
     "pharos_ids": []
   },
+  "RXCUI:236931": {
+    "pharos_ids": []
+  },
+  "RXCUI:237025": {
+    "pharos_ids": []
+  },
+  "RXCUI:2373950": {
+    "pharos_ids": []
+  },
   "RXCUI:2375134": {
     "pharos_ids": []
   },
   "RXCUI:2375135": {
+    "pharos_ids": []
+  },
+  "RXCUI:2375522": {
     "pharos_ids": []
   },
   "RXCUI:237867": {
@@ -32846,7 +34100,16 @@
   "RXCUI:2386036": {
     "pharos_ids": []
   },
+  "RXCUI:2387334": {
+    "pharos_ids": []
+  },
+  "RXCUI:2387833": {
+    "pharos_ids": []
+  },
   "RXCUI:2388173": {
+    "pharos_ids": []
+  },
+  "RXCUI:2391551": {
     "pharos_ids": []
   },
   "RXCUI:240572": {
@@ -32855,11 +34118,53 @@
   "RXCUI:2461437": {
     "pharos_ids": []
   },
+  "RXCUI:2462511": {
+    "pharos_ids": []
+  },
   "RXCUI:246399": {
     "pharos_ids": []
   },
   "RXCUI:2465553": {
     "pharos_ids": []
+  },
+  "RXCUI:2469333": {
+    "pharos_ids": []
+  },
+  "RXCUI:2472151": {
+    "pharos_ids": []
+  },
+  "RXCUI:2473850": {
+    "pharos_ids": []
+  },
+  "RXCUI:2474235": {
+    "pharos_ids": []
+  },
+  "RXCUI:2475861": {
+    "pharos_ids": []
+  },
+  "RXCUI:2478646": {
+    "pharos_ids": []
+  },
+  "RXCUI:25188": {
+    "pharos_ids": []
+  },
+  "RXCUI:2525": {
+    "pharos_ids": []
+  },
+  "RXCUI:253156": {
+    "pharos_ids": []
+  },
+  "RXCUI:2532300": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1096146",
+      "DrugCentral:5446",
+      "Guide to Pharmacology:9320",
+      "LyCHI:4DVYJN2JZLF5",
+      "PHAROS:4DVYJN2JZLF5",
+      "PubChem:11363176",
+      "pt:PONESIMOD",
+      "unii:5G7AKV2MKP"
+    ]
   },
   "RXCUI:2535744": {
     "pharos_ids": []
@@ -32870,16 +34175,50 @@
   "RXCUI:2539039": {
     "pharos_ids": []
   },
+  "RXCUI:2539968": {
+    "pharos_ids": []
+  },
+  "RXCUI:2540965": {
+    "pharos_ids": []
+  },
+  "RXCUI:2549198": {
+    "pharos_ids": []
+  },
   "RXCUI:2556801": {
     "pharos_ids": []
   },
   "RXCUI:2556915": {
     "pharos_ids": []
   },
+  "RXCUI:2557218": {
+    "pharos_ids": []
+  },
+  "RXCUI:2557394": {
+    "pharos_ids": []
+  },
   "RXCUI:2562180": {
     "pharos_ids": []
   },
+  "RXCUI:2562811": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2181927",
+      "DrugCentral:5465",
+      "Guide to Pharmacology:8678",
+      "LyCHI:68RZKAX37SF5",
+      "PHAROS:68RZKAX37SF5",
+      "PubChem:60150535"
+    ]
+  },
+  "RXCUI:2563969": {
+    "pharos_ids": []
+  },
+  "RXCUI:2565276": {
+    "pharos_ids": []
+  },
   "RXCUI:25655": {
+    "pharos_ids": []
+  },
+  "RXCUI:2565813": {
     "pharos_ids": []
   },
   "RXCUI:2566306": {
@@ -32891,13 +34230,49 @@
   "RXCUI:2566416": {
     "pharos_ids": []
   },
+  "RXCUI:2569592": {
+    "pharos_ids": []
+  },
+  "RXCUI:2571093": {
+    "pharos_ids": []
+  },
+  "RXCUI:2571853": {
+    "pharos_ids": []
+  },
   "RXCUI:2583637": {
     "pharos_ids": []
   },
   "RXCUI:2583638": {
     "pharos_ids": []
   },
+  "RXCUI:2587060": {
+    "pharos_ids": []
+  },
+  "RXCUI:2587719": {
+    "pharos_ids": []
+  },
+  "RXCUI:2587790": {
+    "pharos_ids": []
+  },
+  "RXCUI:2589006": {
+    "pharos_ids": []
+  },
+  "RXCUI:2590744": {
+    "pharos_ids": []
+  },
+  "RXCUI:2591415": {
+    "pharos_ids": []
+  },
+  "RXCUI:2591584": {
+    "pharos_ids": []
+  },
   "RXCUI:2591804": {
+    "pharos_ids": []
+  },
+  "RXCUI:259404": {
+    "pharos_ids": []
+  },
+  "RXCUI:2595942": {
     "pharos_ids": []
   },
   "RXCUI:2596777": {
@@ -32906,13 +34281,25 @@
   "RXCUI:259753": {
     "pharos_ids": []
   },
+  "RXCUI:2599041": {
+    "pharos_ids": []
+  },
   "RXCUI:259909": {
+    "pharos_ids": []
+  },
+  "RXCUI:2602351": {
+    "pharos_ids": []
+  },
+  "RXCUI:2602779": {
     "pharos_ids": []
   },
   "RXCUI:2603506": {
     "pharos_ids": []
   },
   "RXCUI:2603508": {
+    "pharos_ids": []
+  },
+  "RXCUI:2604689": {
     "pharos_ids": []
   },
   "RXCUI:2606073": {
@@ -32924,13 +34311,90 @@
   "RXCUI:2610319": {
     "pharos_ids": []
   },
+  "RXCUI:2610406": {
+    "pharos_ids": []
+  },
+  "RXCUI:2610418": {
+    "pharos_ids": []
+  },
   "RXCUI:2612074": {
     "pharos_ids": []
+  },
+  "RXCUI:2612153": {
+    "pharos_ids": []
+  },
+  "RXCUI:2612452": {
+    "pharos_ids": []
+  },
+  "RXCUI:2612537": {
+    "pharos_ids": []
+  },
+  "RXCUI:2612673": {
+    "pharos_ids": []
+  },
+  "RXCUI:2613761": {
+    "pharos_ids": []
+  },
+  "RXCUI:26143": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL441687",
+      "DrugCentral:1325",
+      "LyCHI:BP9PSBWAQL5S",
+      "PHAROS:BP9PSBWAQL5S",
+      "PubChem:14982",
+      "pt:GLYCYRRHIZIN",
+      "unii:6FO62043WK"
+    ]
   },
   "RXCUI:261542": {
     "pharos_ids": []
   },
+  "RXCUI:2619155": {
+    "pharos_ids": []
+  },
+  "RXCUI:2619312": {
+    "pharos_ids": []
+  },
+  "RXCUI:2619425": {
+    "pharos_ids": []
+  },
+  "RXCUI:2621549": {
+    "pharos_ids": []
+  },
+  "RXCUI:2621881": {
+    "pharos_ids": []
+  },
   "RXCUI:2624743": {
+    "pharos_ids": []
+  },
+  "RXCUI:2625125": {
+    "pharos_ids": []
+  },
+  "RXCUI:2625651": {
+    "pharos_ids": []
+  },
+  "RXCUI:2625882": {
+    "pharos_ids": []
+  },
+  "RXCUI:2626142": {
+    "pharos_ids": []
+  },
+  "RXCUI:2626348": {
+    "pharos_ids": []
+  },
+  "RXCUI:2626722": {
+    "pharos_ids": []
+  },
+  "RXCUI:2626768": {
+    "pharos_ids": []
+  },
+  "RXCUI:2627648": {
+    "pharos_ids": []
+  },
+  "RXCUI:2630724": {
+    "pharos_ids": []
+  },
+  "RXCUI:2632980": {
     "pharos_ids": []
   },
   "RXCUI:2636536": {
@@ -32939,10 +34403,58 @@
   "RXCUI:2637040": {
     "pharos_ids": []
   },
+  "RXCUI:2637395": {
+    "pharos_ids": []
+  },
+  "RXCUI:2637445": {
+    "pharos_ids": []
+  },
+  "RXCUI:2637757": {
+    "pharos_ids": []
+  },
+  "RXCUI:2639649": {
+    "pharos_ids": []
+  },
+  "RXCUI:2639781": {
+    "pharos_ids": []
+  },
   "RXCUI:2639950": {
     "pharos_ids": []
   },
+  "RXCUI:2640387": {
+    "pharos_ids": []
+  },
+  "RXCUI:2640402": {
+    "pharos_ids": []
+  },
+  "RXCUI:2640849": {
+    "pharos_ids": []
+  },
+  "RXCUI:2641642": {
+    "pharos_ids": []
+  },
+  "RXCUI:2642208": {
+    "pharos_ids": []
+  },
+  "RXCUI:2642273": {
+    "pharos_ids": []
+  },
+  "RXCUI:2642402": {
+    "pharos_ids": []
+  },
   "RXCUI:2643204": {
+    "pharos_ids": []
+  },
+  "RXCUI:2644435": {
+    "pharos_ids": []
+  },
+  "RXCUI:2644448": {
+    "pharos_ids": []
+  },
+  "RXCUI:2644513": {
+    "pharos_ids": []
+  },
+  "RXCUI:2644881": {
     "pharos_ids": []
   },
   "RXCUI:2645242": {
@@ -33191,13 +34703,34 @@
   "RXCUI:2663037": {
     "pharos_ids": []
   },
+  "RXCUI:2663939": {
+    "pharos_ids": []
+  },
+  "RXCUI:2667434": {
+    "pharos_ids": []
+  },
+  "RXCUI:2668080": {
+    "pharos_ids": []
+  },
   "RXCUI:2668194": {
     "pharos_ids": []
   },
   "RXCUI:2668195": {
     "pharos_ids": []
   },
+  "RXCUI:2668385": {
+    "pharos_ids": []
+  },
+  "RXCUI:2669407": {
+    "pharos_ids": []
+  },
+  "RXCUI:266974": {
+    "pharos_ids": []
+  },
   "RXCUI:2670556": {
+    "pharos_ids": []
+  },
+  "RXCUI:2670656": {
     "pharos_ids": []
   },
   "RXCUI:2675584": {
@@ -33206,13 +34739,43 @@
   "RXCUI:2675988": {
     "pharos_ids": []
   },
+  "RXCUI:2677425": {
+    "pharos_ids": []
+  },
+  "RXCUI:2677776": {
+    "pharos_ids": []
+  },
+  "RXCUI:2678931": {
+    "pharos_ids": []
+  },
   "RXCUI:2682677": {
+    "pharos_ids": []
+  },
+  "RXCUI:2682955": {
+    "pharos_ids": []
+  },
+  "RXCUI:2686620": {
     "pharos_ids": []
   },
   "RXCUI:2686970": {
     "pharos_ids": []
   },
   "RXCUI:2686972": {
+    "pharos_ids": []
+  },
+  "RXCUI:2687965": {
+    "pharos_ids": []
+  },
+  "RXCUI:2689282": {
+    "pharos_ids": []
+  },
+  "RXCUI:2691309": {
+    "pharos_ids": []
+  },
+  "RXCUI:2691528": {
+    "pharos_ids": []
+  },
+  "RXCUI:2693778": {
     "pharos_ids": []
   },
   "RXCUI:2693889": {
@@ -33224,14 +34787,101 @@
   "RXCUI:2695779": {
     "pharos_ids": []
   },
+  "RXCUI:2695870": {
+    "pharos_ids": []
+  },
+  "RXCUI:2696256": {
+    "pharos_ids": []
+  },
+  "RXCUI:2697132": {
+    "pharos_ids": []
+  },
+  "RXCUI:2697461": {
+    "pharos_ids": []
+  },
+  "RXCUI:2698200": {
+    "pharos_ids": []
+  },
+  "RXCUI:2698561": {
+    "pharos_ids": []
+  },
+  "RXCUI:2699587": {
+    "pharos_ids": []
+  },
   "RXCUI:2700338": {
+    "pharos_ids": []
+  },
+  "RXCUI:2700340": {
+    "pharos_ids": []
+  },
+  "RXCUI:2700660": {
+    "pharos_ids": []
+  },
+  "RXCUI:2700714": {
+    "pharos_ids": []
+  },
+  "RXCUI:2700746": {
     "pharos_ids": []
   },
   "RXCUI:2701435": {
     "pharos_ids": []
   },
+  "RXCUI:2705377": {
+    "pharos_ids": []
+  },
   "RXCUI:2705457": {
     "pharos_ids": []
+  },
+  "RXCUI:2705553": {
+    "pharos_ids": []
+  },
+  "RXCUI:2706334": {
+    "pharos_ids": []
+  },
+  "RXCUI:2706347": {
+    "pharos_ids": []
+  },
+  "RXCUI:2706479": {
+    "pharos_ids": []
+  },
+  "RXCUI:2708340": {
+    "pharos_ids": []
+  },
+  "RXCUI:2715382": {
+    "pharos_ids": []
+  },
+  "RXCUI:2715399": {
+    "pharos_ids": []
+  },
+  "RXCUI:2716481": {
+    "pharos_ids": []
+  },
+  "RXCUI:2717168": {
+    "pharos_ids": []
+  },
+  "RXCUI:2717169": {
+    "pharos_ids": []
+  },
+  "RXCUI:2717512": {
+    "pharos_ids": []
+  },
+  "RXCUI:2729665": {
+    "pharos_ids": []
+  },
+  "RXCUI:2730302": {
+    "pharos_ids": []
+  },
+  "RXCUI:274964": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2040682",
+      "DrugCentral:633",
+      "Guide to Pharmacology:7469",
+      "LyCHI:U92GRBX86HV5",
+      "PHAROS:U92GRBX86HV5",
+      "PubChem:6918155",
+      "pt:CICLESONIDE",
+      "unii:S59502J185"
+    ]
   },
   "RXCUI:283224": {
     "pharos_ids": []
@@ -33240,6 +34890,9 @@
     "pharos_ids": []
   },
   "RXCUI:283641": {
+    "pharos_ids": []
+  },
+  "RXCUI:283753": {
     "pharos_ids": []
   },
   "RXCUI:284756": {
@@ -33261,6 +34914,12 @@
     "pharos_ids": []
   },
   "RXCUI:28874": {
+    "pharos_ids": []
+  },
+  "RXCUI:29495": {
+    "pharos_ids": []
+  },
+  "RXCUI:306266": {
     "pharos_ids": []
   },
   "RXCUI:307686": {
@@ -33287,10 +34946,39 @@
   "RXCUI:311415": {
     "pharos_ids": []
   },
+  "RXCUI:3143": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL90593",
+      "DrugCentral:795",
+      "LyCHI:FS54HD2ZRCVL",
+      "PHAROS:FS54HD2ZRCVL",
+      "PubChem:5881",
+      "pt:PRASTERONE",
+      "unii:459AG36T1B"
+    ]
+  },
+  "RXCUI:314517": {
+    "pharos_ids": []
+  },
+  "RXCUI:31479": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL982",
+      "DrugCentral:1876",
+      "Guide to Pharmacology:1628",
+      "LyCHI:MJV3Z58X5UJA",
+      "PHAROS:MJV3Z58X5UJA",
+      "PubChem:5284594",
+      "pt:NALMEFENE",
+      "unii:TOV02TDP9I"
+    ]
+  },
   "RXCUI:327148": {
     "pharos_ids": []
   },
   "RXCUI:340021": {
+    "pharos_ids": []
+  },
+  "RXCUI:340705": {
     "pharos_ids": []
   },
   "RXCUI:343262": {
@@ -33303,6 +34991,21 @@
     "pharos_ids": []
   },
   "RXCUI:353102": {
+    "pharos_ids": []
+  },
+  "RXCUI:35623": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL744",
+      "DrugCentral:2382",
+      "Guide to Pharmacology:2326",
+      "LyCHI:CTLUL57W2GUZ",
+      "PHAROS:CTLUL57W2GUZ",
+      "PubChem:5070",
+      "pt:RILUZOLE",
+      "unii:7LJ087RS6F"
+    ]
+  },
+  "RXCUI:3565": {
     "pharos_ids": []
   },
   "RXCUI:36572": {
@@ -33377,6 +35080,9 @@
   "RXCUI:373979": {
     "pharos_ids": []
   },
+  "RXCUI:3740": {
+    "pharos_ids": []
+  },
   "RXCUI:374458": {
     "pharos_ids": []
   },
@@ -33399,6 +35105,9 @@
     "pharos_ids": []
   },
   "RXCUI:375581": {
+    "pharos_ids": []
+  },
+  "RXCUI:37578": {
     "pharos_ids": []
   },
   "RXCUI:375827": {
@@ -33464,6 +35173,21 @@
   "RXCUI:379383": {
     "pharos_ids": []
   },
+  "RXCUI:3829": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL577",
+      "DrugCentral:1006",
+      "Guide to Pharmacology:6332",
+      "LyCHI:NVHP63K624ML",
+      "PHAROS:NVHP63K624ML",
+      "PubChem:5462501",
+      "pt:ENALAPRILAT ANHYDROUS",
+      "unii:Q508Q118JM"
+    ]
+  },
+  "RXCUI:38508": {
+    "pharos_ids": []
+  },
   "RXCUI:393355": {
     "pharos_ids": []
   },
@@ -33471,6 +35195,20 @@
     "pharos_ids": []
   },
   "RXCUI:393393": {
+    "pharos_ids": []
+  },
+  "RXCUI:40114": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL862",
+      "DrugCentral:1343",
+      "LyCHI:TFPFTJNHL3BH",
+      "PHAROS:TFPFTJNHL3BH",
+      "PubChem:3519",
+      "pt:GUANFACINE",
+      "unii:30OMY4G3MK"
+    ]
+  },
+  "RXCUI:40144": {
     "pharos_ids": []
   },
   "RXCUI:402099": {
@@ -33500,7 +35238,25 @@
   "RXCUI:405343": {
     "pharos_ids": []
   },
+  "RXCUI:4090": {
+    "pharos_ids": []
+  },
+  "RXCUI:42330": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL17157",
+      "DrugCentral:2600",
+      "Guide to Pharmacology:2608",
+      "LyCHI:MGQPMCMHRN4T",
+      "PHAROS:MGQPMCMHRN4T",
+      "PubChem:5405",
+      "pt:TERFENADINE",
+      "unii:7BA5G9Y06Q"
+    ]
+  },
   "RXCUI:42729": {
+    "pharos_ids": []
+  },
+  "RXCUI:42892": {
     "pharos_ids": []
   },
   "RXCUI:451784": {
@@ -33509,7 +35265,24 @@
   "RXCUI:471577": {
     "pharos_ids": []
   },
+  "RXCUI:47364": {
+    "pharos_ids": []
+  },
+  "RXCUI:475342": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL4583196",
+      "LyCHI:ZFW1WCMLHQT1",
+      "PHAROS:ZFW1WCMLHQT1",
+      "PubChem:42609478"
+    ]
+  },
   "RXCUI:476348": {
+    "pharos_ids": []
+  },
+  "RXCUI:485576": {
+    "pharos_ids": []
+  },
+  "RXCUI:485853": {
     "pharos_ids": []
   },
   "RXCUI:486895": {
@@ -33518,7 +35291,34 @@
   "RXCUI:493191": {
     "pharos_ids": []
   },
+  "RXCUI:4955": {
+    "pharos_ids": []
+  },
+  "RXCUI:498193": {
+    "pharos_ids": []
+  },
+  "RXCUI:4986": {
+    "pharos_ids": []
+  },
+  "RXCUI:52105": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201170",
+      "DrugCentral:4512",
+      "LyCHI:lithium citrate",
+      "PHAROS:lithium citrate",
+      "PubChem:5129076"
+    ]
+  },
+  "RXCUI:53750": {
+    "pharos_ids": []
+  },
   "RXCUI:545254": {
+    "pharos_ids": []
+  },
+  "RXCUI:5464": {
+    "pharos_ids": []
+  },
+  "RXCUI:54993": {
     "pharos_ids": []
   },
   "RXCUI:562251": {
@@ -33531,6 +35331,15 @@
     "pharos_ids": []
   },
   "RXCUI:578325": {
+    "pharos_ids": []
+  },
+  "RXCUI:5879": {
+    "pharos_ids": []
+  },
+  "RXCUI:5882": {
+    "pharos_ids": []
+  },
+  "RXCUI:5933": {
     "pharos_ids": []
   },
   "RXCUI:596702": {
@@ -33569,6 +35378,9 @@
   "RXCUI:637364": {
     "pharos_ids": []
   },
+  "RXCUI:6417": {
+    "pharos_ids": []
+  },
   "RXCUI:643066": {
     "pharos_ids": []
   },
@@ -33584,8 +35396,40 @@
   "RXCUI:656686": {
     "pharos_ids": []
   },
+  "RXCUI:6574": {
+    "pharos_ids": []
+  },
+  "RXCUI:657797": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201182",
+      "DrugCentral:4161",
+      "Guide to Pharmacology:5892",
+      "LyCHI:48STSPY2SLCV",
+      "PHAROS:48STSPY2SLCV",
+      "PubChem:6918289",
+      "pt:TEMSIROLIMUS",
+      "unii:624KN6GM2T"
+    ]
+  },
+  "RXCUI:6579": {
+    "pharos_ids": []
+  },
   "RXCUI:659877": {
     "pharos_ids": []
+  },
+  "RXCUI:6677": {
+    "pharos_ids": []
+  },
+  "RXCUI:7004": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1670",
+      "DrugCentral:1820",
+      "LyCHI:SQALPCX5Y21A",
+      "PHAROS:SQALPCX5Y21A",
+      "PubChem:4211",
+      "pt:MITOTANE",
+      "unii:78E4J5IB5J"
+    ]
   },
   "RXCUI:700516": {
     "pharos_ids": []
@@ -33602,14 +35446,53 @@
   "RXCUI:722125": {
     "pharos_ids": []
   },
+  "RXCUI:72257": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201563",
+      "DrugCentral:5140",
+      "LyCHI:interferon beta-1b",
+      "PHAROS:interferon beta-1b"
+    ]
+  },
+  "RXCUI:72435": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201570",
+      "DrugCentral:5017",
+      "LyCHI:anakinra",
+      "PHAROS:anakinra"
+    ]
+  },
   "RXCUI:729582": {
     "pharos_ids": []
+  },
+  "RXCUI:73044": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1272",
+      "DrugCentral:2366",
+      "Guide to Pharmacology:6841",
+      "LyCHI:TYZKJAMBL4TW",
+      "PHAROS:TYZKJAMBL4TW",
+      "PubChem:65981",
+      "pt:REPAGLINIDE",
+      "unii:668Z8C33LU"
+    ]
   },
   "RXCUI:730869": {
     "pharos_ids": []
   },
   "RXCUI:730872": {
     "pharos_ids": []
+  },
+  "RXCUI:7393": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL573",
+      "DrugCentral:2835",
+      "LyCHI:KMR1XXHPFJH1",
+      "PHAROS:KMR1XXHPFJH1",
+      "PubChem:938",
+      "pt:NIACIN",
+      "unii:2679MF687A"
+    ]
   },
   "RXCUI:74170": {
     "pharos_ids": []
@@ -33671,10 +35554,28 @@
   "RXCUI:807277": {
     "pharos_ids": []
   },
+  "RXCUI:809864": {
+    "pharos_ids": []
+  },
   "RXCUI:810083": {
     "pharos_ids": []
   },
+  "RXCUI:81638": {
+    "pharos_ids": []
+  },
+  "RXCUI:81981": {
+    "pharos_ids": []
+  },
+  "RXCUI:82010": {
+    "pharos_ids": []
+  },
+  "RXCUI:82054": {
+    "pharos_ids": []
+  },
   "RXCUI:829538": {
+    "pharos_ids": []
+  },
+  "RXCUI:83171": {
     "pharos_ids": []
   },
   "RXCUI:847731": {
@@ -33755,6 +35656,9 @@
   "RXCUI:896236": {
     "pharos_ids": []
   },
+  "RXCUI:89748": {
+    "pharos_ids": []
+  },
   "RXCUI:897844": {
     "pharos_ids": []
   },
@@ -33767,10 +35671,16 @@
   "RXCUI:901639": {
     "pharos_ids": []
   },
+  "RXCUI:90176": {
+    "pharos_ids": []
+  },
   "RXCUI:904462": {
     "pharos_ids": []
   },
   "RXCUI:904492": {
+    "pharos_ids": []
+  },
+  "RXCUI:91293": {
     "pharos_ids": []
   },
   "RXCUI:93249": {
@@ -33795,7 +35705,16 @@
   "RXCUI:978675": {
     "pharos_ids": []
   },
+  "RXCUI:9793": {
+    "pharos_ids": []
+  },
   "RXCUI:979468": {
+    "pharos_ids": []
+  },
+  "RXCUI:9903": {
+    "pharos_ids": []
+  },
+  "RXCUI:998038": {
     "pharos_ids": []
   },
   "RXCUI:998040": {

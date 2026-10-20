@@ -11,11 +11,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  ".ALPHA.-TOCOPHEROL, D-": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   ".ALPHA.1-PROTEINASE INHIBITOR HUMAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  ".BETA.-CAROTENE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   ".GAMMA.-AMINOBUTYRIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "1": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -27,6 +39,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "16": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "2,3,7,8-TETRACHLORODIBENZO-P-DIOXIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -35,11 +51,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "4-HYDROXYBUTANOIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "4-HYDROXYCYCLOPHOSPHAMIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "8-CHLOROTHEOPHYLLINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "A": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -71,6 +95,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ACACIA LONGIFOLIA": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "ACALABRUTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -84,6 +112,22 @@
     "is_diagnostic_agent": false
   },
   "ACEBUTOLOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ACER NEGUNDO POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ACER RUBRUM POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ACER SACCHARUM POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ACETAMINOPHE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -119,6 +163,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ACETYLSALICYLIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ACITRETIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -136,6 +184,10 @@
     "is_diagnostic_agent": false
   },
   "ACORAMIDIS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ACRIFLAVINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -164,6 +216,10 @@
     "is_diagnostic_agent": false
   },
   "ADEFOVIR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ADENINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -199,6 +255,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "AFOXOLANER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "AGALSIDASE BETA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -211,6 +271,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ALBUMIN AGGREGATED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "ALBUMIN HUMAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -219,11 +283,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ALBUTREPENONACOG ALFA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ALCAFTADINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ALCLOMETASONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALCLOXA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -275,6 +347,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ALLANTOIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ALLOGENIC BONE-MARROW-DERIVED MESENCHYMAL STEM CELLS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -287,7 +363,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ALMOND": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "ALMOTRIPTAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALNUS RUBRA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ALOE BARBADENSIS LEAF EXTRACT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -307,6 +395,22 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ALPHA LIPOIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALPHA-TOCOPHEROL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALPHA-TOCOPHERYLQUINONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALPHA.1-PROTEINASE INHIBITOR HUMAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ALPRAZOLAM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -319,7 +423,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ALTERNARIA ALTERNATA": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ALUMINUM HYDROXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ALUMINUM OXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALUMINUM ZIRCONIUM TETRACHLOROHYDREX GLY": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -335,7 +451,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "AMBRISENTAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "AMBROSIA ARTEMISIIFOLIA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "AMBROSIA ARTEMISIIFOLIA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "AMBROSIA PSILOSTACHYA POLLEN": {
     "is_allergen": true,
     "is_diagnostic_agent": false
   },
@@ -363,7 +491,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "AMIKACIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "AMILORIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "AMINO ACIDS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "AMINO ACIDS, SILK": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -451,6 +591,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ANAS PLATYRHYNCHOS FEATHER": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "ANASTROZOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -460,6 +604,10 @@
     "is_diagnostic_agent": false
   },
   "ANHYDROUS DEXTROSE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ANHYDROUS DIBASIC CALCIUM PHOSPHATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -475,7 +623,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ANSER ANSER FEATHER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ANSUVIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ANTHRAX IMMUNE GLOBULIN HUMAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -491,11 +651,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ANTIHEMOPHILIC FACTOR, HUMAN RECOMBINANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ANTIMONY CATION (3+)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ANTIPYRINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ANTITHROMBIN III HUMAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "APADAMTASE ALFA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -515,6 +687,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "APPLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "APRACLONIDINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -531,11 +707,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "AQUA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ARANEUS DIADEMATUS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ARFORMOTEROL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ARGAN OIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -575,6 +759,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ARTEMISIA VULGARIS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "ARTICAINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -599,6 +787,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ASH": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ASIATICOSIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ASPARAGINASE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -608,6 +804,22 @@
     "is_diagnostic_agent": false
   },
   "ASPARTIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ASPERGILLUS FUMIGATUS": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ASPERGILLUS NIDULANS": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ASPERGILLUS NIGER": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ASPERGILLUS TERREUS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -655,11 +867,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ATRIPLEX CANESCENS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "ATROPINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "AURANOFIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "AUREOBASIDIUM PULLULANS VAR. PULLUTANS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -689,6 +909,10 @@
   },
   "AVELUMAB": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "AVENA SATIVA POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "AVIBACTAM": {
@@ -727,6 +951,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "AZELAMIDE MEA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "AZELASTINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -755,6 +983,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BACILLUS CALMETTE-GUERIN SUBSTRAIN TICE LIVE ANTIGEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BACITRACIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -771,11 +1003,35 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BANANA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BARICITINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BARIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "BARIUM CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
+  "BARIUM SULFATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "BASILIXIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BASSIA SCOPARIA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "BAZEDOXIFENE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -787,11 +1043,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BECLOMETHASONE 17-MONOPROPIONATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BEDAQUILINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "BEEF": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BEESWAX": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -812,6 +1076,10 @@
     "is_diagnostic_agent": false
   },
   "BELZUTIFAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BEMOTRIZINOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -871,6 +1139,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BENZOPHENONE-3": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BENZOYL PEROXIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -880,6 +1152,10 @@
     "is_diagnostic_agent": false
   },
   "BENZTROPINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BENZYL ALCOHOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -911,6 +1187,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BEROTRALSTAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BETA CAROTENE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BETAINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -927,7 +1211,31 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BETIATIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BETIBEGLOGENE AUTOTEMCEL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BETULA NIGRA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "BETULA PAPYRIFERA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "BETULA PENDULA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "BEVACIZUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BEVACIZUMAB-MALY": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -959,6 +1267,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BIMATOPROST": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BIMEKIZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -979,6 +1291,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BISMUTH": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BISMUTH CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -991,6 +1307,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BISULFITE ION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BIVALIRUDIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -999,11 +1319,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BLATTELLA GERMANICA": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "BLEOMYCIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "BLINATUMOMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BLUEBERRY": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BORATE ION": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1051,6 +1383,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BOS TAURUS HAIR": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "BOS TAURUS HIP JOINT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1091,11 +1427,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BOTRYTIS CINEREA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BOTULINUM TOXIN TYPE A": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "BRAIN-DERIVED NEUROTROPHIC FACTOR HUMAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BRAZIL NUT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1163,8 +1507,16 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BROMOTHEOPHYLLINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BROMPHENIRAMINE": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BROMUS INERMIS POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "BRYONIA ALBA ROOT": {
@@ -1215,11 +1567,27 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BUTAMBEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BUTENAFINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "BUTOCONAZOLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BUTORPHANOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BUTYROSPERMUM PARKII (SHEA) BUTTER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BUTYROSPERMUM PARKII (SHEA) OIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1251,6 +1619,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CALCIFEDIOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CALCIFEDIOL ANHYDROUS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1275,6 +1647,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CALCIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CALCIUM CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1287,7 +1663,27 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CAMELLIA JAPONICA SEED OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CAMELLIA SINENSIS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CAMELLIA SINENSIS LEAF": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CAMPHOR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CAMPHOR (NATURAL)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CAMPHOR (SYNTHETIC)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1307,8 +1703,16 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CANDIDA ALBICANS": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "CANGRELOR": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CANIS LUPUS FAMILIARIS HAIR": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "CANIS LUPUS FAMILIARIS MILK": {
@@ -1316,6 +1720,10 @@
     "is_diagnostic_agent": false
   },
   "CANNABIDIOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CANTHARIDIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1331,7 +1739,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CAPRYLOYL GLYCINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CAPSAICIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CAPSICUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1407,11 +1823,27 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CARROT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CARTEOLOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "CARVEDILOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CARYA ILLINOINENSIS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "CARYA OVATA POLLEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CASEIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1423,8 +1855,20 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CASTOR OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CATRIDECACOG": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CAULOPHYLLUM THALICTROIDES ROOT": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CAVIA PORCELLUS HAIR": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "CEANOTHUS AMERICANUS LEAF": {
@@ -1440,6 +1884,10 @@
     "is_diagnostic_agent": false
   },
   "CEFACLOR ANHYDROUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CEFADROXIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1471,7 +1919,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CEFOTAXIME": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CEFOTETAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CEFOTETAN DISODIUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1515,6 +1971,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CEFTOLOZANE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CEFTRIAXONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1527,6 +1987,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CELERY": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CELTIS OCCIDENTALIS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "CEMIPLIMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1536,6 +2004,14 @@
     "is_diagnostic_agent": false
   },
   "CENOBAMATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CENTELLA ASIATICA LEAF": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CENTELLA ASIATICA TRITERPENOIDS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1587,6 +2063,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CHENOPODIUM ALBUM POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "CHIMAPHILA UMBELLATA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1595,7 +2075,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CHLORAMBUCIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CHLORAMPHENICOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CHLORCYCLIZINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1623,6 +2111,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CHLOROQUINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CHLOROTHIAZIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1635,7 +2127,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CHLORTETRACYCLINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CHLORTHALIDONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CHLORTHEOPHYLLINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1663,6 +2163,22 @@
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
+  "CHORIOGONADOTROPIN ALFA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CHORIONIC": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CHORIONIC GONADOTROPIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CHROMIC CATION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CHROMIUM": {
     "is_allergen": true,
     "is_diagnostic_agent": false
@@ -1671,11 +2187,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
+  "CHRYSANTHELLUM INDICUM WHOLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CI 77891": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CICLESONIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "CICLOPIROX": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CIDOFOVIR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1735,6 +2263,18 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CITRUS AURANTIUM BERGAMIA (BERGAMOT) FRUIT OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CITRUS PARADISI (GRAPEFRUIT) PEEL OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CLADOSPORIUM CLADOSPORIOIDES": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "CLADRIBINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1763,6 +2303,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CLESROVIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CLEVIDIPINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1787,6 +2331,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CLOFARABINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CLOMIPHENE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1800,6 +2348,14 @@
     "is_diagnostic_agent": false
   },
   "CLONIDINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CLONOSTACHYS ROSEA F. ROSEA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CLOPERASTINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1831,11 +2387,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "COAGULATION FACTOR IX RECOMBINANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "COAGULATION FACTOR IX RECOMBINANT HUMAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "COAGULATION FACTOR VII HUMAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COAGULATION FACTOR VIIA RECOMBINANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COAGULATION FACTOR VIIA RECOMBINANT HUMAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1847,6 +2415,10 @@
     "is_allergen": true,
     "is_diagnostic_agent": false
   },
+  "COBAMAMIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "COBICISTAT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1855,9 +2427,33 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "COCAMIDOPROPYL BETAINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COCARBOXYLASE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "COCCIDIOIDES IMMITIS SPHERULE": {
     "is_allergen": false,
     "is_diagnostic_agent": true
+  },
+  "COCHLIOBOLUS SPICIFER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COCONUT OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COCOS NUCIFERA (COCONUT) OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COD, UNSPECIFIED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
   },
   "CODEINE": {
     "is_allergen": false,
@@ -1899,6 +2495,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CONCIZUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CONESTAT ALFA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1915,7 +2515,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "COPPER TRIPEPTIDE-1": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CORAL SNAKE (MICRURUS FULVIUS) IMMUNE GLOBULIN ANTIVENIN (EQUINE)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CORD BLOOD": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CORN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1963,6 +2575,10 @@
     "is_allergen": true,
     "is_diagnostic_agent": false
   },
+  "CRAB LEG, UNSPECIFIED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CREATINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1976,6 +2592,10 @@
     "is_diagnostic_agent": false
   },
   "CRIZANLIZUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CRIZOTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1999,7 +2619,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CUPRESSUS ARIZONICA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "CUPRIC CATION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CURCUMA LONGA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2027,6 +2655,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CYNODON DACTYLON POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "CYPROHEPTADINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2043,7 +2675,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CYTISUS SCOPARIUS FLOWERING TOP": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DABIGATRAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DABIGATRAN ETEXILATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2067,7 +2707,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DACTYLIS GLOMERATA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "DALBAVANCIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DALFAMPRIDINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2080,6 +2728,14 @@
     "is_diagnostic_agent": false
   },
   "DANAZOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DANDER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DANICOPAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2104,6 +2760,10 @@
     "is_diagnostic_agent": false
   },
   "DARATUMUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DARBEPOETIN ALFA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2139,6 +2799,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DECYL GLUCOSIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DEFACTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2148,6 +2812,10 @@
     "is_diagnostic_agent": false
   },
   "DEFERIPRONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DEFEROXAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2176,6 +2844,10 @@
     "is_diagnostic_agent": false
   },
   "DEMECLOCYCLINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DENDRYPHIELLA VINOSA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2247,6 +2919,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DEUTIVACAFTOR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DEXAMETHASONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2279,6 +2955,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DEXTRAN 70": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DEXTROAMPHETAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2286,6 +2966,14 @@
   "DEXTROMETHORPHAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "DEXTROSE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DIATRIZOATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "DIATRIZOIC ACID": {
     "is_allergen": false,
@@ -2296,6 +2984,10 @@
     "is_diagnostic_agent": false
   },
   "DIAZOXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DIBASIC": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2320,6 +3012,10 @@
     "is_diagnostic_agent": false
   },
   "DIDANOSINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DIDECYLDIMONIUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2348,6 +3044,10 @@
     "is_diagnostic_agent": false
   },
   "DIFELIKEFALIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DIFENOXIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2387,6 +3087,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DIHYDROSTREPTOMYCIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DILTIAZEM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2399,11 +3103,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DIMETHICONE, UNSPECIFIED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DIMETHYL SULFOXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DINOPROST": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "DINOPROSTONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DINUTUXIMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2415,6 +3131,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DIPHENOXYLATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DIPHTHERIA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DIPYRIDAMOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": true
@@ -2423,7 +3147,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DISTEAROYLPHOSPHATIDYLCHOLINE, DL-": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DISULFIRAM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2439,7 +3171,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DOCONEXENT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DOCOSANOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DOCUSATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2491,6 +3231,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DOXAPRAM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DOXAZOSIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2515,11 +3259,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DOXYCYCLINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DOXYCYCLINE ANHYDROUS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "DOXYLAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DROMETRIZOLE TRISILOXANE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2603,6 +3355,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
+  "EFANESOCTOCOG ALFA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "EFAVIRENZ": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2631,8 +3387,20 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "EFTRENONACOG ALFA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EGG": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ELADOCAGENE EXUPARVOVEC": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ELAEAGNUS ANGUSTIFOLIA POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "ELAFIBRANOR": {
@@ -2739,11 +3507,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ENROFLOXACIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ENSIFENTRINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ENSULIZOLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ENTACAPONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ENTECAVIR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2767,7 +3547,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "EPICOCCUM NIGRUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "EPICRIPTINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EPIDERMOPHYTON FLOCCOSUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2787,6 +3575,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "EPOETIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EPRINOMECTIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "EPROSARTAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2797,6 +3593,10 @@
   },
   "EPTINEZUMAB": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EQUUS CABALLUS HAIR": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "ERDAFITINIB": {
@@ -2843,6 +3643,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ESAFOXOLANER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ESCITALOPRAM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2880,6 +3684,14 @@
     "is_diagnostic_agent": false
   },
   "ESTRADIOL VALERATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ESTRIOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ESTROGENS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2923,6 +3735,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ETHACRIDINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ETHACRYNIC": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ETHACRYNIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2931,11 +3751,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ETHENZAMIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ETHINYL ESTRADIOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ETHOSUXIMIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ETHYLHEXYL METHOXYCINNAMATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ETHYLHEXYL SALICYLATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2979,8 +3811,28 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "EUCALYPTOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EUCALYPTUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EUCALYPTUS GLOBULUS LEAF OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EUCALYPTUS OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "EUGENOL": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EUPATORIUM CAPILLIFOLIUM POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "EUPHRASIA STRICTA": {
@@ -3023,6 +3875,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FAGUS GRANDIFOLIA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "FAMOTIDINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3032,6 +3888,10 @@
     "is_diagnostic_agent": false
   },
   "FD&C BLUE NO. 1": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FEBANTEL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3055,6 +3915,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FENOFIBRIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FENOPROFEN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3063,11 +3927,27 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FERRIC": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FERRIC CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "FERRIC DERISOMALTOSE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FERRIC FERROCYANIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FERRIC OXIDE RED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FERROUS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3131,6 +4011,22 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FISH OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FITUSIRAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FLAVIN ADENINE DINUCLEOTIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FLAVIN MONONUCLEOTIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FLAVONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3147,9 +4043,25 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FLORBETABEN F-18": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "FLORFENICOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FLORTAUCIPIR F-18": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "FLOXURIDINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "FLUCICLOVINE F-18": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "FLUCONAZOLE": {
     "is_allergen": false,
@@ -3180,6 +4092,10 @@
     "is_diagnostic_agent": false
   },
   "FLUNISOLIDE ANHYDROUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FLUNIXIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3227,6 +4143,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FLURALANER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FLURANDRENOLIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3239,9 +4159,17 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FLURPIRIDAZ F-18": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "FLUTAMIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "FLUTEMETAMOL F-18": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "FLUTICASONE": {
     "is_allergen": false,
@@ -3271,6 +4199,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FOOD YELLOW 3 FREE ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FORMALDEHYDE": {
     "is_allergen": true,
     "is_diagnostic_agent": false
@@ -3280,6 +4212,10 @@
     "is_diagnostic_agent": false
   },
   "FORMOTEROL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FOSCARBIDOPA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3303,8 +4239,16 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FOSLEVODOPA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "FRAGRANCE 13576": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FRAXINUS AMERICANA POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "FREMANEZUMAB": {
@@ -3324,6 +4268,14 @@
     "is_diagnostic_agent": false
   },
   "FUROSEMIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FURSULTIAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FUSARIUM OXYSPORUM VASINFECTUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3374,6 +4326,10 @@
   "GALLIUM GA-68 GOZETOTIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": true
+  },
+  "GALLUS GALLUS FEATHER": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
   },
   "GALSULFASE": {
     "is_allergen": false,
@@ -3435,11 +4391,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "GENTIAN VIOLET CATION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "GEPIRONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "GILTERITINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "GINKGO BILOBA LEAF": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3475,6 +4439,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "GLUCONIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "GLUCONOLACTONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3507,6 +4475,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "GLYCYRRHIZIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "GLYPHOSATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3528,6 +4500,10 @@
     "is_diagnostic_agent": false
   },
   "GOSERELIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "GOZETOTIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3563,7 +4539,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HAEMOPHILUS INFLUENZAE TYPE B CAPSULAR POLYSACCHARIDE MENINGOCOCCAL OUTER MEMBRANE PROTEIN CONJUGATE ANTIGEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HAEMOPHILUS INFLUENZAE TYPE B STRAIN 1482 CAPSULAR POLYSACCHARIDE TETANUS TOXOID CONJUGATE ANTIGEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HAEMOPHILUS INFLUENZAE TYPE B STRAIN 20752 CAPSULAR POLYSACCHARIDE TETANUS TOXOID CONJUGATE ANTIGEN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3583,11 +4567,31 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HAZELNUT, UNSPECIFIED": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "HELIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HEMIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HEPARIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HEPATITIS A": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HEPATITIS A VIRUS STRAIN CR 326F ANTIGEN (FORMALDEHYDE INACTIVATED)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HEPATITIS A VIRUS STRAIN HM175 ANTIGEN (FORMALDEHYDE INACTIVATED)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3615,7 +4619,35 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HOMATROPINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HOMOSALATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HOUTTUYNIA CORDATA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HUMAN ADENOVIRUS B SEROTYPE 7 STRAIN 55142 ANTIGEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HUMAN ADENOVIRUS E SEROTYPE 4 STRAIN CL-68578": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HUMAN ALBUMIN MICROSPHERES": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "HUMAN AMNIOTIC MEMBRANE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HUMAN BOTULINUM NEUROTOXIN A/B IMMUNE GLOBULIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3627,7 +4659,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HUMAN COAGULATION FACTOR VIII/VON WILLEBRAND FACTOR COMPLEX": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HUMAN CORD BLOOD HEMATOPOIETIC PROGENITOR CELL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HUMAN CYTOMEGALOVIRUS IMMUNE GLOBULIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HUMAN HEPATITIS B VIRUS IMMUNE GLOBULIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3687,6 +4731,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HUMAN SERUM ALBUMIN I-131": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "HUMAN THROMBIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3715,6 +4763,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HYDRATED SILICA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HYDROCHLOROTHIAZIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3727,7 +4779,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HYDROCORTISONE BUTYRATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HYDROGEN PEROXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HYDROLYZED PORCINE COLLAGEN (ENZYMATIC; 3000 MW)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3755,11 +4815,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HYDROXYCHLOROQUINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HYDROXYETHYL CELLULOSE (5500 MPA.S AT 2%)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HYDROXYETHYLPIPERAZINE ETHANE SULFONIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "HYDROXYPROGESTERONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HYDROXYUREA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3772,6 +4844,10 @@
     "is_diagnostic_agent": false
   },
   "HYOSCYAMUS NIGER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HYPROMELLOSE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3800,6 +4876,10 @@
     "is_diagnostic_agent": false
   },
   "ICATIBANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ICODEXTRIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3847,6 +4927,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "IMIDACLOPRID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "IMIDUREA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3868,6 +4952,10 @@
     "is_diagnostic_agent": false
   },
   "IMIQUIMOD": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "INACTIVATED": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3923,6 +5011,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "INFLUENZA A VIRUS A/MICHIGAN/105/2025 SAN 049A (H3N2) HEMAGGLUTININ ANTIGEN (UV, FORMALDEHYDE INACTIVATED)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "INFLUENZA A VIRUS A/SWITZERLAND/6849/2025 IVR 278 (H1N1) HEMAGGLUTININ ANTIGEN (UV, FORMALDEHYDE INACTIVATED)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "INFLUENZA A VIRUS A/VICTORIA/4897/2022 IVR-238 (H1N1) HEMAGGLUTININ ANTIGEN (FORMALDEHYDE INACTIVATED)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3939,6 +5035,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "INFLUENZA B VIRUS B/TOKYO/EIS13-175/2025 HEMAGGLUTININ ANTIGEN (UV, FORMALDEHYDE INACTIVATED)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "INOTERSEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "INOTUZUMAB OZOGAMICIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3952,6 +5056,10 @@
     "is_diagnostic_agent": false
   },
   "INSULIN DETEMIR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "INSULIN GLARGIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3979,6 +5087,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "INTERFERON BETA-1B": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "INTERFERON GAMMA-1B": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3987,11 +5099,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "INTRINSIC FACTOR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "IODIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
   "IODIDE ION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "IODIDE ION I-123": {
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
@@ -4007,7 +5127,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
+  "IOFLUPANE I-123": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "IOHEXOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "IOMEPROL": {
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
@@ -4016,6 +5144,10 @@
     "is_diagnostic_agent": true
   },
   "IOPROMIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "IOTHALAMIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
@@ -4083,6 +5215,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ISOPROPYL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ISOPROPYL ALCOHOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4123,6 +5259,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "IVA ANNUA POLLEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "IVA AXILLARIS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "IVABRADINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4147,6 +5291,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "JUGLANS NIGRA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "JUNIPERUS VIRGINIANA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "KALMIA LATIFOLIA LEAF": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4159,6 +5311,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "KETOCONAZOLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "KETOPROFEN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4168,6 +5324,10 @@
     "is_diagnostic_agent": false
   },
   "KETOTIFEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "KOJIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4184,6 +5344,10 @@
     "is_diagnostic_agent": false
   },
   "LACTIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LACTIC ACID, DL-": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4208,6 +5372,10 @@
     "is_diagnostic_agent": false
   },
   "LANADELUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LANOLIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4236,6 +5404,10 @@
     "is_diagnostic_agent": false
   },
   "LATANOPROST ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LAVANDIN OIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4299,6 +5471,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LEUCONOSTOC/RADISH ROOT FERMENT FILTRATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LEUCOVORIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4308,6 +5484,10 @@
     "is_diagnostic_agent": false
   },
   "LEVALBUTEROL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LEVAMISOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4351,7 +5531,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LEVOMENTHOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LEVOMILNACIPRAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LEVONORDEFRIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4377,6 +5565,10 @@
   },
   "LIFITEGRAST": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LIGUSTRUM VULGARE POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "LINACLOTIDE": {
@@ -4407,6 +5599,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LIQUIDAMBAR STYRACIFLUA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "LIRAGLUTIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4435,12 +5631,20 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LIVE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LIXISENATIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "LOBELIA INFLATA": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LOBSTER, UNSPECIFIED": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "LOFEXIDINE": {
@@ -4464,6 +5668,14 @@
     "is_diagnostic_agent": false
   },
   "LONCASTUXIMAB TESIRINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LONICERA JAPONICA FLOWER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LONOCTOCOG ALFA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4515,6 +5727,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LULICONAZOLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LUMACAFTOR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4536,6 +5752,10 @@
     "is_diagnostic_agent": false
   },
   "LUSUTROMBOPAG": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LUTEIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4567,11 +5787,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MADECASSOSIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MAFENIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "MAFTIVIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MAGNESIUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4583,7 +5811,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MALACHITE GREEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MALATHION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MANGANESE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4631,6 +5867,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MEASLES": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MEASLES VIRUS STRAIN ENDERS' ATTENUATED EDMONSTON LIVE ANTIGEN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4638,6 +5878,10 @@
   "MEBENDAZOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "MEBROFENIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "MECAMYLAMINE": {
     "is_allergen": false,
@@ -4659,6 +5903,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MEDRONIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "MEDROXYPROGESTERONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4679,7 +5927,27 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MELALEUCA ALTERNIFOLIA (TEA TREE) LEAF OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MELALEUCA CITRINA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "MELALEUCA QUINQUENERVIA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "MELATONIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MELIA AZADIRACHTA LEAF": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MELISSA OFFICINALIS LEAF": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4696,6 +5964,10 @@
     "is_diagnostic_agent": false
   },
   "MENADIONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MENTHA PIPERITA LEAF": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4739,6 +6011,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MESALAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "METAXALONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4768,6 +6044,10 @@
     "is_diagnostic_agent": false
   },
   "METHENAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "METHIMAZOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4807,6 +6087,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "METHYLCOBALAMIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "METHYLDOPA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4815,9 +6099,17 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "METHYLENE BLUE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "METHYLENE BLUE CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": true
+  },
+  "METHYLEPHEDRINE, (+/-)-": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
   },
   "METHYLERGONOVINE": {
     "is_allergen": false,
@@ -4909,6 +6201,14 @@
   },
   "MIGLUSTAT": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MILBEMYCIN OXIME": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MILK": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "MILNACIPRAN": {
@@ -5003,7 +6303,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MONOMETHYL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MONOMETHYL FUMARATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MONOSTEARYL FUMARATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5011,11 +6319,35 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MORINDA CITRIFOLIA FRUIT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MORINGA OLEIFERA LEAF": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MOROCTOCOG ALFA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MORPHINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MORUS ALBA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "MORUS RUBRA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "MOSUNETUZUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MOXETUMOMAB PASUDOTOX": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5024,6 +6356,14 @@
     "is_diagnostic_agent": false
   },
   "MOXIFLOXACIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MUCOR RACEMOSUS": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "MUMPS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5044,6 +6384,10 @@
     "is_diagnostic_agent": false
   },
   "NABUMETONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NADH": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5111,6 +6455,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "NARSOPLIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "NATALIZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5120,6 +6468,10 @@
     "is_diagnostic_agent": false
   },
   "NATEGLINIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NAXITAMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5191,7 +6543,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "NETUPITANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "NEVIRAPINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NIACIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5216,6 +6576,10 @@
     "is_diagnostic_agent": false
   },
   "NIFURTIMOX": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NILOTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5255,6 +6619,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "NITRATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NITRIC OXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "NITRITE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5267,7 +6639,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "NITROFURAZONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NITROGEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "NITROGLYCERIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NITROPRUSSIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5311,7 +6695,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "NOVOBIOCIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "NYSTATIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "O-CYMEN-5-OL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "OATMEAL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5369,6 +6765,18 @@
   },
   "OLANZAPINE": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "OLAPARIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "OLEA EUROPAEA (OLIVE) FRUIT OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "OLEA EUROPAEA POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "OLEZARSEN": {
@@ -5435,6 +6843,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ONASEMNOGENE ABEPARVOVEC": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ONDANSETRON": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5444,6 +6856,10 @@
     "is_diagnostic_agent": false
   },
   "OPICAPONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ORANGE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5515,6 +6931,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "OXIDRONIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "OXYBATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5536,6 +6956,10 @@
     "is_diagnostic_agent": false
   },
   "OXYMORPHONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "OXYQUINOLINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5579,6 +7003,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PALM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PALM KERNEL OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PALONOSETRON": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5588,6 +7020,10 @@
     "is_diagnostic_agent": false
   },
   "PAMIDRONIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PANCRELIPASE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5607,6 +7043,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PANTHENOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PANTOPRAZOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5623,11 +7063,31 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PARKINSONIA FLORIDA POLLEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PAROMOMYCIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PAROXETINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PASPALUM NOTATUM POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "PAZOPANIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PEA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PECAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5699,6 +7159,18 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PENICILLIUM CHRYSOGENUM VAR. CHRYSOGENUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PENICILLIUM DIGITATUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PENICILLIUM EXPANSUM": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "PENPULIMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5739,6 +7211,18 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PENTOXYVERINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PEPPERMINT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PERACETIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PERAMIVIR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5758,6 +7242,10 @@
   "PERFLUTREN": {
     "is_allergen": false,
     "is_diagnostic_agent": true
+  },
+  "PERILLA FRUTESCENS": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
   },
   "PERINDOPRIL": {
     "is_allergen": false,
@@ -5783,6 +7271,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PETROLATUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PETROSELINUM CRISPUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5795,11 +7287,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PHENAZOPYRIDINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PHENDIMETRAZINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "PHENELZINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PHENIRAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5859,7 +7359,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PHLEUM PRATENSE POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "PHOMA EXIGUA VAR. EXIGUA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PHOSPHATE ION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PHOSPHATIDYL SERINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5878,6 +7390,10 @@
   "PIBRENTASVIR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "PIFLUFOLASTAT F-18": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "PILOCARPINE": {
     "is_allergen": false,
@@ -5899,6 +7415,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PINUS CONTORTA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "PINUS PONDEROSA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "PIOGLITAZONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5911,7 +7435,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PIPERAZINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PIPERINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PIPERONYL BUTOXIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5943,6 +7475,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PLATANUS OCCIDENTALIS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "PLATINUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5951,11 +7487,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PLEOSPORA TARDA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PLERIXAFOR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "POA PRATENSIS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "PODOFILOX": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "POLACRILIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5987,11 +7535,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "POLYGLUTAMIC ACID (1200 MW)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "POLYMYXIN B": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "POLYSORBATE 20": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "POLYSORBATE 80": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6019,6 +7575,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "POPULUS DELTOIDES POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "PORACTANT ALFA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6040,6 +7600,18 @@
     "is_diagnostic_agent": false
   },
   "POTASSIUM CATION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "POTATO": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "POULTRY, UNSPECIFIED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "POVIDONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6087,6 +7659,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PRAZIQUANTEL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PRAZOSIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6127,6 +7703,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PROCAINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PROCARBAZINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6163,7 +7743,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PROPIOLACTONE INACTIVATED)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PROPOFOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PROPOLIS WAX": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6185,6 +7773,14 @@
   },
   "PROPYLTHIOURACIL": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PROPYPHENAZONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PROSOPIS JULIFLORA": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "PROTAMINE": {
@@ -6215,6 +7811,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PRUNUS AMYGDALUS DULCIS (SWEET ALMOND) OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PSEUDOEPHEDRINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6231,11 +7831,31 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PYRANTEL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PYRAZINAMIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PYRETHRUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PYRETHRUM EXTRACT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PYRIDOSTIGMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PYRIDOXAL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PYRIDOXAL PHOSPHATE ANHYDROUS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6247,7 +7867,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PYRIMETHAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PYRITHIONE ZINC": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PYROPHOSPHORIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "QUAHOG, UNSPECIFIED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "QUATERNIUM-73": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6257,6 +7893,18 @@
   },
   "QUERCETIN": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "QUERCUS ALBA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "QUERCUS RUBRA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "QUERCUS VIRGINIANA POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "QUETIAPINE": {
@@ -6287,6 +7935,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RABIES VIRUS STRAIN PM-1503-3M ANTIGEN (PROPIOLACTONE INACTIVATED)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RALOXIFENE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6311,6 +7963,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RANITIDINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RANOLAZINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6328,6 +7984,18 @@
     "is_diagnostic_agent": false
   },
   "RAXIBACUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RECOMBINANT HEPATITIS B SURFACE ANTIGEN (ISOFORM L)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RECOMBINANT HEPATITIS B SURFACE ANTIGEN (ISOFORM M)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RECOMBINANT HEPATITIS B SURFACE ANTIGEN (ISOFORM S)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6352,6 +8020,10 @@
     "is_diagnostic_agent": false
   },
   "REGORAFENIB ANHYDROUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RELATLIMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6395,6 +8067,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RESORCINOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RETAPAMULIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6411,7 +8087,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RHIZOPUS STOLONIFER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RHODODENDRON AUREUM LEAF": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RIBAVIRIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6423,7 +8107,31 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RIBOFLAVIN 5'-PHOSPHATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RIBOFLAVIN TETRABUTYRATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RICE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RICE BRAN OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RICE GERM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RIFABUTIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RIFAMPIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6523,6 +8231,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ROLAPITANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ROMIDEPSIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6547,6 +8259,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ROSEMARY": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ROSEMARY OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ROSIGLITAZONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6560,6 +8280,10 @@
     "is_diagnostic_agent": false
   },
   "ROZANOLIXIZUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RUBELLA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6579,7 +8303,27 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RUMEX ACETOSELLA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "RUMEX CRISPUS POLLEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RUTIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RYE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SACCHARIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SACCHAROMYCES LYSATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6611,12 +8355,24 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SALIX NIGRA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "SALMETEROL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SALMON, UNSPECIFIED": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "SALMONELLA ENTERICA ENTERICA SEROVAR ENTERITIDIS": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SALSOLA KALI POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "SAMIDORPHAN": {
@@ -6643,6 +8399,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SAROCLADIUM STRICTUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SAROLANER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SATRALIZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6659,6 +8423,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SCHINUS MOLLE POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "SCHOENOCAULON OFFICINALE SEED": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6672,6 +8440,10 @@
     "is_diagnostic_agent": false
   },
   "SEBETRALSTAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SECNIDAZOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6698,6 +8470,14 @@
   "SELEGILINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "SELENIOUS ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SELENITE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "SELENIUM": {
     "is_allergen": false,
@@ -6759,6 +8539,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SERUM, HORSE": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "SESAME SEED": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "SEVABERTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6771,11 +8559,31 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SHEA BUTTER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SHRIMP, UNSPECIFIED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SIBEPRENLIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SILDENAFIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SILICA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SILICON DIOXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SILK AMINO ACIDS": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6792,6 +8600,14 @@
     "is_diagnostic_agent": false
   },
   "SILYBUM MARIANUM SEED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SIMMONDSIA CHINENSIS (JOJOBA) SEED OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SIMOCTOCOG ALFA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6827,6 +8643,18 @@
     "is_allergen": true,
     "is_diagnostic_agent": false
   },
+  "SLICK ALTERATION DISRUPTING BOS TAURUS G.(NC_037347.1) FS(39099129-39099368) IN EXON 9 OF PRLR GENE IN BOS TAURUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SODIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SODIUM 1,2-DIPALMITOYL-SN-GLYCERO-3-PHOSPHO-(1'-RAC-GLYCEROL)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SODIUM BICARBONATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6851,11 +8679,27 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SOLENOPSIS INVICTA": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "SOLENOPSIS RICHTERI": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "SOLIDAGO CANADENSIS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "SOLIDAGO VIRGAUREA FLOWERING TOP": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "SOLIFENACIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SOLRIAMFETOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6875,8 +8719,20 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SORAFENIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SORBIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SORBITOL": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SORGHUM HALEPENSE POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "SOTAGLIFLOZIN": {
@@ -6892,6 +8748,10 @@
     "is_diagnostic_agent": false
   },
   "SOTORASIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SOYBEAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6919,11 +8779,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "STANNOUS CATION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "STAVUDINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "STIRIPENTOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "STRAWBERRY": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7103,6 +8971,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "STRING BEAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "STRONTIUM CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": true
@@ -7132,6 +9004,10 @@
     "is_diagnostic_agent": false
   },
   "SUCRALFATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SUCROSE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7175,11 +9051,23 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SULFITE ION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SULFUR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SULFUR HEXAFLUORIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "SULINDAC": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SULOPENEM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7303,6 +9191,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SUSOCTOCOG ALFA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SUTIMLIMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7313,6 +9205,10 @@
   },
   "SUZETRIGINE": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SYAGRUS ROMANZOFFIANA POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "TACROLIMUS": {
@@ -7379,6 +9275,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TARAXACUM OFFICINALE LEAF": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TARLATAMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7399,6 +9299,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TAXODIUM DISTICHUM POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "TAZAROTENE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7410,6 +9314,22 @@
   "TEBENTAFUSP": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "TECHNETIUM TC-99M EXAMETAZIME": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "TECHNETIUM TC-99M MEDRONATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "TECHNETIUM TC-99M SESTAMIBI": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "TECHNETIUM TC-99M SULFUR COLLOID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "TECLISTAMAB": {
     "is_allergen": false,
@@ -7507,6 +9427,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TERLIPRESSIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TESAMORELIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7535,6 +9459,18 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TETRAHYDROZOLINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TETRAIODOFLUORESCEIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "TETRAKIS(2-METHOXYISOBUTYLISOCYANIDE)COPPER(I) TETRAFLUOROBORATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TEZACAFTOR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7547,11 +9483,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "THALLOUS CATION TL-201": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "THEOPHYLLINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "THEOPHYLLINE ANHYDROUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "THIAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7591,7 +9535,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "THONZONIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "THONZONIUM BROMIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "THREONIC ACID, DL-": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "THREONIC ACID, L-": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7612,6 +9568,10 @@
     "is_diagnostic_agent": false
   },
   "THUJA OCCIDENTALIS LEAFY TWIG": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "THYMOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7642,6 +9602,14 @@
   "TILDRAKIZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "TILIA AMERICANA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "TILMANOCEPT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "TIMOLOL": {
     "is_allergen": false,
@@ -7699,6 +9667,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TITANIUM DIOXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TIZANIDINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7708,6 +9680,14 @@
     "is_diagnostic_agent": false
   },
   "TOCILIZUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TOCOPHEROL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TOCOPHERSOLAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7740,6 +9720,10 @@
     "is_diagnostic_agent": false
   },
   "TOLVAPTAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TOMATO": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7831,6 +9815,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TRENBOLONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TREOSULFAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7852,6 +9840,22 @@
     "is_diagnostic_agent": false
   },
   "TRIAZOLAM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TRICHOPHYTON MENTAGROPHYTES": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TRICHOPHYTON RUBRUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TRICHOPHYTON TONSURANS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TRICLABENDAZOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7880,6 +9884,14 @@
     "is_diagnostic_agent": false
   },
   "TRIHEXYPHENIDYL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TRILOSTANE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TRIMEPRAZINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7939,6 +9951,18 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TULATHROMYCIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TUNA, UNSPECIFIED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TYLOSIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TYROSINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7955,13 +9979,33 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ULMUS AMERICANA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ULMUS PARVIFOLIA POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "UMECLIDINIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "UNDECYLENIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "UPADACITINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
+  },
+  "UREA": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "UREA C-13": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
   },
   "URIDINE": {
     "is_allergen": false,
@@ -7971,8 +10015,16 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "URSADIOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "URSODIOL": {
     "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "URTICA DIOICA POLLEN": {
+    "is_allergen": true,
     "is_diagnostic_agent": false
   },
   "USTEKINUMAB": {
@@ -7984,6 +10036,10 @@
     "is_diagnostic_agent": false
   },
   "VADADUSTAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "VALGANCICLOVIR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8019,6 +10075,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "VANZACAFTOR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "VARDENAFIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8036,6 +10096,10 @@
     "is_diagnostic_agent": false
   },
   "VECURONIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "VECURONIUM CATION": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8080,6 +10144,10 @@
     "is_diagnostic_agent": false
   },
   "VERICIGUAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "VERNONIA APPENDICULATA WHOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8147,6 +10215,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "VON WILLEBRAND FACTOR HUMAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "VONOPRAZAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "VORASIDENIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8175,6 +10251,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "WALNUT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "WARFARIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8183,8 +10263,44 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "WHITE PETROLATUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "WITCH HAZEL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "WYETHIA HELENIOIDES ROOT": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "XANOMELINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "XENON": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "XENON XE-129": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "XENON XE-129, HYPERPOLARIZED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "XENON XE-133": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
+  "XYLITOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "YEAST": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ZAFIRLUKAST": {
@@ -8211,11 +10327,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ZEA MAYS POLLEN": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "ZENOCUTUZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ZICONOTIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ZIDEBACTAM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8247,7 +10371,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ZINC PYRITHIONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ZIPRASIDONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ZIRCONIUM CYCLOSILICATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8264,6 +10396,10 @@
     "is_diagnostic_agent": false
   },
   "ZOLEDRONIC ACID ANHYDROUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ZOLIFLODACIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },

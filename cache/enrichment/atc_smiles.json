@@ -905,6 +905,16 @@
     "atc_main": "A",
     "smiles": "C=C[C@@H]1C[C@]1(NC(=O)[C@@H]1C[C@@H]2CN1C(=O)[C@H](C(C)(C)C)NC(=O)O[C@@H]1C[C@H]1CCCCCc1nc3ccc(OC)cc3nc1O2)C(=O)NS(=O)(=O)C1CC1"
   },
+  "CHEBI:133007": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:133008": {
     "atc_codes": [],
     "atc_level1": "",
@@ -1028,6 +1038,16 @@
     "atc_main": "",
     "smiles": "CC(=O)O.NCCCC[C@H](N)C(=O)O"
   },
+  "CHEBI:133804": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:133809": {
     "atc_codes": [],
     "atc_level1": "",
@@ -1049,6 +1069,16 @@
     "atc_level5": "P01CA02",
     "atc_main": "P",
     "smiles": "O=C(Cn1ccnc1[N+](=O)[O-])NCc1ccccc1"
+  },
+  "CHEBI:133876": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:134677": {
     "atc_codes": [
@@ -1547,6 +1577,16 @@
     "atc_main": "",
     "smiles": "S=C=Nc1ccc(N=C=S)cc1"
   },
+  "CHEBI:134868": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:134876": {
     "atc_codes": [],
     "atc_level1": "",
@@ -1568,6 +1608,16 @@
     "atc_level5": "M03BX30",
     "atc_main": "M",
     "smiles": "OC(CNc1ccccn1)c1ccccc1"
+  },
+  "CHEBI:134891": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:134892": {
     "atc_codes": [
@@ -1602,6 +1652,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "c1ccc2c(SC3=NCCN3)c[nH]c2c1"
+  },
+  "CHEBI:134914": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:134923": {
     "atc_codes": [
@@ -2041,6 +2101,16 @@
     "atc_main": "J",
     "smiles": "O=C1NOCC1/N=C/c1ccc(/C=N/C2CONC2=O)cc1"
   },
+  "CHEBI:135283": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:135285": {
     "atc_codes": [
       "A10BH02"
@@ -2294,6 +2364,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "CN(C)CCCN1C(=O)c2cc([N+](=O)[O-])ccc2Oc2ccccc21"
+  },
+  "CHEBI:135472": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:135499": {
     "atc_codes": [
@@ -2633,6 +2713,26 @@
     "atc_main": "A",
     "smiles": "CNC(=O)c1cnn(-c2nc(N)c3ncn([C@@H]4O[C@H](CO)[C@@H](O)[C@H]4O)c3n2)c1"
   },
+  "CHEBI:135615": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:135616": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:135622": {
     "atc_codes": [
       "S01AE08"
@@ -2914,6 +3014,16 @@
     "atc_main": "A",
     "smiles": "O=C(CN1CCN(Cc2ccc3c(c2)OCO3)CC1)N1c2ccccc2Sc2ccccc21"
   },
+  "CHEBI:135746": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:135752": {
     "atc_codes": [],
     "atc_level1": "",
@@ -2978,6 +3088,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:135764": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:135780": {
     "atc_codes": [],
     "atc_level1": "",
@@ -2999,6 +3119,16 @@
     "atc_level5": "D07AC21",
     "atc_main": "D",
     "smiles": "CCC(=O)O[C@]1(C(=O)CCl)[C@@H](C)C[C@H]2[C@@H]3C[C@H](F)C4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]21C"
+  },
+  "CHEBI:135790": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:135791": {
     "atc_codes": [
@@ -3174,6 +3304,16 @@
     "atc_level5": "V08AB12",
     "atc_main": "V",
     "smiles": "CC(=O)N(CC(O)CO)c1c(I)c(C(=O)NCCO)c(I)c(C(=O)NCC(O)CO)c1I"
+  },
+  "CHEBI:135885": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:135888": {
     "atc_codes": [
@@ -4248,6 +4388,16 @@
     "atc_main": "",
     "smiles": "CCN(CC)CC#CCOC(=O)C(O)(c1ccccc1)C1CCCCC1.Cl"
   },
+  "CHEBI:145370": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:145371": {
     "atc_codes": [
       "L01EE03"
@@ -4441,6 +4591,16 @@
     "atc_main": "D",
     "smiles": "CCCCCCNC(=N)NC(=N)N"
   },
+  "CHEBI:149566": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:149601": {
     "atc_codes": [
       "C10AX15"
@@ -4500,6 +4660,16 @@
     "smiles": "CC(=O)OCC[N+](C)(C)C.[Cl-]"
   },
   "CHEBI:15356": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:15361": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -4619,6 +4789,16 @@
     "atc_main": "B",
     "smiles": "NCC(=O)O"
   },
+  "CHEBI:15440": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:15443": {
     "atc_codes": [],
     "atc_level1": "",
@@ -4700,6 +4880,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:15611": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:15640": {
     "atc_codes": [],
     "atc_level1": "",
@@ -4772,6 +4962,16 @@
     "atc_main": "",
     "smiles": "O=C(O)CCC(=O)O"
   },
+  "CHEBI:15746": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:15765": {
     "atc_codes": [
       "N04BA01"
@@ -4785,6 +4985,26 @@
     "smiles": "N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O"
   },
   "CHEBI:157785": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:15843": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:15846": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -4859,6 +5079,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:15927": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:15936": {
     "atc_codes": [],
     "atc_level1": "",
@@ -4880,6 +5110,16 @@
     "smiles": "O=C(OCc1ccccc1)c1cccnc1"
   },
   "CHEBI:15956": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:15971": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -4974,6 +5214,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "C[C@H]1[C@H](NC(=O)C(=NOC(C)(C)C(=O)O)c2csc(N)n2)C(=O)N1S(=O)(=O)O"
+  },
+  "CHEBI:16171": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:16196": {
     "atc_codes": [],
@@ -5093,6 +5343,26 @@
     "atc_main": "S",
     "smiles": ""
   },
+  "CHEBI:16337": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:16344": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:16347": {
     "atc_codes": [
       "A16AA01"
@@ -5104,6 +5374,16 @@
     "atc_level5": "A16AA01",
     "atc_main": "A",
     "smiles": "C[N+](C)(C)C[C@H](O)CC(=O)[O-]"
+  },
+  "CHEBI:16349": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:16359": {
     "atc_codes": [
@@ -5139,6 +5419,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:16414": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:16436": {
     "atc_codes": [
       "N06BX06"
@@ -5150,6 +5440,16 @@
     "atc_level5": "N06BX06",
     "atc_main": "N",
     "smiles": "C[N+](C)(C)CCOP(=O)(O)OP(=O)([O-])OC[C@H]1O[C@@H](n2ccc(N)nc2=O)[C@H](O)[C@@H]1O"
+  },
+  "CHEBI:16452": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:16467": {
     "atc_codes": [
@@ -5221,6 +5521,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:16581": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:16586": {
     "atc_codes": [
       "B02AA01"
@@ -5232,6 +5542,26 @@
     "atc_level5": "B02AA01",
     "atc_main": "B",
     "smiles": "NCCCCCC(=O)O"
+  },
+  "CHEBI:16610": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:16643": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:16664": {
     "atc_codes": [
@@ -5290,6 +5620,16 @@
     "smiles": "CN1[C@H]2CC[C@H]1CC(OC(=O)[C@H](CO)c1ccccc1)C2"
   },
   "CHEBI:166881": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:16695": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -5404,6 +5744,26 @@
     "atc_level5": "A01AD05",
     "atc_main": "A",
     "smiles": "COC(=O)/C=C/C(=O)O"
+  },
+  "CHEBI:16749": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:16750": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:16755": {
     "atc_codes": [
@@ -5595,6 +5955,16 @@
     "atc_main": "V",
     "smiles": "N[C@@H](CCC(=O)N[C@@H](CS)C(=O)NCC(=O)O)C(=O)O"
   },
+  "CHEBI:16857": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:168630": {
     "atc_codes": [],
     "atc_level1": "",
@@ -5657,6 +6027,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:16898": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:16899": {
     "atc_codes": [
       "B05CX04",
@@ -5672,6 +6052,16 @@
     "atc_level5": "B05CX04",
     "atc_main": "B",
     "smiles": "OC[C@@H](O)[C@@H](O)[C@H](O)[C@H](O)CO"
+  },
+  "CHEBI:16908": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:16914": {
     "atc_codes": [
@@ -5742,6 +6132,16 @@
     "atc_main": "V",
     "smiles": ""
   },
+  "CHEBI:16977": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:16988": {
     "atc_codes": [],
     "atc_level1": "",
@@ -5786,6 +6186,16 @@
     "atc_main": "A",
     "smiles": "CCCC(=O)OC[C@@H](OC(=O)CCC)[C@@H](OC(=O)CCC)[C@H](Cn1c2nc(=O)[nH]c(=O)c-2nc2cc(C)c(C)cc21)OC(=O)CCC"
   },
+  "CHEBI:17020": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:17026": {
     "atc_codes": [
       "G03DA04"
@@ -5824,6 +6234,16 @@
     "atc_main": "A",
     "smiles": "CN[C@@H]1[C@H](O[C@H]2[C@H](O[C@H]3[C@H](O)[C@@H](O)[C@H](N=C(N)N)[C@@H](O)[C@@H]3N=C(N)N)O[C@@H](C)[C@]2(O)C=O)O[C@@H](CO)[C@H](O)[C@H]1O.CN[C@@H]1[C@H](O[C@H]2[C@H](O[C@H]3[C@H](O)[C@@H](O)[C@H](N=C(N)N)[C@@H](O)[C@@H]3N=C(N)N)O[C@@H](C)[C@]2(O)C=O)O[C@@H](CO)[C@H](O)[C@H]1O.O=S(=O)(O)O.O=S(=O)(O)O.O=S(=O)(O)O"
   },
+  "CHEBI:17115": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:17126": {
     "atc_codes": [],
     "atc_level1": "",
@@ -5843,6 +6263,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "Cl.NCCS"
+  },
+  "CHEBI:17148": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:17151": {
     "atc_codes": [],
@@ -5865,6 +6295,36 @@
     "atc_level5": "A11HA01",
     "atc_main": "A",
     "smiles": "NC(=O)c1cccnc1"
+  },
+  "CHEBI:17191": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17196": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17203": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:17231": {
     "atc_codes": [],
@@ -5924,6 +6384,16 @@
     "atc_main": "G",
     "smiles": "C[C@]12CC[C@@H]3c4ccc(O)cc4CC[C@H]3[C@@H]1CCC2=O"
   },
+  "CHEBI:17268": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:17272": {
     "atc_codes": [],
     "atc_level1": "",
@@ -5969,6 +6439,16 @@
     "smiles": "C[C@H]1CO[C@@H]2Cn3cc(C(=O)NCc4ccc(F)cc4F)c(=O)c(O)c3C(=O)N12"
   },
   "CHEBI:172948": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17295": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -6048,6 +6528,16 @@
     "atc_main": "",
     "smiles": "CCC(=O)O[C@H]1CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C"
   },
+  "CHEBI:17351": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:17376": {
     "atc_codes": [],
     "atc_level1": "",
@@ -6059,6 +6549,16 @@
     "smiles": ""
   },
   "CHEBI:173854": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17394": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -6088,6 +6588,16 @@
     "atc_main": "",
     "smiles": "Cc1c(C(N)=O)cc([N+](=O)[O-])cc1[N+](=O)[O-]"
   },
+  "CHEBI:17431": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:174358": {
     "atc_codes": [],
     "atc_level1": "",
@@ -6109,6 +6619,16 @@
     "atc_level4": "B03BA51",
     "atc_level5": "B03BA51",
     "atc_main": "B",
+    "smiles": ""
+  },
+  "CHEBI:174442": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
     "smiles": ""
   },
   "CHEBI:174690": {
@@ -6155,6 +6675,16 @@
     "smiles": "Cl.NCC(=O)CCC(=O)O"
   },
   "CHEBI:17561": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17562": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -6232,6 +6762,16 @@
     "smiles": ""
   },
   "CHEBI:17616": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17621": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -6394,6 +6934,16 @@
     "smiles": "O=C([O-])CCC(=O)OC[C@@H](NC(=O)C(Cl)Cl)[C@H](O)c1ccc([N+](=O)[O-])cc1.[Na+]"
   },
   "CHEBI:177060": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17724": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -6610,6 +7160,16 @@
     "atc_main": "L",
     "smiles": "C=CC(=O)N1CCN(c2nc(=O)n(-c3c(C)ccnc3C(C)C)c3nc(-c4c(O)cccc4F)c(F)cc23)[C@@H](C)C1"
   },
+  "CHEBI:17822": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:17823": {
     "atc_codes": [
       "A11CC04",
@@ -6654,6 +7214,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "CCCCCCCC/C=C\\CCCCCCCC(=O)O.NCCO"
+  },
+  "CHEBI:17883": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:17895": {
     "atc_codes": [],
@@ -6707,6 +7277,26 @@
     "smiles": "CC(C)OP(=O)(F)OC(C)C"
   },
   "CHEBI:17948": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17968": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:17976": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -6817,6 +7407,16 @@
     "smiles": ""
   },
   "CHEBI:180905": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:18095": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -7022,6 +7622,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:18315": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:18323": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:18332": {
     "atc_codes": [],
     "atc_level1": "",
@@ -7066,6 +7686,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "CCCCCCCC[N+](C)(C)CCCCCCCC.[Cl-]"
+  },
+  "CHEBI:183808": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:183811": {
     "atc_codes": [
@@ -7645,6 +8275,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:201423": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:201431": {
     "atc_codes": [],
     "atc_level1": "",
@@ -7823,6 +8463,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "C/C=C/C[C@@H](C)[C@@H](O)[C@H]1C(=O)N[C@@H]([C@@H](C)O)C(=O)N(C)CC(=O)N(C)[C@@H](CC(C)C)C(=O)N[C@@H](C(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)N[C@H](C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N(C)[C@@H](CC(C)C)C(=O)N(C)[C@@H](C(C)C)C(=O)N1C"
+  },
+  "CHEBI:22063": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:2208": {
     "atc_codes": [
@@ -8376,7 +9026,37 @@
     "atc_main": "L",
     "smiles": "O=C(/C=C\\n1cnc(-c2cc(C(F)(F)F)cc(C(F)(F)F)c2)n1)NNc1cnccn1"
   },
+  "CHEBI:22984": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:230239": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:230352": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:230430": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -8824,6 +9504,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:233149": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:23316": {
     "atc_codes": [],
     "atc_level1": "",
@@ -9148,6 +9838,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:24301": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:2453": {
     "atc_codes": [
       "A01AD05",
@@ -9452,6 +10152,16 @@
     "atc_main": "N",
     "smiles": "Cc1nnc2n1-c1ccc(Cl)cc1C(c1ccccc1)=NC2"
   },
+  "CHEBI:26125": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:261649": {
     "atc_codes": [],
     "atc_level1": "",
@@ -9505,6 +10215,16 @@
     "smiles": ""
   },
   "CHEBI:2628": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:26288": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -9780,6 +10500,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:26806": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:2682": {
     "atc_codes": [
       "J02AA01",
@@ -9949,6 +10679,16 @@
     "atc_main": "",
     "smiles": "[Zn]"
   },
+  "CHEBI:27372": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:27373": {
     "atc_codes": [
       "D03AX03",
@@ -9976,6 +10716,16 @@
     "smiles": "CC[C@]1(O)C[C@@H]2CN(CCc3c([nH]c4ccccc34)[C@@](C(=O)OC)(c3cc4c(cc3OC)N(C)[C@H]3[C@@](O)(C(=O)OC)[C@H](OC(C)=O)[C@]5(CC)C=CCN6CC[C@]43[C@@H]65)C2)C1"
   },
   "CHEBI:2739": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:27432": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -10099,6 +10849,16 @@
     "smiles": "Nc1ccc(C(=O)O)c(O)c1"
   },
   "CHEBI:27569": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:27585": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -10454,6 +11214,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:28171": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:28177": {
     "atc_codes": [
       "A01AD05",
@@ -10548,6 +11318,16 @@
     "atc_main": "D",
     "smiles": "Cc1cc2cc3c(C)cc(=O)oc3c(C)c2o1"
   },
+  "CHEBI:28364": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:28417": {
     "atc_codes": [],
     "atc_level1": "",
@@ -10638,6 +11418,16 @@
     "atc_main": "C",
     "smiles": "C[C@H]1O[C@@H](O[C@H]2[C@@H](O)C[C@H](O[C@H]3[C@@H](O)C[C@H](O[C@H]4CC[C@@]5(C)[C@H](CC[C@@H]6[C@@H]5CC[C@]5(C)[C@@H](C7=CC(=O)OC7)CC[C@]65O)C4)O[C@@H]3C)O[C@@H]2C)C[C@H](O)[C@@H]1O"
   },
+  "CHEBI:28548": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:28569": {
     "atc_codes": [],
     "atc_level1": "",
@@ -10679,6 +11469,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "O=C(O)c1ccccc1O.OCCN(CCO)CCO"
+  },
+  "CHEBI:28661": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:28669": {
     "atc_codes": [],
@@ -10756,6 +11556,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "COc1cccc2c1C(=O)c1c(O)c3c(c(O)c1C2=O)C[C@@](O)(C(=O)CO)C[C@@H]3O[C@H]1C[C@H](N)[C@H](O)[C@H](C)O1.Cl"
+  },
+  "CHEBI:28757": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:2877": {
     "atc_codes": [],
@@ -10866,6 +11676,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:28837": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:28864": {
     "atc_codes": [
       "J01GB01",
@@ -10944,6 +11764,16 @@
     "atc_level5": "L01AB01",
     "atc_main": "L",
     "smiles": "CS(=O)(=O)OCCCCOS(C)(=O)=O"
+  },
+  "CHEBI:28908": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:28915": {
     "atc_codes": [],
@@ -11774,6 +12604,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:30805": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:30813": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:3082": {
     "atc_codes": [
       "S01ED52",
@@ -11801,7 +12651,27 @@
     "atc_main": "N",
     "smiles": "O=C([O-])CCCO.[Na+]"
   },
+  "CHEBI:30839": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:3084": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:30849": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -12221,6 +13091,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:31260": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:31263": {
     "atc_codes": [
       "V04CK03"
@@ -12244,6 +13124,16 @@
     "atc_level5": "R02AA09",
     "atc_main": "R",
     "smiles": "CC(C)(C)CC(C)(C)c1ccc(OCCOCC[N+](C)(C)Cc2ccccc2)cc1"
+  },
+  "CHEBI:31266": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:31268": {
     "atc_codes": [],
@@ -12546,6 +13436,16 @@
     "atc_main": "",
     "smiles": "CN1CC(O)C2=CC(=NNC(N)=O)C(=O)C=C21"
   },
+  "CHEBI:31351": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:31353": {
     "atc_codes": [],
     "atc_level1": "",
@@ -12732,6 +13632,16 @@
     "atc_level5": "R03BA08",
     "atc_main": "R",
     "smiles": "CC(C)C(=O)OCC(=O)[C@@]12O[C@H](C3CCCCC3)O[C@@H]1C[C@H]1[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@H]3[C@@H](O)C[C@@]12C"
+  },
+  "CHEBI:31398": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:31399": {
     "atc_codes": [
@@ -13084,6 +13994,16 @@
     "atc_main": "",
     "smiles": "C[C@@H](O)[C@H]1C(=O)N2C(C(=O)O)=C(S[C@@H]3CN[C@H](CNS(N)(=O)=O)C3)[C@H](C)[C@H]12.O"
   },
+  "CHEBI:31519": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:31520": {
     "atc_codes": [],
     "atc_level1": "",
@@ -13171,6 +14091,16 @@
     "atc_level5": "N07XX14",
     "atc_main": "N",
     "smiles": "CC1=NN(c2ccccc2)C(=O)C1"
+  },
+  "CHEBI:31532": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:31536": {
     "atc_codes": [
@@ -13990,6 +14920,16 @@
     "atc_main": "",
     "smiles": "CCCCCCCC(=O)CC[C@@H]1[C@@H](C/C=C\\CCCC(=O)OC(C)C)[C@@H](O)C[C@H]1O"
   },
+  "CHEBI:31735": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:31739": {
     "atc_codes": [
       "J01FA07"
@@ -14721,6 +15661,16 @@
     "atc_main": "M",
     "smiles": "NC(=O)OCCCc1ccccc1"
   },
+  "CHEBI:32007": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:32010": {
     "atc_codes": [
       "N06BX03"
@@ -14840,6 +15790,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "O=S(=O)([O-])[O-].[K+].[K+]"
+  },
+  "CHEBI:32038": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:3205": {
     "atc_codes": [
@@ -15726,6 +16686,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:32288": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:3229": {
     "atc_codes": [],
     "atc_level1": "",
@@ -16578,7 +17548,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:34536": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:34546": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:34553": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -16910,6 +17900,16 @@
     "atc_main": "J",
     "smiles": "CO[C@@]1(NC(=O)CSCC#N)C(=O)N2C(C(=O)O)=C(CSc3nnnn3C)CS[C@@H]21"
   },
+  "CHEBI:34894": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:3490": {
     "atc_codes": [],
     "atc_level1": "",
@@ -17113,6 +18113,16 @@
     "smiles": ""
   },
   "CHEBI:35017": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:35020": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -18225,6 +19235,16 @@
     "atc_main": "N",
     "smiles": "CN1CCN(C2=Nc3cc(Cl)ccc3Nc3ccccc32)CC1"
   },
+  "CHEBI:37684": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:3770": {
     "atc_codes": [
       "A01AD05",
@@ -18554,6 +19574,16 @@
     "smiles": "CC[C@H]1CCC[C@H](O[C@H]2CC[C@H](N(C)C)[C@@H](C)O2)[C@@H](C)C(=O)C2=C[C@@H]3[C@@H](C=C(C)[C@@H]4C[C@@H](O[C@@H]5O[C@@H](C)[C@H](OC)[C@@H](OC)[C@H]5OC)C[C@@H]34)[C@@H]2CC(=O)O1.CC[C@H]1CCC[C@H](O[C@H]2CC[C@H](N(C)C)[C@@H](C)O2)[C@@H](C)C(=O)C2=C[C@@H]3[C@@H](C=C[C@@H]4C[C@@H](O[C@@H]5O[C@@H](C)[C@H](OC)[C@@H](OC)[C@H]5OC)C[C@@H]34)[C@@H]2CC(=O)O1"
   },
   "CHEBI:39214": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:39361": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -19292,6 +20322,16 @@
     "atc_main": "",
     "smiles": "CN(C)c1ccc2nc3ccc(=[N+](C)C)cc-3sc2c1"
   },
+  "CHEBI:43871": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:4388": {
     "atc_codes": [
       "P03BA03"
@@ -19999,6 +21039,16 @@
     "atc_level5": "D01AC06",
     "atc_main": "D",
     "smiles": "c1ccc2[nH]c(-c3cscn3)nc2c1"
+  },
+  "CHEBI:45980": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:46035": {
     "atc_codes": [],
@@ -21028,6 +22078,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:4828": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:48296": {
     "atc_codes": [],
     "atc_level1": "",
@@ -21241,6 +22301,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "CC[C@@H](CO)NCCN[C@@H](CC)CO.Cl"
+  },
+  "CHEBI:4878": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:4882": {
     "atc_codes": [],
@@ -22279,6 +23349,16 @@
     "atc_main": "",
     "smiles": "Cc1ncc([N+](=O)[O-])n1CCO.Cl"
   },
+  "CHEBI:50688": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:50690": {
     "atc_codes": [
       "C10AA05"
@@ -22594,6 +23674,16 @@
     "smiles": ""
   },
   "CHEBI:5089": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:50904": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -23592,6 +24682,16 @@
     "atc_main": "",
     "smiles": "C=C[C@H]1CN2CC[C@H]1C[C@H]2[C@H](O)c1ccnc2ccc(OC)cc12.C=C[C@H]1CN2CC[C@H]1C[C@H]2[C@H](O)c1ccnc2ccc(OC)cc12.O.O.O=S(=O)(O)O"
   },
+  "CHEBI:52683": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:52712": {
     "atc_codes": [],
     "atc_level1": "",
@@ -23738,6 +24838,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "CCCCC(CC)COC(=O)CC(C(=O)OCC(CC)CCCC)S(=O)(=O)O"
+  },
+  "CHEBI:53488": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:53492": {
     "atc_codes": [],
@@ -24212,6 +25322,16 @@
     "atc_level5": "R05CA03",
     "atc_main": "R",
     "smiles": "COc1ccccc1OCC(O)CO"
+  },
+  "CHEBI:5553": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:5554": {
     "atc_codes": [],
@@ -24733,6 +25853,16 @@
     "atc_main": "J",
     "smiles": "CN(C)[C@@H]1C(O)=C(C(=O)NCNCCCC[C@H](N)C(=O)O)C(=O)[C@@]2(O)C(O)=C3C(=O)c4c(O)cccc4[C@@](C)(O)[C@H]3C[C@@H]12"
   },
+  "CHEBI:59116": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:59120": {
     "atc_codes": [
       "N05AB08"
@@ -24972,6 +26102,16 @@
     "atc_main": "",
     "smiles": "Oc1c(Cl)cc(Cl)c2cccnc12"
   },
+  "CHEBI:59495": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:5950": {
     "atc_codes": [],
     "atc_level1": "",
@@ -25122,6 +26262,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:59640": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:59664": {
     "atc_codes": [],
     "atc_level1": "",
@@ -25141,6 +26291,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "Cl.OC(CCN1CCCCC1)(c1ccccc1)C1CCCC1"
+  },
+  "CHEBI:59695": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:59704": {
     "atc_codes": [],
@@ -25191,6 +26351,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "CCNC(C)Cc1cccc(C(F)(F)F)c1.Cl"
+  },
+  "CHEBI:59730": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:59732": {
     "atc_codes": [],
@@ -25243,6 +26413,16 @@
     "smiles": "O=C(O)c1cc(=O)c2c(OCC(O)COc3cccc4oc(C(=O)O)cc(=O)c34)cccc2o1"
   },
   "CHEBI:59782": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:59784": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -25733,6 +26913,16 @@
     "atc_main": "",
     "smiles": "NC[C@H]1O[C@H](O[C@H]2[C@H](O)[C@@H](O[C@H]3O[C@H](CO)[C@@H](O)[C@H](N)[C@H]3O)[C@H](N)C[C@@H]2N)[C@H](O)[C@@H](O)[C@@H]1O.O=S(=O)(O)O"
   },
+  "CHEBI:61159": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:61176": {
     "atc_codes": [],
     "atc_level1": "",
@@ -25869,6 +27059,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:61909": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:61995": {
     "atc_codes": [],
     "atc_level1": "",
@@ -25894,6 +27094,16 @@
     "smiles": "Cc1c(N(C)CS(=O)(=O)[O-])c(=O)n(-c2ccccc2)n1C.O.[Na+]"
   },
   "CHEBI:62268": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:62312": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -27170,6 +28380,16 @@
     "atc_main": "H",
     "smiles": "N[C@@H](Cc1cc(I)c(Oc2cc(I)c(O)c(I)c2)c(I)c1)C(=O)[O-].O.[Na+]"
   },
+  "CHEBI:64482": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:645509": {
     "atc_codes": [],
     "atc_level1": "",
@@ -27189,6 +28409,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "CCN(CC)CC(=O)Nc1c(C)cccc1C.Cl"
+  },
+  "CHEBI:64583": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:64628": {
     "atc_codes": [],
@@ -27437,6 +28667,16 @@
     "atc_level5": "G04BD12",
     "atc_main": "G",
     "smiles": "Nc1nc(CC(=O)Nc2ccc(CCNC[C@H](O)c3ccccc3)cc2)cs1"
+  },
+  "CHEBI:65350": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:6538": {
     "atc_codes": [
@@ -28108,6 +29348,16 @@
     "atc_main": "A",
     "smiles": "CC(=O)OC(C)C[N+](C)(C)C.[Cl-]"
   },
+  "CHEBI:6805": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:6806": {
     "atc_codes": [],
     "atc_level1": "",
@@ -28599,6 +29849,16 @@
     "atc_level5": "L02BX03",
     "atc_main": "L",
     "smiles": "C[C@]12CC[C@H](O)CC1=CC[C@@H]1[C@@H]2CC[C@]2(C)C(c3cccnc3)=CC[C@@H]12"
+  },
+  "CHEBI:68643": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:68646": {
     "atc_codes": [],
@@ -29589,6 +30849,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:71464": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:71466": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:71647": {
     "atc_codes": [],
     "atc_level1": "",
@@ -29952,6 +31232,16 @@
     "smiles": ""
   },
   "CHEBI:73732": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:73788": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -30449,6 +31739,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:74803": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:748035": {
     "atc_codes": [],
     "atc_level1": "",
@@ -30619,6 +31919,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:748292": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:748315": {
     "atc_codes": [],
     "atc_level1": "",
@@ -30720,6 +32030,16 @@
     "smiles": ""
   },
   "CHEBI:748590": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:748623": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -31035,6 +32355,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:749058": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:749064": {
     "atc_codes": [],
     "atc_level1": "",
@@ -31126,6 +32456,16 @@
     "smiles": ""
   },
   "CHEBI:749216": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:749217": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -32465,6 +33805,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:749368": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:749369": {
     "atc_codes": [],
     "atc_level1": "",
@@ -33507,6 +34857,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:749519": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:749520": {
     "atc_codes": [],
     "atc_level1": "",
@@ -33977,6 +35337,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:749573": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:749574": {
     "atc_codes": [],
     "atc_level1": "",
@@ -34327,6 +35697,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:749658": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:749677": {
     "atc_codes": [],
     "atc_level1": "",
@@ -34417,6 +35797,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:749720": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:749728": {
     "atc_codes": [],
     "atc_level1": "",
@@ -34447,6 +35837,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:749786": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:749789": {
     "atc_codes": [],
     "atc_level1": "",
@@ -34468,6 +35868,36 @@
     "smiles": ""
   },
   "CHEBI:749811": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:749813": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:749814": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:749816": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -34538,6 +35968,16 @@
     "smiles": ""
   },
   "CHEBI:749871": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:749877": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -34877,6 +36317,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:750171": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:750182": {
     "atc_codes": [],
     "atc_level1": "",
@@ -35027,6 +36477,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:750278": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:750301": {
     "atc_codes": [],
     "atc_level1": "",
@@ -35058,6 +36518,26 @@
     "smiles": ""
   },
   "CHEBI:750322": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:750343": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:750351": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -35479,6 +36959,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:751042": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:751333": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:7514": {
     "atc_codes": [
       "A01AD05",
@@ -35492,6 +36992,26 @@
     "atc_level5": "A01AD05",
     "atc_main": "A",
     "smiles": "CN(C)C(=O)Oc1cccc([N+](C)(C)C)c1.COS(=O)(=O)[O-]"
+  },
+  "CHEBI:751429": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:751487": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:751529": {
     "atc_codes": [],
@@ -35633,6 +37153,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:751728": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:751729": {
     "atc_codes": [],
     "atc_level1": "",
@@ -35740,6 +37270,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:752031": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:752093": {
     "atc_codes": [],
     "atc_level1": "",
@@ -35761,6 +37301,16 @@
     "smiles": ""
   },
   "CHEBI:752127": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:752252": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -35810,6 +37360,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:75237": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:752415": {
     "atc_codes": [],
     "atc_level1": "",
@@ -35850,6 +37410,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:752498": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:75250": {
     "atc_codes": [
       "J01MB04"
@@ -35861,6 +37431,16 @@
     "atc_level5": "J01MB04",
     "atc_main": "J",
     "smiles": "CCn1cc(C(=O)O)c(=O)c2cnc(N3CCNCC3)nc21"
+  },
+  "CHEBI:752556": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:752585": {
     "atc_codes": [],
@@ -36147,6 +37727,16 @@
     "smiles": ""
   },
   "CHEBI:752944": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:752954": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -36750,6 +38340,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:753454": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:753470": {
     "atc_codes": [],
     "atc_level1": "",
@@ -36781,6 +38381,16 @@
     "smiles": ""
   },
   "CHEBI:753475": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:753504": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -36884,6 +38494,16 @@
     "smiles": ""
   },
   "CHEBI:753608": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:753609": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -37193,7 +38813,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:753833": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:753844": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:753852": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -37313,6 +38953,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:753965": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:753967": {
     "atc_codes": [],
     "atc_level1": "",
@@ -37344,6 +38994,16 @@
     "smiles": ""
   },
   "CHEBI:753993": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:754003": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -37404,6 +39064,16 @@
     "smiles": ""
   },
   "CHEBI:754062": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:754077": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -37623,6 +39293,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:754695": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:754773": {
     "atc_codes": [],
     "atc_level1": "",
@@ -37743,7 +39423,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:754941": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:754951": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:754961": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -38168,6 +39868,16 @@
     "smiles": ""
   },
   "CHEBI:755199": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:755200": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -38999,7 +40709,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:755774": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:755778": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:755787": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -39120,6 +40850,16 @@
     "smiles": ""
   },
   "CHEBI:755863": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:755879": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -39259,6 +40999,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:755946": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:755949": {
     "atc_codes": [],
     "atc_level1": "",
@@ -39379,6 +41129,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:756083": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:756114": {
     "atc_codes": [],
     "atc_level1": "",
@@ -39449,6 +41209,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:756137": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:756147": {
     "atc_codes": [],
     "atc_level1": "",
@@ -39510,6 +41280,16 @@
     "smiles": ""
   },
   "CHEBI:756179": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:756195": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -40504,6 +42284,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:757023": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:757024": {
     "atc_codes": [],
     "atc_level1": "",
@@ -40725,6 +42515,16 @@
     "smiles": ""
   },
   "CHEBI:757121": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:757125": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -42366,6 +44166,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:758133": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:758141": {
     "atc_codes": [],
     "atc_level1": "",
@@ -42884,6 +44694,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:758958": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:758962": {
     "atc_codes": [],
     "atc_level1": "",
@@ -43186,6 +45006,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:75958": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:7596": {
     "atc_codes": [],
     "atc_level1": "",
@@ -43247,6 +45077,16 @@
     "smiles": ""
   },
   "CHEBI:759736": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:759737": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -44201,6 +46041,16 @@
     "atc_main": "A",
     "smiles": "CN(Cc1cc(Br)cc(Br)c1N)C1CCCCC1.Cl"
   },
+  "CHEBI:77053": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:77069": {
     "atc_codes": [
       "M03BX09"
@@ -44277,6 +46127,16 @@
     "atc_main": "",
     "smiles": "c1ccc(C2CN3CCSC3=N2)cc1"
   },
+  "CHEBI:77289": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:7731": {
     "atc_codes": [],
     "atc_level1": "",
@@ -44312,6 +46172,16 @@
     "smiles": ""
   },
   "CHEBI:77568": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:77572": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -44697,6 +46567,16 @@
     "atc_main": "B",
     "smiles": ""
   },
+  "CHEBI:78300": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:78320": {
     "atc_codes": [
       "G01AD01"
@@ -44906,6 +46786,16 @@
     "smiles": ""
   },
   "CHEBI:78671": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:7868": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -45456,6 +47346,16 @@
     "atc_main": "N",
     "smiles": "NC(=O)NC(=O)Cc1ccccc1"
   },
+  "CHEBI:80555": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:8059": {
     "atc_codes": [],
     "atc_level1": "",
@@ -45541,6 +47441,16 @@
     "smiles": ""
   },
   "CHEBI:8077": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "CHEBI:80774": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -45671,6 +47581,16 @@
     "atc_level4": "B03XA02",
     "atc_level5": "B03XA02",
     "atc_main": "B",
+    "smiles": ""
+  },
+  "CHEBI:81712": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
     "smiles": ""
   },
   "CHEBI:81722": {
@@ -46657,6 +48577,16 @@
     "atc_main": "G",
     "smiles": ""
   },
+  "CHEBI:8397": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:8404": {
     "atc_codes": [
       "N01BB04",
@@ -47502,6 +49432,16 @@
     "atc_level5": "",
     "atc_main": "",
     "smiles": "NC(=O)[C@@H]1CC[C@@H]2CN1C(=O)N2OS(=O)(=O)O"
+  },
+  "CHEBI:85989": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:85990": {
     "atc_codes": [
@@ -49426,6 +51366,16 @@
     "atc_main": "D",
     "smiles": "Nc1ccc(S(=O)(=O)[N-]c2ncccn2)cc1.[Ag+]"
   },
+  "CHEBI:9329": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:9331": {
     "atc_codes": [
       "S01AB01",
@@ -49932,6 +51882,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "CHEBI:94521": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "CHEBI:9453": {
     "atc_codes": [
       "R06AX12"
@@ -50306,6 +52266,16 @@
     "atc_level5": "R06AC03",
     "atc_main": "R",
     "smiles": "CN(C)CCN(Cc1ccc(Cl)cc1)c1ccccn1"
+  },
+  "CHEBI:94770": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
   },
   "CHEBI:94789": {
     "atc_codes": [
@@ -52442,6 +54412,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00016690": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00016704": {
     "atc_codes": [],
     "atc_level1": "",
@@ -53032,6 +55012,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00020179": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00020180": {
     "atc_codes": [],
     "atc_level1": "",
@@ -53152,6 +55142,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00030118": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00030291": {
     "atc_codes": [],
     "atc_level1": "",
@@ -53172,7 +55172,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00034480": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "DRON:00042360": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00723866": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "DRON:00724343": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -53272,6 +55302,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00731349": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00731369": {
     "atc_codes": [],
     "atc_level1": "",
@@ -53313,6 +55353,16 @@
     "smiles": ""
   },
   "DRON:00731669": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "DRON:00731678": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -53462,6 +55512,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00751162": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00751175": {
     "atc_codes": [],
     "atc_level1": "",
@@ -53482,6 +55542,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00751330": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00751382": {
     "atc_codes": [],
     "atc_level1": "",
@@ -53492,7 +55562,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "DRON:00751399": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "DRON:00751568": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "DRON:00751587": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -53533,6 +55623,16 @@
     "smiles": ""
   },
   "DRON:00751909": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "DRON:00751924": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -53753,6 +55853,16 @@
     "smiles": ""
   },
   "DRON:00775091": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "DRON:00777569": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -66735,6 +68845,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1000104": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1010600": {
     "atc_codes": [],
     "atc_level1": "",
@@ -66776,6 +68896,66 @@
     "smiles": ""
   },
   "RXCUI:1043561": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:104592": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1046243": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:10473": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:10528": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:107129": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:10798": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -66876,6 +69056,16 @@
     "smiles": ""
   },
   "RXCUI:1116105": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:11416": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -67066,6 +69256,16 @@
     "smiles": ""
   },
   "RXCUI:1152459": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:115265": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -67865,7 +70065,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:117466": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1177828": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1191": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -67955,6 +70175,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1251": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1251579": {
     "atc_codes": [],
     "atc_level1": "",
@@ -67995,6 +70225,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1294532": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1294893": {
     "atc_codes": [],
     "atc_level1": "",
@@ -68005,7 +70245,57 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1297880": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1299782": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1300488": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1304557": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1304974": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1305520": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68035,6 +70325,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1309396": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1310469": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1310501": {
     "atc_codes": [],
     "atc_level1": "",
@@ -68045,7 +70355,47 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:132889": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1329960": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:135391": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1359105": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1360631": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68165,7 +70515,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1422928": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1424883": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1424887": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1426865": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68195,7 +70575,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1431738": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1433764": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1441388": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1482634": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68255,7 +70665,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:153329": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1545147": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1546446": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68375,7 +70805,27 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1597608": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1597615": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1597876": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68396,6 +70846,16 @@
     "smiles": ""
   },
   "RXCUI:1599801": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1599831": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68446,6 +70906,26 @@
     "smiles": ""
   },
   "RXCUI:1603837": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1605064": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:164": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68565,6 +71045,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1673367": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1716094": {
     "atc_codes": [],
     "atc_level1": "",
@@ -68615,6 +71105,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:177906": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1790539": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1790637": {
     "atc_codes": [],
     "atc_level1": "",
@@ -68626,6 +71136,16 @@
     "smiles": ""
   },
   "RXCUI:1793094": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1793925": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68765,6 +71285,46 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1873916": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1889": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1895": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:19143": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:192254": {
     "atc_codes": [],
     "atc_level1": "",
@@ -68776,6 +71336,26 @@
     "smiles": ""
   },
   "RXCUI:1925495": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1926471": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1927283": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68826,6 +71406,16 @@
     "smiles": ""
   },
   "RXCUI:1945037": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1946825": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68915,7 +71505,47 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:1989795": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1989818": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1992672": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:1992681": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1992863": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -68946,6 +71576,16 @@
     "smiles": ""
   },
   "RXCUI:199864": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:1999382": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69015,6 +71655,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:203168": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:203439": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69025,7 +71675,207 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2043313": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2043854": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2045125": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2045614": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2046138": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2046360": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2046361": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2048018": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2049928": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2053449": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2054077": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2054968": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2055640": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2055654": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2055906": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2055981": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2056690": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2057198": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2058825": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2058868": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2059218": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69065,6 +71915,116 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2099305": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2102692": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2103476": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2103477": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2103478": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2103479": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2103480": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2104331": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2104603": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2107051": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2107316": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2108921": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69076,6 +72036,36 @@
     "smiles": ""
   },
   "RXCUI:2109031": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2109054": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2110604": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2117869": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69105,6 +72095,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2121417": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2122515": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69116,6 +72116,26 @@
     "smiles": ""
   },
   "RXCUI:2122519": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2123125": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2123180": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69155,7 +72175,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2166132": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:216653": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2174091": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2174802": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69185,6 +72235,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2204916": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2205091": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69205,6 +72265,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:221175": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2257008": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69215,7 +72285,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2260702": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2262022": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2262421": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2262543": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69245,7 +72345,107 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2265690": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2266523": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2267574": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2268037": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2268306": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:22694": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:227192": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2274802": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2280730": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2282019": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2283045": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69275,6 +72475,76 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2288236": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2289225": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:23043": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:233386": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:235779": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:235851": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2360530": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2360580": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69295,6 +72565,36 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:236931": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:237025": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2373950": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2375134": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69306,6 +72606,16 @@
     "smiles": ""
   },
   "RXCUI:2375135": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2375522": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69365,7 +72675,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2387334": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2387833": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2388173": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2391551": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69395,6 +72735,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2462511": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:246399": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69406,6 +72756,106 @@
     "smiles": ""
   },
   "RXCUI:2465553": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2469333": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2472151": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2473850": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2474235": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2475861": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2478646": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:25188": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2525": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:253156": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2532300": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69445,6 +72895,36 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2539968": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2540965": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2549198": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2556801": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69465,6 +72945,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2557218": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2557394": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2562180": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69475,7 +72975,47 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2562811": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2563969": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2565276": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:25655": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2565813": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69515,6 +73055,36 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2569592": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2571093": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2571853": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2583637": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69535,7 +73105,97 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2587060": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2587719": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2587790": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2589006": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2590744": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2591415": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2591584": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2591804": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:259404": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2595942": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69565,7 +73225,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2599041": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:259909": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2602351": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2602779": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69586,6 +73276,16 @@
     "smiles": ""
   },
   "RXCUI:2603508": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2604689": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69625,7 +73325,87 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2610406": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2610418": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2612074": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2612153": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2612452": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2612537": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2612673": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2613761": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:26143": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69645,7 +73425,157 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2619155": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2619312": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2619425": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2621549": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2621881": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2624743": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2625125": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2625651": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2625882": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2626142": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2626348": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2626722": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2626768": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2627648": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2630724": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2632980": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -69675,6 +73605,56 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2637395": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2637445": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2637757": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2639649": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2639781": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2639950": {
     "atc_codes": [],
     "atc_level1": "",
@@ -69685,7 +73665,117 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2640387": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2640402": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2640849": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2641642": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2642208": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2642273": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2642402": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2643204": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2644435": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2644448": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2644513": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2644881": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70515,6 +74605,36 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2663939": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2667434": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2668080": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2668194": {
     "atc_codes": [],
     "atc_level1": "",
@@ -70535,7 +74655,47 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2668385": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2669407": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:266974": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2670556": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2670656": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70565,7 +74725,57 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2677425": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2677776": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2678931": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2682677": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2682955": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2686620": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70586,6 +74796,56 @@
     "smiles": ""
   },
   "RXCUI:2686972": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2687965": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2689282": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2691309": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2691528": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2693778": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70625,7 +74885,117 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2695870": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2696256": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2697132": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2697461": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2698200": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2698561": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2699587": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2700338": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2700340": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2700660": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2700714": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2700746": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70645,7 +75015,157 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:2705377": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:2705457": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2705553": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2706334": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2706347": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2706479": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2708340": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2715382": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2715399": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2716481": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2717168": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2717169": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2717512": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2729665": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:2730302": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:274964": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70676,6 +75196,16 @@
     "smiles": ""
   },
   "RXCUI:283641": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:283753": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70746,6 +75276,26 @@
     "smiles": ""
   },
   "RXCUI:28874": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:29495": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:306266": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70835,6 +75385,36 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:3143": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:314517": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:31479": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:327148": {
     "atc_codes": [],
     "atc_level1": "",
@@ -70846,6 +75426,16 @@
     "smiles": ""
   },
   "RXCUI:340021": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:340705": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -70886,6 +75476,26 @@
     "smiles": ""
   },
   "RXCUI:353102": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:35623": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:3565": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71135,6 +75745,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:3740": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:374458": {
     "atc_codes": [],
     "atc_level1": "",
@@ -71206,6 +75826,16 @@
     "smiles": ""
   },
   "RXCUI:375581": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:37578": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71425,6 +76055,26 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:3829": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:38508": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:393355": {
     "atc_codes": [],
     "atc_level1": "",
@@ -71446,6 +76096,26 @@
     "smiles": ""
   },
   "RXCUI:393393": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:40114": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:40144": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71545,7 +76215,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:4090": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:42330": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:42729": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:42892": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71575,7 +76275,47 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:47364": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:475342": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:476348": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:485576": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:485853": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71605,7 +76345,77 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:4955": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:498193": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:4986": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:52105": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:53750": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:545254": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:5464": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:54993": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71646,6 +76456,36 @@
     "smiles": ""
   },
   "RXCUI:578325": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:5879": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:5882": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:5933": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71775,6 +76615,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:6417": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:643066": {
     "atc_codes": [],
     "atc_level1": "",
@@ -71825,7 +76675,57 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:6574": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:657797": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:6579": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:659877": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:6677": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:7004": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71885,7 +76785,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:72257": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:72435": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:729582": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:73044": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -71906,6 +76836,16 @@
     "smiles": ""
   },
   "RXCUI:730872": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:7393": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -72115,6 +77055,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:809864": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:810083": {
     "atc_codes": [],
     "atc_level1": "",
@@ -72125,7 +77075,57 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:81638": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:81981": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:82010": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:82054": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:829538": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:83171": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -72395,6 +77395,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:89748": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:897844": {
     "atc_codes": [],
     "atc_level1": "",
@@ -72435,6 +77445,16 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:90176": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:904462": {
     "atc_codes": [],
     "atc_level1": "",
@@ -72446,6 +77466,16 @@
     "smiles": ""
   },
   "RXCUI:904492": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:91293": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
@@ -72505,7 +77535,37 @@
     "atc_main": "",
     "smiles": ""
   },
+  "RXCUI:9793": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
   "RXCUI:979468": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:9903": {
+    "atc_codes": [],
+    "atc_level1": "",
+    "atc_level2": "",
+    "atc_level3": "",
+    "atc_level4": "",
+    "atc_level5": "",
+    "atc_main": "",
+    "smiles": ""
+  },
+  "RXCUI:998038": {
     "atc_codes": [],
     "atc_level1": "",
     "atc_level2": "",
