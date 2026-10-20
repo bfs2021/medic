@@ -627,6 +627,15 @@ audit-regression audit="fp_audit.json" show="0":
 v1-drug-gap:
   uv run python scripts/v1_drug_gap.py
 
+# Compare v1.0.0's grounded drug-disease PAIRS with the current build, hierarchy-aware.
+# A strict id/label join counts a pair as missing whenever the two releases named the disease
+# at a different specificity — 20% of the apparent gap — including cases where v1 had
+# downfilled a subtype (removed on purpose, §5.7) or where we are deliberately more specific.
+# Reads v1's lists from `main` and the hierarchy from cache/ontologies/mondo.json.
+[group('QC')]
+v1-pair-gap ref="main":
+  uv run python scripts/v1_pair_gap.py --ref {{ref}}
+
 # ============== Utility ==============
 
 # List all drugs in the merged drug list
