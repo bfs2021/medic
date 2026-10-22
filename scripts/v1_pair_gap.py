@@ -176,7 +176,12 @@ def main() -> int:
     args = ap.parse_args()
 
     parents = mondo_parents()
-    print(f"Mondo subclass edges: {sum(len(v) for v in parents.values()):,}\n")
+    # Which Mondo: the ancestor/descendant classes below are only comparable between runs
+    # if the hierarchy is, and the pin (#94) is what makes that checkable.
+    from medic.grounding.lexical.sources import pinned_ontologies, release_in_file
+    print(f"Mondo subclass edges: {sum(len(v) for v in parents.values()):,} "
+          f"(release {release_in_file(MONDO) or 'unknown'}, "
+          f"pinned {pinned_ontologies()['mondo'].version})\n")
 
     for kind, fname in (("indication", "indication_list.yaml"),
                         ("contraindication", "contraindication_list.yaml")):
