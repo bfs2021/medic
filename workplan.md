@@ -5,6 +5,13 @@ one against what this branch already does. Each entry says what the PR proposes,
 already have, and what is genuinely new — because two of them overlap work I did
 independently, and in both cases parts of his approach are better than mine.
 
+**Status (2026-10-22): all four merged.** `eb750eb` #101, `0579229` #104 pinning,
+`130dc38` #102, `620bcbf` #104 xrefs, `7a795f0` #103 — his commits preserved in history,
+co-authorship on the merges. What changed from his versions, and the four open decisions this
+closed, are in `WORKLOG.md` under 2026-10-22. Only item 6 below (the #69–#87 gold standard)
+is outstanding. The *measured* effect of #102, #103 and the reliability cap needs a rebuild:
+the products on disk predate all of it.
+
 Companion to `plan.md` (the #88–#100 sequence, phases 1–5) and `WORKLOG.md` (what happened).
 
 Current state for reference: error rate at HIGH **4.7%**, 21,180 indication pairs, 86,104

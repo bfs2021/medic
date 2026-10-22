@@ -314,3 +314,60 @@ categories only.
 now clearly the best remaining move: ~14.5% of the apparent gap, a scripting change, no LLM
 spend. Lever 1 is 10.4% for ~35,000 calls. Lever 2's remaining share needs re-extraction and
 is unquantified.
+
+---
+
+## 2026-10-22 — Adopting Kevin's four open PRs (#101–#104)
+
+`workplan.md` assessed all four one by one; this is what landed. All four are merged with
+his commits preserved in history and co-authorship on the merges, in the workplan's order
+except that #103 (the expensive one) went last so the cheap verification could run first.
+
+| PR | taken | changed |
+|---|---|---|
+| #101 enabler gate | as written | nothing |
+| #104 pinning | mechanism as written | pins name **our** releases, and are now checked against the files on disk |
+| #102 salt tier-0 | as written | settled the 0.90/HIGH boundary it depends on |
+| #104 xrefs | as written | resolved where our SPL UNII belongs (`source_xrefs`, not `alternate_ids`) |
+| #103 label ranking | pool filtering, ranking, date parsing, section check | kept our breadth: 20 labels, all names, generic-first |
+
+### Four decisions that were open and are now made
+
+1. **`salt_ester_strip` 0.90 vs the `conf >= 0.9` HIGH threshold.** Settled by reading the
+   *predicate*, not by moving the number: a `skos:closeMatch` or `skos:broadMatch` grounding
+   caps at MEDIUM however certain the rule. Measured scope before changing it — 171
+   `salt_ester_strip` steps and 3 `inn_suffix_in_to_ine` in the current indications, nothing
+   else inexact is at or above 0.9. #102's tier 0 is what made this load-bearing: it fires
+   the same rule for the 617 salts that *do* have a ChEBI entry.
+2. **Where the SPL-asserted UNII belongs.** `source_xrefs`, not `alternate_ids` — reversing
+   the leaning recorded in `workplan.md`. The label asserts the UNII of its own active
+   moiety; that the moiety is *this* ChEBI term is MeDIC's grounding decision, so an
+   exactMatch row would publish an identity nothing verified.
+3. **Which ontology releases to pin.** The ones in `cache/ontologies/` (mondo 2026-07-06, hp
+   2026-06-23, chebi 253, dron 2026-06-04), not the newest pinnable. Pinning forward would
+   record a false reproducibility claim and move every grounded id as a side effect of a
+   provenance commit.
+4. **Ranking vs breadth in acquisition.** Both. They fix different faults — *which* label
+   and *how many*, under *how many names* — and filtering the pool is what lets the two
+   compose rather than compete.
+
+### Two bugs of ours that reading his PRs found
+
+- The string date sort. His note was about the acquirer, where ours was latent because every
+  hit was kept; the same code in `setid_lookup.lookup_setid` was **live**, picking which
+  DailyMed document an FDA evidence item deep-links to. Fixed, with tests over the month,
+  year and unparseable cases.
+- "We keep all 20, so we are a superset of his best 3." False. Without the doctype filter and
+  at `pagesize=20`, the useful label can be crowded out by veterinary and duplicate OTC
+  entries before we see it.
+
+### Owed
+
+- The gates cannot judge three of the four until a rebuild: the products on disk predate all
+  of this, so `just v1-pair-gap` still reports 33.9% / 46.3% by construction. Index rebuild
+  → `build-all` → gates is the cheap half (no LLM); #103 needs re-acquisition and re-ingest.
+- The UNII could publish as a SSSOM `closeMatch` row once its collection moves from export
+  time to merge time. It is gathered from the association products, which the SSSOM exporter
+  does not read.
+- #88 point 5's OTC half ("each partner owns its own symptom class") is still open; #101 is
+  explicit about not covering it.
