@@ -254,3 +254,8 @@ analysis/licensing-risk-2026-08-16.md
 # Adverse events are not built or shipped in v2.0.0 (see issues on the MedDRA question).
 # Kept ignored so a future PVLens/FAERS run cannot commit MedDRA term text.
 kb/adverse_events/
+
+# The external label audit: produced by and licensed as part of
+# kevinschaper/drug-disease-compare, so it is fetched (see scripts/audit_regression.py),
+# never vendored here.
+/fp_audit.json

@@ -2994,9 +2994,9 @@
   everycure_id: UNII:41KZS5432U
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749868
-    grounded_label: aminobenzoate potassium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:22494
+    grounded_label: aminobenzoate
+    grounding_quality: lexical_exact_surgery
     original_string: Aminobenzoate potassium
     subject_id: MEDICNE:8cf8b374-321f-5600-8d09-3912aed5c1aa
   grounding_confidence: 0.9
@@ -3014,12 +3014,12 @@
   mention_id: MEDICNE:8cf8b374-321f-5600-8d09-3912aed5c1aa
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749868
-    normalized_label: aminobenzoate potassium
-    original_id: CHEBI:749868
+    normalized_id: CHEBI:22494
+    normalized_label: aminobenzoate
+    original_id: CHEBI:22494
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749868
-  normalized_label: aminobenzoate potassium
+  normalized_id: CHEBI:22494
+  normalized_label: aminobenzoate
   original_literal: Aminobenzoate potassium
   source: EVERYCURE
   source_name: Aminobenzoate potassium
@@ -17513,13 +17513,13 @@
   drug_target: Glucocorticoid receptor agonist
   everycure_id: CHEBI:16962
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:3897
-    grounded_label: Cortisone acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:16962
+    grounded_label: cortisone
+    grounding_quality: lexical_exact_surgery
     original_string: Cortisone acetate
     subject_id: MEDICNE:ffbcd379-2a35-5bfa-b615-efa3abb026a5
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   is_antimicrobial: false
@@ -17529,12 +17529,12 @@
   mention_id: MEDICNE:ffbcd379-2a35-5bfa-b615-efa3abb026a5
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3897
-    normalized_label: Cortisone acetate
-    original_id: CHEBI:3897
+    normalized_id: CHEBI:16962
+    normalized_label: cortisone
+    original_id: CHEBI:16962
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3897
-  normalized_label: Cortisone acetate
+  normalized_id: CHEBI:16962
+  normalized_label: cortisone
   original_literal: Cortisone acetate
   source: EVERYCURE
   source_name: Cortisone acetate
@@ -32556,13 +32556,13 @@
   drug_target: Shifts immune response from Th1 to Th2 and induces regulatory T cells
   everycure_id: UNII:5M691HL4BO
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:749565
-    grounded_label: glatiramer acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: DRON:00016914
+    grounded_label: glatiramer
+    grounding_quality: lexical_exact_surgery
     original_string: Glatiramer acetate
     subject_id: MEDICNE:dc63be21-6a46-54ad-992a-696640bc2970
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   is_antimicrobial: false
@@ -32577,12 +32577,12 @@
   mention_id: MEDICNE:dc63be21-6a46-54ad-992a-696640bc2970
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749565
-    normalized_label: glatiramer acetate
-    original_id: CHEBI:749565
+    normalized_id: DRON:00016914
+    normalized_label: glatiramer
+    original_id: DRON:00016914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749565
-  normalized_label: glatiramer acetate
+  normalized_id: DRON:00016914
+  normalized_label: glatiramer
   original_literal: Glatiramer acetate
   source: EVERYCURE
   source_name: Glatiramer acetate
@@ -33171,9 +33171,9 @@
   everycure_id: PUBCHEM.COMPOUND:11980076
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749265
-    grounded_label: gonadorelin acetate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:5520
+    grounded_label: gonadorelin
+    grounding_quality: lexical_exact_surgery
     original_string: Gonadorelin acetate
     subject_id: MEDICNE:141d551f-17b7-54cf-8471-75d43001b618
   grounding_confidence: 0.9
@@ -33186,12 +33186,12 @@
   mention_id: MEDICNE:141d551f-17b7-54cf-8471-75d43001b618
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749265
-    normalized_label: gonadorelin acetate
-    original_id: CHEBI:749265
+    normalized_id: CHEBI:5520
+    normalized_label: gonadorelin
+    original_id: CHEBI:5520
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749265
-  normalized_label: gonadorelin acetate
+  normalized_id: CHEBI:5520
+  normalized_label: gonadorelin
   original_literal: Gonadorelin acetate
   source: EVERYCURE
   source_name: Gonadorelin acetate
@@ -43024,13 +43024,13 @@
   drug_target: Progestin
   everycure_id: CHEBI:6715
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:6716
-    grounded_label: medroxyprogesterone acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:6715
+    grounded_label: medroxyprogesterone
+    grounding_quality: lexical_exact_surgery
     original_string: Medroxyprogesterone acetate
     subject_id: MEDICNE:797b0ff2-db38-591f-b0c6-c99d5a1f62f0
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   is_antimicrobial: false
@@ -43040,12 +43040,12 @@
   mention_id: MEDICNE:797b0ff2-db38-591f-b0c6-c99d5a1f62f0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6716
-    normalized_label: medroxyprogesterone acetate
-    original_id: CHEBI:6716
+    normalized_id: CHEBI:6715
+    normalized_label: medroxyprogesterone
+    original_id: CHEBI:6715
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6716
-  normalized_label: medroxyprogesterone acetate
+  normalized_id: CHEBI:6715
+  normalized_label: medroxyprogesterone
   original_literal: Medroxyprogesterone acetate
   source: EVERYCURE
   source_name: Medroxyprogesterone acetate
@@ -43152,9 +43152,9 @@
   everycure_id: CHEBI:6722
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:6723
-    grounded_label: megestrol acetate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:6722
+    grounded_label: megestrol
+    grounding_quality: lexical_exact_surgery
     original_string: Megestrol acetate
     subject_id: MEDICNE:52769c29-5d9e-58d2-bcd8-fbd404a143e1
   grounding_confidence: 0.9
@@ -43167,12 +43167,12 @@
   mention_id: MEDICNE:52769c29-5d9e-58d2-bcd8-fbd404a143e1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6723
-    normalized_label: megestrol acetate
-    original_id: CHEBI:6723
+    normalized_id: CHEBI:6722
+    normalized_label: megestrol
+    original_id: CHEBI:6722
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6723
-  normalized_label: megestrol acetate
+  normalized_id: CHEBI:6722
+  normalized_label: megestrol
   original_literal: Megestrol acetate
   source: EVERYCURE
   source_name: Megestrol acetate
@@ -57024,9 +57024,9 @@
   everycure_id: CHEBI:60773
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:60773
-    grounded_label: porfimer sodium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:60652
+    grounded_label: porfimer
+    grounding_quality: lexical_exact_surgery
     original_string: Porfimer sodium
     subject_id: MEDICNE:1602002f-8c37-54f7-bfcc-ae73335d2bc6
   grounding_confidence: 0.9
@@ -57039,12 +57039,12 @@
   mention_id: MEDICNE:1602002f-8c37-54f7-bfcc-ae73335d2bc6
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:60773
-    normalized_label: porfimer sodium
-    original_id: CHEBI:60773
+    normalized_id: CHEBI:60652
+    normalized_label: porfimer
+    original_id: CHEBI:60652
     tool: medic-normalizer/1
-  normalized_id: CHEBI:60773
-  normalized_label: porfimer sodium
+  normalized_id: CHEBI:60652
+  normalized_label: porfimer
   original_literal: Porfimer sodium
   source: EVERYCURE
   source_name: Porfimer sodium
@@ -59160,13 +59160,13 @@
   drug_target: Antihelmintic
   everycure_id: CHEBI:8654
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:8655
-    grounded_label: Pyrantel pamoate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:8654
+    grounded_label: pyrantel
+    grounding_quality: lexical_exact_surgery
     original_string: Pyrantel pamoate
     subject_id: MEDICNE:86ecb573-792b-55c9-aba0-62a1d26c2774
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   is_antimicrobial: true
@@ -59176,12 +59176,12 @@
   mention_id: MEDICNE:86ecb573-792b-55c9-aba0-62a1d26c2774
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8655
-    normalized_label: Pyrantel pamoate
-    original_id: CHEBI:8655
+    normalized_id: CHEBI:8654
+    normalized_label: pyrantel
+    original_id: CHEBI:8654
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8655
-  normalized_label: Pyrantel pamoate
+  normalized_id: CHEBI:8654
+  normalized_label: pyrantel
   original_literal: Pyrantel pamoate
   source: EVERYCURE
   source_name: Pyrantel pamoate

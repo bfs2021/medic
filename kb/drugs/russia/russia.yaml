@@ -722,9 +722,9 @@
   approval_date: '19640430'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:59033
-    grounded_label: metamizole sodium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:62088
+    grounded_label: metamizole
+    grounding_quality: lexical_exact_surgery
     original_string: Metamizole sodium
     subject_id: MEDICNE:2f79f795-172e-5de7-9f12-2fdb7c0303f4
   grounding_confidence: 0.9
@@ -733,12 +733,12 @@
   mention_id: MEDICNE:2f79f795-172e-5de7-9f12-2fdb7c0303f4
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59033
-    normalized_label: metamizole sodium
-    original_id: CHEBI:59033
+    normalized_id: CHEBI:62088
+    normalized_label: metamizole
+    original_id: CHEBI:62088
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59033
-  normalized_label: metamizole sodium
+  normalized_id: CHEBI:62088
+  normalized_label: metamizole
   original_literal: Метамизол натрия
   original_name_ru: Метамизол натрия
   source: RUSSIA
@@ -8708,7 +8708,7 @@
     - CHEBI:32178
     - CHEBI:131366
     - CHEBI:16914
-    - CHEBI:31767
+    - RXCUI:6260
     - CHEBI:16842
     - CHEBI:36560
     confidence: 1.0
@@ -10864,9 +10864,9 @@
   approval_date: '19781023'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:22256
-    grounded_label: adenosine phosphate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:16335
+    grounded_label: adenosine
+    grounding_quality: lexical_exact_surgery
     original_string: Adenosine phosphate
     subject_id: MEDICNE:3196a385-a1c1-570a-a22f-26f0ff70fbf0
   grounding_confidence: 0.9
@@ -10875,12 +10875,12 @@
   mention_id: MEDICNE:3196a385-a1c1-570a-a22f-26f0ff70fbf0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:22256
-    normalized_label: adenosine phosphate
-    original_id: CHEBI:22256
+    normalized_id: CHEBI:16335
+    normalized_label: adenosine
+    original_id: CHEBI:16335
     tool: medic-normalizer/1
-  normalized_id: CHEBI:22256
-  normalized_label: adenosine phosphate
+  normalized_id: CHEBI:16335
+  normalized_label: adenosine
   original_literal: Аденозина фосфат
   original_name_ru: Аденозина фосфат
   source: RUSSIA
@@ -16167,24 +16167,24 @@
   - П N011489/05
   approval_date: '19990611'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:3020
-    grounded_label: benzalkonium chloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:188978
+    grounded_label: BENZALKONIUM
+    grounding_quality: lexical_exact_surgery
     original_string: Benzalkonium chloride
     subject_id: MEDICNE:dd03ba2d-b27e-5607-8818-611aa68410e1
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:dd03ba2d-b27e-5607-8818-611aa68410e1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3020
-    normalized_label: benzalkonium chloride
-    original_id: CHEBI:3020
+    normalized_id: CHEBI:188978
+    normalized_label: BENZALKONIUM
+    original_id: CHEBI:188978
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3020
-  normalized_label: benzalkonium chloride
+  normalized_id: CHEBI:188978
+  normalized_label: BENZALKONIUM
   original_literal: Бензалкония хлорид
   original_name_ru: Бензалкония хлорид
   source: RUSSIA
@@ -22641,9 +22641,9 @@
   approval_date: '20071119'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:90959
-    grounded_label: tiotropium bromide
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:90960
+    grounded_label: tiotropium
+    grounding_quality: lexical_exact_surgery
     original_string: Tiotropium bromide
     subject_id: MEDICNE:e06be5be-0a8f-5eb9-a0b5-d8578c11ccb9
   grounding_confidence: 0.9
@@ -22652,12 +22652,12 @@
   mention_id: MEDICNE:e06be5be-0a8f-5eb9-a0b5-d8578c11ccb9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90959
-    normalized_label: tiotropium bromide
-    original_id: CHEBI:90959
+    normalized_id: CHEBI:90960
+    normalized_label: tiotropium
+    original_id: CHEBI:90960
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90959
-  normalized_label: tiotropium bromide
+  normalized_id: CHEBI:90960
+  normalized_label: tiotropium
   original_literal: Тиотропия бромид
   original_name_ru: Тиотропия бромид
   source: RUSSIA
@@ -27942,12 +27942,12 @@
   approval_date: '20060414'
   grounding:
     components:
-    - CHEBI:59033
+    - CHEBI:62088
     - CHEBI:135547
-    - CHEBI:751831
+    - CHEBI:94773
     confidence: 0.9
-    grounded_id: CHEBI:59033
-    grounded_label: metamizole sodium
+    grounded_id: CHEBI:62088
+    grounded_label: metamizole
     grounding_quality: lexical_exact_surgery
     original_string: Metamizole Sodium + Pitofenone + Fenpiverinium Bromide
     subject_id: MEDICNE:28af227f-6fa1-5ceb-973f-c07840c145ae
@@ -27957,12 +27957,12 @@
   mention_id: MEDICNE:28af227f-6fa1-5ceb-973f-c07840c145ae
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59033
-    normalized_label: metamizole sodium
-    original_id: CHEBI:59033
+    normalized_id: CHEBI:62088
+    normalized_label: metamizole
+    original_id: CHEBI:62088
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59033
-  normalized_label: metamizole sodium
+  normalized_id: CHEBI:62088
+  normalized_label: metamizole
   original_literal: Метамизол натрия+Питофенон+Фенпивериния бромид
   original_name_ru: Метамизол натрия+Питофенон+Фенпивериния бромид
   source: RUSSIA
@@ -28281,24 +28281,24 @@
   - Р N001153/02
   approval_date: '20070814'
   grounding:
-    confidence: 1.0
-    grounded_id: RXCUI:1046243
-    grounded_label: alpha-tocopherol acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:22470
+    grounded_label: alpha-tocopherol
+    grounding_quality: lexical_exact_surgery
     original_string: alpha-tocopherol acetate
     subject_id: MEDICNE:45e1fa5f-0ebd-53db-98e5-54404131730b
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:45e1fa5f-0ebd-53db-98e5-54404131730b
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:1046243
-    normalized_label: alpha-tocopherol acetate
-    original_id: RXCUI:1046243
+    normalized_id: CHEBI:22470
+    normalized_label: alpha-tocopherol
+    original_id: CHEBI:22470
     tool: medic-normalizer/1
-  normalized_id: RXCUI:1046243
-  normalized_label: alpha-tocopherol acetate
+  normalized_id: CHEBI:22470
+  normalized_label: alpha-tocopherol
   original_literal: альфа-токоферола ацетат
   original_name_ru: альфа-токоферола ацетат
   source: RUSSIA
@@ -32894,7 +32894,7 @@
   grounding:
     components:
     - CHEBI:82700
-    - CHEBI:90959
+    - CHEBI:90960
     confidence: 0.9
     grounded_id: CHEBI:82700
     grounded_label: olodaterol
@@ -34002,11 +34002,11 @@
   approval_date: '20151228'
   grounding:
     components:
-    - CHEBI:90972
+    - CHEBI:749411
     - CHEBI:68575
     confidence: 0.9
-    grounded_id: CHEBI:90972
-    grounded_label: glycopyrronium bromide
+    grounded_id: CHEBI:749411
+    grounded_label: glycopyrronium
     grounding_quality: lexical_exact_surgery
     original_string: Glycopyrronium bromide + Indacaterol
     subject_id: MEDICNE:e2bc7967-e756-53c2-8e1d-81a21cd88973
@@ -34016,12 +34016,12 @@
   mention_id: MEDICNE:e2bc7967-e756-53c2-8e1d-81a21cd88973
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90972
-    normalized_label: glycopyrronium bromide
-    original_id: CHEBI:90972
+    normalized_id: CHEBI:749411
+    normalized_label: glycopyrronium
+    original_id: CHEBI:749411
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90972
-  normalized_label: glycopyrronium bromide
+  normalized_id: CHEBI:749411
+  normalized_label: glycopyrronium
   original_literal: Гликопиррония бромид+Индакатерол
   original_name_ru: Гликопиррония бромид+Индакатерол
   source: RUSSIA
@@ -35047,24 +35047,24 @@
   - ФС-001688
   approval_date: '20100324'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:749565
-    grounded_label: glatiramer acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: DRON:00016914
+    grounded_label: glatiramer
+    grounding_quality: lexical_exact_surgery
     original_string: Glatiramer acetate
     subject_id: MEDICNE:cbde0a46-7da8-5836-bbf5-5ed013e601fa
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:cbde0a46-7da8-5836-bbf5-5ed013e601fa
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749565
-    normalized_label: glatiramer acetate
-    original_id: CHEBI:749565
+    normalized_id: DRON:00016914
+    normalized_label: glatiramer
+    original_id: DRON:00016914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749565
-  normalized_label: glatiramer acetate
+  normalized_id: DRON:00016914
+  normalized_label: glatiramer
   original_literal: Глатирамера ацетат
   original_name_ru: Глатирамера ацетат
   source: RUSSIA
@@ -45185,9 +45185,9 @@
   approval_date: '20151019'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:76004
-    grounded_label: dimethyl fumarate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:42266
+    grounded_label: ethane
+    grounding_quality: lexical_exact_surgery
     original_string: Dimethyl fumarate
     subject_id: MEDICNE:fc070554-993b-560c-85a8-a5c34e5b69d7
   grounding_confidence: 0.9
@@ -45196,12 +45196,12 @@
   mention_id: MEDICNE:fc070554-993b-560c-85a8-a5c34e5b69d7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:76004
-    normalized_label: dimethyl fumarate
-    original_id: CHEBI:76004
+    normalized_id: CHEBI:42266
+    normalized_label: ethane
+    original_id: CHEBI:42266
     tool: medic-normalizer/1
-  normalized_id: CHEBI:76004
-  normalized_label: dimethyl fumarate
+  normalized_id: CHEBI:42266
+  normalized_label: ethane
   original_literal: Диметилфумарат
   original_name_ru: Диметилфумарат
   source: RUSSIA
@@ -47243,11 +47243,11 @@
   approval_date: '20071001'
   grounding:
     components:
-    - CHEBI:46659
+    - CHEBI:5956
     - CHEBI:149226
     confidence: 0.9
-    grounded_id: CHEBI:46659
-    grounded_label: ipratropium bromide
+    grounded_id: CHEBI:5956
+    grounded_label: ipratropium
     grounding_quality: lexical_exact_surgery
     original_string: Ipratropium Bromide + Fenoterol
     subject_id: MEDICNE:6b515c71-714f-59fb-84b1-7b71e9ad7fcc
@@ -47257,12 +47257,12 @@
   mention_id: MEDICNE:6b515c71-714f-59fb-84b1-7b71e9ad7fcc
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:46659
-    normalized_label: ipratropium bromide
-    original_id: CHEBI:46659
+    normalized_id: CHEBI:5956
+    normalized_label: ipratropium
+    original_id: CHEBI:5956
     tool: medic-normalizer/1
-  normalized_id: CHEBI:46659
-  normalized_label: ipratropium bromide
+  normalized_id: CHEBI:5956
+  normalized_label: ipratropium
   original_literal: Ипратропия бромид+Фенотерол
   original_name_ru: Ипратропия бромид+Фенотерол
   source: RUSSIA
@@ -47290,7 +47290,7 @@
     components:
     - RXCUI:314517
     - CHEBI:116735
-    - CHEBI:59033
+    - CHEBI:62088
     - CHEBI:32139
     confidence: 0.9
     grounded_id: RXCUI:314517
@@ -48271,9 +48271,9 @@
   approval_date: '20080918'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749476
-    grounded_label: enoxaparin sodium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:28304
+    grounded_label: heparin
+    grounding_quality: lexical_exact_surgery
     original_string: Enoxaparin Sodium
     subject_id: MEDICNE:03757a7d-6391-5104-beef-ca2f2510823f
   grounding_confidence: 0.9
@@ -48282,12 +48282,12 @@
   mention_id: MEDICNE:03757a7d-6391-5104-beef-ca2f2510823f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749476
-    normalized_label: enoxaparin sodium
-    original_id: CHEBI:749476
+    normalized_id: CHEBI:28304
+    normalized_label: heparin
+    original_id: CHEBI:28304
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749476
-  normalized_label: enoxaparin sodium
+  normalized_id: CHEBI:28304
+  normalized_label: heparin
   original_literal: Эноксапарин натрия
   original_name_ru: Эноксапарин натрия
   source: RUSSIA
@@ -48490,7 +48490,7 @@
     components:
     - CHEBI:5855
     - CHEBI:135547
-    - CHEBI:751831
+    - CHEBI:94773
     confidence: 0.9
     grounded_id: CHEBI:135547
     grounded_label: pitofenone
@@ -49124,12 +49124,12 @@
   approval_date: '20211007'
   grounding:
     components:
-    - CHEBI:90972
+    - CHEBI:749411
     - CHEBI:68575
     - CHEBI:6970
     confidence: 0.9
-    grounded_id: CHEBI:90972
-    grounded_label: glycopyrronium bromide
+    grounded_id: CHEBI:749411
+    grounded_label: glycopyrronium
     grounding_quality: lexical_exact_surgery
     original_string: Glycopyrronium bromide + Indacaterol + Mometasone
     subject_id: MEDICNE:716bddcf-7f97-5068-9df9-483e46d49592
@@ -49139,12 +49139,12 @@
   mention_id: MEDICNE:716bddcf-7f97-5068-9df9-483e46d49592
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90972
-    normalized_label: glycopyrronium bromide
-    original_id: CHEBI:90972
+    normalized_id: CHEBI:749411
+    normalized_label: glycopyrronium
+    original_id: CHEBI:749411
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90972
-  normalized_label: glycopyrronium bromide
+  normalized_id: CHEBI:749411
+  normalized_label: glycopyrronium
   original_literal: Гликопиррония бромид+Индакатерол+Мометазон
   original_name_ru: Гликопиррония бромид+Индакатерол+Мометазон
   source: RUSSIA
@@ -49574,9 +49574,9 @@
   approval_date: '20211111'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749278
-    grounded_label: caffeine citrate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:27732
+    grounded_label: caffeine
+    grounding_quality: lexical_exact_surgery
     original_string: Caffeine citrate
     subject_id: MEDICNE:fc4472f4-e52d-56ce-9755-23d59fc68c77
   grounding_confidence: 0.9
@@ -49585,12 +49585,12 @@
   mention_id: MEDICNE:fc4472f4-e52d-56ce-9755-23d59fc68c77
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749278
-    normalized_label: caffeine citrate
-    original_id: CHEBI:749278
+    normalized_id: CHEBI:27732
+    normalized_label: caffeine
+    original_id: CHEBI:27732
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749278
-  normalized_label: caffeine citrate
+  normalized_id: CHEBI:27732
+  normalized_label: caffeine
   original_literal: Кофеина цитрат
   original_name_ru: Кофеина цитрат
   source: RUSSIA
@@ -54730,24 +54730,24 @@
   - ФС-002161
   approval_date: '20060519'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:37397
-    grounded_label: chondroitin sulfate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:16137
+    grounded_label: chondroitin D-glucuronate
+    grounding_quality: lexical_exact_surgery
     original_string: Chondroitin sulfate
     subject_id: MEDICNE:6f4e210d-9451-5d0f-8443-27c3d89d7ee6
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:6f4e210d-9451-5d0f-8443-27c3d89d7ee6
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:37397
-    normalized_label: chondroitin sulfate
-    original_id: CHEBI:37397
+    normalized_id: CHEBI:16137
+    normalized_label: chondroitin D-glucuronate
+    original_id: CHEBI:16137
     tool: medic-normalizer/1
-  normalized_id: CHEBI:37397
-  normalized_label: chondroitin sulfate
+  normalized_id: CHEBI:16137
+  normalized_label: chondroitin D-glucuronate
   original_literal: Хондроитина сульфат
   original_name_ru: Хондроитина сульфат
   source: RUSSIA
@@ -55308,10 +55308,10 @@
   grounding:
     components:
     - CHEBI:6456
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
-    grounded_id: CHEBI:32915
-    grounded_label: cetylpyridinium chloride
+    grounded_id: CHEBI:32914
+    grounded_label: cetylpyridinium
     grounding_quality: lexical_exact_surgery
     original_string: Lidocaine + Cetylpyridinium Chloride
     subject_id: MEDICNE:79610155-ee0c-564d-b692-fd7c1dab259c
@@ -55321,12 +55321,12 @@
   mention_id: MEDICNE:79610155-ee0c-564d-b692-fd7c1dab259c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32915
-    normalized_label: cetylpyridinium chloride
-    original_id: CHEBI:32915
+    normalized_id: CHEBI:32914
+    normalized_label: cetylpyridinium
+    original_id: CHEBI:32914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32915
-  normalized_label: cetylpyridinium chloride
+  normalized_id: CHEBI:32914
+  normalized_label: cetylpyridinium
   original_literal: Лидокаин+Цетилпиридиния хлорид
   original_name_ru: Лидокаин+Цетилпиридиния хлорид
   source: RUSSIA
@@ -55734,27 +55734,18 @@
   - П N011414/01
   approval_date: '20100507'
   grounding:
-    components:
-    - RXCUI:90176
-    - CHEBI:85467
-    confidence: 0.9
-    grounded_id: RXCUI:90176
-    grounded_label: iron
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Iron Sulfate + [Ascorbic Acid]
     subject_id: MEDICNE:8d60563f-b8bf-5eec-a89a-789d5227f6ee
-  grounding_confidence: 0.9
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:8d60563f-b8bf-5eec-a89a-789d5227f6ee
-  normalization:
-    normalization_quality: identity
-    normalized_id: RXCUI:90176
-    normalized_label: iron
-    original_id: RXCUI:90176
-    tool: medic-normalizer/1
-  normalized_id: RXCUI:90176
-  normalized_label: iron
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Железа сульфат+[Аскорбиновая кислота]
   original_name_ru: Железа сульфат+[Аскорбиновая кислота]
   source: RUSSIA
@@ -59035,7 +59026,7 @@
   grounding:
     components:
     - CHEBI:75037
-    - CHEBI:79040
+    - CHEBI:79041
     confidence: 0.9
     grounded_id: CHEBI:75037
     grounded_label: vilanterol
@@ -59562,9 +59553,9 @@
   approval_date: '20080314'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:46659
-    grounded_label: ipratropium bromide
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:5956
+    grounded_label: ipratropium
+    grounding_quality: lexical_exact_surgery
     original_string: Ipratropium bromide
     subject_id: MEDICNE:53fdedcf-b94e-56e2-a0cb-d70f92bca989
   grounding_confidence: 0.9
@@ -59573,12 +59564,12 @@
   mention_id: MEDICNE:53fdedcf-b94e-56e2-a0cb-d70f92bca989
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:46659
-    normalized_label: ipratropium bromide
-    original_id: CHEBI:46659
+    normalized_id: CHEBI:5956
+    normalized_label: ipratropium
+    original_id: CHEBI:5956
     tool: medic-normalizer/1
-  normalized_id: CHEBI:46659
-  normalized_label: ipratropium bromide
+  normalized_id: CHEBI:5956
+  normalized_label: ipratropium
   original_literal: Ипратропия бромид
   original_name_ru: Ипратропия бромид
   source: RUSSIA
@@ -60830,24 +60821,18 @@
   - ФС-000816
   approval_date: '20071126'
   grounding:
-    confidence: 0.9
-    grounded_id: RXCUI:90176
-    grounded_label: iron
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Iron sulfate
     subject_id: MEDICNE:9b56b498-2259-5135-a8b8-a82b7359863f
-  grounding_confidence: 0.9
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:9b56b498-2259-5135-a8b8-a82b7359863f
-  normalization:
-    normalization_quality: identity
-    normalized_id: RXCUI:90176
-    normalized_label: iron
-    original_id: RXCUI:90176
-    tool: medic-normalizer/1
-  normalized_id: RXCUI:90176
-  normalized_label: iron
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Железа сульфат
   original_name_ru: Железа сульфат
   source: RUSSIA
@@ -61627,10 +61612,10 @@
   grounding:
     components:
     - CHEBI:94563
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
-    grounded_id: CHEBI:32915
-    grounded_label: cetylpyridinium chloride
+    grounded_id: CHEBI:32914
+    grounded_label: cetylpyridinium
     grounding_quality: lexical_exact_surgery
     original_string: Benzidamine + Cetylpyridinium Chloride
     subject_id: MEDICNE:07e0c3fd-3955-5d2b-8933-69a5dd373595
@@ -61640,12 +61625,12 @@
   mention_id: MEDICNE:07e0c3fd-3955-5d2b-8933-69a5dd373595
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32915
-    normalized_label: cetylpyridinium chloride
-    original_id: CHEBI:32915
+    normalized_id: CHEBI:32914
+    normalized_label: cetylpyridinium
+    original_id: CHEBI:32914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32915
-  normalized_label: cetylpyridinium chloride
+  normalized_id: CHEBI:32914
+  normalized_label: cetylpyridinium
   original_literal: Бензидамин+Цетилпиридиния хлорид
   original_name_ru: Бензидамин+Цетилпиридиния хлорид
   source: RUSSIA
@@ -64879,27 +64864,18 @@
   - ЛС-000300
   approval_date: '20100726'
   grounding:
-    components:
-    - RXCUI:90176
-    - CHEBI:27470
-    confidence: 0.9
-    grounded_id: RXCUI:90176
-    grounded_label: iron
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Iron Sulfate + Folic Acid
     subject_id: MEDICNE:bc0c2c17-7b44-5496-8524-168cdde45756
-  grounding_confidence: 0.9
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:bc0c2c17-7b44-5496-8524-168cdde45756
-  normalization:
-    normalization_quality: identity
-    normalized_id: RXCUI:90176
-    normalized_label: iron
-    original_id: RXCUI:90176
-    tool: medic-normalizer/1
-  normalized_id: RXCUI:90176
-  normalized_label: iron
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Железа сульфат+Фолиевая кислота
   original_name_ru: Железа сульфат+Фолиевая кислота
   source: RUSSIA
@@ -67269,9 +67245,9 @@
   approval_date: '20130923'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:90972
-    grounded_label: glycopyrronium bromide
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:749411
+    grounded_label: glycopyrronium
+    grounding_quality: lexical_exact_surgery
     original_string: Glycopyrronium bromide
     subject_id: MEDICNE:ca3bd505-b8e6-5d1d-9bc5-95f355c0c53b
   grounding_confidence: 0.9
@@ -67280,12 +67256,12 @@
   mention_id: MEDICNE:ca3bd505-b8e6-5d1d-9bc5-95f355c0c53b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90972
-    normalized_label: glycopyrronium bromide
-    original_id: CHEBI:90972
+    normalized_id: CHEBI:749411
+    normalized_label: glycopyrronium
+    original_id: CHEBI:749411
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90972
-  normalized_label: glycopyrronium bromide
+  normalized_id: CHEBI:749411
+  normalized_label: glycopyrronium
   original_literal: Гликопиррония бромид
   original_name_ru: Гликопиррония бромид
   source: RUSSIA
@@ -69348,24 +69324,24 @@
   application_number: ЛП-№(000920)-(ГП-RU)
   approval_date: '20230803'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:751827
-    grounded_label: butamirate citrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:135310
+    grounded_label: butamirate
+    grounding_quality: lexical_exact_surgery
     original_string: butamirate citrate
     subject_id: MEDICNE:38a7c423-f276-53df-9c36-229b04e23114
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:38a7c423-f276-53df-9c36-229b04e23114
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:751827
-    normalized_label: butamirate citrate
-    original_id: CHEBI:751827
+    normalized_id: CHEBI:135310
+    normalized_label: butamirate
+    original_id: CHEBI:135310
     tool: medic-normalizer/1
-  normalized_id: CHEBI:751827
-  normalized_label: butamirate citrate
+  normalized_id: CHEBI:135310
+  normalized_label: butamirate
   original_literal: бутамирата цитрат
   original_name_ru: бутамирата цитрат
   source: RUSSIA
@@ -70481,26 +70457,26 @@
   approval_date: '20170718'
   grounding:
     components:
-    - CHEBI:748127
+    - CHEBI:135826
     - CHEBI:64275
-    confidence: 0.85
-    grounded_id: CHEBI:748127
-    grounded_label: octenidine hydrochloride
+    confidence: 0.9
+    grounded_id: CHEBI:135826
+    grounded_label: octenidine
     grounding_quality: lexical_exact_surgery
     original_string: Octenidine dihydrochloride + Phenoxyethanol
     subject_id: MEDICNE:0b8b63cc-5610-508b-a717-fa4aa8aff41e
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:0b8b63cc-5610-508b-a717-fa4aa8aff41e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:748127
-    normalized_label: octenidine hydrochloride
-    original_id: CHEBI:748127
+    normalized_id: CHEBI:135826
+    normalized_label: octenidine
+    original_id: CHEBI:135826
     tool: medic-normalizer/1
-  normalized_id: CHEBI:748127
-  normalized_label: octenidine hydrochloride
+  normalized_id: CHEBI:135826
+  normalized_label: octenidine
   original_literal: Октенидина дигидрохлорид+Феноксиэтанол
   original_name_ru: Октенидина дигидрохлорид+Феноксиэтанол
   source: RUSSIA
@@ -72043,9 +72019,9 @@
   approval_date: '20060119'
   grounding:
     confidence: 0.9
-    grounded_id: RXCUI:40144
-    grounded_label: levothyroxine sodium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:18332
+    grounded_label: L-thyroxine
+    grounding_quality: lexical_exact_surgery
     original_string: Levothyroxine sodium
     subject_id: MEDICNE:abb42f66-bc4f-527e-a294-a501c77cc9a7
   grounding_confidence: 0.9
@@ -72054,12 +72030,12 @@
   mention_id: MEDICNE:abb42f66-bc4f-527e-a294-a501c77cc9a7
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:40144
-    normalized_label: levothyroxine sodium
-    original_id: RXCUI:40144
+    normalized_id: CHEBI:18332
+    normalized_label: L-thyroxine
+    original_id: CHEBI:18332
     tool: medic-normalizer/1
-  normalized_id: RXCUI:40144
-  normalized_label: levothyroxine sodium
+  normalized_id: CHEBI:18332
+  normalized_label: L-thyroxine
   original_literal: Левотироксин натрия
   original_name_ru: Левотироксин натрия
   source: RUSSIA
@@ -72943,7 +72919,7 @@
   grounding:
     components:
     - CHEBI:3207
-    - CHEBI:90972
+    - CHEBI:749411
     - CHEBI:5147
     confidence: 0.9
     grounded_id: CHEBI:3207
@@ -76316,7 +76292,7 @@
   approval_date: '20090817'
   grounding:
     components:
-    - CHEBI:46659
+    - CHEBI:5956
     - CHEBI:10082
     confidence: 1.0
     grounded_id: CHEBI:10082
@@ -76964,10 +76940,10 @@
   grounding:
     components:
     - CHEBI:5417
-    - CHEBI:37397
+    - CHEBI:16137
     confidence: 0.9
-    grounded_id: CHEBI:37397
-    grounded_label: chondroitin sulfate
+    grounded_id: CHEBI:16137
+    grounded_label: chondroitin D-glucuronate
     grounding_quality: lexical_exact_surgery
     original_string: Glucosamine + Chondroitin Sulfate
     subject_id: MEDICNE:893f7169-cd94-5f26-992a-b05552439b68
@@ -76977,12 +76953,12 @@
   mention_id: MEDICNE:893f7169-cd94-5f26-992a-b05552439b68
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:37397
-    normalized_label: chondroitin sulfate
-    original_id: CHEBI:37397
+    normalized_id: CHEBI:16137
+    normalized_label: chondroitin D-glucuronate
+    original_id: CHEBI:16137
     tool: medic-normalizer/1
-  normalized_id: CHEBI:37397
-  normalized_label: chondroitin sulfate
+  normalized_id: CHEBI:16137
+  normalized_label: chondroitin D-glucuronate
   original_literal: Глюкозамин+Хондроитина сульфат
   original_name_ru: Глюкозамин+Хондроитина сульфат
   source: RUSSIA
@@ -80134,24 +80110,24 @@
   - Р N003409/01
   approval_date: '20061027'
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:61219
-    grounded_label: succinylcholine chloride (anhydrous)
-    grounding_quality: lexical_exact_normalized
+    confidence: 0.9
+    grounded_id: CHEBI:45652
+    grounded_label: succinylcholine
+    grounding_quality: lexical_exact_surgery
     original_string: Suxamethonium chloride
     subject_id: MEDICNE:9bacd5bf-6bba-5761-bfc0-23c5b6349496
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:9bacd5bf-6bba-5761-bfc0-23c5b6349496
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:61219
-    normalized_label: succinylcholine chloride (anhydrous)
-    original_id: CHEBI:61219
+    normalized_id: CHEBI:45652
+    normalized_label: succinylcholine
+    original_id: CHEBI:45652
     tool: medic-normalizer/1
-  normalized_id: CHEBI:61219
-  normalized_label: succinylcholine chloride (anhydrous)
+  normalized_id: CHEBI:45652
+  normalized_label: succinylcholine
   original_literal: Суксаметония хлорид
   original_name_ru: Суксаметония хлорид
   source: RUSSIA
@@ -81151,11 +81127,11 @@
   grounding:
     components:
     - CHEBI:51352
-    - CHEBI:51765
+    - CHEBI:18208
     - CHEBI:52154
     confidence: 0.9
-    grounded_id: CHEBI:51765
-    grounded_label: benzylpenicillin sodium
+    grounded_id: CHEBI:18208
+    grounded_label: benzylpenicillin
     grounding_quality: lexical_exact_surgery
     original_string: Benzathine Benzylpenicillin + Benzylpenicillin Sodium + Benzylpenicillin
       Procaine
@@ -81166,12 +81142,12 @@
   mention_id: MEDICNE:bd5905fd-2369-5480-833b-634ee8c91d9e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:51765
-    normalized_label: benzylpenicillin sodium
-    original_id: CHEBI:51765
+    normalized_id: CHEBI:18208
+    normalized_label: benzylpenicillin
+    original_id: CHEBI:18208
     tool: medic-normalizer/1
-  normalized_id: CHEBI:51765
-  normalized_label: benzylpenicillin sodium
+  normalized_id: CHEBI:18208
+  normalized_label: benzylpenicillin
   original_literal: Бензатина бензилпенициллин+Бензилпенициллин натрия+Бензилпенициллин
     прокаина
   original_name_ru: Бензатина бензилпенициллин+Бензилпенициллин натрия+Бензилпенициллин
@@ -83298,7 +83274,7 @@
   grounding:
     components:
     - CHEBI:75037
-    - CHEBI:79040
+    - CHEBI:79041
     - CHEBI:74899
     confidence: 0.9
     grounded_id: CHEBI:75037
@@ -83467,9 +83443,9 @@
   approval_date: '20230531'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:748411
-    grounded_label: papaverine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:28241
+    grounded_label: papaverine
+    grounding_quality: lexical_exact_surgery
     original_string: Papaverine hydrochloride
     subject_id: MEDICNE:6a73c884-c314-5b93-9ead-52af5e638cd7
   grounding_confidence: 0.9
@@ -83478,12 +83454,12 @@
   mention_id: MEDICNE:6a73c884-c314-5b93-9ead-52af5e638cd7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:748411
-    normalized_label: papaverine hydrochloride
-    original_id: CHEBI:748411
+    normalized_id: CHEBI:28241
+    normalized_label: papaverine
+    original_id: CHEBI:28241
     tool: medic-normalizer/1
-  normalized_id: CHEBI:748411
-  normalized_label: papaverine hydrochloride
+  normalized_id: CHEBI:28241
+  normalized_label: papaverine
   original_literal: папаверина гидрохлорид
   original_name_ru: папаверина гидрохлорид
   source: RUSSIA
@@ -84397,7 +84373,7 @@
   approval_date: '20100518'
   grounding:
     components:
-    - CHEBI:3020
+    - CHEBI:188978
     - CHEBI:116735
     - CHEBI:201397
     confidence: 1.0
@@ -84954,26 +84930,26 @@
   approval_date: '20230622'
   grounding:
     components:
-    - CHEBI:17609
+    - CHEBI:17650
     - CHEBI:6456
-    confidence: 0.85
-    grounded_id: CHEBI:6456
-    grounded_label: lidocaine
+    confidence: 0.9
+    grounded_id: CHEBI:17650
+    grounded_label: cortisol
     grounding_quality: lexical_exact_surgery
     original_string: Hydrocortisone Acetate + Lidocaine
     subject_id: MEDICNE:ebaa69c9-f5aa-50fc-8a42-d07140ff864a
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:ebaa69c9-f5aa-50fc-8a42-d07140ff864a
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6456
-    normalized_label: lidocaine
-    original_id: CHEBI:6456
+    normalized_id: CHEBI:17650
+    normalized_label: cortisol
+    original_id: CHEBI:17650
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6456
-  normalized_label: lidocaine
+  normalized_id: CHEBI:17650
+  normalized_label: cortisol
   original_literal: Гидрокортизона ацетат+Лидокаин
   original_name_ru: Гидрокортизона ацетат+Лидокаин
   source: RUSSIA
@@ -89488,24 +89464,24 @@
   - Р N013515/01
   approval_date: '20080815'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:8231
-    grounded_label: Pipecuronium bromide
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:8230
+    grounded_label: Pipecuronium
+    grounding_quality: lexical_exact_surgery
     original_string: Pipecuronium bromide
     subject_id: MEDICNE:12cf5c8e-c18f-5ad5-b498-435a3803200a
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:12cf5c8e-c18f-5ad5-b498-435a3803200a
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8231
-    normalized_label: Pipecuronium bromide
-    original_id: CHEBI:8231
+    normalized_id: CHEBI:8230
+    normalized_label: Pipecuronium
+    original_id: CHEBI:8230
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8231
-  normalized_label: Pipecuronium bromide
+  normalized_id: CHEBI:8230
+  normalized_label: Pipecuronium
   original_literal: Пипекурония бромид
   original_name_ru: Пипекурония бромид
   source: RUSSIA
@@ -89635,24 +89611,24 @@
   - ФС-000922
   approval_date: '20081006'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:8666
-    grounded_label: Pyridostigmine bromide
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:8665
+    grounded_label: Pyridostigmine
+    grounding_quality: lexical_exact_surgery
     original_string: Pyridostigmine bromide
     subject_id: MEDICNE:8e686767-3403-5b0a-b477-27965ae8d783
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:8e686767-3403-5b0a-b477-27965ae8d783
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8666
-    normalized_label: Pyridostigmine bromide
-    original_id: CHEBI:8666
+    normalized_id: CHEBI:8665
+    normalized_label: Pyridostigmine
+    original_id: CHEBI:8665
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8666
-  normalized_label: Pyridostigmine bromide
+  normalized_id: CHEBI:8665
+  normalized_label: Pyridostigmine
   original_literal: Пиридостигмина бромид
   original_name_ru: Пиридостигмина бромид
   source: RUSSIA
@@ -94274,11 +94250,11 @@
   grounding:
     components:
     - CHEBI:27732
-    - CHEBI:59033
+    - CHEBI:62088
     - CHEBI:18385
     confidence: 0.9
-    grounded_id: CHEBI:59033
-    grounded_label: metamizole sodium
+    grounded_id: CHEBI:62088
+    grounded_label: metamizole
     grounding_quality: lexical_exact_surgery
     original_string: Caffeine + Metamizole Sodium + Thiamine
     subject_id: MEDICNE:d1f71282-4964-5796-9cb3-cb2954c53dbd
@@ -94288,12 +94264,12 @@
   mention_id: MEDICNE:d1f71282-4964-5796-9cb3-cb2954c53dbd
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59033
-    normalized_label: metamizole sodium
-    original_id: CHEBI:59033
+    normalized_id: CHEBI:62088
+    normalized_label: metamizole
+    original_id: CHEBI:62088
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59033
-  normalized_label: metamizole sodium
+  normalized_id: CHEBI:62088
+  normalized_label: metamizole
   original_literal: Кофеин+Метамизол натрия+Тиамин
   original_name_ru: Кофеин+Метамизол натрия+Тиамин
   source: RUSSIA
@@ -97245,24 +97221,24 @@
   - П N011489/03
   approval_date: '20060525'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:234578
-    grounded_label: C12-C14-Alkyl(ethylbenzyl)dimethylammonium chloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:749177
+    grounded_label: miristalkonium ion
+    grounding_quality: lexical_exact_surgery
     original_string: Myristalkonium chloride
     subject_id: MEDICNE:5ababd6a-7197-583e-9f5f-f8e7d579f003
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:5ababd6a-7197-583e-9f5f-f8e7d579f003
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:234578
-    normalized_label: C12-C14-Alkyl(ethylbenzyl)dimethylammonium chloride
-    original_id: CHEBI:234578
+    normalized_id: CHEBI:749177
+    normalized_label: miristalkonium ion
+    original_id: CHEBI:749177
     tool: medic-normalizer/1
-  normalized_id: CHEBI:234578
-  normalized_label: C12-C14-Alkyl(ethylbenzyl)dimethylammonium chloride
+  normalized_id: CHEBI:749177
+  normalized_label: miristalkonium ion
   original_literal: Миристалкония хлорид
   original_name_ru: Миристалкония хлорид
   source: RUSSIA
@@ -97321,7 +97297,7 @@
   grounding:
     components:
     - CHEBI:116735
-    - CHEBI:3020
+    - CHEBI:188978
     - CHEBI:201397
     confidence: 1.0
     grounded_id: CHEBI:201397
@@ -97639,24 +97615,18 @@
   - ЛП-№(008170)-(РГ-RU)
   approval_date: '20240325'
   grounding:
-    confidence: 0.8
-    grounded_id: CHEBI:33325
-    grounded_label: radium atom
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Radium chloride (223Ra)
     subject_id: MEDICNE:249596bc-65d3-5050-99d1-3048f4c9f037
-  grounding_confidence: 0.8
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:249596bc-65d3-5050-99d1-3048f4c9f037
-  normalization:
-    normalization_quality: identity
-    normalized_id: CHEBI:33325
-    normalized_label: radium atom
-    original_id: CHEBI:33325
-    tool: medic-normalizer/1
-  normalized_id: CHEBI:33325
-  normalized_label: radium atom
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Радия хлорид (223Ra)
   original_name_ru: Радия хлорид (223Ra)
   source: RUSSIA
@@ -98215,7 +98185,7 @@
     components:
     - CHEBI:5530
     - CHEBI:309594
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
     grounded_id: CHEBI:309594
     grounded_label: oxybuprocaine
@@ -98528,11 +98498,11 @@
   grounding:
     components:
     - CHEBI:3001
-    - CHEBI:90972
+    - CHEBI:749411
     - CHEBI:5147
     confidence: 0.9
-    grounded_id: CHEBI:90972
-    grounded_label: glycopyrronium bromide
+    grounded_id: CHEBI:749411
+    grounded_label: glycopyrronium
     grounding_quality: lexical_exact_surgery
     original_string: Beclomethasone + Glycopyrronium Bromide + Formoterol
     subject_id: MEDICNE:63a2a33e-d169-50c9-9692-aee7e7b3fe66
@@ -98542,12 +98512,12 @@
   mention_id: MEDICNE:63a2a33e-d169-50c9-9692-aee7e7b3fe66
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90972
-    normalized_label: glycopyrronium bromide
-    original_id: CHEBI:90972
+    normalized_id: CHEBI:749411
+    normalized_label: glycopyrronium
+    original_id: CHEBI:749411
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90972
-  normalized_label: glycopyrronium bromide
+  normalized_id: CHEBI:749411
+  normalized_label: glycopyrronium
   original_literal: Беклометазон+Гликопиррония бромид+Формотерол
   original_name_ru: Беклометазон+Гликопиррония бромид+Формотерол
   source: RUSSIA
@@ -99283,7 +99253,7 @@
     - CHEBI:6824
     - CHEBI:131366
     - CHEBI:16914
-    - CHEBI:31767
+    - RXCUI:6260
     - CHEBI:32178
     - CHEBI:16842
     - CHEBI:36560
@@ -99378,10 +99348,10 @@
   grounding:
     components:
     - CHEBI:5530
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
-    grounded_id: CHEBI:32915
-    grounded_label: cetylpyridinium chloride
+    grounded_id: CHEBI:32914
+    grounded_label: cetylpyridinium
     grounding_quality: lexical_exact_surgery
     original_string: Gramicidin C + Cetylpyridinium Chloride
     subject_id: MEDICNE:7c5d029c-1bc2-54d8-9924-06693c1063a1
@@ -99391,12 +99361,12 @@
   mention_id: MEDICNE:7c5d029c-1bc2-54d8-9924-06693c1063a1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32915
-    normalized_label: cetylpyridinium chloride
-    original_id: CHEBI:32915
+    normalized_id: CHEBI:32914
+    normalized_label: cetylpyridinium
+    original_id: CHEBI:32914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32915
-  normalized_label: cetylpyridinium chloride
+  normalized_id: CHEBI:32914
+  normalized_label: cetylpyridinium
   original_literal: Грамицидин С+Цетилпиридиния хлорид
   original_name_ru: Грамицидин С+Цетилпиридиния хлорид
   source: RUSSIA
@@ -101152,7 +101122,7 @@
     confidence: 0.9
     grounded_id: CHEBI:135780
     grounded_label: otilonium bromide
-    grounding_quality: lexical_exact_normalized
+    grounding_quality: lexical_exact_surgery
     original_string: Otilonium bromide
     subject_id: MEDICNE:6818f741-ebf3-52aa-954e-3692e61abfae
   grounding_confidence: 0.9
@@ -101505,11 +101475,11 @@
   grounding:
     components:
     - CHEBI:27732
-    - CHEBI:59033
+    - CHEBI:62088
     - CHEBI:8069
     confidence: 0.9
-    grounded_id: CHEBI:59033
-    grounded_label: metamizole sodium
+    grounded_id: CHEBI:62088
+    grounded_label: metamizole
     grounding_quality: lexical_exact_surgery
     original_string: Caffeine + Metamizole Sodium + Phenobarbital
     subject_id: MEDICNE:708162fe-7dda-5f3b-be87-2b842a91aa35
@@ -101519,12 +101489,12 @@
   mention_id: MEDICNE:708162fe-7dda-5f3b-be87-2b842a91aa35
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59033
-    normalized_label: metamizole sodium
-    original_id: CHEBI:59033
+    normalized_id: CHEBI:62088
+    normalized_label: metamizole
+    original_id: CHEBI:62088
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59033
-  normalized_label: metamizole sodium
+  normalized_id: CHEBI:62088
+  normalized_label: metamizole
   original_literal: Кофеин+Метамизол натрия+Фенобарбитал
   original_name_ru: Кофеин+Метамизол натрия+Фенобарбитал
   source: RUSSIA
@@ -105610,7 +105580,7 @@
     components:
     - CHEBI:15365
     - CHEBI:4636
-    - CHEBI:59033
+    - CHEBI:62088
     confidence: 1.0
     grounded_id: CHEBI:15365
     grounded_label: acetylsalicylic acid
@@ -106196,7 +106166,7 @@
   grounding:
     components:
     - CHEBI:6741
-    - CHEBI:37397
+    - CHEBI:16137
     confidence: 0.9
     grounded_id: CHEBI:6741
     grounded_label: meloxicam
@@ -106723,24 +106693,24 @@
   application_number: ЛП-№(006790)-(РГ-RU)
   approval_date: '20240905'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:45652
-    grounded_label: succinylcholine
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:751928
+    grounded_label: dicolinium iodide
+    grounding_quality: lexical_exact_surgery
     original_string: Dicholine succinate
     subject_id: MEDICNE:82f6a544-2634-5e1d-9d05-0609006d3a26
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:82f6a544-2634-5e1d-9d05-0609006d3a26
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:45652
-    normalized_label: succinylcholine
-    original_id: CHEBI:45652
+    normalized_id: CHEBI:751928
+    normalized_label: dicolinium iodide
+    original_id: CHEBI:751928
     tool: medic-normalizer/1
-  normalized_id: CHEBI:45652
-  normalized_label: succinylcholine
+  normalized_id: CHEBI:751928
+  normalized_label: dicolinium iodide
   original_literal: Дихолина сукцинат
   original_name_ru: Дихолина сукцинат
   source: RUSSIA
@@ -108960,10 +108930,10 @@
   grounding:
     components:
     - CHEBI:94708
-    - CHEBI:37397
+    - CHEBI:16137
     confidence: 0.9
-    grounded_id: CHEBI:37397
-    grounded_label: chondroitin sulfate
+    grounded_id: CHEBI:16137
+    grounded_label: chondroitin D-glucuronate
     grounding_quality: lexical_exact_surgery
     original_string: Diacereine + Chondroitin Sulfate
     subject_id: MEDICNE:f8329feb-7f4b-5998-ad57-a9debd6ed13e
@@ -108973,12 +108943,12 @@
   mention_id: MEDICNE:f8329feb-7f4b-5998-ad57-a9debd6ed13e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:37397
-    normalized_label: chondroitin sulfate
-    original_id: CHEBI:37397
+    normalized_id: CHEBI:16137
+    normalized_label: chondroitin D-glucuronate
+    original_id: CHEBI:16137
     tool: medic-normalizer/1
-  normalized_id: CHEBI:37397
-  normalized_label: chondroitin sulfate
+  normalized_id: CHEBI:16137
+  normalized_label: chondroitin D-glucuronate
   original_literal: Диацереин+Хондроитина сульфат
   original_name_ru: Диацереин+Хондроитина сульфат
   source: RUSSIA
@@ -109243,24 +109213,24 @@
   - П N014154/01-2002
   approval_date: '20080617'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:757128
-    grounded_label: citrulline malate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:18211
+    grounded_label: citrulline
+    grounding_quality: lexical_exact_surgery
     original_string: Citrulline malate
     subject_id: MEDICNE:e39e2047-ae81-531e-a74d-7f01e55e2442
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:e39e2047-ae81-531e-a74d-7f01e55e2442
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:757128
-    normalized_label: citrulline malate
-    original_id: CHEBI:757128
+    normalized_id: CHEBI:18211
+    normalized_label: citrulline
+    original_id: CHEBI:18211
     tool: medic-normalizer/1
-  normalized_id: CHEBI:757128
-  normalized_label: citrulline malate
+  normalized_id: CHEBI:18211
+  normalized_label: citrulline
   original_literal: Цитруллина малат
   original_name_ru: Цитруллина малат
   source: RUSSIA
@@ -110995,24 +110965,24 @@
   - П N016196/02
   approval_date: '20100304'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:32270
-    grounded_label: trospium chloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:145791
+    grounded_label: trospium
+    grounding_quality: lexical_exact_surgery
     original_string: Trospium chloride
     subject_id: MEDICNE:4e3088c7-71f4-5577-a97c-0059a9e98497
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:4e3088c7-71f4-5577-a97c-0059a9e98497
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32270
-    normalized_label: trospium chloride
-    original_id: CHEBI:32270
+    normalized_id: CHEBI:145791
+    normalized_label: trospium
+    original_id: CHEBI:145791
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32270
-  normalized_label: trospium chloride
+  normalized_id: CHEBI:145791
+  normalized_label: trospium
   original_literal: Троспия хлорид
   original_name_ru: Троспия хлорид
   source: RUSSIA
@@ -113119,24 +113089,18 @@
   - ЛП-№(008183)-(РГ-RU)
   approval_date: '20161229'
   grounding:
-    confidence: 0.9
-    grounded_id: CHEBI:33325
-    grounded_label: radium atom
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: radium chloride [223 Ra]
     subject_id: MEDICNE:b4496132-1c81-53d5-8e75-75c6f7a2a2e5
-  grounding_confidence: 0.9
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:b4496132-1c81-53d5-8e75-75c6f7a2a2e5
-  normalization:
-    normalization_quality: identity
-    normalized_id: CHEBI:33325
-    normalized_label: radium atom
-    original_id: CHEBI:33325
-    tool: medic-normalizer/1
-  normalized_id: CHEBI:33325
-  normalized_label: radium atom
+  normalized_id: ''
+  normalized_label: ''
   original_literal: радия хлорид [223 Ra]
   original_name_ru: радия хлорид [223 Ra]
   source: RUSSIA
@@ -117381,7 +117345,7 @@
   grounding:
     components:
     - CHEBI:3668
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
     grounded_id: CHEBI:3668
     grounded_label: Choline salicylate
@@ -121312,10 +121276,10 @@
     components:
     - CHEBI:5417
     - CHEBI:5855
-    - CHEBI:37397
+    - CHEBI:16137
     confidence: 0.9
-    grounded_id: CHEBI:37397
-    grounded_label: chondroitin sulfate
+    grounded_id: CHEBI:16137
+    grounded_label: chondroitin D-glucuronate
     grounding_quality: lexical_exact_surgery
     original_string: Glucosamine + Ibuprofen + Chondroitin Sulfate
     subject_id: MEDICNE:b8dbf15d-1ace-53a8-abf2-e37ca371d459
@@ -121325,12 +121289,12 @@
   mention_id: MEDICNE:b8dbf15d-1ace-53a8-abf2-e37ca371d459
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:37397
-    normalized_label: chondroitin sulfate
-    original_id: CHEBI:37397
+    normalized_id: CHEBI:16137
+    normalized_label: chondroitin D-glucuronate
+    original_id: CHEBI:16137
     tool: medic-normalizer/1
-  normalized_id: CHEBI:37397
-  normalized_label: chondroitin sulfate
+  normalized_id: CHEBI:16137
+  normalized_label: chondroitin D-glucuronate
   original_literal: Глюкозамин+Ибупрофен+Хондроитина сульфат
   original_name_ru: Глюкозамин+Ибупрофен+Хондроитина сульфат
   source: RUSSIA
@@ -124064,9 +124028,9 @@
   approval_date: '20091201'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749043
-    grounded_label: yohimbine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:10093
+    grounded_label: yohimbine
+    grounding_quality: lexical_exact_surgery
     original_string: Yohimbine hydrochloride
     subject_id: MEDICNE:1729149f-63f5-5112-a66f-85294c56e97d
   grounding_confidence: 0.9
@@ -124075,12 +124039,12 @@
   mention_id: MEDICNE:1729149f-63f5-5112-a66f-85294c56e97d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749043
-    normalized_label: yohimbine hydrochloride
-    original_id: CHEBI:749043
+    normalized_id: CHEBI:10093
+    normalized_label: yohimbine
+    original_id: CHEBI:10093
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749043
-  normalized_label: yohimbine hydrochloride
+  normalized_id: CHEBI:10093
+  normalized_label: yohimbine
   original_literal: Йохимбина гидрохлорид
   original_name_ru: Йохимбина гидрохлорид
   source: RUSSIA
@@ -124714,10 +124678,10 @@
   grounding:
     components:
     - CHEBI:5130
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
-    grounded_id: CHEBI:32915
-    grounded_label: cetylpyridinium chloride
+    grounded_id: CHEBI:32914
+    grounded_label: cetylpyridinium
     grounding_quality: lexical_exact_surgery
     original_string: Flurbiprofen + Cetylpyridinium Chloride
     subject_id: MEDICNE:2382fed3-e320-5f88-aea7-8dfd507d5ff3
@@ -124727,12 +124691,12 @@
   mention_id: MEDICNE:2382fed3-e320-5f88-aea7-8dfd507d5ff3
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32915
-    normalized_label: cetylpyridinium chloride
-    original_id: CHEBI:32915
+    normalized_id: CHEBI:32914
+    normalized_label: cetylpyridinium
+    original_id: CHEBI:32914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32915
-  normalized_label: cetylpyridinium chloride
+  normalized_id: CHEBI:32914
+  normalized_label: cetylpyridinium
   original_literal: Флурбипрофен+Цетилпиридиния хлорид
   original_name_ru: Флурбипрофен+Цетилпиридиния хлорид
   source: RUSSIA
@@ -128788,7 +128752,7 @@
     components:
     - CHEBI:6456
     - RXCUI:1426865
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
     grounded_id: RXCUI:1426865
     grounded_label: lysozyme
@@ -129166,14 +129130,14 @@
   approval_date: '20170621'
   grounding:
     components:
-    - CHEBI:31303
+    - CHEBI:77032
     - CHEBI:3309
     - CHEBI:46195
     - CHEBI:28527
     - CHEBI:85467
     confidence: 0.9
-    grounded_id: CHEBI:31303
-    grounded_label: bromhexine hydrochloride
+    grounded_id: CHEBI:77032
+    grounded_label: bromhexine
     grounding_quality: lexical_exact_surgery
     original_string: Bromhexine Hydrochloride + Calcium Gluconate + Paracetamol +
       Rutoside + [Ascorbic Acid]
@@ -129184,12 +129148,12 @@
   mention_id: MEDICNE:5be394e8-4691-52cb-85f8-2dd82b55bc25
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31303
-    normalized_label: bromhexine hydrochloride
-    original_id: CHEBI:31303
+    normalized_id: CHEBI:77032
+    normalized_label: bromhexine
+    original_id: CHEBI:77032
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31303
-  normalized_label: bromhexine hydrochloride
+  normalized_id: CHEBI:77032
+  normalized_label: bromhexine
   original_literal: Бромгексина гидрохлорид+Кальция глюконат+Парацетамол+Рутозид+[Аскорбиновая
     кислота]
   original_name_ru: Бромгексина гидрохлорид+Кальция глюконат+Парацетамол+Рутозид+[Аскорбиновая
@@ -137098,7 +137062,7 @@
     components:
     - CHEBI:47381
     - CHEBI:28262
-    - CHEBI:37397
+    - CHEBI:16137
     confidence: 0.95
     grounded_id: CHEBI:28262
     grounded_label: dimethyl sulfoxide
@@ -143286,12 +143250,12 @@
     components:
     - CHEBI:27732
     - CHEBI:46195
-    - CHEBI:751529
+    - CHEBI:134806
     - CHEBI:8093
     - CHEBI:85467
     confidence: 0.9
-    grounded_id: CHEBI:751529
-    grounded_label: terpin hydrate
+    grounded_id: CHEBI:134806
+    grounded_label: terpin
     grounding_quality: lexical_exact_surgery
     original_string: Caffeine + Paracetamol + Terpin hydrate + Phenylephrine + [Ascorbic
       acid]
@@ -143302,12 +143266,12 @@
   mention_id: MEDICNE:46939276-01ed-5d12-98f5-cc4e1fb32468
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:751529
-    normalized_label: terpin hydrate
-    original_id: CHEBI:751529
+    normalized_id: CHEBI:134806
+    normalized_label: terpin
+    original_id: CHEBI:134806
     tool: medic-normalizer/1
-  normalized_id: CHEBI:751529
-  normalized_label: terpin hydrate
+  normalized_id: CHEBI:134806
+  normalized_label: terpin
   original_literal: Кофеин+Парацетамол+Терпингидрат+Фенилэфрин+[Аскорбиновая кислота]
   original_name_ru: Кофеин+Парацетамол+Терпингидрат+Фенилэфрин+[Аскорбиновая кислота]
   source: RUSSIA
@@ -144987,9 +144951,9 @@
   approval_date: '20070525'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:32915
-    grounded_label: cetylpyridinium chloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:32914
+    grounded_label: cetylpyridinium
+    grounding_quality: lexical_exact_surgery
     original_string: Cetylpyridinium chloride
     subject_id: MEDICNE:392f59ed-6a53-594d-8404-4eacde7ff3b9
   grounding_confidence: 0.9
@@ -144998,12 +144962,12 @@
   mention_id: MEDICNE:392f59ed-6a53-594d-8404-4eacde7ff3b9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32915
-    normalized_label: cetylpyridinium chloride
-    original_id: CHEBI:32915
+    normalized_id: CHEBI:32914
+    normalized_label: cetylpyridinium
+    original_id: CHEBI:32914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32915
-  normalized_label: cetylpyridinium chloride
+  normalized_id: CHEBI:32914
+  normalized_label: cetylpyridinium
   original_literal: Цетилпиридиния хлорид
   original_name_ru: Цетилпиридиния хлорид
   source: RUSSIA
@@ -149802,24 +149766,24 @@
   application_number: П N012724/01
   approval_date: '20100205'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:9179
-    grounded_label: sodium nitroprusside dihydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:29321
+    grounded_label: sodium nitroprusside
+    grounding_quality: lexical_exact_surgery
     original_string: Sodium nitroprusside dihydrate
     subject_id: MEDICNE:baa0ed80-d3d1-57e8-9143-82a5604a557d
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:baa0ed80-d3d1-57e8-9143-82a5604a557d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9179
-    normalized_label: sodium nitroprusside dihydrate
-    original_id: CHEBI:9179
+    normalized_id: CHEBI:29321
+    normalized_label: sodium nitroprusside
+    original_id: CHEBI:29321
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9179
-  normalized_label: sodium nitroprusside dihydrate
+  normalized_id: CHEBI:29321
+  normalized_label: sodium nitroprusside
   original_literal: Нитропруссид натрия дигидрат
   original_name_ru: Нитропруссид натрия дигидрат
   source: RUSSIA
@@ -149843,10 +149807,10 @@
     - CHEBI:6030
     - CHEBI:28077
     - CHEBI:45285
-    - CHEBI:755192
+    - CHEBI:4877
     confidence: 0.9
-    grounded_id: CHEBI:755192
-    grounded_label: ethambutol hydrochloride
+    grounded_id: CHEBI:4877
+    grounded_label: ethambutol
     grounding_quality: lexical_exact_surgery
     original_string: Isoniazid + Rifampicin + Pyrazinamide + Ethambutol Hydrochloride
     subject_id: MEDICNE:761ec7c0-15ba-5fa7-8ef7-0a172b3d0bd4
@@ -149856,12 +149820,12 @@
   mention_id: MEDICNE:761ec7c0-15ba-5fa7-8ef7-0a172b3d0bd4
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:755192
-    normalized_label: ethambutol hydrochloride
-    original_id: CHEBI:755192
+    normalized_id: CHEBI:4877
+    normalized_label: ethambutol
+    original_id: CHEBI:4877
     tool: medic-normalizer/1
-  normalized_id: CHEBI:755192
-  normalized_label: ethambutol hydrochloride
+  normalized_id: CHEBI:4877
+  normalized_label: ethambutol
   original_literal: Изониазид+Рифампицин+Пиразинамид+Этамбутола гидрохлорид
   original_name_ru: Изониазид+Рифампицин+Пиразинамид+Этамбутола гидрохлорид
   source: RUSSIA
@@ -150727,12 +150691,12 @@
   approval_date: '20100225'
   grounding:
     components:
-    - CHEBI:34650
+    - CHEBI:59662
     - CHEBI:27902
     - CHEBI:17698
     confidence: 0.9
-    grounded_id: CHEBI:34650
-    grounded_label: colistimethate sodium
+    grounded_id: CHEBI:59662
+    grounded_label: colistimethate
     grounding_quality: lexical_exact_surgery
     original_string: Colistimethate Sodium + Tetracycline + Chloramphenicol
     subject_id: MEDICNE:0e579f3b-5ae8-5381-a9d0-13b798c3b907
@@ -150742,12 +150706,12 @@
   mention_id: MEDICNE:0e579f3b-5ae8-5381-a9d0-13b798c3b907
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:34650
-    normalized_label: colistimethate sodium
-    original_id: CHEBI:34650
+    normalized_id: CHEBI:59662
+    normalized_label: colistimethate
+    original_id: CHEBI:59662
     tool: medic-normalizer/1
-  normalized_id: CHEBI:34650
-  normalized_label: colistimethate sodium
+  normalized_id: CHEBI:59662
+  normalized_label: colistimethate
   original_literal: Колистиметат натрия+Тетрациклин+Хлорамфеникол
   original_name_ru: Колистиметат натрия+Тетрациклин+Хлорамфеникол
   source: RUSSIA
@@ -151147,27 +151111,18 @@
   - П N015041/03
   approval_date: '20081010'
   grounding:
-    components:
-    - RXCUI:90176
-    - CHEBI:17822
-    confidence: 0.95
-    grounded_id: CHEBI:17822
-    grounded_label: serine
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Iron Sulfate + Serine
     subject_id: MEDICNE:dd2e4786-f285-5e95-a087-df602857fbf5
-  grounding_confidence: 0.95
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:dd2e4786-f285-5e95-a087-df602857fbf5
-  normalization:
-    normalization_quality: identity
-    normalized_id: CHEBI:17822
-    normalized_label: serine
-    original_id: CHEBI:17822
-    tool: medic-normalizer/1
-  normalized_id: CHEBI:17822
-  normalized_label: serine
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Железа сульфат+Серин
   original_name_ru: Железа сульфат+Серин
   source: RUSSIA
@@ -155177,9 +155132,9 @@
   approval_date: '20080516'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:748411
-    grounded_label: papaverine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:28241
+    grounded_label: papaverine
+    grounding_quality: lexical_exact_surgery
     original_string: Papaverine hydrochloride
     subject_id: MEDICNE:6a73c884-c314-5b93-9ead-52af5e638cd7
   grounding_confidence: 0.9
@@ -155188,12 +155143,12 @@
   mention_id: MEDICNE:6a73c884-c314-5b93-9ead-52af5e638cd7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:748411
-    normalized_label: papaverine hydrochloride
-    original_id: CHEBI:748411
+    normalized_id: CHEBI:28241
+    normalized_label: papaverine
+    original_id: CHEBI:28241
     tool: medic-normalizer/1
-  normalized_id: CHEBI:748411
-  normalized_label: papaverine hydrochloride
+  normalized_id: CHEBI:28241
+  normalized_label: papaverine
   original_literal: Папаверина гидрохлорид
   original_name_ru: Папаверина гидрохлорид
   source: RUSSIA
@@ -159464,9 +159419,9 @@
   approval_date: '20091203'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:31264
-    grounded_label: benzethonium chloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:94725
+    grounded_label: dimethyl-(phenylmethyl)-[2-[2-[4-(2,4,4-trimethylpentan-2-yl)phenoxy]ethoxy]ethyl]ammonium
+    grounding_quality: lexical_exact_surgery
     original_string: Benzethonium chloride
     subject_id: MEDICNE:8583a81f-b2bb-5003-949c-63eae02e3887
   grounding_confidence: 0.9
@@ -159475,12 +159430,12 @@
   mention_id: MEDICNE:8583a81f-b2bb-5003-949c-63eae02e3887
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31264
-    normalized_label: benzethonium chloride
-    original_id: CHEBI:31264
+    normalized_id: CHEBI:94725
+    normalized_label: dimethyl-(phenylmethyl)-[2-[2-[4-(2,4,4-trimethylpentan-2-yl)phenoxy]ethoxy]ethyl]ammonium
+    original_id: CHEBI:94725
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31264
-  normalized_label: benzethonium chloride
+  normalized_id: CHEBI:94725
+  normalized_label: dimethyl-(phenylmethyl)-[2-[2-[4-(2,4,4-trimethylpentan-2-yl)phenoxy]ethoxy]ethyl]ammonium
   original_literal: Бензетония хлорид
   original_name_ru: Бензетония хлорид
   source: RUSSIA
@@ -163185,24 +163140,24 @@
   application_number: ФС-000541
   approval_date: '20130405'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:45652
-    grounded_label: succinylcholine
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:751928
+    grounded_label: dicolinium iodide
+    grounding_quality: lexical_exact_surgery
     original_string: Dicholine succinate
     subject_id: MEDICNE:8400d986-7a94-5e95-b122-3e776c512d32
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:8400d986-7a94-5e95-b122-3e776c512d32
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:45652
-    normalized_label: succinylcholine
-    original_id: CHEBI:45652
+    normalized_id: CHEBI:751928
+    normalized_label: dicolinium iodide
+    original_id: CHEBI:751928
     tool: medic-normalizer/1
-  normalized_id: CHEBI:45652
-  normalized_label: succinylcholine
+  normalized_id: CHEBI:751928
+  normalized_label: dicolinium iodide
   original_literal: Дихолинсукцинат
   original_name_ru: Дихолинсукцинат
   source: RUSSIA
@@ -163341,24 +163296,24 @@
   - ФС-002072
   approval_date: '20130527'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:32138
-    grounded_label: sodium acetate trihydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:32954
+    grounded_label: sodium acetate
+    grounding_quality: lexical_exact_surgery
     original_string: Sodium acetate trihydrate
     subject_id: MEDICNE:fb270343-953e-5a78-8118-05127e5f99b9
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:fb270343-953e-5a78-8118-05127e5f99b9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32138
-    normalized_label: sodium acetate trihydrate
-    original_id: CHEBI:32138
+    normalized_id: CHEBI:32954
+    normalized_label: sodium acetate
+    original_id: CHEBI:32954
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32138
-  normalized_label: sodium acetate trihydrate
+  normalized_id: CHEBI:32954
+  normalized_label: sodium acetate
   original_literal: натрия ацетата тригидрат
   original_name_ru: натрия ацетата тригидрат
   source: RUSSIA
@@ -164710,24 +164665,24 @@
   application_number: ФС-001161
   approval_date: '20150805'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:34582
-    grounded_label: bleomycin sulfate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:22907
+    grounded_label: bleomycin
+    grounding_quality: lexical_exact_surgery
     original_string: bleomycin sulfate
     subject_id: MEDICNE:21829765-d23c-59f7-a8d8-fe1318b3b1d1
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:21829765-d23c-59f7-a8d8-fe1318b3b1d1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:34582
-    normalized_label: bleomycin sulfate
-    original_id: CHEBI:34582
+    normalized_id: CHEBI:22907
+    normalized_label: bleomycin
+    original_id: CHEBI:22907
     tool: medic-normalizer/1
-  normalized_id: CHEBI:34582
-  normalized_label: bleomycin sulfate
+  normalized_id: CHEBI:22907
+  normalized_label: bleomycin
   original_literal: блеомицина сульфат
   original_name_ru: блеомицина сульфат
   source: RUSSIA
@@ -164997,24 +164952,24 @@
   application_number: ФС-001318
   approval_date: '20160128'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:32138
-    grounded_label: sodium acetate trihydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:32954
+    grounded_label: sodium acetate
+    grounding_quality: lexical_exact_surgery
     original_string: Sodium acetate trihydrate
     subject_id: MEDICNE:fb270343-953e-5a78-8118-05127e5f99b9
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:fb270343-953e-5a78-8118-05127e5f99b9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32138
-    normalized_label: sodium acetate trihydrate
-    original_id: CHEBI:32138
+    normalized_id: CHEBI:32954
+    normalized_label: sodium acetate
+    original_id: CHEBI:32954
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32138
-  normalized_label: sodium acetate trihydrate
+  normalized_id: CHEBI:32954
+  normalized_label: sodium acetate
   original_literal: Натрия ацетата тригидрат
   original_name_ru: Натрия ацетата тригидрат
   source: RUSSIA
@@ -166227,9 +166182,9 @@
   approval_date: '20190327'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:759822
-    grounded_label: lutetium chloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:33382
+    grounded_label: lutetium atom
+    grounding_quality: lexical_exact_surgery
     original_string: '[177Lu] Lutetium chloride'
     subject_id: MEDICNE:80ae91ac-df2e-5d18-9620-74271f9b854b
   grounding_confidence: 0.9
@@ -166238,12 +166193,12 @@
   mention_id: MEDICNE:80ae91ac-df2e-5d18-9620-74271f9b854b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:759822
-    normalized_label: lutetium chloride
-    original_id: CHEBI:759822
+    normalized_id: CHEBI:33382
+    normalized_label: lutetium atom
+    original_id: CHEBI:33382
     tool: medic-normalizer/1
-  normalized_id: CHEBI:759822
-  normalized_label: lutetium chloride
+  normalized_id: CHEBI:33382
+  normalized_label: lutetium atom
   original_literal: Лютеция хлорид [177Lu]
   original_name_ru: Лютеция хлорид [177Lu]
   source: RUSSIA
@@ -173047,9 +173002,9 @@
   approval_date: '20111027'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749594
-    grounded_label: methylnaltrexone bromide
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:136007
+    grounded_label: methylnaltrexone
+    grounding_quality: lexical_exact_surgery
     original_string: Methylnaltrexone bromide
     subject_id: MEDICNE:4e400006-51bb-5fa8-bb1b-0d2d00c64938
   grounding_confidence: 0.9
@@ -173058,12 +173013,12 @@
   mention_id: MEDICNE:4e400006-51bb-5fa8-bb1b-0d2d00c64938
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749594
-    normalized_label: methylnaltrexone bromide
-    original_id: CHEBI:749594
+    normalized_id: CHEBI:136007
+    normalized_label: methylnaltrexone
+    original_id: CHEBI:136007
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749594
-  normalized_label: methylnaltrexone bromide
+  normalized_id: CHEBI:136007
+  normalized_label: methylnaltrexone
   original_literal: Метилналтрексона бромид
   original_name_ru: Метилналтрексона бромид
   source: RUSSIA
@@ -174059,24 +174014,24 @@
   application_number: ЛП-001263
   approval_date: '20111124'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:87016
-    grounded_label: eslicarbazepine acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:174358
+    grounded_label: (S)-MHD
+    grounding_quality: lexical_exact_surgery
     original_string: eslicarbazepine acetate
     subject_id: MEDICNE:c4bb25e0-045e-51fe-8423-f46a5b403997
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:c4bb25e0-045e-51fe-8423-f46a5b403997
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:87016
-    normalized_label: eslicarbazepine acetate
-    original_id: CHEBI:87016
+    normalized_id: CHEBI:174358
+    normalized_label: (S)-MHD
+    original_id: CHEBI:174358
     tool: medic-normalizer/1
-  normalized_id: CHEBI:87016
-  normalized_label: eslicarbazepine acetate
+  normalized_id: CHEBI:174358
+  normalized_label: (S)-MHD
   original_literal: эсликарбазепина ацетат
   original_name_ru: эсликарбазепина ацетат
   source: RUSSIA
@@ -178752,9 +178707,9 @@
   approval_date: '20150113'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:79040
-    grounded_label: umeclidinium bromide
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:79041
+    grounded_label: umeclidinium
+    grounding_quality: lexical_exact_surgery
     original_string: Umeclidinium bromide
     subject_id: MEDICNE:50255d69-5e5b-5ae8-948a-16e094edb272
   grounding_confidence: 0.9
@@ -178763,12 +178718,12 @@
   mention_id: MEDICNE:50255d69-5e5b-5ae8-948a-16e094edb272
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:79040
-    normalized_label: umeclidinium bromide
-    original_id: CHEBI:79040
+    normalized_id: CHEBI:79041
+    normalized_label: umeclidinium
+    original_id: CHEBI:79041
     tool: medic-normalizer/1
-  normalized_id: CHEBI:79040
-  normalized_label: umeclidinium bromide
+  normalized_id: CHEBI:79041
+  normalized_label: umeclidinium
   original_literal: Умеклидиния бромид
   original_name_ru: Умеклидиния бромид
   source: RUSSIA
@@ -180273,7 +180228,7 @@
   grounding:
     components:
     - CHEBI:22652
-    - CHEBI:31303
+    - CHEBI:77032
     - CHEBI:3309
     - CHEBI:46195
     - CHEBI:28527
@@ -180461,7 +180416,7 @@
     components:
     - CHEBI:32588
     - CHEBI:86345
-    - CHEBI:32138
+    - CHEBI:32954
     - CHEBI:84997
     - CHEBI:26710
     confidence: 0.9
@@ -181291,11 +181246,11 @@
   approval_date: '20200204'
   grounding:
     components:
-    - CHEBI:90972
+    - CHEBI:749411
     - CHEBI:5147
     confidence: 0.9
-    grounded_id: CHEBI:90972
-    grounded_label: glycopyrronium bromide
+    grounded_id: CHEBI:749411
+    grounded_label: glycopyrronium
     grounding_quality: lexical_exact_surgery
     original_string: Glycopyrronium Bromide + Formoterol
     subject_id: MEDICNE:af2cb435-694d-5e63-864e-c9912d6b29ce
@@ -181305,12 +181260,12 @@
   mention_id: MEDICNE:af2cb435-694d-5e63-864e-c9912d6b29ce
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90972
-    normalized_label: glycopyrronium bromide
-    original_id: CHEBI:90972
+    normalized_id: CHEBI:749411
+    normalized_label: glycopyrronium
+    original_id: CHEBI:749411
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90972
-  normalized_label: glycopyrronium bromide
+  normalized_id: CHEBI:749411
+  normalized_label: glycopyrronium
   original_literal: Гликопиррония бромид+Формотерол
   original_name_ru: Гликопиррония бромид+Формотерол
   source: RUSSIA
@@ -181331,13 +181286,13 @@
   approval_date: '20200602'
   grounding:
     components:
-    - CHEBI:17609
+    - CHEBI:17650
     - CHEBI:6909
     - CHEBI:7488
     - CHEBI:17698
     confidence: 0.9
-    grounded_id: CHEBI:6909
-    grounded_label: metronidazole
+    grounded_id: CHEBI:17650
+    grounded_label: cortisol
     grounding_quality: lexical_exact_surgery
     original_string: Hydrocortisone Acetate + Metronidazole + Natamycin + Chloramphenicol
     subject_id: MEDICNE:24c9a08d-b638-53fc-99a6-a1513282239f
@@ -181347,12 +181302,12 @@
   mention_id: MEDICNE:24c9a08d-b638-53fc-99a6-a1513282239f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6909
-    normalized_label: metronidazole
-    original_id: CHEBI:6909
+    normalized_id: CHEBI:17650
+    normalized_label: cortisol
+    original_id: CHEBI:17650
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6909
-  normalized_label: metronidazole
+  normalized_id: CHEBI:17650
+  normalized_label: cortisol
   original_literal: Гидрокортизона ацетат+Метронидазол+Натамицин+Хлорамфеникол
   original_name_ru: Гидрокортизона ацетат+Метронидазол+Натамицин+Хлорамфеникол
   source: RUSSIA
@@ -181584,11 +181539,11 @@
   approval_date: '20210405'
   grounding:
     components:
-    - CHEBI:46659
+    - CHEBI:5956
     - CHEBI:149226
     confidence: 0.9
-    grounded_id: CHEBI:46659
-    grounded_label: ipratropium bromide
+    grounded_id: CHEBI:5956
+    grounded_label: ipratropium
     grounding_quality: lexical_exact_surgery
     original_string: Ipratropium Bromide + Fenoterol
     subject_id: MEDICNE:5bedcdbd-4b8b-5882-a22c-9123b1ef85fe
@@ -181598,12 +181553,12 @@
   mention_id: MEDICNE:5bedcdbd-4b8b-5882-a22c-9123b1ef85fe
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:46659
-    normalized_label: ipratropium bromide
-    original_id: CHEBI:46659
+    normalized_id: CHEBI:5956
+    normalized_label: ipratropium
+    original_id: CHEBI:5956
     tool: medic-normalizer/1
-  normalized_id: CHEBI:46659
-  normalized_label: ipratropium bromide
+  normalized_id: CHEBI:5956
+  normalized_label: ipratropium
   original_literal: Ипратропия бромид + Фенотерол
   original_name_ru: Ипратропия бромид + Фенотерол
   source: RUSSIA
@@ -183242,24 +183197,24 @@
   application_number: ЛП-№(003552)-(РГ-RU)
   approval_date: '20231031'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:4637
-    grounded_label: diphenhydramine hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:4636
+    grounded_label: diphenhydramine
+    grounding_quality: lexical_exact_surgery
     original_string: diphenhydramine hydrochloride
     subject_id: MEDICNE:f2418c8e-534a-5fe9-a74f-f890761d05fd
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:f2418c8e-534a-5fe9-a74f-f890761d05fd
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4637
-    normalized_label: diphenhydramine hydrochloride
-    original_id: CHEBI:4637
+    normalized_id: CHEBI:4636
+    normalized_label: diphenhydramine
+    original_id: CHEBI:4636
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4637
-  normalized_label: diphenhydramine hydrochloride
+  normalized_id: CHEBI:4636
+  normalized_label: diphenhydramine
   original_literal: дифенгидрамина гидрохлорид
   original_name_ru: дифенгидрамина гидрохлорид
   source: RUSSIA
@@ -183312,24 +183267,24 @@
   application_number: ЛП-№(004433)-(РГ-RU)
   approval_date: '20240126'
   grounding:
-    confidence: 1.0
-    grounded_id: RXCUI:91293
-    grounded_label: naftifine hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:7451
+    grounded_label: naftifine
+    grounding_quality: lexical_exact_surgery
     original_string: naftifine hydrochloride
     subject_id: MEDICNE:19a4e91b-75ce-5493-bf42-eddbd5866b64
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:19a4e91b-75ce-5493-bf42-eddbd5866b64
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:91293
-    normalized_label: naftifine hydrochloride
-    original_id: RXCUI:91293
+    normalized_id: CHEBI:7451
+    normalized_label: naftifine
+    original_id: CHEBI:7451
     tool: medic-normalizer/1
-  normalized_id: RXCUI:91293
-  normalized_label: naftifine hydrochloride
+  normalized_id: CHEBI:7451
+  normalized_label: naftifine
   original_literal: нафтифина гидрохлорид
   original_name_ru: нафтифина гидрохлорид
   source: RUSSIA
@@ -183382,24 +183337,24 @@
   application_number: ЛП-№(005340)-(ГП-RU)
   approval_date: '20250530'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:6716
-    grounded_label: medroxyprogesterone acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:6715
+    grounded_label: medroxyprogesterone
+    grounding_quality: lexical_exact_surgery
     original_string: medroxyprogesterone acetate
     subject_id: MEDICNE:5280a383-3294-52d5-843c-21b4c784bfbc
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:5280a383-3294-52d5-843c-21b4c784bfbc
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6716
-    normalized_label: medroxyprogesterone acetate
-    original_id: CHEBI:6716
+    normalized_id: CHEBI:6715
+    normalized_label: medroxyprogesterone
+    original_id: CHEBI:6715
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6716
-  normalized_label: medroxyprogesterone acetate
+  normalized_id: CHEBI:6715
+  normalized_label: medroxyprogesterone
   original_literal: медроксипрогестерона ацетат
   original_name_ru: медроксипрогестерона ацетат
   source: RUSSIA
@@ -200701,11 +200656,11 @@
   approval_date: '20100610'
   grounding:
     components:
-    - CHEBI:46659
+    - CHEBI:5956
     - CHEBI:2549
     confidence: 0.9
-    grounded_id: CHEBI:46659
-    grounded_label: ipratropium bromide
+    grounded_id: CHEBI:5956
+    grounded_label: ipratropium
     grounding_quality: lexical_exact_surgery
     original_string: Ipratropium Bromide + Salbutamol
     subject_id: MEDICNE:ad517224-3157-5ae2-9778-fc3c0bd37ce2
@@ -200715,12 +200670,12 @@
   mention_id: MEDICNE:ad517224-3157-5ae2-9778-fc3c0bd37ce2
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:46659
-    normalized_label: ipratropium bromide
-    original_id: CHEBI:46659
+    normalized_id: CHEBI:5956
+    normalized_label: ipratropium
+    original_id: CHEBI:5956
     tool: medic-normalizer/1
-  normalized_id: CHEBI:46659
-  normalized_label: ipratropium bromide
+  normalized_id: CHEBI:5956
+  normalized_label: ipratropium
   original_literal: Ипратропия бромид+Сальбутамол
   original_name_ru: Ипратропия бромид+Сальбутамол
   source: RUSSIA
@@ -205211,11 +205166,11 @@
   approval_date: '20070831'
   grounding:
     components:
-    - CHEBI:59033
+    - CHEBI:62088
     - CHEBI:15854
     confidence: 0.9
-    grounded_id: CHEBI:59033
-    grounded_label: metamizole sodium
+    grounded_id: CHEBI:62088
+    grounded_label: metamizole
     grounding_quality: lexical_exact_surgery
     original_string: Metamizole Sodium + Quinine
     subject_id: MEDICNE:bec545bc-2ca2-5489-a095-9a83aa3a5d89
@@ -205225,12 +205180,12 @@
   mention_id: MEDICNE:bec545bc-2ca2-5489-a095-9a83aa3a5d89
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59033
-    normalized_label: metamizole sodium
-    original_id: CHEBI:59033
+    normalized_id: CHEBI:62088
+    normalized_label: metamizole
+    original_id: CHEBI:62088
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59033
-  normalized_label: metamizole sodium
+  normalized_id: CHEBI:62088
+  normalized_label: metamizole
   original_literal: Метамизол натрия+Хинин
   original_name_ru: Метамизол натрия+Хинин
   source: RUSSIA
@@ -208634,7 +208589,7 @@
   grounding:
     components:
     - CHEBI:4470
-    - CHEBI:751529
+    - CHEBI:134806
     - CHEBI:85467
     confidence: 0.9
     grounded_id: CHEBI:4470
@@ -210409,28 +210364,18 @@
   application_number: П N012666/01
   approval_date: '20060811'
   grounding:
-    components:
-    - RXCUI:90176
-    - CHEBI:27470
-    - CHEBI:754405
-    confidence: 0.9
-    grounded_id: RXCUI:90176
-    grounded_label: iron
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Iron Sulfate + Folic Acid + Cyanocobalamin
     subject_id: MEDICNE:af61d09b-7972-5f95-8e31-c48b3037e18a
-  grounding_confidence: 0.9
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:af61d09b-7972-5f95-8e31-c48b3037e18a
-  normalization:
-    normalization_quality: identity
-    normalized_id: RXCUI:90176
-    normalized_label: iron
-    original_id: RXCUI:90176
-    tool: medic-normalizer/1
-  normalized_id: RXCUI:90176
-  normalized_label: iron
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Железа сульфат+Фолиевая кислота+Цианокобаламин
   original_name_ru: Железа сульфат+Фолиевая кислота+Цианокобаламин
   source: RUSSIA
@@ -210677,24 +210622,24 @@
   application_number: П N012724/01
   approval_date: '20100205'
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:9179
-    grounded_label: sodium nitroprusside dihydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:29321
+    grounded_label: sodium nitroprusside
+    grounding_quality: lexical_exact_surgery
     original_string: Sodium nitroprusside dihydrate
     subject_id: MEDICNE:2c84ca12-370b-54c8-95d7-34edcdee4231
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:2c84ca12-370b-54c8-95d7-34edcdee4231
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9179
-    normalized_label: sodium nitroprusside dihydrate
-    original_id: CHEBI:9179
+    normalized_id: CHEBI:29321
+    normalized_label: sodium nitroprusside
+    original_id: CHEBI:29321
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9179
-  normalized_label: sodium nitroprusside dihydrate
+  normalized_id: CHEBI:29321
+  normalized_label: sodium nitroprusside
   original_literal: Нитропруссида натрия дигидрат
   original_name_ru: Нитропруссида натрия дигидрат
   source: RUSSIA
@@ -211268,24 +211213,24 @@
   application_number: П N012966/01
   approval_date: '20120110'
   grounding:
-    confidence: 1.0
-    grounded_id: RXCUI:1926471
-    grounded_label: magnesium orotate dihydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:755773
+    grounded_label: magnesium orotate
+    grounding_quality: lexical_exact_surgery
     original_string: magnesium orotate dihydrate
     subject_id: MEDICNE:5fa375e0-76cf-55cf-a58d-2efe43f6c6bd
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:5fa375e0-76cf-55cf-a58d-2efe43f6c6bd
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:1926471
-    normalized_label: magnesium orotate dihydrate
-    original_id: RXCUI:1926471
+    normalized_id: CHEBI:755773
+    normalized_label: magnesium orotate
+    original_id: CHEBI:755773
     tool: medic-normalizer/1
-  normalized_id: RXCUI:1926471
-  normalized_label: magnesium orotate dihydrate
+  normalized_id: CHEBI:755773
+  normalized_label: magnesium orotate
   original_literal: магния оротата дигидрат
   original_name_ru: магния оротата дигидрат
   source: RUSSIA
@@ -216677,24 +216622,18 @@
   application_number: П N014662/01
   approval_date: '20080721'
   grounding:
-    confidence: 0.9
-    grounded_id: RXCUI:90176
-    grounded_label: iron
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Iron chloride
     subject_id: MEDICNE:372895a3-c364-5d77-81d7-337293d6ad4d
-  grounding_confidence: 0.9
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:372895a3-c364-5d77-81d7-337293d6ad4d
-  normalization:
-    normalization_quality: identity
-    normalized_id: RXCUI:90176
-    normalized_label: iron
-    original_id: RXCUI:90176
-    tool: medic-normalizer/1
-  normalized_id: RXCUI:90176
-  normalized_label: iron
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Железа хлорид
   original_name_ru: Железа хлорид
   source: RUSSIA
@@ -217065,12 +217004,12 @@
   approval_date: '20080918'
   grounding:
     components:
-    - CHEBI:34650
+    - CHEBI:59662
     - CHEBI:63334
     - CHEBI:17698
     confidence: 0.9
-    grounded_id: CHEBI:34650
-    grounded_label: colistimethate sodium
+    grounded_id: CHEBI:59662
+    grounded_label: colistimethate
     grounding_quality: lexical_exact_surgery
     original_string: Colistimethate Sodium + Rolitetracycline + Chloramphenicol
     subject_id: MEDICNE:ff9424ee-f8a3-5e09-ba3c-843a6d0e4e6e
@@ -217080,12 +217019,12 @@
   mention_id: MEDICNE:ff9424ee-f8a3-5e09-ba3c-843a6d0e4e6e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:34650
-    normalized_label: colistimethate sodium
-    original_id: CHEBI:34650
+    normalized_id: CHEBI:59662
+    normalized_label: colistimethate
+    original_id: CHEBI:59662
     tool: medic-normalizer/1
-  normalized_id: CHEBI:34650
-  normalized_label: colistimethate sodium
+  normalized_id: CHEBI:59662
+  normalized_label: colistimethate
   original_literal: Колистиметат натрия+Ролитетрациклин+Хлорамфеникол
   original_name_ru: Колистиметат натрия+Ролитетрациклин+Хлорамфеникол
   source: RUSSIA
@@ -217106,26 +217045,26 @@
   approval_date: '20081010'
   grounding:
     components:
-    - CHEBI:3020
+    - CHEBI:188978
     - CHEBI:30618
-    confidence: 0.85
-    grounded_id: CHEBI:3020
-    grounded_label: benzalkonium chloride
+    confidence: 0.9
+    grounded_id: CHEBI:188978
+    grounded_label: BENZALKONIUM
     grounding_quality: lexical_exact_surgery
     original_string: Benzalkonium chloride + Hypromellose
     subject_id: MEDICNE:f9323f04-2afe-5258-bf8e-f8c2ad5e932e
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:f9323f04-2afe-5258-bf8e-f8c2ad5e932e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3020
-    normalized_label: benzalkonium chloride
-    original_id: CHEBI:3020
+    normalized_id: CHEBI:188978
+    normalized_label: BENZALKONIUM
+    original_id: CHEBI:188978
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3020
-  normalized_label: benzalkonium chloride
+  normalized_id: CHEBI:188978
+  normalized_label: BENZALKONIUM
   original_literal: Бензалкония хлорид+Гипромеллоза
   original_name_ru: Бензалкония хлорид+Гипромеллоза
   source: RUSSIA
@@ -217182,28 +217121,18 @@
   application_number: П N014776/01
   approval_date: '20081208'
   grounding:
-    components:
-    - RXCUI:90176
-    - CHEBI:17822
-    - CHEBI:27470
-    confidence: 0.95
-    grounded_id: CHEBI:17822
-    grounded_label: serine
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Iron Sulfate + Serine + Folic Acid
     subject_id: MEDICNE:26514f43-5e91-5d97-b3f6-3865aec1555e
-  grounding_confidence: 0.95
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:26514f43-5e91-5d97-b3f6-3865aec1555e
-  normalization:
-    normalization_quality: identity
-    normalized_id: CHEBI:17822
-    normalized_label: serine
-    original_id: CHEBI:17822
-    tool: medic-normalizer/1
-  normalized_id: CHEBI:17822
-  normalized_label: serine
+  normalized_id: ''
+  normalized_label: ''
   original_literal: Железа сульфат+Серин+Фолиевая кислота
   original_name_ru: Железа сульфат+Серин+Фолиевая кислота
   source: RUSSIA
@@ -219573,10 +219502,10 @@
   grounding:
     components:
     - CHEBI:116735
-    - CHEBI:32915
+    - CHEBI:32914
     confidence: 0.9
-    grounded_id: CHEBI:32915
-    grounded_label: cetylpyridinium chloride
+    grounded_id: CHEBI:32914
+    grounded_label: cetylpyridinium
     grounding_quality: lexical_exact_surgery
     original_string: Benzocaine + Cetylpyridinium Chloride
     subject_id: MEDICNE:683589e1-7625-56a0-bab6-bab3a78c0230
@@ -219586,12 +219515,12 @@
   mention_id: MEDICNE:683589e1-7625-56a0-bab6-bab3a78c0230
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32915
-    normalized_label: cetylpyridinium chloride
-    original_id: CHEBI:32915
+    normalized_id: CHEBI:32914
+    normalized_label: cetylpyridinium
+    original_id: CHEBI:32914
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32915
-  normalized_label: cetylpyridinium chloride
+  normalized_id: CHEBI:32914
+  normalized_label: cetylpyridinium
   original_literal: Бензокаин+Цетилпиридиния хлорид
   original_name_ru: Бензокаин+Цетилпиридиния хлорид
   source: RUSSIA
@@ -222791,24 +222720,24 @@
   application_number: Р N000083/01
   approval_date: '20110808'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:30961
-    grounded_label: pyridoxine hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:16709
+    grounded_label: pyridoxine
+    grounding_quality: lexical_exact_surgery
     original_string: pyridoxine hydrochloride
     subject_id: MEDICNE:b075f8da-8cff-5aad-b0d3-d1e73dfdf123
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:b075f8da-8cff-5aad-b0d3-d1e73dfdf123
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:30961
-    normalized_label: pyridoxine hydrochloride
-    original_id: CHEBI:30961
+    normalized_id: CHEBI:16709
+    normalized_label: pyridoxine
+    original_id: CHEBI:16709
     tool: medic-normalizer/1
-  normalized_id: CHEBI:30961
-  normalized_label: pyridoxine hydrochloride
+  normalized_id: CHEBI:16709
+  normalized_label: pyridoxine
   original_literal: пиридоксина гидрохлорид
   original_name_ru: пиридоксина гидрохлорид
   source: RUSSIA
@@ -222956,9 +222885,9 @@
   approval_date: '20091209'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:132969
-    grounded_label: 5-aminolevulinic acid hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:17549
+    grounded_label: 5-aminolevulinic acid
+    grounding_quality: lexical_exact_surgery
     original_string: 5-Aminolevulinic acid hydrochloride
     subject_id: MEDICNE:c88935f8-faf8-58b6-8b47-07f652353d72
   grounding_confidence: 0.9
@@ -222967,12 +222896,12 @@
   mention_id: MEDICNE:c88935f8-faf8-58b6-8b47-07f652353d72
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:132969
-    normalized_label: 5-aminolevulinic acid hydrochloride
-    original_id: CHEBI:132969
+    normalized_id: CHEBI:17549
+    normalized_label: 5-aminolevulinic acid
+    original_id: CHEBI:17549
     tool: medic-normalizer/1
-  normalized_id: CHEBI:132969
-  normalized_label: 5-aminolevulinic acid hydrochloride
+  normalized_id: CHEBI:17549
+  normalized_label: 5-aminolevulinic acid
   original_literal: 5-Аминолевулиновой кислоты гидрохлорид
   original_name_ru: 5-Аминолевулиновой кислоты гидрохлорид
   source: RUSSIA
@@ -234173,9 +234102,9 @@
   approval_date: '20110928'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:9399
-    grounded_label: tamsulosin hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:9398
+    grounded_label: tamsulosin
+    grounding_quality: lexical_exact_surgery
     original_string: Tamsulosin hydrochloride
     subject_id: MEDICNE:fdfca247-972c-522f-bb6e-e71ab3da889e
   grounding_confidence: 0.9
@@ -234184,12 +234113,12 @@
   mention_id: MEDICNE:fdfca247-972c-522f-bb6e-e71ab3da889e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9399
-    normalized_label: tamsulosin hydrochloride
-    original_id: CHEBI:9399
+    normalized_id: CHEBI:9398
+    normalized_label: tamsulosin
+    original_id: CHEBI:9398
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9399
-  normalized_label: tamsulosin hydrochloride
+  normalized_id: CHEBI:9398
+  normalized_label: tamsulosin
   original_literal: Тамсулозина гидрохлорид
   original_name_ru: Тамсулозина гидрохлорид
   source: RUSSIA
@@ -234308,8 +234237,8 @@
   approval_date: '20111221'
   grounding:
     confidence: 0.9
-    grounded_id: RXCUI:6574
-    grounded_label: magnesium
+    grounded_id: CHEBI:755772
+    grounded_label: magnesium lactate
     grounding_quality: lexical_exact_surgery
     original_string: Magnesium lactate dihydrate
     subject_id: MEDICNE:dbb20284-8adf-5aaf-b9dc-f6c8c5c30388
@@ -234319,12 +234248,12 @@
   mention_id: MEDICNE:dbb20284-8adf-5aaf-b9dc-f6c8c5c30388
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:6574
-    normalized_label: magnesium
-    original_id: RXCUI:6574
+    normalized_id: CHEBI:755772
+    normalized_label: magnesium lactate
+    original_id: CHEBI:755772
     tool: medic-normalizer/1
-  normalized_id: RXCUI:6574
-  normalized_label: magnesium
+  normalized_id: CHEBI:755772
+  normalized_label: magnesium lactate
   original_literal: Магния лактата дигидрат
   original_name_ru: Магния лактата дигидрат
   source: RUSSIA
@@ -234469,24 +234398,24 @@
   application_number: ФС-000544
   approval_date: '20130408'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:4671
-    grounded_label: dobutamine hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:4670
+    grounded_label: dobutamine
+    grounding_quality: lexical_exact_surgery
     original_string: dobutamine hydrochloride
     subject_id: MEDICNE:f8b3cc95-be5d-5ebc-a83e-2e9c2a129fb1
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   mention_id: MEDICNE:f8b3cc95-be5d-5ebc-a83e-2e9c2a129fb1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4671
-    normalized_label: dobutamine hydrochloride
-    original_id: CHEBI:4671
+    normalized_id: CHEBI:4670
+    normalized_label: dobutamine
+    original_id: CHEBI:4670
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4671
-  normalized_label: dobutamine hydrochloride
+  normalized_id: CHEBI:4670
+  normalized_label: dobutamine
   original_literal: добутамина гидрохлорид
   original_name_ru: добутамина гидрохлорид
   source: RUSSIA

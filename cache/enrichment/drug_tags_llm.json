@@ -35,6 +35,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:10093": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:10100": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -188,6 +192,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:119486": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:119573": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -547,6 +555,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:134806": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:134813": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -604,6 +616,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:134929": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:134936": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -788,6 +804,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:135310": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:135314": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -1131,6 +1151,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:135804": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:135806": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -1156,6 +1180,22 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:135826": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:135829": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:135845": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:135859": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:135862": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -1196,6 +1236,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:135890": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:135894": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -1348,6 +1392,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:135965": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:135968": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -1787,6 +1835,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:15782": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:15843": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -1860,6 +1912,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:16134": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:16137": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -2200,6 +2256,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:169727": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:16973": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -2703,6 +2763,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:18211": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:18222": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -2844,6 +2908,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:188719": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:188978": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -3084,6 +3152,14 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:22256": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:22470": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:22494": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -3559,6 +3635,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:2401": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:240107": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -3708,6 +3788,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:26216": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:2627": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -3959,6 +4043,14 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:27644": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:27662": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:27666": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -4131,6 +4223,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:28502": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:28527": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -4140,6 +4236,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:28548": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:28568": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -4535,9 +4635,17 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:3061": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:30618": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": true
+  },
+  "CHEBI:30659": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
   },
   "CHEBI:3070": {
     "is_metallic_salt": false,
@@ -4848,6 +4956,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:31325": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:3133": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -5411,6 +5523,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:31713": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:31714": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -5424,6 +5540,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:31718": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:3172": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -6075,6 +6195,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:3228": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:32286": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -6255,6 +6379,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:33382": {
+    "is_metallic_salt": true,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:3347": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -6379,6 +6507,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:34521": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:34523": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -6483,6 +6615,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:34791": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:3480": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -6528,6 +6664,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:3490": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:3491": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -6703,6 +6843,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:355510": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:3558": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -6744,6 +6888,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:35778": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:35854": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -6812,6 +6960,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:3645": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:3646": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -7283,6 +7435,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:41462": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:41500": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -7307,6 +7463,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:41934": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:41948": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -7320,6 +7480,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:421707": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:42266": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -7340,6 +7504,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:42797": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:42820": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -7711,6 +7879,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:4638": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:4639": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -7812,6 +7984,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:4703": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:4706": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -8123,6 +8299,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:487869": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:4882": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -8172,6 +8352,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:4903": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:4904": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -8455,6 +8639,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:50580": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:5062": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -8579,6 +8767,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:50851": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:50854": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -8687,6 +8879,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:51043": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:51044": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -8696,6 +8892,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:51063": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:51066": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -8776,6 +8976,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:51230": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:51235": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -9167,6 +9371,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:5520": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:5521": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -9215,6 +9423,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:5543": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:554446": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -9239,6 +9451,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:5555": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:5556": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -9260,6 +9476,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:560555": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:5612": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -9363,6 +9583,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:584020": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:5847": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -9439,6 +9663,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:59170": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:59171": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -9448,6 +9676,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:59204": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:59213": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -9575,7 +9807,15 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:59662": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:59664": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:59692": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -9663,7 +9903,15 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:599928": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:600103": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:6005": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -9723,6 +9971,14 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:60652": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:60654": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:6067": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -9756,6 +10012,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:60800": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:60802": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -9812,6 +10072,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:61176": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:61203": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -9876,6 +10140,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:62312": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:62932": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -10231,6 +10499,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": true
   },
+  "CHEBI:6431": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:64310": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -10307,6 +10579,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:6441": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:6442": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -10344,6 +10620,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:64628": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:64703": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -10487,6 +10767,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:66889": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:66895": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -10599,6 +10883,14 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:6746": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:6752": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:6753": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -10636,6 +10928,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:6775": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:6780": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -10699,6 +10995,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:6817": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:6818": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -10728,6 +11028,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:6825": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:6827": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -10915,6 +11219,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:6897": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:6899": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -10952,6 +11260,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:6917": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:6919": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -10996,6 +11308,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:6954": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:6958": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -11495,6 +11811,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:747559": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:7476": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -11527,6 +11847,14 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:747921": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:747960": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:747972": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -11544,6 +11872,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:748025": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:748028": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -11655,6 +11987,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:748533": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:748559": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -11735,6 +12071,18 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:748891": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:748901": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:748914": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:748916": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -11756,6 +12104,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:748993": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:748997": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -11824,6 +12176,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:749151": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:749177": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -12283,6 +12639,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:749344": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:749345": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -12475,11 +12835,31 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:749400": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:749401": {
+    "is_metallic_salt": true,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:749405": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:749409": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:749410": {
     "is_metallic_salt": true,
     "is_no_therapeutic_value": false
   },
   "CHEBI:749411": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:749412": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -13000,6 +13380,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:749579": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:749580": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -13623,6 +14007,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:750784": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:7508": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -13743,6 +14131,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:751928": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:751938": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -13860,6 +14252,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:75283": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:752856": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -14599,6 +14995,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:754910": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:754929": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -14736,6 +15136,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:755141": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:755142": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -15031,6 +15435,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:755673": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:755674": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -15275,6 +15683,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:756005": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:756031": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -15455,6 +15867,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:756410": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:756412": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -15575,6 +15991,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:756604": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:756608": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -15663,6 +16083,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:756737": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:756738": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -15692,6 +16116,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:756835": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:756901": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -16407,6 +16835,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:757924": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:757931": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -16605,6 +17037,10 @@
   },
   "CHEBI:758390": {
     "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:758406": {
+    "is_metallic_salt": true,
     "is_no_therapeutic_value": false
   },
   "CHEBI:758410": {
@@ -16971,6 +17407,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:759884": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:759885": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -17104,6 +17544,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:760342": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:760349": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -17619,6 +18063,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:7954": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:7955": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -17727,6 +18175,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:8067": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:8068": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -17772,6 +18224,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:8107": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:81496": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -17847,6 +18303,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:8230": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:8231": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -17872,6 +18332,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:8242": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:8245": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -18275,6 +18739,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:8491": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:8492": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -18284,6 +18752,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:8494": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:8497": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -18703,6 +19175,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:8872": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:8874": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -18775,6 +19251,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:9073": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:90841": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -18816,6 +19296,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:90877": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:90879": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -18907,11 +19391,19 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:9118": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:9122": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
   "CHEBI:9123": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:91231": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -19463,6 +19955,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:94725": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:94731": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -19539,6 +20035,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:9536": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:9537": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -19575,11 +20075,19 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:9587": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:9588": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
   "CHEBI:9589": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:9598": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -19604,6 +20112,10 @@
     "is_no_therapeutic_value": false
   },
   "CHEBI:9609": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:9611": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -19691,6 +20203,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:9701": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:9703": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -19751,7 +20267,15 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "CHEBI:9763": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "CHEBI:9765": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "CHEBI:9774": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -20147,6 +20671,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "DRON:00011813": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "DRON:00011824": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -20168,6 +20696,10 @@
     "is_no_therapeutic_value": false
   },
   "DRON:00012339": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "DRON:00012478": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -20200,6 +20732,10 @@
     "is_no_therapeutic_value": false
   },
   "DRON:00013042": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "DRON:00013140": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -20240,6 +20776,10 @@
     "is_no_therapeutic_value": false
   },
   "DRON:00014060": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "DRON:00014107": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -20299,6 +20839,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "DRON:00016914": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "DRON:00016952": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -20308,6 +20852,10 @@
     "is_no_therapeutic_value": false
   },
   "DRON:00017166": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "DRON:00017208": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -20424,6 +20972,10 @@
     "is_no_therapeutic_value": false
   },
   "DRON:00019004": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "DRON:00019012": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -20912,6 +21464,10 @@
     "is_no_therapeutic_value": false
   },
   "DRON:00965870": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "DRON:00965871": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
@@ -26059,6 +26615,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "RXCUI:10454": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "RXCUI:104592": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -27627,6 +28187,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "RXCUI:25138": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "RXCUI:25188": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -28675,6 +29239,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "RXCUI:34119": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "RXCUI:343262": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -29247,6 +29815,10 @@
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },
+  "RXCUI:7512": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
   "RXCUI:7880": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
@@ -29256,6 +29828,10 @@
     "is_no_therapeutic_value": false
   },
   "RXCUI:797752": {
+    "is_metallic_salt": false,
+    "is_no_therapeutic_value": false
+  },
+  "RXCUI:7980": {
     "is_metallic_salt": false,
     "is_no_therapeutic_value": false
   },

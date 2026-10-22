@@ -2044,27 +2044,27 @@
   approval_date: '19610101'
   grounding:
     components:
-    - RXCUI:203168
+    - CHEBI:2666
     - CHEBI:28940
-    confidence: 1.0
-    grounded_id: RXCUI:203168
-    grounded_label: amitriptyline hydrochloride
+    confidence: 0.9
+    grounded_id: CHEBI:2666
+    grounded_label: amitriptyline
     grounding_quality: lexical_exact_surgery
     original_string: Amitriptyline Hydrochloride 10/25mg Tablet & 10mg/cc
     subject_id: MEDICNE:9cfac734-aad5-5a61-ad4f-0a0e12443e2f
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Anti-depressant.
   mention_id: MEDICNE:9cfac734-aad5-5a61-ad4f-0a0e12443e2f
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:203168
-    normalized_label: amitriptyline hydrochloride
-    original_id: RXCUI:203168
+    normalized_id: CHEBI:2666
+    normalized_label: amitriptyline
+    original_id: CHEBI:2666
     tool: medic-normalizer/1
-  normalized_id: RXCUI:203168
-  normalized_label: amitriptyline hydrochloride
+  normalized_id: CHEBI:2666
+  normalized_label: amitriptyline
   original_literal: Amitriptyline Hydrochloride 10/25mg Tablet & 10mg/cc
   snippet: Anti-depressant.
   snippets:
@@ -2167,9 +2167,9 @@
   approval_date: '19610101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:31963
-    grounded_label: Paramethasone acetate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:7922
+    grounded_label: Paramethasone
+    grounding_quality: lexical_exact_surgery
     original_string: Paramethasone Acetate
     subject_id: MEDICNE:c4f4dd57-19fc-5173-83f8-fc2d3b2ed122
   grounding_confidence: 0.9
@@ -2179,12 +2179,12 @@
   mention_id: MEDICNE:c4f4dd57-19fc-5173-83f8-fc2d3b2ed122
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31963
-    normalized_label: Paramethasone acetate
-    original_id: CHEBI:31963
+    normalized_id: CHEBI:7922
+    normalized_label: Paramethasone
+    original_id: CHEBI:7922
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31963
-  normalized_label: Paramethasone acetate
+  normalized_id: CHEBI:7922
+  normalized_label: Paramethasone
   original_literal: Paramethasone Acetate
   snippet: Corticosteroid.
   snippets:
@@ -2257,9 +2257,9 @@
   approval_date: '19610101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:8688
-    grounded_label: Pyrvinium pamoate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:8687
+    grounded_label: pyrvinium
+    grounding_quality: lexical_exact_surgery
     original_string: Pyrvinium Pamoate
     subject_id: MEDICNE:79bf8ac7-04a7-570a-b382-8c77b3d91487
   grounding_confidence: 0.9
@@ -2269,12 +2269,12 @@
   mention_id: MEDICNE:79bf8ac7-04a7-570a-b382-8c77b3d91487
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8688
-    normalized_label: Pyrvinium pamoate
-    original_id: CHEBI:8688
+    normalized_id: CHEBI:8687
+    normalized_label: pyrvinium
+    original_id: CHEBI:8687
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8688
-  normalized_label: Pyrvinium pamoate
+  normalized_id: CHEBI:8687
+  normalized_label: pyrvinium
   original_literal: Pyrvinium Pamoate
   snippet: Anthelmintic.
   snippets:
@@ -3430,13 +3430,13 @@
 - alternate_ids: []
   approval_date: '19610101'
   grounding:
-    confidence: 0.765
+    confidence: 0.9
     grounded_id: CHEBI:8397
     grounded_label: Prenylamine
-    grounding_quality: lexical_exact_normalized
+    grounding_quality: lexical_exact_surgery
     original_string: Prenylamine Lactate
     subject_id: MEDICNE:a5318b4f-06ea-5ad9-8278-4548b4999611
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Coronary vasodilator.
@@ -5690,25 +5690,25 @@
 - alternate_ids: []
   approval_date: '19610101'
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:5312
-    grounded_label: gentamicin sulfate
-    grounding_quality: lexical_exact_normalized
+    confidence: 0.9
+    grounded_id: CHEBI:759884
+    grounded_label: gentamicin
+    grounding_quality: lexical_exact_surgery
     original_string: Gentamicin Sulphate
     subject_id: MEDICNE:b587787d-0693-596c-81f1-179772f4fecf
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Urinary tract infection.
   mention_id: MEDICNE:b587787d-0693-596c-81f1-179772f4fecf
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:5312
-    normalized_label: gentamicin sulfate
-    original_id: CHEBI:5312
+    normalized_id: CHEBI:759884
+    normalized_label: gentamicin
+    original_id: CHEBI:759884
     tool: medic-normalizer/1
-  normalized_id: CHEBI:5312
-  normalized_label: gentamicin sulfate
+  normalized_id: CHEBI:759884
+  normalized_label: gentamicin
   original_literal: Gentamicin Sulphate
   snippet: Urinary tract infection.
   snippets:
@@ -7177,25 +7177,25 @@
 - alternate_ids: []
   approval_date: '19610101'
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:756121
-    grounded_label: isoproterenol sulfate
-    grounding_quality: lexical_exact_normalized
+    confidence: 0.9
+    grounded_id: CHEBI:64317
+    grounded_label: isoprenaline
+    grounding_quality: lexical_exact_surgery
     original_string: Isoprenaline Sulphate
     subject_id: MEDICNE:aff094da-5294-5ad5-b4ac-ef1edf412407
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Cardiac drug.
   mention_id: MEDICNE:aff094da-5294-5ad5-b4ac-ef1edf412407
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:756121
-    normalized_label: isoproterenol sulfate
-    original_id: CHEBI:756121
+    normalized_id: CHEBI:64317
+    normalized_label: isoprenaline
+    original_id: CHEBI:64317
     tool: medic-normalizer/1
-  normalized_id: CHEBI:756121
-  normalized_label: isoproterenol sulfate
+  normalized_id: CHEBI:64317
+  normalized_label: isoprenaline
   original_literal: Isoprenaline Sulphate
   snippet: Cardiac drug.
   snippets:
@@ -7330,9 +7330,9 @@
   approval_date: '19610101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:9496
-    grounded_label: Tetramisole hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:77289
+    grounded_label: tetramisole
+    grounding_quality: lexical_exact_surgery
     original_string: Tetramisole Hydrochloride
     subject_id: MEDICNE:35e03213-6e09-5215-946b-3cca120a6332
   grounding_confidence: 0.9
@@ -7342,12 +7342,12 @@
   mention_id: MEDICNE:35e03213-6e09-5215-946b-3cca120a6332
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9496
-    normalized_label: Tetramisole hydrochloride
-    original_id: CHEBI:9496
+    normalized_id: CHEBI:77289
+    normalized_label: tetramisole
+    original_id: CHEBI:77289
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9496
-  normalized_label: Tetramisole hydrochloride
+  normalized_id: CHEBI:77289
+  normalized_label: tetramisole
   original_literal: Tetramisole Hydrochloride
   snippet: Anthelmintic.
   snippets:
@@ -8225,9 +8225,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:650657
-    grounded_label: ketamine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:6121
+    grounded_label: ketamine
+    grounding_quality: lexical_exact_surgery
     original_string: Ketamine Hydrochloride
     subject_id: MEDICNE:54375e83-905a-5c74-bbf5-51c538046e71
   grounding_confidence: 0.9
@@ -8237,12 +8237,12 @@
   mention_id: MEDICNE:54375e83-905a-5c74-bbf5-51c538046e71
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:650657
-    normalized_label: ketamine hydrochloride
-    original_id: CHEBI:650657
+    normalized_id: CHEBI:6121
+    normalized_label: ketamine
+    original_id: CHEBI:6121
     tool: medic-normalizer/1
-  normalized_id: CHEBI:650657
-  normalized_label: ketamine hydrochloride
+  normalized_id: CHEBI:6121
+  normalized_label: ketamine
   original_literal: Ketamine Hydrochloride
   snippet: Anaesthetic agent.
   snippets:
@@ -8695,25 +8695,25 @@
 - alternate_ids: []
   approval_date: '19710101'
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:59729
-    grounded_label: fenfluramine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    confidence: 0.9
+    grounded_id: CHEBI:5000
+    grounded_label: fenfluramine
+    grounding_quality: lexical_exact_surgery
     original_string: Fenfluramine Hcl
     subject_id: MEDICNE:0822f6e7-8f01-5d58-955c-24d83e8246d5
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Anti-obesity drug.
   mention_id: MEDICNE:0822f6e7-8f01-5d58-955c-24d83e8246d5
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59729
-    normalized_label: fenfluramine hydrochloride
-    original_id: CHEBI:59729
+    normalized_id: CHEBI:5000
+    normalized_label: fenfluramine
+    original_id: CHEBI:5000
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59729
-  normalized_label: fenfluramine hydrochloride
+  normalized_id: CHEBI:5000
+  normalized_label: fenfluramine
   original_literal: Fenfluramine Hcl
   snippet: Anti-obesity drug.
   snippets:
@@ -8965,25 +8965,25 @@
 - alternate_ids: []
   approval_date: '19710101'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:4711
-    grounded_label: Doxepin Hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:4710
+    grounded_label: doxepin
+    grounding_quality: lexical_exact_surgery
     original_string: Doxepin Hydrochloride
     subject_id: MEDICNE:8eb78a44-5584-59ca-bf8f-3564ee251b8c
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Psychotic drug.
   mention_id: MEDICNE:8eb78a44-5584-59ca-bf8f-3564ee251b8c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4711
-    normalized_label: Doxepin Hydrochloride
-    original_id: CHEBI:4711
+    normalized_id: CHEBI:4710
+    normalized_label: doxepin
+    original_id: CHEBI:4710
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4711
-  normalized_label: Doxepin Hydrochloride
+  normalized_id: CHEBI:4710
+  normalized_label: doxepin
   original_literal: Doxepin Hydrochloride
   snippet: Psychotic drug.
   snippets:
@@ -8996,9 +8996,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:59171
-    grounded_label: biperiden hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:3112
+    grounded_label: biperiden
+    grounding_quality: lexical_exact_surgery
     original_string: Biperiden Hydrochloride
     subject_id: MEDICNE:cb8c0c54-f688-58f4-bb72-b78063030046
   grounding_confidence: 0.9
@@ -9008,12 +9008,12 @@
   mention_id: MEDICNE:cb8c0c54-f688-58f4-bb72-b78063030046
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59171
-    normalized_label: biperiden hydrochloride
-    original_id: CHEBI:59171
+    normalized_id: CHEBI:3112
+    normalized_label: biperiden
+    original_id: CHEBI:3112
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59171
-  normalized_label: biperiden hydrochloride
+  normalized_id: CHEBI:3112
+  normalized_label: biperiden
   original_literal: Biperiden Hydrochloride
   snippet: Parkinsonism.
   snippets:
@@ -9075,9 +9075,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749236
-    grounded_label: bupivacaine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:3215
+    grounded_label: bupivacaine
+    grounding_quality: lexical_exact_surgery
     original_string: Bupivacaine Hydrochloride
     subject_id: MEDICNE:f6a50152-8ace-5a58-ab66-80801068858f
   grounding_confidence: 0.9
@@ -9087,12 +9087,12 @@
   mention_id: MEDICNE:f6a50152-8ace-5a58-ab66-80801068858f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749236
-    normalized_label: bupivacaine hydrochloride
-    original_id: CHEBI:749236
+    normalized_id: CHEBI:3215
+    normalized_label: bupivacaine
+    original_id: CHEBI:3215
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749236
-  normalized_label: bupivacaine hydrochloride
+  normalized_id: CHEBI:3215
+  normalized_label: bupivacaine
   original_literal: Bupivacaine Hydrochloride
   snippet: Anaesthetic.
   snippets:
@@ -9555,9 +9555,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:2619
-    grounded_label: amantadine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:2618
+    grounded_label: amantadine
+    grounding_quality: lexical_exact_surgery
     original_string: Amantadine Hydrochloride
     subject_id: MEDICNE:50787389-51bf-5a7c-92a1-0c3c01a14a4b
   grounding_confidence: 0.9
@@ -9567,12 +9567,12 @@
   mention_id: MEDICNE:50787389-51bf-5a7c-92a1-0c3c01a14a4b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:2619
-    normalized_label: amantadine hydrochloride
-    original_id: CHEBI:2619
+    normalized_id: CHEBI:2618
+    normalized_label: amantadine
+    original_id: CHEBI:2618
     tool: medic-normalizer/1
-  normalized_id: CHEBI:2619
-  normalized_label: amantadine hydrochloride
+  normalized_id: CHEBI:2618
+  normalized_label: amantadine
   original_literal: Amantadine Hydrochloride
   snippet: Parkinsonism.
   snippets:
@@ -9815,9 +9815,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:754961
-    grounded_label: ethacridine lactate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:135032
+    grounded_label: ethacridine
+    grounding_quality: lexical_exact_surgery
     original_string: Ethacridine Lactate
     subject_id: MEDICNE:8ed7c9fb-88bb-50d1-9c31-3de039f46dc9
   grounding_confidence: 0.9
@@ -9827,12 +9827,12 @@
   mention_id: MEDICNE:8ed7c9fb-88bb-50d1-9c31-3de039f46dc9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:754961
-    normalized_label: ethacridine lactate
-    original_id: CHEBI:754961
+    normalized_id: CHEBI:135032
+    normalized_label: ethacridine
+    original_id: CHEBI:135032
     tool: medic-normalizer/1
-  normalized_id: CHEBI:754961
-  normalized_label: ethacridine lactate
+  normalized_id: CHEBI:135032
+  normalized_label: ethacridine
   original_literal: Ethacridine Lactate
   snippet: Anti-diarrhoeal agent.
   snippets:
@@ -10099,9 +10099,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:31949
-    grounded_label: oxprenolol hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:747559
+    grounded_label: oxprenolol
+    grounding_quality: lexical_exact_surgery
     original_string: Oxprenolol Hydrochloride
     subject_id: MEDICNE:dfc4d58d-23c1-56c0-b8f3-f51d208e41dc
   grounding_confidence: 0.9
@@ -10111,12 +10111,12 @@
   mention_id: MEDICNE:dfc4d58d-23c1-56c0-b8f3-f51d208e41dc
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31949
-    normalized_label: oxprenolol hydrochloride
-    original_id: CHEBI:31949
+    normalized_id: CHEBI:747559
+    normalized_label: oxprenolol
+    original_id: CHEBI:747559
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31949
-  normalized_label: oxprenolol hydrochloride
+  normalized_id: CHEBI:747559
+  normalized_label: oxprenolol
   original_literal: Oxprenolol Hydrochloride
   snippet: Beta-blocker.
   snippets:
@@ -10734,9 +10734,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:31351
-    grounded_label: Carbenoxolone sodium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:41462
+    grounded_label: CARBENOXOLONE
+    grounding_quality: lexical_exact_surgery
     original_string: Carbenoxolone Sodium
     subject_id: MEDICNE:fbd8190a-5eda-5f6c-8d76-3f6279b4f4f1
   grounding_confidence: 0.9
@@ -10746,12 +10746,12 @@
   mention_id: MEDICNE:fbd8190a-5eda-5f6c-8d76-3f6279b4f4f1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31351
-    normalized_label: Carbenoxolone sodium
-    original_id: CHEBI:31351
+    normalized_id: CHEBI:41462
+    normalized_label: CARBENOXOLONE
+    original_id: CHEBI:41462
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31351
-  normalized_label: Carbenoxolone sodium
+  normalized_id: CHEBI:41462
+  normalized_label: CARBENOXOLONE
   original_literal: Carbenoxolone Sodium
   snippet: Gastric ulcer.
   snippets:
@@ -13200,9 +13200,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:32288
-    grounded_label: Valethamate bromide
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:135303
+    grounded_label: valethamate
+    grounding_quality: lexical_exact_surgery
     original_string: Valethamate Bromide
     subject_id: MEDICNE:4368ed77-7565-5c98-8944-3895d37a8d58
   grounding_confidence: 0.9
@@ -13212,12 +13212,12 @@
   mention_id: MEDICNE:4368ed77-7565-5c98-8944-3895d37a8d58
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:32288
-    normalized_label: Valethamate bromide
-    original_id: CHEBI:32288
+    normalized_id: CHEBI:135303
+    normalized_label: valethamate
+    original_id: CHEBI:135303
     tool: medic-normalizer/1
-  normalized_id: CHEBI:32288
-  normalized_label: Valethamate bromide
+  normalized_id: CHEBI:135303
+  normalized_label: valethamate
   original_literal: Valethamate Bromide
   snippet: ''
   snippets: []
@@ -13625,9 +13625,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:31519
-    grounded_label: dothiepin hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:36798
+    grounded_label: dothiepin
+    grounding_quality: lexical_exact_surgery
     original_string: Dothiepin Hydrochloride
     subject_id: MEDICNE:d062fb3b-7a99-58b2-9a08-d93cbae6b60e
   grounding_confidence: 0.9
@@ -13638,12 +13638,12 @@
   mention_id: MEDICNE:d062fb3b-7a99-58b2-9a08-d93cbae6b60e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31519
-    normalized_label: dothiepin hydrochloride
-    original_id: CHEBI:31519
+    normalized_id: CHEBI:36798
+    normalized_label: dothiepin
+    original_id: CHEBI:36798
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31519
-  normalized_label: dothiepin hydrochloride
+  normalized_id: CHEBI:36798
+  normalized_label: dothiepin
   original_literal: Dothiepin Hydrochloride
   snippet: Anti depressant- indicated in the treatment of psychotic depression, neurotic
     depression, anxiety, depression.
@@ -13905,9 +13905,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:756120
-    grounded_label: doxapram hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:681848
+    grounded_label: doxapram
+    grounding_quality: lexical_exact_surgery
     original_string: Doxapram Hydrochloride
     subject_id: MEDICNE:f7e8e44d-8dfc-53fe-bb6c-f97ede5e9c45
   grounding_confidence: 0.9
@@ -13918,12 +13918,12 @@
   mention_id: MEDICNE:f7e8e44d-8dfc-53fe-bb6c-f97ede5e9c45
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:756120
-    normalized_label: doxapram hydrochloride
-    original_id: CHEBI:756120
+    normalized_id: CHEBI:681848
+    normalized_label: doxapram
+    original_id: CHEBI:681848
     tool: medic-normalizer/1
-  normalized_id: CHEBI:756120
-  normalized_label: doxapram hydrochloride
+  normalized_id: CHEBI:681848
+  normalized_label: doxapram
   original_literal: Doxapram Hydrochloride
   snippet: Respiratory stimulant- for the treatment of post-operative respiratory
     depression and respiratory depression due to poisoning.
@@ -17004,9 +17004,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:9397
-    grounded_label: tamoxifen citrate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:41774
+    grounded_label: tamoxifen
+    grounding_quality: lexical_exact_surgery
     original_string: Tamoxifen Citrate
     subject_id: MEDICNE:9d819b49-feeb-5c18-8959-d19e446dc283
   grounding_confidence: 0.9
@@ -17016,12 +17016,12 @@
   mention_id: MEDICNE:9d819b49-feeb-5c18-8959-d19e446dc283
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9397
-    normalized_label: tamoxifen citrate
-    original_id: CHEBI:9397
+    normalized_id: CHEBI:41774
+    normalized_label: tamoxifen
+    original_id: CHEBI:41774
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9397
-  normalized_label: tamoxifen citrate
+  normalized_id: CHEBI:41774
+  normalized_label: tamoxifen
   original_literal: Tamoxifen Citrate
   snippet: Breast cancer in pre & post menopausal women.
   snippets:
@@ -17257,9 +17257,9 @@
   approval_date: '19710101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:52065
-    grounded_label: methicillin sodium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:6827
+    grounded_label: methicillin
+    grounding_quality: lexical_exact_surgery
     original_string: Methicillin Sodium
     subject_id: MEDICNE:6d98b504-e183-550b-8859-2d2761db12fe
   grounding_confidence: 0.9
@@ -17269,12 +17269,12 @@
   mention_id: MEDICNE:6d98b504-e183-550b-8859-2d2761db12fe
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:52065
-    normalized_label: methicillin sodium
-    original_id: CHEBI:52065
+    normalized_id: CHEBI:6827
+    normalized_label: methicillin
+    original_id: CHEBI:6827
     tool: medic-normalizer/1
-  normalized_id: CHEBI:52065
-  normalized_label: methicillin sodium
+  normalized_id: CHEBI:6827
+  normalized_label: methicillin
   original_literal: Methicillin Sodium
   snippet: Antibiotic- indicate in the
   snippets:
@@ -17818,9 +17818,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:756083
-    grounded_label: sisomicin sulfate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:9169
+    grounded_label: sisomycin
+    grounding_quality: lexical_exact_surgery
     original_string: Sisomicin Sulfate
     subject_id: MEDICNE:978b714e-b5b7-5864-9c60-dcd68cd35e20
   grounding_confidence: 0.9
@@ -17831,12 +17831,12 @@
   mention_id: MEDICNE:978b714e-b5b7-5864-9c60-dcd68cd35e20
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:756083
-    normalized_label: sisomicin sulfate
-    original_id: CHEBI:756083
+    normalized_id: CHEBI:9169
+    normalized_label: sisomycin
+    original_id: CHEBI:9169
     tool: medic-normalizer/1
-  normalized_id: CHEBI:756083
-  normalized_label: sisomicin sulfate
+  normalized_id: CHEBI:9169
+  normalized_label: sisomycin
   original_literal: Sisomicin Sulfate
   snippet: Aminoglycoside antibiotic- Indicated in the treatment of the systemic and
     local
@@ -18148,9 +18148,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:6906
-    grounded_label: Metoprolol tartrate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:6904
+    grounded_label: metoprolol
+    grounding_quality: lexical_exact_surgery
     original_string: Metoprolol Tartrate
     subject_id: MEDICNE:6e53f4df-a1b4-549a-81c9-66147efeaaf1
   grounding_confidence: 0.9
@@ -18160,12 +18160,12 @@
   mention_id: MEDICNE:6e53f4df-a1b4-549a-81c9-66147efeaaf1
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6906
-    normalized_label: Metoprolol tartrate
-    original_id: CHEBI:6906
+    normalized_id: CHEBI:6904
+    normalized_label: metoprolol
+    original_id: CHEBI:6904
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6906
-  normalized_label: Metoprolol tartrate
+  normalized_id: CHEBI:6904
+  normalized_label: metoprolol
   original_literal: Metoprolol Tartrate
   snippet: Antihypertensive agent- Indicated in the treatment of hypertension.
   snippets:
@@ -19501,9 +19501,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:50362
-    grounded_label: cimetidine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:3699
+    grounded_label: cimetidine
+    grounding_quality: lexical_exact_surgery
     original_string: Cimetidine Hydrochloride
     subject_id: MEDICNE:dc7d6ac0-b800-5dda-b83e-0e52b724a74c
   grounding_confidence: 0.9
@@ -19513,12 +19513,12 @@
   mention_id: MEDICNE:dc7d6ac0-b800-5dda-b83e-0e52b724a74c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:50362
-    normalized_label: cimetidine hydrochloride
-    original_id: CHEBI:50362
+    normalized_id: CHEBI:3699
+    normalized_label: cimetidine
+    original_id: CHEBI:3699
     tool: medic-normalizer/1
-  normalized_id: CHEBI:50362
-  normalized_label: cimetidine hydrochloride
+  normalized_id: CHEBI:3699
+  normalized_label: cimetidine
   original_literal: Cimetidine Hydrochloride
   snippet: ''
   snippets: []
@@ -19612,9 +19612,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:756153
-    grounded_label: spectinomycin hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:9215
+    grounded_label: spectinomycin
+    grounding_quality: lexical_exact_surgery
     original_string: Spectinomycin Hydrochloride
     subject_id: MEDICNE:eec566db-5f46-5d2f-87af-f6b20f00489a
   grounding_confidence: 0.9
@@ -19626,12 +19626,12 @@
   mention_id: MEDICNE:eec566db-5f46-5d2f-87af-f6b20f00489a
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:756153
-    normalized_label: spectinomycin hydrochloride
-    original_id: CHEBI:756153
+    normalized_id: CHEBI:9215
+    normalized_label: spectinomycin
+    original_id: CHEBI:9215
     tool: medic-normalizer/1
-  normalized_id: CHEBI:756153
-  normalized_label: spectinomycin hydrochloride
+  normalized_id: CHEBI:9215
+  normalized_label: spectinomycin
   original_literal: Spectinomycin Hydrochloride
   snippet: Anti gonorrheal agent- Indicated in the treatment of acute gonorrheal urethritis
     & proctitis in male and acute gonorrheal cervicitis & proctitis in females.
@@ -20841,9 +20841,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:31522
-    grounded_label: Doxorubicin hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:28748
+    grounded_label: doxorubicin
+    grounding_quality: lexical_exact_surgery
     original_string: Doxorubicin Hydrochloride
     subject_id: MEDICNE:5398d07f-b4cb-587e-9dcf-c2b50633ceba
   grounding_confidence: 0.9
@@ -20853,12 +20853,12 @@
   mention_id: MEDICNE:5398d07f-b4cb-587e-9dcf-c2b50633ceba
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31522
-    normalized_label: Doxorubicin hydrochloride
-    original_id: CHEBI:31522
+    normalized_id: CHEBI:28748
+    normalized_label: doxorubicin
+    original_id: CHEBI:28748
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31522
-  normalized_label: Doxorubicin hydrochloride
+  normalized_id: CHEBI:28748
+  normalized_label: doxorubicin
   original_literal: Doxorubicin Hydrochloride
   snippet: ''
   snippets: []
@@ -21126,9 +21126,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749321
-    grounded_label: articaine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:748399
+    grounded_label: articaine
+    grounding_quality: lexical_exact_surgery
     original_string: Articaine Hydrochloride
     subject_id: MEDICNE:5c17b447-6f0d-5e4e-8a5a-5412b97f4161
   grounding_confidence: 0.9
@@ -21139,12 +21139,12 @@
   mention_id: MEDICNE:5c17b447-6f0d-5e4e-8a5a-5412b97f4161
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749321
-    normalized_label: articaine hydrochloride
-    original_id: CHEBI:749321
+    normalized_id: CHEBI:748399
+    normalized_label: articaine
+    original_id: CHEBI:748399
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749321
-  normalized_label: articaine hydrochloride
+  normalized_id: CHEBI:748399
+  normalized_label: articaine
   original_literal: Articaine Hydrochloride
   snippet: Local anaesthetic agent- Indicated for spinal infiltration, dental surgical
     & epidural anaesthesia.
@@ -21264,9 +21264,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:751042
-    grounded_label: reproterol hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:135612
+    grounded_label: reproterol
+    grounding_quality: lexical_exact_surgery
     original_string: Reproterol Hydrochloride
     subject_id: MEDICNE:447349ad-d177-5c11-8f35-0ee6d0b71ac8
   grounding_confidence: 0.9
@@ -21277,12 +21277,12 @@
   mention_id: MEDICNE:447349ad-d177-5c11-8f35-0ee6d0b71ac8
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:751042
-    normalized_label: reproterol hydrochloride
-    original_id: CHEBI:751042
+    normalized_id: CHEBI:135612
+    normalized_label: reproterol
+    original_id: CHEBI:135612
     tool: medic-normalizer/1
-  normalized_id: CHEBI:751042
-  normalized_label: reproterol hydrochloride
+  normalized_id: CHEBI:135612
+  normalized_label: reproterol
   original_literal: Reproterol Hydrochloride
   snippet: Bronchodilator- Indicated in the treatment of conditions involving reversible
     airways obstruction viz bronchial asthma, bronchitis etc.
@@ -21297,9 +21297,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:81712
-    grounded_label: Clostebol acetate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:135372
+    grounded_label: clostebol
+    grounding_quality: lexical_exact_surgery
     original_string: Clostebol Acetate
     subject_id: MEDICNE:1a338898-93f1-5563-969c-2dcf58bfbaaa
   grounding_confidence: 0.9
@@ -21310,12 +21310,12 @@
   mention_id: MEDICNE:1a338898-93f1-5563-969c-2dcf58bfbaaa
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:81712
-    normalized_label: Clostebol acetate
-    original_id: CHEBI:81712
+    normalized_id: CHEBI:135372
+    normalized_label: clostebol
+    original_id: CHEBI:135372
     tool: medic-normalizer/1
-  normalized_id: CHEBI:81712
-  normalized_label: Clostebol acetate
+  normalized_id: CHEBI:135372
+  normalized_label: clostebol
   original_literal: Clostebol Acetate
   snippet: Protein anabolizing agent- Preparation containing the drug with neomycin
     shall be
@@ -21408,9 +21408,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:8466
-    grounded_label: propafenone hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:63619
+    grounded_label: propafenone
+    grounding_quality: lexical_exact_surgery
     original_string: Propafenone Hydrochloride
     subject_id: MEDICNE:03165649-e485-5640-9a91-764455a0193d
   grounding_confidence: 0.9
@@ -21421,12 +21421,12 @@
   mention_id: MEDICNE:03165649-e485-5640-9a91-764455a0193d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8466
-    normalized_label: propafenone hydrochloride
-    original_id: CHEBI:8466
+    normalized_id: CHEBI:63619
+    normalized_label: propafenone
+    original_id: CHEBI:63619
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8466
-  normalized_label: propafenone hydrochloride
+  normalized_id: CHEBI:63619
+  normalized_label: propafenone
   original_literal: Propafenone Hydrochloride
   snippet: Anti arrhythmic agent- Indicated in the treatment of ventricular extra
     systoles supra ventricular tachycardia etc.
@@ -21980,9 +21980,9 @@
   approval_date: '19810101'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:3498
-    grounded_label: cefotaxime sodium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:204928
+    grounded_label: cefotaxime
+    grounding_quality: lexical_exact_surgery
     original_string: Cefotaxime Sodium
     subject_id: MEDICNE:7d5e2747-756d-5fe9-a6aa-561c1d48eeae
   grounding_confidence: 0.9
@@ -21992,12 +21992,12 @@
   mention_id: MEDICNE:7d5e2747-756d-5fe9-a6aa-561c1d48eeae
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3498
-    normalized_label: cefotaxime sodium
-    original_id: CHEBI:3498
+    normalized_id: CHEBI:204928
+    normalized_label: cefotaxime
+    original_id: CHEBI:204928
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3498
-  normalized_label: cefotaxime sodium
+  normalized_id: CHEBI:204928
+  normalized_label: cefotaxime
   original_literal: Cefotaxime Sodium
   snippet: Antibiotic- Indicated in the
   snippets:
@@ -38892,9 +38892,9 @@
   approval_date: '20010327'
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:4508
-    grounded_label: diclofenac potassium
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:47381
+    grounded_label: diclofenac
+    grounding_quality: lexical_exact_surgery
     original_string: Diclofenac potassium
     subject_id: MEDICNE:f95fae52-e2b1-5438-87f7-5489620dfdc0
   grounding_confidence: 0.9
@@ -38904,12 +38904,12 @@
   mention_id: MEDICNE:f95fae52-e2b1-5438-87f7-5489620dfdc0
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4508
-    normalized_label: diclofenac potassium
-    original_id: CHEBI:4508
+    normalized_id: CHEBI:47381
+    normalized_label: diclofenac
+    original_id: CHEBI:47381
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4508
-  normalized_label: diclofenac potassium
+  normalized_id: CHEBI:47381
+  normalized_label: diclofenac
   original_literal: Diclofenac potassium
   snippet: For additional indication of migraine attack
   snippets:
@@ -39801,7 +39801,7 @@
   grounding:
     components:
     - RXCUI:274964
-    - CHEBI:31633
+    - CHEBI:5147
     confidence: 1.0
     grounded_id: RXCUI:274964
     grounded_label: ciclesonide
@@ -43338,11 +43338,11 @@
   approval_date: '20071015'
   grounding:
     components:
-    - CHEBI:50686
+    - CHEBI:39548
     - CHEBI:8774
     confidence: 1.0
-    grounded_id: CHEBI:50686
-    grounded_label: atorvastatin calcium
+    grounded_id: CHEBI:8774
+    grounded_label: ramipril
     grounding_quality: lexical_exact_surgery
     original_string: Atorvastatin Calcium (10mg ) + Ramipril (2.5mg/5mg) tablet
     subject_id: MEDICNE:fd479c45-822d-5ecf-a200-fe485accf29c
@@ -43353,12 +43353,12 @@
   mention_id: MEDICNE:fd479c45-822d-5ecf-a200-fe485accf29c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:50686
-    normalized_label: atorvastatin calcium
-    original_id: CHEBI:50686
+    normalized_id: CHEBI:8774
+    normalized_label: ramipril
+    original_id: CHEBI:8774
     tool: medic-normalizer/1
-  normalized_id: CHEBI:50686
-  normalized_label: atorvastatin calcium
+  normalized_id: CHEBI:8774
+  normalized_label: ramipril
   original_literal: Atorvastatin Calcium (10mg ) + Ramipril (2.5mg/5mg) tablet
   snippet: For treatment of patients with both hypertension and hypercholesterolemia.
   snippets:
@@ -45563,7 +45563,7 @@
   approval_date: '20080101'
   grounding:
     components:
-    - CHEBI:6802
+    - CHEBI:6801
     - CHEBI:5001
     confidence: 1.0
     grounded_id: CHEBI:5001
@@ -48135,7 +48135,7 @@
   grounding:
     components:
     - CHEBI:40237
-    - CHEBI:6802
+    - CHEBI:6801
     confidence: 1.0
     grounded_id: CHEBI:40237
     grounded_label: sitagliptin
@@ -48757,7 +48757,7 @@
   grounding:
     components:
     - CHEBI:64354
-    - CHEBI:748315
+    - CHEBI:6541
     confidence: 1.0
     grounded_id: CHEBI:64354
     grounded_label: metolazone
@@ -49108,11 +49108,11 @@
   approval_date: '20080101'
   grounding:
     components:
-    - CHEBI:3498
+    - CHEBI:204928
     - CHEBI:157785
     confidence: 0.9
-    grounded_id: CHEBI:3498
-    grounded_label: cefotaxime sodium
+    grounded_id: CHEBI:204928
+    grounded_label: cefotaxime
     grounding_quality: lexical_exact_surgery
     original_string: Cefotaxime sodium + Sulbactam sodium for injection (Additional
       Indication)
@@ -49124,12 +49124,12 @@
   mention_id: MEDICNE:cf62ebf3-6794-52df-a492-ddbe55e9d84f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3498
-    normalized_label: cefotaxime sodium
-    original_id: CHEBI:3498
+    normalized_id: CHEBI:204928
+    normalized_label: cefotaxime
+    original_id: CHEBI:204928
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3498
-  normalized_label: cefotaxime sodium
+  normalized_id: CHEBI:204928
+  normalized_label: cefotaxime
   original_literal: Cefotaxime sodium + Sulbactam sodium for injection (Additional
     Indication)
   snippet: For the treatment of lower respiratory tract infection in children
@@ -49419,7 +49419,7 @@
   grounding:
     components:
     - CHEBI:135285
-    - CHEBI:6802
+    - CHEBI:6801
     confidence: 1.0
     grounded_id: CHEBI:135285
     grounded_label: vildagliptin
@@ -52792,7 +52792,7 @@
   grounding:
     components:
     - CHEBI:46195
-    - CHEBI:8094
+    - CHEBI:8093
     confidence: 1.0
     grounded_id: CHEBI:46195
     grounded_label: paracetamol
@@ -59262,11 +59262,11 @@
   approval_date: '20091215'
   grounding:
     components:
-    - RXCUI:237025
+    - CHEBI:135724
     - CHEBI:29013
     confidence: 1.0
-    grounded_id: RXCUI:237025
-    grounded_label: halometasone monohydrate
+    grounded_id: CHEBI:29013
+    grounded_label: fusidic acid
     grounding_quality: lexical_exact_surgery
     original_string: Halometasone monohydrate 0.05% w/w + Fusidic acid 2.00% w/w cream
     subject_id: MEDICNE:5960ecca-5c36-5463-b6c4-32b9840e749b
@@ -59277,12 +59277,12 @@
   mention_id: MEDICNE:5960ecca-5c36-5463-b6c4-32b9840e749b
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:237025
-    normalized_label: halometasone monohydrate
-    original_id: RXCUI:237025
+    normalized_id: CHEBI:29013
+    normalized_label: fusidic acid
+    original_id: CHEBI:29013
     tool: medic-normalizer/1
-  normalized_id: RXCUI:237025
-  normalized_label: halometasone monohydrate
+  normalized_id: CHEBI:29013
+  normalized_label: fusidic acid
   original_literal: Halometasone monohydrate 0.05% w/w + Fusidic acid 2.00% w/w cream
   snippet: For the treatment of acute and chronic infected eczematous dermatitis
   snippets:
@@ -70303,9 +70303,9 @@
   approval_date: ''
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:759737
-    grounded_label: atosiban acetate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:135899
+    grounded_label: atosiban
+    grounding_quality: lexical_exact_surgery
     original_string: Atosiban Acetate
     subject_id: MEDICNE:7db9be24-1dd0-5eb9-b094-afd28a5e6b90
   grounding_confidence: 0.9
@@ -70315,12 +70315,12 @@
   mention_id: MEDICNE:7db9be24-1dd0-5eb9-b094-afd28a5e6b90
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:759737
-    normalized_label: atosiban acetate
-    original_id: CHEBI:759737
+    normalized_id: CHEBI:135899
+    normalized_label: atosiban
+    original_id: CHEBI:135899
     tool: medic-normalizer/1
-  normalized_id: CHEBI:759737
-  normalized_label: atosiban acetate
+  normalized_id: CHEBI:135899
+  normalized_label: atosiban
   original_literal: Atosiban Acetate
   snippet: minutes
   snippets:
@@ -73422,9 +73422,9 @@
   approval_date: ''
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:31532
-    grounded_label: efonidipine hydrochloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:135859
+    grounded_label: efonidipine
+    grounding_quality: lexical_exact_surgery
     original_string: Efonidipine Hydrochloride
     subject_id: MEDICNE:8bf67a07-d594-54d7-b101-e16e0dd41a04
   grounding_confidence: 0.9
@@ -73434,12 +73434,12 @@
   mention_id: MEDICNE:8bf67a07-d594-54d7-b101-e16e0dd41a04
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31532
-    normalized_label: efonidipine hydrochloride
-    original_id: CHEBI:31532
+    normalized_id: CHEBI:135859
+    normalized_label: efonidipine
+    original_id: CHEBI:135859
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31532
-  normalized_label: efonidipine hydrochloride
+  normalized_id: CHEBI:135859
+  normalized_label: efonidipine
   original_literal: Efonidipine Hydrochloride
   snippet: ''
   snippets: []
@@ -73985,9 +73985,9 @@
   approval_date: ''
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:749058
-    grounded_label: piperaquine phosphate
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:91231
+    grounded_label: piperaquine
+    grounding_quality: lexical_exact_surgery
     original_string: Piperaquine phosphate
     subject_id: MEDICNE:9d2c6987-a0a3-5998-b61d-0aae1c6f45c3
   grounding_confidence: 0.9
@@ -73997,12 +73997,12 @@
   mention_id: MEDICNE:9d2c6987-a0a3-5998-b61d-0aae1c6f45c3
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749058
-    normalized_label: piperaquine phosphate
-    original_id: CHEBI:749058
+    normalized_id: CHEBI:91231
+    normalized_label: piperaquine
+    original_id: CHEBI:91231
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749058
-  normalized_label: piperaquine phosphate
+  normalized_id: CHEBI:91231
+  normalized_label: piperaquine
   original_literal: Piperaquine phosphate
   snippet: '- Acute uncomplicated Plasmodium falciparum malaria infection'
   snippets:
@@ -75009,29 +75009,26 @@
 - alternate_ids: []
   approval_date: '20181122'
   grounding:
-    components:
-    - CHEBI:757023
-    - CHEBI:136044
-    confidence: 1.0
-    grounded_id: CHEBI:757023
-    grounded_label: fimasartan potassium trihydrate
+    confidence: 0.9
+    grounded_id: CHEBI:136044
+    grounded_label: fimasartan
     grounding_quality: lexical_exact_surgery
     original_string: Fimasartan potassium trihydrate bulk drug and Fimasartan film
       coated tablets 30mg/60mg/120mg
     subject_id: MEDICNE:e5d19319-399c-526e-8404-aff03cee014c
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: For the treatment of mild hypertension
   mention_id: MEDICNE:e5d19319-399c-526e-8404-aff03cee014c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:757023
-    normalized_label: fimasartan potassium trihydrate
-    original_id: CHEBI:757023
+    normalized_id: CHEBI:136044
+    normalized_label: fimasartan
+    original_id: CHEBI:136044
     tool: medic-normalizer/1
-  normalized_id: CHEBI:757023
-  normalized_label: fimasartan potassium trihydrate
+  normalized_id: CHEBI:136044
+  normalized_label: fimasartan
   original_literal: Fimasartan potassium trihydrate bulk drug and Fimasartan film
     coated tablets 30mg/60mg/120mg
   snippet: For the treatment of mild hypertension
@@ -75725,14 +75722,14 @@
 - alternate_ids: []
   approval_date: '20191120'
   grounding:
-    confidence: 0.85
+    confidence: 0.9
     grounded_id: CHEBI:136046
     grounded_label: ripasudil
     grounding_quality: lexical_exact_surgery
     original_string: Ripasudil hydrochloride hydrate bulk drug and Ripasudil Eye drops
       0.4% w/v
     subject_id: MEDICNE:88c6bd1e-1019-5aae-b1d6-5654f568d4e9
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: To treat glaucoma and ocular hypertension when other medicines for glaucoma
@@ -76065,17 +76062,14 @@
 - alternate_ids: []
   approval_date: '20200103'
   grounding:
-    components:
-    - CHEBI:59495
-    - RXCUI:83171
-    confidence: 1.0
-    grounded_id: CHEBI:59495
-    grounded_label: cidofovir dihydrate
+    confidence: 0.9
+    grounded_id: RXCUI:83171
+    grounded_label: cidofovir
     grounding_quality: lexical_exact_surgery
     original_string: Cidofovir dihydrate bulk drug and Cidofovir injection 75 mg/
       ml (5 ml single use vial)
     subject_id: MEDICNE:efb7b193-6ac2-511c-8888-56da01183379
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Cidofovir is indicated for the treatment of CMV retinitis in adults
@@ -76084,12 +76078,12 @@
   mention_id: MEDICNE:efb7b193-6ac2-511c-8888-56da01183379
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59495
-    normalized_label: cidofovir dihydrate
-    original_id: CHEBI:59495
+    normalized_id: RXCUI:83171
+    normalized_label: cidofovir
+    original_id: RXCUI:83171
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59495
-  normalized_label: cidofovir dihydrate
+  normalized_id: RXCUI:83171
+  normalized_label: cidofovir
   original_literal: Cidofovir dihydrate bulk drug and Cidofovir injection 75 mg/ ml
     (5 ml single use vial)
   snippet: Cidofovir is indicated for the treatment of CMV retinitis in adults with
@@ -76520,25 +76514,25 @@
 - alternate_ids: []
   approval_date: '20200514'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:758133
-    grounded_label: centhaquine citrate
+    confidence: 0.9
+    grounded_id: CHEBI:757924
+    grounded_label: centhaquine
     grounding_quality: lexical_exact_surgery
     original_string: Centhaquine citrate bulk and Centhaquine citrate injection 1.0mg/vial
     subject_id: MEDICNE:f1881f9a-89dd-51d6-a9e6-7c4b91c965d3
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Add on resuscitative agent for hypovolemic shock
   mention_id: MEDICNE:f1881f9a-89dd-51d6-a9e6-7c4b91c965d3
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:758133
-    normalized_label: centhaquine citrate
-    original_id: CHEBI:758133
+    normalized_id: CHEBI:757924
+    normalized_label: centhaquine
+    original_id: CHEBI:757924
     tool: medic-normalizer/1
-  normalized_id: CHEBI:758133
-  normalized_label: centhaquine citrate
+  normalized_id: CHEBI:757924
+  normalized_label: centhaquine
   original_literal: Centhaquine citrate bulk and Centhaquine citrate injection 1.0mg/vial
   snippet: Add on resuscitative agent for hypovolemic shock
   snippets:
@@ -76957,16 +76951,13 @@
 - alternate_ids: []
   approval_date: '20201014'
   grounding:
-    components:
-    - RXCUI:1992863
-    - CHEBI:757758
-    confidence: 1.0
-    grounded_id: RXCUI:1992863
-    grounded_label: netarsudil mesylate
+    confidence: 0.9
+    grounded_id: CHEBI:757758
+    grounded_label: netarsudil
     grounding_quality: lexical_exact_surgery
     original_string: Netarsudil mesylate bulk and Netarsudil ophthalmic solution 0.02%w/v
     subject_id: MEDICNE:1960d3f0-9850-587c-9b4a-786a14d966f0
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: For the reduction of elevated intraocular pressure in patients with
@@ -76974,12 +76965,12 @@
   mention_id: MEDICNE:1960d3f0-9850-587c-9b4a-786a14d966f0
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:1992863
-    normalized_label: netarsudil mesylate
-    original_id: RXCUI:1992863
+    normalized_id: CHEBI:757758
+    normalized_label: netarsudil
+    original_id: CHEBI:757758
     tool: medic-normalizer/1
-  normalized_id: RXCUI:1992863
-  normalized_label: netarsudil mesylate
+  normalized_id: CHEBI:757758
+  normalized_label: netarsudil
   original_literal: Netarsudil mesylate bulk and Netarsudil ophthalmic solution 0.02%w/v
   snippet: For the reduction of elevated intraocular pressure in patients with open
     angle galucoma or ocular hypertension
@@ -77603,17 +77594,14 @@
 - alternate_ids: []
   approval_date: '20210716'
   grounding:
-    components:
-    - CHEBI:90932
-    - CHEBI:90933
-    confidence: 1.0
-    grounded_id: CHEBI:90932
-    grounded_label: cariprazine hydrochloride
+    confidence: 0.9
+    grounded_id: CHEBI:90933
+    grounded_label: cariprazine
     grounding_quality: lexical_exact_surgery
     original_string: Cariprazine hydrochloride bulk and Cariprazine capsules 1.5mg/3mg/4.5mg
       and 6mg
     subject_id: MEDICNE:0cf2324f-710f-5962-889c-f6ee9f9f3739
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: For the treatment of Schizophrenia in adults. Acute treatment of manic
@@ -77621,12 +77609,12 @@
   mention_id: MEDICNE:0cf2324f-710f-5962-889c-f6ee9f9f3739
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90932
-    normalized_label: cariprazine hydrochloride
-    original_id: CHEBI:90932
+    normalized_id: CHEBI:90933
+    normalized_label: cariprazine
+    original_id: CHEBI:90933
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90932
-  normalized_label: cariprazine hydrochloride
+  normalized_id: CHEBI:90933
+  normalized_label: cariprazine
   original_literal: Cariprazine hydrochloride bulk and Cariprazine capsules 1.5mg/3mg/4.5mg
     and 6mg
   snippet: For the treatment of Schizophrenia in adults. Acute treatment of manic
@@ -78351,17 +78339,14 @@
 - alternate_ids: []
   approval_date: '20220418'
   grounding:
-    components:
-    - CHEBI:90952
-    - CHEBI:90953
-    confidence: 1.0
-    grounded_id: CHEBI:90952
-    grounded_label: sugammadex sodium
+    confidence: 0.9
+    grounded_id: CHEBI:90953
+    grounded_label: sugammadex
     grounding_quality: lexical_exact_surgery
     original_string: Sugammadex sodium bulk and Sugammadex injection 100mg/ml (single
       dose vial for bolus injection, IV)
     subject_id: MEDICNE:ca2d4421-bfba-5de5-ae51-7119660f41a4
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Reversal of neuromuscular blockade induced by rocuronium or vecuronium
@@ -78369,12 +78354,12 @@
   mention_id: MEDICNE:ca2d4421-bfba-5de5-ae51-7119660f41a4
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90952
-    normalized_label: sugammadex sodium
-    original_id: CHEBI:90952
+    normalized_id: CHEBI:90953
+    normalized_label: sugammadex
+    original_id: CHEBI:90953
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90952
-  normalized_label: sugammadex sodium
+  normalized_id: CHEBI:90953
+  normalized_label: sugammadex
   original_literal: Sugammadex sodium bulk and Sugammadex injection 100mg/ml (single
     dose vial for bolus injection, IV)
   snippet: Reversal of neuromuscular blockade induced by rocuronium or vecuronium
@@ -78990,14 +78975,14 @@
 - alternate_ids: []
   approval_date: '20221202'
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:68564
-    grounded_label: icatibant acetate
+    confidence: 0.9
+    grounded_id: CHEBI:68556
+    grounded_label: icatibant
     grounding_quality: lexical_exact_surgery
     original_string: Icatibant Acetate Injection, 30 mg/3ml(10mg/ml) and Icatibant
       Acetate Bulk drug
     subject_id: MEDICNE:cd85aed8-80d3-564d-9296-1f40bf6997b4
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Indicated for treatment of acute attacks of hereditary angioedema(HAE)
@@ -79005,12 +78990,12 @@
   mention_id: MEDICNE:cd85aed8-80d3-564d-9296-1f40bf6997b4
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:68564
-    normalized_label: icatibant acetate
-    original_id: CHEBI:68564
+    normalized_id: CHEBI:68556
+    normalized_label: icatibant
+    original_id: CHEBI:68556
     tool: medic-normalizer/1
-  normalized_id: CHEBI:68564
-  normalized_label: icatibant acetate
+  normalized_id: CHEBI:68556
+  normalized_label: icatibant
   original_literal: Icatibant Acetate Injection, 30 mg/3ml(10mg/ml) and Icatibant
     Acetate Bulk drug
   snippet: Indicated for treatment of acute attacks of hereditary angioedema(HAE)

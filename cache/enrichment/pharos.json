@@ -58,6 +58,18 @@
       "unii:WPY40FTH8K"
     ]
   },
+  "CHEBI:10093": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL15245,CHEMBL537669",
+      "DrugCentral:3659",
+      "Guide to Pharmacology:102",
+      "LyCHI:GL6TM19DJZTU",
+      "PHAROS:GL6TM19DJZTU",
+      "PubChem:8969,57479379",
+      "pt:YOHIMBINE",
+      "unii:2Y49VWD90Q"
+    ]
+  },
   "CHEBI:10100": {
     "pharos_ids": [
       "ChEMBL:CHEMBL603",
@@ -353,6 +365,9 @@
       "PHAROS:FRVL6LWPXSL8",
       "PubChem:64139"
     ]
+  },
+  "CHEBI:119573": {
+    "pharos_ids": []
   },
   "CHEBI:119915": {
     "pharos_ids": [
@@ -902,6 +917,9 @@
   "CHEBI:134783": {
     "pharos_ids": []
   },
+  "CHEBI:134806": {
+    "pharos_ids": []
+  },
   "CHEBI:134813": {
     "pharos_ids": []
   },
@@ -953,6 +971,9 @@
     ]
   },
   "CHEBI:134929": {
+    "pharos_ids": []
+  },
+  "CHEBI:134936": {
     "pharos_ids": []
   },
   "CHEBI:134938": {
@@ -1208,6 +1229,17 @@
   },
   "CHEBI:135310": {
     "pharos_ids": []
+  },
+  "CHEBI:135314": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201242",
+      "DrugCentral:1434",
+      "LyCHI:G54RKLZN1ZYS",
+      "PHAROS:G54RKLZN1ZYS",
+      "PubChem:52195",
+      "pt:INDECAINIDE",
+      "unii:3AZF20DM1T"
+    ]
   },
   "CHEBI:135323": {
     "pharos_ids": []
@@ -1729,6 +1761,17 @@
       "unii:877K0XW47A"
     ]
   },
+  "CHEBI:135804": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201349",
+      "DrugCentral:1365",
+      "LyCHI:9C8DWHVLN4TM",
+      "PHAROS:9C8DWHVLN4TM",
+      "PubChem:3601",
+      "pt:HEXAFLUORENIUM",
+      "unii:55W5L6G81R"
+    ]
+  },
   "CHEBI:135806": {
     "pharos_ids": [
       "ChEMBL:CHEMBL2074972,CHEMBL2218858",
@@ -1772,6 +1815,31 @@
   },
   "CHEBI:135826": {
     "pharos_ids": []
+  },
+  "CHEBI:135829": {
+    "pharos_ids": []
+  },
+  "CHEBI:135845": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201352",
+      "DrugCentral:3520",
+      "LyCHI:528W63U9AQW2",
+      "PHAROS:528W63U9AQW2",
+      "PubChem:5311399",
+      "pt:RAPACURONIUM",
+      "unii:GG1LBM463S"
+    ]
+  },
+  "CHEBI:135859": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2074922",
+      "DrugCentral:992",
+      "LyCHI:RJKK67JP4Y39",
+      "PHAROS:RJKK67JP4Y39",
+      "PubChem:119171",
+      "pt:EFONIDIPINE",
+      "unii:40ZTP2T37Q"
+    ]
   },
   "CHEBI:135867": {
     "pharos_ids": [
@@ -10282,6 +10350,9 @@
   "CHEBI:421707": {
     "pharos_ids": []
   },
+  "CHEBI:42266": {
+    "pharos_ids": []
+  },
   "CHEBI:42355": {
     "pharos_ids": [
       "ChEMBL:CHEMBL532",
@@ -10315,6 +10386,17 @@
       "PubChem:6919078,3446",
       "pt:GABAPENTIN",
       "unii:6CW7F3G59X"
+    ]
+  },
+  "CHEBI:42820": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL821",
+      "DrugCentral:1344",
+      "LyCHI:Q3HSJJ1A3X3U",
+      "PHAROS:Q3HSJJ1A3X3U",
+      "PubChem:3520",
+      "pt:GUANIDINE",
+      "unii:JU58VJ6Y3B"
     ]
   },
   "CHEBI:42944": {
@@ -10982,6 +11064,17 @@
   "CHEBI:4637": {
     "pharos_ids": []
   },
+  "CHEBI:4638": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL936",
+      "DrugCentral:313",
+      "LyCHI:SXV3S71WKXTZ",
+      "PHAROS:SXV3S71WKXTZ",
+      "PubChem:3055",
+      "pt:DIPHENIDOL",
+      "unii:NQO8R319LY"
+    ]
+  },
   "CHEBI:4639": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1201294",
@@ -11162,6 +11255,17 @@
   },
   "CHEBI:4703": {
     "pharos_ids": []
+  },
+  "CHEBI:4706": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1237123",
+      "DrugCentral:2974",
+      "LyCHI:YS5BD7CVV2N1",
+      "PHAROS:YS5BD7CVV2N1",
+      "PubChem:60169",
+      "pt:DOXACURIUM, (+/-)-",
+      "unii:7560511IZ6"
+    ]
   },
   "CHEBI:4707": {
     "pharos_ids": []
@@ -11709,6 +11813,9 @@
   "CHEBI:4878": {
     "pharos_ids": []
   },
+  "CHEBI:487869": {
+    "pharos_ids": []
+  },
   "CHEBI:4882": {
     "pharos_ids": [
       "ChEMBL:CHEMBL591",
@@ -11789,6 +11896,18 @@
       "PubChem:5991",
       "pt:ETHINYL ESTRADIOL",
       "unii:423D2T571U"
+    ]
+  },
+  "CHEBI:4904": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL492",
+      "DrugCentral:1097",
+      "Guide to Pharmacology:2621",
+      "LyCHI:X5XBWSU3YFRL",
+      "PHAROS:X5XBWSU3YFRL",
+      "PubChem:37497",
+      "pt:ETIDOCAINE",
+      "unii:I6CQM0F31V"
     ]
   },
   "CHEBI:49040": {
@@ -12270,6 +12389,17 @@
       "unii:C6T4514L4E"
     ]
   },
+  "CHEBI:50580": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201251",
+      "DrugCentral:237",
+      "LyCHI:WJS9FN3AMZTL",
+      "PHAROS:WJS9FN3AMZTL",
+      "PubChem:60789",
+      "pt:ARBUTAMINE",
+      "unii:B07L15YAEV"
+    ]
+  },
   "CHEBI:5062": {
     "pharos_ids": [
       "ChEMBL:CHEMBL710",
@@ -12504,6 +12634,17 @@
   "CHEBI:50848": {
     "pharos_ids": []
   },
+  "CHEBI:50851": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201263",
+      "DrugCentral:1387",
+      "LyCHI:4RN1XHVDRDX7",
+      "PHAROS:4RN1XHVDRDX7",
+      "PubChem:84088",
+      "pt:HYDROCORTAMATE",
+      "unii:Y3N00BK5WK"
+    ]
+  },
   "CHEBI:50854": {
     "pharos_ids": []
   },
@@ -12685,6 +12826,16 @@
   "CHEBI:51042": {
     "pharos_ids": []
   },
+  "CHEBI:51043": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL76370",
+      "LyCHI:4PNNLFXQSZQR",
+      "PHAROS:4PNNLFXQSZQR",
+      "PubChem:135409453",
+      "pt:TEGASEROD",
+      "unii:458VC51857"
+    ]
+  },
   "CHEBI:51044": {
     "pharos_ids": []
   },
@@ -12702,6 +12853,18 @@
   },
   "CHEBI:51063": {
     "pharos_ids": []
+  },
+  "CHEBI:51066": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201216",
+      "DrugCentral:781",
+      "Guide to Pharmacology:7155",
+      "LyCHI:V1TA25VTYMP5",
+      "PHAROS:V1TA25VTYMP5",
+      "PubChem:3033538",
+      "pt:DAPIPRAZOLE",
+      "unii:5RNZ8GJO7K"
+    ]
   },
   "CHEBI:5108": {
     "pharos_ids": []
@@ -12840,6 +13003,17 @@
       "PubChem:5311027",
       "pt:BIMATOPROST",
       "unii:QXS94885MZ"
+    ]
+  },
+  "CHEBI:51235": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201328",
+      "DrugCentral:516",
+      "LyCHI:4K7U6S6ZQ9SH",
+      "PHAROS:4K7U6S6ZQ9SH",
+      "PubChem:18104",
+      "pt:CARPHENAZINE",
+      "unii:CLY16Y8Z7E"
     ]
   },
   "CHEBI:5124": {
@@ -13394,6 +13568,15 @@
       "unii:SX6K58TVWC"
     ]
   },
+  "CHEBI:5520": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1007",
+      "DrugCentral:2958",
+      "LyCHI:PWDJRV7CRXLY",
+      "PHAROS:PWDJRV7CRXLY",
+      "PubChem:638793"
+    ]
+  },
   "CHEBI:5521": {
     "pharos_ids": []
   },
@@ -13450,6 +13633,9 @@
       "PubChem:54766"
     ]
   },
+  "CHEBI:5543": {
+    "pharos_ids": []
+  },
   "CHEBI:554446": {
     "pharos_ids": []
   },
@@ -13476,6 +13662,17 @@
   },
   "CHEBI:55548": {
     "pharos_ids": []
+  },
+  "CHEBI:5555": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1037",
+      "DrugCentral:1339",
+      "LyCHI:8V83VFJRWXTM",
+      "PHAROS:8V83VFJRWXTM",
+      "PubChem:38521",
+      "pt:GUANADREL",
+      "unii:765C9332T4"
+    ]
   },
   "CHEBI:5556": {
     "pharos_ids": []
@@ -13517,6 +13714,9 @@
     ]
   },
   "CHEBI:560555": {
+    "pharos_ids": []
+  },
+  "CHEBI:5612": {
     "pharos_ids": []
   },
   "CHEBI:5613": {
@@ -13705,6 +13905,18 @@
   "CHEBI:5819": {
     "pharos_ids": []
   },
+  "CHEBI:584020": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1065,CHEMBL1200938",
+      "DrugCentral:1775",
+      "Guide to Pharmacology:134",
+      "LyCHI:3M5UQBRT98CD",
+      "PHAROS:3M5UQBRT98CD",
+      "PubChem:9681,5281073",
+      "pt:METHYSERGIDE",
+      "unii:XZA9HY6Z98"
+    ]
+  },
   "CHEBI:5847": {
     "pharos_ids": [
       "ChEMBL:CHEMBL225071",
@@ -13797,6 +14009,17 @@
   "CHEBI:59169": {
     "pharos_ids": []
   },
+  "CHEBI:59170": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201323",
+      "DrugCentral:357",
+      "LyCHI:HPVCKCWNWTCD",
+      "PHAROS:HPVCKCWNWTCD",
+      "PubChem:7741",
+      "pt:BETAZOLE",
+      "unii:1C065P542O"
+    ]
+  },
   "CHEBI:59171": {
     "pharos_ids": []
   },
@@ -13819,6 +14042,9 @@
       "pt:CARBETOCIN",
       "unii:88TWF8015Y"
     ]
+  },
+  "CHEBI:59213": {
+    "pharos_ids": []
   },
   "CHEBI:59223": {
     "pharos_ids": []
@@ -13985,8 +14211,22 @@
   "CHEBI:59640": {
     "pharos_ids": []
   },
+  "CHEBI:59662": {
+    "pharos_ids": []
+  },
   "CHEBI:59664": {
     "pharos_ids": []
+  },
+  "CHEBI:59692": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201227",
+      "DrugCentral:763",
+      "LyCHI:TMW9JGRN2DK7",
+      "PHAROS:TMW9JGRN2DK7",
+      "PubChem:2911",
+      "pt:CYCRIMINE",
+      "unii:543567RFQQ"
+    ]
   },
   "CHEBI:59693": {
     "pharos_ids": []
@@ -14077,7 +14317,13 @@
   "CHEBI:599440": {
     "pharos_ids": []
   },
+  "CHEBI:599928": {
+    "pharos_ids": []
+  },
   "CHEBI:600103": {
+    "pharos_ids": []
+  },
+  "CHEBI:6005": {
     "pharos_ids": []
   },
   "CHEBI:600520": {
@@ -14172,6 +14418,12 @@
   "CHEBI:60641": {
     "pharos_ids": []
   },
+  "CHEBI:60652": {
+    "pharos_ids": []
+  },
+  "CHEBI:60654": {
+    "pharos_ids": []
+  },
   "CHEBI:6067": {
     "pharos_ids": [
       "ChEMBL:CHEMBL547",
@@ -14233,6 +14485,18 @@
   },
   "CHEBI:60800": {
     "pharos_ids": []
+  },
+  "CHEBI:60802": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1077896",
+      "DrugCentral:2403",
+      "Guide to Pharmacology:7602",
+      "LyCHI:D4LXA9D256G2",
+      "PHAROS:D4LXA9D256G2",
+      "PubChem:175805",
+      "pt:ROPIVACAINE",
+      "unii:7IO5LYA57N"
+    ]
   },
   "CHEBI:60816": {
     "pharos_ids": []
@@ -14321,6 +14585,17 @@
   },
   "CHEBI:61176": {
     "pharos_ids": []
+  },
+  "CHEBI:61203": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201347",
+      "DrugCentral:220",
+      "LyCHI:6B8N2ZRKU85L",
+      "PHAROS:6B8N2ZRKU85L",
+      "PubChem:8944",
+      "pt:ANILERIDINE",
+      "unii:71Q1A3O279"
+    ]
   },
   "CHEBI:6121": {
     "pharos_ids": [
@@ -14433,6 +14708,9 @@
     "pharos_ids": []
   },
   "CHEBI:62312": {
+    "pharos_ids": []
+  },
+  "CHEBI:62932": {
     "pharos_ids": []
   },
   "CHEBI:62964": {
@@ -15033,6 +15311,17 @@
   "CHEBI:64275": {
     "pharos_ids": []
   },
+  "CHEBI:6431": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1254682",
+      "DrugCentral:1560",
+      "LyCHI:NDSKXMKUM7QA",
+      "PHAROS:NDSKXMKUM7QA",
+      "PubChem:5359371",
+      "pt:LEVALLORPHAN",
+      "unii:353613BU4U"
+    ]
+  },
   "CHEBI:64310": {
     "pharos_ids": [
       "ChEMBL:CHEMBL601719",
@@ -15169,6 +15458,9 @@
   "CHEBI:6439": {
     "pharos_ids": []
   },
+  "CHEBI:6441": {
+    "pharos_ids": []
+  },
   "CHEBI:6442": {
     "pharos_ids": []
   },
@@ -15230,6 +15522,9 @@
       "PHAROS:L2NYLN78KPXZ",
       "PubChem:16129706"
     ]
+  },
+  "CHEBI:64703": {
+    "pharos_ids": []
   },
   "CHEBI:6472": {
     "pharos_ids": []
@@ -15443,6 +15738,14 @@
   },
   "CHEBI:66880": {
     "pharos_ids": []
+  },
+  "CHEBI:66889": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2107866",
+      "DrugCentral:4234",
+      "LyCHI:peginesatide",
+      "PHAROS:peginesatide"
+    ]
   },
   "CHEBI:66895": {
     "pharos_ids": []
@@ -15669,6 +15972,20 @@
       "unii:VG2QF83CGL"
     ]
   },
+  "CHEBI:6746": {
+    "pharos_ids": []
+  },
+  "CHEBI:6752": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1724",
+      "DrugCentral:1689",
+      "LyCHI:G7NGGSR3X8KQ",
+      "PHAROS:G7NGGSR3X8KQ",
+      "PubChem:6461",
+      "pt:MEPENZOLATE",
+      "unii:ONW3LB39P7"
+    ]
+  },
   "CHEBI:6753": {
     "pharos_ids": []
   },
@@ -15755,6 +16072,18 @@
       "PubChem:4075",
       "pt:MESALAMINE",
       "unii:4Q81I59GXC"
+    ]
+  },
+  "CHEBI:6780": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1088",
+      "DrugCentral:1712",
+      "Guide to Pharmacology:7227",
+      "LyCHI:RFRXFN6LSFV6",
+      "PHAROS:RFRXFN6LSFV6",
+      "PubChem:4078",
+      "pt:MESORIDAZINE",
+      "unii:5XE4NWM740"
     ]
   },
   "CHEBI:6781": {
@@ -15870,6 +16199,17 @@
       "unii:762RDY0Y2H"
     ]
   },
+  "CHEBI:6817": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201264",
+      "DrugCentral:1736",
+      "LyCHI:SQ65XNSJAPJ6",
+      "PHAROS:SQ65XNSJAPJ6",
+      "PubChem:4097",
+      "pt:METHANTHELINE",
+      "unii:36EI79TX7I"
+    ]
+  },
   "CHEBI:6818": {
     "pharos_ids": []
   },
@@ -15923,6 +16263,9 @@
     "pharos_ids": []
   },
   "CHEBI:6825": {
+    "pharos_ids": []
+  },
+  "CHEBI:6827": {
     "pharos_ids": []
   },
   "CHEBI:6832": {
@@ -16308,6 +16651,17 @@
   "CHEBI:6894": {
     "pharos_ids": []
   },
+  "CHEBI:6897": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1291",
+      "DrugCentral:1779",
+      "LyCHI:QQKKLZBL7DYY",
+      "PHAROS:QQKKLZBL7DYY",
+      "PubChem:31477",
+      "pt:METIPRANOLOL",
+      "unii:X39AL81KEB"
+    ]
+  },
   "CHEBI:6899": {
     "pharos_ids": []
   },
@@ -16371,6 +16725,9 @@
     ]
   },
   "CHEBI:6917": {
+    "pharos_ids": []
+  },
+  "CHEBI:6919": {
     "pharos_ids": []
   },
   "CHEBI:6923": {
@@ -16471,6 +16828,17 @@
       "PubChem:4211",
       "pt:MITOTANE",
       "unii:78E4J5IB5J"
+    ]
+  },
+  "CHEBI:6958": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL984",
+      "DrugCentral:1822",
+      "LyCHI:ZX6G9CD1PWV7",
+      "PHAROS:ZX6G9CD1PWV7",
+      "PubChem:5281080",
+      "pt:MIVACURIUM",
+      "unii:77D66S9Q93"
     ]
   },
   "CHEBI:6959": {
@@ -17287,6 +17655,17 @@
   "CHEBI:747442": {
     "pharos_ids": []
   },
+  "CHEBI:747559": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL546",
+      "DrugCentral:2027",
+      "LyCHI:UHUXQ8RS39PB",
+      "PHAROS:UHUXQ8RS39PB",
+      "PubChem:4631",
+      "pt:OXPRENOLOL",
+      "unii:519MXN9YZR"
+    ]
+  },
   "CHEBI:7476": {
     "pharos_ids": [
       "ChEMBL:CHEMBL154",
@@ -17334,6 +17713,30 @@
   "CHEBI:747900": {
     "pharos_ids": []
   },
+  "CHEBI:747921": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL434,CHEMBL1711",
+      "DrugCentral:1499",
+      "Guide to Pharmacology:536",
+      "LyCHI:9F2V3V2MRJAL",
+      "PHAROS:9F2V3V2MRJAL",
+      "PubChem:3779,13701",
+      "pt:ISOPROTERENOL",
+      "unii:L628TT009W"
+    ]
+  },
+  "CHEBI:747960": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL505",
+      "DrugCentral:616",
+      "Guide to Pharmacology:6976",
+      "LyCHI:2Y781B63JW42",
+      "PHAROS:2Y781B63JW42",
+      "PubChem:2725",
+      "pt:CHLORPHENIRAMINE",
+      "unii:3U6IO1965U"
+    ]
+  },
   "CHEBI:747972": {
     "pharos_ids": []
   },
@@ -17355,6 +17758,9 @@
     ]
   },
   "CHEBI:748025": {
+    "pharos_ids": []
+  },
+  "CHEBI:748028": {
     "pharos_ids": []
   },
   "CHEBI:74803": {
@@ -17496,11 +17902,25 @@
       "unii:134FM9ZZ6M"
     ]
   },
+  "CHEBI:748533": {
+    "pharos_ids": []
+  },
   "CHEBI:748559": {
     "pharos_ids": []
   },
   "CHEBI:748576": {
     "pharos_ids": []
+  },
+  "CHEBI:748590": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1200413",
+      "DrugCentral:3591",
+      "LyCHI:89MZKKT49QRT",
+      "PHAROS:89MZKKT49QRT",
+      "PubChem:657258",
+      "pt:TETRAHYDROZOLINE",
+      "unii:S9U025Y077"
+    ]
   },
   "CHEBI:748623": {
     "pharos_ids": []
@@ -17580,6 +18000,15 @@
   "CHEBI:748881": {
     "pharos_ids": []
   },
+  "CHEBI:748891": {
+    "pharos_ids": []
+  },
+  "CHEBI:748901": {
+    "pharos_ids": []
+  },
+  "CHEBI:748914": {
+    "pharos_ids": []
+  },
   "CHEBI:748916": {
     "pharos_ids": []
   },
@@ -17604,6 +18033,9 @@
     ]
   },
   "CHEBI:748993": {
+    "pharos_ids": []
+  },
+  "CHEBI:748997": {
     "pharos_ids": []
   },
   "CHEBI:749000": {
@@ -17670,6 +18102,9 @@
     "pharos_ids": []
   },
   "CHEBI:749151": {
+    "pharos_ids": []
+  },
+  "CHEBI:749177": {
     "pharos_ids": []
   },
   "CHEBI:7492": {
@@ -18028,6 +18463,9 @@
   "CHEBI:749343": {
     "pharos_ids": []
   },
+  "CHEBI:749344": {
+    "pharos_ids": []
+  },
   "CHEBI:749345": {
     "pharos_ids": []
   },
@@ -18206,6 +18644,34 @@
       "unii:59H4FCV1TF"
     ]
   },
+  "CHEBI:749400": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1200967",
+      "DrugCentral:404",
+      "LyCHI:ABLNZVJHDR3H",
+      "PHAROS:ABLNZVJHDR3H",
+      "PubChem:519514",
+      "pt:BROMODIPHENHYDRAMINE",
+      "unii:T032BI7727"
+    ]
+  },
+  "CHEBI:749401": {
+    "pharos_ids": []
+  },
+  "CHEBI:749405": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201286",
+      "DrugCentral:2039",
+      "LyCHI:C913KPGTTSBT",
+      "PHAROS:C913KPGTTSBT",
+      "PubChem:5749",
+      "pt:OXYPHENONIUM",
+      "unii:D2G5508Y7I"
+    ]
+  },
+  "CHEBI:749409": {
+    "pharos_ids": []
+  },
   "CHEBI:749410": {
     "pharos_ids": []
   },
@@ -18219,6 +18685,17 @@
       "PubChem:11693,3494",
       "pt:GLYCOPYRRONIUM",
       "unii:A14FB57V1D"
+    ]
+  },
+  "CHEBI:749412": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201342",
+      "DrugCentral:1780",
+      "LyCHI:GTSYTG18XFZN",
+      "PHAROS:GTSYTG18XFZN",
+      "PubChem:4167",
+      "pt:METHIXENE",
+      "unii:32VY6L26ZW"
     ]
   },
   "CHEBI:749414": {
@@ -18816,6 +19293,9 @@
     "pharos_ids": []
   },
   "CHEBI:749579": {
+    "pharos_ids": []
+  },
+  "CHEBI:749580": {
     "pharos_ids": []
   },
   "CHEBI:749581": {
@@ -19559,6 +20039,9 @@
   "CHEBI:7507": {
     "pharos_ids": []
   },
+  "CHEBI:750784": {
+    "pharos_ids": []
+  },
   "CHEBI:7508": {
     "pharos_ids": []
   },
@@ -19679,6 +20162,9 @@
   "CHEBI:751864": {
     "pharos_ids": []
   },
+  "CHEBI:751928": {
+    "pharos_ids": []
+  },
   "CHEBI:751938": {
     "pharos_ids": []
   },
@@ -19767,6 +20253,9 @@
     "pharos_ids": []
   },
   "CHEBI:75283": {
+    "pharos_ids": []
+  },
+  "CHEBI:752856": {
     "pharos_ids": []
   },
   "CHEBI:752868": {
@@ -20447,6 +20936,9 @@
   "CHEBI:754901": {
     "pharos_ids": []
   },
+  "CHEBI:754910": {
+    "pharos_ids": []
+  },
   "CHEBI:754929": {
     "pharos_ids": []
   },
@@ -20635,6 +21127,13 @@
   },
   "CHEBI:755141": {
     "pharos_ids": []
+  },
+  "CHEBI:755142": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL4446102",
+      "LyCHI:CX3K2Z5LMGPH",
+      "PHAROS:CX3K2Z5LMGPH"
+    ]
   },
   "CHEBI:755143": {
     "pharos_ids": []
@@ -21035,6 +21534,16 @@
       "unii:4RA0KN46E0"
     ]
   },
+  "CHEBI:755673": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3646118,CHEMBL3931782",
+      "DrugCentral:5486",
+      "Guide to Pharmacology:8456",
+      "LyCHI:XQ6L4GR3W4QR",
+      "PHAROS:XQ6L4GR3W4QR",
+      "PubChem:59603622,69669724"
+    ]
+  },
   "CHEBI:755674": {
     "pharos_ids": [
       "ChEMBL:CHEMBL3646221",
@@ -21355,6 +21864,18 @@
   "CHEBI:756000": {
     "pharos_ids": []
   },
+  "CHEBI:756005": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3948730",
+      "DrugCentral:5441",
+      "Guide to Pharmacology:8916",
+      "LyCHI:VU4ZSGX14BY3",
+      "PHAROS:VU4ZSGX14BY3",
+      "PubChem:72950888",
+      "pt:UMBRALISIB",
+      "unii:38073MQB2A"
+    ]
+  },
   "CHEBI:756031": {
     "pharos_ids": []
   },
@@ -21513,6 +22034,17 @@
   "CHEBI:756409": {
     "pharos_ids": []
   },
+  "CHEBI:756410": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL3989917",
+      "DrugCentral:5283",
+      "LyCHI:QRFLQ9M6BM6F",
+      "PHAROS:QRFLQ9M6BM6F",
+      "PubChem:71544786",
+      "pt:FOSNETUPITANT",
+      "unii:T672P80L2S"
+    ]
+  },
   "CHEBI:756412": {
     "pharos_ids": []
   },
@@ -21650,6 +22182,9 @@
       "unii:3ZO554A4Q8"
     ]
   },
+  "CHEBI:756604": {
+    "pharos_ids": []
+  },
   "CHEBI:756608": {
     "pharos_ids": [
       "ChEMBL:CHEMBL4113131",
@@ -21753,6 +22288,9 @@
   "CHEBI:756735": {
     "pharos_ids": []
   },
+  "CHEBI:756737": {
+    "pharos_ids": []
+  },
   "CHEBI:756738": {
     "pharos_ids": [
       "ChEMBL:CHEMBL4297232",
@@ -21781,6 +22319,15 @@
   },
   "CHEBI:756835": {
     "pharos_ids": []
+  },
+  "CHEBI:756901": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL4297412",
+      "DrugCentral:5497",
+      "LyCHI:BYN8P7G79PTL",
+      "PHAROS:BYN8P7G79PTL",
+      "PubChem:137171658"
+    ]
   },
   "CHEBI:756989": {
     "pharos_ids": []
@@ -22632,6 +23179,9 @@
   "CHEBI:757895": {
     "pharos_ids": []
   },
+  "CHEBI:757924": {
+    "pharos_ids": []
+  },
   "CHEBI:757931": {
     "pharos_ids": [
       "ChEMBL:CHEMBL4594446",
@@ -22816,6 +23366,9 @@
     "pharos_ids": []
   },
   "CHEBI:758390": {
+    "pharos_ids": []
+  },
+  "CHEBI:758406": {
     "pharos_ids": []
   },
   "CHEBI:758410": {
@@ -23148,6 +23701,14 @@
   "CHEBI:759883": {
     "pharos_ids": []
   },
+  "CHEBI:759884": {
+    "pharos_ids": [
+      "Guide to Pharmacology:2427",
+      "LyCHI:DR47YA5R4BCS",
+      "PHAROS:DR47YA5R4BCS",
+      "PubChem:3467"
+    ]
+  },
   "CHEBI:759885": {
     "pharos_ids": []
   },
@@ -23293,6 +23854,9 @@
     "pharos_ids": []
   },
   "CHEBI:760342": {
+    "pharos_ids": []
+  },
+  "CHEBI:760349": {
     "pharos_ids": []
   },
   "CHEBI:760350": {
@@ -24096,6 +24660,17 @@
       "PubChem:4723"
     ]
   },
+  "CHEBI:7954": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1290",
+      "DrugCentral:2078",
+      "LyCHI:ZKFP9HJQWHJQ",
+      "PHAROS:ZKFP9HJQWHJQ",
+      "PubChem:37464",
+      "pt:PENBUTOLOL",
+      "unii:78W62V43DY"
+    ]
+  },
   "CHEBI:7955": {
     "pharos_ids": []
   },
@@ -24263,6 +24838,17 @@
       "unii:5M7Y6274ZE"
     ]
   },
+  "CHEBI:8067": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201208",
+      "DrugCentral:2133",
+      "LyCHI:UV2RYT3BUS1N",
+      "PHAROS:UV2RYT3BUS1N",
+      "PubChem:4762",
+      "pt:PHENMETRAZINE",
+      "unii:XA501VL3VR"
+    ]
+  },
   "CHEBI:8068": {
     "pharos_ids": []
   },
@@ -24350,6 +24936,9 @@
       "pt:PHENYTOIN",
       "unii:6158TKW0C5"
     ]
+  },
+  "CHEBI:81496": {
+    "pharos_ids": []
   },
   "CHEBI:81567": {
     "pharos_ids": []
@@ -24446,6 +25035,17 @@
   "CHEBI:8229": {
     "pharos_ids": []
   },
+  "CHEBI:8230": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201206",
+      "DrugCentral:2183",
+      "LyCHI:7CCF2DRN6L3R",
+      "PHAROS:7CCF2DRN6L3R",
+      "PubChem:50192",
+      "pt:PIPECURONIUM",
+      "unii:1N3O74HM92"
+    ]
+  },
   "CHEBI:8231": {
     "pharos_ids": []
   },
@@ -24466,6 +25066,17 @@
   },
   "CHEBI:8242": {
     "pharos_ids": []
+  },
+  "CHEBI:8245": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1094966",
+      "DrugCentral:2199",
+      "LyCHI:R6XT2USJATD1",
+      "PHAROS:R6XT2USJATD1",
+      "PubChem:4845",
+      "pt:PIRBUTEROL",
+      "unii:OG645J8RVW"
+    ]
   },
   "CHEBI:8246": {
     "pharos_ids": []
@@ -24953,6 +25564,17 @@
       "PubChem:108150"
     ]
   },
+  "CHEBI:84115": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1305",
+      "DrugCentral:224",
+      "LyCHI:KKCY9J5G3ZK5",
+      "PHAROS:KKCY9J5G3ZK5",
+      "PubChem:2200",
+      "pt:ANTAZOLINE",
+      "unii:DHA8014SS1"
+    ]
+  },
   "CHEBI:84116": {
     "pharos_ids": [
       "ChEMBL:CHEMBL855",
@@ -25150,6 +25772,17 @@
       "unii:6GC8A4PAYH"
     ]
   },
+  "CHEBI:8491": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL252103",
+      "DrugCentral:2298",
+      "LyCHI:28GQPJBXNSC9",
+      "PHAROS:28GQPJBXNSC9",
+      "PubChem:28125497",
+      "pt:PROPIOMAZINE",
+      "unii:242Z0PM79Y"
+    ]
+  },
   "CHEBI:8492": {
     "pharos_ids": []
   },
@@ -25158,6 +25791,17 @@
   },
   "CHEBI:8494": {
     "pharos_ids": []
+  },
+  "CHEBI:8497": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1237104",
+      "DrugCentral:844",
+      "LyCHI:VYH4RZ1YFVNF",
+      "PHAROS:VYH4RZ1YFVNF",
+      "PubChem:25137854",
+      "pt:PROPOXYPHENE",
+      "unii:S2F83W92TK"
+    ]
   },
   "CHEBI:8499": {
     "pharos_ids": [
@@ -25785,6 +26429,17 @@
       "unii:L6UH7ZF8HC"
     ]
   },
+  "CHEBI:8872": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL785,CHEMBL489553",
+      "DrugCentral:2390",
+      "LyCHI:AVRXD3GMWW12",
+      "PHAROS:AVRXD3GMWW12",
+      "PubChem:33572,688570",
+      "pt:RITODRINE",
+      "unii:I0Q6O6740J"
+    ]
+  },
   "CHEBI:8874": {
     "pharos_ids": [
       "ChEMBL:CHEMBL636",
@@ -25914,6 +26569,17 @@
       "unii:5BF646324K"
     ]
   },
+  "CHEBI:9073": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL447",
+      "DrugCentral:2428",
+      "LyCHI:UJK8MUX94B6V",
+      "PHAROS:UJK8MUX94B6V",
+      "PubChem:5193",
+      "pt:SECOBARBITAL",
+      "unii:1P7H87IN75"
+    ]
+  },
   "CHEBI:90841": {
     "pharos_ids": [
       "ChEMBL:CHEMBL334966,CHEMBL1097279",
@@ -26000,6 +26666,17 @@
   },
   "CHEBI:90877": {
     "pharos_ids": []
+  },
+  "CHEBI:90879": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL235668,CHEMBL65375",
+      "DrugCentral:4893",
+      "LyCHI:JRPJ7XXGDTSX",
+      "PHAROS:JRPJ7XXGDTSX",
+      "PubChem:6323266,9903778",
+      "pt:TIPIRACIL",
+      "unii:NGO10K751P"
+    ]
   },
   "CHEBI:90881": {
     "pharos_ids": []
@@ -26155,6 +26832,14 @@
       "PHAROS:romiplostim"
     ]
   },
+  "CHEBI:9118": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201490",
+      "DrugCentral:2433",
+      "LyCHI:M345HP4AKQZ6",
+      "PHAROS:M345HP4AKQZ6"
+    ]
+  },
   "CHEBI:9122": {
     "pharos_ids": [
       "ChEMBL:CHEMBL12713",
@@ -26177,6 +26862,14 @@
       "PubChem:68617",
       "pt:SERTRALINE",
       "unii:QUC7NX6WMB"
+    ]
+  },
+  "CHEBI:91231": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL303933",
+      "LyCHI:XZWZZFX4VFLM",
+      "PHAROS:XZWZZFX4VFLM",
+      "PubChem:122262"
     ]
   },
   "CHEBI:9124": {
@@ -27095,6 +27788,9 @@
   "CHEBI:94721": {
     "pharos_ids": []
   },
+  "CHEBI:94725": {
+    "pharos_ids": []
+  },
   "CHEBI:94731": {
     "pharos_ids": []
   },
@@ -27199,6 +27895,17 @@
       "unii:ISP4442I3Y"
     ]
   },
+  "CHEBI:9536": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL440",
+      "DrugCentral:2626",
+      "LyCHI:UK39A1HAYYJ2",
+      "PHAROS:UK39A1HAYYJ2",
+      "PubChem:3032285",
+      "pt:THIAMYLAL",
+      "unii:01T23W89FR"
+    ]
+  },
   "CHEBI:9537": {
     "pharos_ids": []
   },
@@ -27266,6 +27973,9 @@
       "unii:Z80I64HMNP"
     ]
   },
+  "CHEBI:9587": {
+    "pharos_ids": []
+  },
   "CHEBI:9588": {
     "pharos_ids": [
       "ChEMBL:CHEMBL833",
@@ -27280,6 +27990,14 @@
   },
   "CHEBI:9589": {
     "pharos_ids": []
+  },
+  "CHEBI:9598": {
+    "pharos_ids": [
+      "Guide to Pharmacology:7604",
+      "LyCHI:RN7ZX2ZZG32K",
+      "PHAROS:RN7ZX2ZZG32K",
+      "PubChem:60937"
+    ]
   },
   "CHEBI:9599": {
     "pharos_ids": [
@@ -27315,6 +28033,17 @@
   },
   "CHEBI:9609": {
     "pharos_ids": []
+  },
+  "CHEBI:9611": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1762",
+      "DrugCentral:2686",
+      "LyCHI:B6BRQG6J9VF5",
+      "PHAROS:B6BRQG6J9VF5",
+      "PubChem:38945",
+      "pt:TOCAINIDE",
+      "unii:27DXO59SAN"
+    ]
   },
   "CHEBI:9613": {
     "pharos_ids": [
@@ -27490,6 +28219,17 @@
       "unii:J712EO9048"
     ]
   },
+  "CHEBI:9701": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201354",
+      "DrugCentral:2737",
+      "LyCHI:Z42TS7NSVL6X",
+      "PHAROS:Z42TS7NSVL6X",
+      "PubChem:20299",
+      "pt:TRIDIHEXETHYL",
+      "unii:7HE50A367X"
+    ]
+  },
   "CHEBI:9703": {
     "pharos_ids": []
   },
@@ -27604,8 +28344,23 @@
       "unii:N0A3Z5XTC6"
     ]
   },
+  "CHEBI:9763": {
+    "pharos_ids": []
+  },
   "CHEBI:9765": {
     "pharos_ids": []
+  },
+  "CHEBI:9774": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL339427",
+      "DrugCentral:2781",
+      "Guide to Pharmacology:2294",
+      "LyCHI:H5Q7DR5W7A2Z",
+      "PHAROS:H5Q7DR5W7A2Z",
+      "PubChem:6000",
+      "pt:TUBOCURARINE",
+      "unii:W9YXS298BM"
+    ]
   },
   "CHEBI:9884": {
     "pharos_ids": []
@@ -27991,6 +28746,17 @@
   "DRON:00011382": {
     "pharos_ids": []
   },
+  "DRON:00011813": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201233",
+      "DrugCentral:4218",
+      "LyCHI:KSC2ZZSQHKT5",
+      "PHAROS:KSC2ZZSQHKT5",
+      "PubChem:17277",
+      "pt:METHYLDOPATE",
+      "unii:2579Z4P04J"
+    ]
+  },
   "DRON:00011824": {
     "pharos_ids": []
   },
@@ -28004,6 +28770,9 @@
     "pharos_ids": []
   },
   "DRON:00012319": {
+    "pharos_ids": []
+  },
+  "DRON:00012478": {
     "pharos_ids": []
   },
   "DRON:00012716": {
@@ -28040,6 +28809,17 @@
       "PHAROS:rituximab"
     ]
   },
+  "DRON:00013140": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201229",
+      "DrugCentral:801",
+      "LyCHI:YNBD52S8V5CM",
+      "PHAROS:YNBD52S8V5CM",
+      "PubChem:5966",
+      "pt:DEMECARIUM",
+      "unii:ILP8XJ8R5K"
+    ]
+  },
   "DRON:00013433": {
     "pharos_ids": []
   },
@@ -28068,6 +28848,9 @@
     "pharos_ids": []
   },
   "DRON:00014060": {
+    "pharos_ids": []
+  },
+  "DRON:00014107": {
     "pharos_ids": []
   },
   "DRON:00014409": {
@@ -28112,6 +28895,9 @@
   "DRON:00016834": {
     "pharos_ids": []
   },
+  "DRON:00016914": {
+    "pharos_ids": []
+  },
   "DRON:00016952": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1201561",
@@ -28124,6 +28910,9 @@
     "pharos_ids": []
   },
   "DRON:00017166": {
+    "pharos_ids": []
+  },
+  "DRON:00017208": {
     "pharos_ids": []
   },
   "DRON:00017209": {
@@ -28229,6 +29018,14 @@
       "PubChem:1549000,9955977",
       "pt:LEVOCETIRIZINE",
       "unii:6U5EA9RT2O"
+    ]
+  },
+  "DRON:00019012": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL2108752",
+      "DrugCentral:4905",
+      "LyCHI:pegaptanib",
+      "PHAROS:pegaptanib"
     ]
   },
   "DRON:00019030": {
@@ -28650,6 +29447,18 @@
       "PubChem:135463437",
       "pt:CYCLIC PYRANOPTERIN MONOPHOSPHATE",
       "unii:4X7K2681Y7"
+    ]
+  },
+  "DRON:00965871": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1852688,CHEMBL1834657",
+      "DrugCentral:5459",
+      "Guide to Pharmacology:7877",
+      "LyCHI:51D1WX9A6P18",
+      "PHAROS:51D1WX9A6P18",
+      "PubChem:53235510,56669626",
+      "pt:INFIGRATINIB",
+      "unii:A4055ME1VK"
     ]
   },
   "DRON:00975437": {
@@ -32841,6 +33650,9 @@
   "RXCUI:1043561": {
     "pharos_ids": []
   },
+  "RXCUI:10454": {
+    "pharos_ids": []
+  },
   "RXCUI:104592": {
     "pharos_ids": []
   },
@@ -34145,6 +34957,14 @@
   "RXCUI:2478646": {
     "pharos_ids": []
   },
+  "RXCUI:25138": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL177756",
+      "LyCHI:G1A619TDKYF7",
+      "PHAROS:G1A619TDKYF7",
+      "PubChem:3383"
+    ]
+  },
   "RXCUI:25188": {
     "pharos_ids": []
   },
@@ -34981,6 +35801,9 @@
   "RXCUI:340705": {
     "pharos_ids": []
   },
+  "RXCUI:34119": {
+    "pharos_ids": []
+  },
   "RXCUI:343262": {
     "pharos_ids": []
   },
@@ -35500,6 +36323,18 @@
   "RXCUI:748671": {
     "pharos_ids": []
   },
+  "RXCUI:7512": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1434513,CHEMBL1437",
+      "DrugCentral:1960",
+      "Guide to Pharmacology:505",
+      "LyCHI:NMF7HVW8US3U",
+      "PHAROS:NMF7HVW8US3U",
+      "PubChem:24847757,439260",
+      "pt:NOREPINEPHRINE",
+      "unii:X4W3ENH1CV"
+    ]
+  },
   "RXCUI:7880": {
     "pharos_ids": []
   },
@@ -35507,6 +36342,9 @@
     "pharos_ids": []
   },
   "RXCUI:797752": {
+    "pharos_ids": []
+  },
+  "RXCUI:7980": {
     "pharos_ids": []
   },
   "RXCUI:800000": {

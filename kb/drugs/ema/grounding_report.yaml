@@ -1,8 +1,8 @@
-auto_accepted: 942
+auto_accepted: 940
 llm_reranked: 0
 review_recommended: 0
 total_drugs: 995
-unresolved: 53
+unresolved: 55
 unresolved_drugs:
 - diphtheria, tetanus, pertussis (acellular, component), hepatitis B (rDNA), poliomyelitis
   (inactivated) and Haemophilus type b conjugate vaccine (adsorbed)
@@ -20,9 +20,11 @@ unresolved_drugs:
   (rDNA) (HBV), poliomyelitis (inactivated) (IPV) and Haemophilus influenzae type-b
   (Hib) conjugate vaccine (adsorbed)
 - pneumococcal polysaccharide conjugate vaccine (13-valent, adsorbed)
+- gallium (68Ga) chloride;germanium (68Ge) chloride
 - dengue tetravalent vaccine (live, attenuated)
 - zoonotic influenza vaccine (H5N1) (surface antigen, inactivated, adjuvanted)
 - Ebola Zaire vaccine (rVSV∆G-ZEBOV-GP, live)
+- germanium (68Ge) chloride;gallium (68Ga) chloride
 - ledispavir;sofosbuvir
 - pneumococcal polysaccharide conjugate vaccine (adsorbed)
 - pandemic influenza vaccine (H5N1) (split virion, inactivated, adjuvanted)

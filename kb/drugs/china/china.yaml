@@ -1057,11 +1057,11 @@
   approval_date: '20170726'
   grounding:
     components:
-    - CHEBI:3483
+    - CHEBI:474053
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:3483
-    grounded_label: cefazolin sodium
+    grounded_id: CHEBI:474053
+    grounded_label: cefazolin
     grounding_quality: lexical_exact_surgery
     original_string: Cefazolin Sodium and Sodium Chloride Injection
     subject_id: MEDICNE:3fc5b126-82ce-5011-ab12-81f9786dc0ef
@@ -1071,12 +1071,12 @@
   mention_id: MEDICNE:3fc5b126-82ce-5011-ab12-81f9786dc0ef
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3483
-    normalized_label: cefazolin sodium
-    original_id: CHEBI:3483
+    normalized_id: CHEBI:474053
+    normalized_label: cefazolin
+    original_id: CHEBI:474053
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3483
-  normalized_label: cefazolin sodium
+  normalized_id: CHEBI:474053
+  normalized_label: cefazolin
   original_literal: 注射用头孢唑林钠/氯化钠注射液
   original_name_zh: 注射用头孢唑林钠/氯化钠注射液
   source: CHINA
@@ -1499,24 +1499,18 @@
 - alternate_ids: []
   approval_date: '19930309'
   grounding:
-    confidence: 0.8
-    grounded_id: CHEBI:26216
-    grounded_label: potassium atom
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Potassium Sodium Citrate Granules
     subject_id: MEDICNE:1bcdc877-079d-5689-a8d4-912745472fde
-  grounding_confidence: 0.8
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:1bcdc877-079d-5689-a8d4-912745472fde
-  normalization:
-    normalization_quality: identity
-    normalized_id: CHEBI:26216
-    normalized_label: potassium atom
-    original_id: CHEBI:26216
-    tool: medic-normalizer/1
-  normalized_id: CHEBI:26216
-  normalized_label: potassium atom
+  normalized_id: ''
+  normalized_label: ''
   original_literal: 枸橼酸氢钾钠颗粒
   original_name_zh: 枸橼酸氢钾钠颗粒
   source: CHINA
@@ -5738,11 +5732,11 @@
   approval_date: '20040415'
   grounding:
     components:
-    - CHEBI:7008
+    - CHEBI:63611
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:7008
-    grounded_label: moxifloxacin hydrochloride
+    grounded_id: CHEBI:63611
+    grounded_label: moxifloxacin
     grounding_quality: lexical_exact_surgery
     original_string: Moxifloxacin Hydrochloride and Sodium Chloride Injection
     subject_id: MEDICNE:139624ad-b94c-569e-a8f4-145d16cfaaf6
@@ -5752,12 +5746,12 @@
   mention_id: MEDICNE:139624ad-b94c-569e-a8f4-145d16cfaaf6
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:7008
-    normalized_label: moxifloxacin hydrochloride
-    original_id: CHEBI:7008
+    normalized_id: CHEBI:63611
+    normalized_label: moxifloxacin
+    original_id: CHEBI:63611
     tool: medic-normalizer/1
-  normalized_id: CHEBI:7008
-  normalized_label: moxifloxacin hydrochloride
+  normalized_id: CHEBI:63611
+  normalized_label: moxifloxacin
   original_literal: 盐酸莫西沙星氯化钠注射液
   original_name_zh: 盐酸莫西沙星氯化钠注射液
   source: CHINA
@@ -5875,11 +5869,11 @@
   approval_date: '19960712'
   grounding:
     components:
-    - CHEBI:8233
+    - CHEBI:8232
     - CHEBI:85192
     confidence: 0.9
-    grounded_id: CHEBI:8233
-    grounded_label: piperacillin sodium
+    grounded_id: CHEBI:8232
+    grounded_label: piperacillin
     grounding_quality: lexical_exact_surgery
     original_string: Piperacillin Sodium and Tazobactam Sodium for Injection
     subject_id: MEDICNE:3847ed52-d4d6-5a1f-85d3-a37ed8c7506b
@@ -5889,12 +5883,12 @@
   mention_id: MEDICNE:3847ed52-d4d6-5a1f-85d3-a37ed8c7506b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:8233
-    normalized_label: piperacillin sodium
-    original_id: CHEBI:8233
+    normalized_id: CHEBI:8232
+    normalized_label: piperacillin
+    original_id: CHEBI:8232
     tool: medic-normalizer/1
-  normalized_id: CHEBI:8233
-  normalized_label: piperacillin sodium
+  normalized_id: CHEBI:8232
+  normalized_label: piperacillin
   original_literal: 注射用哌拉西林钠他唑巴坦钠
   original_name_zh: 注射用哌拉西林钠他唑巴坦钠
   source: CHINA
@@ -15262,11 +15256,11 @@
   approval_date: '20080522'
   grounding:
     components:
-    - CHEBI:748035
+    - CHEBI:2567
     - CHEBI:28940
     confidence: 0.9
-    grounded_id: CHEBI:748035
-    grounded_label: alendronate sodium
+    grounded_id: CHEBI:2567
+    grounded_label: alendronic acid
     grounding_quality: lexical_exact_surgery
     original_string: Alendronate Sodium and Vitamin D3 Tablets
     subject_id: MEDICNE:d664d2a0-cafd-525e-8f0a-fb24d5ba2fd3
@@ -15276,12 +15270,12 @@
   mention_id: MEDICNE:d664d2a0-cafd-525e-8f0a-fb24d5ba2fd3
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:748035
-    normalized_label: alendronate sodium
-    original_id: CHEBI:748035
+    normalized_id: CHEBI:2567
+    normalized_label: alendronic acid
+    original_id: CHEBI:2567
     tool: medic-normalizer/1
-  normalized_id: CHEBI:748035
-  normalized_label: alendronate sodium
+  normalized_id: CHEBI:2567
+  normalized_label: alendronic acid
   original_literal: 阿仑膦酸钠维D3片
   original_name_zh: 阿仑膦酸钠维D3片
   source: CHINA
@@ -15300,11 +15294,11 @@
   approval_date: '20090929'
   grounding:
     components:
-    - CHEBI:748035
+    - CHEBI:2567
     - CHEBI:28940
     confidence: 0.9
-    grounded_id: CHEBI:748035
-    grounded_label: alendronate sodium
+    grounded_id: CHEBI:2567
+    grounded_label: alendronic acid
     grounding_quality: lexical_exact_surgery
     original_string: Alendronate Sodium and Vitamin D3 Tablets (II)
     subject_id: MEDICNE:ff8d9d70-6633-59ba-8959-ddca4a684733
@@ -15314,12 +15308,12 @@
   mention_id: MEDICNE:ff8d9d70-6633-59ba-8959-ddca4a684733
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:748035
-    normalized_label: alendronate sodium
-    original_id: CHEBI:748035
+    normalized_id: CHEBI:2567
+    normalized_label: alendronic acid
+    original_id: CHEBI:2567
     tool: medic-normalizer/1
-  normalized_id: CHEBI:748035
-  normalized_label: alendronate sodium
+  normalized_id: CHEBI:2567
+  normalized_label: alendronic acid
   original_literal: 阿仑膦酸钠维D3片（II）
   original_name_zh: 阿仑膦酸钠维D3片（II）
   source: CHINA
@@ -16095,11 +16089,11 @@
   approval_date: '20000616'
   grounding:
     components:
-    - CHEBI:748315
+    - CHEBI:6541
     - CHEBI:5778
     confidence: 0.9
-    grounded_id: CHEBI:748315
-    grounded_label: losartan potassium
+    grounded_id: CHEBI:6541
+    grounded_label: losartan
     grounding_quality: lexical_exact_surgery
     original_string: Losartan Potassium and Hydrochlorothiazide Tablets
     subject_id: MEDICNE:db0eac5c-2503-5af1-9455-6b980994a542
@@ -16109,12 +16103,12 @@
   mention_id: MEDICNE:db0eac5c-2503-5af1-9455-6b980994a542
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:748315
-    normalized_label: losartan potassium
-    original_id: CHEBI:748315
+    normalized_id: CHEBI:6541
+    normalized_label: losartan
+    original_id: CHEBI:6541
     tool: medic-normalizer/1
-  normalized_id: CHEBI:748315
-  normalized_label: losartan potassium
+  normalized_id: CHEBI:6541
+  normalized_label: losartan
   original_literal: 氯沙坦钾氢氯噻嗪片
   original_name_zh: 氯沙坦钾氢氯噻嗪片
   source: CHINA
@@ -19540,11 +19534,11 @@
   approval_date: '20020806'
   grounding:
     components:
-    - CHEBI:6760
+    - CHEBI:6759
     - DRON:00752139
     confidence: 0.9
-    grounded_id: CHEBI:6760
-    grounded_label: mepivacaine hydrochloride
+    grounded_id: CHEBI:6759
+    grounded_label: mepivacaine
     grounding_quality: lexical_exact_surgery
     original_string: Mepivacaine Hydrochloride and Epinephrine Injection
     subject_id: MEDICNE:59a8a492-9a8d-59b4-a6b7-5bfc3c34c24d
@@ -19554,12 +19548,12 @@
   mention_id: MEDICNE:59a8a492-9a8d-59b4-a6b7-5bfc3c34c24d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6760
-    normalized_label: mepivacaine hydrochloride
-    original_id: CHEBI:6760
+    normalized_id: CHEBI:6759
+    normalized_label: mepivacaine
+    original_id: CHEBI:6759
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6760
-  normalized_label: mepivacaine hydrochloride
+  normalized_id: CHEBI:6759
+  normalized_label: mepivacaine
   original_literal: 盐酸甲哌卡因肾上腺素注射液
   original_name_zh: 盐酸甲哌卡因肾上腺素注射液
   source: CHINA
@@ -20309,11 +20303,11 @@
   approval_date: '20210119'
   grounding:
     components:
-    - CHEBI:31472
+    - CHEBI:4466
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:31472
-    grounded_label: dexmedetomidine hydrochloride
+    grounded_id: CHEBI:4466
+    grounded_label: dexmedetomidine
     grounding_quality: lexical_exact_surgery
     original_string: Dexmedetomidine Hydrochloride and Sodium Chloride Injection
     subject_id: MEDICNE:3f42b802-bcec-58a8-838f-3fb0f41702e8
@@ -20323,12 +20317,12 @@
   mention_id: MEDICNE:3f42b802-bcec-58a8-838f-3fb0f41702e8
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31472
-    normalized_label: dexmedetomidine hydrochloride
-    original_id: CHEBI:31472
+    normalized_id: CHEBI:4466
+    normalized_label: dexmedetomidine
+    original_id: CHEBI:4466
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31472
-  normalized_label: dexmedetomidine hydrochloride
+  normalized_id: CHEBI:4466
+  normalized_label: dexmedetomidine
   original_literal: 盐酸右美托咪定氯化钠注射液
   original_name_zh: 盐酸右美托咪定氯化钠注射液
   source: CHINA
@@ -21588,11 +21582,11 @@
   approval_date: '19970116'
   grounding:
     components:
-    - RXCUI:235851
+    - CHEBI:100241
     - DRON:00763759
     confidence: 0.9
-    grounded_id: RXCUI:235851
-    grounded_label: ciprofloxacin lactate
+    grounded_id: CHEBI:100241
+    grounded_label: ciprofloxacin
     grounding_quality: lexical_exact_surgery
     original_string: Ciprofloxacin Lactate and Sodium Chloride Injection
     subject_id: MEDICNE:31cb393a-52af-50a1-927a-10330ed004c1
@@ -21602,12 +21596,12 @@
   mention_id: MEDICNE:31cb393a-52af-50a1-927a-10330ed004c1
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:235851
-    normalized_label: ciprofloxacin lactate
-    original_id: RXCUI:235851
+    normalized_id: CHEBI:100241
+    normalized_label: ciprofloxacin
+    original_id: CHEBI:100241
     tool: medic-normalizer/1
-  normalized_id: RXCUI:235851
-  normalized_label: ciprofloxacin lactate
+  normalized_id: CHEBI:100241
+  normalized_label: ciprofloxacin
   original_literal: 乳酸环丙沙星氯化钠注射液
   original_name_zh: 乳酸环丙沙星氯化钠注射液
   source: CHINA
@@ -24523,11 +24517,11 @@
   approval_date: '20200225'
   grounding:
     components:
-    - CHEBI:750246
+    - CHEBI:60802
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:750246
-    grounded_label: ropivacaine hydrochloride
+    grounded_id: CHEBI:60802
+    grounded_label: ropivacaine
     grounding_quality: lexical_exact_surgery
     original_string: Ropivacaine Hydrochloride and Sodium Chloride Injection
     subject_id: MEDICNE:c663ff17-dac8-525b-ab3b-8dc3f186c34e
@@ -24537,12 +24531,12 @@
   mention_id: MEDICNE:c663ff17-dac8-525b-ab3b-8dc3f186c34e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:750246
-    normalized_label: ropivacaine hydrochloride
-    original_id: CHEBI:750246
+    normalized_id: CHEBI:60802
+    normalized_label: ropivacaine
+    original_id: CHEBI:60802
     tool: medic-normalizer/1
-  normalized_id: CHEBI:750246
-  normalized_label: ropivacaine hydrochloride
+  normalized_id: CHEBI:60802
+  normalized_label: ropivacaine
   original_literal: 盐酸罗哌卡因氯化钠注射液
   original_name_zh: 盐酸罗哌卡因氯化钠注射液
   source: CHINA
@@ -25443,11 +25437,11 @@
   approval_date: '20201216'
   grounding:
     components:
-    - CHEBI:9606
+    - CHEBI:9605
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:9606
-    grounded_label: tirofiban hydrochloride
+    grounded_id: CHEBI:9605
+    grounded_label: tirofiban
     grounding_quality: lexical_exact_surgery
     original_string: Tirofiban Hydrochloride and Sodium Chloride Injection
     subject_id: MEDICNE:17ce297a-c749-56e7-bb52-f26ec880a239
@@ -25457,12 +25451,12 @@
   mention_id: MEDICNE:17ce297a-c749-56e7-bb52-f26ec880a239
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:9606
-    normalized_label: tirofiban hydrochloride
-    original_id: CHEBI:9606
+    normalized_id: CHEBI:9605
+    normalized_label: tirofiban
+    original_id: CHEBI:9605
     tool: medic-normalizer/1
-  normalized_id: CHEBI:9606
-  normalized_label: tirofiban hydrochloride
+  normalized_id: CHEBI:9605
+  normalized_label: tirofiban
   original_literal: 盐酸替罗非班氯化钠注射液
   original_name_zh: 盐酸替罗非班氯化钠注射液
   source: CHINA
@@ -26049,11 +26043,11 @@
   approval_date: '20201229'
   grounding:
     components:
-    - CHEBI:3490
+    - CHEBI:3489
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:3490
-    grounded_label: cefmetazole sodium
+    grounded_id: CHEBI:3489
+    grounded_label: cefmetazole
     grounding_quality: lexical_exact_surgery
     original_string: Cefmetazole Sodium and Sodium Chloride Injection
     subject_id: MEDICNE:5fc7cf3c-527c-590a-aa49-2b681bc05945
@@ -26063,12 +26057,12 @@
   mention_id: MEDICNE:5fc7cf3c-527c-590a-aa49-2b681bc05945
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3490
-    normalized_label: cefmetazole sodium
-    original_id: CHEBI:3490
+    normalized_id: CHEBI:3489
+    normalized_label: cefmetazole
+    original_id: CHEBI:3489
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3490
-  normalized_label: cefmetazole sodium
+  normalized_id: CHEBI:3489
+  normalized_label: cefmetazole
   original_literal: 注射用头孢美唑钠/氯化钠注射液
   original_name_zh: 注射用头孢美唑钠/氯化钠注射液
   source: CHINA
@@ -27420,11 +27414,11 @@
   approval_date: '20210818'
   grounding:
     components:
-    - CHEBI:51255
+    - CHEBI:2676
     - CHEBI:85264
     confidence: 0.9
-    grounded_id: CHEBI:51255
-    grounded_label: amoxicillin sodium
+    grounded_id: CHEBI:2676
+    grounded_label: amoxicillin
     grounding_quality: lexical_exact_surgery
     original_string: Amoxicillin Sodium and Clavulanate Potassium for Injection
     subject_id: MEDICNE:29168fa5-123a-5e90-90d6-d5841fc04ad2
@@ -27434,12 +27428,12 @@
   mention_id: MEDICNE:29168fa5-123a-5e90-90d6-d5841fc04ad2
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:51255
-    normalized_label: amoxicillin sodium
-    original_id: CHEBI:51255
+    normalized_id: CHEBI:2676
+    normalized_label: amoxicillin
+    original_id: CHEBI:2676
     tool: medic-normalizer/1
-  normalized_id: CHEBI:51255
-  normalized_label: amoxicillin sodium
+  normalized_id: CHEBI:2676
+  normalized_label: amoxicillin
   original_literal: 注射用阿莫西林钠克拉维酸钾
   original_name_zh: 注射用阿莫西林钠克拉维酸钾
   source: CHINA
@@ -27528,11 +27522,11 @@
   approval_date: '20220203'
   grounding:
     components:
-    - CHEBI:3494
+    - CHEBI:3493
     - CHEBI:157785
     confidence: 0.9
-    grounded_id: CHEBI:3494
-    grounded_label: Cefoperazone sodium
+    grounded_id: CHEBI:3493
+    grounded_label: cefoperazone
     grounding_quality: lexical_exact_surgery
     original_string: Cefoperazone Sodium and Sulbactam Sodium for Injection
     subject_id: MEDICNE:f96d5555-c7f3-56f6-a1dd-a8595b39b9c3
@@ -27542,12 +27536,12 @@
   mention_id: MEDICNE:f96d5555-c7f3-56f6-a1dd-a8595b39b9c3
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3494
-    normalized_label: Cefoperazone sodium
-    original_id: CHEBI:3494
+    normalized_id: CHEBI:3493
+    normalized_label: cefoperazone
+    original_id: CHEBI:3493
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3494
-  normalized_label: Cefoperazone sodium
+  normalized_id: CHEBI:3493
+  normalized_label: cefoperazone
   original_literal: 注射用头孢哌酮钠舒巴坦钠
   original_name_zh: 注射用头孢哌酮钠舒巴坦钠
   source: CHINA
@@ -29791,11 +29785,11 @@
   approval_date: '20220130'
   grounding:
     components:
-    - CHEBI:51255
+    - CHEBI:2676
     - CHEBI:157785
     confidence: 0.9
-    grounded_id: CHEBI:51255
-    grounded_label: amoxicillin sodium
+    grounded_id: CHEBI:2676
+    grounded_label: amoxicillin
     grounding_quality: lexical_exact_surgery
     original_string: Amoxicillin Sodium and Sulbactam Sodium for Injection
     subject_id: MEDICNE:1cb9430b-796e-5709-9fef-5bfa87ebc2f9
@@ -29805,12 +29799,12 @@
   mention_id: MEDICNE:1cb9430b-796e-5709-9fef-5bfa87ebc2f9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:51255
-    normalized_label: amoxicillin sodium
-    original_id: CHEBI:51255
+    normalized_id: CHEBI:2676
+    normalized_label: amoxicillin
+    original_id: CHEBI:2676
     tool: medic-normalizer/1
-  normalized_id: CHEBI:51255
-  normalized_label: amoxicillin sodium
+  normalized_id: CHEBI:2676
+  normalized_label: amoxicillin
   original_literal: 注射用阿莫西林钠舒巴坦钠
   original_name_zh: 注射用阿莫西林钠舒巴坦钠
   source: CHINA
@@ -30510,11 +30504,11 @@
   approval_date: '20220822'
   grounding:
     components:
-    - CHEBI:94700
+    - CHEBI:31964
     - DRON:00763759
     confidence: 0.9
-    grounded_id: DRON:00763759
-    grounded_label: sodium chloride Injection
+    grounded_id: CHEBI:31964
+    grounded_label: Pazufloxacin
     grounding_quality: lexical_exact_surgery
     original_string: Pazufloxacin Mesylate and Sodium Chloride Injection
     subject_id: MEDICNE:bee3ad4f-219c-535b-b926-f44accc1a457
@@ -30524,12 +30518,12 @@
   mention_id: MEDICNE:bee3ad4f-219c-535b-b926-f44accc1a457
   normalization:
     normalization_quality: identity
-    normalized_id: DRON:00763759
-    normalized_label: sodium chloride Injection
-    original_id: DRON:00763759
+    normalized_id: CHEBI:31964
+    normalized_label: Pazufloxacin
+    original_id: CHEBI:31964
     tool: medic-normalizer/1
-  normalized_id: DRON:00763759
-  normalized_label: sodium chloride Injection
+  normalized_id: CHEBI:31964
+  normalized_label: Pazufloxacin
   original_literal: 甲磺酸帕珠沙星氯化钠注射液
   original_name_zh: 甲磺酸帕珠沙星氯化钠注射液
   source: CHINA
@@ -33699,11 +33693,11 @@
   approval_date: '20210616'
   grounding:
     components:
-    - CHEBI:4857
+    - CHEBI:4856
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:4857
-    grounded_label: esmolol hydrochloride
+    grounded_id: CHEBI:4856
+    grounded_label: esmolol
     grounding_quality: lexical_exact_surgery
     original_string: Esmolol Hydrochloride and Sodium Chloride Injection
     subject_id: MEDICNE:83a7bd7c-bffd-57af-a41d-b2bcec593329
@@ -33713,12 +33707,12 @@
   mention_id: MEDICNE:83a7bd7c-bffd-57af-a41d-b2bcec593329
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4857
-    normalized_label: esmolol hydrochloride
-    original_id: CHEBI:4857
+    normalized_id: CHEBI:4856
+    normalized_label: esmolol
+    original_id: CHEBI:4856
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4857
-  normalized_label: esmolol hydrochloride
+  normalized_id: CHEBI:4856
+  normalized_label: esmolol
   original_literal: 盐酸艾司洛尔氯化钠注射液
   original_name_zh: 盐酸艾司洛尔氯化钠注射液
   source: CHINA
@@ -35338,11 +35332,11 @@
   approval_date: '20230128'
   grounding:
     components:
-    - CHEBI:34535
+    - CHEBI:28971
     - CHEBI:157785
     confidence: 0.9
-    grounded_id: CHEBI:34535
-    grounded_label: ampicillin sodium
+    grounded_id: CHEBI:28971
+    grounded_label: ampicillin
     grounding_quality: lexical_exact_surgery
     original_string: Ampicillin Sodium and Sulbactam Sodium for Injection
     subject_id: MEDICNE:6b6d368f-1681-5992-bd75-26e0b6333a73
@@ -35352,12 +35346,12 @@
   mention_id: MEDICNE:6b6d368f-1681-5992-bd75-26e0b6333a73
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:34535
-    normalized_label: ampicillin sodium
-    original_id: CHEBI:34535
+    normalized_id: CHEBI:28971
+    normalized_label: ampicillin
+    original_id: CHEBI:28971
     tool: medic-normalizer/1
-  normalized_id: CHEBI:34535
-  normalized_label: ampicillin sodium
+  normalized_id: CHEBI:28971
+  normalized_label: ampicillin
   original_literal: 注射用氨苄西林钠舒巴坦钠
   original_name_zh: 注射用氨苄西林钠舒巴坦钠
   source: CHINA
@@ -38142,11 +38136,11 @@
   approval_date: '20231229'
   grounding:
     components:
-    - CHEBI:51255
+    - CHEBI:2676
     - CHEBI:85264
     confidence: 0.9
-    grounded_id: CHEBI:51255
-    grounded_label: amoxicillin sodium
+    grounded_id: CHEBI:2676
+    grounded_label: amoxicillin
     grounding_quality: lexical_exact_surgery
     original_string: Amoxicillin Sodium and Clavulanate Potassium for Injection (II)
     subject_id: MEDICNE:a21c05b2-8036-5afc-9252-7cf77880e780
@@ -38156,12 +38150,12 @@
   mention_id: MEDICNE:a21c05b2-8036-5afc-9252-7cf77880e780
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:51255
-    normalized_label: amoxicillin sodium
-    original_id: CHEBI:51255
+    normalized_id: CHEBI:2676
+    normalized_label: amoxicillin
+    original_id: CHEBI:2676
     tool: medic-normalizer/1
-  normalized_id: CHEBI:51255
-  normalized_label: amoxicillin sodium
+  normalized_id: CHEBI:2676
+  normalized_label: amoxicillin
   original_literal: 注射用阿莫西林钠克拉维酸钾（Ⅱ）
   original_name_zh: 注射用阿莫西林钠克拉维酸钾（Ⅱ）
   source: CHINA
@@ -39245,27 +39239,18 @@
 - alternate_ids: []
   approval_date: '20231102'
   grounding:
-    components:
-    - CHEBI:26708
-    - DRON:00754325
-    confidence: 0.9
-    grounded_id: DRON:00754325
-    grounded_label: glucose Injection
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: Sodium, Potassium, Magnesium, Calcium, and Glucose Injection
     subject_id: MEDICNE:91565a7f-3574-5c02-9429-95f4ec651525
-  grounding_confidence: 0.9
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   mention_id: MEDICNE:91565a7f-3574-5c02-9429-95f4ec651525
-  normalization:
-    normalization_quality: identity
-    normalized_id: DRON:00754325
-    normalized_label: glucose Injection
-    original_id: DRON:00754325
-    tool: medic-normalizer/1
-  normalized_id: DRON:00754325
-  normalized_label: glucose Injection
+  normalized_id: ''
+  normalized_label: ''
   original_literal: 钠钾镁钙葡萄糖注射液
   original_name_zh: 钠钾镁钙葡萄糖注射液
   source: CHINA
@@ -39668,11 +39653,11 @@
   approval_date: '20230808'
   grounding:
     components:
-    - CHEBI:3517
+    - CHEBI:3515
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:3517
-    grounded_label: Cefuroxime sodium
+    grounded_id: CHEBI:3515
+    grounded_label: cefuroxime
     grounding_quality: lexical_exact_surgery
     original_string: Cefuroxime Sodium and Sodium Chloride Injection
     subject_id: MEDICNE:031ae461-120b-5bfc-b01c-e678dfffdcb6
@@ -39682,12 +39667,12 @@
   mention_id: MEDICNE:031ae461-120b-5bfc-b01c-e678dfffdcb6
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:3517
-    normalized_label: Cefuroxime sodium
-    original_id: CHEBI:3517
+    normalized_id: CHEBI:3515
+    normalized_label: cefuroxime
+    original_id: CHEBI:3515
     tool: medic-normalizer/1
-  normalized_id: CHEBI:3517
-  normalized_label: Cefuroxime sodium
+  normalized_id: CHEBI:3515
+  normalized_label: cefuroxime
   original_literal: 注射用头孢呋辛钠/氯化钠注射液
   original_name_zh: 注射用头孢呋辛钠/氯化钠注射液
   source: CHINA
@@ -43698,11 +43683,11 @@
   approval_date: '20250408'
   grounding:
     components:
-    - CHEBI:6344
+    - CHEBI:6343
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:6344
-    grounded_label: Labetalol hydrochloride
+    grounded_id: CHEBI:6343
+    grounded_label: labetalol
     grounding_quality: lexical_exact_surgery
     original_string: Labetalol Hydrochloride and Sodium Chloride Injection
     subject_id: MEDICNE:7eef431b-6d3d-521b-87e9-43a53f916533
@@ -43712,12 +43697,12 @@
   mention_id: MEDICNE:7eef431b-6d3d-521b-87e9-43a53f916533
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6344
-    normalized_label: Labetalol hydrochloride
-    original_id: CHEBI:6344
+    normalized_id: CHEBI:6343
+    normalized_label: labetalol
+    original_id: CHEBI:6343
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6344
-  normalized_label: Labetalol hydrochloride
+  normalized_id: CHEBI:6343
+  normalized_label: labetalol
   original_literal: 盐酸拉贝洛尔氯化钠注射液
   original_name_zh: 盐酸拉贝洛尔氯化钠注射液
   source: CHINA
@@ -49662,11 +49647,11 @@
   grounding:
     components:
     - CHEBI:471744
-    - CHEBI:59511
+    - CHEBI:3697
     - DRON:00763759
     confidence: 0.9
-    grounded_id: CHEBI:59511
-    grounded_label: cilastatin sodium
+    grounded_id: CHEBI:3697
+    grounded_label: cilastatin
     grounding_quality: lexical_exact_surgery
     original_string: Imipenem and Cilastatin Sodium/Sodium Chloride Injection
     subject_id: MEDICNE:e4c3660e-83dc-51a6-bf62-00af1b27763d
@@ -49676,12 +49661,12 @@
   mention_id: MEDICNE:e4c3660e-83dc-51a6-bf62-00af1b27763d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:59511
-    normalized_label: cilastatin sodium
-    original_id: CHEBI:59511
+    normalized_id: CHEBI:3697
+    normalized_label: cilastatin
+    original_id: CHEBI:3697
     tool: medic-normalizer/1
-  normalized_id: CHEBI:59511
-  normalized_label: cilastatin sodium
+  normalized_id: CHEBI:3697
+  normalized_label: cilastatin
   original_literal: 注射用亚胺培南西司他丁钠/氯化钠注射液
   original_name_zh: 注射用亚胺培南西司他丁钠/氯化钠注射液
   source: CHINA

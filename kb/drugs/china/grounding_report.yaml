@@ -1,8 +1,8 @@
-auto_accepted: 931
+auto_accepted: 929
 llm_reranked: 0
 review_recommended: 0
 total_drugs: 1521
-unresolved: 590
+unresolved: 592
 unresolved_drugs:
 - Dotebalamide Tablets
 - Valtuxetin Hydrobromide Tablets
@@ -12,6 +12,7 @@ unresolved_drugs:
 - Raltegravir Potassium Dry Suspension
 - Pivastatin Calcium Tablets
 - Sodium L-Glutamine Gluconate Granules
+- Potassium Sodium Citrate Granules
 - Alfa Calcitriol Soft Gel Capsules
 - Terazoline Hydrochloride Tablets
 - Cefladin Capsules
@@ -440,6 +441,7 @@ unresolved_drugs:
 - Compound Electrolyte Injection (V)
 - Ifemitide Tablets (I)
 - Cefalexin Dry Suspension
+- Sodium, Potassium, Magnesium, Calcium, and Glucose Injection
 - Isotretinoin Soft Gel Capsules
 - Dihydroxypropyl Theophylline Injection
 - Lubi Progesterone Soft Capsules

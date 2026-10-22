@@ -9363,7 +9363,7 @@
   grounding:
     components:
     - CHEBI:176844
-    - CHEBI:68639
+    - CHEBI:68642
     confidence: 1.0
     grounded_id: CHEBI:176844
     grounded_label: niraparib
@@ -9400,7 +9400,7 @@
     components:
     - CHEBI:3001
     - CHEBI:5147
-    - CHEBI:90972
+    - CHEBI:749411
     confidence: 1.0
     grounded_id: CHEBI:5147
     grounded_label: formoterol
@@ -11463,13 +11463,13 @@
   ema_product_number: EMEA/H/C/004264
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/inhixa
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:749476
-    grounded_label: enoxaparin sodium
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:28304
+    grounded_label: heparin
+    grounding_quality: lexical_exact_surgery
     original_string: enoxaparin sodium
     subject_id: MEDICNE:485508bd-4f36-564d-b6c4-1f342438cc3e
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Inhixa is indicated for adults for:  Prophylaxis of venous thromboembolism,
@@ -11503,12 +11503,12 @@
   mention_id: MEDICNE:485508bd-4f36-564d-b6c4-1f342438cc3e
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749476
-    normalized_label: enoxaparin sodium
-    original_id: CHEBI:749476
+    normalized_id: CHEBI:28304
+    normalized_label: heparin
+    original_id: CHEBI:28304
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749476
-  normalized_label: enoxaparin sodium
+  normalized_id: CHEBI:28304
+  normalized_label: heparin
   original_literal: enoxaparin sodium
   product_name: Inhixa
   source: EMA
@@ -16129,13 +16129,13 @@
   ema_product_number: EMEA/H/C/004692
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/lyvdelzi
   grounding:
-    confidence: 0.765
+    confidence: 0.9
     grounded_id: CHEBI:756444
     grounded_label: seladelpar lysine
-    grounding_quality: lexical_exact
+    grounding_quality: lexical_exact_surgery
     original_string: seladelpar lysine dihydrate
     subject_id: MEDICNE:53ef00a3-7425-50a4-a787-c5c255dfbc53
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Lyvdelzi is indicated for the treatment of primary biliary cholangitis
@@ -16226,13 +16226,13 @@
   ema_product_number: EMEA/H/C/002204
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ameluz
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:132969
-    grounded_label: 5-aminolevulinic acid hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:17549
+    grounded_label: 5-aminolevulinic acid
+    grounding_quality: lexical_exact_surgery
     original_string: 5-aminolevulinic acid hydrochloride
     subject_id: MEDICNE:79719884-7e6d-55a0-8cd3-294f2d8714ad
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of actinic keratosis of mild to moderate severity on the face
@@ -16258,12 +16258,12 @@
   mention_id: MEDICNE:79719884-7e6d-55a0-8cd3-294f2d8714ad
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:132969
-    normalized_label: 5-aminolevulinic acid hydrochloride
-    original_id: CHEBI:132969
+    normalized_id: CHEBI:17549
+    normalized_label: 5-aminolevulinic acid
+    original_id: CHEBI:17549
     tool: medic-normalizer/1
-  normalized_id: CHEBI:132969
-  normalized_label: 5-aminolevulinic acid hydrochloride
+  normalized_id: CHEBI:17549
+  normalized_label: 5-aminolevulinic acid
   original_literal: 5-aminolevulinic acid hydrochloride
   product_name: Ameluz
   source: EMA
@@ -17542,7 +17542,7 @@
   grounding:
     components:
     - CHEBI:68610
-    - CHEBI:6802
+    - CHEBI:6801
     confidence: 1.0
     grounded_id: CHEBI:68610
     grounded_label: linagliptin
@@ -19651,18 +19651,15 @@
   ema_product_number: EMEA/H/C/006053
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/galliapharm
   grounding:
-    components:
-    - CHEBI:749395
-    - CHEBI:30441
-    confidence: 0.8
-    grounded_id: CHEBI:749395
-    grounded_label: gallium
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: gallium (68Ga) chloride;germanium (68Ge) chloride
     subject_id: MEDICNE:dba9e87b-f33f-57f1-bfe7-dce87b78db41
-  grounding_confidence: 0.8
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   indication: This radionuclide generator is not intended for direct use in patients.
     The sterile eluate (gallium (68Ga) chloride solution) from the radionuclide generator
     GalliaPharm is indicated for in vitro radiolabelling of various kits for radiopharmaceutical
@@ -19677,14 +19674,8 @@
       with such eluate, to be used for positron emission tomography (PET) imaging.
     product_name: GalliaPharm
   mention_id: MEDICNE:dba9e87b-f33f-57f1-bfe7-dce87b78db41
-  normalization:
-    normalization_quality: identity
-    normalized_id: CHEBI:749395
-    normalized_label: gallium
-    original_id: CHEBI:749395
-    tool: medic-normalizer/1
-  normalized_id: CHEBI:749395
-  normalized_label: gallium
+  normalized_id: ''
+  normalized_label: ''
   original_literal: gallium (68Ga) chloride;germanium (68Ge) chloride
   product_name: GalliaPharm
   source: EMA
@@ -20285,13 +20276,13 @@
   ema_product_number: EMEA/H/C/000403
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/arixtra
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:31632
-    grounded_label: fondaparinux sodium
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:61033
+    grounded_label: fondaparinux
+    grounding_quality: lexical_exact_surgery
     original_string: fondaparinux sodium
     subject_id: MEDICNE:3942d102-a4ba-57a7-bc68-9a88531e1c63
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 1.5-mg/0.3-ml and 2.5-mg/0.5-ml solution for injection Prevention of
@@ -20337,12 +20328,12 @@
   mention_id: MEDICNE:3942d102-a4ba-57a7-bc68-9a88531e1c63
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31632
-    normalized_label: fondaparinux sodium
-    original_id: CHEBI:31632
+    normalized_id: CHEBI:61033
+    normalized_label: fondaparinux
+    original_id: CHEBI:61033
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31632
-  normalized_label: fondaparinux sodium
+  normalized_id: CHEBI:61033
+  normalized_label: fondaparinux
   original_literal: fondaparinux sodium
   product_name: Arixtra
   source: EMA
@@ -21586,13 +21577,13 @@
   ema_product_number: EMEA/H/C/002691
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/enurev-breezhaler
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:90972
-    grounded_label: glycopyrronium bromide
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:749411
+    grounded_label: glycopyrronium
+    grounding_quality: lexical_exact_surgery
     original_string: glycopyrronium bromide
     subject_id: MEDICNE:4936ba51-da48-594c-8031-b1ad7d46e495
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Enurev Breezhaler is indicated as a maintenance bronchodilator treatment
@@ -21627,12 +21618,12 @@
   mention_id: MEDICNE:4936ba51-da48-594c-8031-b1ad7d46e495
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90972
-    normalized_label: glycopyrronium bromide
-    original_id: CHEBI:90972
+    normalized_id: CHEBI:749411
+    normalized_label: glycopyrronium
+    original_id: CHEBI:749411
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90972
-  normalized_label: glycopyrronium bromide
+  normalized_id: CHEBI:749411
+  normalized_label: glycopyrronium
   original_literal: glycopyrronium bromide
   product_name: Enurev Breezhaler
   source: EMA
@@ -22005,7 +21996,7 @@
   grounding:
     components:
     - CHEBI:3176
-    - CHEBI:51157
+    - CHEBI:3175
     confidence: 1.0
     grounded_id: CHEBI:3176
     grounded_label: brinzolamide
@@ -22826,13 +22817,13 @@
   ema_product_number: EMEA/H/C/005368
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/abiraterone-mylan
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:68639
-    grounded_label: abiraterone acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:68642
+    grounded_label: abiraterone
+    grounding_quality: lexical_exact_surgery
     original_string: abiraterone acetate
     subject_id: MEDICNE:100a7d81-8b2d-5063-b726-d8d226071775
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Abiraterone Mylan is indicated with prednisone or prednisolone for:  the
@@ -22874,12 +22865,12 @@
   mention_id: MEDICNE:100a7d81-8b2d-5063-b726-d8d226071775
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:68639
-    normalized_label: abiraterone acetate
-    original_id: CHEBI:68639
+    normalized_id: CHEBI:68642
+    normalized_label: abiraterone
+    original_id: CHEBI:68642
     tool: medic-normalizer/1
-  normalized_id: CHEBI:68639
-  normalized_label: abiraterone acetate
+  normalized_id: CHEBI:68642
+  normalized_label: abiraterone
   original_literal: abiraterone acetate
   product_name: Abiraterone Mylan
   source: EMA
@@ -23143,13 +23134,13 @@
   ema_product_number: EMEA/H/C/000870
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/relistor
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:749594
-    grounded_label: methylnaltrexone bromide
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:136007
+    grounded_label: methylnaltrexone
+    grounding_quality: lexical_exact_surgery
     original_string: methylnaltrexone bromide
     subject_id: MEDICNE:2d38e32a-26cb-51a9-9098-6bbd9c8a1f2d
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of opioid-induced constipation in advanced-illness patients
@@ -23164,12 +23155,12 @@
   mention_id: MEDICNE:2d38e32a-26cb-51a9-9098-6bbd9c8a1f2d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749594
-    normalized_label: methylnaltrexone bromide
-    original_id: CHEBI:749594
+    normalized_id: CHEBI:136007
+    normalized_label: methylnaltrexone
+    original_id: CHEBI:136007
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749594
-  normalized_label: methylnaltrexone bromide
+  normalized_id: CHEBI:136007
+  normalized_label: methylnaltrexone
   original_literal: methylnaltrexone bromide
   product_name: Relistor
   source: EMA
@@ -23563,13 +23554,13 @@
   ema_product_number: EMEA/H/C/004584
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/namuscla
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:6917
-    grounded_label: mexiletine hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:6916
+    grounded_label: mexiletine
+    grounding_quality: lexical_exact_surgery
     original_string: mexiletine hcl
     subject_id: MEDICNE:03dde32a-d6e7-5b21-814f-ee7c8e86a48b
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Namuscla is indicated for the symptomatic treatment of myotonia in adult
@@ -23582,12 +23573,12 @@
   mention_id: MEDICNE:03dde32a-d6e7-5b21-814f-ee7c8e86a48b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:6917
-    normalized_label: mexiletine hydrochloride
-    original_id: CHEBI:6917
+    normalized_id: CHEBI:6916
+    normalized_label: mexiletine
+    original_id: CHEBI:6916
     tool: medic-normalizer/1
-  normalized_id: CHEBI:6917
-  normalized_label: mexiletine hydrochloride
+  normalized_id: CHEBI:6916
+  normalized_label: mexiletine
   original_literal: mexiletine hcl
   product_name: Namuscla
   source: EMA
@@ -24698,18 +24689,15 @@
   ema_product_number: EMEA/H/C/006639
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/galenvita
   grounding:
-    components:
-    - CHEBI:30441
-    - CHEBI:749395
-    confidence: 0.8
-    grounded_id: CHEBI:30441
-    grounded_label: germanium atom
-    grounding_quality: lexical_exact_surgery
+    confidence: 0.0
+    grounded_id: null
+    grounded_label: null
+    grounding_quality: unresolved
     original_string: germanium (68Ge) chloride;gallium (68Ga) chloride
     subject_id: MEDICNE:f7b0d485-9c39-5611-b034-5f0c3e73a8d7
-  grounding_confidence: 0.8
+  grounding_confidence: 0.0
   grounding_service: lexical
-  grounding_status: accepted
+  grounding_status: unresolved
   indication: This radionuclide generator is not intended for direct use in patients.
     The sterile eluate (gallium (68Ga) chloride solution) from the radionuclide generator
     GalenVita is indicated for in vitro&nbsp;radiolabelling of various kits for radiopharmaceutical
@@ -24724,14 +24712,8 @@
       with such eluate, to be used for positron emission tomography (PET) imaging.
     product_name: GalenVita
   mention_id: MEDICNE:f7b0d485-9c39-5611-b034-5f0c3e73a8d7
-  normalization:
-    normalization_quality: identity
-    normalized_id: CHEBI:30441
-    normalized_label: germanium atom
-    original_id: CHEBI:30441
-    tool: medic-normalizer/1
-  normalized_id: CHEBI:30441
-  normalized_label: germanium atom
+  normalized_id: ''
+  normalized_label: ''
   original_literal: germanium (68Ge) chloride;gallium (68Ga) chloride
   product_name: GalenVita
   source: EMA
@@ -26496,13 +26478,13 @@
   ema_product_number: EMEA/H/C/005975
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/tuzulby
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:31836
-    grounded_label: methylphenidate hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:6887
+    grounded_label: methylphenidate
+    grounding_quality: lexical_exact_surgery
     original_string: methylphenidate hydrochloride
     subject_id: MEDICNE:365513be-1f28-5742-a607-b7867169a78d
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Tuzulby is indicated as part of a comprehensive treatment programme
@@ -26529,12 +26511,12 @@
   mention_id: MEDICNE:365513be-1f28-5742-a607-b7867169a78d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31836
-    normalized_label: methylphenidate hydrochloride
-    original_id: CHEBI:31836
+    normalized_id: CHEBI:6887
+    normalized_label: methylphenidate
+    original_id: CHEBI:6887
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31836
-  normalized_label: methylphenidate hydrochloride
+  normalized_id: CHEBI:6887
+  normalized_label: methylphenidate
   original_literal: methylphenidate hydrochloride
   product_name: Tuzulby
   source: EMA
@@ -32283,7 +32265,7 @@
   grounding:
     components:
     - RXCUI:1992672
-    - CHEBI:6802
+    - CHEBI:6801
     confidence: 1.0
     grounded_id: RXCUI:1992672
     grounded_label: ertugliflozin
@@ -32813,7 +32795,7 @@
   grounding:
     components:
     - CHEBI:68575
-    - CHEBI:90972
+    - CHEBI:749411
     - CHEBI:6970
     confidence: 1.0
     grounded_id: CHEBI:68575
@@ -33827,7 +33809,7 @@
   grounding:
     components:
     - CHEBI:40237
-    - CHEBI:6802
+    - CHEBI:6801
     confidence: 1.0
     grounded_id: CHEBI:40237
     grounded_label: sitagliptin
@@ -34649,13 +34631,13 @@
   ema_product_number: EMEA/H/C/005248
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/tecovirimat-siga
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:759800
-    grounded_label: tecovirimat monohydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:749735
+    grounded_label: tecovirimat
+    grounding_quality: lexical_exact_surgery
     original_string: tecovirimat monohydrate
     subject_id: MEDICNE:3a23bbcd-f1b2-5a33-af89-415baab2a05c
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Tecovirimat SIGA is indicated for the treatment of the following viral
@@ -34676,12 +34658,12 @@
   mention_id: MEDICNE:3a23bbcd-f1b2-5a33-af89-415baab2a05c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:759800
-    normalized_label: tecovirimat monohydrate
-    original_id: CHEBI:759800
+    normalized_id: CHEBI:749735
+    normalized_label: tecovirimat
+    original_id: CHEBI:749735
     tool: medic-normalizer/1
-  normalized_id: CHEBI:759800
-  normalized_label: tecovirimat monohydrate
+  normalized_id: CHEBI:749735
+  normalized_label: tecovirimat
   original_literal: tecovirimat monohydrate
   product_name: Tecovirimat SIGA
   source: EMA
@@ -34692,13 +34674,13 @@
   ema_product_number: EMEA/H/C/005741
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/sitagliptin-sun
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:759736
-    grounded_label: sitagliptin fumarate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:40237
+    grounded_label: sitagliptin
+    grounding_quality: lexical_exact_surgery
     original_string: sitagliptin fumarate
     subject_id: MEDICNE:6ac09e27-a0df-5700-8dac-6b9ebdb67460
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 'For adult patients with type 2 diabetes mellitus, Sitagliptin SUN is
@@ -34744,12 +34726,12 @@
   mention_id: MEDICNE:6ac09e27-a0df-5700-8dac-6b9ebdb67460
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:759736
-    normalized_label: sitagliptin fumarate
-    original_id: CHEBI:759736
+    normalized_id: CHEBI:40237
+    normalized_label: sitagliptin
+    original_id: CHEBI:40237
     tool: medic-normalizer/1
-  normalized_id: CHEBI:759736
-  normalized_label: sitagliptin fumarate
+  normalized_id: CHEBI:40237
+  normalized_label: sitagliptin
   original_literal: sitagliptin fumarate
   product_name: Sitagliptin SUN
   source: EMA
@@ -36906,13 +36888,13 @@
   ema_product_number: EMEA/H/C/005731
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/aqumeldi
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:4785
-    grounded_label: enalapril maleate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:4784
+    grounded_label: enalapril
+    grounding_quality: lexical_exact_surgery
     original_string: enalapril maleate
     subject_id: MEDICNE:0aa3b252-885e-5a83-a6c3-ec4ed483212b
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of heart failure.
@@ -36923,12 +36905,12 @@
   mention_id: MEDICNE:0aa3b252-885e-5a83-a6c3-ec4ed483212b
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:4785
-    normalized_label: enalapril maleate
-    original_id: CHEBI:4785
+    normalized_id: CHEBI:4784
+    normalized_label: enalapril
+    original_id: CHEBI:4784
     tool: medic-normalizer/1
-  normalized_id: CHEBI:4785
-  normalized_label: enalapril maleate
+  normalized_id: CHEBI:4784
+  normalized_label: enalapril
   original_literal: enalapril maleate
   product_name: Aqumeldi
   source: EMA
@@ -38532,15 +38514,15 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/sitagliptin-metformin-hydrochloride-mylan
   grounding:
     components:
-    - CHEBI:760248
-    - CHEBI:6802
-    confidence: 1.0
-    grounded_id: CHEBI:760248
-    grounded_label: sitagliptin hydrochloride monohydrate
+    - CHEBI:40237
+    - CHEBI:6801
+    confidence: 0.9
+    grounded_id: CHEBI:40237
+    grounded_label: sitagliptin
     grounding_quality: lexical_exact_surgery
     original_string: sitagliptin hydrochloride monohydrate;metformin hydrochloride
     subject_id: MEDICNE:aa3608c6-a7be-5690-9689-8318c6e12abc
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 'For adult patients with type 2 diabetes mellitus: Sitagliptin/Metformin
@@ -38580,12 +38562,12 @@
   mention_id: MEDICNE:aa3608c6-a7be-5690-9689-8318c6e12abc
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:760248
-    normalized_label: sitagliptin hydrochloride monohydrate
-    original_id: CHEBI:760248
+    normalized_id: CHEBI:40237
+    normalized_label: sitagliptin
+    original_id: CHEBI:40237
     tool: medic-normalizer/1
-  normalized_id: CHEBI:760248
-  normalized_label: sitagliptin hydrochloride monohydrate
+  normalized_id: CHEBI:40237
+  normalized_label: sitagliptin
   original_literal: sitagliptin hydrochloride monohydrate;metformin hydrochloride
   product_name: Sitagliptin / Metformin hydrochloride Mylan
   source: EMA
@@ -38636,12 +38618,12 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/riltrava-aerosphere
   grounding:
     components:
-    - RXCUI:998038
+    - CHEBI:5147
     - CHEBI:749411
     - CHEBI:3207
     confidence: 1.0
-    grounded_id: RXCUI:998038
-    grounded_label: formoterol fumarate dihydrate
+    grounded_id: CHEBI:749411
+    grounded_label: glycopyrronium
     grounding_quality: lexical_exact_surgery
     original_string: formoterol fumarate dihydrate;glycopyrronium;budesonide
     subject_id: MEDICNE:08fe6192-096b-5866-b02b-b73e55844415
@@ -38666,12 +38648,12 @@
   mention_id: MEDICNE:08fe6192-096b-5866-b02b-b73e55844415
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:998038
-    normalized_label: formoterol fumarate dihydrate
-    original_id: RXCUI:998038
+    normalized_id: CHEBI:749411
+    normalized_label: glycopyrronium
+    original_id: CHEBI:749411
     tool: medic-normalizer/1
-  normalized_id: RXCUI:998038
-  normalized_label: formoterol fumarate dihydrate
+  normalized_id: CHEBI:749411
+  normalized_label: glycopyrronium
   original_literal: formoterol fumarate dihydrate;glycopyrronium;budesonide
   product_name: Riltrava Aerosphere
   source: EMA
@@ -38863,13 +38845,13 @@
   ema_product_number: EMEA/H/C/001027
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ellaone
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:71025
-    grounded_label: ulipristal acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:177631
+    grounded_label: Ulipristal
+    grounding_quality: lexical_exact_surgery
     original_string: ulipristal acetate
     subject_id: MEDICNE:9ee0ef4d-2b5f-58df-83e0-43fb6ff98c28
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Emergency contraception within 120 hours (five days) of unprotected
@@ -38882,12 +38864,12 @@
   mention_id: MEDICNE:9ee0ef4d-2b5f-58df-83e0-43fb6ff98c28
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:71025
-    normalized_label: ulipristal acetate
-    original_id: CHEBI:71025
+    normalized_id: CHEBI:177631
+    normalized_label: Ulipristal
+    original_id: CHEBI:177631
     tool: medic-normalizer/1
-  normalized_id: CHEBI:71025
-  normalized_label: ulipristal acetate
+  normalized_id: CHEBI:177631
+  normalized_label: Ulipristal
   original_literal: ulipristal acetate
   product_name: ellaOne
   source: EMA
@@ -39470,7 +39452,7 @@
   grounding:
     components:
     - CHEBI:5147
-    - CHEBI:90972
+    - CHEBI:749411
     - CHEBI:3207
     confidence: 1.0
     grounded_id: CHEBI:5147
@@ -39725,13 +39707,13 @@
   ema_product_number: EMEA/H/C/000554
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/emselex
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:31455
-    grounded_label: darifenacin hydrobromide
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:391960
+    grounded_label: darifenacin
+    grounding_quality: lexical_exact_surgery
     original_string: darifenacin hydrobromide
     subject_id: MEDICNE:2a0c5d7d-4023-5358-82d3-1ab6eeb76ab5
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Symptomatic treatment of urge incontinence and/or increased urinary
@@ -39745,12 +39727,12 @@
   mention_id: MEDICNE:2a0c5d7d-4023-5358-82d3-1ab6eeb76ab5
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31455
-    normalized_label: darifenacin hydrobromide
-    original_id: CHEBI:31455
+    normalized_id: CHEBI:391960
+    normalized_label: darifenacin
+    original_id: CHEBI:391960
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31455
-  normalized_label: darifenacin hydrobromide
+  normalized_id: CHEBI:391960
+  normalized_label: darifenacin
   original_literal: darifenacin hydrobromide
   product_name: Emselex
   source: EMA
@@ -39862,13 +39844,13 @@
   ema_product_number: EMEA/H/C/005857
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/livmarli
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:747999
-    grounded_label: maralixibat chloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:748720
+    grounded_label: maralixibat
+    grounding_quality: lexical_exact_surgery
     original_string: maralixibat chloride
     subject_id: MEDICNE:9383edc6-6ea8-52ca-9252-97afa39cd1c8
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Livmarli is indicated for the treatment of:•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -39885,12 +39867,12 @@
   mention_id: MEDICNE:9383edc6-6ea8-52ca-9252-97afa39cd1c8
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:747999
-    normalized_label: maralixibat chloride
-    original_id: CHEBI:747999
+    normalized_id: CHEBI:748720
+    normalized_label: maralixibat
+    original_id: CHEBI:748720
     tool: medic-normalizer/1
-  normalized_id: CHEBI:747999
-  normalized_label: maralixibat chloride
+  normalized_id: CHEBI:748720
+  normalized_label: maralixibat
   original_literal: maralixibat chloride
   product_name: Livmarli
   source: EMA
@@ -40134,13 +40116,13 @@
   ema_product_number: EMEA/H/C/006324
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ryjunea
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:233047
-    grounded_label: atropine sulfate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:16684
+    grounded_label: atropine
+    grounding_quality: lexical_exact_surgery
     original_string: atropine sulfate
     subject_id: MEDICNE:bf95d7a1-1a88-568a-88e6-52a811a9925c
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Ryjunea is indicated for slowing the progression of myopia in paediatric
@@ -40156,12 +40138,12 @@
   mention_id: MEDICNE:bf95d7a1-1a88-568a-88e6-52a811a9925c
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:233047
-    normalized_label: atropine sulfate
-    original_id: CHEBI:233047
+    normalized_id: CHEBI:16684
+    normalized_label: atropine
+    original_id: CHEBI:16684
     tool: medic-normalizer/1
-  normalized_id: CHEBI:233047
-  normalized_label: atropine sulfate
+  normalized_id: CHEBI:16684
+  normalized_label: atropine
   original_literal: atropine sulfate
   product_name: Ryjunea
   source: EMA
@@ -40913,11 +40895,11 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/laventair-ellipta
   grounding:
     components:
-    - CHEBI:79040
+    - CHEBI:79041
     - CHEBI:75037
     confidence: 1.0
-    grounded_id: CHEBI:79040
-    grounded_label: umeclidinium bromide
+    grounded_id: CHEBI:75037
+    grounded_label: vilanterol
     grounding_quality: lexical_exact_surgery
     original_string: umeclidinium bromide;vilanterol
     subject_id: MEDICNE:28b3fc8c-2940-58a9-95f3-778c90fce8eb
@@ -40943,12 +40925,12 @@
   mention_id: MEDICNE:28b3fc8c-2940-58a9-95f3-778c90fce8eb
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:79040
-    normalized_label: umeclidinium bromide
-    original_id: CHEBI:79040
+    normalized_id: CHEBI:75037
+    normalized_label: vilanterol
+    original_id: CHEBI:75037
     tool: medic-normalizer/1
-  normalized_id: CHEBI:79040
-  normalized_label: umeclidinium bromide
+  normalized_id: CHEBI:75037
+  normalized_label: vilanterol
   original_literal: umeclidinium bromide;vilanterol
   product_name: Laventair Ellipta (previously Laventair)
   source: EMA
@@ -41088,13 +41070,13 @@
   ema_product_number: EMEA/H/C/006471
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/dimethyl-fumarate-accord
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:76004
-    grounded_label: dimethyl fumarate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:42266
+    grounded_label: ethane
+    grounding_quality: lexical_exact_surgery
     original_string: dimethyl fumarate
     subject_id: MEDICNE:4000f55e-4635-506e-91e5-adb2d3efe8ce
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Dimethyl fumarate Accord is indicated for the treatment of adult and
@@ -41135,12 +41117,12 @@
   mention_id: MEDICNE:4000f55e-4635-506e-91e5-adb2d3efe8ce
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:76004
-    normalized_label: dimethyl fumarate
-    original_id: CHEBI:76004
+    normalized_id: CHEBI:42266
+    normalized_label: ethane
+    original_id: CHEBI:42266
     tool: medic-normalizer/1
-  normalized_id: CHEBI:76004
-  normalized_label: dimethyl fumarate
+  normalized_id: CHEBI:42266
+  normalized_label: ethane
   original_literal: dimethyl fumarate
   product_name: Dimethyl fumarate Accord
   source: EMA
@@ -41700,13 +41682,13 @@
   ema_product_number: EMEA/H/C/000988
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/zebinix
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:87016
-    grounded_label: eslicarbazepine acetate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:174358
+    grounded_label: (S)-MHD
+    grounding_quality: lexical_exact_surgery
     original_string: eslicarbazepine acetate
     subject_id: MEDICNE:ab736b2c-45f0-53eb-ad2b-b44e8a236852
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Zebinix is indicated as adjunctive therapy in adults, adolescents and
@@ -41721,12 +41703,12 @@
   mention_id: MEDICNE:ab736b2c-45f0-53eb-ad2b-b44e8a236852
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:87016
-    normalized_label: eslicarbazepine acetate
-    original_id: CHEBI:87016
+    normalized_id: CHEBI:174358
+    normalized_label: (S)-MHD
+    original_id: CHEBI:174358
     tool: medic-normalizer/1
-  normalized_id: CHEBI:87016
-  normalized_label: eslicarbazepine acetate
+  normalized_id: CHEBI:174358
+  normalized_label: (S)-MHD
   original_literal: eslicarbazepine acetate
   product_name: Zebinix
   source: EMA
@@ -42272,13 +42254,13 @@
   ema_product_number: EMEA/H/C/002211
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/eklira-genuair
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:65344
-    grounded_label: aclidinium bromide
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:65346
+    grounded_label: aclidinium
+    grounding_quality: lexical_exact_surgery
     original_string: aclidinium bromide
     subject_id: MEDICNE:fbea3d68-baf2-5a40-8973-050cae0d6bcd
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Eklira Genuair is indicated as a maintenance bronchodilator treatment
@@ -42300,12 +42282,12 @@
   mention_id: MEDICNE:fbea3d68-baf2-5a40-8973-050cae0d6bcd
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:65344
-    normalized_label: aclidinium bromide
-    original_id: CHEBI:65344
+    normalized_id: CHEBI:65346
+    normalized_label: aclidinium
+    original_id: CHEBI:65346
     tool: medic-normalizer/1
-  normalized_id: CHEBI:65344
-  normalized_label: aclidinium bromide
+  normalized_id: CHEBI:65346
+  normalized_label: aclidinium
   original_literal: aclidinium bromide
   product_name: Eklira Genuair
   source: EMA
@@ -42317,11 +42299,11 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/duaklir-genuair
   grounding:
     components:
-    - CHEBI:65344
+    - CHEBI:65346
     - CHEBI:5147
     confidence: 1.0
-    grounded_id: CHEBI:65344
-    grounded_label: aclidinium bromide
+    grounded_id: CHEBI:5147
+    grounded_label: formoterol
     grounding_quality: lexical_exact_surgery
     original_string: aclidinium bromide;formoterol
     subject_id: MEDICNE:9d56dd3e-8f51-5743-ab9d-e84df002ad39
@@ -42340,12 +42322,12 @@
   mention_id: MEDICNE:9d56dd3e-8f51-5743-ab9d-e84df002ad39
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:65344
-    normalized_label: aclidinium bromide
-    original_id: CHEBI:65344
+    normalized_id: CHEBI:5147
+    normalized_label: formoterol
+    original_id: CHEBI:5147
     tool: medic-normalizer/1
-  normalized_id: CHEBI:65344
-  normalized_label: aclidinium bromide
+  normalized_id: CHEBI:5147
+  normalized_label: formoterol
   original_literal: aclidinium bromide;formoterol
   product_name: Duaklir Genuair
   source: EMA
@@ -42424,7 +42406,7 @@
   grounding:
     components:
     - CHEBI:135285
-    - CHEBI:6802
+    - CHEBI:6801
     confidence: 1.0
     grounded_id: CHEBI:135285
     grounded_label: vildagliptin
@@ -42474,7 +42456,7 @@
   grounding:
     components:
     - CHEBI:68575
-    - CHEBI:90972
+    - CHEBI:749411
     confidence: 1.0
     grounded_id: CHEBI:68575
     grounded_label: indacaterol
@@ -42610,13 +42592,13 @@
   ema_product_number: EMEA/H/C/002809
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/incruse-ellipta
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:79040
-    grounded_label: umeclidinium bromide
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:79041
+    grounded_label: umeclidinium
+    grounding_quality: lexical_exact_surgery
     original_string: umeclidinium bromide
     subject_id: MEDICNE:f2130ac3-ac78-5121-9bc1-27ca983f93b7
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Indicated as a maintenance bronchodilator treatment to relieve symptoms
@@ -42629,12 +42611,12 @@
   mention_id: MEDICNE:f2130ac3-ac78-5121-9bc1-27ca983f93b7
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:79040
-    normalized_label: umeclidinium bromide
-    original_id: CHEBI:79040
+    normalized_id: CHEBI:79041
+    normalized_label: umeclidinium
+    original_id: CHEBI:79041
     tool: medic-normalizer/1
-  normalized_id: CHEBI:79040
-  normalized_label: umeclidinium bromide
+  normalized_id: CHEBI:79041
+  normalized_label: umeclidinium
   original_literal: umeclidinium bromide
   product_name: Incruse Ellipta (previously Incruse)
   source: EMA
@@ -43481,13 +43463,13 @@
   ema_product_number: EMEA/H/C/006044
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/neoatricon
   grounding:
-    confidence: 1.0
-    grounded_id: RXCUI:82010
-    grounded_label: dopamine hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:18243
+    grounded_label: dopamine
+    grounding_quality: lexical_exact_surgery
     original_string: dopamine hydrochloride
     subject_id: MEDICNE:abe791b8-7785-5fa6-a9be-e402b05210b7
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of hypotension in haemodynamically unstable neonates, infants
@@ -43500,12 +43482,12 @@
   mention_id: MEDICNE:abe791b8-7785-5fa6-a9be-e402b05210b7
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:82010
-    normalized_label: dopamine hydrochloride
-    original_id: RXCUI:82010
+    normalized_id: CHEBI:18243
+    normalized_label: dopamine
+    original_id: CHEBI:18243
     tool: medic-normalizer/1
-  normalized_id: RXCUI:82010
-  normalized_label: dopamine hydrochloride
+  normalized_id: CHEBI:18243
+  normalized_label: dopamine
   original_literal: dopamine hydrochloride
   product_name: Neoatricon
   source: EMA
@@ -43889,13 +43871,13 @@
   ema_product_number: EMEA/H/C/002711
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/memantine-merz
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:64323
-    grounded_label: memantine hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:64312
+    grounded_label: memantine
+    grounding_quality: lexical_exact_surgery
     original_string: memantine hydrochloride
     subject_id: MEDICNE:c93f18db-074e-566d-9915-633c5d9be76f
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of patients with moderate to severe Alzheimer’s disease.
@@ -43906,12 +43888,12 @@
   mention_id: MEDICNE:c93f18db-074e-566d-9915-633c5d9be76f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:64323
-    normalized_label: memantine hydrochloride
-    original_id: CHEBI:64323
+    normalized_id: CHEBI:64312
+    normalized_label: memantine
+    original_id: CHEBI:64312
     tool: medic-normalizer/1
-  normalized_id: CHEBI:64323
-  normalized_label: memantine hydrochloride
+  normalized_id: CHEBI:64312
+  normalized_label: memantine
   original_literal: memantine hydrochloride
   product_name: Memantine Merz
   source: EMA
@@ -43957,13 +43939,13 @@
   ema_product_number: EMEA/H/C/001225
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/colobreathe
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:34650
-    grounded_label: colistimethate sodium
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:59662
+    grounded_label: colistimethate
+    grounding_quality: lexical_exact_surgery
     original_string: colistimethate sodium
     subject_id: MEDICNE:2b959185-7ce2-57eb-9255-02442d9c04f9
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Colobreathe is indicated for the management of chronic pulmonary infections
@@ -43980,12 +43962,12 @@
   mention_id: MEDICNE:2b959185-7ce2-57eb-9255-02442d9c04f9
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:34650
-    normalized_label: colistimethate sodium
-    original_id: CHEBI:34650
+    normalized_id: CHEBI:59662
+    normalized_label: colistimethate
+    original_id: CHEBI:59662
     tool: medic-normalizer/1
-  normalized_id: CHEBI:34650
-  normalized_label: colistimethate sodium
+  normalized_id: CHEBI:59662
+  normalized_label: colistimethate
   original_literal: colistimethate sodium
   product_name: Colobreathe
   source: EMA
@@ -44948,7 +44930,7 @@
   grounding:
     components:
     - CHEBI:71272
-    - CHEBI:6802
+    - CHEBI:6801
     confidence: 1.0
     grounded_id: CHEBI:71272
     grounded_label: saxagliptin
@@ -45081,13 +45063,13 @@
   ema_product_number: EMEA/H/C/001215
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/brinavess
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:752603
-    grounded_label: vernakalant hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:135956
+    grounded_label: vernakalant
+    grounding_quality: lexical_exact_surgery
     original_string: vernakalant hydrochloride
     subject_id: MEDICNE:efd74c9a-897a-5640-81b7-d1c61df5cf93
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Rapid conversion of recent onset atrial fibrillation to sinus rhythm
@@ -45103,12 +45085,12 @@
   mention_id: MEDICNE:efd74c9a-897a-5640-81b7-d1c61df5cf93
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:752603
-    normalized_label: vernakalant hydrochloride
-    original_id: CHEBI:752603
+    normalized_id: CHEBI:135956
+    normalized_label: vernakalant
+    original_id: CHEBI:135956
     tool: medic-normalizer/1
-  normalized_id: CHEBI:752603
-  normalized_label: vernakalant hydrochloride
+  normalized_id: CHEBI:135956
+  normalized_label: vernakalant
   original_literal: vernakalant hydrochloride
   product_name: Brinavess
   source: EMA
@@ -47121,13 +47103,13 @@
   ema_product_number: EMEA/H/C/002846
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/sivextro
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:83326
-    grounded_label: tedizolid phosphate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:82717
+    grounded_label: tedizolid
+    grounding_quality: lexical_exact_surgery
     original_string: tedizolid phosphate
     subject_id: MEDICNE:d2780630-f3c1-5ba2-80cf-e26ff383d85d
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Sivextro tablets are indicated for the treatment of acute bacterial
@@ -47150,12 +47132,12 @@
   mention_id: MEDICNE:d2780630-f3c1-5ba2-80cf-e26ff383d85d
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:83326
-    normalized_label: tedizolid phosphate
-    original_id: CHEBI:83326
+    normalized_id: CHEBI:82717
+    normalized_label: tedizolid
+    original_id: CHEBI:82717
     tool: medic-normalizer/1
-  normalized_id: CHEBI:83326
-  normalized_label: tedizolid phosphate
+  normalized_id: CHEBI:82717
+  normalized_label: tedizolid
   original_literal: tedizolid phosphate
   product_name: Sivextro
   source: EMA
@@ -47207,13 +47189,13 @@
   ema_product_number: EMEA/H/C/005435
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/gencebok
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:749278
-    grounded_label: caffeine citrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:27732
+    grounded_label: caffeine
+    grounding_quality: lexical_exact_surgery
     original_string: caffeine citrate
     subject_id: MEDICNE:96854499-114e-5077-bac2-e1d2abb3d266
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Treatment of primary apnoea of premature newborns.
@@ -47224,12 +47206,12 @@
   mention_id: MEDICNE:96854499-114e-5077-bac2-e1d2abb3d266
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749278
-    normalized_label: caffeine citrate
-    original_id: CHEBI:749278
+    normalized_id: CHEBI:27732
+    normalized_label: caffeine
+    original_id: CHEBI:27732
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749278
-  normalized_label: caffeine citrate
+  normalized_id: CHEBI:27732
+  normalized_label: caffeine
   original_literal: caffeine citrate
   product_name: Gencebok
   source: EMA
@@ -47937,7 +47919,7 @@
   grounding:
     components:
     - CHEBI:65346
-    - RXCUI:998038
+    - CHEBI:5147
     confidence: 1.0
     grounded_id: CHEBI:65346
     grounded_label: aclidinium
@@ -48107,7 +48089,7 @@
   grounding:
     components:
     - CHEBI:3207
-    - RXCUI:998038
+    - CHEBI:5147
     confidence: 1.0
     grounded_id: CHEBI:3207
     grounded_label: budesonide
@@ -49501,7 +49483,7 @@
   grounding:
     components:
     - CHEBI:749411
-    - RXCUI:998038
+    - CHEBI:5147
     confidence: 1.0
     grounded_id: CHEBI:749411
     grounded_label: glycopyrronium
@@ -49650,13 +49632,13 @@
   ema_product_number: EMEA/H/C/004125
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/onivyde-pegylated-liposomal
   grounding:
-    confidence: 0.85
-    grounded_id: CHEBI:90881
-    grounded_label: irinotecan hydrochloride hydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:80630
+    grounded_label: irinotecan
+    grounding_quality: lexical_exact_surgery
     original_string: irinotecan hydrochloride trihydrate
     subject_id: MEDICNE:3b43d12f-e3af-5d95-8ec0-35da5a0efc26
-  grounding_confidence: 0.85
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: ONIVYDE pegylated liposomal is indicated:- in combination with oxaliplatin,
@@ -49675,12 +49657,12 @@
   mention_id: MEDICNE:3b43d12f-e3af-5d95-8ec0-35da5a0efc26
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:90881
-    normalized_label: irinotecan hydrochloride hydrate
-    original_id: CHEBI:90881
+    normalized_id: CHEBI:80630
+    normalized_label: irinotecan
+    original_id: CHEBI:80630
     tool: medic-normalizer/1
-  normalized_id: CHEBI:90881
-  normalized_label: irinotecan hydrochloride hydrate
+  normalized_id: CHEBI:80630
+  normalized_label: irinotecan
   original_literal: irinotecan hydrochloride trihydrate
   product_name: Onivyde pegylated liposomal (previously Onivyde)
   source: EMA
@@ -50499,13 +50481,13 @@
   ema_product_number: EMEA/H/C/002644
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/stayveer
   grounding:
-    confidence: 1.0
-    grounded_id: RXCUI:498193
-    grounded_label: bosentan monohydrate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:51450
+    grounded_label: bosentan
+    grounding_quality: lexical_exact_surgery
     original_string: bosentan monohydrate
     subject_id: MEDICNE:4fd4e874-e270-52d5-95cf-8d451b966be8
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: 'Treatment of pulmonary arterial hypertension (PAH) to improve exercise
@@ -50531,12 +50513,12 @@
   mention_id: MEDICNE:4fd4e874-e270-52d5-95cf-8d451b966be8
   normalization:
     normalization_quality: identity
-    normalized_id: RXCUI:498193
-    normalized_label: bosentan monohydrate
-    original_id: RXCUI:498193
+    normalized_id: CHEBI:51450
+    normalized_label: bosentan
+    original_id: CHEBI:51450
     tool: medic-normalizer/1
-  normalized_id: RXCUI:498193
-  normalized_label: bosentan monohydrate
+  normalized_id: CHEBI:51450
+  normalized_label: bosentan
   original_literal: bosentan monohydrate
   product_name: Stayveer
   source: EMA
@@ -50664,13 +50646,13 @@
   ema_product_number: EMEA/H/C/000494
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/reyataz
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:31243
-    grounded_label: atazanavir sulfate
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:37924
+    grounded_label: atazanavir
+    grounding_quality: lexical_exact_surgery
     original_string: atazanavir sulfate
     subject_id: MEDICNE:a0ce06f9-33d8-5d12-8d58-76ccee18fe1f
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Reyataz capsules, co-administered with low dose ritonavir, are indicated
@@ -50712,12 +50694,12 @@
   mention_id: MEDICNE:a0ce06f9-33d8-5d12-8d58-76ccee18fe1f
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:31243
-    normalized_label: atazanavir sulfate
-    original_id: CHEBI:31243
+    normalized_id: CHEBI:37924
+    normalized_label: atazanavir
+    original_id: CHEBI:37924
     tool: medic-normalizer/1
-  normalized_id: CHEBI:31243
-  normalized_label: atazanavir sulfate
+  normalized_id: CHEBI:37924
+  normalized_label: atazanavir
   original_literal: atazanavir sulfate
   product_name: Reyataz
   source: EMA
@@ -52753,7 +52735,7 @@
     components:
     - CHEBI:750198
     - CHEBI:23965
-    - CHEBI:7628
+    - CHEBI:7627
     confidence: 1.0
     grounded_id: CHEBI:750198
     grounded_label: relugolix
@@ -53748,13 +53730,13 @@
   ema_product_number: EMEA/H/C/004131
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/fotivda
   grounding:
-    confidence: 0.765
-    grounded_id: CHEBI:751609
-    grounded_label: tivozanib hydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:91327
+    grounded_label: tivozanib
+    grounding_quality: lexical_exact_surgery
     original_string: tivozanib hydrochloride monohydrate
     subject_id: MEDICNE:15840b34-e4de-5474-85a7-045e91076d12
-  grounding_confidence: 0.765
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Fotivda is indicated for the first line treatment of adult patients
@@ -53773,12 +53755,12 @@
   mention_id: MEDICNE:15840b34-e4de-5474-85a7-045e91076d12
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:751609
-    normalized_label: tivozanib hydrochloride
-    original_id: CHEBI:751609
+    normalized_id: CHEBI:91327
+    normalized_label: tivozanib
+    original_id: CHEBI:91327
     tool: medic-normalizer/1
-  normalized_id: CHEBI:751609
-  normalized_label: tivozanib hydrochloride
+  normalized_id: CHEBI:91327
+  normalized_label: tivozanib
   original_literal: tivozanib hydrochloride monohydrate
   product_name: Fotivda
   source: EMA
@@ -54100,13 +54082,13 @@
   ema_product_number: EMEA/H/C/000796
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ceplene
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:749857
-    grounded_label: histamine dihydrochloride
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: CHEBI:18295
+    grounded_label: histamine
+    grounding_quality: lexical_exact_surgery
     original_string: histamine dihydrochloride
     subject_id: MEDICNE:16ffe8a6-6a76-5129-be11-fff1ddb18861
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Ceplene maintenance therapy is indicated for adult patients with acute
@@ -54123,12 +54105,12 @@
   mention_id: MEDICNE:16ffe8a6-6a76-5129-be11-fff1ddb18861
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749857
-    normalized_label: histamine dihydrochloride
-    original_id: CHEBI:749857
+    normalized_id: CHEBI:18295
+    normalized_label: histamine
+    original_id: CHEBI:18295
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749857
-  normalized_label: histamine dihydrochloride
+  normalized_id: CHEBI:18295
+  normalized_label: histamine
   original_literal: histamine dihydrochloride
   product_name: Ceplene
   source: EMA
@@ -54660,13 +54642,13 @@
   ema_product_number: EMEA/H/C/004246
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/elmiron
   grounding:
-    confidence: 1.0
-    grounded_id: CHEBI:749457
-    grounded_label: pentosan polysulfate sodium
-    grounding_quality: lexical_exact
+    confidence: 0.9
+    grounded_id: DRON:00016704
+    grounded_label: pentosan polysulfate
+    grounding_quality: lexical_exact_surgery
     original_string: pentosan polysulfate sodium
     subject_id: MEDICNE:4cc9a52f-5d84-5ad8-89a6-af897305b1ec
-  grounding_confidence: 1.0
+  grounding_confidence: 0.9
   grounding_service: lexical
   grounding_status: accepted
   indication: Elmiron is indicated for the treatment of bladder pain syndrome characterized
@@ -54681,12 +54663,12 @@
   mention_id: MEDICNE:4cc9a52f-5d84-5ad8-89a6-af897305b1ec
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:749457
-    normalized_label: pentosan polysulfate sodium
-    original_id: CHEBI:749457
+    normalized_id: DRON:00016704
+    normalized_label: pentosan polysulfate
+    original_id: DRON:00016704
     tool: medic-normalizer/1
-  normalized_id: CHEBI:749457
-  normalized_label: pentosan polysulfate sodium
+  normalized_id: DRON:00016704
+  normalized_label: pentosan polysulfate
   original_literal: pentosan polysulfate sodium
   product_name: Elmiron
   source: EMA
@@ -54970,9 +54952,9 @@
   epar_url: https://www.ema.europa.eu/en/medicines/human/EPAR/yttriga
   grounding:
     confidence: 0.9
-    grounded_id: CHEBI:63020
-    grounded_label: yttrium chloride
-    grounding_quality: lexical_exact_normalized
+    grounded_id: CHEBI:758406
+    grounded_label: yttrium
+    grounding_quality: lexical_exact_surgery
     original_string: yttrium [90Y] chloride
     subject_id: MEDICNE:ccf39505-d806-510a-af8f-be3eebd986b8
   grounding_confidence: 0.9
@@ -54991,12 +54973,12 @@
   mention_id: MEDICNE:ccf39505-d806-510a-af8f-be3eebd986b8
   normalization:
     normalization_quality: identity
-    normalized_id: CHEBI:63020
-    normalized_label: yttrium chloride
-    original_id: CHEBI:63020
+    normalized_id: CHEBI:758406
+    normalized_label: yttrium
+    original_id: CHEBI:758406
     tool: medic-normalizer/1
-  normalized_id: CHEBI:63020
-  normalized_label: yttrium chloride
+  normalized_id: CHEBI:758406
+  normalized_label: yttrium
   original_literal: yttrium [90Y] chloride
   product_name: Yttriga
   source: EMA

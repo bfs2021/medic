@@ -44,6 +44,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:10093": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:10100": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -235,6 +240,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:119486": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:119573": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -693,6 +703,14 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:134806": {
+    "combination_therapy_ingredients": [
+      "terpin hydrate",
+      "codeine phosphate"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
+  },
   "CHEBI:134813": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -767,6 +785,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:134929": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:134936": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -1010,6 +1033,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:135310": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:135314": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -1466,6 +1494,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:135804": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:135806": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -1500,6 +1533,26 @@
     "is_combination_therapy": true
   },
   "CHEBI:135826": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:135829": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:135845": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:135859": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:135862": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -1554,6 +1607,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:135890": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:135894": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -1744,6 +1802,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:135965": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:135968": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -2298,6 +2361,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:15782": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:15843": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -2389,6 +2457,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:16134": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:16137": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -2814,6 +2887,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:169727": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:16973": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -3467,6 +3545,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:18211": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:18222": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -3646,6 +3729,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:188719": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:188978": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -3957,6 +4045,16 @@
     "is_combination_therapy": false
   },
   "CHEBI:22256": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:22470": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:22494": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -4563,6 +4661,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:2401": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:240107": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -4753,6 +4856,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:26216": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:2627": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -5076,6 +5184,16 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:27644": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:27662": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:27666": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -5295,6 +5413,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:28502": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:28527": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -5306,6 +5429,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:28548": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:28568": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -5812,7 +5940,17 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:3061": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:30618": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:30659": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -6212,6 +6350,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:31325": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:3133": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -6923,6 +7066,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:31713": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:31714": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -6939,6 +7087,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:31718": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:3172": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -7779,6 +7932,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:3228": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:32286": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -8004,6 +8162,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:33382": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:3347": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -8162,6 +8325,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:34521": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:34523": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -8292,6 +8460,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:34791": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:3480": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -8348,6 +8521,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:3490": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:3491": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -8572,6 +8750,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:355510": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:3558": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -8623,6 +8806,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:35778": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:35854": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -8708,6 +8896,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:3645": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:3646": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -9315,6 +9508,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:41462": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:41500": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -9348,6 +9546,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:41934": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:41948": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -9364,6 +9567,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:421707": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:42266": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -9389,6 +9597,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:42797": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:42820": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -9856,6 +10069,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:4638": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:4639": {
     "combination_therapy_ingredients": [
       "Diphenoxylate",
@@ -9985,6 +10203,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:4703": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:4706": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -10374,6 +10597,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:487869": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:4882": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -10435,6 +10663,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:4903": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:4904": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -10797,6 +11030,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:50580": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:5062": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -10958,6 +11196,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:50851": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:50854": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -11093,6 +11336,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:51043": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:51044": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -11104,6 +11352,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:51063": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:51066": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -11204,6 +11457,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:51230": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:51235": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -11702,6 +11960,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:5520": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:5521": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -11766,6 +12029,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:5543": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:554446": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -11796,6 +12064,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:5555": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:5556": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -11822,6 +12095,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:560555": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:5612": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -11951,6 +12229,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:584020": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:5847": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -12046,6 +12329,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:59170": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:59171": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -12057,6 +12345,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:59204": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:59213": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -12216,7 +12509,17 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:59662": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:59664": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:59692": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -12326,7 +12629,17 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:599928": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:600103": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:6005": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -12401,6 +12714,16 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:60652": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:60654": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:6067": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -12442,6 +12765,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:60800": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:60802": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -12512,6 +12840,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:61176": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:61203": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -12592,6 +12925,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:62312": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:62932": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -13038,6 +13376,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:6431": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:64310": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -13133,6 +13476,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:6441": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:6442": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -13179,6 +13527,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:64628": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:64703": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -13361,6 +13714,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:66889": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:66895": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -13501,6 +13859,19 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:6746": {
+    "combination_therapy_ingredients": [
+      "menadione",
+      "sodium bisulfite"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
+  },
+  "CHEBI:6752": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:6753": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -13547,6 +13918,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:6775": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:6780": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -13626,6 +14002,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:6817": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:6818": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -13662,6 +14043,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:6825": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:6827": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -13899,6 +14285,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:6897": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:6899": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -13945,6 +14336,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:6917": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:6919": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -14000,6 +14396,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:6954": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:6958": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -14627,6 +15028,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:747559": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:7476": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -14667,6 +15073,16 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:747921": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:747960": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:747972": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -14688,6 +15104,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:748025": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:748028": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -14832,6 +15253,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:748533": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:748559": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -14932,6 +15358,24 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:748891": {
+    "combination_therapy_ingredients": [
+      "dapsone",
+      "sulfoxone sodium"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
+  },
+  "CHEBI:748901": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:748914": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:748916": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -14958,6 +15402,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:748993": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:748997": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -15043,6 +15492,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:749151": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:749177": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -15617,6 +16071,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:749344": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:749345": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -15857,12 +16316,40 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:749400": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:749401": {
+    "combination_therapy_ingredients": [
+      "indium in-111",
+      "pentetate"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
+  },
+  "CHEBI:749405": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:749409": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:749410": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
   "CHEBI:749411": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:749412": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -16513,6 +17000,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:749579": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:749580": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -17298,6 +17790,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:750784": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:7508": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -17447,6 +17944,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:751864": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:751928": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -17606,6 +18108,14 @@
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
+  },
+  "CHEBI:752856": {
+    "combination_therapy_ingredients": [
+      "segesterone acetate",
+      "ethinyl estradiol"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
   },
   "CHEBI:752868": {
     "combination_therapy_ingredients": [],
@@ -18590,6 +19100,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:754910": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:754929": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -18761,6 +19276,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:755141": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:755142": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -19130,6 +19650,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:755673": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:755674": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -19451,6 +19976,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:756005": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:756031": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -19682,6 +20212,14 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:756410": {
+    "combination_therapy_ingredients": [
+      "fosnetupitant",
+      "palonosetron"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
+  },
   "CHEBI:756412": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -19835,6 +20373,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:756604": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:756608": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -19945,6 +20488,14 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:756737": {
+    "combination_therapy_ingredients": [
+      "diclofenac",
+      "hyaluronate"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
+  },
   "CHEBI:756738": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -19981,6 +20532,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:756835": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:756901": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -20898,6 +21454,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:757924": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:757931": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -21144,6 +21705,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:758390": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:758406": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -21606,6 +22172,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:759884": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:759885": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -21772,6 +22343,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:760342": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:760349": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -22447,6 +23023,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:7954": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:7955": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -22582,6 +23163,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:8067": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:8068": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -22638,6 +23224,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:8107": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:81496": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -22742,6 +23333,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:8230": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:8231": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -22776,6 +23372,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:8242": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:8245": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -23301,6 +23902,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:8491": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:8492": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -23312,6 +23918,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:8494": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:8497": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -23859,6 +24470,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:8872": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:8874": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -23949,6 +24565,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:9073": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:90841": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -24003,6 +24624,14 @@
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
+  },
+  "CHEBI:90879": {
+    "combination_therapy_ingredients": [
+      "trifluridine",
+      "tipiracil"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
   },
   "CHEBI:90881": {
     "combination_therapy_ingredients": [],
@@ -24117,6 +24746,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:9118": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:9122": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -24126,6 +24760,14 @@
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
+  },
+  "CHEBI:91231": {
+    "combination_therapy_ingredients": [
+      "piperaquine phosphate",
+      "dihydroartemisinin"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
   },
   "CHEBI:9124": {
     "combination_therapy_ingredients": [],
@@ -24823,6 +25465,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:94725": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:94731": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -24921,6 +25568,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:9536": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:9537": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -24966,12 +25618,25 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:9587": {
+    "combination_therapy_ingredients": [
+      "ticarcillin",
+      "clavulanic acid"
+    ],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": true
+  },
   "CHEBI:9588": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
   "CHEBI:9589": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:9598": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -25002,6 +25667,11 @@
     "is_combination_therapy": false
   },
   "CHEBI:9609": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:9611": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -25111,6 +25781,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:9701": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:9703": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -25186,7 +25861,17 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "CHEBI:9763": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "CHEBI:9765": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "CHEBI:9774": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -25721,6 +26406,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "DRON:00011813": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "DRON:00011824": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -25755,6 +26445,11 @@
     "is_combination_therapy": false
   },
   "DRON:00012339": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "DRON:00012478": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -25795,6 +26490,11 @@
     "is_combination_therapy": false
   },
   "DRON:00013042": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "DRON:00013140": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -25861,6 +26561,11 @@
     ],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": true
+  },
+  "DRON:00014107": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
   },
   "DRON:00014409": {
     "combination_therapy_ingredients": [],
@@ -25953,6 +26658,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": true
   },
+  "DRON:00016914": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "DRON:00016952": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -25964,6 +26674,11 @@
     "is_combination_therapy": false
   },
   "DRON:00017166": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "DRON:00017208": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -26152,6 +26867,11 @@
     "is_combination_therapy": true
   },
   "DRON:00019004": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "DRON:00019012": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -26779,6 +27499,11 @@
     "is_combination_therapy": false
   },
   "DRON:00965870": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "DRON:00965871": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
@@ -34640,6 +35365,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": true
   },
+  "RXCUI:10454": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "RXCUI:104592": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -37494,6 +38224,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "RXCUI:25138": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "RXCUI:25188": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -39175,6 +39910,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false
   },
+  "RXCUI:34119": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "RXCUI:343262": {
     "combination_therapy_ingredients": [
       "insulin lispro",
@@ -40221,6 +40961,11 @@
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": true
   },
+  "RXCUI:7512": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
   "RXCUI:7880": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
@@ -40236,6 +40981,11 @@
     "is_combination_therapy": true
   },
   "RXCUI:797752": {
+    "combination_therapy_ingredients": [],
+    "combination_therapy_ingredients_curies": [],
+    "is_combination_therapy": false
+  },
+  "RXCUI:7980": {
     "combination_therapy_ingredients": [],
     "combination_therapy_ingredients_curies": [],
     "is_combination_therapy": false

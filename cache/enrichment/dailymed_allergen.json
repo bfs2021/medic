@@ -15,6 +15,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  ".ALPHA.-TOCOPHEROL, DL-": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   ".ALPHA.1-PROTEINASE INHIBITOR HUMAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -48,6 +52,10 @@
     "is_diagnostic_agent": false
   },
   "2-MERCAPTOETHANESULFONIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "3-O-ETHYL ASCORBIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -271,6 +279,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ALBUMIN (HUMAN)": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ALBUMIN AGGREGATED": {
     "is_allergen": false,
     "is_diagnostic_agent": true
@@ -320,6 +332,10 @@
     "is_diagnostic_agent": false
   },
   "ALENDRONIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALFATRADIOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -427,11 +443,23 @@
     "is_allergen": true,
     "is_diagnostic_agent": false
   },
+  "ALUMINUM CATION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALUMINUM CHLOROHYDRATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ALUMINUM HYDROXIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ALUMINUM OXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ALUMINUM SESQUICHLOROHYDRATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -715,6 +743,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ARBUTIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ARFORMOTEROL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -913,6 +945,10 @@
   },
   "AVENA SATIVA POLLEN": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "AVENA SATIVA WHOLE": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "AVIBACTAM": {
@@ -1507,6 +1543,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BROMODIPHENHYDRAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BROMOTHEOPHYLLINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1687,6 +1727,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CAMPHOR, (-)-": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CANAGLIFLOZIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1748,6 +1792,10 @@
     "is_diagnostic_agent": false
   },
   "CAPSICUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CAPSICUM OLEORESIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1869,6 +1917,10 @@
   },
   "CAVIA PORCELLUS HAIR": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "CAVIAR, UNSPECIFIED": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "CEANOTHUS AMERICANUS LEAF": {
@@ -2044,6 +2096,10 @@
     "is_diagnostic_agent": false
   },
   "CETUXIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CETYLPYRIDINIUM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2335,6 +2391,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CLOFAZIMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CLOMIPHENE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2411,6 +2471,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "COBALAMIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "COBALTOUS CATION": {
     "is_allergen": true,
     "is_diagnostic_agent": false
@@ -2444,6 +2508,10 @@
     "is_diagnostic_agent": false
   },
   "COCONUT OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COCONUT SHELL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2515,6 +2583,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "COPPER OXODOTREOTIDE CU-64": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "COPPER TRIPEPTIDE-1": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2528,6 +2600,10 @@
     "is_diagnostic_agent": false
   },
   "CORN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CORN OIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2624,6 +2700,10 @@
     "is_diagnostic_agent": false
   },
   "CUPRIC CATION": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CUPRIC OXIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2779,6 +2859,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DASATINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DATOPOTAMAB DERUXTECAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2828,6 +2912,10 @@
     "is_diagnostic_agent": false
   },
   "DEFLAZACORT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DEHYDRATED ALCOHOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3107,6 +3195,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DIMETHYL SULFONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DIMETHYL SULFOXIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3156,6 +3248,10 @@
     "is_diagnostic_agent": false
   },
   "DL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DL-": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3879,6 +3975,10 @@
     "is_allergen": true,
     "is_diagnostic_agent": false
   },
+  "FAMCICLOVIR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FAMOTIDINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3944,6 +4044,10 @@
     "is_diagnostic_agent": false
   },
   "FERRIC OXIDE RED": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FERRIC OXYHYDROXIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4447,6 +4551,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "GLUCOSAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "GLUTAMIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4520,6 +4628,10 @@
     "is_diagnostic_agent": false
   },
   "GRAZOPREVIR ANHYDROUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "GREEN TEA LEAF": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4784,6 +4896,10 @@
     "is_diagnostic_agent": false
   },
   "HYDROGEN PEROXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "HYDROGENATED JOJOBA OIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5159,6 +5275,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
+  "IPERONYL BUTOXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "IPILIMUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5180,6 +5300,10 @@
     "is_diagnostic_agent": false
   },
   "IRON": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "IRON PROTEIN SUCCINYLATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5224,6 +5348,10 @@
     "is_diagnostic_agent": false
   },
   "ISOPROTERENOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ISOSORBIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5359,6 +5487,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LACTOBACILLUS CRISPATUS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LACTULOSE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5404,6 +5536,10 @@
     "is_diagnostic_agent": false
   },
   "LATANOPROST ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LAURIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5483,6 +5619,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LEVACETYLLEUCINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LEVALBUTEROL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5524,6 +5664,10 @@
     "is_diagnostic_agent": false
   },
   "LEVOLEUCOVORIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LEVOMEFOLATE GLUCOSAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5707,6 +5851,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LOTEPREDNOL ETABONATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LOTILANER": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5808,6 +5956,10 @@
     "is_diagnostic_agent": false
   },
   "MAGNESIUM HYDROXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MAGNESIUM OXIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5972,6 +6124,10 @@
     "is_diagnostic_agent": false
   },
   "MENTHOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MENTHOL, (+)-": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6179,6 +6335,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MICONAZOLE NITRATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MIDAZOLAM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6299,6 +6459,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MOMETASONE FUROATE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MONOETHANOLAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6376,6 +6540,10 @@
     "is_diagnostic_agent": false
   },
   "MYCOPHENOLIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "N-ALKYL DIMETHYL BENZYL AMMONIUM ION (C12-C18)": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6588,6 +6756,10 @@
     "is_diagnostic_agent": false
   },
   "NIMODIPINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NINTEDANIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6935,6 +7107,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "OXIGLUTATIONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "OXYBATE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7088,6 +7264,10 @@
     "is_diagnostic_agent": false
   },
   "PECAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PECTIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7815,6 +7995,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PRUNUS MUME FLOWER OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PSEUDOEPHEDRINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7878,6 +8062,10 @@
   "PYROPHOSPHORIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": true
+  },
+  "PYRROLIDONE CARBOXYLIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
   },
   "QUAHOG, UNSPECIFIED": {
     "is_allergen": false,
@@ -8076,6 +8264,10 @@
     "is_diagnostic_agent": false
   },
   "RETIFANLIMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RETINOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8311,6 +8503,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RUSFERTIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RUTIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8432,6 +8628,10 @@
     "is_diagnostic_agent": false
   },
   "SCOPOLAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SCUTELLARIA BAICALENSIS ROOT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8560,6 +8760,10 @@
     "is_diagnostic_agent": false
   },
   "SHEA BUTTER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "SHEANUT OIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -9015,6 +9219,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SUGAMMADEX": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SULBACTAM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -9244,6 +9452,10 @@
     "is_diagnostic_agent": false
   },
   "TALAZOPARIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TALC": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -9831,6 +10043,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TRIAMCINOLONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TRIAMCINOLONE ACETONIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -10208,6 +10424,10 @@
     "is_diagnostic_agent": false
   },
   "VITAMIN A": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "VITAMIN D": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },

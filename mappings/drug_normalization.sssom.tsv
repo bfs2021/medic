@@ -10,6 +10,7 @@ CHEBI:10033	skos:exactMatch	CHEBI:10033	warfarin	semapv:UnspecifiedMatching	medi
 CHEBI:10034	skos:exactMatch	CHEBI:10034	warfarin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:10056	skos:exactMatch	CHEBI:10056	xanomeline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:10082	skos:exactMatch	CHEBI:10082	Xylometazoline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:10093	skos:exactMatch	CHEBI:10093	yohimbine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:10100	skos:exactMatch	CHEBI:10100	zafirlukast	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:10101	skos:exactMatch	CHEBI:10101	zalcitabine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:10102	skos:exactMatch	CHEBI:10102	zaleplon	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -47,7 +48,9 @@ CHEBI:115156	skos:exactMatch	CHEBI:115156	disodium fumarate	semapv:UnspecifiedMa
 CHEBI:116278	skos:exactMatch	CHEBI:116278	lomefloxacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:116735	skos:exactMatch	CHEBI:116735	benzocaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:119486	skos:exactMatch	CHEBI:119486	efavirenz	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:119573	skos:exactMatch	CHEBI:119573	delavirdine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:119915	skos:exactMatch	CHEBI:119915	fentanyl	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:124991	skos:exactMatch	CHEBI:124991	cefalotin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:125354	skos:exactMatch	CHEBI:125354	plerixafor	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:125612	skos:exactMatch	CHEBI:125612	2,3,5,6,7,8-hexahydro-1H-cyclopenta[b]quinolin-9-amine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:127342	skos:exactMatch	CHEBI:127342	atomoxetine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -68,6 +71,7 @@ CHEBI:131848	skos:exactMatch	CHEBI:131848	fotemustine	semapv:UnspecifiedMatching
 CHEBI:132112	skos:exactMatch	CHEBI:132112	sodium thiosulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:132233	skos:exactMatch	CHEBI:132233	1-phenylpropan-2-amine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:132268	skos:exactMatch	CHEBI:132268	dacomitinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:132767	skos:exactMatch	CHEBI:132767	ferric pyrophosphate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:132774	skos:exactMatch	CHEBI:132774	roxadustat	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:132842	skos:exactMatch	CHEBI:132842	sulfapyridine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:132912	skos:exactMatch	CHEBI:132912	nebivolol hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -103,6 +107,7 @@ CHEBI:134711	skos:exactMatch	CHEBI:134711	UREA C 14	semapv:UnspecifiedMatching	m
 CHEBI:134712	skos:exactMatch	CHEBI:134712	olanexidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134713	skos:exactMatch	CHEBI:134713	menadiol sodium diphosphate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134714	skos:exactMatch	CHEBI:134714	sacubitril	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:134715	skos:exactMatch	CHEBI:134715	trelagliptin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134716	skos:exactMatch	CHEBI:134716	brexpiprazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134717	skos:exactMatch	CHEBI:134717	decamethoxine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134718	skos:exactMatch	CHEBI:134718	safinamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -128,6 +133,7 @@ CHEBI:134760	skos:exactMatch	CHEBI:134760	pentaerythritol	semapv:UnspecifiedMatc
 CHEBI:134774	skos:exactMatch	CHEBI:134774	aminomethylbenzoic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134775	skos:exactMatch	CHEBI:134775	hydroxymethylnicotinamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134783	skos:exactMatch	CHEBI:134783	propylhexedrine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:134806	skos:exactMatch	CHEBI:134806	terpin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134813	skos:exactMatch	CHEBI:134813	chlorobutanol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134814	skos:exactMatch	CHEBI:134814	nikethamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134832	skos:exactMatch	CHEBI:134832	aminitrozole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -136,10 +142,12 @@ CHEBI:134868	skos:exactMatch	CHEBI:134868	pivhydrazine	semapv:UnspecifiedMatchin
 CHEBI:134876	skos:exactMatch	CHEBI:134876	bendazol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134888	skos:exactMatch	CHEBI:134888	fenyramidol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134891	skos:exactMatch	CHEBI:134891	sulfacarbamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:134892	skos:exactMatch	CHEBI:134892	5-aminolevulinic acid hexyl ester	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134893	skos:exactMatch	CHEBI:134893	tramazoline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134914	skos:exactMatch	CHEBI:134914	morinamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134923	skos:exactMatch	CHEBI:134923	talbutal	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134929	skos:exactMatch	CHEBI:134929	nimorazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:134936	skos:exactMatch	CHEBI:134936	pemirolast	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134938	skos:exactMatch	CHEBI:134938	ozagrel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134949	skos:exactMatch	CHEBI:134949	hopantenic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:134962	skos:exactMatch	CHEBI:134962	ambazone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -153,6 +161,7 @@ CHEBI:135005	skos:exactMatch	CHEBI:135005	milnacipran	semapv:UnspecifiedMatching
 CHEBI:135010	skos:exactMatch	CHEBI:135010	enoximone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135013	skos:exactMatch	CHEBI:135013	trimecaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135014	skos:exactMatch	CHEBI:135014	erdosteine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135032	skos:exactMatch	CHEBI:135032	ethacridine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135042	skos:exactMatch	CHEBI:135042	tenonitrozole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135102	skos:exactMatch	CHEBI:135102	isoxepac	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135108	skos:exactMatch	CHEBI:135108	moxastine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -161,9 +170,11 @@ CHEBI:135134	skos:exactMatch	CHEBI:135134	iobenguane (123I)	semapv:UnspecifiedMa
 CHEBI:135135	skos:exactMatch	CHEBI:135135	acetarsol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135136	skos:exactMatch	CHEBI:135136	nifuroxazide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135144	skos:exactMatch	CHEBI:135144	mebhydrolin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135156	skos:exactMatch	CHEBI:135156	ramosetron	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135163	skos:exactMatch	CHEBI:135163	tromantadine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135173	skos:exactMatch	CHEBI:135173	taurolidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135180	skos:exactMatch	CHEBI:135180	nifuratel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135193	skos:exactMatch	CHEBI:135193	fospropofol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135207	skos:exactMatch	CHEBI:135207	clofedanol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135230	skos:exactMatch	CHEBI:135230	sulfacytine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135239	skos:exactMatch	CHEBI:135239	indobufen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -173,8 +184,10 @@ CHEBI:135278	skos:exactMatch	CHEBI:135278	terizidone	semapv:UnspecifiedMatching	
 CHEBI:135283	skos:exactMatch	CHEBI:135283	methenolone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135285	skos:exactMatch	CHEBI:135285	vildagliptin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135293	skos:exactMatch	CHEBI:135293	mesterolone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135303	skos:exactMatch	CHEBI:135303	valethamate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135309	skos:exactMatch	CHEBI:135309	fabomotizole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135310	skos:exactMatch	CHEBI:135310	butamirate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135314	skos:exactMatch	CHEBI:135314	indecainide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135323	skos:exactMatch	CHEBI:135323	gestodene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135333	skos:exactMatch	CHEBI:135333	lodoxamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135335	skos:exactMatch	CHEBI:135335	artemotil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -184,8 +197,10 @@ CHEBI:135343	skos:exactMatch	CHEBI:135343	oxyfedrine	semapv:UnspecifiedMatching	
 CHEBI:135349	skos:exactMatch	CHEBI:135349	mitiglinide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135351	skos:exactMatch	CHEBI:135351	rotigotine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135361	skos:exactMatch	CHEBI:135361	methscopolamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135372	skos:exactMatch	CHEBI:135372	clostebol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135381	skos:exactMatch	CHEBI:135381	trofosfamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135398	skos:exactMatch	CHEBI:135398	norelgestromin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135413	skos:exactMatch	CHEBI:135413	protokylol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135448	skos:exactMatch	CHEBI:135448	nitroxazepine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135472	skos:exactMatch	CHEBI:135472	embramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135499	skos:exactMatch	CHEBI:135499	xipamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -246,19 +261,26 @@ CHEBI:135782	skos:exactMatch	CHEBI:135782	ulobetasol propionate	semapv:Unspecifi
 CHEBI:135790	skos:exactMatch	CHEBI:135790	estriol succinate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135791	skos:exactMatch	CHEBI:135791	prednicarbate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135798	skos:exactMatch	CHEBI:135798	betamethasone benzoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135804	skos:exactMatch	CHEBI:135804	hexafluronium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135806	skos:exactMatch	CHEBI:135806	benidipine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135809	skos:exactMatch	CHEBI:135809	landiolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135810	skos:exactMatch	CHEBI:135810	atrasentan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135811	skos:exactMatch	CHEBI:135811	pinaverium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135815	skos:exactMatch	CHEBI:135815	betamethasone butyrate propionate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135826	skos:exactMatch	CHEBI:135826	octenidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135829	skos:exactMatch	CHEBI:135829	alatrofloxacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135845	skos:exactMatch	CHEBI:135845	rapacuronium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135859	skos:exactMatch	CHEBI:135859	efonidipine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135862	skos:exactMatch	CHEBI:135862	tyropanoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135867	skos:exactMatch	CHEBI:135867	etoposide phosphate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135871	skos:exactMatch	CHEBI:135871	prednisolone steaglate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135873	skos:exactMatch	CHEBI:135873	glucosaminylmuramyl dipeptide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135875	skos:exactMatch	CHEBI:135875	talaporfin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135876	skos:exactMatch	CHEBI:135876	valrubicin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135884	skos:exactMatch	CHEBI:135884	ioxilan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135885	skos:exactMatch	CHEBI:135885	metildigoxin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135888	skos:exactMatch	CHEBI:135888	pimecrolimus	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135894	skos:exactMatch	CHEBI:135894	saralasin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135898	skos:exactMatch	CHEBI:135898	lanatoside C	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135899	skos:exactMatch	CHEBI:135899	atosiban	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135900	skos:exactMatch	CHEBI:135900	demoxytocin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -295,6 +317,7 @@ CHEBI:135958	skos:exactMatch	CHEBI:135958	xenon (127Xe) gas	semapv:UnspecifiedMa
 CHEBI:135959	skos:exactMatch	CHEBI:135959	xenon (133Xe) gas	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135961	skos:exactMatch	CHEBI:135961	degarelix	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135962	skos:exactMatch	CHEBI:135962	dapoxetine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:135968	skos:exactMatch	CHEBI:135968	ceftobiprole medocaril	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135975	skos:exactMatch	CHEBI:135975	sulfisoxazole acetyl	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135980	skos:exactMatch	CHEBI:135980	ammonia-(13)N	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:135981	skos:exactMatch	CHEBI:135981	estradiol acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -305,6 +328,7 @@ CHEBI:135997	skos:exactMatch	CHEBI:135997	iobenguane (131I)	semapv:UnspecifiedMa
 CHEBI:136002	skos:exactMatch	CHEBI:136002	krypton (81mKr) gas	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:136007	skos:exactMatch	CHEBI:136007	methylnaltrexone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:136009	skos:exactMatch	CHEBI:136009	(6S)-5-methyltetrahydrofolic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:136019	skos:exactMatch	CHEBI:136019	nalfurafine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:136034	skos:exactMatch	CHEBI:136034	afamelanotide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:136036	skos:exactMatch	CHEBI:136036	cridanimod	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:136038	skos:exactMatch	CHEBI:136038	mebicar	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -365,6 +389,7 @@ CHEBI:149601	skos:exactMatch	CHEBI:149601	bempedoic acid	semapv:UnspecifiedMatch
 CHEBI:149836	skos:exactMatch	CHEBI:149836	tigecycline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:150867	skos:exactMatch	CHEBI:150867	(+)-geodin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15354	skos:exactMatch	CHEBI:15354	choline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:15355	skos:exactMatch	CHEBI:15355	acetylcholine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15356	skos:exactMatch	CHEBI:15356	cysteine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15361	skos:exactMatch	CHEBI:15361	pyruvate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15365	skos:exactMatch	CHEBI:15365	acetylsalicylic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -393,6 +418,7 @@ CHEBI:15741	skos:exactMatch	CHEBI:15741	succinic acid	semapv:UnspecifiedMatching
 CHEBI:15746	skos:exactMatch	CHEBI:15746	spermine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15765	skos:exactMatch	CHEBI:15765	L-dopa	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:157785	skos:exactMatch	CHEBI:157785	sulbactam sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:15782	skos:exactMatch	CHEBI:15782	viomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15843	skos:exactMatch	CHEBI:15843	arachidonic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15846	skos:exactMatch	CHEBI:15846	NAD(+)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:15854	skos:exactMatch	CHEBI:15854	quinine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -407,6 +433,7 @@ CHEBI:15971	skos:exactMatch	CHEBI:15971	L-histidine	semapv:UnspecifiedMatching	m
 CHEBI:16095	skos:exactMatch	CHEBI:16095	sepiapterin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:16118	skos:exactMatch	CHEBI:16118	berberine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:16134	skos:exactMatch	CHEBI:16134	ammonia	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:16137	skos:exactMatch	CHEBI:16137	chondroitin D-glucuronate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:16163	skos:exactMatch	CHEBI:16163	S-carboxymethyl-L-cysteine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:161680	skos:exactMatch	CHEBI:161680	aztreonam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:16171	skos:exactMatch	CHEBI:16171	NMN zwitterion	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -481,6 +508,7 @@ CHEBI:16919	skos:exactMatch	CHEBI:16919	creatine	semapv:UnspecifiedMatching	medi
 CHEBI:16958	skos:exactMatch	CHEBI:16958	beta-alanine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:16962	skos:exactMatch	CHEBI:16962	cortisone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:169727	skos:exactMatch	CHEBI:169727	Iophendylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:16973	skos:exactMatch	CHEBI:16973	11-deoxycorticosterone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:16977	skos:exactMatch	CHEBI:16977	L-alanine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:16988	skos:exactMatch	CHEBI:16988	D-ribose	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:170007	skos:exactMatch	CHEBI:170007	nirmatrelvir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -590,13 +618,16 @@ CHEBI:181016	skos:exactMatch	CHEBI:181016	Tiamulin fumarate	semapv:UnspecifiedMa
 CHEBI:18145	skos:exactMatch	CHEBI:18145	(R,R,R)-alpha-tocopherol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18208	skos:exactMatch	CHEBI:18208	benzylpenicillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:182080	skos:exactMatch	CHEBI:182080	Talwin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:18211	skos:exactMatch	CHEBI:18211	citrulline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18222	skos:exactMatch	CHEBI:18222	xylose	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18237	skos:exactMatch	CHEBI:18237	glutamic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18243	skos:exactMatch	CHEBI:18243	dopamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:18246	skos:exactMatch	CHEBI:18246	(1->4)-beta-D-glucan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:182465	skos:exactMatch	CHEBI:182465	Lincomycin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18257	skos:exactMatch	CHEBI:18257	ornithine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18258	skos:exactMatch	CHEBI:18258	3,3',5-triiodo-L-thyronine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:182695	skos:exactMatch	CHEBI:182695	DL-alpha-Tocopherol acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:18295	skos:exactMatch	CHEBI:18295	histamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18303	skos:exactMatch	CHEBI:18303	phosphatidyl-L-serine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18315	skos:exactMatch	CHEBI:18315	pyrroloquinoline quinone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:18323	skos:exactMatch	CHEBI:18323	anserine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -617,6 +648,7 @@ CHEBI:188153	skos:exactMatch	CHEBI:188153	oteseconazole	semapv:UnspecifiedMatchi
 CHEBI:188352	skos:exactMatch	CHEBI:188352	phenol formaldehyde resin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:188559	skos:exactMatch	CHEBI:188559	palovarotene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:188719	skos:exactMatch	CHEBI:188719	Ertugliflozin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:188978	skos:exactMatch	CHEBI:188978	BENZALKONIUM	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:189104	skos:exactMatch	CHEBI:189104	Febantel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:190509	skos:exactMatch	CHEBI:190509	imipenem zwitterion	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:191940	skos:exactMatch	CHEBI:191940	ponatinib hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -653,6 +685,8 @@ CHEBI:22063	skos:exactMatch	CHEBI:22063	sulfoxide	semapv:UnspecifiedMatching	med
 CHEBI:2208	skos:exactMatch	CHEBI:2208	purine-6-thiol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:22198	skos:exactMatch	CHEBI:22198	acetylcysteine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:22256	skos:exactMatch	CHEBI:22256	adenosine phosphate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:22470	skos:exactMatch	CHEBI:22470	alpha-tocopherol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:22494	skos:exactMatch	CHEBI:22494	aminobenzoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:22495	skos:exactMatch	CHEBI:22495	aminobenzoic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:22652	skos:exactMatch	CHEBI:22652	ascorbic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:22660	skos:exactMatch	CHEBI:22660	aspartic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -704,6 +738,7 @@ CHEBI:230352	skos:exactMatch	CHEBI:230352	Desidustat	semapv:UnspecifiedMatching	
 CHEBI:230430	skos:exactMatch	CHEBI:230430	Ulinastatin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:230470	skos:exactMatch	CHEBI:230470	rezafungin acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:230519	skos:exactMatch	CHEBI:230519	heparin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:230550	skos:exactMatch	CHEBI:230550	roxatidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:230846	skos:exactMatch	CHEBI:230846	Pegvaliase	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:230905	skos:exactMatch	CHEBI:230905	Ribociclib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:231032	skos:exactMatch	CHEBI:231032	Brincidofovir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -730,6 +765,7 @@ CHEBI:231702	skos:exactMatch	CHEBI:231702	tirbanibulin	semapv:UnspecifiedMatchin
 CHEBI:232153	skos:exactMatch	CHEBI:232153	hydrazine sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:232328	skos:exactMatch	CHEBI:232328	dordaviprone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:232543	skos:exactMatch	CHEBI:232543	epirubicin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:232544	skos:exactMatch	CHEBI:232544	Tirabrutinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:232546	skos:exactMatch	CHEBI:232546	sunitinib malate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:232548	skos:exactMatch	CHEBI:232548	topotecan hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:232556	skos:exactMatch	CHEBI:232556	Erdafitinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -764,6 +800,7 @@ CHEBI:2376	skos:exactMatch	CHEBI:2376	acarbose	semapv:UnspecifiedMatching	medic-
 CHEBI:2379	skos:exactMatch	CHEBI:2379	acebutolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2380	skos:exactMatch	CHEBI:2380	acebutolol hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:23965	skos:exactMatch	CHEBI:23965	estradiol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:2401	skos:exactMatch	CHEBI:2401	acetophenazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:240107	skos:exactMatch	CHEBI:240107	bromfenac	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2402	skos:exactMatch	CHEBI:2402	acetophenazine dimaleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2417	skos:exactMatch	CHEBI:2417	acetylcholine chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -781,6 +818,7 @@ CHEBI:24996	skos:exactMatch	CHEBI:24996	lactate	semapv:UnspecifiedMatching	medic
 CHEBI:2500	skos:exactMatch	CHEBI:2500	Aescin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:25094	skos:exactMatch	CHEBI:25094	lysine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:25107	skos:exactMatch	CHEBI:25107	magnesium atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:251408	skos:exactMatch	CHEBI:251408	edrophonium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:253342	skos:exactMatch	CHEBI:253342	alosetron	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:25357	skos:exactMatch	CHEBI:25357	mitomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2549	skos:exactMatch	CHEBI:2549	albuterol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -795,6 +833,7 @@ CHEBI:261649	skos:exactMatch	CHEBI:261649	bismuth subsalicylate	semapv:Unspecifi
 CHEBI:2618	skos:exactMatch	CHEBI:2618	amantadine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2619	skos:exactMatch	CHEBI:2619	amantadine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:26216	skos:exactMatch	CHEBI:26216	potassium atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:2627	skos:exactMatch	CHEBI:2627	ambenonium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:26271	skos:exactMatch	CHEBI:26271	proline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2628	skos:exactMatch	CHEBI:2628	ambenonium chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:26288	skos:exactMatch	CHEBI:26288	propanediol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -814,6 +853,7 @@ CHEBI:2668	skos:exactMatch	CHEBI:2668	amlodipine	semapv:UnspecifiedMatching	medi
 CHEBI:2669	skos:exactMatch	CHEBI:2669	amlodipine benzenesulfonate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:26710	skos:exactMatch	CHEBI:26710	sodium chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2673	skos:exactMatch	CHEBI:2673	amobarbital	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:2674	skos:exactMatch	CHEBI:2674	amodiaquine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:267413	skos:exactMatch	CHEBI:267413	balsalazide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2675	skos:exactMatch	CHEBI:2675	amoxapine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2676	skos:exactMatch	CHEBI:2676	amoxicillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -822,6 +862,7 @@ CHEBI:2679	skos:exactMatch	CHEBI:2679	amphetamine	semapv:UnspecifiedMatching	med
 CHEBI:26806	skos:exactMatch	CHEBI:26806	succinate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2682	skos:exactMatch	CHEBI:2682	amphotericin B	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:26833	skos:exactMatch	CHEBI:26833	sulfur atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:2686	skos:exactMatch	CHEBI:2686	amrinone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2687	skos:exactMatch	CHEBI:2687	amsacrine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:26986	skos:exactMatch	CHEBI:26986	threonine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:27013	skos:exactMatch	CHEBI:27013	tocopherol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -848,6 +889,8 @@ CHEBI:27569	skos:exactMatch	CHEBI:27569	arabinogalactan	semapv:UnspecifiedMatchi
 CHEBI:27585	skos:exactMatch	CHEBI:27585	selenomethionine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:27594	skos:exactMatch	CHEBI:27594	carbon atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:27607	skos:exactMatch	CHEBI:27607	thymol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:27644	skos:exactMatch	CHEBI:27644	chlortetracycline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:27662	skos:exactMatch	CHEBI:27662	benzquinamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:27666	skos:exactMatch	CHEBI:27666	actinomycin D	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:27690	skos:exactMatch	CHEBI:27690	acetazolamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:27701	skos:exactMatch	CHEBI:27701	oxytetracycline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -887,9 +930,11 @@ CHEBI:28364	skos:exactMatch	CHEBI:28364	all-cis-5,8,11,14,17-icosapentaenoic aci
 CHEBI:28445	skos:exactMatch	CHEBI:28445	vincristine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28482	skos:exactMatch	CHEBI:28482	quinidine sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28487	skos:exactMatch	CHEBI:28487	reserpine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:28502	skos:exactMatch	CHEBI:28502	tolazoline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28527	skos:exactMatch	CHEBI:28527	rutin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28544	skos:exactMatch	CHEBI:28544	digitoxin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28548	skos:exactMatch	CHEBI:28548	D-pinitol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:28568	skos:exactMatch	CHEBI:28568	piperazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28569	skos:exactMatch	CHEBI:28569	quinidine polygalacturonate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28572	skos:exactMatch	CHEBI:28572	rescinnamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:28593	skos:exactMatch	CHEBI:28593	quinidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -940,14 +985,17 @@ CHEBI:291902	skos:exactMatch	CHEBI:291902	eptifibatide	semapv:UnspecifiedMatchin
 CHEBI:2922	skos:exactMatch	CHEBI:2922	auranofin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:29231	skos:exactMatch	CHEBI:29231	hypoiodous acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:29321	skos:exactMatch	CHEBI:29321	sodium nitroprusside	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:2946	skos:exactMatch	CHEBI:2946	azatadine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2947	skos:exactMatch	CHEBI:2947	azatadine maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2948	skos:exactMatch	CHEBI:2948	azathioprine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2950	skos:exactMatch	CHEBI:2950	azelastine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2951	skos:exactMatch	CHEBI:2951	azelastine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2955	skos:exactMatch	CHEBI:2955	azithromycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:2956	skos:exactMatch	CHEBI:2956	azlocillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:29670	skos:exactMatch	CHEBI:29670	Ramoplanin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:29671	skos:exactMatch	CHEBI:29671	Resistomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:29673	skos:exactMatch	CHEBI:29673	rifamycin SV	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:2968	skos:exactMatch	CHEBI:2968	bacampicillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:29687	skos:exactMatch	CHEBI:29687	teicoplanin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:29688	skos:exactMatch	CHEBI:29688	telithromycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:2969	skos:exactMatch	CHEBI:2969	bacampicillin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -969,7 +1017,9 @@ CHEBI:30441	skos:exactMatch	CHEBI:30441	germanium atom	semapv:UnspecifiedMatchin
 CHEBI:3047	skos:exactMatch	CHEBI:3047	benzthiazide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3048	skos:exactMatch	CHEBI:3048	benzatropine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:30496	skos:exactMatch	CHEBI:30496	sulfur hexafluoride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3061	skos:exactMatch	CHEBI:3061	bepridil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:30618	skos:exactMatch	CHEBI:30618	hydroxypropyl methylcellulose	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:30659	skos:exactMatch	CHEBI:30659	D-thyroxine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3070	skos:exactMatch	CHEBI:3070	bestatin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:30745	skos:exactMatch	CHEBI:30745	phenylacetic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:30746	skos:exactMatch	CHEBI:30746	benzoic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1002,6 +1052,7 @@ CHEBI:31171	skos:exactMatch	CHEBI:31171	Aclarubicin hydrochloride	semapv:Unspeci
 CHEBI:31173	skos:exactMatch	CHEBI:31173	Actarit	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31174	skos:exactMatch	CHEBI:31174	adapalene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31175	skos:exactMatch	CHEBI:31175	adefovir pivoxil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:31176	skos:exactMatch	CHEBI:31176	adipiodone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31184	skos:exactMatch	CHEBI:31184	alclometasone dipropionate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31186	skos:exactMatch	CHEBI:31186	alfacalcidol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31189	skos:exactMatch	CHEBI:31189	Allylestrenol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1042,6 +1093,7 @@ CHEBI:31303	skos:exactMatch	CHEBI:31303	bromhexine hydrochloride	semapv:Unspecif
 CHEBI:31304	skos:exactMatch	CHEBI:31304	bromisoval	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31324	skos:exactMatch	CHEBI:31324	Buserelin acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31325	skos:exactMatch	CHEBI:31325	butenafine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3133	skos:exactMatch	CHEBI:3133	bitolterol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31336	skos:exactMatch	CHEBI:31336	calcium glycerophosphate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3134	skos:exactMatch	CHEBI:3134	bitolterol mesylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31340	skos:exactMatch	CHEBI:31340	Calcium folinate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1165,9 +1217,11 @@ CHEBI:31708	skos:exactMatch	CHEBI:31708	Iofetamine hydrochloride I 123	semapv:Un
 CHEBI:31709	skos:exactMatch	CHEBI:31709	iohexol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31710	skos:exactMatch	CHEBI:31710	iomeprol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31711	skos:exactMatch	CHEBI:31711	iopamidol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:31713	skos:exactMatch	CHEBI:31713	Iotalamic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31714	skos:exactMatch	CHEBI:31714	Iothalamate meglumine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31715	skos:exactMatch	CHEBI:31715	Iotrolan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31717	skos:exactMatch	CHEBI:31717	Ioversol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3172	skos:exactMatch	CHEBI:3172	bretylium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3173	skos:exactMatch	CHEBI:3173	bretylium tosylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31731	skos:exactMatch	CHEBI:31731	isopropyl unoprostone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:31735	skos:exactMatch	CHEBI:31735	Isoxsuprine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1243,6 +1297,7 @@ CHEBI:32030	skos:exactMatch	CHEBI:32030	potassium bromide	semapv:UnspecifiedMatc
 CHEBI:32034	skos:exactMatch	CHEBI:32034	potassium bitartrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32036	skos:exactMatch	CHEBI:32036	potassium sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32038	skos:exactMatch	CHEBI:32038	pralidoxime iodide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3205	skos:exactMatch	CHEBI:3205	buclizine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32053	skos:exactMatch	CHEBI:32053	prilocaine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32064	skos:exactMatch	CHEBI:32064	Propyliodone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32066	skos:exactMatch	CHEBI:32066	Prothionamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1311,6 +1366,7 @@ CHEBI:32269	skos:exactMatch	CHEBI:32269	tropisetron	semapv:UnspecifiedMatching	m
 CHEBI:32270	skos:exactMatch	CHEBI:32270	trospium chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32273	skos:exactMatch	CHEBI:32273	Tyropanoate sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32278	skos:exactMatch	CHEBI:32278	Urapidil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3228	skos:exactMatch	CHEBI:3228	butabarbital	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32286	skos:exactMatch	CHEBI:32286	alfuzosin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32288	skos:exactMatch	CHEBI:32288	Valethamate bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3229	skos:exactMatch	CHEBI:3229	Butabarbital sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1331,6 +1387,7 @@ CHEBI:32599	skos:exactMatch	CHEBI:32599	magnesium sulfate	semapv:UnspecifiedMatc
 CHEBI:32687	skos:exactMatch	CHEBI:32687	piperonyl butoxide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3286	skos:exactMatch	CHEBI:3286	cabergoline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32888	skos:exactMatch	CHEBI:32888	gamma-hexachlorocyclohexane	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:32914	skos:exactMatch	CHEBI:32914	cetylpyridinium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32915	skos:exactMatch	CHEBI:32915	cetylpyridinium chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:32954	skos:exactMatch	CHEBI:32954	sodium acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3306	skos:exactMatch	CHEBI:3306	calcitonin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1347,6 +1404,7 @@ CHEBI:33234	skos:exactMatch	CHEBI:33234	vitamin E	semapv:UnspecifiedMatching	med
 CHEBI:33324	skos:exactMatch	CHEBI:33324	strontium atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:33325	skos:exactMatch	CHEBI:33325	radium atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:33336	skos:exactMatch	CHEBI:33336	lanthanum atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:33382	skos:exactMatch	CHEBI:33382	lutetium atom	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3347	skos:exactMatch	CHEBI:3347	candesartan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3348	skos:exactMatch	CHEBI:3348	Candesartan cilexetil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:33568	skos:exactMatch	CHEBI:33568	adrenaline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1359,6 +1417,7 @@ CHEBI:3380	skos:exactMatch	CHEBI:3380	captopril	semapv:UnspecifiedMatching	medic
 CHEBI:33823	skos:exactMatch	CHEBI:33823	enol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3385	skos:exactMatch	CHEBI:3385	carbachol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3387	skos:exactMatch	CHEBI:3387	carbamazepine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3393	skos:exactMatch	CHEBI:3393	carbenicillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3395	skos:exactMatch	CHEBI:3395	carbidopa	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3398	skos:exactMatch	CHEBI:3398	carbinoxamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3403	skos:exactMatch	CHEBI:3403	carboprost	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1372,6 +1431,7 @@ CHEBI:34380	skos:exactMatch	CHEBI:34380	monobenzone	semapv:UnspecifiedMatching	m
 CHEBI:34385	skos:exactMatch	CHEBI:34385	4-aminopyridine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3441	skos:exactMatch	CHEBI:3441	carvedilol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34474	skos:exactMatch	CHEBI:34474	6alpha-Fluoroprednisolone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:34521	skos:exactMatch	CHEBI:34521	Acetrizoic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34523	skos:exactMatch	CHEBI:34523	Acotiamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34532	skos:exactMatch	CHEBI:34532	Alprostadil alfadex	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34535	skos:exactMatch	CHEBI:34535	ampicillin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1387,6 +1447,7 @@ CHEBI:34647	skos:exactMatch	CHEBI:34647	clindamycin palmitate hydrochloride	sema
 CHEBI:34650	skos:exactMatch	CHEBI:34650	colistimethate sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34671	skos:exactMatch	CHEBI:34671	Deoxycorticosterone acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34682	skos:exactMatch	CHEBI:34682	diazinon	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:34683	skos:exactMatch	CHEBI:34683	disodium hydrogenphosphate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34691	skos:exactMatch	CHEBI:34691	dicloxacillin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34730	skos:exactMatch	CHEBI:34730	doxycycline hyclate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34742	skos:exactMatch	CHEBI:34742	Erythromycin stearate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1396,6 +1457,7 @@ CHEBI:34776	skos:exactMatch	CHEBI:34776	Glucagon hydrochloride	semapv:Unspecifie
 CHEBI:3478	skos:exactMatch	CHEBI:3478	cefaclor	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34789	skos:exactMatch	CHEBI:34789	hetacillin potassium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3479	skos:exactMatch	CHEBI:3479	cefadroxil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:34791	skos:exactMatch	CHEBI:34791	Hexylcaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3480	skos:exactMatch	CHEBI:3480	cefamandole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3481	skos:exactMatch	CHEBI:3481	cefamandole nafate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34825	skos:exactMatch	CHEBI:34825	Luliconazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1408,6 +1470,7 @@ CHEBI:34888	skos:exactMatch	CHEBI:34888	Niflumic acid	semapv:UnspecifiedMatching
 CHEBI:3489	skos:exactMatch	CHEBI:3489	cefmetazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34894	skos:exactMatch	CHEBI:34894	Norethindrone enanthate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3490	skos:exactMatch	CHEBI:3490	cefmetazole sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3491	skos:exactMatch	CHEBI:3491	cefonicid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34910	skos:exactMatch	CHEBI:34910	pentetrazol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34911	skos:exactMatch	CHEBI:34911	permethrin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:34916	skos:exactMatch	CHEBI:34916	phenothrin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1451,6 +1514,8 @@ CHEBI:3545	skos:exactMatch	CHEBI:3545	cephapirin sodium	semapv:UnspecifiedMatchi
 CHEBI:3547	skos:exactMatch	CHEBI:3547	cephradine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:354984	skos:exactMatch	CHEBI:354984	candicidin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:35505	skos:exactMatch	CHEBI:35505	hydrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:355510	skos:exactMatch	CHEBI:355510	cefotiam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3558	skos:exactMatch	CHEBI:3558	cerivastatin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3559	skos:exactMatch	CHEBI:3559	cerivastatin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3561	skos:exactMatch	CHEBI:3561	cetirizine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3562	skos:exactMatch	CHEBI:3562	Cetirizine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1459,6 +1524,7 @@ CHEBI:3568	skos:exactMatch	CHEBI:3568	cevimeline	semapv:UnspecifiedMatching	medi
 CHEBI:35702	skos:exactMatch	CHEBI:35702	diethyl ether	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:35722	skos:exactMatch	CHEBI:35722	sulfated glycosaminoglycan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:35739	skos:exactMatch	CHEBI:35739	pentetic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:35854	skos:exactMatch	CHEBI:35854	valacyclovir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:35940	skos:exactMatch	CHEBI:35940	protirelin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3606	skos:exactMatch	CHEBI:3606	Chloramphenicol succinate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3611	skos:exactMatch	CHEBI:3611	chlordiazepoxide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1475,6 +1541,7 @@ CHEBI:3641	skos:exactMatch	CHEBI:3641	chlorotrianisene	semapv:UnspecifiedMatchin
 CHEBI:3643	skos:exactMatch	CHEBI:3643	chlorphenesin carbamate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:364453	skos:exactMatch	CHEBI:364453	carprofen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3645	skos:exactMatch	CHEBI:3645	Chlorpheniramine maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3646	skos:exactMatch	CHEBI:3646	Chlorphentermine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3647	skos:exactMatch	CHEBI:3647	chlorpromazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3649	skos:exactMatch	CHEBI:3649	chlorpromazine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3650	skos:exactMatch	CHEBI:3650	chlorpropamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1490,12 +1557,14 @@ CHEBI:36773	skos:exactMatch	CHEBI:36773	camphor	semapv:UnspecifiedMatching	medic
 CHEBI:36791	skos:exactMatch	CHEBI:36791	escitalopram	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:36795	skos:exactMatch	CHEBI:36795	(S)-duloxetine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:36796	skos:exactMatch	CHEBI:36796	duloxetine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:36798	skos:exactMatch	CHEBI:36798	dothiepin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:36808	skos:exactMatch	CHEBI:36808	duloxetine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3696	skos:exactMatch	CHEBI:3696	cidofovir anhydrous	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3697	skos:exactMatch	CHEBI:3697	cilastatin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3698	skos:exactMatch	CHEBI:3698	cilazapril	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3699	skos:exactMatch	CHEBI:3699	cimetidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3716	skos:exactMatch	CHEBI:3716	cinoxacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:3720	skos:exactMatch	CHEBI:3720	cisapride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3721	skos:exactMatch	CHEBI:3721	cisatracurium besylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3723	skos:exactMatch	CHEBI:3723	citalopram	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:3724	skos:exactMatch	CHEBI:3724	citalopram hydrobromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1531,6 +1600,7 @@ CHEBI:37845	skos:exactMatch	CHEBI:37845	growth hormone	semapv:UnspecifiedMatchin
 CHEBI:37878	skos:exactMatch	CHEBI:37878	glucosamine sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:37922	skos:exactMatch	CHEBI:37922	arbekacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:37924	skos:exactMatch	CHEBI:37924	atazanavir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:37937	skos:exactMatch	CHEBI:37937	bethanidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:37941	skos:exactMatch	CHEBI:37941	clopidogrel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:37943	skos:exactMatch	CHEBI:37943	colistin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:37950	skos:exactMatch	CHEBI:37950	hexoprenaline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1581,19 +1651,23 @@ CHEBI:41039	skos:exactMatch	CHEBI:41039	benfotiamine	semapv:UnspecifiedMatching	
 CHEBI:41060	skos:exactMatch	CHEBI:41060	IBANDRONATE	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41237	skos:exactMatch	CHEBI:41237	benzyl benzoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41423	skos:exactMatch	CHEBI:41423	celecoxib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:41462	skos:exactMatch	CHEBI:41462	CARBENOXOLONE	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41500	skos:exactMatch	CHEBI:41500	4-phenylbutyric acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41688	skos:exactMatch	CHEBI:41688	crystal violet	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41774	skos:exactMatch	CHEBI:41774	tamoxifen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41872	skos:exactMatch	CHEBI:41872	dequalinium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41879	skos:exactMatch	CHEBI:41879	dexamethasone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41922	skos:exactMatch	CHEBI:41922	diethylstilbestrol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:41934	skos:exactMatch	CHEBI:41934	decamethonium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41948	skos:exactMatch	CHEBI:41948	eflornithine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:41977	skos:exactMatch	CHEBI:41977	daunorubicin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:42068	skos:exactMatch	CHEBI:42068	idarubicin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:421707	skos:exactMatch	CHEBI:421707	abacavir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:42266	skos:exactMatch	CHEBI:42266	ethane	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:42355	skos:exactMatch	CHEBI:42355	erythromycin A	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:42446	skos:exactMatch	CHEBI:42446	(S)-flurbiprofen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:42797	skos:exactMatch	CHEBI:42797	gabapentin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:42820	skos:exactMatch	CHEBI:42820	guanidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:42944	skos:exactMatch	CHEBI:42944	galanthamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4304	skos:exactMatch	CHEBI:4304	Sitafloxacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4305	skos:exactMatch	CHEBI:4305	dacarbazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1601,6 +1675,7 @@ CHEBI:4309	skos:exactMatch	CHEBI:4309	dalfopristin	semapv:UnspecifiedMatching	me
 CHEBI:4315	skos:exactMatch	CHEBI:4315	danazol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4317	skos:exactMatch	CHEBI:4317	dantrolene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4325	skos:exactMatch	CHEBI:4325	dapsone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:43362	skos:exactMatch	CHEBI:43362	immucillin H	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:43415	skos:exactMatch	CHEBI:43415	dexibuprofen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4356	skos:exactMatch	CHEBI:4356	desferrioxamine B	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:43602	skos:exactMatch	CHEBI:43602	obeticholic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1679,7 +1754,9 @@ CHEBI:4631	skos:exactMatch	CHEBI:4631	diosmin	semapv:UnspecifiedMatching	medic-n
 CHEBI:46345	skos:exactMatch	CHEBI:46345	5-fluorouracil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4636	skos:exactMatch	CHEBI:4636	diphenhydramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4637	skos:exactMatch	CHEBI:4637	diphenhydramine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:4638	skos:exactMatch	CHEBI:4638	diphenidol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4639	skos:exactMatch	CHEBI:4639	diphenoxylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:4646	skos:exactMatch	CHEBI:4646	dipivefrin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4647	skos:exactMatch	CHEBI:4647	dipivefrin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:465284	skos:exactMatch	CHEBI:465284	ganciclovir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4653	skos:exactMatch	CHEBI:4653	dipyridamole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1704,6 +1781,7 @@ CHEBI:4696	skos:exactMatch	CHEBI:4696	donepezil hydrochloride	semapv:Unspecified
 CHEBI:4698	skos:exactMatch	CHEBI:4698	Dopamine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4702	skos:exactMatch	CHEBI:4702	dorzolamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4703	skos:exactMatch	CHEBI:4703	dorzolamide hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:4706	skos:exactMatch	CHEBI:4706	doxacurium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4707	skos:exactMatch	CHEBI:4707	doxacurium chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4708	skos:exactMatch	CHEBI:4708	doxazosin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4709	skos:exactMatch	CHEBI:4709	doxazosin mesylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1778,6 +1856,7 @@ CHEBI:4875	skos:exactMatch	CHEBI:4875	etanercept	semapv:UnspecifiedMatching	medi
 CHEBI:4876	skos:exactMatch	CHEBI:4876	etacrynic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4877	skos:exactMatch	CHEBI:4877	ethambutol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4878	skos:exactMatch	CHEBI:4878	ethambutol dihydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:487869	skos:exactMatch	CHEBI:487869	clavulanate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4882	skos:exactMatch	CHEBI:4882	ethchlorvynol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4884	skos:exactMatch	CHEBI:4884	ethinamate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:48843	skos:exactMatch	CHEBI:48843	disodium selenite	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1791,6 +1870,7 @@ CHEBI:48947	skos:exactMatch	CHEBI:48947	clavulanic acid	semapv:UnspecifiedMatchi
 CHEBI:48981	skos:exactMatch	CHEBI:48981	quinolin-8-ol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:49005	skos:exactMatch	CHEBI:49005	deferasirox	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4903	skos:exactMatch	CHEBI:4903	17alpha-ethynylestradiol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:4904	skos:exactMatch	CHEBI:4904	etidocaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:49040	skos:exactMatch	CHEBI:49040	ezetimibe	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4905	skos:exactMatch	CHEBI:4905	Etidocaine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:4906	skos:exactMatch	CHEBI:4906	etidronate disodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1855,6 +1935,7 @@ CHEBI:50506	skos:exactMatch	CHEBI:50506	phentermine hydrochloride	semapv:Unspeci
 CHEBI:5051	skos:exactMatch	CHEBI:5051	Fexofenadine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50512	skos:exactMatch	CHEBI:50512	lidocaine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50567	skos:exactMatch	CHEBI:50567	levosimendan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:50580	skos:exactMatch	CHEBI:50580	arbutamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5062	skos:exactMatch	CHEBI:5062	finasteride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5063	skos:exactMatch	CHEBI:5063	fipronil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50648	skos:exactMatch	CHEBI:50648	9-cis-retinoic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1878,12 +1959,14 @@ CHEBI:50740	skos:exactMatch	CHEBI:50740	raloxifene hydrochloride	semapv:Unspecif
 CHEBI:50742	skos:exactMatch	CHEBI:50742	cyproterone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50749	skos:exactMatch	CHEBI:50749	calcipotriol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50777	skos:exactMatch	CHEBI:50777	etonogestrel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:50785	skos:exactMatch	CHEBI:50785	ethynodiol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50815	skos:exactMatch	CHEBI:50815	norgestimate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50838	skos:exactMatch	CHEBI:50838	drospirenone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50841	skos:exactMatch	CHEBI:50841	loxapine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50845	skos:exactMatch	CHEBI:50845	doxycycline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50846	skos:exactMatch	CHEBI:50846	immunomodulator	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50848	skos:exactMatch	CHEBI:50848	loteprednol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:50851	skos:exactMatch	CHEBI:50851	hydrocortamate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50854	skos:exactMatch	CHEBI:50854	hydrocortamate hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50859	skos:exactMatch	CHEBI:50859	bexarotene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:50861	skos:exactMatch	CHEBI:50861	treprostinil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1910,9 +1993,11 @@ CHEBI:51037	skos:exactMatch	CHEBI:51037	epinastine hydrochloride	semapv:Unspecif
 CHEBI:51040	skos:exactMatch	CHEBI:51040	minaprine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:51041	skos:exactMatch	CHEBI:51041	acamprosate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:51042	skos:exactMatch	CHEBI:51042	acamprosate calcium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:51043	skos:exactMatch	CHEBI:51043	tegaserod	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:51044	skos:exactMatch	CHEBI:51044	tegaserod maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5106	skos:exactMatch	CHEBI:5106	flunisolide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:51063	skos:exactMatch	CHEBI:51063	amphetamine sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:51066	skos:exactMatch	CHEBI:51066	dapiprazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5108	skos:exactMatch	CHEBI:5108	Fluocinolone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5109	skos:exactMatch	CHEBI:5109	Fluocinonide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:51137	skos:exactMatch	CHEBI:51137	mianserin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1931,6 +2016,7 @@ CHEBI:51210	skos:exactMatch	CHEBI:51210	pivmecillinam	semapv:UnspecifiedMatching
 CHEBI:51213	skos:exactMatch	CHEBI:51213	pivmecillinam hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5123	skos:exactMatch	CHEBI:5123	fluphenazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:51230	skos:exactMatch	CHEBI:51230	bimatoprost	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:51235	skos:exactMatch	CHEBI:51235	carfenazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5124	skos:exactMatch	CHEBI:5124	fluphenazine decanoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:51241	skos:exactMatch	CHEBI:51241	carphenazine maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5125	skos:exactMatch	CHEBI:5125	Fluphenazine enanthate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -1995,6 +2081,7 @@ CHEBI:53488	skos:exactMatch	CHEBI:53488	(7Z,10Z,13Z,16Z,19Z)-docosapentaenoic ac
 CHEBI:53509	skos:exactMatch	CHEBI:53509	erlotinib hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:53579	skos:exactMatch	CHEBI:53579	pholcodine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:53675	skos:exactMatch	CHEBI:53675	ceftazidime sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:53691	skos:exactMatch	CHEBI:53691	amidotrizoic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:53692	skos:exactMatch	CHEBI:53692	sodium amidotrizoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:53727	skos:exactMatch	CHEBI:53727	sulfamethoxydiazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5373	skos:exactMatch	CHEBI:5373	(S)-glaucine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2014,6 +2101,7 @@ CHEBI:5391	skos:exactMatch	CHEBI:5391	glucagon	semapv:UnspecifiedMatching	medic-
 CHEBI:5417	skos:exactMatch	CHEBI:5417	glucosamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5439	skos:exactMatch	CHEBI:5439	Glutethimide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5441	skos:exactMatch	CHEBI:5441	glyburide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:5520	skos:exactMatch	CHEBI:5520	gonadorelin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5521	skos:exactMatch	CHEBI:5521	Gonadorelin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5523	skos:exactMatch	CHEBI:5523	Goserelin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5530	skos:exactMatch	CHEBI:5530	gramicidin S	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2024,16 +2112,20 @@ CHEBI:553473	skos:exactMatch	CHEBI:553473	ceftizoxime	semapv:UnspecifiedMatching
 CHEBI:55368	skos:exactMatch	CHEBI:55368	mechlorethamine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5537	skos:exactMatch	CHEBI:5537	granisetron	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5538	skos:exactMatch	CHEBI:5538	Granisetron hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:5543	skos:exactMatch	CHEBI:5543	Grepafloxacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:554446	skos:exactMatch	CHEBI:554446	cephapirin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:55490	skos:exactMatch	CHEBI:55490	cefmenoxime	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5551	skos:exactMatch	CHEBI:5551	Guaifenesin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5553	skos:exactMatch	CHEBI:5553	Guanabenz	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5554	skos:exactMatch	CHEBI:5554	Guanabenz acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:5555	skos:exactMatch	CHEBI:5555	guanadrel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5556	skos:exactMatch	CHEBI:5556	guanadrel sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5557	skos:exactMatch	CHEBI:5557	guanethidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5558	skos:exactMatch	CHEBI:5558	Guanfacine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5559	skos:exactMatch	CHEBI:5559	Guanfacine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5603	skos:exactMatch	CHEBI:5603	Halazepam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:560555	skos:exactMatch	CHEBI:560555	cefditoren pivoxil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:5612	skos:exactMatch	CHEBI:5612	Halofantrine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5613	skos:exactMatch	CHEBI:5613	haloperidol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5614	skos:exactMatch	CHEBI:5614	Haloprogin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5615	skos:exactMatch	CHEBI:5615	halothane	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2057,6 +2149,7 @@ CHEBI:5801	skos:exactMatch	CHEBI:5801	hydroxychloroquine	semapv:UnspecifiedMatch
 CHEBI:5812	skos:exactMatch	CHEBI:5812	Hydroxyprogesterone caproate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5818	skos:exactMatch	CHEBI:5818	hydroxyzine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5819	skos:exactMatch	CHEBI:5819	hydroxyzine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:584020	skos:exactMatch	CHEBI:584020	methysergide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5847	skos:exactMatch	CHEBI:5847	ICI D1694	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5855	skos:exactMatch	CHEBI:5855	ibuprofen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:5856	skos:exactMatch	CHEBI:5856	Ibutilide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2074,11 +2167,14 @@ CHEBI:59116	skos:exactMatch	CHEBI:59116	metofenazate	semapv:UnspecifiedMatching	
 CHEBI:59164	skos:exactMatch	CHEBI:59164	balsalazide disodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59167	skos:exactMatch	CHEBI:59167	bambuterol hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59169	skos:exactMatch	CHEBI:59169	benzphetamine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:59170	skos:exactMatch	CHEBI:59170	betazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59171	skos:exactMatch	CHEBI:59171	biperiden hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59173	skos:exactMatch	CHEBI:59173	bivalirudin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59204	skos:exactMatch	CHEBI:59204	carbetocin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:59213	skos:exactMatch	CHEBI:59213	cefpiramide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59223	skos:exactMatch	CHEBI:59223	ceruletide diethylamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59224	skos:exactMatch	CHEBI:59224	cetrorelix	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:59254	skos:exactMatch	CHEBI:59254	(S)-betaxolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59269	skos:exactMatch	CHEBI:59269	dexbrompheniramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59273	skos:exactMatch	CHEBI:59273	dexbrompheniramine maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59297	skos:exactMatch	CHEBI:59297	benzylpenicilloyl polylysine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2103,6 +2199,8 @@ CHEBI:59594	skos:exactMatch	CHEBI:59594	colesevelam	semapv:UnspecifiedMatching	m
 CHEBI:59599	skos:exactMatch	CHEBI:59599	colesevelam hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59602	skos:exactMatch	CHEBI:59602	colestipol hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59640	skos:exactMatch	CHEBI:59640	N-acetylglucosamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:59662	skos:exactMatch	CHEBI:59662	colistimethate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:59692	skos:exactMatch	CHEBI:59692	cycrimine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59693	skos:exactMatch	CHEBI:59693	cycrimine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59695	skos:exactMatch	CHEBI:59695	cyproheptadine hydrochloride (anhydrous)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59704	skos:exactMatch	CHEBI:59704	sexipyridine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2116,12 +2214,15 @@ CHEBI:59756	skos:exactMatch	CHEBI:59756	dihydroergotamine mesylate	semapv:Unspec
 CHEBI:59773	skos:exactMatch	CHEBI:59773	cromoglycic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59782	skos:exactMatch	CHEBI:59782	diphemanil methylsulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59784	skos:exactMatch	CHEBI:59784	diphenoxylate hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:59788	skos:exactMatch	CHEBI:59788	diphenylpyraline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59849	skos:exactMatch	CHEBI:59849	ecothiopate iodide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59865	skos:exactMatch	CHEBI:59865	emedastine difumarate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59900	skos:exactMatch	CHEBI:59900	caspofungin acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:59912	skos:exactMatch	CHEBI:59912	dihydroergocristine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:599440	skos:exactMatch	CHEBI:599440	amorolfine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:599928	skos:exactMatch	CHEBI:599928	moxalactam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:600103	skos:exactMatch	CHEBI:600103	daptomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6005	skos:exactMatch	CHEBI:6005	Isoetharine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:600520	skos:exactMatch	CHEBI:600520	micafungin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:60070	skos:exactMatch	CHEBI:60070	ertapenem sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:601027	skos:exactMatch	CHEBI:601027	aliskiren	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2133,6 +2234,8 @@ CHEBI:6044	skos:exactMatch	CHEBI:6044	Isopropamide iodide	semapv:UnspecifiedMatc
 CHEBI:6060	skos:exactMatch	CHEBI:6060	Isosorbide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6061	skos:exactMatch	CHEBI:6061	isosorbide dinitrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6062	skos:exactMatch	CHEBI:6062	isosorbide mononitrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:60652	skos:exactMatch	CHEBI:60652	porfimer	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:60654	skos:exactMatch	CHEBI:60654	valproate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6067	skos:exactMatch	CHEBI:6067	isotretinoin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6073	skos:exactMatch	CHEBI:6073	Isradipine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6076	skos:exactMatch	CHEBI:6076	itraconazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2141,6 +2244,7 @@ CHEBI:60773	skos:exactMatch	CHEBI:60773	porfimer sodium	semapv:UnspecifiedMatchi
 CHEBI:6078	skos:exactMatch	CHEBI:6078	ivermectin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:60799	skos:exactMatch	CHEBI:60799	esketamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:60800	skos:exactMatch	CHEBI:60800	esketamine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:60802	skos:exactMatch	CHEBI:60802	ropivacaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:608828	skos:exactMatch	CHEBI:608828	enfuvirtide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:60902	skos:exactMatch	CHEBI:60902	orphenadrine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:60937	skos:exactMatch	CHEBI:60937	moricizine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2154,6 +2258,7 @@ CHEBI:61080	skos:exactMatch	CHEBI:61080	romidepsin	semapv:UnspecifiedMatching	me
 CHEBI:6109	skos:exactMatch	CHEBI:6109	kanamycin A sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:61159	skos:exactMatch	CHEBI:61159	conjugated linoleic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:61176	skos:exactMatch	CHEBI:61176	eletriptan hydrobromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:61203	skos:exactMatch	CHEBI:61203	anileridine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6121	skos:exactMatch	CHEBI:6121	ketamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:61219	skos:exactMatch	CHEBI:61219	succinylcholine chloride (anhydrous)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6128	skos:exactMatch	CHEBI:6128	ketoprofen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2165,8 +2270,10 @@ CHEBI:61397	skos:exactMatch	CHEBI:61397	neratinib	semapv:UnspecifiedMatching	med
 CHEBI:6149	skos:exactMatch	CHEBI:6149	levobupivacaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:617099	skos:exactMatch	CHEBI:617099	carbimazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:61909	skos:exactMatch	CHEBI:61909	ethanesulfonate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:62088	skos:exactMatch	CHEBI:62088	metamizole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:62268	skos:exactMatch	CHEBI:62268	alectinib hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:62312	skos:exactMatch	CHEBI:62312	[3)-beta-D-Glcp-(1->]15	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:62932	skos:exactMatch	CHEBI:62932	mycophenolate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:62964	skos:exactMatch	CHEBI:62964	magnesium acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:62984	skos:exactMatch	CHEBI:62984	zinc acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:63004	skos:exactMatch	CHEBI:63004	sodium bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2202,6 +2309,7 @@ CHEBI:63612	skos:exactMatch	CHEBI:63612	nelarabine	semapv:UnspecifiedMatching	me
 CHEBI:63613	skos:exactMatch	CHEBI:63613	nevirapine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:63614	skos:exactMatch	CHEBI:63614	olsalazine sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:63616	skos:exactMatch	CHEBI:63616	pemetrexed	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:63617	skos:exactMatch	CHEBI:63617	pergolide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:63618	skos:exactMatch	CHEBI:63618	pravastatin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:63619	skos:exactMatch	CHEBI:63619	propafenone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:63620	skos:exactMatch	CHEBI:63620	rasagiline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2249,6 +2357,7 @@ CHEBI:64213	skos:exactMatch	CHEBI:64213	cantharidin	semapv:UnspecifiedMatching	m
 CHEBI:64227	skos:exactMatch	CHEBI:64227	ciglitazone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6427	skos:exactMatch	CHEBI:6427	leuprolide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:64275	skos:exactMatch	CHEBI:64275	2-phenoxyethanol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6431	skos:exactMatch	CHEBI:6431	Levallorphan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:64310	skos:exactMatch	CHEBI:64310	crizotinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:64311	skos:exactMatch	CHEBI:64311	fosaprepitant dimeglumine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:64312	skos:exactMatch	CHEBI:64312	memantine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2268,6 +2377,7 @@ CHEBI:6437	skos:exactMatch	CHEBI:6437	levetiracetam	semapv:UnspecifiedMatching	m
 CHEBI:643703	skos:exactMatch	CHEBI:643703	diethylpropion hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6438	skos:exactMatch	CHEBI:6438	levobunolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6439	skos:exactMatch	CHEBI:6439	levobunolol hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6441	skos:exactMatch	CHEBI:6441	levacetylmethadol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6442	skos:exactMatch	CHEBI:6442	Levomethadyl acetate hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6443	skos:exactMatch	CHEBI:6443	levonorgestrel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6444	skos:exactMatch	CHEBI:6444	Levorphanol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2278,6 +2388,7 @@ CHEBI:645509	skos:exactMatch	CHEBI:645509	diltiazem hydrochloride	semapv:Unspeci
 CHEBI:6456	skos:exactMatch	CHEBI:6456	lidocaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:64583	skos:exactMatch	CHEBI:64583	sphingomyelin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:64628	skos:exactMatch	CHEBI:64628	somatostatin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:64703	skos:exactMatch	CHEBI:64703	p-aminohippurate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6472	skos:exactMatch	CHEBI:6472	lincomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:64733	skos:exactMatch	CHEBI:64733	potassium citrate (anhydrous)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6484	skos:exactMatch	CHEBI:6484	liothyronine sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2309,6 +2420,7 @@ CHEBI:6650	skos:exactMatch	CHEBI:6650	malic acid	semapv:UnspecifiedMatching	medi
 CHEBI:6651	skos:exactMatch	CHEBI:6651	malathion	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:66876	skos:exactMatch	CHEBI:66876	avanafil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:66880	skos:exactMatch	CHEBI:66880	florbetapir F-18	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:66889	skos:exactMatch	CHEBI:66889	peginesatide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:66895	skos:exactMatch	CHEBI:66895	peginesatide acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:66899	skos:exactMatch	CHEBI:66899	tafluprost	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6690	skos:exactMatch	CHEBI:6690	Maprotiline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2336,6 +2448,8 @@ CHEBI:6722	skos:exactMatch	CHEBI:6722	megestrol	semapv:UnspecifiedMatching	medic
 CHEBI:6723	skos:exactMatch	CHEBI:6723	megestrol acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6729	skos:exactMatch	CHEBI:6729	Melarsoprol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6741	skos:exactMatch	CHEBI:6741	meloxicam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6746	skos:exactMatch	CHEBI:6746	menadiol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6752	skos:exactMatch	CHEBI:6752	Mepenzolate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6753	skos:exactMatch	CHEBI:6753	Mepenzolate bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6754	skos:exactMatch	CHEBI:6754	pethidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6755	skos:exactMatch	CHEBI:6755	mephentermine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2344,20 +2458,25 @@ CHEBI:6757	skos:exactMatch	CHEBI:6757	mephenytoin	semapv:UnspecifiedMatching	med
 CHEBI:6759	skos:exactMatch	CHEBI:6759	mepivacaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6760	skos:exactMatch	CHEBI:6760	mepivacaine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6761	skos:exactMatch	CHEBI:6761	Meprobamate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6762	skos:exactMatch	CHEBI:6762	mepyramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6775	skos:exactMatch	CHEBI:6775	mesalamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6780	skos:exactMatch	CHEBI:6780	mesoridazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6781	skos:exactMatch	CHEBI:6781	mesoridazine besylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6784	skos:exactMatch	CHEBI:6784	mestranol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6792	skos:exactMatch	CHEBI:6792	metaproterenol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6794	skos:exactMatch	CHEBI:6794	metaraminol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6795	skos:exactMatch	CHEBI:6795	metaraminol bitartrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6797	skos:exactMatch	CHEBI:6797	Metaxalone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6801	skos:exactMatch	CHEBI:6801	metformin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6802	skos:exactMatch	CHEBI:6802	metformin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6804	skos:exactMatch	CHEBI:6804	methacholine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6805	skos:exactMatch	CHEBI:6805	methacycline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6806	skos:exactMatch	CHEBI:6806	Methacycline hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6807	skos:exactMatch	CHEBI:6807	methadone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6809	skos:exactMatch	CHEBI:6809	methamphetamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6810	skos:exactMatch	CHEBI:6810	Methandrostenolone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:681569	skos:exactMatch	CHEBI:681569	clofarabine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6817	skos:exactMatch	CHEBI:6817	Methantheline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6818	skos:exactMatch	CHEBI:6818	Methantheline bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:681848	skos:exactMatch	CHEBI:681848	doxapram	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:681850	skos:exactMatch	CHEBI:681850	conivaptan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2365,6 +2484,7 @@ CHEBI:6822	skos:exactMatch	CHEBI:6822	Methazolamide	semapv:UnspecifiedMatching	m
 CHEBI:6823	skos:exactMatch	CHEBI:6823	methdilazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6824	skos:exactMatch	CHEBI:6824	hexamethylenetetramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6825	skos:exactMatch	CHEBI:6825	Methenamine hippurate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6827	skos:exactMatch	CHEBI:6827	methicillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6832	skos:exactMatch	CHEBI:6832	methocarbamol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6834	skos:exactMatch	CHEBI:6834	methohexital sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6838	skos:exactMatch	CHEBI:6838	methotrimeprazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2411,6 +2531,7 @@ CHEBI:6888	skos:exactMatch	CHEBI:6888	6alpha-methylprednisolone	semapv:Unspecifi
 CHEBI:6889	skos:exactMatch	CHEBI:6889	methylprednisolone acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6890	skos:exactMatch	CHEBI:6890	Methylprednisolone sodium succinate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6894	skos:exactMatch	CHEBI:6894	Methysergide maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6897	skos:exactMatch	CHEBI:6897	metipranolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6899	skos:exactMatch	CHEBI:6899	metoclopramide hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6901	skos:exactMatch	CHEBI:6901	Metocurine iodide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6904	skos:exactMatch	CHEBI:6904	metoprolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2421,6 +2542,7 @@ CHEBI:691037	skos:exactMatch	CHEBI:691037	desoximetasone	semapv:UnspecifiedMatch
 CHEBI:6912	skos:exactMatch	CHEBI:6912	alpha-methyl-L-tyrosine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6916	skos:exactMatch	CHEBI:6916	mexiletine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6917	skos:exactMatch	CHEBI:6917	mexiletine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6919	skos:exactMatch	CHEBI:6919	mezlocillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6923	skos:exactMatch	CHEBI:6923	miconazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6924	skos:exactMatch	CHEBI:6924	miconazole nitrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6931	skos:exactMatch	CHEBI:6931	midazolam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2432,6 +2554,7 @@ CHEBI:69441	skos:exactMatch	CHEBI:69441	p-methoxyphenol	semapv:UnspecifiedMatchi
 CHEBI:69478	skos:exactMatch	CHEBI:69478	cannabidiol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6950	skos:exactMatch	CHEBI:6950	mirtazapine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6954	skos:exactMatch	CHEBI:6954	Mitotane	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:6958	skos:exactMatch	CHEBI:6958	Mivacurium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6959	skos:exactMatch	CHEBI:6959	Mivacurium chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6960	skos:exactMatch	CHEBI:6960	Moexipril	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:6961	skos:exactMatch	CHEBI:6961	Moexipril hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2549,6 +2672,7 @@ CHEBI:747294	skos:exactMatch	CHEBI:747294	Oliceridine	semapv:UnspecifiedMatching
 CHEBI:747353	skos:exactMatch	CHEBI:747353	darolutamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:747406	skos:exactMatch	CHEBI:747406	milsaperidone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:747442	skos:exactMatch	CHEBI:747442	imlunestrant	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:747559	skos:exactMatch	CHEBI:747559	oxprenolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7476	skos:exactMatch	CHEBI:7476	naproxen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:747652	skos:exactMatch	CHEBI:747652	Velaglucerase alfa	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7477	skos:exactMatch	CHEBI:7477	naproxen sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2556,11 +2680,14 @@ CHEBI:747793	skos:exactMatch	CHEBI:747793	elafibranor	semapv:UnspecifiedMatching
 CHEBI:7478	skos:exactMatch	CHEBI:7478	naratriptan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7479	skos:exactMatch	CHEBI:7479	Naratriptan hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:747900	skos:exactMatch	CHEBI:747900	edotreotide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:747921	skos:exactMatch	CHEBI:747921	isoproterenol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:747960	skos:exactMatch	CHEBI:747960	chlorpheniramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:747972	skos:exactMatch	CHEBI:747972	amdinocillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:747999	skos:exactMatch	CHEBI:747999	maralixibat chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748005	skos:exactMatch	CHEBI:748005	cupric sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748011	skos:exactMatch	CHEBI:748011	macimorelin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748025	skos:exactMatch	CHEBI:748025	dimethindene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:748028	skos:exactMatch	CHEBI:748028	aceclidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:74803	skos:exactMatch	CHEBI:74803	furaltadone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748035	skos:exactMatch	CHEBI:748035	alendronate sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748068	skos:exactMatch	CHEBI:748068	iodoantipyrine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2588,6 +2715,7 @@ CHEBI:748411	skos:exactMatch	CHEBI:748411	papaverine hydrochloride	semapv:Unspec
 CHEBI:748425	skos:exactMatch	CHEBI:748425	desvenlafaxine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748439	skos:exactMatch	CHEBI:748439	decamethonium bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748522	skos:exactMatch	CHEBI:748522	pheniramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:748533	skos:exactMatch	CHEBI:748533	ethopropazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748559	skos:exactMatch	CHEBI:748559	deferoxamine mesylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748576	skos:exactMatch	CHEBI:748576	hexetidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748590	skos:exactMatch	CHEBI:748590	tetrahydrozoline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2608,12 +2736,16 @@ CHEBI:748835	skos:exactMatch	CHEBI:748835	menthol	semapv:UnspecifiedMatching	med
 CHEBI:748844	skos:exactMatch	CHEBI:748844	meclocycline sulfosalicylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748860	skos:exactMatch	CHEBI:748860	hydroxyamphetamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748881	skos:exactMatch	CHEBI:748881	cupric chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:748891	skos:exactMatch	CHEBI:748891	sulfoxone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:748901	skos:exactMatch	CHEBI:748901	netilmicin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:748914	skos:exactMatch	CHEBI:748914	carbenicillin indanyl	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748916	skos:exactMatch	CHEBI:748916	mipomersen sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748939	skos:exactMatch	CHEBI:748939	raltegravir potassium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748977	skos:exactMatch	CHEBI:748977	spiramycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748989	skos:exactMatch	CHEBI:748989	floretyrosine f18	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:74899	skos:exactMatch	CHEBI:74899	fluticasone furoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:748993	skos:exactMatch	CHEBI:748993	tacrine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:748997	skos:exactMatch	CHEBI:748997	leucovorin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749000	skos:exactMatch	CHEBI:749000	nalfurafine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749001	skos:exactMatch	CHEBI:749001	elagolix sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749006	skos:exactMatch	CHEBI:749006	maribavir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2631,6 +2763,7 @@ CHEBI:749113	skos:exactMatch	CHEBI:749113	daxalipram	semapv:UnspecifiedMatching	
 CHEBI:749126	skos:exactMatch	CHEBI:749126	tolperisone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749140	skos:exactMatch	CHEBI:749140	iothalamate sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749151	skos:exactMatch	CHEBI:749151	clopidogrel bisulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749177	skos:exactMatch	CHEBI:749177	miristalkonium ion	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7492	skos:exactMatch	CHEBI:7492	nedocromil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749216	skos:exactMatch	CHEBI:749216	isoxsuprine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749217	skos:exactMatch	CHEBI:749217	halofuginone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2745,6 +2878,7 @@ CHEBI:749340	skos:exactMatch	CHEBI:749340	technetium tc 99m disofenin	semapv:Uns
 CHEBI:749341	skos:exactMatch	CHEBI:749341	technetium tc 99m medronate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749342	skos:exactMatch	CHEBI:749342	hexafluorenium bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749343	skos:exactMatch	CHEBI:749343	penicillin g procaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749344	skos:exactMatch	CHEBI:749344	mersalyl	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749345	skos:exactMatch	CHEBI:749345	pentetate calcium trisodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749346	skos:exactMatch	CHEBI:749346	betazole hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749347	skos:exactMatch	CHEBI:749347	mycophenolate mofetil hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2793,8 +2927,13 @@ CHEBI:749394	skos:exactMatch	CHEBI:749394	levocetirizine dihydrochloride	semapv:
 CHEBI:749395	skos:exactMatch	CHEBI:749395	gallium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749396	skos:exactMatch	CHEBI:749396	benztropine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7494	skos:exactMatch	CHEBI:7494	nefazodone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749400	skos:exactMatch	CHEBI:749400	bromodiphenhydramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749401	skos:exactMatch	CHEBI:749401	indium in 111 pentetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749405	skos:exactMatch	CHEBI:749405	oxyphenonium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749409	skos:exactMatch	CHEBI:749409	chlophedianol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749410	skos:exactMatch	CHEBI:749410	technetium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749411	skos:exactMatch	CHEBI:749411	glycopyrronium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749412	skos:exactMatch	CHEBI:749412	methixene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749414	skos:exactMatch	CHEBI:749414	methylergonovine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749425	skos:exactMatch	CHEBI:749425	epoetin alfa	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749426	skos:exactMatch	CHEBI:749426	pegfilgrastim	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -2925,6 +3064,7 @@ CHEBI:749574	skos:exactMatch	CHEBI:749574	estrogens, conjugated	semapv:Unspecifi
 CHEBI:749577	skos:exactMatch	CHEBI:749577	iodine povacrylex	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749578	skos:exactMatch	CHEBI:749578	mecasermin rinfabate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749579	skos:exactMatch	CHEBI:749579	sinecatechins	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:749580	skos:exactMatch	CHEBI:749580	fomivirsen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749581	skos:exactMatch	CHEBI:749581	mecasermin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749583	skos:exactMatch	CHEBI:749583	follitropin alfa	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:749585	skos:exactMatch	CHEBI:749585	desvenlafaxine succinate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3079,6 +3219,7 @@ CHEBI:750504	skos:exactMatch	CHEBI:750504	plecanatide	semapv:UnspecifiedMatching
 CHEBI:750507	skos:exactMatch	CHEBI:750507	ondelopran	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:750510	skos:exactMatch	CHEBI:750510	avatrombopag	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7507	skos:exactMatch	CHEBI:7507	neomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:750784	skos:exactMatch	CHEBI:750784	edetate sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7508	skos:exactMatch	CHEBI:7508	framycetin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:750813	skos:exactMatch	CHEBI:750813	insulin detemir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:751042	skos:exactMatch	CHEBI:751042	reproterol hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3109,6 +3250,7 @@ CHEBI:75179	skos:exactMatch	CHEBI:75179	trifluridine	semapv:UnspecifiedMatching	
 CHEBI:751827	skos:exactMatch	CHEBI:751827	butamirate citrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:751857	skos:exactMatch	CHEBI:751857	camphor, monobromated	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:751864	skos:exactMatch	CHEBI:751864	calcium dobesilate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:751928	skos:exactMatch	CHEBI:751928	dicolinium iodide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:751938	skos:exactMatch	CHEBI:751938	iothalamate sodium i 125	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:752029	skos:exactMatch	CHEBI:752029	viloxazine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:752031	skos:exactMatch	CHEBI:752031	ceftiofur hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3138,6 +3280,7 @@ CHEBI:75275	skos:exactMatch	CHEBI:75275	tetradecyl sulfonic acid	semapv:Unspecif
 CHEBI:7528	skos:exactMatch	CHEBI:7528	netilmycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:752802	skos:exactMatch	CHEBI:752802	trimeperidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:75283	skos:exactMatch	CHEBI:75283	miltefosine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:752856	skos:exactMatch	CHEBI:752856	segesterone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:752868	skos:exactMatch	CHEBI:752868	flurpiridaz f 18	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:752873	skos:exactMatch	CHEBI:752873	talaporfin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:752880	skos:exactMatch	CHEBI:752880	treprostinil diolamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3321,6 +3464,7 @@ CHEBI:754891	skos:exactMatch	CHEBI:754891	cevimeline hydrochloride	semapv:Unspec
 CHEBI:754898	skos:exactMatch	CHEBI:754898	momelotinib dihydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:754900	skos:exactMatch	CHEBI:754900	eravacycline dihydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:754901	skos:exactMatch	CHEBI:754901	naloxegol oxalate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:754910	skos:exactMatch	CHEBI:754910	mipomersen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:754929	skos:exactMatch	CHEBI:754929	gadoxetic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:754938	skos:exactMatch	CHEBI:754938	ergoloid mesylates	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:754941	skos:exactMatch	CHEBI:754941	magnesium valproate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3356,6 +3500,7 @@ CHEBI:7551	skos:exactMatch	CHEBI:7551	nicardipine hydrochloride	semapv:Unspecifi
 CHEBI:755118	skos:exactMatch	CHEBI:755118	osilodrostat	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755131	skos:exactMatch	CHEBI:755131	ravidasvir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755141	skos:exactMatch	CHEBI:755141	orilotimod	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:755142	skos:exactMatch	CHEBI:755142	peficitinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755143	skos:exactMatch	CHEBI:755143	benzhydrocodone hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755149	skos:exactMatch	CHEBI:755149	talazoparib tosylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755151	skos:exactMatch	CHEBI:755151	benzhydrocodone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3429,6 +3574,7 @@ CHEBI:755639	skos:exactMatch	CHEBI:755639	rauwolfia serpentina	semapv:Unspecifie
 CHEBI:755642	skos:exactMatch	CHEBI:755642	gozetotide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755649	skos:exactMatch	CHEBI:755649	clascoterone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755661	skos:exactMatch	CHEBI:755661	upadacitinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:755673	skos:exactMatch	CHEBI:755673	molidustat	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755674	skos:exactMatch	CHEBI:755674	vadadustat	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755675	skos:exactMatch	CHEBI:755675	pyrotinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755682	skos:exactMatch	CHEBI:755682	abrocitinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3490,6 +3636,7 @@ CHEBI:755968	skos:exactMatch	CHEBI:755968	brensocatib	semapv:UnspecifiedMatching
 CHEBI:755992	skos:exactMatch	CHEBI:755992	molidustat sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:755996	skos:exactMatch	CHEBI:755996	zanubrutinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756000	skos:exactMatch	CHEBI:756000	acoramidis	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:756005	skos:exactMatch	CHEBI:756005	umbralisib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756031	skos:exactMatch	CHEBI:756031	ibuprofen sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756033	skos:exactMatch	CHEBI:756033	indomethacin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756076	skos:exactMatch	CHEBI:756076	rose bengal sodium i 131	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3535,6 +3682,7 @@ CHEBI:756375	skos:exactMatch	CHEBI:756375	avacopan	semapv:UnspecifiedMatching	me
 CHEBI:756388	skos:exactMatch	CHEBI:756388	trimeprazine tartrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756389	skos:exactMatch	CHEBI:756389	tacrolimus	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756409	skos:exactMatch	CHEBI:756409	difelikefalin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:756410	skos:exactMatch	CHEBI:756410	fosnetupitant	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756412	skos:exactMatch	CHEBI:756412	fosnetupitant chloride hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756413	skos:exactMatch	CHEBI:756413	pitavastatin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756414	skos:exactMatch	CHEBI:756414	neratinib maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3565,6 +3713,7 @@ CHEBI:756521	skos:exactMatch	CHEBI:756521	nadofaragene firadenovec	semapv:Unspec
 CHEBI:756524	skos:exactMatch	CHEBI:756524	relatlimab	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7566	skos:exactMatch	CHEBI:7566	Nifurtimox	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756602	skos:exactMatch	CHEBI:756602	voxelotor	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:756604	skos:exactMatch	CHEBI:756604	beclabuvir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756608	skos:exactMatch	CHEBI:756608	ensartinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756622	skos:exactMatch	CHEBI:756622	pitolisant hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756625	skos:exactMatch	CHEBI:756625	brilliant blue g	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3587,6 +3736,7 @@ CHEBI:756725	skos:exactMatch	CHEBI:756725	ensartinib hydrochloride	semapv:Unspec
 CHEBI:756726	skos:exactMatch	CHEBI:756726	asciminib hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756729	skos:exactMatch	CHEBI:756729	mitapivat sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756735	skos:exactMatch	CHEBI:756735	prabotulinumtoxin a	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:756737	skos:exactMatch	CHEBI:756737	diclofenac etalhyaluronate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756738	skos:exactMatch	CHEBI:756738	diclofenac etalhyaluronate sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756742	skos:exactMatch	CHEBI:756742	lisocabtagene maraleucel	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756746	skos:exactMatch	CHEBI:756746	onasemnogene abeparvovec	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3595,6 +3745,7 @@ CHEBI:756777	skos:exactMatch	CHEBI:756777	diazoxide choline	semapv:UnspecifiedMa
 CHEBI:756830	skos:exactMatch	CHEBI:756830	piflufolastat f18	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756834	skos:exactMatch	CHEBI:756834	copper oxodotreotide cu-64	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756835	skos:exactMatch	CHEBI:756835	edotreotide gallium ga-68	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:756901	skos:exactMatch	CHEBI:756901	pafolacianine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756989	skos:exactMatch	CHEBI:756989	baloxavir marboxil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756995	skos:exactMatch	CHEBI:756995	ibrexafungerp	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:756996	skos:exactMatch	CHEBI:756996	imeglimin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3773,6 +3924,7 @@ CHEBI:757882	skos:exactMatch	CHEBI:757882	calcium oxybate	semapv:UnspecifiedMatc
 CHEBI:757889	skos:exactMatch	CHEBI:757889	gumarontinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:757894	skos:exactMatch	CHEBI:757894	valemetostat tosylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:757895	skos:exactMatch	CHEBI:757895	lutetium lu-177 vipivotide tetraxetan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:757924	skos:exactMatch	CHEBI:757924	centhaquine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:757931	skos:exactMatch	CHEBI:757931	dotinurad	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:757939	skos:exactMatch	CHEBI:757939	antithrombin gamma	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:757979	skos:exactMatch	CHEBI:757979	talquetamab	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3823,6 +3975,7 @@ CHEBI:758324	skos:exactMatch	CHEBI:758324	olezarsen	semapv:UnspecifiedMatching	m
 CHEBI:758351	skos:exactMatch	CHEBI:758351	depemokimab	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:758372	skos:exactMatch	CHEBI:758372	elasomeran	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:758390	skos:exactMatch	CHEBI:758390	goflikicept	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:758406	skos:exactMatch	CHEBI:758406	yttrium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:758410	skos:exactMatch	CHEBI:758410	revumenib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:758413	skos:exactMatch	CHEBI:758413	taletrectinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:758431	skos:exactMatch	CHEBI:758431	aumolertinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3914,6 +4067,7 @@ CHEBI:75988	skos:exactMatch	CHEBI:75988	teniposide	semapv:UnspecifiedMatching	me
 CHEBI:759881	skos:exactMatch	CHEBI:759881	monoctanoin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:759882	skos:exactMatch	CHEBI:759882	flupentixol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:759883	skos:exactMatch	CHEBI:759883	colistin sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:759884	skos:exactMatch	CHEBI:759884	gentamicin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:759885	skos:exactMatch	CHEBI:759885	codeine phosphate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:759887	skos:exactMatch	CHEBI:759887	ceftriaxone sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:759898	skos:exactMatch	CHEBI:759898	vapreotide acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -3948,6 +4102,7 @@ CHEBI:760250	skos:exactMatch	CHEBI:760250	momelotinib dihydrochloride monohydrat
 CHEBI:760308	skos:exactMatch	CHEBI:760308	revumenib citrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:760311	skos:exactMatch	CHEBI:760311	dordaviprone hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:760342	skos:exactMatch	CHEBI:760342	benzgalantamine gluconate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:760349	skos:exactMatch	CHEBI:760349	plozasiran	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:760350	skos:exactMatch	CHEBI:760350	plozasiran sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:760389	skos:exactMatch	CHEBI:760389	lazertinib mesylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:760399	skos:exactMatch	CHEBI:760399	pemivibart	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4054,6 +4209,7 @@ CHEBI:7908	skos:exactMatch	CHEBI:7908	pancuronium bromide	semapv:UnspecifiedMatc
 CHEBI:7915	skos:exactMatch	CHEBI:7915	pantoprazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7916	skos:exactMatch	CHEBI:7916	pantothenic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7921	skos:exactMatch	CHEBI:7921	paramethadione	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:7922	skos:exactMatch	CHEBI:7922	Paramethasone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7930	skos:exactMatch	CHEBI:7930	Pargyline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7931	skos:exactMatch	CHEBI:7931	paricalcitol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7934	skos:exactMatch	CHEBI:7934	paromomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4064,6 +4220,7 @@ CHEBI:79399	skos:exactMatch	CHEBI:79399	Piperazine citrate	semapv:UnspecifiedMat
 CHEBI:79401	skos:exactMatch	CHEBI:79401	vincristine sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7944	skos:exactMatch	CHEBI:7944	paroxetine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7953	skos:exactMatch	CHEBI:7953	pemoline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:7954	skos:exactMatch	CHEBI:7954	penbutolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7955	skos:exactMatch	CHEBI:7955	penbutolol sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7956	skos:exactMatch	CHEBI:7956	penciclovir	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:7959	skos:exactMatch	CHEBI:7959	D-penicillamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4091,6 +4248,7 @@ CHEBI:8060	skos:exactMatch	CHEBI:8060	Phenelzine	semapv:UnspecifiedMatching	medi
 CHEBI:8061	skos:exactMatch	CHEBI:8061	Phenelzine sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:80630	skos:exactMatch	CHEBI:80630	irinotecan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8066	skos:exactMatch	CHEBI:8066	phenindione	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8067	skos:exactMatch	CHEBI:8067	phenmetrazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8068	skos:exactMatch	CHEBI:8068	Phenmetrazine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8069	skos:exactMatch	CHEBI:8069	phenobarbital	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8070	skos:exactMatch	CHEBI:8070	phenobarbital sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4103,6 +4261,7 @@ CHEBI:8081	skos:exactMatch	CHEBI:8081	phentolamine	semapv:UnspecifiedMatching	me
 CHEBI:8093	skos:exactMatch	CHEBI:8093	phenylephrine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8094	skos:exactMatch	CHEBI:8094	phenylephrine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8107	skos:exactMatch	CHEBI:8107	phenytoin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:81496	skos:exactMatch	CHEBI:81496	Iopodic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:81567	skos:exactMatch	CHEBI:81567	thyroid stimulating hormone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:81570	skos:exactMatch	CHEBI:81570	Chorionic gonadotropin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:81579	skos:exactMatch	CHEBI:81579	Erythropoietin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4118,6 +4277,7 @@ CHEBI:8214	skos:exactMatch	CHEBI:8214	pindolol	semapv:UnspecifiedMatching	medic-
 CHEBI:82248	skos:exactMatch	CHEBI:82248	Proxan	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8228	skos:exactMatch	CHEBI:8228	pioglitazone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8229	skos:exactMatch	CHEBI:8229	Pioglitazone hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8230	skos:exactMatch	CHEBI:8230	Pipecuronium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8231	skos:exactMatch	CHEBI:8231	Pipecuronium bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8232	skos:exactMatch	CHEBI:8232	piperacillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8233	skos:exactMatch	CHEBI:8233	piperacillin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4125,6 +4285,7 @@ CHEBI:82339	skos:exactMatch	CHEBI:82339	Merphalan	semapv:UnspecifiedMatching	med
 CHEBI:82365	skos:exactMatch	CHEBI:82365	Palygorskite	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:82405	skos:exactMatch	CHEBI:82405	Benzoyl peroxide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8242	skos:exactMatch	CHEBI:8242	pipobroman	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8245	skos:exactMatch	CHEBI:8245	Pirbuterol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8246	skos:exactMatch	CHEBI:8246	Pirbuterol acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:82461	skos:exactMatch	CHEBI:82461	Doxylamine succinate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:82467	skos:exactMatch	CHEBI:82467	Evans blue	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4207,6 +4368,7 @@ CHEBI:8448	skos:exactMatch	CHEBI:8448	procyclidine	semapv:UnspecifiedMatching	me
 CHEBI:8449	skos:exactMatch	CHEBI:8449	procyclidine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:84500	skos:exactMatch	CHEBI:84500	varenicline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:84507	skos:exactMatch	CHEBI:84507	varenicline tartrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8455	skos:exactMatch	CHEBI:8455	proguanil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8459	skos:exactMatch	CHEBI:8459	promazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8460	skos:exactMatch	CHEBI:8460	promazine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8461	skos:exactMatch	CHEBI:8461	promethazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4217,8 +4379,10 @@ CHEBI:8481	skos:exactMatch	CHEBI:8481	Propantheline	semapv:UnspecifiedMatching	m
 CHEBI:8482	skos:exactMatch	CHEBI:8482	Propantheline bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8485	skos:exactMatch	CHEBI:8485	Proparacaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:84883	skos:exactMatch	CHEBI:84883	ethyl (5Z,8Z,11Z,14Z,17Z)-icosapentaenoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8491	skos:exactMatch	CHEBI:8491	propiomazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8492	skos:exactMatch	CHEBI:8492	propiomazine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8493	skos:exactMatch	CHEBI:8493	Propiverine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8497	skos:exactMatch	CHEBI:8497	propoxyphene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8499	skos:exactMatch	CHEBI:8499	propranolol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:84997	skos:exactMatch	CHEBI:84997	sodium gluconate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8500	skos:exactMatch	CHEBI:8500	propranolol hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4256,6 +4420,7 @@ CHEBI:85973	skos:exactMatch	CHEBI:85973	edoxaban	semapv:UnspecifiedMatching	medi
 CHEBI:85974	skos:exactMatch	CHEBI:85974	edoxaban tosylate hydrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:85975	skos:exactMatch	CHEBI:85975	edoxaban tosylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:85977	skos:exactMatch	CHEBI:85977	isavuconazonium sulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:85978	skos:exactMatch	CHEBI:85978	isavuconazonium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:85979	skos:exactMatch	CHEBI:85979	isavuconazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8598	skos:exactMatch	CHEBI:8598	protriptyline hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:85980	skos:exactMatch	CHEBI:85980	eluxadoline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4279,6 +4444,7 @@ CHEBI:8655	skos:exactMatch	CHEBI:8655	Pyrantel pamoate	semapv:UnspecifiedMatchin
 CHEBI:8665	skos:exactMatch	CHEBI:8665	Pyridostigmine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8666	skos:exactMatch	CHEBI:8666	Pyridostigmine bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8673	skos:exactMatch	CHEBI:8673	pyrimethamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8687	skos:exactMatch	CHEBI:8687	pyrvinium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8688	skos:exactMatch	CHEBI:8688	Pyrvinium pamoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8694	skos:exactMatch	CHEBI:8694	Quazepam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:87016	skos:exactMatch	CHEBI:87016	eslicarbazepine acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4313,6 +4479,7 @@ CHEBI:8865	skos:exactMatch	CHEBI:8865	Rimantadine hydrochloride	semapv:Unspecifi
 CHEBI:8868	skos:exactMatch	CHEBI:8868	Risedronate sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8869	skos:exactMatch	CHEBI:8869	Risedronic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8871	skos:exactMatch	CHEBI:8871	risperidone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:8872	skos:exactMatch	CHEBI:8872	ritodrine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8874	skos:exactMatch	CHEBI:8874	rivastigmine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8875	skos:exactMatch	CHEBI:8875	Rizatriptan benzoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:88839	skos:exactMatch	CHEBI:88839	Ethyl salicylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4324,11 +4491,13 @@ CHEBI:8889	skos:exactMatch	CHEBI:8889	Ropinirole hydrochloride	semapv:Unspecifie
 CHEBI:8890	skos:exactMatch	CHEBI:8890	(S)-ropivacaine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:8892	skos:exactMatch	CHEBI:8892	rosiglitazone maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9011	skos:exactMatch	CHEBI:9011	salmeterol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:90117	skos:exactMatch	CHEBI:90117	indigo carmine (acid form)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9012	skos:exactMatch	CHEBI:9012	Salmeterol xinafoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9014	skos:exactMatch	CHEBI:9014	salsalate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90217	skos:exactMatch	CHEBI:90217	quizartinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90227	skos:exactMatch	CHEBI:90227	selumetinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90241	skos:exactMatch	CHEBI:90241	vinflunine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9073	skos:exactMatch	CHEBI:9073	secobarbital	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90841	skos:exactMatch	CHEBI:90841	cangrelor	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90844	skos:exactMatch	CHEBI:90844	selexipag	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90851	skos:exactMatch	CHEBI:90851	cobimetinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4340,6 +4509,7 @@ CHEBI:90864	skos:exactMatch	CHEBI:90864	sonidegib phosphate	semapv:UnspecifiedMa
 CHEBI:90865	skos:exactMatch	CHEBI:90865	flibanserin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9087	skos:exactMatch	CHEBI:9087	selegiline hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90877	skos:exactMatch	CHEBI:90877	tipiracil hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:90879	skos:exactMatch	CHEBI:90879	tipiracil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90881	skos:exactMatch	CHEBI:90881	irinotecan hydrochloride hydrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90908	skos:exactMatch	CHEBI:90908	rolapitant	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90914	skos:exactMatch	CHEBI:90914	uridine triacetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4361,8 +4531,10 @@ CHEBI:90959	skos:exactMatch	CHEBI:90959	tiotropium bromide	semapv:UnspecifiedMat
 CHEBI:90960	skos:exactMatch	CHEBI:90960	tiotropium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:90972	skos:exactMatch	CHEBI:90972	glycopyrronium bromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:91083	skos:exactMatch	CHEBI:91083	semaxanib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9118	skos:exactMatch	CHEBI:9118	sermorelin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9122	skos:exactMatch	CHEBI:9122	sertindole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9123	skos:exactMatch	CHEBI:9123	sertraline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:91231	skos:exactMatch	CHEBI:91231	piperaquine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9124	skos:exactMatch	CHEBI:9124	sertraline hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:91248	skos:exactMatch	CHEBI:91248	L-cysteine hydrochloride hydrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9130	skos:exactMatch	CHEBI:9130	sevoflurane	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4377,6 +4549,7 @@ CHEBI:9150	skos:exactMatch	CHEBI:9150	simvastatin	semapv:UnspecifiedMatching	med
 CHEBI:91514	skos:exactMatch	CHEBI:91514	3,4-dimethoxybenzoic acid 4-[ethyl-[1-(4-methoxyphenyl)propan-2-yl]amino]butyl ester	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:91583	skos:exactMatch	CHEBI:91583	2-[cyclohexyl(oxo)methyl]-3,6,7,11b-tetrahydro-1H-pyrazino[2,1-a]isoquinolin-4-one	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9168	skos:exactMatch	CHEBI:9168	sirolimus	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9169	skos:exactMatch	CHEBI:9169	sisomycin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:91749	skos:exactMatch	CHEBI:91749	tianeptine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:91755	skos:exactMatch	CHEBI:91755	LSM-1636	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9179	skos:exactMatch	CHEBI:9179	sodium nitroprusside dihydrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4473,6 +4646,7 @@ CHEBI:94701	skos:exactMatch	CHEBI:94701	(2R,3S,4S,5R)-2-(6-amino-2-fluoro-9-puri
 CHEBI:94707	skos:exactMatch	CHEBI:94707	(1R,5S)-3-(diphenylmethyl)oxy-8-methyl-8-azabicyclo[3.2.1]octane	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:94708	skos:exactMatch	CHEBI:94708	4,5-diacetyloxy-9,10-dioxo-2-anthracenecarboxylic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:94714	skos:exactMatch	CHEBI:94714	doxofylline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:94725	skos:exactMatch	CHEBI:94725	dimethyl-(phenylmethyl)-[2-[2-[4-(2,4,4-trimethylpentan-2-yl)phenoxy]ethoxy]ethyl]ammonium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:94731	skos:exactMatch	CHEBI:94731	2-[3-(trifluoromethyl)anilino]benzoic acid 2-(2-hydroxyethoxy)ethyl ester	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:94759	skos:exactMatch	CHEBI:94759	6-chloro-5-(2,3-dichlorophenoxy)-2-(methylthio)-1H-benzimidazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:94767	skos:exactMatch	CHEBI:94767	N'-[(4-chlorophenyl)methyl]-N,N-dimethyl-N'-(2-pyridinyl)ethane-1,2-diamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4488,6 +4662,7 @@ CHEBI:9496	skos:exactMatch	CHEBI:9496	Tetramisole hydrochloride	semapv:Unspecifi
 CHEBI:9513	skos:exactMatch	CHEBI:9513	thalidomide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:95170	skos:exactMatch	CHEBI:95170	2-hydroxy-2,2-diphenylacetic acid (1-methyl-1-azoniabicyclo[2.2.2]octan-3-yl) ester	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:95341	skos:exactMatch	CHEBI:95341	baricitinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9536	skos:exactMatch	CHEBI:9536	thiamylal	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9537	skos:exactMatch	CHEBI:9537	Thiamylal sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9544	skos:exactMatch	CHEBI:9544	thiethylperazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9555	skos:exactMatch	CHEBI:9555	tioguanine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4497,14 +4672,17 @@ CHEBI:9570	skos:exactMatch	CHEBI:9570	Thiotepa	semapv:UnspecifiedMatching	medic-
 CHEBI:9571	skos:exactMatch	CHEBI:9571	Thiothixene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9574	skos:exactMatch	CHEBI:9574	Thrombin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9586	skos:exactMatch	CHEBI:9586	tiagabine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9587	skos:exactMatch	CHEBI:9587	ticarcillin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9588	skos:exactMatch	CHEBI:9588	ticlopidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9589	skos:exactMatch	CHEBI:9589	ticlopidine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9598	skos:exactMatch	CHEBI:9598	Tiludronic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9599	skos:exactMatch	CHEBI:9599	(S)-timolol (anhydrous)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9600	skos:exactMatch	CHEBI:9600	(S)-timolol maleate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9604	skos:exactMatch	CHEBI:9604	tioconazole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9605	skos:exactMatch	CHEBI:9605	tirofiban	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9606	skos:exactMatch	CHEBI:9606	tirofiban hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9609	skos:exactMatch	CHEBI:9609	Tizanidine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9611	skos:exactMatch	CHEBI:9611	tocainide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9613	skos:exactMatch	CHEBI:9613	tolazamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9615	skos:exactMatch	CHEBI:9615	Tolazoline hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9619	skos:exactMatch	CHEBI:9619	tolmetin sodium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4526,6 +4704,7 @@ CHEBI:9671	skos:exactMatch	CHEBI:9671	triamterene	semapv:UnspecifiedMatching	med
 CHEBI:9674	skos:exactMatch	CHEBI:9674	triazolam	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9683	skos:exactMatch	CHEBI:9683	trichlormethiazide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9695	skos:exactMatch	CHEBI:9695	Triclofos	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9701	skos:exactMatch	CHEBI:9701	tridihexethyl	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9703	skos:exactMatch	CHEBI:9703	tridihexethyl chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9706	skos:exactMatch	CHEBI:9706	Trientine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9710	skos:exactMatch	CHEBI:9710	trifluoperazine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4537,10 +4716,13 @@ CHEBI:9725	skos:exactMatch	CHEBI:9725	Trimeprazine	semapv:UnspecifiedMatching	me
 CHEBI:9727	skos:exactMatch	CHEBI:9727	trimethadione	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9729	skos:exactMatch	CHEBI:9729	trimethaphan camsylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9738	skos:exactMatch	CHEBI:9738	trimipramine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9741	skos:exactMatch	CHEBI:9741	Tripelennamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9753	skos:exactMatch	CHEBI:9753	troglitazone	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9754	skos:exactMatch	CHEBI:9754	tris	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9757	skos:exactMatch	CHEBI:9757	Tropicamide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9763	skos:exactMatch	CHEBI:9763	trovafloxacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9765	skos:exactMatch	CHEBI:9765	Trypsin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+CHEBI:9774	skos:exactMatch	CHEBI:9774	tubocurarine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9907	skos:exactMatch	CHEBI:9907	ursodeoxycholic acid	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9919	skos:exactMatch	CHEBI:9919	Valacyclovir hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 CHEBI:9925	skos:exactMatch	CHEBI:9925	sodium valproate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4568,12 +4750,14 @@ DRON:00010126	skos:exactMatch	DRON:00010126	isocarboxazid	semapv:UnspecifiedMatc
 DRON:00010616	skos:exactMatch	DRON:00010616	dihydroergotoxine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00011136	skos:exactMatch	DRON:00011136	muromonab-CD3	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00011382	skos:exactMatch	DRON:00011382	piperacetazine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00011813	skos:exactMatch	DRON:00011813	methyldopate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00011824	skos:exactMatch	DRON:00011824	Yellow Fever Vaccine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012137	skos:exactMatch	DRON:00012137	Haemophilus B Conjugate Vaccine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012199	skos:exactMatch	DRON:00012199	ROTAVIRUS VACCINE, LIVE	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012287	skos:exactMatch	DRON:00012287	chamomile flowers	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012319	skos:exactMatch	DRON:00012319	LICORICE ROOT	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012339	skos:exactMatch	DRON:00012339	propolis	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00012478	skos:exactMatch	DRON:00012478	aminosalicylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012716	skos:exactMatch	DRON:00012716	factor IX	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012840	skos:exactMatch	DRON:00012840	digoxin antibodies Fab fragments	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00012870	skos:exactMatch	DRON:00012870	antithrombin III	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4582,6 +4766,7 @@ DRON:00012890	skos:exactMatch	DRON:00012890	BCG Vaccine	semapv:UnspecifiedMatchi
 DRON:00012997	skos:exactMatch	DRON:00012997	basiliximab	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00013031	skos:exactMatch	DRON:00013031	factor VIIa	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00013042	skos:exactMatch	DRON:00013042	rituximab	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00013140	skos:exactMatch	DRON:00013140	demecarium	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00013433	skos:exactMatch	DRON:00013433	factor XIII	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00013437	skos:exactMatch	DRON:00013437	hemicellulase	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00013510	skos:exactMatch	DRON:00013510	trisulfapyrimidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4592,6 +4777,7 @@ DRON:00013783	skos:exactMatch	DRON:00013783	lymphocyte immune globulin, anti-thy
 DRON:00013812	skos:exactMatch	DRON:00013812	collagenase	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00014041	skos:exactMatch	DRON:00014041	Indium IN-111 Chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00014060	skos:exactMatch	DRON:00014060	Rauwolfia alkaloids	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00014107	skos:exactMatch	DRON:00014107	colfosceril	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00014409	skos:exactMatch	DRON:00014409	licorice root extract	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00014976	skos:exactMatch	DRON:00014976	flupirtine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00015290	skos:exactMatch	DRON:00015290	dichlorobenzyl alcohol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4606,9 +4792,11 @@ DRON:00016359	skos:exactMatch	DRON:00016359	Ginkgo biloba leaf extract	semapv:Un
 DRON:00016690	skos:exactMatch	DRON:00016690	diethylamine salicylate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00016704	skos:exactMatch	DRON:00016704	pentosan polysulfate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00016834	skos:exactMatch	DRON:00016834	belladonna alkaloids	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00016914	skos:exactMatch	DRON:00016914	glatiramer	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00016952	skos:exactMatch	DRON:00016952	peginterferon alfa-2b	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00016953	skos:exactMatch	DRON:00016953	Rho(D) immune globulin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00017166	skos:exactMatch	DRON:00017166	Senna Leaves	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00017208	skos:exactMatch	DRON:00017208	ardeparin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00017209	skos:exactMatch	DRON:00017209	Hepatitis B Vaccine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00017235	skos:exactMatch	DRON:00017235	Smallpox Vaccine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00017627	skos:exactMatch	DRON:00017627	insulin aspart, human	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4638,6 +4826,7 @@ DRON:00018853	skos:exactMatch	DRON:00018853	Immune Globulin Subcutaneous (Human)
 DRON:00018911	skos:exactMatch	DRON:00018911	pumpkin seed oil	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00018984	skos:exactMatch	DRON:00018984	saw palmetto fruit extract	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00019004	skos:exactMatch	DRON:00019004	levocetirizine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00019012	skos:exactMatch	DRON:00019012	pegaptanib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00019030	skos:exactMatch	DRON:00019030	Immune Globulin (Human)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00019101	skos:exactMatch	DRON:00019101	milk thistle extract	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00019201	skos:exactMatch	DRON:00019201	acellular pertussis vaccine, inactivated	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4760,6 +4949,7 @@ DRON:00942702	skos:exactMatch	DRON:00942702	levamlodipine	semapv:UnspecifiedMatc
 DRON:00947301	skos:exactMatch	DRON:00947301	plasminogen	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00965862	skos:exactMatch	DRON:00965862	3-iodobenzylguanidine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00965870	skos:exactMatch	DRON:00965870	fosdenopterin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+DRON:00965871	skos:exactMatch	DRON:00965871	infigratinib	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00975437	skos:exactMatch	DRON:00975437	tapinarof	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00994946	skos:exactMatch	DRON:00994946	antihemophilic factor (recombinant), Fc-VWF-XTEN fusion protein	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 DRON:00994950	skos:exactMatch	DRON:00994950	fecal microbiota, live	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4849,6 +5039,7 @@ PUBCHEM.COMPOUND:92043599	skos:exactMatch	PUBCHEM.COMPOUND:92043599	Epoetin alfa
 PUBCHEM.COMPOUND:9852982	skos:exactMatch	PUBCHEM.COMPOUND:9852982	Ceftaroline	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 PUBCHEM.COMPOUND:9889433	skos:exactMatch	PUBCHEM.COMPOUND:9889433	Hyoscine butylbromide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:1000104	skos:exactMatch	RXCUI:1000104	incobotulinumtoxinA	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+RXCUI:10454	skos:exactMatch	RXCUI:10454	thiamine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:104592	skos:exactMatch	RXCUI:104592	cyproheptadine hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:1046243	skos:exactMatch	RXCUI:1046243	alpha-tocopherol acetate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:10473	skos:exactMatch	RXCUI:10473	thiotepa	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -4983,6 +5174,7 @@ RXCUI:2473850	skos:exactMatch	RXCUI:2473850	margetuximab-cmkb	semapv:Unspecified
 RXCUI:2474235	skos:exactMatch	RXCUI:2474235	naxitamab-gqgk	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:2475861	skos:exactMatch	RXCUI:2475861	collagenase clostridium histolyticum-aaes	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:2478646	skos:exactMatch	RXCUI:2478646	evinacumab-dgnb	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+RXCUI:25138	skos:exactMatch	RXCUI:25138	fluorescein	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:25188	skos:exactMatch	RXCUI:25188	flupenthixol decanoate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:2525	skos:exactMatch	RXCUI:2525	chymopapain	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:253156	skos:exactMatch	RXCUI:253156	beclomethasone dipropionate monohydrate	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -5104,6 +5296,7 @@ RXCUI:3143	skos:exactMatch	RXCUI:3143	prasterone	semapv:UnspecifiedMatching	medi
 RXCUI:314517	skos:exactMatch	RXCUI:314517	belladonna leaf extract	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:31479	skos:exactMatch	RXCUI:31479	nalmefene	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:340705	skos:exactMatch	RXCUI:340705	human chorionic gonadotropin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+RXCUI:34119	skos:exactMatch	RXCUI:34119	polyestradiol	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:35623	skos:exactMatch	RXCUI:35623	riluzole	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:3565	skos:exactMatch	RXCUI:3565	succinylcholine chloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:3740	skos:exactMatch	RXCUI:3740	echothiophate iodide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
@@ -5141,6 +5334,8 @@ RXCUI:72257	skos:exactMatch	RXCUI:72257	interferon beta-1b	semapv:UnspecifiedMat
 RXCUI:72435	skos:exactMatch	RXCUI:72435	anakinra	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:73044	skos:exactMatch	RXCUI:73044	repaglinide	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:7393	skos:exactMatch	RXCUI:7393	niacin	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+RXCUI:7512	skos:exactMatch	RXCUI:7512	norepinephrine	semapv:UnspecifiedMatching	medic-normalizer/1	identity
+RXCUI:7980	skos:exactMatch	RXCUI:7980	penicillin G	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:809864	skos:exactMatch	RXCUI:809864	C1 esterase inhibitor (human)	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:81638	skos:exactMatch	RXCUI:81638	strontium-89	semapv:UnspecifiedMatching	medic-normalizer/1	identity
 RXCUI:81981	skos:exactMatch	RXCUI:81981	ciprofloxacin hydrochloride	semapv:UnspecifiedMatching	medic-normalizer/1	identity

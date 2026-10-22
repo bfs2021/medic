@@ -1,8 +1,8 @@
-auto_accepted: 2454
+auto_accepted: 2445
 llm_reranked: 0
 review_recommended: 0
 total_drugs: 5885
-unresolved: 3431
+unresolved: 3440
 unresolved_drugs:
 - Ruzam Concentrate
 - Azoxymere bromide
@@ -327,6 +327,7 @@ unresolved_drugs:
 - Proproten®-100
 - Ergoferon®
 - Antibodies to the brain-specific S-100 protein + Antibodies to endothelial NO synthase
+- Iron Sulfate + [Ascorbic Acid]
 - Metabolites of Escherichia coli, Enterococcus faecalis, Lactobacillus acidophilus,
   and Lactobacillus helveticus
 - Purified micronized flavonoid fraction (diosmin + flavonoids expressed as hesperidin)
@@ -353,6 +354,7 @@ unresolved_drugs:
 - The sum of the sodium salts of chlorin e6, chlorin p6, and purpurin 5
 - Sodium daltepariin
 - ARNIGEL®
+- Iron sulfate
 - Calcium Nadroparin
 - Coryphollotropin alfa
 - Sinupret® Extract
@@ -382,6 +384,7 @@ unresolved_drugs:
 - Lanceolate Plantain Leaf Extract + Common Thyme Herb Extract
 - Vaccine for the Prevention of Viral Hepatitis B
 - Ascorbic acid + (wood mallow flowers + lanceolate plantain leaves) extract
+- Iron Sulfate + Folic Acid
 - ORVIS® Rino
 - Polypeptides from the cerebral cortex of cattle
 - Osteogenon
@@ -611,6 +614,7 @@ unresolved_drugs:
 - Dextrose + Potassium chloride + Calcium chloride + Magnesium chloride + Sodium acetate
   + Sodium chloride + Malic acid
 - Birch leaves + Licorice roots + Cinnamon rose hips + Purple coneflower herb
+- Radium chloride (223Ra)
 - Coliprotein bacteriophage
 - Epidermal allergens
 - Chaga
@@ -807,6 +811,7 @@ unresolved_drugs:
 - Agri®
 - Ball-Leaf Eucalyptus Leaf Oil + [Levomenthol]
 - Ascorbic acid + Wild mallow flower extract + Lance-leaved plantain leaf extract
+- radium chloride [223 Ra]
 - Tuya-GF
 - Common Pumpkin Seed Oil + [Thymol]
 - Plasmid deoxyribonucleic acid [supercoiled circular double-stranded]
@@ -1455,6 +1460,7 @@ unresolved_drugs:
 - Marshmallow Root Extract
 - Antithymocyte Immunoglobulin
 - Actiferrin
+- Iron Sulfate + Serine
 - Dexa-Gentamicin
 - Contratubex
 - Blood clotting factors II, IX, and X in combination
@@ -2914,6 +2920,7 @@ unresolved_drugs:
 - Apizartron
 - McMirror Complex
 - Ferro-Folgamma®
+- Iron Sulfate + Folic Acid + Cyanocobalamin
 - Spazmalgon®
 - Lipofundin MST/LST 20%
 - Lipofundin MST/LST 10%
@@ -3065,6 +3072,7 @@ unresolved_drugs:
 - Vitalipid H for Adults
 - Vitalipid N for Children
 - Maxamine Forte
+- Iron chloride
 - Dextrose + Potassium chloride + Magnesium chloride + Sodium acetate + Sodium gluconate
   + Sodium chloride
 - Tenorox
@@ -3076,6 +3084,7 @@ unresolved_drugs:
 - Tissucol Kit
 - Hexbenidine + Etamivan + Etofilin
 - Strepsils® Plus
+- Iron Sulfate + Serine + Folic Acid
 - Festival
 - Festal®
 - Phytolysin®
