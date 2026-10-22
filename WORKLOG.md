@@ -404,3 +404,35 @@ mistake this project has made most often.
 Worth stating plainly: ~1,000 curated attributions existed for two weeks while #88, #89 and
 #97 shipped unscored, and the first thing scoring them says is that half the curated claims
 are not in the build at all.
+
+### Why the gold standard misses — measured, and not what the headline number suggested
+
+Splitting the 317 missing claims by whether we extracted *anything* from that section:
+
+| | |
+|---|---:|
+| found | 309 |
+| **section asserted other diseases** | **307 (96.8% of misses)** |
+| nothing extracted from that section at all | 10 (3.2%) |
+| document never acquired | 0 |
+
+So the 50.6% is almost entirely **extraction recall within a section**, not acquisition and
+not a missed section. The misses cluster on labels with long enumerated contraindication
+lists — the combined oral contraceptives, where the curator recorded 12 conditions and we
+assert 4:
+
+    17alpha-ethynylestradiol-drospirenone: wanted HP:0000083, MONDO:0000004, MONDO:0002305,
+    MONDO:0005277, MONDO:0007254 … we have HP:0000846, HP:0002625, MONDO:0005010,
+    MONDO:0005279
+
+**Not truncation**, which was the tempting explanation given that `max_tokens` was 500 for
+about five prompt generations. Measured on the v4 cache: median raw answer 517 characters,
+p99 5,001, and only 105 of 10,494 answers (1.0%) exceed 5,000 characters — nowhere near the
+1,500-token ceiling. The bump to 1,500 did its job; what remains is the model returning a
+subset of a long list.
+
+A first heuristic for "truncated" flagged 7,878 of 10,494 answers, i.e. 75%, which is the
+tell-tale of a heuristic measuring nothing: the final record is long because verbatim quotes
+are long. Discarded rather than reported.
+
+Recorded as `issues/issue_extraction_recall_within_enumerated_sections.md`.
