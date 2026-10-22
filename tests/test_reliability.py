@@ -229,6 +229,63 @@ def test_step_grounding_exact_drug_is_high():
     assert score_reliability(rec, StatementType.DRUG_APPROVAL) == ReliabilityTier.HIGH
 
 
+def _step_grounded(*, quality, conf, predicate=None, rule=None):
+    """A drug-approval record whose only grounding step is the one under test."""
+    step = {"category": "GROUNDING", "input_value": "fentanyl citrate",
+            "output_value": "CHEBI:119915", "method": "LEXICAL_MATCH",
+            "quality": quality, "confidence": conf}
+    if predicate:
+        step["predicate_id"] = predicate
+    if rule:
+        step["applied_rules"] = [rule]
+    return {
+        "approvals": [{"authority": "FDA", "source": "ORANGEBOOK", "status": "APPROVED"}],
+        "identity": {"id": "MEDICNE:z", "original_literal": "fentanyl citrate",
+                     "resolution": {"pipeline": [step]}},
+        "evidence": [{"approval_status": "APPROVED", "reference": "accessdata.fda.gov"}],
+    }
+
+
+def test_a_salt_stripped_to_its_parent_caps_at_medium():
+    """`salt_ester_strip` is scored 0.90 and the HIGH threshold reads `conf >= 0.9`, so a
+    closeMatch sat exactly on the boundary and reached the top tier although the comment in
+    `_grounding_tier` says a salt match should be MEDIUM. Latent while the rule only fired
+    for salts missing from the index (174 steps); #102's tier 0 fires it for the 617 that
+    are present, so the boundary had to be settled before taking that change."""
+    rec = _step_grounded(quality="lexical_exact_surgery", conf=0.90,
+                         predicate="skos:closeMatch", rule="salt_ester_strip")
+    assert score_reliability(rec, StatementType.DRUG_APPROVAL) == ReliabilityTier.MEDIUM
+
+
+def test_a_high_certainty_exact_match_still_reaches_high():
+    """The cap is on the *kind* of match, not on confidence: an exactMatch rule at the same
+    certainty is unaffected, so this does not quietly demote the whole inexact tier."""
+    rec = _step_grounded(quality="lexical_exact_surgery", conf=0.92,
+                         predicate="skos:exactMatch", rule="combination_split")
+    assert score_reliability(rec, StatementType.DRUG_APPROVAL) == ReliabilityTier.HIGH
+
+
+def test_a_broad_match_caps_at_medium_too():
+    rec = _step_grounded(quality="lexical_exact_surgery", conf=0.95,
+                         predicate="skos:broadMatch", rule="qualifier_strip")
+    assert score_reliability(rec, StatementType.DRUG_APPROVAL) == ReliabilityTier.MEDIUM
+
+
+def test_a_step_with_no_predicate_is_left_to_the_thresholds():
+    """A missing predicate means the record predates the field, not that the match was
+    inexact — demoting on an absent value would rescore history on a guess."""
+    rec = _step_grounded(quality="lexical_exact_surgery", conf=0.95)
+    assert score_reliability(rec, StatementType.DRUG_APPROVAL) == ReliabilityTier.HIGH
+
+
+def test_the_flat_grounding_path_caps_the_same_way():
+    """Both readers have to agree, or a record scores differently depending on which shape
+    it happens to be in mid-migration."""
+    rec = _indication(quality="lexical_exact_surgery", conf=0.90)
+    rec["disease_grounding"]["predicate_id"] = "skos:closeMatch"
+    assert score_reliability(rec) == ReliabilityTier.MEDIUM
+
+
 def test_step_translation_candidate_china_drug_is_medium():
     rec = {
         "approvals": [{"authority": "NMPA_CHINA", "source": "CDE_CHINA", "status": "APPROVED"}],

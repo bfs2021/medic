@@ -222,6 +222,32 @@ def _confidence_or_none(raw, basis) -> float | None:
         return None
 
 
+#: The only mapping predicate that asserts the transformed string still denotes the same
+#: concept. `skos:closeMatch` and `skos:broadMatch` say, in the vocabulary's own terms, that
+#: it does not — a salt stripped to its parent moiety or a qualifier dropped from a disease
+#: name lands on a *neighbouring* concept, deliberately.
+_IDENTITY_PREDICATE = "skos:exactmatch"
+
+
+def _caps_at_medium(obj: dict) -> bool:
+    """Does this grounding's own predicate say it is not an identity match?
+
+    Certainty alone cannot carry this. `salt_ester_strip` is scored 0.90 and the threshold
+    below reads `conf >= 0.9` as HIGH, so a closeMatch has been reaching the top tier
+    although the comment two lines down says a salt match should be MEDIUM — a boundary
+    collision, 174 steps' worth while the rule only fired when the index lacked the salt.
+    PR #102's tier 0 makes the same rule fire for every salt that *does* have an entry
+    (617 drug nodes), which would have promoted all of them. Reading the predicate fixes the
+    cause rather than nudging the number: how confident we are *within* a kind of match is a
+    separate question from which kind it is.
+
+    A missing predicate means the record predates the field, not that the match was exact,
+    so it is left to the certainty thresholds rather than demoted on a guess.
+    """
+    pred = str(obj.get("predicate_id") or obj.get("mapping_predicate") or "").strip().lower()
+    return bool(pred) and pred != _IDENTITY_PREDICATE
+
+
 def _grounding_tier_from_step(step: dict) -> ReliabilityTier | None:
     """Reliability tier from a GroundingStep (the transformation-provenance model)."""
     quality = (step.get("quality") or "").lower()
@@ -241,7 +267,7 @@ def _grounding_tier_from_step(step: dict) -> ReliabilityTier | None:
         # match was inexact, so MEDIUM, not HIGH and not LOW.
         return ReliabilityTier.MEDIUM
     if conf >= 0.9:
-        return ReliabilityTier.HIGH
+        return ReliabilityTier.MEDIUM if _caps_at_medium(step) else ReliabilityTier.HIGH
     if conf >= 0.7:
         return ReliabilityTier.MEDIUM
     return ReliabilityTier.LOW
@@ -283,13 +309,15 @@ def _grounding_tier(grounding: dict | None) -> ReliabilityTier | None:
     if quality in _EXACT_QUALITIES:
         return ReliabilityTier.HIGH
     # Inexact (surgery / salt / formulation / transliteration / fuzzy): let the rule
-    # weight decide — fuzzy edit-1 (~0.6) is LOW, salt/formulation (~0.8-0.9) is MEDIUM.
+    # weight decide — fuzzy edit-1 (~0.6) is LOW, salt/formulation (~0.8-0.9) is MEDIUM,
+    # with a non-exactMatch predicate capped at MEDIUM however high the rule's certainty
+    # (see :func:`_caps_at_medium`).
     conf = _confidence_or_none(
         grounding.get("confidence"), grounding.get("confidence_basis"))
     if conf is None:
         return ReliabilityTier.MEDIUM
     if conf >= 0.9:
-        return ReliabilityTier.HIGH
+        return ReliabilityTier.MEDIUM if _caps_at_medium(grounding) else ReliabilityTier.HIGH
     if conf >= 0.7:
         return ReliabilityTier.MEDIUM
     return ReliabilityTier.LOW
