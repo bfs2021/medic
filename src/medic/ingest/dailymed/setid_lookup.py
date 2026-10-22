@@ -77,16 +77,20 @@ def lookup_setid(drug_name: str, timeout: float = 10.0) -> Optional[str]:
         cache.put(key, {"setid": "", "match": "no_results"})
         return None
 
-    # Pick the most recent SPL by published_date (descending sort)
-    def _date(entry: dict) -> str:
-        return str(entry.get("published_date") or entry.get("publishing_date") or "")
+    # Most recent SPL by parsed publication date. This used to sort the raw string, which
+    # the endpoint formats as "Oct 14, 2026" — so it ordered alphabetically by month and
+    # "Sep 3, 2026" ranked above "Oct 14, 2026". Found in #98's review of the acquirer,
+    # where the same bug was latent because every hit was kept anyway; here it decided
+    # which document URL an FDA evidence item got, so it was live.
+    from medic.ingest.dailymed.acquire import published_date
 
-    data_sorted = sorted(data, key=_date, reverse=True)
+    data_sorted = sorted(data, key=published_date, reverse=True)
     setid = (data_sorted[0].get("setid") or "").strip()
     cache.put(key, {
         "setid": setid,
         "title": data_sorted[0].get("title", "")[:200],
-        "published_date": _date(data_sorted[0]),
+        "published_date": str(data_sorted[0].get("published_date")
+                              or data_sorted[0].get("publishing_date") or ""),
     })
     # Flush incrementally so progress is durable if the run is killed mid-way
     try:

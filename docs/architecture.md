@@ -298,19 +298,33 @@ The indication pipeline extracts drug-disease associations from regulatory drug 
 The DailyMed ingest (`src/medic/ingest/dailymed/`) is the primary USA indication source. The pipeline:
 
 1. **Acquire** — `acquire.py` fetches SPL XML for USA-approved drugs from the DailyMed v2 REST
-   API (`spls.json?drug_name=<NAME>` → setids → `spls/<setid>.xml`), driven by
-   `products/drug_list.yaml`, into `data/raw/dailymed/<setid>.xml`. Resumable; a few hundred MB
-   rather than the tens-of-GB bulk release. Run via `just ingest-dailymed-acquire`.
+   API (`spls.json?drug_name=<NAME>&doctype=<human Rx | human OTC>` → ranked setids →
+   `spls/<setid>.xml`), driven by `products/drug_list.yaml`, into `data/raw/dailymed/<setid>.xml`.
+   Resumable; a few hundred MB rather than the tens-of-GB bulk release. Run via
+   `just ingest-dailymed-acquire`.
 
-   It keeps **every** SPL per drug name, newest first, up to `--labels-per-drug` (default 20).
-   It previously kept only the most recently published one, and that was the dominant cause of
-   the recall gap against v1: a drug's indications are split across manufacturers and
-   formulations, so one label states an arbitrary subset. `lansoprazole` had two SPLs on disk
-   and asserted exactly one indication — *Helicobacter pylori infection* — while GERD, duodenal
-   ulcer and erosive esophagitis were in text that was never fetched. Cost of the change,
-   measured over 12 drugs and 221 SPLs: 118 distinct indication sections, i.e. ~9.8 extraction
-   calls per drug rather than 1, because roughly half of a drug's SPLs repeat another's
-   indication text verbatim and extraction is cached on the section-text hash.
+   Two separate faults were fixed here, and both fixes are needed (#98).
+
+   **Which labels.** Hits are ranked — ingredient list matching the query's shape, Rx over OTC,
+   systemic over inhaled over topical/ophthalmic/otic, plain over liposomal/extended-release,
+   name match, then a *parsed* publication date — and only labels carrying an Indications section
+   are kept. Querying per human doctype (`34391-3`, `34390-5`) keeps animal labels out of the pool
+   entirely, at `pagesize=100` rather than 20. "Most recent of 20" used to pick ER hydromorphone
+   (no renal colic), liposomal doxorubicin (no bone sarcoma), an ipratropium/albuterol combination
+   for albuterol, veterinary ivermectin and ophthalmic flurbiprofen — and it compared
+   `"Oct 14, 2026"` as a string, so September sorted above October.
+
+   **How many labels, and under how many names.** Ranking a pool does not help when a drug's
+   indications are *split* across labels rather than ranked among them, so it keeps up to
+   `--labels-per-drug` (default 20) and queries **every** name the drug goes by, generic spelling
+   first, pooling the hits. `lansoprazole` had two SPLs on disk and asserted exactly one
+   indication — *Helicobacter pylori infection* — while GERD, duodenal ulcer and erosive
+   esophagitis were in text that was never fetched; separately, 1,074 of 2,591 product-style
+   names (41%) returned no SPL at all because DailyMed's `drug_name` index does not match
+   "Lansoprazole Enteric-Coated Capsules". Cost, measured over 12 drugs and 221 SPLs: 118 distinct
+   indication sections, i.e. ~9.8 extraction calls per drug rather than 1, because roughly half of
+   a drug's SPLs repeat another's indication text verbatim and extraction is cached on the
+   section-text hash.
 2. **Mine** — `mine_spl_labels` parses each SPL XML, pulling the Indications & Usage section
    (LOINC 34067-9) and Contraindications section (LOINC 34070-3) text plus active-moiety names and the
    setid (from the `<setId root=...>` attribute). It also reads bulk-release `*.zip` archives if present.
