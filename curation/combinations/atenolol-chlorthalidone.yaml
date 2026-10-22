@@ -1,0 +1,193 @@
+id: MEDICNE:combo-1f5f9c13-4937-547e-8f2e-e25937d91a90
+name: atenolol / chlorthalidone
+ingredients:
+- id: CHEBI:2904
+  label: atenolol
+- id: CHEBI:3654
+  label: chlorthalidone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: dfbd0160-f56a-41b9-a4ff-eb2df73b1e9b
+    version: 3
+    title: Atenolol and Chlorthalidone Tablets, USP
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dfbd0160-f56a-41b9-a4ff-eb2df73b1e9b
+  product_name: Atenolol and Chlorthalidone
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Atenolol and chlorthalidone tablets are indicated for the treatment of hypertension, to lower
+      blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "This fixed dose combination drug is not indicated for initial
+      therapy of hypertension" (in the same paragraph, not split out as a Limitation of Use span)
+      restricts this claim but produces none. HP Hypertension agrees with the grounding store.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: sinus bradycardia
+      term:
+        id: HP:0001688
+        label: Sinus bradycardia
+      binding: EXACT
+    quote: >-
+      Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia;
+      heart block greater than first degree; cardiogenic shock; overt cardiac failure (see
+      WARNINGS ); anuria; hypersensitivity to this product or to sulfonamide-derived drugs.
+    explanation: >-
+      "are contraindicated in patients with: sinus bradycardia" states the sinus bradycardia
+      contraindication, the first item of the semicolon list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: heart block greater than first degree
+      term:
+        id: HP:0011706
+        label: Second degree atrioventricular block
+      binding: NARROWER
+    quote: >-
+      Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia;
+      heart block greater than first degree; cardiogenic shock; overt cardiac failure (see
+      WARNINGS ); anuria; hypersensitivity to this product or to sulfonamide-derived drugs.
+    explanation: >-
+      "are contraindicated in patients with: ... heart block greater than first degree" states the
+      contraindication, an item of the list. Heart block greater than first degree is second- or
+      third-degree atrioventricular block, so this claim binds the second-degree block, NARROWER than the
+      words.
+    status: DRAFT
+    notes: >-
+      Split into its two degrees (second, third), each bound NARROWER, as in the
+      metoprolol/hydrochlorothiazide file; no single term says "greater than first degree"
+      (searched MONDO and HP "atrioventricular block", "heart block"), and Atrioventricular block
+      would include the excluded first degree. Both terms descend from the HP Heart block that the
+      words "heart block" name. Grounding store has sssom:NoTermFound for the phrase.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: heart block greater than first degree
+      term:
+        id: HP:0001709
+        label: Third degree atrioventricular block
+      binding: NARROWER
+    quote: >-
+      Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia;
+      heart block greater than first degree; cardiogenic shock; overt cardiac failure (see
+      WARNINGS ); anuria; hypersensitivity to this product or to sulfonamide-derived drugs.
+    explanation: >-
+      "are contraindicated in patients with: ... heart block greater than first degree" states the
+      contraindication, an item of the list. Heart block greater than first degree is second- or
+      third-degree atrioventricular block, so this claim binds the third-degree block, NARROWER than the
+      words.
+    status: DRAFT
+    notes: >-
+      Split into its two degrees (second, third), each bound NARROWER, as in the
+      metoprolol/hydrochlorothiazide file; no single term says "greater than first degree"
+      (searched MONDO and HP "atrioventricular block", "heart block"), and Atrioventricular block
+      would include the excluded first degree. Both terms descend from the HP Heart block that the
+      words "heart block" name. Grounding store has sssom:NoTermFound for the phrase.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cardiogenic shock
+      term:
+        id: HP:0030149
+        label: Cardiogenic shock
+      binding: EXACT
+    quote: >-
+      Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia;
+      heart block greater than first degree; cardiogenic shock; overt cardiac failure (see
+      WARNINGS ); anuria; hypersensitivity to this product or to sulfonamide-derived drugs.
+    explanation: >-
+      "are contraindicated in patients with: ... cardiogenic shock" states the contraindication, an
+      item of the list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: overt cardiac failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia;
+      heart block greater than first degree; cardiogenic shock; overt cardiac failure (see
+      WARNINGS ); anuria; hypersensitivity to this product or to sulfonamide-derived drugs.
+    explanation: >-
+      "are contraindicated in patients with: ... overt cardiac failure" states the
+      contraindication, an item of the list; "overt" (clinically manifest) narrows it, so the
+      heart failure term is BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO heart failure has the exact synonym "cardiac failure", as the grounding store's row
+      for "cardiac failure" says (it has sssom:NoTermFound for "Overt cardiac failure").
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia;
+      heart block greater than first degree; cardiogenic shock; overt cardiac failure (see
+      WARNINGS ); anuria; hypersensitivity to this product or to sulfonamide-derived drugs.
+    explanation: >-
+      "are contraindicated in patients with: ... anuria" states the contraindication, an item of
+      the list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Atenolol and chlorthalidone tablets are contraindicated in patients with: sinus bradycardia;
+      heart block greater than first degree; cardiogenic shock; overt cardiac failure (see
+      WARNINGS ); anuria; hypersensitivity to this product or to sulfonamide-derived drugs.
+    explanation: >-
+      "are contraindicated in patients with: ... hypersensitivity to this product or to
+      sulfonamide-derived drugs" states a drug-allergy contraindication; the sulfonamide-derived
+      drugs are recorded as the agents, the product itself is dropped.
+    status: DRAFT
+    notes: >-
+      Hypersensitivity to "this product" (own ingredients) is not curated; the claim keeps only
+      the sulfonamide-derived drugs. Unlike the other thiazide labels, this one does not say
+      "other" sulfonamide-derived drugs, and chlorthalidone is itself a sulfonamide, but the label
+      names the class, not the ingredient, so the class is kept. ChEBI sulfonamide is the chemical
+      class, broader than "sulfonamide-derived drugs". Unattributed: an allergen is not a cause.
+notes: >-
+  Old-format (non-PLR) label with no Highlights. Not claimed: the class-level
+  cardiovascular-outcomes text after the indication (credited to antihypertensive drug classes,
+  "including atenolol and chlorthalidone", not to this product, so it neither indicates nor
+  attributes); "not indicated for initial therapy of hypertension" (a limitation); hypersensitivity
+  to this product (own ingredients). All claims are product-level: the label never assigns an
+  indication or contraindication to atenolol or chlorthalidone.

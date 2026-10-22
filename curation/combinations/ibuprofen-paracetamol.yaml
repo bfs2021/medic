@@ -1,0 +1,146 @@
+id: MEDICNE:combo-23200ad7-1bb0-5cbf-9deb-cdb734470681
+name: ibuprofen / paracetamol
+ingredients:
+- id: CHEBI:5855
+  label: ibuprofen
+- id: CHEBI:46195
+  label: paracetamol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 52193849-d03a-b61b-e063-6394a90ad277
+    version: 2
+    title: Acetaminophen and Ibuprofen Tablets-cvs
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=52193849-d03a-b61b-e063-6394a90ad277
+  product_name: Acetaminophen and Ibuprofen
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: EXACT
+    quote: 'temporarily relieves minor aches and pains due to: ■ headache'
+    explanation: '"temporarily relieves minor aches and pains due to:" followed by the listed item gives AMELIORATES_CONDITION
+      for minor aches and pains of that kind; the item names the pain relieved. "headache" is HP Headache.'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: toothache
+      term:
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: 'temporarily relieves minor aches and pains due to: ■ headache ■ toothache'
+    explanation: '"temporarily relieves minor aches and pains due to:" followed by the listed item gives AMELIORATES_CONDITION
+      for minor aches and pains of that kind; the item names the pain relieved. "toothache" is tooth pain; HP Pain
+      is broader (no tooth-pain term).'
+    status: DRAFT
+    notes: 'Searched HP and MONDO "toothache", "dental pain", "odontalgia", "dentalgia", "oral pain", "mouth pain",
+      "tooth": no tooth-pain term, so the claim binds HP Pain, BROADER.'
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: backache
+      term:
+        id: HP:0003418
+        label: Back pain
+      binding: EXACT
+    quote: 'temporarily relieves minor aches and pains due to: ■ headache ■ toothache ■ backache'
+    explanation: '"temporarily relieves minor aches and pains due to:" followed by the listed item gives AMELIORATES_CONDITION
+      for minor aches and pains of that kind; the item names the pain relieved. "backache" is back pain; HP Back
+      pain.'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: menstrual cramps
+      term:
+        id: HP:0100607
+        label: Dysmenorrhea
+      binding: EXACT
+    quote: 'temporarily relieves minor aches and pains due to: ■ headache ■ toothache ■ backache ■ menstrual cramps'
+    explanation: '"temporarily relieves minor aches and pains due to:" followed by the listed item gives AMELIORATES_CONDITION
+      for minor aches and pains of that kind; the item names the pain relieved. "menstrual cramps" is painful menstruation;
+      HP Dysmenorrhea (exact synonym "Painful menstruation").'
+    status: DRAFT
+    notes: HP Dysmenorrhea is chosen over MONDO dysmenorrhea because the label names a symptom; "menstrual cramps"
+      is the lay name for painful menstruation, so the binding is EXACT.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: muscular aches
+      term:
+        id: HP:0003326
+        label: Myalgia
+      binding: EXACT
+    quote: 'temporarily relieves minor aches and pains due to: ■ headache ■ toothache ■ backache ■ menstrual cramps
+      ■ muscular aches'
+    explanation: '"temporarily relieves minor aches and pains due to:" followed by the listed item gives AMELIORATES_CONDITION
+      for minor aches and pains of that kind; the item names the pain relieved. "muscular aches" is muscle ache;
+      HP Myalgia (exact synonym "Muscle ache").'
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: minor pain
+      term:
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: 'temporarily relieves minor aches and pains due to: ■ headache ■ toothache ■ backache ■ menstrual cramps
+      ■ muscular aches ■ minor pain of arthritis'
+    disease_context:
+      text: arthritis
+      term:
+        id: MONDO:0005578
+        label: arthritic joint disease
+      binding: EXACT
+    explanation: '"temporarily relieves minor aches and pains due to:" followed by the listed item gives AMELIORATES_CONDITION
+      for minor aches and pains of that kind; the item names the pain relieved. "minor pain of arthritis" is mild
+      pain in arthritis: the object is "minor pain" (HP Pain, broader because of "minor") and "arthritis" is the
+      disease context (MONDO arthritic joint disease, exact synonym "arthritis").'
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: allergic reaction
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: any other pain reliever
+      term:
+        id: CHEBI:35480
+        label: analgesic
+      binding: EXACT
+    quote: if you have ever had an allergic reaction to acetaminophen or any other pain reliever
+    explanation: '"Do not use ... if you have ever had an allergic reaction to acetaminophen or any other pain reliever"
+      contraindicates the product after an allergic reaction to another analgesic (cross-sensitivity). drug allergy
+      is NARROWER than "allergic reaction", justified by "to ... any other pain reliever".'
+    status: DRAFT
+    notes: 'The own-ingredient allergen "acetaminophen" (paracetamol, an ingredient of this product) is not curated
+      (no allergy to the product''s own ingredients); the claim carries only "any other pain reliever", the analgesic
+      class, as cross-sensitivity. Not attributed: the agents are allergens.'
+notes: 'OTC Drug Facts label; the Uses text is the indication section and "Do not use" the Contraindications section.
+  Uses reads "temporarily relieves minor aches and pains due to:" followed by six bulleted items (headache, toothache,
+  backache, menstrual cramps, muscular aches, minor pain of arthritis). Each item names a kind of pain, so each
+  is one AMELIORATES_CONDITION claim whose object is that pain; for the last item the pain is the object and arthritis
+  the disease context. The heading "minor aches and pains" is not curated on its own: the items are what the label
+  says it relieves. No use is assigned to an ingredient by the label, so no claim is attributed. Contraindications
+  curated: the allergic reaction to "any other pain reliever" (the own-ingredient allergen acetaminophen dropped).
+  Not curated: "with any other drug containing acetaminophen (prescription or nonprescription)" (a drug interaction
+  with no patient condition); "right before or after heart surgery" (a procedure, not a condition). The pipeline
+  listed this product''s ibuprofen as dexibuprofen (a combination_split row in mappings/drug_grounding.sssom.tsv
+  maps "IBUPROFEN" to CHEBI:43415 dexibuprofen); the SPL active moiety is IBUPROFEN and the label helper grounds
+  it to CHEBI:5855 ibuprofen, which this file uses.'

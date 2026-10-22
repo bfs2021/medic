@@ -1,0 +1,258 @@
+id: MEDICNE:combo-def4b21a-8616-5865-812a-c7af88dec083
+name: dorzolamide / timolol
+ingredients:
+- id: CHEBI:4702
+  label: dorzolamide
+- id: CHEBI:39465
+  label: timolol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: f45cce05-fb47-4607-b68e-5a3d47e7235a
+    version: 10
+    title: 'These highlights do not include all the information needed to use DORZOLAMIDE HYDROCHLORIDE
+      AND TIMOLOL MALEATE OPHTHALMIC SOLUTION safely and effectively. See full prescribing information
+      for DORZOLAMIDE HYDROCHLORIDE AND TIMOLOL MALEATE OPHTHALMIC SOLUTION. DORZOLAMIDE HYDROCHLORIDE
+      AND TIMOLOL MALEATE ophthalmic solution Initial U.S. Approval: 1998'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f45cce05-fb47-4607-b68e-5a3d47e7235a
+  product_name: Dorzolamide Hydrochloride and Timolol Maleate ophthalmic Solution
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: elevated intraocular pressure
+      term:
+        id: HP:0007906
+        label: Ocular hypertension
+      binding: EXACT
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is indicated for the
+      reduction of elevated intraocular pressure (IOP) in patients with open-angle glaucoma or
+      ocular hypertension who are insufficiently responsive to beta-blockers (failed to achieve
+      target IOP determined after multiple measurements over time).
+    disease_context:
+      text: open-angle glaucoma or ocular hypertension
+      member: open-angle glaucoma
+      term:
+        id: MONDO:0005338
+        label: open-angle glaucoma
+      binding: EXACT
+    line_of_therapy:
+      text: who are insufficiently responsive to beta-blockers
+      term_gap: >-
+        A prior-therapy requirement stated in words; no ontology term is sought for a line of
+        therapy.
+    explanation: >-
+      "is indicated for the reduction of elevated intraocular pressure (IOP)" gives TREATS with the
+      raised pressure as the object; "in patients with open-angle glaucoma or ocular hypertension"
+      restricts it, and this claim covers the open-angle glaucoma member. "who are insufficiently
+      responsive to beta-blockers" is the prior-therapy requirement, defined in the parentheses.
+    status: DRAFT
+    notes: >-
+      HP Ocular hypertension has the exact synonym "Elevated intraocular pressure", so the object
+      is the sign the product lowers; the patient's disease goes in disease_context. TREATS rather
+      than AMELIORATES_CONDITION: "indicated for the reduction of" a sign is the label's
+      indication wording, not symptom relief. The following sentence (comparison with concomitant
+      timolol and dorzolamide) is efficacy information and makes no claim. Product-level,
+      unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: elevated intraocular pressure
+      term:
+        id: HP:0007906
+        label: Ocular hypertension
+      binding: EXACT
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is indicated for the
+      reduction of elevated intraocular pressure (IOP) in patients with open-angle glaucoma or
+      ocular hypertension who are insufficiently responsive to beta-blockers (failed to achieve
+      target IOP determined after multiple measurements over time).
+    disease_context:
+      text: open-angle glaucoma or ocular hypertension
+      member: ocular hypertension
+      term:
+        id: MONDO:0006875
+        label: ocular hypertension
+      binding: EXACT
+    line_of_therapy:
+      text: who are insufficiently responsive to beta-blockers
+      term_gap: >-
+        A prior-therapy requirement stated in words; no ontology term is sought for a line of
+        therapy.
+    explanation: >-
+      "is indicated for the reduction of elevated intraocular pressure (IOP)" gives TREATS with the
+      raised pressure as the object; "in patients with open-angle glaucoma or ocular hypertension"
+      restricts it, and this claim covers the ocular hypertension member. "who are insufficiently
+      responsive to beta-blockers" is the prior-therapy requirement.
+    status: DRAFT
+    notes: >-
+      The disease context is bound to MONDO ocular hypertension (the disease; agrees with the
+      grounding store), the object "elevated intraocular pressure" to the HP sign. Product-level,
+      unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: bronchial asthma, a history of bronchial asthma, or severe chronic obstructive pulmonary
+        disease
+      member: bronchial asthma
+      term:
+        id: HP:0002099
+        label: Asthma
+      binding: EXACT
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is contraindicated in
+      patients with bronchial asthma, a history of bronchial asthma, or severe chronic obstructive
+      pulmonary disease
+    explanation: >-
+      "is contraindicated in patients with bronchial asthma, a history of bronchial asthma, or
+      severe chronic obstructive pulmonary disease"; this claim covers the bronchial asthma member
+      and, since it names the same condition, the "a history of bronchial asthma" member.
+    status: DRAFT
+    notes: >-
+      "a history of bronchial asthma" is covered by this claim rather than a second identical one
+      (same relation, same condition; the schema has no slot for past disease). HP Asthma has the
+      exact synonym "Bronchial asthma"; MONDO has no term with that wording (searched MONDO
+      "bronchial asthma", "asthma"). Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: bronchial asthma, a history of bronchial asthma, or severe chronic obstructive pulmonary
+        disease
+      member: severe chronic obstructive pulmonary disease
+      term:
+        id: MONDO:0005002
+        label: chronic obstructive pulmonary disease
+      binding: BROADER
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is contraindicated in
+      patients with bronchial asthma, a history of bronchial asthma, or severe chronic obstructive
+      pulmonary disease
+    explanation: >-
+      "is contraindicated in patients with ... severe chronic obstructive pulmonary disease"; this
+      claim covers the severe COPD member of the list.
+    status: DRAFT
+    notes: >-
+      No severity-specific COPD term (MONDO "COPD, severe early onset" is a genetic entity, not
+      severe COPD), so COPD is bound BROADER. The grounding store maps the phrase to
+      UMLS:C0730607. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: sinus bradycardia, second or third degree atrioventricular block, overt cardiac failure,
+        and cardiogenic shock
+      member: sinus bradycardia
+      term:
+        id: HP:0001688
+        label: Sinus bradycardia
+      binding: EXACT
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is contraindicated in
+      patients with sinus bradycardia, second or third degree atrioventricular block, overt cardiac
+      failure, and cardiogenic shock
+    explanation: >-
+      "is contraindicated in patients with sinus bradycardia, ..."; this claim covers the sinus
+      bradycardia member of the list.
+    status: DRAFT
+    notes: >-
+      HP Sinus bradycardia agrees with the grounding store. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: second or third degree atrioventricular block
+      member: second degree atrioventricular block
+      term:
+        id: MONDO:0000467
+        label: second-degree atrioventricular block
+      binding: EXACT
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is contraindicated in
+      patients with sinus bradycardia, second or third degree atrioventricular block, overt cardiac
+      failure, and cardiogenic shock
+    explanation: >-
+      "is contraindicated in patients with ... second or third degree atrioventricular block";
+      this claim covers the second-degree member of the nested coordination.
+    status: DRAFT
+    notes: >-
+      MONDO second-degree atrioventricular block has the exact synonym "second degree
+      atrioventricular block". The object text is the inner
+      coordination, not the whole list: the validator splits the nested list at the wrong level
+      (it offers "second" and "third degree atrioventricular block" as members). Product-level,
+      unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: second or third degree atrioventricular block
+      member: third degree atrioventricular block
+      term:
+        id: MONDO:0000468
+        label: third-degree atrioventricular block
+      binding: EXACT
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is contraindicated in
+      patients with sinus bradycardia, second or third degree atrioventricular block, overt cardiac
+      failure, and cardiogenic shock
+    explanation: >-
+      "is contraindicated in patients with ... second or third degree atrioventricular block";
+      this claim covers the third-degree member of the nested coordination.
+    status: DRAFT
+    notes: >-
+      MONDO third-degree atrioventricular block has the exact synonym "third degree
+      atrioventricular block". The object text is the inner
+      coordination, not the whole list: the validator splits the nested list at the wrong level
+      (it offers "second" and "third degree atrioventricular block" as members). Product-level,
+      unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: sinus bradycardia, second or third degree atrioventricular block, overt cardiac failure,
+        and cardiogenic shock
+      member: overt cardiac failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is contraindicated in
+      patients with sinus bradycardia, second or third degree atrioventricular block, overt cardiac
+      failure, and cardiogenic shock
+    explanation: >-
+      "is contraindicated in patients with ... overt cardiac failure"; this claim covers the overt
+      cardiac failure member of the list.
+    status: DRAFT
+    notes: >-
+      MONDO heart failure has the exact synonym "cardiac failure"; "overt" narrows it, so BROADER.
+      MONDO symptomatic heart failure (MONDO:0005254) was considered, but the label does not
+      define "overt" as symptomatic. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: sinus bradycardia, second or third degree atrioventricular block, overt cardiac failure,
+        and cardiogenic shock
+      member: cardiogenic shock
+      term:
+        id: HP:0030149
+        label: Cardiogenic shock
+      binding: EXACT
+    quote: >-
+      Dorzolamide hydrochloride and timolol maleate ophthalmic solution is contraindicated in
+      patients with sinus bradycardia, second or third degree atrioventricular block, overt cardiac
+      failure, and cardiogenic shock
+    explanation: >-
+      "is contraindicated in patients with ... cardiogenic shock"; this claim covers the
+      cardiogenic shock member of the list.
+    status: DRAFT
+    notes: >-
+      HP Cardiogenic shock agrees with the grounding store. Product-level, unattributed.
+notes: >-
+  Not curated: "Hypersensitivity to any component of this product" and section 4.3 (allergy to the
+  product's own ingredients). The Highlights restate the indication and contraindications; the
+  claims quote the full-text sentences of 1, 4.1 and 4.2. No claim is attributed: the label never
+  assigns an indication or contraindication to dorzolamide or timolol; the pharmacologic-class
+  description in the Highlights indication is not an attribution.

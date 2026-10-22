@@ -1,0 +1,88 @@
+id: MEDICNE:combo-8bce023f-0563-53e2-855e-8f9b368a5718
+name: glyburide / metformin
+ingredients:
+- id: CHEBI:5441
+  label: glyburide
+- id: CHEBI:6801
+  label: metformin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 266fdd0d-de19-d1e4-e063-6394a90a1a64
+    version: 1
+    title: 'These highlights do not include all the information needed to use GLYBURIDE AND METFORMIN
+      HYDROCHLORIDE TABLETS safely and effectively. See full prescribing information for GLYBURIDE AND
+      METFORMIN HYDROCHLORIDE TABLETS. GLYBURIDE and METFORMIN HYDROCHLORIDE tablets, for oral use Initial
+      U.S. Approval: 2000'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=266fdd0d-de19-d1e4-e063-6394a90a1a64
+  product_name: Glyburide and Metformin Hydrochloride
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Glyburide and metformin hydrochloride tablets are indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2 diabetes mellitus.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "indicated ... to improve glycemic control in adults with type 2 diabetes mellitus" states treatment of type 2 diabetes mellitus; "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject is the product's generic name, which lists both ingredients and attributes nothing. "as an adjunct to diet and exercise" names non-drug measures, kept in the quote, not in_combination_with.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Severe renal impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 )
+    explanation: >-
+      Under "Glyburide and metformin hydrochloride tablets are contraindicated in patients with:", the item "Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 )" lists severe renal impairment as a contraindicated condition; the eGFR threshold defines "severe".
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. HP Renal insufficiency is the term for impaired renal function,
+      as in the metformin-combination files of PR #74; no severe-renal-insufficiency term (searched
+      HP "severe renal", "renal impairment"), so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or chronic metabolic acidosis
+      term:
+        id: MONDO:0000440
+        label: metabolic acidosis
+      binding: EXACT
+    examples:
+    - text: diabetic ketoacidosis
+      term:
+        id: MONDO:0012819
+        label: diabetic ketoacidosis
+      binding: EXACT
+    quote: >-
+      Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma.
+    explanation: >-
+      Under "Glyburide and metformin hydrochloride tablets are contraindicated in patients with:", the item "Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma" lists metabolic acidosis as a contraindicated condition; "Acute or chronic" is an exhaustive pair covering the whole class, and "including diabetic ketoacidosis" names an example.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. One claim for the class (exhaustive pair), diabetic
+      ketoacidosis as a listed example; "with or without coma" does not restrict it.
+notes: >-
+  Not claimed: "Hypersensitivity to metformin or glyburide" (own ingredients); "Concomitant
+  administration of bosentan" (a drug-drug interaction with no condition, out of scope). The
+  label has no Limitations of Use. The Highlights restate the indication and contraindications.
+  The label names no component for the indication or the curated contraindications, so nothing
+  is attributed.

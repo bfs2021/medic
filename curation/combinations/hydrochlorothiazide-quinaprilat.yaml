@@ -1,0 +1,170 @@
+id: MEDICNE:combo-23196258-aa79-5f3a-b241-cce0cc472ca0
+name: hydrochlorothiazide / quinaprilat
+ingredients:
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:140296
+  label: quinaprilat
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 7e97959c-d34d-4a6e-99f0-a821d5ce5089
+    version: 8
+    title: Quinapril Hydrochloride and Hydrochlorothiazide Tablets, USP Rx Only
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7e97959c-d34d-4a6e-99f0-a821d5ce5089
+  product_name: Quinapril Hydrochloride and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Quinapril HCl and hydrochlorothiazide tablets, USP are indicated for the treatment of
+      hypertension, to lower blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "This fixed combination is not indicated for the initial therapy
+      of hypertension" restricts this claim but produces none. HP Hypertension agrees with the
+      grounding store; MONDO has no term labelled or exactly synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: angioedema
+      term:
+        id: HP:0100665
+        label: Angioedema
+      binding: EXACT
+    object_specialization:
+    - text: ACE inhibitor
+      term:
+        id: CHEBI:35457
+        label: EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor
+      binding: EXACT
+    quote: >-
+      Quinapril HCl and hydrochlorothiazide tablets are contraindicated in patients who are
+      hypersensitive to quinapril or hydrochlorothiazide and in patients with a history of
+      angioedema related to previous treatment with an ACE inhibitor.
+    explanation: >-
+      "are contraindicated ... in patients with a history of angioedema related to previous
+      treatment with an ACE inhibitor" states a contraindication in patients with past angioedema,
+      specialised to ACE inhibitors as its cause.
+    status: DRAFT
+    notes: >-
+      Angioedema + specialization ACE inhibitor composes "angioedema related to previous treatment
+      with an ACE inhibitor" (the pattern in the skill's specialization table). "history of" places
+      the angioedema in the past; the schema has no slot for that, so it stays in the quote. HP
+      Angioedema chosen over MONDO angioedema, which MONDO places under urticaria; the label's
+      angioedema is a drug reaction, not an urticarial disease. ChEBI EC 3.4.15.1
+      (peptidyl-dipeptidase A) inhibitor is the angiotensin-converting-enzyme inhibitor class.
+      Not attributed: the sentence speaks of the product; the hypersensitivity to quinapril or
+      hydrochlorothiazide in the same sentence names the product's own ingredients and is not
+      curated.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Because of the hydrochlorothiazide components, this product is contraindicated in patients
+      with anuria or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: STATED_REASON
+      snippet: Because of the hydrochlorothiazide components
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide components", giving
+        hydrochlorothiazide as the reason for both contraindications it lists, anuria among them.
+    explanation: >-
+      "this product is contraindicated in patients with anuria" states the anuria contraindication,
+      the first of the sentence's two conditions.
+    status: DRAFT
+    notes: >-
+      Attributed as in the olmesartan/amlodipine/hydrochlorothiazide file, but as STATED_REASON:
+      the label writes "components" (plural), which the validator does not accept as a component
+      statement; "Because of" names hydrochlorothiazide as the reason. The text is "anuria" alone:
+      the "or" joins two separate contraindications (anuria; sulfonamide hypersensitivity), each
+      curated as its own claim. A text "anuria or hypersensitivity to other sulfonamide-derived
+      drugs" with member "anuria" is read by the validator as an allergy claim without agents.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Because of the hydrochlorothiazide components, this product is contraindicated in patients
+      with anuria or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: STATED_REASON
+      snippet: Because of the hydrochlorothiazide components
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide components", giving
+        hydrochlorothiazide as the reason for both contraindications it lists, the sulfonamide
+        cross-sensitivity among them.
+    explanation: >-
+      "contraindicated in patients with ... hypersensitivity to other sulfonamide-derived drugs"
+      states a drug-allergy contraindication with other sulfonamide-derived drugs as the agents;
+      "other" excludes the product's own ingredients.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs. Attributed to hydrochlorothiazide on the
+      label's "Because of the hydrochlorothiazide components", not on the allergen. ChEBI
+      sulfonamide is the chemical class, broader than "sulfonamide-derived drugs".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not co-administer quinapril HCl and hydrochlorothiazide with aliskiren: in patients with
+      diabetes.
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not co-administer quinapril HCl and hydrochlorothiazide with aliskiren: in patients with
+      diabetes" contraindicates the product in patients with diabetes when given with aliskiren,
+      recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: "quinapril HCl and hydrochlorothiazide" is the product's own name.
+notes: >-
+  The helper grounds the ACE-inhibitor ingredient to quinaprilat (CHEBI:140296), the SPL active
+  moiety; the label itself speaks of quinapril hydrochloride, the prodrug. Not claimed: the
+  class-level cardiovascular-outcomes text after the indication (the label says there are no
+  controlled trials demonstrating risk reduction with this product); "not indicated for the initial
+  therapy of hypertension"; the captopril agranulocytosis and "Angioedema in Black Patients"
+  paragraphs in Indications (warnings, not indications); hypersensitivity to quinapril or
+  hydrochlorothiazide (own ingredients).

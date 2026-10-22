@@ -1,0 +1,521 @@
+id: MEDICNE:combo-13f7192a-e91d-5336-9d2c-fcb2db41035f
+name: 17alpha-ethynylestradiol / levonorgestrel
+ingredients:
+- id: CHEBI:4903
+  label: 17alpha-ethynylestradiol
+- id: CHEBI:6443
+  label: levonorgestrel
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 752f525e-1838-4058-9ab7-2c2d91f86dfd
+    version: 12
+    title: Kurvelo&trade; (levonorgestrel and ethinyl estradiol tablets USP, 0.15 mg/30 mcg)Rx only
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=752f525e-1838-4058-9ab7-2c2d91f86dfd
+  product_name: Kurvelo
+  claims:
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy", "pregnan", "contracept"; HP "pregnancy", "pregnant", "pregnan"; PATO
+        "pregnan": no term for pregnancy as a state (only pregnancy disorders, exposures and modifiers);
+        the grounding store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Kurvelo is indicated for use by females of reproductive potential to prevent pregnancy.
+    life_stage:
+      text: of reproductive potential
+      term_gap: >-
+        searched HsapDv "adult", "menarche", "menopause", "reproductive", "fertile"; UBERON "reproductive
+        stage", "sexually mature"; PATO "female", "fertile" (female fertile describes fertility, not a
+        stage); HP "menarche": no reproductive-age life-stage term (adult stage would drop the restriction)
+    sex:
+      text: females
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "indicated for use by females of reproductive potential to prevent pregnancy" is contraception:
+      PREVENTATIVE_FOR_CONDITION with pregnancy as the object; "females" gives the sex and "of reproductive
+      potential" the life stage.
+    status: DRAFT
+    notes: >-
+      Object unbound (no configured ontology has a pregnancy term). Product-level claim, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Smoke
+      term_gap: >-
+        searched MONDO "smok", "tobacco", "nicotine"; HP "smok", "tobacco": only nicotine dependence /
+        addictive nicotine use, HP:0430133 Tobacco use history (an exposure history, not current smoking)
+        and modifiers ("Triggered by smoking"); no term for being a smoker
+    quote: Smoke, if over age 35
+    age_range:
+      min_years: 35
+      text: over age 35
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "if over age 35" restricts it, recorded as age_range.
+    status: DRAFT
+    notes: >-
+      A risk factor rather than a disease; unbound for lack of a term. "over" is a strict bound; age_range
+      has no exclusive bound, so min_years 35 is the nearest encoding.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      Have current or history of deep vein thrombosis or pulmonary embolism
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "deep vein thrombosis" of the coordination "deep vein thrombosis
+      or pulmonary embolism"; "current or history of" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode. No MONDO DVT term, so HP.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      Have current or history of deep vein thrombosis or pulmonary embolism
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "pulmonary embolism" of the coordination "deep vein thrombosis or
+      pulmonary embolism"; "current or history of" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cerebrovascular disease
+      term:
+        id: MONDO:0011057
+        label: cerebrovascular disorder
+      binding: EXACT
+    quote: Have cerebrovascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "Have cerebrovascular disease" is an item of that list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    quote: Have coronary artery disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "Have coronary artery disease" is an item of that list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic valvular diseases of the heart
+      term:
+        id: MONDO:0002869
+        label: heart valve disorder
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: subacute bacterial endocarditis with valvular disease
+      term:
+        id: MONDO:0006981
+        label: subacute bacterial endocarditis
+      binding: BROADER
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "thrombogenic valvular diseases of the heart" of the coordination;
+      heart valve disorder lacks "thrombogenic", so BROADER. Of the shared "(for example, ...)" members,
+      "subacute bacterial endocarditis with valvular disease" is the valvular example.
+    status: DRAFT
+    notes: >-
+      Assigning the shared examples to members (SBE with valvular disease -> valvular, atrial fibrillation
+      -> rhythm) is a reading of the list; the label gives them for the pair. "with valvular disease"
+      narrows SBE, so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic rhythm diseases of the heart
+      term:
+        id: MONDO:0007263
+        label: cardiac rhythm disease
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: atrial fibrillation
+      term:
+        id: MONDO:0004981
+        label: atrial fibrillation
+      binding: EXACT
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "thrombogenic rhythm diseases of the heart"; no thrombogenic-arrhythmia
+      term, so cardiac rhythm disease BROADER. Of the shared "(for example, ...)" members, "atrial fibrillation"
+      is the rhythm example.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: inherited or acquired hypercoagulopathies
+      term:
+        id: MONDO:0002305
+        label: thrombophilia
+      binding: EXACT
+    quote: Have inherited or acquired hypercoagulopathies
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "inherited or acquired" is an exhaustive pair: together the two alternatives name every hypercoagulopathy,
+      so the claim is the class, thrombophilia (hypercoagulability).
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        uncontrolled hypertension or hypertension with vascular disease
+      member: uncontrolled hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      Have uncontrolled hypertension or hypertension with vascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "uncontrolled hypertension" of the coordination "uncontrolled hypertension
+      or hypertension with vascular disease"; "uncontrolled" narrows the term, so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO hypertensive disorder has no "hypertension" synonym, so HP Hypertension.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        uncontrolled hypertension or hypertension with vascular disease
+      member: hypertension with vascular disease
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      Have uncontrolled hypertension or hypertension with vascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "hypertension with vascular disease"; "with vascular disease" narrows
+      the term, so BROADER.
+    status: DRAFT
+    notes: >-
+      No term for hypertension with vascular disease (searched MONDO "vascular disease"; HP "vascular
+      disease").
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+        or other end-organ damage, or diabetes mellitus of >20 years duration
+      member: diabetes mellitus
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Have diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+      or other end-organ damage, or diabetes mellitus of >20 years duration
+    age_range:
+      min_years: 35
+      text: over age 35
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". The item coordinates several diabetes conditions; this claim is its first member, "Have diabetes
+      mellitus and are over age 35": any diabetes mellitus in a woman over 35, the age recorded as age_range.
+    status: DRAFT
+    notes: >-
+      "over" is a strict bound; age_range has no exclusive bound, so min_years 35 is the nearest encoding.
+      The age bound belongs to this member only; the other members carry none. The validator's coverage check names
+      "diabetes mellitus and are over age 35" as uncovered, but its member check rejects that wording; this
+      claim covers it, with the age in age_range.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+        or other end-organ damage, or diabetes mellitus of >20 years duration
+      member: diabetes mellitus with hypertension
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: >-
+      Have diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+      or other end-organ damage, or diabetes mellitus of >20 years duration
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "diabetes mellitus with hypertension" of the item's coordination
+      of diabetes conditions, with no age bound; "with hypertension" narrows diabetes mellitus, so BROADER.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+        or other end-organ damage, or diabetes mellitus of >20 years duration
+      member: diabetes mellitus with vascular disease
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: >-
+      Have diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+      or other end-organ damage, or diabetes mellitus of >20 years duration
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "diabetes mellitus with vascular disease" of the item's coordination
+      of diabetes conditions, with no age bound; "with vascular disease" narrows diabetes mellitus, so
+      BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO:0000960 diabetic peripheral angiopathy is labelled peripheral-only, so not bound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+        or other end-organ damage, or diabetes mellitus of >20 years duration
+      member: other end-organ damage
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: >-
+      Have diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+      or other end-organ damage, or diabetes mellitus of >20 years duration
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "other end-organ damage" of the item's coordination of diabetes conditions,
+      with no age bound; "or other end-organ damage" continues "diabetes mellitus with hypertension or
+      vascular disease", so it reads as diabetes mellitus with other end-organ damage, which narrows diabetes
+      mellitus, so BROADER.
+    status: DRAFT
+    notes: >-
+      The validator does not accept "diabetes mellitus with other end-organ damage" as a member of this
+      list (the shared head does not carry across the comma), so the member is written as the label's own
+      words, as in the Annovera file. No diabetic end-organ-damage term (searched MONDO "diabetic", "end-organ");
+      the specific complications would each name one organ.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+        or other end-organ damage, or diabetes mellitus of >20 years duration
+      member: diabetes mellitus of >20 years duration
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: >-
+      Have diabetes mellitus and are over age 35, diabetes mellitus with hypertension or vascular disease
+      or other end-organ damage, or diabetes mellitus of >20 years duration
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "diabetes mellitus of >20 years duration" of the item's coordination
+      of diabetes conditions, with no age bound; the duration narrows diabetes mellitus, so BROADER.
+    status: DRAFT
+    notes: No slot records disease duration; it stays in the member.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        headaches with focal neurological symptoms, migraine headaches with aura, or over age 35 with any
+        migraine headaches
+      member: headaches with focal neurological symptoms
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: BROADER
+    quote: >-
+      Have headaches with focal neurological symptoms, migraine headaches with aura, or over age 35 with
+      any migraine headaches
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". The item lists three alternatives; this claim is "headaches with focal neurological symptoms",
+      with no age bound. No term for headache with focal neurological symptoms, so Headache BROADER.
+    status: DRAFT
+    notes: Searched HP "Headache", "focal".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        headaches with focal neurological symptoms, migraine headaches with aura, or over age 35 with any
+        migraine headaches
+      member: migraine headaches with aura
+      term:
+        id: MONDO:0005475
+        label: migraine with aura
+      binding: EXACT
+    quote: >-
+      Have headaches with focal neurological symptoms, migraine headaches with aura, or over age 35 with
+      any migraine headaches
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the second alternative, "migraine headaches with aura", with no age bound.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        headaches with focal neurological symptoms, migraine headaches with aura, or over age 35 with any
+        migraine headaches
+      member: over age 35 with any migraine headaches
+      term:
+        id: MONDO:0005277
+        label: migraine disorder
+      binding: EXACT
+    quote: >-
+      Have headaches with focal neurological symptoms, migraine headaches with aura, or over age 35 with
+      any migraine headaches
+    age_range:
+      min_years: 35
+      text: over age 35
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the third alternative, "over age 35 with any migraine headaches": every migraine
+      ("any"), restricted by "over age 35", recorded as age_range.
+    status: DRAFT
+    notes: >-
+      "over" is a strict bound; age_range has no exclusive bound, so min_years 35 is the nearest encoding.
+      EXACT: the age is a patient restriction carried by age_range, and "any" widens rather than narrows.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breast cancer
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: >-
+      Current diagnosis of, or history of, breast cancer, which may be hormone-sensitive
+    explanation: >-
+      An item of "Kurvelo is contraindicated in females who are known to have the following conditions:":
+      breast cancer, currently diagnosed or in the history. "which may be hormone-sensitive" describes
+      the cancer; it does not restrict the contraindication.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope; the label contraindicates current breast cancer and a history
+      of it. This older-format label has no Highlights, so the full-text item is quoted.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Liver tumors, acute viral hepatitis, or severe (decompensated) cirrhosis
+      member: Liver tumors
+      term:
+        id: MONDO:0024477
+        label: liver and intrahepatic bile duct neoplasm
+      binding: EXACT
+    quote: >-
+      Liver tumors, acute viral hepatitis, or severe (decompensated) cirrhosis
+    explanation: >-
+      An item of "Kurvelo is contraindicated in females who are known to have the following conditions:"
+      listing three liver conditions; this claim is the member "Liver tumors".
+    status: DRAFT
+    notes: '"liver tumor" is an exact synonym of the term.'
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Liver tumors, acute viral hepatitis, or severe (decompensated) cirrhosis
+      member: acute viral hepatitis
+      term:
+        id: MONDO:0006011
+        label: viral hepatitis
+      binding: BROADER
+    quote: >-
+      Liver tumors, acute viral hepatitis, or severe (decompensated) cirrhosis
+    explanation: >-
+      The same item; this claim is the member "acute viral hepatitis". MONDO viral hepatitis lacks "acute",
+      so BROADER.
+    status: DRAFT
+    notes: >-
+      No acute-viral-hepatitis term (searched MONDO "acute viral hepatitis", "viral hepatitis", "hepatitis";
+      HP "Acute hepatitis"). HP:0200119 Acute hepatitis would drop the viral cause; MONDO viral hepatitis
+      keeps it and drops the acuteness. The grounding store maps the text to UMLS:C0276622 (no configured
+      ontology).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Liver tumors, acute viral hepatitis, or severe (decompensated) cirrhosis
+      member: severe decompensated cirrhosis
+      term:
+        id: MONDO:0005155
+        label: cirrhosis of liver
+      binding: BROADER
+    quote: >-
+      Liver tumors, acute viral hepatitis, or severe (decompensated) cirrhosis
+    explanation: >-
+      The same item; this claim is the member "severe (decompensated) cirrhosis", written "severe decompensated
+      cirrhosis". MONDO cirrhosis of liver (exact synonym "cirrhosis") lacks the severity, so BROADER.
+    status: DRAFT
+    notes: >-
+      No decompensated-cirrhosis term (searched MONDO "decompensated", "cirrhosis"). MONDO:0100193 chronic
+      liver failure carries the synonym "end stage liver disease (decompensated liver disease)", but end-stage
+      disease is narrower than decompensation, so it is not bound; a reviewer may prefer it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Undiagnosed abnormal uterine bleeding
+      term:
+        id: HP:0000140
+        label: Abnormality of the menstrual cycle
+      binding: BROADER
+    quote: Undiagnosed abnormal uterine bleeding
+    explanation: >-
+      An item of "Kurvelo is contraindicated in females who are known to have the following conditions:"
+      after the thrombotic risk-factor list: undiagnosed abnormal uterine bleeding.
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for abnormal uterine bleeding (searched HP "abnormal uterine", "uterine bleeding"),
+      so the parent HP Abnormality of the menstrual cycle, BROADER, as in the other combined hormonal
+      contraceptive files. Not Metrorrhagia, whose HP exact synonym "Abnormal uterus bleeding" is too
+      narrow a reading (metrorrhagia is intermenstrual bleeding). "Undiagnosed" describes the workup,
+      not the condition.
+notes: >-
+  The high risk of arterial or venous thrombotic diseases is not curated as a claim of its own: the label
+  gives it as the heading of a risk-factor list ("Examples include women who are known to: ..."), and
+  each listed risk factor is its own claim. Not curated: use of hepatitis C drug combinations containing
+  ombitasvir/paritaprevir/ritonavir, with or without dasabuvir (drug interaction, no condition). This
+  label lists no pregnancy contraindication and no hypersensitivity contraindication. This older-format
+  label has no Highlights; the bracketed cross-references ("[see WARNINGS (1) ]") are left out of the
+  quotes.

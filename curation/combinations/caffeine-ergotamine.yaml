@@ -1,0 +1,251 @@
+id: MEDICNE:combo-3e7b25cf-deeb-5a9f-8ec8-79a8388af1d9
+name: caffeine / ergotamine
+ingredients:
+- id: CHEBI:27732
+  label: caffeine
+- id: CHEBI:64318
+  label: ergotamine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 3a31ad0c-7bdd-544b-f5df-a99d04cf541c
+    version: 7
+    title: ERGOTAMINE TARTRATE and CAFFEINE SUPPOSITORIES USP (For Rectal Administration) Rx only
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3a31ad0c-7bdd-544b-f5df-a99d04cf541c
+  product_name: MIGERGOT
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: vascular headache
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: BROADER
+    examples:
+    - text: migraine
+      term:
+        id: MONDO:0005277
+        label: migraine disorder
+      binding: EXACT
+    - text: migraine variants
+      term:
+        id: MONDO:0005277
+        label: migraine disorder
+      binding: BROADER
+    - text: histaminic cephalalgia
+      term:
+        id: MONDO:0043537
+        label: cluster headache syndrome
+      binding: EXACT
+    quote: >-
+      Ergotamine Tartrate and Caffeine Indicated as therapy to abort or prevent vascular headache,
+      e.g., migraine, migraine variants or so-called “histaminic cephalalgia”.
+    explanation: >-
+      "Indicated as therapy to abort ... vascular headache" is treatment of an attack of vascular
+      headache (the "abort" half of "abort or prevent"); "e.g., migraine, migraine variants or
+      so-called histaminic cephalalgia" are the label's examples of the category.
+    status: DRAFT
+    notes: >-
+      No current vascular-headache term (searched MONDO "vascular headache", "headache"; HP
+      "vascular headache", "headache"): MONDO's vascular headache (MONDO:0040797) is obsolete, and
+      the grounding store still maps the phrase to it, so the validator rejects MONDO headache
+      disorder as unrelated (an obsolete-term row in the store should be reviewed). HP Headache is
+      the closest
+      broader term. "histaminic
+      cephalalgia" is the old name of cluster headache (MONDO exact synonyms "histamine
+      cephalgia", "histamine headache"). "migraine variants" has no term of its own and is bound
+      BROADER to migraine disorder. Product-level claim, unattributed. The prevention half of
+      "abort or prevent" is a separate claim. The validator's warning that the quote reads as risk
+      reduction comes from "prevent", which belongs to that other claim; "abort" an attack is
+      treatment.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: vascular headache
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: BROADER
+    examples:
+    - text: migraine
+      term:
+        id: MONDO:0005277
+        label: migraine disorder
+      binding: EXACT
+    - text: migraine variants
+      term:
+        id: MONDO:0005277
+        label: migraine disorder
+      binding: BROADER
+    - text: histaminic cephalalgia
+      term:
+        id: MONDO:0043537
+        label: cluster headache syndrome
+      binding: EXACT
+    quote: >-
+      Ergotamine Tartrate and Caffeine Indicated as therapy to abort or prevent vascular headache,
+      e.g., migraine, migraine variants or so-called “histaminic cephalalgia”.
+    explanation: >-
+      "Indicated as therapy to ... prevent vascular headache" is prevention of vascular headache
+      (the "prevent" half of "abort or prevent"); migraine, migraine variants and histaminic
+      cephalalgia are the label's examples.
+    status: DRAFT
+    notes: >-
+      As the TREATS claim; the label states both aborting and preventing, so each relation is a
+      claim. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnant
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0549206 is in no configured ontology
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    quote: >-
+      Ergotamine tartrate and caffeine is contraindicated in women who are or may become pregnant.
+    explanation: >-
+      "is contraindicated in women who are or may become pregnant" is a contraindication in
+      pregnancy; "women" gives the sex.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a pregnancy term. "or may become pregnant" extends the contraindication
+      to women who could conceive; it is kept in the quote, not a separate condition. The
+      preceding sentence ("may cause fetal harm when administered to pregnant women") states the
+      risk and names the product, not one ingredient, so the claim is unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal function and sepsis
+      member: Peripheral vascular disease
+      term:
+        id: MONDO:0005294
+        label: peripheral vascular disease
+      binding: EXACT
+    quote: >-
+      Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal
+      function and sepsis.
+    explanation: >-
+      A sentence of the Contraindications section listing conditions; this claim covers its first
+      member, peripheral vascular disease.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal function and sepsis
+      member: coronary heart disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    quote: >-
+      Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal
+      function and sepsis.
+    explanation: >-
+      A sentence of the Contraindications section listing conditions; this claim covers the member
+      coronary heart disease.
+    status: DRAFT
+    notes: >-
+      MONDO coronary artery disorder has "coronary heart disease" as an exact synonym.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal function and sepsis
+      member: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal
+      function and sepsis.
+    explanation: >-
+      A sentence of the Contraindications section listing conditions; this claim covers the member
+      hypertension.
+    status: DRAFT
+    notes: >-
+      HP Hypertension, as in the other combination files; MONDO has no term labelled or exactly
+      synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: impaired hepatic or renal function
+      member: impaired hepatic function
+      term:
+        id: HP:0001410
+        label: Decreased liver function
+      binding: EXACT
+    quote: >-
+      Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal
+      function and sepsis.
+    explanation: >-
+      A sentence of the Contraindications section listing conditions; this claim covers the member
+      impaired hepatic function, from the nested "impaired hepatic or renal function".
+    status: DRAFT
+    notes: >-
+      The object text is the nested coordination "impaired hepatic or renal function" rather than
+      the whole list: the validator splits the whole list at the wrong level ("impaired hepatic",
+      "renal function") and rejects the member "impaired hepatic function". The nested phrase is
+      the item of the list this claim covers.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: impaired hepatic or renal function
+      member: impaired renal function
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: EXACT
+    quote: >-
+      Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal
+      function and sepsis.
+    explanation: >-
+      A sentence of the Contraindications section listing conditions; this claim covers the member
+      impaired renal function, from the nested "impaired hepatic or renal function".
+    status: DRAFT
+    notes: >-
+      HP Renal insufficiency (exact synonym "Renal failure"), EXACT as other combination files
+      bind "renal impairment" (HP has no separate impaired-renal-function term; searched HP
+      "renal impairment", "impaired renal", "abnormal renal"); a reviewer may prefer BROADER. The grounding
+      store's UMLS:C1565489 Renal Insufficiencies is in no configured ontology. Object text is the
+      nested coordination, as for the hepatic claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal function and sepsis
+      member: sepsis
+      term:
+        id: HP:0100806
+        label: Sepsis
+      binding: EXACT
+    quote: >-
+      Peripheral vascular disease, coronary heart disease, hypertension, impaired hepatic or renal
+      function and sepsis.
+    explanation: >-
+      A sentence of the Contraindications section listing conditions; this claim covers its last
+      member, sepsis.
+    status: DRAFT
+    notes: >-
+      No MONDO term labelled "sepsis" (searched MONDO "sepsis"; only neonatal, bacterial and
+      non-human-animal sepsis); HP Sepsis is exact.
+notes: >-
+  Suppository product (MIGERGOT). Not curated: the CYP 3A4 inhibitor contraindication ("ergotamine
+  use is contraindicated with these drugs and other potent inhibitors of CYP 3A4") is a pure drug
+  interaction with no patient condition; ergotism, vasospasm, ischemia of the extremities and
+  cerebral ischemia in that passage are the risks of the interaction, not contraindicated
+  conditions. "may cause fetal harm" and "the patient should be apprised of the potential hazard
+  to the fetus" are risk and counselling statements. "Hypersensitivity to any of the components"
+  is an allergy to the product's own ingredients. No contraindication names caffeine or
+  ergotamine as its cause, so none is attributed.

@@ -1,0 +1,321 @@
+id: MEDICNE:combo-0449583c-e4fc-5128-9565-8a48e2da4c6c
+name: codeine / phenylephrine / promethazine
+ingredients:
+- id: CHEBI:16714
+  label: codeine
+- id: CHEBI:8093
+  label: phenylephrine
+- id: CHEBI:8461
+  label: promethazine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: >-
+    https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 5c3c2c1b-ab52-410b-8c94-c125c6adb4d2
+    version: 1
+    title: >-
+      PROMETHAZINE VC WITH CODEINE SYRUP (PROMETHAZINE HYDROCHLORIDE, USP, PHENYLEPHRINE HYDROCHLORIDE,
+      USP AND CODEINE PHOSPHATE, USP)
+    url: >-
+      https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5c3c2c1b-ab52-410b-8c94-c125c6adb4d2
+  product_name: Promethazine VC With Codeine
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: coughs
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Promethazine HCl, phenylephrine HCl and codeine phosphate syrup is indicated for the temporary relief
+      of coughs and upper respiratory symptoms, including nasal congestion, associated with allergy or
+      the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory
+      symptoms" names two conditions; this claim is the member "coughs". "associated with allergy or the
+      common cold" names the conditions they occur in; this claim takes the member "allergy" as the disease
+      context (one claim per symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed. MONDO allergic disease has the
+      exact synonym "allergy"; an indication context, not an allergy contraindication.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: coughs
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Promethazine HCl, phenylephrine HCl and codeine phosphate syrup is indicated for the temporary relief
+      of coughs and upper respiratory symptoms, including nasal congestion, associated with allergy or
+      the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory
+      symptoms" names two conditions; this claim is the member "coughs". "associated with allergy or the
+      common cold" names the conditions they occur in; this claim takes the member "the common cold" as
+      the disease context (one claim per symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no term
+        for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits under
+        Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper respiratory
+        tract disorder names a disease; the grounding store's UMLS:C0749874 is in no configured ontology
+    quote: >-
+      Promethazine HCl, phenylephrine HCl and codeine phosphate syrup is indicated for the temporary relief
+      of coughs and upper respiratory symptoms, including nasal congestion, associated with allergy or
+      the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    examples:
+    - text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory
+      symptoms" names two conditions; this claim is the member "upper respiratory symptoms"; "including
+      nasal congestion" lists an example, recorded in examples. "associated with allergy or the common
+      cold" names the conditions they occur in; this claim takes the member "allergy" as the disease context
+      (one claim per symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed. MONDO allergic disease has the
+      exact synonym "allergy"; an indication context, not an allergy contraindication.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no term
+        for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits under
+        Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper respiratory
+        tract disorder names a disease; the grounding store's UMLS:C0749874 is in no configured ontology
+    quote: >-
+      Promethazine HCl, phenylephrine HCl and codeine phosphate syrup is indicated for the temporary relief
+      of coughs and upper respiratory symptoms, including nasal congestion, associated with allergy or
+      the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    examples:
+    - text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory
+      symptoms" names two conditions; this claim is the member "upper respiratory symptoms"; "including
+      nasal congestion" lists an example, recorded in examples. "associated with allergy or the common
+      cold" names the conditions they occur in; this claim takes the member "the common cold" as the disease
+      context (one claim per symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: comatose states
+      term:
+        id: HP:0001259
+        label: Coma
+      binding: EXACT
+    quote: >-
+      Promethazine is contraindicated in comatose states, and in individuals known to be hypersensitive
+      or to have had an idiosyncratic reaction to promethazine or to other phenothiazines.
+    attributed_to:
+    - ingredient: CHEBI:8461
+      basis: INGREDIENT_SUBJECT
+      snippet: Promethazine is contraindicated
+      explanation: >-
+        Promethazine is the subject of "is contraindicated" in the sentence that names this condition.
+    explanation: '"Promethazine is contraindicated in comatose states": coma.'
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitive or to have had an idiosyncratic reaction
+      member: hypersensitive
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: phenothiazines
+      term:
+        id: CHEBI:38093
+        label: phenothiazines
+      binding: EXACT
+    quote: >-
+      Promethazine is contraindicated in comatose states, and in individuals known to be hypersensitive
+      or to have had an idiosyncratic reaction to promethazine or to other phenothiazines.
+    attributed_to:
+    - ingredient: CHEBI:8461
+      basis: INGREDIENT_SUBJECT
+      snippet: Promethazine is contraindicated
+      explanation: >-
+        Promethazine is the subject of "is contraindicated" in the sentence that names this condition.
+    explanation: >-
+      "Promethazine is contraindicated ... in individuals known to be hypersensitive ... to promethazine
+      or to other phenothiazines": drug allergy to other phenothiazines (cross-sensitivity); this claim
+      is the member "hypersensitive" of "hypersensitive or to have had an idiosyncratic reaction". drug
+      allergy is NARROWER than "hypersensitive", justified by the named drugs.
+    status: DRAFT
+    notes: >-
+      Promethazine as an allergen is the product's own ingredient and is dropped; only the other phenothiazines
+      are kept. The attribution rests on promethazine being the subject of "is contraindicated" (as for
+      clarithromycin in the amoxicillin/clarithromycin/lansoprazole file), not on its being an allergen.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitive or to have had an idiosyncratic reaction
+      member: to have had an idiosyncratic reaction
+      term:
+        id: HP:0020172
+        label: Adverse drug response
+      binding: BROADER
+    object_specialization:
+    - text: phenothiazines
+      term:
+        id: CHEBI:38093
+        label: phenothiazines
+      binding: EXACT
+    quote: >-
+      Promethazine is contraindicated in comatose states, and in individuals known to be hypersensitive
+      or to have had an idiosyncratic reaction to promethazine or to other phenothiazines.
+    attributed_to:
+    - ingredient: CHEBI:8461
+      basis: INGREDIENT_SUBJECT
+      snippet: Promethazine is contraindicated
+      explanation: >-
+        Promethazine is the subject of "is contraindicated" in the sentence that names this condition.
+    explanation: >-
+      "Promethazine is contraindicated ... in individuals known ... to have had an idiosyncratic reaction
+      to promethazine or to other phenothiazines": a prior idiosyncratic reaction to other phenothiazines.
+      HP Adverse drug response (exact synonym "Adverse drug reaction") is broader than an idiosyncratic
+      reaction.
+    status: DRAFT
+    notes: >-
+      "hypersensitive or to have had an idiosyncratic reaction" names two reactions; the hypersensitivity
+      is the preceding claim. The member keeps "to have had" because the validator's member expansion
+      does (a known tooling gap). No idiosyncratic-reaction term (searched HP/MONDO "idiosyncratic", "drug
+      reaction", "adverse drug"). Promethazine as the agent is the product's own and is dropped from the
+      specializations.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypertension or with peripheral vascular insufficiency
+      member: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Phenylephrine is contraindicated in patients with hypertension or with peripheral vascular insufficiency
+      (ischemia may result with risk of gangrene or thrombosis of compromised vascular beds).
+    attributed_to:
+    - ingredient: CHEBI:8093
+      basis: INGREDIENT_SUBJECT
+      snippet: Phenylephrine is contraindicated
+      explanation: >-
+        Phenylephrine is the subject of "is contraindicated" in the sentence that names this condition.
+    explanation: >-
+      "Phenylephrine is contraindicated in patients with hypertension or with peripheral vascular insufficiency";
+      this claim is the member "hypertension".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypertension or with peripheral vascular insufficiency
+      member: with peripheral vascular insufficiency
+      term:
+        id: MONDO:0020674
+        label: vascular insufficiency disorder
+      binding: BROADER
+    quote: >-
+      Phenylephrine is contraindicated in patients with hypertension or with peripheral vascular insufficiency
+      (ischemia may result with risk of gangrene or thrombosis of compromised vascular beds).
+    attributed_to:
+    - ingredient: CHEBI:8093
+      basis: INGREDIENT_SUBJECT
+      snippet: Phenylephrine is contraindicated
+      explanation: >-
+        Phenylephrine is the subject of "is contraindicated" in the sentence that names this condition.
+    explanation: >-
+      The same sentence; this claim is the member "with peripheral vascular insufficiency" (the member
+      keeps the preposition because the validator's member expansion does). MONDO vascular insufficiency
+      disorder (exact synonym "vascular insufficiency") lacks "peripheral", so BROADER. The parenthesis
+      gives the risk (ischemia, gangrene, thrombosis), not further conditions.
+    status: DRAFT
+    notes: >-
+      No peripheral vascular insufficiency term (searched MONDO "vascular insufficiency", "peripheral
+      vascular", "peripheral arterial", "arterial insufficiency"; HP "peripheral vascular", "vascular
+      insufficiency", "arterial insufficiency"). MONDO peripheral vascular disease is a sibling, not a
+      parent, of vascular insufficiency disorder; binding it would drop the anchor "vascular insufficiency".
+notes: >-
+  Prescription-format label. The single indication sentence is split per symptom (coughs; upper respiratory
+  symptoms, with nasal congestion as its listed example) and per condition (allergy; the common cold),
+  as in the brompheniramine/dextromethorphan/pseudoephedrine file. No indication is assigned to an ingredient.
+  Contraindications curated: promethazine's comatose states, hypersensitivity and idiosyncratic reaction
+  to other phenothiazines (attributed to promethazine, the subject of "is contraindicated"); phenylephrine's
+  hypertension and peripheral vascular insufficiency (attributed to phenylephrine). Not curated: "Codeine
+  is contraindicated in patients with a known hypersensitivity to the drug" and "Phenylephrine should
+  not be used in patients known to be hypersensitive to the drug" (allergy to the product's own ingredients);
+  "or in those receiving a monoamine oxidase inhibitor (MAOI)" (a drug interaction); "contraindicated
+  in pediatric patients less than 6 years of age, because the combination may cause fatal respiratory
+  depression" (an age population with no condition; the respiratory depression is the risk, not a patient
+  condition); "Antihistamines and codeine are both contraindicated for use in the treatment of lower respiratory
+  tract symptoms, including asthma" (left for the reviewer: it sits in the Contraindications section and
+  says "contraindicated", but what it contraindicates is a use, "for use in the treatment of" lower respiratory
+  tract symptoms, not a patient condition; it is worded more strongly than the brompheniramine/dextromethorphan/pseudoephedrine
+  file's "should not be used to treat", which that file also left uncurated. If curated, the object would
+  be "lower respiratory tract symptoms" (term_gap) with asthma as an example, attributable to codeine
+  as a co-subject).

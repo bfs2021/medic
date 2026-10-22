@@ -1,0 +1,398 @@
+id: MEDICNE:combo-8e53ec6b-e968-5ef1-96aa-7fecf9b539cf
+name: dienogest / Estradiol valerate
+ingredients:
+- id: CHEBI:70708
+  label: dienogest
+- id: CHEBI:31561
+  label: Estradiol valerate
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 3fbcd7d8-cc53-4dbb-8edc-451acadc472c
+    version: 1
+    title: 'These highlights do not include all the information needed to use Natazia safely and effectively.
+      See full prescribing information for Natazia. Natazia (estradiol valerate and estradiol valerate/dienogest)
+      tablets for oral use Initial U.S. Approval: 2010'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3fbcd7d8-cc53-4dbb-8edc-451acadc472c
+  product_name: Natazia
+  claims:
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy", "pregnan", "contracept"; HP "pregnancy", "pregnant", "pregnan"; PATO
+        "pregnan": no term for pregnancy as a state (only pregnancy disorders, exposures and modifiers);
+        the grounding store's UMLS:C0032961 is in no configured ontology
+    quote: Natazia™ is indicated for use by women to prevent pregnancy.
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "indicated for use by women to prevent pregnancy" is contraception: PREVENTATIVE_FOR_CONDITION with
+      pregnancy as the object; "women" gives the sex.
+    status: DRAFT
+    notes: >-
+      Quoted from section 1 of the full text; the Highlights restate it ("an estrogen/progestin COC indicated
+      for use by women to prevent pregnancy"). "The efficacy of Natazia in women with a body mass index
+      (BMI) of > 30 kg/m 2 has not been evaluated" is negated; no claim. This label version (v1) carries
+      no heavy menstrual bleeding indication. Object unbound (no configured ontology has a pregnancy term).
+      Product-level claim, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Smoke
+      term_gap: >-
+        searched MONDO "smok", "tobacco", "nicotine"; HP "smok", "tobacco": only nicotine dependence /
+        addictive nicotine use, HP:0430133 Tobacco use history (an exposure history, not current smoking)
+        and modifiers ("Triggered by smoking"); no term for being a smoker
+    quote: Smoke, if over age 35
+    age_range:
+      min_years: 35
+      text: over age 35
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "if over age 35" restricts it, recorded as age_range.
+    status: DRAFT
+    notes: >-
+      A risk factor rather than a disease; unbound for lack of a term. "over" is a strict bound; age_range
+      has no exclusive bound, so min_years 35 is the nearest encoding.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      Have deep vein thrombosis or pulmonary embolism, now or in the past
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "deep vein thrombosis" of the coordination "deep vein thrombosis
+      or pulmonary embolism"; "now or in the past" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode. No MONDO DVT term, so HP.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      Have deep vein thrombosis or pulmonary embolism, now or in the past
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "pulmonary embolism" of the coordination "deep vein thrombosis or
+      pulmonary embolism"; "now or in the past" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cerebrovascular disease
+      term:
+        id: MONDO:0011057
+        label: cerebrovascular disorder
+      binding: EXACT
+    quote: Have cerebrovascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "Have cerebrovascular disease" is an item of that list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    quote: Have coronary artery disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "Have coronary artery disease" is an item of that list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic valvular diseases of the heart
+      term:
+        id: MONDO:0002869
+        label: heart valve disorder
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: subacute bacterial endocarditis with valvular disease
+      term:
+        id: MONDO:0006981
+        label: subacute bacterial endocarditis
+      binding: BROADER
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "thrombogenic valvular diseases of the heart" of the coordination;
+      heart valve disorder lacks "thrombogenic", so BROADER. Of the shared "(for example, ...)" members,
+      "subacute bacterial endocarditis with valvular disease" is the valvular example.
+    status: DRAFT
+    notes: >-
+      Assigning the shared examples to members (SBE with valvular disease -> valvular, atrial fibrillation
+      -> rhythm) is a reading of the list; the label gives them for the pair. "with valvular disease"
+      narrows SBE, so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic rhythm diseases of the heart
+      term:
+        id: MONDO:0007263
+        label: cardiac rhythm disease
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: atrial fibrillation
+      term:
+        id: MONDO:0004981
+        label: atrial fibrillation
+      binding: EXACT
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". This claim is the member "thrombogenic rhythm diseases of the heart"; no thrombogenic-arrhythmia
+      term, so cardiac rhythm disease BROADER. Of the shared "(for example, ...)" members, "atrial fibrillation"
+      is the rhythm example.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: inherited or acquired hypercoagulopathies
+      term:
+        id: MONDO:0002305
+        label: thrombophilia
+      binding: EXACT
+    quote: Have inherited or acquired hypercoagulopathies
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "inherited or acquired" is an exhaustive pair: together the two alternatives name every hypercoagulopathy,
+      so the claim is the class, thrombophilia (hypercoagulability).
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: uncontrolled hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: Have uncontrolled hypertension
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "Have uncontrolled hypertension" is an item of that list. "uncontrolled" narrows the term,
+      so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO hypertensive disorder has no "hypertension" synonym, so HP Hypertension.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes with vascular disease
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: Have diabetes with vascular disease
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "Have diabetes with vascular disease" is an item of that list; "diabetes" is read as diabetes
+      mellitus, and "with vascular disease" narrows it, so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO:0000960 diabetic peripheral angiopathy is labelled peripheral-only, so not bound; a reviewer
+      may prefer it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: headaches with focal neurological symptoms or have migraine headaches with or without aura
+      member: headaches with focal neurological symptoms
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: BROADER
+    quote: >-
+      Have headaches with focal neurological symptoms or have migraine headaches with or without aura
+      if over age 35
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". "Have headaches with focal neurological symptoms" is the first of two predicates joined by
+      "or have"; the repeated verb ("or have migraine headaches ... if over age 35") binds the age
+      restriction to the migraine member only. No term for headache with focal neurological symptoms,
+      so Headache BROADER.
+    status: DRAFT
+    notes: Searched HP "Headache", "focal".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: headaches with focal neurological symptoms or have migraine headaches with or without aura
+      member: migraine headaches with or without aura
+      term:
+        id: MONDO:0005277
+        label: migraine disorder
+      binding: EXACT
+    quote: >-
+      Have headaches with focal neurological symptoms or have migraine headaches with or without aura
+      if over age 35
+    age_range:
+      min_years: 35
+      text: over age 35
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include women who are known
+      to:". The second predicate, "or have migraine headaches with or without aura", carries its own
+      restriction "if over age 35", recorded as age_range; "with or without aura" covers all migraine,
+      so EXACT.
+    status: DRAFT
+    notes: >-
+      "over" is a strict bound (older than 35); age_range has no exclusive bound, so min_years 35 is
+      the nearest encoding.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Undiagnosed abnormal genital bleeding
+      term:
+        id: HP:0001892
+        label: Abnormal bleeding
+      binding: BROADER
+    quote: Undiagnosed abnormal genital bleeding
+    explanation: >-
+      An item of "Do not prescribe Natazia to women who are known to have the following:" after the thrombotic risk-factor list:
+      undiagnosed abnormal genital bleeding.
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for genital bleeding (searched HP "genital bleeding", "genital hemorrhage", "genital",
+      "vaginal bleeding", "uterine bleeding"). Genital bleeding covers uterine and vaginal bleeding, so neither
+      HP:0034263 Abnormal vaginal bleeding nor HP:0000140 Abnormality of the menstrual cycle (bound for
+      "abnormal uterine bleeding" in the sibling files) is a superclass of it; HP Abnormal bleeding is,
+      so BROADER. A reviewer may prefer HP:0000140 for consistency. "Undiagnosed" describes the workup,
+      not the condition. Grounding store maps the text to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Breast cancer or other estrogen- or progestin-sensitive cancer
+      member: Breast cancer
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: Breast cancer or other estrogen- or progestin-sensitive cancer, now or in the past
+    explanation: >-
+      An item of "Do not prescribe Natazia to women who are known to have the following:"; this claim is the member "Breast cancer" of the coordination "Breast cancer or other estrogen- or progestin-sensitive cancer". "now
+      or in the past" covers current disease and a past one.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope. The full-text item is quoted because, unlike the sibling labels,
+      it already carries the whole coordination; the Highlights restate it without "now or in the past".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Breast cancer or other estrogen- or progestin-sensitive cancer
+      member: other estrogen-sensitive cancer
+      term_gap: >-
+        searched MONDO "hormone", "estrogen", "progest", "cancer": no term for estrogen-sensitive cancer
+        in general (only MONDO:0700079 hormone receptor-positive breast cancer); MONDO cancer would drop
+        the hormone sensitivity
+    quote: Breast cancer or other estrogen- or progestin-sensitive cancer, now or in the past
+    explanation: >-
+      The same item also names "other estrogen- or progestin-sensitive cancer"; this claim covers "other
+      estrogen-sensitive cancer", now or in the past.
+    status: DRAFT
+    notes: >-
+      Unbound; the member distinguishes this claim from its sibling. No slot records a temporal scope.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Breast cancer or other estrogen- or progestin-sensitive cancer
+      member: other progestin-sensitive cancer
+      term_gap: >-
+        searched MONDO "hormone", "estrogen", "progest", "cancer": no term for progestin-sensitive cancer
+        in general (only MONDO:0700079 hormone receptor-positive breast cancer); MONDO cancer would drop
+        the hormone sensitivity
+    quote: Breast cancer or other estrogen- or progestin-sensitive cancer, now or in the past
+    explanation: >-
+      The same item also names "other estrogen- or progestin-sensitive cancer"; this claim covers "other
+      progestin-sensitive cancer", now or in the past.
+    status: DRAFT
+    notes: >-
+      Unbound; the member distinguishes this claim from its sibling. No slot records a temporal scope.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Liver tumors, benign or malignant, or liver disease
+      member: Liver tumors
+      term:
+        id: MONDO:0024477
+        label: liver and intrahepatic bile duct neoplasm
+      binding: EXACT
+    quote: Liver tumors, benign or malignant, or liver disease
+    explanation: >-
+      An item of "Do not prescribe Natazia to women who are known to have the following:"; this claim is the member "Liver tumors" of the coordination "Liver tumors, benign or malignant, or liver disease". "benign
+      or malignant" is an exhaustive pair spanning every liver tumor, so the general liver tumor term is
+      EXACT.
+    status: DRAFT
+    notes: '"liver tumor" is an exact synonym of the term.'
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Liver tumors, benign or malignant, or liver disease
+      member: liver disease
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: EXACT
+    quote: Liver tumors, benign or malignant, or liver disease
+    explanation: >-
+      The same item; this claim is the member "liver disease" of the coordination "Liver tumors, benign or malignant, or liver disease".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding store's
+        UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Pregnancy, because there is no reason to use COCs during pregnancy
+    explanation: >-
+      An item of "Do not prescribe Natazia to women who are known to have the following:": pregnancy. The stated reason ("there is no reason to use COCs during pregnancy")
+      names no ingredient.
+    status: DRAFT
+    notes: Unbound for lack of a term.
+notes: >-
+  The high risk of arterial or venous thrombotic diseases is not curated as a claim of its own: the label
+  gives it as the heading of a risk-factor list ("Examples include women who are known to: ..."), and
+  each listed risk factor is its own claim. "Do not prescribe Natazia to women who are known to have the
+  following:" is this label's contraindication lead. The bracketed cross-references ("[see Warnings and
+  Precautions ( 5.1 )]") are left out of the quotes. The Highlights copy restates the full-text contraindications
+  in shorter form ("Liver tumors or liver disease"); full-text items are quoted. The label lists no hypersensitivity
+  and no hepatitis C co-administration contraindication.

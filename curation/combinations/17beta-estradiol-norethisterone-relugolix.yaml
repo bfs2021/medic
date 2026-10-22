@@ -1,0 +1,491 @@
+id: MEDICNE:combo-cb506241-adf0-5def-9ceb-95af7f560084
+name: 17beta-estradiol / norethisterone / relugolix
+ingredients:
+- id: CHEBI:16469
+  label: 17beta-estradiol
+- id: CHEBI:7627
+  label: norethisterone
+- id: CHEBI:750198
+  label: relugolix
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: fc3feb73-cc84-43a8-aa32-b262460495e8
+    version: 18
+    title: 'These highlights do not include all the information needed to use MYFEMBREE safely and effectively.
+      See full prescribing information for MYFEMBREE. MYFEMBREE® (relugolix, estradiol, and norethindrone
+      acetate) tablets, for oral useInitial U.S. Approval: 2021'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fc3feb73-cc84-43a8-aa32-b262460495e8
+  product_name: Myfembree
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: heavy menstrual bleeding
+      term:
+        id: HP:0000132
+        label: Menorrhagia
+      binding: EXACT
+    quote: >-
+      MYFEMBREE is indicated for the management of heavy menstrual bleeding associated with uterine
+      leiomyomas (fibroids) in premenopausal women
+    disease_context:
+      text: uterine leiomyomas
+      term:
+        id: HP:0000131
+        label: Uterine leiomyoma
+      binding: EXACT
+    life_stage:
+      text: premenopausal
+      term_gap: >-
+        searched HsapDv "menopause", "premenopause", "perimenopausal", "adult", "menarche", PATO
+        "premenopausal", HP "menarche": no premenopausal life-stage term (adult stage would drop the
+        restriction; HP:6000309 "Menstruating female between menarche and menopause" is a
+        past-medical-history phenotype, not a life stage)
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "is indicated for the management of heavy menstrual bleeding" gives TREATS and the object;
+      "associated with uterine leiomyomas (fibroids)" is the disease context; "in premenopausal
+      women" gives the life stage (premenopausal) and the sex (women).
+    status: DRAFT
+    notes: >-
+      "management of" -> TREATS. HP Menorrhagia (exact synonym "Abnormally heavy bleeding during
+      menstruation"); no MONDO term (searched MONDO "menorrhagia", "heavy menstrual bleeding").
+      Context: HP Uterine leiomyoma (exact synonym Uterine fibroid); MONDO:0007886 uterine corpus
+      leiomyoma is restricted to the corpus. Grounding store maps "heavy menstrual bleeding" to
+      UMLS:C0025323. Product-level claim, unattributed; the 24-month Limitations of Use produce no
+      claim.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: moderate to severe pain
+      term:
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: >-
+      MYFEMBREE is indicated for the management of moderate to severe pain associated with
+      endometriosis in premenopausal women
+    disease_context:
+      text: endometriosis
+      term:
+        id: MONDO:0005133
+        label: endometriosis
+      binding: EXACT
+    life_stage:
+      text: premenopausal
+      term_gap: >-
+        searched HsapDv "menopause", "premenopause", "perimenopausal", "adult", "menarche", PATO
+        "premenopausal", HP "menarche": no premenopausal life-stage term (adult stage would drop the
+        restriction; HP:6000309 "Menstruating female between menarche and menopause" is a
+        past-medical-history phenotype, not a life stage)
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "is indicated for the management of moderate to severe pain" gives TREATS and the object (pain,
+      with a severity the bound term lacks); "associated with endometriosis" is the disease context;
+      "in premenopausal women" gives the life stage and the sex.
+    status: DRAFT
+    notes: >-
+      Object is the pain, context endometriosis (same pattern as bronchospasm | COPD). "moderate to
+      severe" narrows, so BROADER. "management of" -> TREATS per the decision table, although the
+      claim is symptomatic; a reviewer may prefer AMELIORATES_CONDITION.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: smoke
+      term_gap: >-
+        searched MONDO "smok", "tobacco", "nicotine"; HP "smok", "tobacco": only nicotine dependence /
+        addictive nicotine use, HP:0430133 Tobacco use history (an exposure history, not current
+        smoking) and modifiers ("Triggered by smoking"); no term for being a smoker
+    quote: >-
+      Examples include women over 35 years of age who smoke
+    age_range:
+      min_years: 35
+      text: over 35 years of age
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: the sentence lists "women over 35 years of age who
+      smoke" as an example of the high risk of arterial, venous thrombotic, or thromboembolic
+      disorders that the contraindication names. The object is smoking ("who smoke"); "over 35 years
+      of age" restricts it, recorded as age_range.
+    status: DRAFT
+    notes: >-
+      A risk factor rather than a disease; unbound for lack of a term. "over" is a strict bound
+      (older than 35); age_range has no exclusive bound, so min_years 35 is the nearest encoding.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      current or history of deep vein thrombosis or pulmonary embolism
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: this claim is the member "deep vein thrombosis" of
+      the coordination "deep vein thrombosis or pulmonary embolism", listed after "Examples include ... women who are known to
+      have:" under the high risk of thrombotic disorders. "current or history of" covers current
+      disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode. No MONDO DVT term (searched MONDO "deep vein thrombosis",
+      "venous thrombosis"), so HP.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      current or history of deep vein thrombosis or pulmonary embolism
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: this claim is the member "pulmonary embolism" of
+      the coordination "deep vein thrombosis or pulmonary embolism", listed after "Examples include ... women who are known to
+      have:". "current or history of" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also
+      contraindicates a past episode.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: vascular disease
+      term:
+        id: MONDO:0005385
+        label: vascular disorder
+      binding: EXACT
+    quote: >-
+      vascular disease (e.g., cerebrovascular disease, coronary artery disease, peripheral vascular
+      disease)
+    examples:
+    - text: cerebrovascular disease
+      term:
+        id: MONDO:0011057
+        label: cerebrovascular disorder
+      binding: EXACT
+    - text: coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    - text: peripheral vascular disease
+      term:
+        id: MONDO:0005294
+        label: peripheral vascular disease
+      binding: EXACT
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: "vascular disease" is an item of the list after
+      "Examples include ... women who are known to have:". Its "(e.g., ...)" members are recorded as
+      examples of the category.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic valvular diseases of the heart
+      term:
+        id: MONDO:0002869
+        label: heart valve disorder
+      binding: BROADER
+    quote: >-
+      thrombogenic valvular or thrombogenic rhythm diseases of the heart (e.g., subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: subacute bacterial endocarditis with valvular disease
+      term:
+        id: MONDO:0006981
+        label: subacute bacterial endocarditis
+      binding: BROADER
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
+      known to have:". This claim is the member "thrombogenic valvular diseases of the heart" of the
+      coordination; heart valve disorder lacks "thrombogenic", so BROADER. Of the shared "(e.g., ...)"
+      members, "subacute bacterial endocarditis with valvular disease" is the valvular example.
+    status: DRAFT
+    notes: >-
+      Assigning the shared examples to members (SBE with valvular disease -> valvular, atrial
+      fibrillation -> rhythm) is a reading of the list; the label gives them for the pair. "with
+      valvular disease" narrows SBE, so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic rhythm diseases of the heart
+      term:
+        id: MONDO:0007263
+        label: cardiac rhythm disease
+      binding: BROADER
+    quote: >-
+      thrombogenic valvular or thrombogenic rhythm diseases of the heart (e.g., subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: atrial fibrillation
+      term:
+        id: MONDO:0004981
+        label: atrial fibrillation
+      binding: EXACT
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
+      known to have:". This claim is the member "thrombogenic rhythm diseases of the heart"; no
+      thrombogenic-arrhythmia term, so cardiac rhythm disease BROADER. Of the shared "(e.g., ...)"
+      members, "atrial fibrillation" is the rhythm example.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: inherited or acquired hypercoagulopathies
+      term:
+        id: MONDO:0002305
+        label: thrombophilia
+      binding: EXACT
+    quote: >-
+      inherited or acquired hypercoagulopathies
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
+      known to have:". "inherited or acquired" is an exhaustive pair: together the two alternatives
+      name every hypercoagulopathy, so the claim is the class, thrombophilia (hypercoagulability).
+    status: DRAFT
+    notes: >-
+      One claim on the class term rather than one per member (inherited thrombophilia / acquired),
+      per the exhaustive-pair rule.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: uncontrolled hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      uncontrolled hypertension
+    explanation: >-
+      Contraindicated as a thrombotic risk factor: "uncontrolled hypertension" is an item of the list
+      after "Examples include ... women who are known to have:". "uncontrolled" narrows the term, so
+      BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO hypertensive disorder has no "hypertension" synonym, so HP Hypertension.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: headaches with focal neurological symptoms or migraine headaches with aura
+      member: headaches with focal neurological symptoms
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: BROADER
+    quote: >-
+      headaches with focal neurological symptoms or migraine headaches with aura if over 35 years of
+      age
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
+      known to have:". This claim is the member "headaches with focal neurological symptoms" of the
+      coordination "headaches with focal neurological symptoms or migraine headaches with aura". The
+      wording leaves open whether "if over 35 years of age" covers both members; this claim takes
+      the reading that it bounds the migraine member only, so no age restriction here. No term for headache with focal neurological symptoms, so Headache BROADER.
+    status: DRAFT
+    notes: >-
+      The age bound's scope is ambiguous in this wording (the drospirenone COC label repeats the verb,
+      "or have migraine headaches ... if over age 35", which bounds the migraine member only). A
+      reviewer who reads the bound as covering both members should add the age_range here. Searched
+      HP "Headache", "focal".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: headaches with focal neurological symptoms or migraine headaches with aura
+      member: migraine headaches with aura
+      term:
+        id: MONDO:0005475
+        label: migraine with aura
+      binding: EXACT
+    quote: >-
+      headaches with focal neurological symptoms or migraine headaches with aura if over 35 years of
+      age
+    age_range:
+      min_years: 35
+      text: over 35 years of age
+    explanation: >-
+      Contraindicated as a thrombotic risk factor, listed after "Examples include ... women who are
+      known to have:". This claim is the member "migraine headaches with aura" of the coordination
+      "headaches with focal neurological symptoms or migraine headaches with aura"; it carries the
+      restriction "if over 35 years of age", recorded as age_range.
+    status: DRAFT
+    notes: >-
+      "over" is a strict bound (older than 35); age_range has no exclusive bound, so min_years 35 is
+      the nearest encoding. Grounding store maps "migraine headaches with aura" to
+      sssom:NoTermFound; MONDO migraine with aura fits.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnant
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0549206 is in no configured ontology
+    quote: >-
+      Who are pregnant.
+    explanation: >-
+      "MYFEMBREE is contraindicated in women: ... Who are pregnant." lists pregnancy as a
+      contraindication; the object is the state of being pregnant.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. The following sentence (risk of early pregnancy loss) is the
+      reason, not a further claim. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: osteoporosis
+      term:
+        id: MONDO:0005298
+        label: osteoporosis
+      binding: EXACT
+    quote: >-
+      With known osteoporosis, because of the risk of further bone loss
+    explanation: >-
+      An item of "MYFEMBREE is contraindicated in women:": "With known osteoporosis". The stated
+      reason (further bone loss) names no ingredient.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breast cancer or other hormone-sensitive malignancies
+      member: breast cancer
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: >-
+      With current or history of breast cancer or other hormone-sensitive malignancies, and with
+      increased risk for hormone-sensitive malignancies
+    explanation: >-
+      An item of "MYFEMBREE is contraindicated in women:": "With current or history of breast cancer
+      ..."; this claim is the member "breast cancer" of the coordination "breast cancer or other
+      hormone-sensitive malignancies", current or past.
+    status: DRAFT
+    notes: >-
+      "current or history of": the label contraindicates current breast cancer and a history of it;
+      no slot records a temporal scope.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breast cancer or other hormone-sensitive malignancies
+      member: other hormone-sensitive malignancies
+      term_gap: >-
+        searched MONDO "hormone", "hormone-sensitive", "hormone-dependent", "cancer": no term for
+        hormone-sensitive cancer in general (only hormone receptor-positive breast cancer); MONDO:0004992
+        cancer, which the grounding store matches, would drop the hormone sensitivity
+    quote: >-
+      With current or history of breast cancer or other hormone-sensitive malignancies, and with
+      increased risk for hormone-sensitive malignancies
+    explanation: >-
+      An item of "MYFEMBREE is contraindicated in women:": "With current or history of ... other
+      hormone-sensitive malignancies"; this claim is the member "other hormone-sensitive malignancies"
+      of the coordination "breast cancer or other hormone-sensitive malignancies", current or past.
+    status: DRAFT
+    notes: >-
+      "current or history of": current disease or a history of it; no slot records a temporal scope.
+      Being at increased risk for these malignancies is a separate contraindication, the next claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: increased risk for hormone-sensitive malignancies
+      term_gap: >-
+        searched MONDO "hormone", "hormone-sensitive", "hormone-dependent", "cancer": no term for
+        hormone-sensitive cancer, and no ontology term for being at increased risk of a disease;
+        MONDO:0004992 cancer, which the grounding store matches, would claim the disease itself
+    quote: >-
+      With current or history of breast cancer or other hormone-sensitive malignancies, and with
+      increased risk for hormone-sensitive malignancies
+    explanation: >-
+      The same item continues "and with increased risk for hormone-sensitive malignancies": women at
+      increased risk, without current or past disease, are also contraindicated. The object is that
+      risk state.
+    status: DRAFT
+    notes: >-
+      Not in the Highlights summary ("Current or history of breast cancer or other hormone-sensitive
+      malignancies"), but stated in the full-text Contraindications. Unbound; the label gives no risk
+      factors that could be curated instead.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hepatic impairment or disease
+      member: hepatic impairment
+      term:
+        id: HP:0001410
+        label: Decreased liver function
+      binding: EXACT
+    quote: >-
+      With known hepatic impairment or disease
+    explanation: >-
+      An item of "MYFEMBREE is contraindicated in women:". "hepatic impairment or disease" is a
+      coordination; this claim is the member "hepatic impairment".
+    status: DRAFT
+    notes: >-
+      No MONDO hepatic-impairment term; HP Decreased liver function (exact synonym Liver
+      dysfunction), as in the abacavir/lamivudine file.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hepatic impairment or disease
+      member: hepatic disease
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: EXACT
+    quote: >-
+      With known hepatic impairment or disease
+    explanation: >-
+      An item of "MYFEMBREE is contraindicated in women:". This claim is the member "hepatic disease"
+      of the coordination "hepatic impairment or disease"; liver disorder has the exact synonym
+      "hepatic disease".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: undiagnosed abnormal uterine bleeding
+      term:
+        id: HP:0000140
+        label: Abnormality of the menstrual cycle
+      binding: BROADER
+    quote: >-
+      With undiagnosed abnormal uterine bleeding.
+    explanation: >-
+      An item of "MYFEMBREE is contraindicated in women:": "With undiagnosed abnormal uterine
+      bleeding".
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for abnormal uterine bleeding, so the parent HP Abnormality of the menstrual
+      cycle, BROADER. Not Metrorrhagia: HP lists "Abnormal uterus bleeding" as an exact synonym of
+      HP:0100608 Metrorrhagia, although metrorrhagia means intermenstrual bleeding while abnormal
+      uterine bleeding also covers heavy menstrual bleeding; the synonym should be reported upstream
+      to HPO. "undiagnosed" describes the workup, not the condition. Grounding store maps the text
+      to UMLS:C0019080 / UMLS:C3650625.
+notes: >-
+  The high risk of arterial, venous thrombotic, or thromboembolic disorders is not curated as a claim
+  of its own: the label gives it as the heading of a risk-factor list ("Examples include ..."), and each
+  listed risk factor is its own claim. Not curated: "known anaphylactic reaction, angioedema, or
+  hypersensitivity to MYFEMBREE or any of its components" (allergy to the product itself); the
+  Limitations of Use (24-month limit for bone loss), which the helper prints as LIMITATION_STATEMENT
+  in both the Highlights and the full text. The Highlights restate the full-text indications and
+  contraindications.

@@ -1,0 +1,449 @@
+id: MEDICNE:combo-03d33cbd-f1d2-5669-9f73-688cde48240f
+name: 17alpha-ethynylestradiol / norelgestromin
+ingredients:
+- id: CHEBI:4903
+  label: 17alpha-ethynylestradiol
+- id: CHEBI:135398
+  label: norelgestromin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: >-
+    https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: f7848550-086a-43d8-8ae5-047f4b9e4382
+    version: 17
+    title: >-
+      These highlights do not include all the information needed to use XULANE® safely and effectively.
+      See full prescribing information for XULANE. XULANE® (norelgestromin and ethinyl estradiol transdermal
+      system)Initial U.S. Approval: 2001
+    url: >-
+      https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f7848550-086a-43d8-8ae5-047f4b9e4382
+  product_name: XULANE
+  claims:
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy", "pregnan", "contracept"; HP "pregnancy", "pregnant", "pregnan"; PATO
+        "pregnan": no term for pregnancy as a state (only pregnancy disorders, exposures and modifiers);
+        the grounding store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Xulane is indicated for the prevention of pregnancy in women with a body mass index (BMI) < 30 kg/m
+      2 for whom a combined hormonal contraceptive is appropriate.
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "indicated for the prevention of pregnancy in women" is contraception: PREVENTATIVE_FOR_CONDITION
+      with pregnancy as the object; "women" gives the sex.
+    status: DRAFT
+    notes: >-
+      The restriction to women with a BMI < 30 kg/m2 has no slot (it is a negative restriction: not obese);
+      it is the counterpart of the BMI >= 30 contraindication, which is curated. "for whom a combined
+      hormonal contraceptive is appropriate" is a population criterion. The Limitations of Use (less effective
+      at 198 lbs / 90 kg or more) produce no claim. Object unbound (no configured ontology has a pregnancy
+      term). Product-level claim, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Smoke
+      term_gap: >-
+        searched MONDO "smok", "tobacco", "nicotine"; HP "smok", "tobacco": only nicotine dependence /
+        addictive nicotine use, HP:0430133 Tobacco use history (an exposure history, not current smoking)
+        and modifiers ("Triggered by smoking"); no term for being a smoker
+    quote: Smoke, if over age 35
+    age_range:
+      min_years: 35
+      text: over age 35
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". "if
+      over age 35" restricts it, recorded as age_range.
+    status: DRAFT
+    notes: >-
+      A risk factor rather than a disease; unbound for lack of a term. "over" is a strict bound; age_range
+      has no exclusive bound, so min_years 35 is the nearest encoding.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      Have deep vein thrombosis or pulmonary embolism, now or in the past
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". This
+      claim is the member "deep vein thrombosis" of the coordination "deep vein thrombosis or pulmonary
+      embolism"; "now or in the past" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also contraindicates
+      a past episode. No MONDO DVT term, so HP.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis or pulmonary embolism
+      member: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      Have deep vein thrombosis or pulmonary embolism, now or in the past
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". This
+      claim is the member "pulmonary embolism" of the coordination "deep vein thrombosis or pulmonary
+      embolism"; "now or in the past" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope, so the object alone reads as current disease; the label also contraindicates
+      a past episode.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: inherited or acquired hypercoagulopathies
+      term:
+        id: MONDO:0002305
+        label: thrombophilia
+      binding: EXACT
+    quote: Have inherited or acquired hypercoagulopathies
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". "inherited
+      or acquired" is an exhaustive pair: together the two alternatives name every hypercoagulopathy,
+      so the claim is the class, thrombophilia (hypercoagulability).
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cerebrovascular disease
+      term:
+        id: MONDO:0011057
+        label: cerebrovascular disorder
+      binding: EXACT
+    quote: Have cerebrovascular disease
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". "Have
+      cerebrovascular disease" is an item of that list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    quote: Have coronary artery disease
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". "Have
+      coronary artery disease" is an item of that list.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic valvular diseases of the heart
+      term:
+        id: MONDO:0002869
+        label: heart valve disorder
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: subacute bacterial endocarditis with valvular disease
+      term:
+        id: MONDO:0006981
+        label: subacute bacterial endocarditis
+      binding: BROADER
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". This
+      claim is the member "thrombogenic valvular diseases of the heart" of the coordination; heart valve
+      disorder lacks "thrombogenic", so BROADER. Of the shared "(for example, ...)" members, "subacute
+      bacterial endocarditis with valvular disease" is the valvular example.
+    status: DRAFT
+    notes: >-
+      Assigning the shared examples to members (SBE with valvular disease -> valvular, atrial fibrillation
+      -> rhythm) is a reading of the list; the label gives them for the pair. "with valvular disease"
+      narrows SBE, so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        thrombogenic valvular or thrombogenic rhythm diseases of the heart
+      member: thrombogenic rhythm diseases of the heart
+      term:
+        id: MONDO:0007263
+        label: cardiac rhythm disease
+      binding: BROADER
+    quote: >-
+      Have thrombogenic valvular or thrombogenic rhythm diseases of the heart (for example, subacute bacterial
+      endocarditis with valvular disease, or atrial fibrillation)
+    examples:
+    - text: atrial fibrillation
+      term:
+        id: MONDO:0004981
+        label: atrial fibrillation
+      binding: EXACT
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". This
+      claim is the member "thrombogenic rhythm diseases of the heart"; no thrombogenic-arrhythmia term,
+      so cardiac rhythm disease BROADER. Of the shared "(for example, ...)" members, "atrial fibrillation"
+      is the rhythm example.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: uncontrolled hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: Have uncontrolled hypertension
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". "Have
+      uncontrolled hypertension" is an item of that list. "uncontrolled" narrows the term, so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO hypertensive disorder has no "hypertension" synonym, so HP Hypertension.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes mellitus with vascular disease
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: Have diabetes mellitus with vascular disease
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". "Have
+      diabetes mellitus with vascular disease" is an item of that list. "with vascular disease" narrows
+      diabetes mellitus, so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO:0000960 diabetic peripheral angiopathy is labelled peripheral-only, so not bound; a reviewer
+      may prefer it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        headaches with focal neurological symptoms or have migraine headaches with aura
+      member: headaches with focal neurological symptoms
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: BROADER
+    quote: >-
+      Have headaches with focal neurological symptoms or have migraine headaches with aura
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". This
+      claim is the member "headaches with focal neurological symptoms" of the coordination "headaches
+      with focal neurological symptoms or have migraine headaches with aura". No term for headache with
+      focal neurological symptoms, so Headache BROADER.
+    status: DRAFT
+    notes: >-
+      Searched HP "Headache", "focal". No age restriction: in this label the age bound sits on its own
+      list item ("Women over age 35 with any migraine headaches").
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        headaches with focal neurological symptoms or have migraine headaches with aura
+      member: migraine headaches with aura
+      term:
+        id: MONDO:0005475
+        label: migraine with aura
+      binding: EXACT
+    quote: >-
+      Have headaches with focal neurological symptoms or have migraine headaches with aura
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". This
+      claim is the member "migraine headaches with aura" of the coordination "headaches with focal neurological
+      symptoms or have migraine headaches with aura"; no age restriction applies to it.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: migraine headaches
+      term:
+        id: MONDO:0005277
+        label: migraine disorder
+      binding: EXACT
+    quote: Women over age 35 with any migraine headaches
+    age_range:
+      min_years: 35
+      text: over age 35
+    explanation: >-
+      Contraindicated as a thromboembolic risk factor, listed after "Examples include women who:". The
+      list item "Women over age 35 with any migraine headaches" contraindicates every migraine ("any"),
+      so migraine disorder EXACT, restricted by "over age 35", recorded as age_range.
+    status: DRAFT
+    notes: >-
+      "over" is a strict bound; age_range has no exclusive bound, so min_years 35 is the nearest encoding.
+      "Women" repeats the list's population and is not recorded as a sex qualifier, as for the other list
+      items.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Body Mass Index ≥ 30 kg/m 2
+      term:
+        id: HP:0031418
+        label: Increased body mass index
+      binding: BROADER
+    quote: Body Mass Index ≥ 30 kg/m 2
+    explanation: >-
+      An item of "Xulane is contraindicated in females who are known to have or develop the following
+      conditions:": a body mass index of 30 kg/m2 or more.
+    status: DRAFT
+    notes: >-
+      HP Increased body mass index has no threshold, so BROADER. BMI >= 30 kg/m2 is the usual clinical
+      threshold for obesity, but the label states a measurement, not obesity, so HP:0001513 Obesity /
+      MONDO:0011122 obesity disorder are not bound; a reviewer may prefer them. Not a thrombotic risk-factor
+      list item: it is its own bullet of the contraindication list. The validator reads the "/" in the
+      unit "kg/m 2" as a coordination; there is only one condition, so no member is named.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Liver tumors, benign or malignant, or liver disease
+      member: Liver tumors
+      term:
+        id: MONDO:0024477
+        label: liver and intrahepatic bile duct neoplasm
+      binding: EXACT
+    quote: Liver tumors, benign or malignant, or liver disease
+    explanation: >-
+      An item of "Xulane is contraindicated in females who are known to have or develop the following
+      conditions:"; this claim is the member "Liver tumors" of the coordination "Liver tumors, benign
+      or malignant, or liver disease". "benign or malignant" is an exhaustive pair spanning every liver
+      tumor, so the general liver tumor term is EXACT.
+    status: DRAFT
+    notes: '"liver tumor" is an exact synonym of the term.'
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Liver tumors, benign or malignant, or liver disease
+      member: liver disease
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: EXACT
+    quote: Liver tumors, benign or malignant, or liver disease
+    explanation: >-
+      The same item; this claim is the member "liver disease" of the coordination "Liver tumors, benign
+      or malignant, or liver disease".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Undiagnosed abnormal uterine bleeding
+      term:
+        id: HP:0000140
+        label: Abnormality of the menstrual cycle
+      binding: BROADER
+    quote: Undiagnosed abnormal uterine bleeding
+    explanation: >-
+      An item of "Xulane is contraindicated in females who are known to have or develop the following
+      conditions:" after the thromboembolic risk-factor list: undiagnosed abnormal uterine bleeding.
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for abnormal uterine bleeding (searched HP "abnormal uterine", "uterine bleeding"),
+      so the parent HP Abnormality of the menstrual cycle, BROADER, as in the other combined hormonal
+      contraceptive files. Not Metrorrhagia, whose HP exact synonym "Abnormal uterus bleeding" is too
+      narrow a reading (metrorrhagia is intermenstrual bleeding). "Undiagnosed" describes the workup,
+      not the condition. Grounding store maps the text to UMLS:C0019080 / UMLS:C3650625.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding store's
+        UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Pregnancy, because there is no reason to use hormonal contraceptives during pregnancy
+    explanation: >-
+      An item of "Xulane is contraindicated in females who are known to have or develop the following
+      conditions:": pregnancy. The stated reason ("there is no reason to use hormonal contraceptives during
+      pregnancy") names no ingredient.
+    status: DRAFT
+    notes: Unbound for lack of a term.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Breast cancer or other estrogen- or progestin-sensitive cancer
+      member: Breast cancer
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: >-
+      Breast cancer or other estrogen- or progestin-sensitive cancer
+    explanation: >-
+      A Highlights item of the contraindications; this claim is the member "Breast cancer" of the coordination
+      "Breast cancer or other estrogen- or progestin-sensitive cancer".
+    status: DRAFT
+    notes: >-
+      The full-text item ("Current diagnosis of, or history of, breast cancer, which may be hormone-sensitive")
+      restates this member with its temporal scope; no slot records "history of", and a second breast
+      cancer claim would duplicate this one, so the Highlights coordination is quoted for all three members.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Breast cancer or other estrogen- or progestin-sensitive cancer
+      member: other estrogen-sensitive cancer
+      term_gap: >-
+        searched MONDO "hormone", "estrogen", "progest", "cancer": no term for estrogen-sensitive cancer
+        in general (only MONDO:0700079 hormone receptor-positive breast cancer); MONDO cancer would drop
+        the hormone sensitivity
+    quote: >-
+      Breast cancer or other estrogen- or progestin-sensitive cancer
+    explanation: >-
+      The same Highlights item, "Breast cancer or other estrogen- or progestin-sensitive cancer", also
+      names other estrogen- or progestin-sensitive cancer. This claim covers "other estrogen-sensitive
+      cancer".
+    status: DRAFT
+    notes: >-
+      Unbound; the member distinguishes this claim from its sibling. Only the Highlights state this; the
+      full text names breast cancer alone.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Breast cancer or other estrogen- or progestin-sensitive cancer
+      member: other progestin-sensitive cancer
+      term_gap: >-
+        searched MONDO "hormone", "estrogen", "progest", "cancer": no term for progestin-sensitive cancer
+        in general (only MONDO:0700079 hormone receptor-positive breast cancer); MONDO cancer would drop
+        the hormone sensitivity
+    quote: >-
+      Breast cancer or other estrogen- or progestin-sensitive cancer
+    explanation: >-
+      The same Highlights item, "Breast cancer or other estrogen- or progestin-sensitive cancer", also
+      names other estrogen- or progestin-sensitive cancer. This claim covers "other progestin-sensitive
+      cancer".
+    status: DRAFT
+    notes: >-
+      Unbound; the member distinguishes this claim from its sibling. Only the Highlights state this; the
+      full text names breast cancer alone.
+notes: >-
+  The high risk of arterial or venous thromboembolic events is not curated as a claim of its own: the
+  label gives it as the heading of a risk-factor list ("Examples include women who: ..."), and each listed
+  risk factor is its own claim. Not curated: use of hepatitis C drug combinations containing ombitasvir/paritaprevir/ritonavir,
+  with or without dasabuvir (drug interaction, no condition). The Highlights copy restates the full-text
+  contraindications in shorter form ("BMI ≥ 30 kg/m 2", "Liver tumors or liver disease"); full-text items
+  are quoted, except breast cancer, where only the Highlights add "other estrogen- or progestin-sensitive
+  cancer" and that coordination is quoted.

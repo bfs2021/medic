@@ -1,0 +1,108 @@
+id: MEDICNE:combo-08c3ba0d-bcaf-580c-b431-4a5ad601621e
+name: empagliflozin / linagliptin / metformin
+ingredients:
+- id: CHEBI:82720
+  label: empagliflozin
+- id: CHEBI:68610
+  label: linagliptin
+- id: CHEBI:6801
+  label: metformin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 71873567-9594-452a-bb92-34a129adecac
+    version: 11
+    title: 'These highlights do not include all the information needed to use TRIJARDY XR safely and effectively.
+      See full prescribing information for TRIJARDY XR. TRIJARDY® XR (empagliflozin, linagliptin, and
+      metformin hydrochloride extended-release tablets), for oral use Initial U.S. Approval: 2020'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=71873567-9594-452a-bb92-34a129adecac
+  product_name: Trijardy XR
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      TRIJARDY XR is a combination of empagliflozin, linagliptin, and metformin hydrochloride (HCl)
+      indicated as an adjunct to diet and exercise to improve glycemic control in adults with type 2
+      diabetes mellitus .
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "indicated ... to improve glycemic control in adults with type 2 diabetes mellitus" states
+      treatment of type 2 diabetes mellitus; "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject is the product ("a combination of empagliflozin,
+      linagliptin, and metformin hydrochloride"), which names the ingredients only as its contents.
+      "as an adjunct to diet and exercise" names non-drug measures, kept in the quote.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe renal impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      severe renal impairment (eGFR less than 30 mL/min/1.73 m 2 )
+    explanation: >-
+      Under "is contraindicated in patients with:", the item "severe renal impairment (eGFR less than
+      30 mL/min/1.73 m 2 )" lists severe renal impairment as a contraindicated condition; the eGFR
+      threshold defines "severe".
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. HP Renal insufficiency is the term for impaired renal function
+      (as for "Renal impairment" in the drospirenone file); no severe-renal-insufficiency term
+      (searched HP "severe renal", "renal impairment"), so BROADER.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: acute or chronic metabolic acidosis
+      term:
+        id: MONDO:0000440
+        label: metabolic acidosis
+      binding: EXACT
+    examples:
+    - text: diabetic ketoacidosis
+      term:
+        id: MONDO:0012819
+        label: diabetic ketoacidosis
+      binding: EXACT
+    quote: >-
+      acute or chronic metabolic acidosis, including diabetic ketoacidosis
+    explanation: >-
+      Under "is contraindicated in patients with:", the item "acute or chronic metabolic acidosis,
+      including diabetic ketoacidosis" lists metabolic acidosis as a contraindicated condition;
+      "acute or chronic" is an exhaustive pair covering the whole class, and "including diabetic
+      ketoacidosis" names an example.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. One claim for the class (exhaustive pair), diabetic ketoacidosis
+      as a listed example.
+notes: >-
+  Not claimed: "Empagliflozin is indicated to reduce the risk of cardiovascular (CV) death in
+  adults with type 2 diabetes mellitus and established CV disease". The label attributes it to
+  empagliflozin (the sentence's subject), but its only object is cardiovascular death, an outcome
+  rather than a condition (as "death" and "sudden death" in the aspirin/omeprazole file), and
+  binding it to cardiovascular disorder would state prevention of the disease the population
+  already has. If a reviewer reads "CV death" as an outcome endpoint for cardiovascular disease,
+  the claim is PREVENTATIVE_FOR_CONDITION MONDO:0004995 cardiovascular disorder, BROADER, context
+  "established CV disease", attributed to CHEBI:82720 by INGREDIENT_SUBJECT ("Empagliflozin is
+  indicated to reduce the risk of cardiovascular (CV) death"), which the validator would accept.
+  Also not claimed: the Limitations of Use (type 1 diabetes mellitus and diabetic ketoacidosis
+  there; history of pancreatitis, "has not been studied"); "hypersensitivity to empagliflozin,
+  linagliptin, metformin HCl or any of the excipients" (own ingredients) and the reactions that
+  "have occurred" (a report, not a contraindicated condition). The Highlights restate the
+  indications and contraindications. Linagliptin has no indication of its own on this label.

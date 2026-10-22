@@ -1,0 +1,365 @@
+id: MEDICNE:combo-91272022-146b-5b74-812e-2a956b3afe29
+name: estrogens, conjugated / medroxyprogesterone
+ingredients:
+- id: CHEBI:749574
+  label: estrogens, conjugated
+- id: CHEBI:6715
+  label: medroxyprogesterone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 36ec4df9-298d-4b15-9386-7848d217a46c
+    version: 3
+    title: 'These highlights do not include all the information needed to use PREMPRO/PREMPHASE safely
+      and effectively. See full prescribing information for PREMPRO/PREMPHASE. PREMPRO® (conjugated estrogens/medroxyprogesterone
+      acetate tablets) PREMPHASE® (conjugated estrogens plus medroxyprogesterone acetate tablets)Initial
+      U.S. Approval: 1995'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=36ec4df9-298d-4b15-9386-7848d217a46c
+  product_name: Prempro
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Moderate to Severe Vasomotor Symptoms
+      term_gap: >-
+        searched MONDO "vasomotor", "menopaus", "climacteric", "hot flash"; HP "vasomotor", "hot
+        flash", "hot flush", "menopaus": no term for menopausal vasomotor symptoms; HP:0031217 Hot
+        flashes names one vasomotor symptom only (night sweats are another), so binding it would say
+        less than the label
+    quote: >-
+      indicated in women with intact uteri for: Treatment of Moderate to Severe Vasomotor Symptoms due
+      to Menopause
+    life_stage:
+      text: Menopause
+      term_gap: >-
+        searched HsapDv "menopaus", "postmenopaus", "adult"; MONDO and HP "menopaus": no menopause
+        life-stage term (HP:0008209 Early menopause and MONDO:0001119 premature menopause are
+        disorders; adult stage would drop the restriction)
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "indicated in women with intact uteri for: Treatment of Moderate to Severe Vasomotor Symptoms"
+      gives TREATS and the object; "due to Menopause" ties the symptoms to menopause, recorded as the
+      life stage; "women" gives the sex.
+    status: DRAFT
+    notes: >-
+      Quoted from the Highlights, whose lead carries the population ("in women with intact uteri");
+      the full-text headings (1.1-1.3) restate the indications without it. Having an intact uterus is
+      a population restriction with no slot (it is not a condition); it stays in the quote. Menopause
+      is recorded as a life stage, not a disease context, since it is not a disease. "Treatment of" ->
+      TREATS per the decision table, although the claim is symptomatic. Product-level ("an
+      estrogen/progestin"), unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Vulvar and Vaginal Atrophy
+      member: Vulvar Atrophy
+      term:
+        id: MONDO:0002187
+        label: vulvar disease
+      binding: BROADER
+    quote: >-
+      indicated in women with intact uteri for: Treatment of Moderate to Severe Vasomotor Symptoms due
+      to Menopause ( 1.1 ) Treatment of Moderate to Severe Vulvar and Vaginal Atrophy due to Menopause
+    life_stage:
+      text: Menopause
+      term_gap: >-
+        searched HsapDv "menopaus", "postmenopaus", "adult"; MONDO and HP "menopaus": no menopause
+        life-stage term (HP:0008209 Early menopause and MONDO:0001119 premature menopause are
+        disorders; adult stage would drop the restriction)
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      The second item of "indicated in women with intact uteri for:": "Treatment of Moderate to Severe
+      Vulvar and Vaginal Atrophy" gives TREATS; this claim is the member "Vulvar Atrophy" of the
+      coordination "Vulvar and Vaginal Atrophy". "due to Menopause" gives the life stage, "women" the
+      sex.
+    status: DRAFT
+    notes: >-
+      Unlike the estradiol/norethindrone label ("Symptoms of Vulvar and Vaginal Atrophy",
+      AMELIORATES_CONDITION), this label treats the atrophy itself, so TREATS. The quote runs through
+      item 1.1 to reach the list lead that carries the population. No vulvar atrophy term (searched
+      MONDO "vulva", "vulvar", "atrophy", "kraurosis", "vulvovaginal atrophy"; HP "vulva", "vulvar
+      atrophy", "atroph"), so MONDO vulvar disease, BROADER.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Vulvar and Vaginal Atrophy
+      member: Vaginal Atrophy
+      term:
+        id: MONDO:0001433
+        label: vaginal disorder
+      binding: BROADER
+    quote: >-
+      indicated in women with intact uteri for: Treatment of Moderate to Severe Vasomotor Symptoms due
+      to Menopause ( 1.1 ) Treatment of Moderate to Severe Vulvar and Vaginal Atrophy due to Menopause
+    life_stage:
+      text: Menopause
+      term_gap: >-
+        searched HsapDv "menopaus", "postmenopaus", "adult"; MONDO and HP "menopaus": no menopause
+        life-stage term (HP:0008209 Early menopause and MONDO:0001119 premature menopause are
+        disorders; adult stage would drop the restriction)
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      The second item of "indicated in women with intact uteri for:": "Treatment of Moderate to Severe
+      Vulvar and Vaginal Atrophy" gives TREATS; this claim is the member "Vaginal Atrophy". "due to
+      Menopause" gives the life stage, "women" the sex.
+    status: DRAFT
+    notes: >-
+      No vaginal atrophy term (searched MONDO "vaginal atrophy", "atrophic vaginitis", "vagin"; HP
+      "vaginal atrophy", "vagina"), so MONDO vaginal disorder, BROADER. MONDO:0001410 postmenopausal
+      atrophic vaginitis (exact synonym atrophic vaginitis) is the closest specific term, but
+      "vaginitis" adds inflammation the label does not state; a reviewer may prefer it, NARROWER.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: Postmenopausal Osteoporosis
+      term:
+        id: MONDO:0008159
+        label: postmenopausal osteoporosis
+      binding: EXACT
+    quote: >-
+      indicated in women with intact uteri for: Treatment of Moderate to Severe Vasomotor Symptoms due
+      to Menopause ( 1.1 ) Treatment of Moderate to Severe Vulvar and Vaginal Atrophy due to Menopause
+      ( 1.2 ) Prevention of Postmenopausal Osteoporosis
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      The third item of "indicated in women with intact uteri for:": "Prevention of Postmenopausal
+      Osteoporosis" gives PREVENTATIVE_FOR_CONDITION and the object; "women" gives the sex.
+    status: DRAFT
+    notes: >-
+      The quote runs through items 1.1 and 1.2 to reach the list lead that carries the population.
+      "Postmenopausal" is part of the bound term, so no separate life stage.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Undiagnosed abnormal genital bleeding
+      term:
+        id: HP:0030012
+        label: Abnormal female reproductive system physiology
+      binding: BROADER
+    quote: >-
+      Undiagnosed abnormal genital bleeding
+    explanation: >-
+      An item of "PREMPRO or PREMPHASE therapy should not be used in women with any of the following
+      conditions:": undiagnosed abnormal genital bleeding.
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for abnormal genital bleeding (searched HP "genital bleeding", "genital",
+      "uterine bleeding", "vaginal bleeding", "postmenopausal"; MONDO "vagin"). HP:0000140 Abnormality of
+      the menstrual cycle, used for "abnormal uterine bleeding" in the contraceptive files, does not fit
+      menopausal women, and HP:0033840 Postmenopausal bleeding adds a restriction the words do not
+      state, so the parent HP Abnormal female reproductive system physiology, BROADER. HP:0034263
+      Abnormal vaginal bleeding is the closest sign; a reviewer may prefer it. "Undiagnosed" describes
+      the workup, not the condition. Grounding store maps the text to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breast cancer
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: >-
+      Known, suspected, or history of breast cancer
+    explanation: >-
+      An item of "... should not be used in women with any of the following conditions:": known,
+      suspected, or past breast cancer.
+    status: DRAFT
+    notes: >-
+      "Known, suspected, or history of" qualifies one condition; no slot records certainty or a
+      temporal scope, so one claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: estrogen-dependent neoplasia
+      term_gap: >-
+        searched MONDO "estrogen", "estrogen-dependent", "hormone", "hormone-sensitive"; no term for
+        estrogen-dependent neoplasm in general (only receptor-defined breast cancers); MONDO neoplasm
+        would drop the estrogen dependence. Grounding store maps the text to sssom:NoTermFound
+    quote: >-
+      Known or suspected estrogen-dependent neoplasia
+    explanation: >-
+      An item of "... should not be used in women with any of the following conditions:": known or
+      suspected estrogen-dependent neoplasia.
+    status: DRAFT
+    notes: Unbound, as "other estrogen-or progestin-sensitive cancer" in the contraceptive files.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis, pulmonary embolism
+      member: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      Active deep vein thrombosis, pulmonary embolism or a history of these conditions
+    explanation: >-
+      An item of "... should not be used in women with any of the following conditions:". This claim
+      is the member "deep vein thrombosis" of "deep vein thrombosis, pulmonary embolism", active or
+      past.
+    status: DRAFT
+    notes: >-
+      No slot records "or a history of these conditions", so the object alone reads as active disease.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis, pulmonary embolism
+      member: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      Active deep vein thrombosis, pulmonary embolism or a history of these conditions
+    explanation: >-
+      The same item; this claim is the member "pulmonary embolism", active or past.
+    status: DRAFT
+    notes: >-
+      No slot records "or a history of these conditions", so the object alone reads as active disease.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: arterial thromboembolic disease
+      term:
+        id: HP:0001907
+        label: Thromboembolism
+      binding: BROADER
+    quote: >-
+      Active arterial thromboembolic disease (for example, stroke and myocardial infarction), or a
+      history of these conditions
+    examples:
+    - text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    - text: myocardial infarction
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    explanation: >-
+      An item of "... should not be used in women with any of the following conditions:": active or
+      past arterial thromboembolic disease; "(for example, stroke and myocardial infarction)" lists
+      examples of the category.
+    status: DRAFT
+    notes: >-
+      HP Thromboembolism has the exact synonym "Thromboembolic disease"; "arterial" narrows it and no
+      arterial thromboembolism term exists (searched HP and MONDO "arterial thrombo", "thromboembol"),
+      so BROADER. HP:0004420 Arterial thrombosis leaves out embolism. No slot records "or a history of
+      these conditions".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: liver dysfunction or disease
+      member: liver dysfunction
+      term:
+        id: HP:0001410
+        label: Decreased liver function
+      binding: EXACT
+    quote: >-
+      Known liver dysfunction or disease
+    explanation: >-
+      An item of "... should not be used in women with any of the following conditions:". This claim
+      is the member "liver dysfunction" (an exact synonym of Decreased liver function) of the
+      coordination "liver dysfunction or disease".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: liver dysfunction or disease
+      member: liver disease
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: EXACT
+    quote: >-
+      Known liver dysfunction or disease
+    explanation: >-
+      The same item; this claim is the member "liver disease", an exact synonym of liver disorder.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombophilic disorders
+      term:
+        id: MONDO:0002305
+        label: thrombophilia
+      binding: EXACT
+    quote: >-
+      Known thrombophilic disorders (e.g., protein C, protein S, or antithrombin deficiency)
+    examples:
+    - text: protein C, protein S, or antithrombin deficiency
+      member: protein C deficiency
+      term:
+        id: HP:0005543
+        label: Reduced protein C activity
+      binding: EXACT
+    - text: protein C, protein S, or antithrombin deficiency
+      member: protein S deficiency
+      term:
+        id: MONDO:0002304
+        label: protein S deficiency
+      binding: EXACT
+    - text: protein C, protein S, or antithrombin deficiency
+      member: antithrombin deficiency
+      term:
+        id: HP:0001976
+        label: Reduced antithrombin III activity
+      binding: EXACT
+    explanation: >-
+      An item of "... should not be used in women with any of the following conditions:": known
+      thrombophilic disorders, the class thrombophilia; the "(e.g., ...)" deficiencies are examples
+      of the category, one per member of the coordination.
+    status: DRAFT
+    notes: >-
+      Same terms as the estradiol/norethindrone file, where the deficiencies are separate items.
+      Antithrombin is antithrombin III; MONDO:0013144 hereditary antithrombin deficiency would add
+      "hereditary".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnan"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Known or suspected pregnancy
+    explanation: >-
+      An item of "... should not be used in women with any of the following conditions:": known or
+      suspected pregnancy.
+    status: DRAFT
+    notes: Unbound for lack of a term.
+notes: >-
+  The label covers PREMPRO and PREMPHASE (two regimens of the same two ingredients) in one document;
+  the skeleton's product_name is the SPL's first product, Prempro. All claims are product-level ("an
+  estrogen/progestin"); the label assigns none to an ingredient. Quotes come from the Highlights
+  (indications, which carry the population) and the full-text Contraindications, which the Highlights
+  restate. This label version prints no Limitations of Use and no hypersensitivity contraindication.

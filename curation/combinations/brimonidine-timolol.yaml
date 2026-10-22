@@ -1,0 +1,242 @@
+id: MEDICNE:combo-4386e0ea-e9f5-5222-a203-72eef0f9aa7c
+name: brimonidine / timolol
+ingredients:
+- id: CHEBI:3175
+  label: brimonidine
+- id: CHEBI:39465
+  label: timolol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 8c641b6c-3335-4ec3-89b9-2d97a8901062
+    version: 1
+    title: 'These highlights do not include all the information needed to use COMBIGAN® safely and effectively.
+      See full prescribing information for COMBIGAN®. COMBIGAN® (brimonidine tartrate/timolol maleate
+      ophthalmic solution) 0.2%/0.5% Initial U.S. Approval: 2007'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8c641b6c-3335-4ec3-89b9-2d97a8901062
+  product_name: COMBIGAN
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: elevated intraocular pressure
+      term:
+        id: HP:0007906
+        label: Ocular hypertension
+      binding: EXACT
+    quote: >-
+      COMBIGAN ® is an alpha adrenergic receptor agonist with a beta adrenergic receptor inhibitor
+      indicated for the reduction of elevated intraocular pressure (IOP) in patients with glaucoma
+      or ocular hypertension who require adjunctive or replacement therapy due to inadequately
+      controlled IOP
+    disease_context:
+      text: glaucoma or ocular hypertension
+      member: glaucoma
+      term:
+        id: MONDO:0005041
+        label: glaucoma
+      binding: EXACT
+    line_of_therapy:
+      text: who require adjunctive or replacement therapy due to inadequately controlled IOP
+      term_gap: >-
+        A prior-therapy requirement stated in words; no ontology term is sought for a line of
+        therapy.
+    explanation: >-
+      "indicated for the reduction of elevated intraocular pressure (IOP)" gives TREATS with the
+      raised pressure as the object; "in patients with glaucoma or ocular hypertension" restricts
+      it, and this claim covers the glaucoma member of that coordination. "who require adjunctive
+      or replacement therapy due to inadequately controlled IOP" is the prior-therapy
+      requirement.
+    status: DRAFT
+    notes: >-
+      HP Ocular hypertension has the exact synonym "Elevated intraocular pressure", so the object
+      is the sign the product lowers; the patient's disease goes in disease_context. TREATS rather
+      than AMELIORATES_CONDITION: "indicated for the reduction of" a sign is the label's
+      indication wording, not symptom relief. The comparison with concomitant timolol and
+      brimonidine after the semicolon is efficacy information and makes no claim. Product-level,
+      unattributed: the pharmacologic-class wording names no ingredient.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: elevated intraocular pressure
+      term:
+        id: HP:0007906
+        label: Ocular hypertension
+      binding: EXACT
+    quote: >-
+      COMBIGAN ® is an alpha adrenergic receptor agonist with a beta adrenergic receptor inhibitor
+      indicated for the reduction of elevated intraocular pressure (IOP) in patients with glaucoma
+      or ocular hypertension who require adjunctive or replacement therapy due to inadequately
+      controlled IOP
+    disease_context:
+      text: glaucoma or ocular hypertension
+      member: ocular hypertension
+      term:
+        id: MONDO:0006875
+        label: ocular hypertension
+      binding: EXACT
+    line_of_therapy:
+      text: who require adjunctive or replacement therapy due to inadequately controlled IOP
+      term_gap: >-
+        A prior-therapy requirement stated in words; no ontology term is sought for a line of
+        therapy.
+    explanation: >-
+      "indicated for the reduction of elevated intraocular pressure (IOP)" gives TREATS with the
+      raised pressure as the object; "in patients with glaucoma or ocular hypertension" restricts
+      it, and this claim covers the ocular hypertension member. "who require adjunctive or
+      replacement therapy due to inadequately controlled IOP" is the prior-therapy requirement.
+    status: DRAFT
+    notes: >-
+      The disease context is bound to MONDO ocular hypertension (the disease; agrees with the
+      grounding store), the object "elevated intraocular pressure" to the HP sign. Product-level,
+      unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: bronchial asthma
+      term:
+        id: HP:0002099
+        label: Asthma
+      binding: EXACT
+    quote: >-
+      COMBIGAN ® is contraindicated in patients with bronchial asthma; a history of bronchial
+      asthma; severe chronic obstructive pulmonary disease
+    explanation: >-
+      "is contraindicated in patients with bronchial asthma; a history of bronchial asthma" states
+      the contraindication for current asthma and extends it to asthma in the past; "a history of"
+      describes the patient, not a different condition.
+    status: DRAFT
+    notes: >-
+      One claim covers both list items ("bronchial asthma" and "a history of bronchial asthma"):
+      they name the same condition, the schema has no slot for "past" disease, and two identical
+      claims would duplicate one edge. HP Asthma has the exact synonym "Bronchial asthma"; MONDO
+      has no term with that wording (searched MONDO "bronchial asthma", "asthma"). The grounding
+      store maps "bronchial asthma" to UMLS:C0004096. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe chronic obstructive pulmonary disease
+      term:
+        id: MONDO:0005002
+        label: chronic obstructive pulmonary disease
+      binding: BROADER
+    quote: >-
+      COMBIGAN ® is contraindicated in patients with bronchial asthma; a history of bronchial
+      asthma; severe chronic obstructive pulmonary disease
+    explanation: >-
+      "is contraindicated in patients with ... severe chronic obstructive pulmonary disease" names
+      severe COPD as a contraindicated condition.
+    status: DRAFT
+    notes: >-
+      No severity-specific COPD term (MONDO "COPD, severe early onset" is a genetic entity, not
+      severe COPD), so COPD is bound BROADER. The grounding store maps the phrase to
+      UMLS:C0730607. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: sinus bradycardia
+      term:
+        id: HP:0001688
+        label: Sinus bradycardia
+      binding: EXACT
+    quote: >-
+      COMBIGAN ® is contraindicated in patients with sinus bradycardia; second or third degree
+      atrioventricular block; overt cardiac failure (see WARNINGS AND PRECAUTIONS , 5.2 );
+      cardiogenic shock.
+    explanation: >-
+      "is contraindicated in patients with sinus bradycardia" states the contraindication.
+    status: DRAFT
+    notes: >-
+      HP Sinus bradycardia agrees with the grounding store. Product-level, unattributed: the label
+      does not name timolol as the cause.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: second or third degree atrioventricular block
+      member: second degree atrioventricular block
+      term:
+        id: MONDO:0000467
+        label: second-degree atrioventricular block
+      binding: EXACT
+    quote: >-
+      COMBIGAN ® is contraindicated in patients with sinus bradycardia; second or third degree
+      atrioventricular block; overt cardiac failure (see WARNINGS AND PRECAUTIONS , 5.2 );
+      cardiogenic shock.
+    explanation: >-
+      "is contraindicated in patients with ... second or third degree atrioventricular block";
+      this claim covers the second-degree member of the coordination.
+    status: DRAFT
+    notes: >-
+      MONDO second-degree atrioventricular block has the exact synonym "second degree
+      atrioventricular block". Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: second or third degree atrioventricular block
+      member: third degree atrioventricular block
+      term:
+        id: MONDO:0000468
+        label: third-degree atrioventricular block
+      binding: EXACT
+    quote: >-
+      COMBIGAN ® is contraindicated in patients with sinus bradycardia; second or third degree
+      atrioventricular block; overt cardiac failure (see WARNINGS AND PRECAUTIONS , 5.2 );
+      cardiogenic shock.
+    explanation: >-
+      "is contraindicated in patients with ... second or third degree atrioventricular block";
+      this claim covers the third-degree member of the coordination.
+    status: DRAFT
+    notes: >-
+      MONDO third-degree atrioventricular block has the exact synonym "third degree
+      atrioventricular block". Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: overt cardiac failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      COMBIGAN ® is contraindicated in patients with sinus bradycardia; second or third degree
+      atrioventricular block; overt cardiac failure (see WARNINGS AND PRECAUTIONS , 5.2 );
+      cardiogenic shock.
+    explanation: >-
+      "is contraindicated in patients with ... overt cardiac failure" names clinically manifest
+      heart failure as a contraindicated condition.
+    status: DRAFT
+    notes: >-
+      MONDO heart failure has the exact synonym "cardiac failure"; "overt" narrows it, so BROADER.
+      MONDO symptomatic heart failure (MONDO:0005254) was considered, but the label does not
+      define "overt" as symptomatic. The grounding store has sssom:NoTermFound for "Overt cardiac
+      failure". Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cardiogenic shock
+      term:
+        id: HP:0030149
+        label: Cardiogenic shock
+      binding: EXACT
+    quote: >-
+      COMBIGAN ® is contraindicated in patients with sinus bradycardia; second or third degree
+      atrioventricular block; overt cardiac failure (see WARNINGS AND PRECAUTIONS , 5.2 );
+      cardiogenic shock.
+    explanation: >-
+      "is contraindicated in patients with ... cardiogenic shock" names cardiogenic shock as a
+      contraindicated condition.
+    status: DRAFT
+    notes: >-
+      HP Cardiogenic shock agrees with the grounding store and the metoprolol/hydrochlorothiazide
+      precedent. Product-level, unattributed.
+notes: >-
+  Not curated: "Hypersensitivity to any component of this product" and the full-text
+  hypersensitivity paragraph (allergy to the product's own ingredients). The Highlights restate the
+  indication and contraindications; the claims quote the full-text sentences. No claim is
+  attributed: the label never assigns an indication or contraindication to brimonidine or timolol.

@@ -1,0 +1,259 @@
+id: MEDICNE:combo-0887350d-76d0-565c-b39c-4c214d345f0c
+name: chlorpheniramine / hydrocodone
+ingredients:
+- id: CHEBI:747960
+  label: chlorpheniramine
+- id: CHEBI:5779
+  label: hydrocodone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: >-
+    https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: eecaa52b-f636-4ae4-a60f-d5e2503ab53b
+    version: 103
+    title: 'These highlights do not include all the information needed to use Hydrocodone Polistirex and
+      Chlorpheniramine Polistirex Extended-Release Oral Suspension safely and effectively. See full prescribing
+      information for Hydrocodone Polistirex and Chlorpheniramine Polistirex Extended-Release Oral Suspension.
+      Hydrocodone Polistirex and Chlorpheniramine Polistirex Extended-Release Suspension, for oral administration,
+      CII Initial U.S. Approval: 1987'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=eecaa52b-f636-4ae4-a60f-d5e2503ab53b
+  product_name: Hydrocodone Polistirex and Chlorpheniramine Polistirexextended-release
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: cough and upper respiratory symptoms
+      member: cough
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Hydrocodone Polistirex and Chlorpheniramine Polistirex Extended-Release Suspension is indicated
+      for the temporary relief of cough and upper respiratory symptoms associated with allergy or the
+      common cold in patients 18 years of age and older.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: 18 years of age and older
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "cough and upper respiratory
+      symptoms" names two conditions; this claim is the member "cough". "associated with allergy or the
+      common cold" names the conditions they occur in; this claim takes the member "allergy" as the disease
+      context (one claim per symptom per condition). "in patients 18 years of age and older" gives the
+      age range.
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both the cough and the upper respiratory
+      symptoms, as in codeine-phenylephrine-promethazine.yaml (sibling PR #76). Product-level, unattributed.
+      MONDO allergic disease has the exact synonym "allergy"; an indication context, not an allergy contraindication.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: cough and upper respiratory symptoms
+      member: cough
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Hydrocodone Polistirex and Chlorpheniramine Polistirex Extended-Release Suspension is indicated
+      for the temporary relief of cough and upper respiratory symptoms associated with allergy or the
+      common cold in patients 18 years of age and older.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: 18 years of age and older
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "cough and upper respiratory
+      symptoms" names two conditions; this claim is the member "cough". "associated with allergy or the
+      common cold" names the conditions they occur in; this claim takes the member "the common cold" as
+      the disease context (one claim per symptom per condition). "in patients 18 years of age and older"
+      gives the age range.
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both the cough and the upper respiratory
+      symptoms, as in codeine-phenylephrine-promethazine.yaml (sibling PR #76). Product-level, unattributed.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: cough and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no term
+        for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits under
+        Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper respiratory
+        tract disorder names a disease; the grounding store's UMLS:C0749874 is in no configured ontology
+    quote: >-
+      Hydrocodone Polistirex and Chlorpheniramine Polistirex Extended-Release Suspension is indicated
+      for the temporary relief of cough and upper respiratory symptoms associated with allergy or the
+      common cold in patients 18 years of age and older.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: 18 years of age and older
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "cough and upper respiratory
+      symptoms" names two conditions; this claim is the member "upper respiratory symptoms". "associated
+      with allergy or the common cold" names the conditions they occur in; this claim takes the member
+      "allergy" as the disease context (one claim per symptom per condition). "in patients 18 years of
+      age and older" gives the age range.
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both the cough and the upper respiratory
+      symptoms, as in codeine-phenylephrine-promethazine.yaml (sibling PR #76). Product-level, unattributed.
+      MONDO allergic disease has the exact synonym "allergy"; an indication context, not an allergy contraindication.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: cough and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no term
+        for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits under
+        Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper respiratory
+        tract disorder names a disease; the grounding store's UMLS:C0749874 is in no configured ontology
+    quote: >-
+      Hydrocodone Polistirex and Chlorpheniramine Polistirex Extended-Release Suspension is indicated
+      for the temporary relief of cough and upper respiratory symptoms associated with allergy or the
+      common cold in patients 18 years of age and older.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: 18 years of age and older
+    explanation: >-
+      "indicated for the temporary relief of" gives AMELIORATES_CONDITION. "cough and upper respiratory
+      symptoms" names two conditions; this claim is the member "upper respiratory symptoms". "associated
+      with allergy or the common cold" names the conditions they occur in; this claim takes the member
+      "the common cold" as the disease context (one claim per symptom per condition). "in patients 18
+      years of age and older" gives the age range.
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both the cough and the upper respiratory
+      symptoms, as in codeine-phenylephrine-promethazine.yaml (sibling PR #76). Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Significant respiratory depression
+      term_gap: >-
+        searched HP/MONDO "respiratory depression" (no term), "hypoventilation", "respiratory insufficiency",
+        "breathing". The intended term is HP:0002791 Hypoventilation (reduced ventilation; exact synonyms
+        "Slow breathing", "Under breathing"), BROADER because of "Significant", but the validator anchors
+        the word "depression" on HP:0000716 Depressivity (mood) and rejects Hypoventilation as unrelated,
+        so the object is left unbound. Grounding store: the phrase is sssom:NoTermFound; "respiratory
+        depression" maps to UMLS:C0235063 Decreased pulmonary function, in no configured ontology
+    quote: Significant respiratory depression
+    explanation: >-
+      An item of "Hydrocodone Polistirex and Chlorpheniramine Polistirex is also contraindicated in patients
+      with:": "Significant respiratory depression", a contraindicated patient condition.
+    status: DRAFT
+    notes: >-
+      Unbound only because of a term-check misreading ("depression" read as mood depression); a reviewer
+      may bind HP:0002791 Hypoventilation, BROADER. HP Respiratory insufficiency names failure of gas
+      exchange, not depressed breathing. Not attributed: the label states it of the product.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or severe bronchial asthma
+      member: Acute bronchial asthma
+      term:
+        id: MONDO:0850283
+        label: acute asthma
+      binding: EXACT
+    quote: >-
+      Acute or severe bronchial asthma in an unmonitored setting or in the absence of resuscitative equipment
+    explanation: >-
+      An item of "Hydrocodone Polistirex and Chlorpheniramine Polistirex is also contraindicated in patients
+      with:": "Acute or severe bronchial asthma" coordinates acute and severe bronchial asthma; this claim
+      is the member "Acute bronchial asthma": MONDO acute asthma ("bronchial asthma" is asthma). "in an
+      unmonitored setting or in the absence of resuscitative equipment" restricts the setting, for which
+      the schema has no slot; it stays in the quote.
+    status: DRAFT
+    notes: >-
+      One claim per member of "Acute or severe bronchial asthma". Grounding store maps the phrase and
+      "acute bronchial asthma" to UMLS:C0004096 (Asthmas, broadMatch), in no configured ontology. Not
+      attributed: the label states it of the product.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or severe bronchial asthma
+      member: severe bronchial asthma
+      term:
+        id: MONDO:0004979
+        label: asthma
+      binding: BROADER
+    quote: >-
+      Acute or severe bronchial asthma in an unmonitored setting or in the absence of resuscitative equipment
+    explanation: >-
+      An item of "Hydrocodone Polistirex and Chlorpheniramine Polistirex is also contraindicated in patients
+      with:": this claim is the member "severe bronchial asthma". MONDO asthma lacks the severity, so
+      BROADER. "in an unmonitored setting or in the absence of resuscitative equipment" restricts the
+      setting, for which the schema has no slot; it stays in the quote.
+    status: DRAFT
+    notes: >-
+      No severe-asthma term (searched MONDO "severe asthma", "asthma"; near-fatal asthma and status asthmaticus
+      are narrower than "severe"). Grounding store maps "severe bronchial asthma" to UMLS:C0004096 (broadMatch).
+      Not attributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: gastrointestinal obstruction
+      term:
+        id: HP:0004796
+        label: Gastrointestinal obstruction
+      binding: EXACT
+    quote: >-
+      Known or suspected gastrointestinal obstruction, including paralytic ileus
+    examples:
+    - text: paralytic ileus
+      term:
+        id: MONDO:0004568
+        label: paralytic ileus
+      binding: EXACT
+    explanation: >-
+      An item of "Hydrocodone Polistirex and Chlorpheniramine Polistirex is also contraindicated in patients
+      with:": "Known or suspected gastrointestinal obstruction", HP Gastrointestinal obstruction; "Known
+      or suspected" describes how certain the diagnosis is, not a second condition. "including paralytic
+      ileus" lists an example, recorded in examples.
+    status: DRAFT
+    notes: >-
+      Grounding store maps "Gastrointestinal obstruction" to HP:0004796 (agrees) and the whole phrase
+      "Known or suspected gastrointestinal obstruction" to sssom:NoTermFound. Not attributed.
+notes: >-
+  Prescription label (PLR format), extended-release suspension. Indication split per symptom (cough; upper
+  respiratory symptoms) and per condition (allergy; the common cold), each with age_range min 18. Not
+  curated: the Limitations of Use paragraphs; "All children younger than 6 years of age" (an age group
+  with no condition, a known missing slot); hypersensitivity to hydrocodone, chlorpheniramine or the inactive
+  ingredients (own ingredients). "in an unmonitored setting or in the absence of resuscitative equipment"
+  restricts the asthma contraindication to a care setting; no slot, kept in the quote. No claim is attributed:
+  every contraindication is stated of the product.

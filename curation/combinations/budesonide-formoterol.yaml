@@ -1,0 +1,178 @@
+id: MEDICNE:combo-c67c5da7-776c-5bb9-bee1-438a73c030da
+name: budesonide / formoterol
+ingredients:
+- id: CHEBI:3207
+  label: budesonide
+- id: CHEBI:5147
+  label: formoterol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: dd352302-e2fe-4388-b4b0-00b34f6ebe48
+    version: 2
+    title: 'These highlights do not include all the information needed to use BUDESONIDE AND FORMOTEROL
+      FUMARATE DIHYDRATE INHALATION AEROSOL safely and effectively. See full prescribing information for
+      BUDESONIDE AND FORMOTEROL FUMARATE DIHYDRATE INHALATION AEROSOL. BUDESONIDE and FORMOTEROL FUMARATE
+      DIHYDRATE inhalation aerosol, for oral inhalation use Initial U.S. Approval: 2006'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=dd352302-e2fe-4388-b4b0-00b34f6ebe48
+  product_name: Budesonide and formoterol fumarate dihydrate
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: asthma
+      term:
+        id: MONDO:0004979
+        label: asthma
+      binding: EXACT
+    quote: >-
+      Budesonide and formoterol fumarate dihydrate inhalation aerosol is indicated for the treatment
+      of asthma in patients 6 years of age and older.
+    age_range:
+      min_years: 6
+      text: 6 years of age and older
+    explanation: >-
+      "is indicated for the treatment of asthma" gives TREATS with object asthma; "in patients 6
+      years of age and older" sets the lower age bound.
+    status: DRAFT
+    notes: >-
+      The next sentence ("should be used for patients not adequately controlled on a long-term
+      asthma-control medication ... or whose disease warrants initiation of treatment with both")
+      is an alternative-criteria usage statement, not a single prior-therapy requirement, so no
+      line_of_therapy is recorded. Product-level, unattributed: the "corticosteroid and a
+      long-acting beta 2 -adrenergic agonist" class wording names no ingredient.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: airflow obstruction
+      term:
+        id: HP:0006536
+        label: Airway obstruction
+      binding: EXACT
+    quote: >-
+      Budesonide and formoterol fumarate dihydrate inhalation aerosol 160/4.5 is indicated for the
+      maintenance treatment of airflow obstruction in patients with chronic obstructive pulmonary
+      disease (COPD) including chronic bronchitis and/or emphysema.
+    disease_context:
+      text: chronic obstructive pulmonary disease (COPD)
+      term:
+        id: MONDO:0005002
+        label: chronic obstructive pulmonary disease
+      binding: EXACT
+    explanation: >-
+      "is indicated for the maintenance treatment of airflow obstruction" gives TREATS
+      (maintenance is still treatment) with airflow obstruction as the object; "in patients with
+      chronic obstructive pulmonary disease (COPD)" is the disease context.
+    status: DRAFT
+    notes: >-
+      HP Airway obstruction ("Increased resistance to the passage of air") is the parent of HP
+      Reversible and Irreversible airflow obstruction, so it names airflow obstruction without a
+      reversibility the label does not state. EXACT rests on that hierarchy and the definition, not
+      on a synonym; a reviewer may prefer BROADER. The grounding store has sssom:NoTermFound for
+      "airflow obstruction"; its only match is the row for the bare word "obstruction"
+      (UMLS:C0028778 "Block"), which is not a respiratory concept. "including chronic bronchitis and/or emphysema" lists examples of
+      the disease context (MONDO chronic bronchitis MONDO:0005607, pulmonary emphysema
+      MONDO:0004849, both under COPD); the schema's examples slot describes the object, so they
+      are not recorded. The 160/4.5 strength restriction stays in the quote. Product-level,
+      unattributed.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: exacerbations of COPD
+      term_gap: >-
+        searched MONDO "exacerbation", "acute exacerbation", "COPD", "chronic obstructive"; HP
+        "exacerbation": no COPD-exacerbation term. The words also name COPD (MONDO:0005002) and HP
+        Chronic obstructive pulmonary disease (HP:0006510), but those are the disease, not the
+        exacerbation the product reduces, so COPD is recorded as the disease context instead.
+    quote: >-
+      Budesonide and formoterol fumarate dihydrate inhalation aerosol 160/4.5 is also indicated to
+      reduce exacerbations of COPD.
+    disease_context:
+      text: COPD
+      term:
+        id: MONDO:0005002
+        label: chronic obstructive pulmonary disease
+      binding: EXACT
+    explanation: >-
+      "is also indicated to reduce exacerbations of COPD" gives PREVENTATIVE_FOR_CONDITION with the
+      exacerbation as the object and COPD as its disease context.
+    status: DRAFT
+    notes: >-
+      Follows the skill's tie-break ("Reduction of exacerbations of COPD": object the exacerbation,
+      context COPD, unbound when no term fits). Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: status asthmaticus or other acute episodes of asthma or COPD
+      member: status asthmaticus
+      term:
+        id: MONDO:0004766
+        label: status asthmaticus
+      binding: EXACT
+    quote: >-
+      Primary treatment of status asthmaticus or other acute episodes of asthma or COPD where
+      intensive measures are required.
+    explanation: >-
+      Under "The use of ... is contraindicated in the following conditions:", "Primary treatment of
+      status asthmaticus or other acute episodes of asthma or COPD where intensive measures are
+      required" contraindicates the product as primary treatment of those episodes; this claim
+      covers the status asthmaticus member.
+    status: DRAFT
+    notes: >-
+      The contraindication is to primary treatment of the episode, not to use in a patient who
+      has had one; the "primary treatment" and "where intensive measures are required" wording
+      has no slot and stays in the quote. MONDO status asthmaticus (HP Status asthmaticus
+      HP:0012653 also exists; the grounding store maps to it). Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: status asthmaticus or other acute episodes of asthma or COPD
+      member: other acute episodes of asthma
+      term:
+        id: MONDO:0850283
+        label: acute asthma
+      binding: EXACT
+    quote: >-
+      Primary treatment of status asthmaticus or other acute episodes of asthma or COPD where
+      intensive measures are required.
+    explanation: >-
+      The same list item contraindicates primary treatment of "other acute episodes of asthma ...
+      where intensive measures are required"; this claim covers the acute-asthma member ("other" marks these as episodes besides status asthmaticus).
+    status: DRAFT
+    notes: >-
+      MONDO acute asthma says what "acute episodes of asthma" says. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: status asthmaticus or other acute episodes of asthma or COPD
+      member: other acute episodes of COPD
+      term_gap: >-
+        searched MONDO "exacerbation", "acute exacerbation", "COPD", "chronic obstructive"; HP
+        "exacerbation": no term for an acute COPD episode or exacerbation. COPD itself
+        (MONDO:0005002, HP:0006510) names the disease, not the episode, and binding it here would
+        state that the product is contraindicated in COPD, which it is indicated for.
+    quote: >-
+      Primary treatment of status asthmaticus or other acute episodes of asthma or COPD where
+      intensive measures are required.
+    explanation: >-
+      The same list item contraindicates primary treatment of "acute episodes of ... COPD where
+      intensive measures are required"; this claim covers the COPD member.
+    status: DRAFT
+    notes: >-
+      Unbound, like the "exacerbations of COPD" indication (skill tie-break). No disease_context
+      "COPD" is added: inside this coordinated phrase the validator reads it as a coordination
+      member. Product-level, unattributed.
+notes: >-
+  Not curated: hypersensitivity to any of the ingredients (allergy to the product's own
+  ingredients); the Limitations of Use ("NOT indicated for the relief of acute bronchospasm"); "the
+  only strength indicated for the treatment of COPD" (restates the strength restriction of the
+  COPD claims). The Highlights restate the indications and contraindications; the claims quote the
+  full-text sentences except the contraindication, which quotes the full-text list item. No claim
+  is attributed: the label never assigns an indication or contraindication to budesonide or
+  formoterol.

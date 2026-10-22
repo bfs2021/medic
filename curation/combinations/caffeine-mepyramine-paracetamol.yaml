@@ -1,0 +1,226 @@
+id: MEDICNE:combo-36adcdc3-8c54-545e-a539-cea653121e1e
+name: caffeine / mepyramine / paracetamol
+ingredients:
+- id: CHEBI:27732
+  label: caffeine
+- id: CHEBI:6762
+  label: mepyramine
+- id: CHEBI:46195
+  label: paracetamol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: de723b85-011c-4014-82a8-e813460e3f12
+    version: 8
+    title: Rite Aid 44-390
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=de723b85-011c-4014-82a8-e813460e3f12
+  product_name: MENSTRUAL COMPLETE
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: bloating
+      term:
+        id: HP:0003270
+        label: Abdominal distention
+      binding: EXACT
+    quote: >-
+      for the temporary relief of these symptoms associated with menstrual periods: bloating
+    disease_context:
+      text: menstrual periods
+      term_gap: >-
+        searched MONDO/HP "menstrua", HsapDv "menstrua": menstruation itself has no condition or
+        life-stage term. MONDO menstrual disorder, HP Abnormality of the menstrual cycle and their
+        children name disorders the label does not; HP:0025220 Triggered by menstruation is an onset
+        modifier, not a condition; HP:6000309 Menstruating female between menarche and menopause is
+        a past-history phenotype. The grounding store maps "menstrual periods" to UMLS:C0025344
+        (closeMatch), outside the configured ontologies
+    explanation: >-
+      "for the temporary relief of these symptoms associated with menstrual periods:" followed by
+      the listed symptom gives AMELIORATES_CONDITION ("temporary relief") for that symptom. HP
+      Abdominal distention (exact synonym "Bloating"). "associated with menstrual periods" names
+      what the symptoms occur with, recorded as an unbound disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: EXACT
+    quote: >-
+      for the temporary relief of these symptoms associated with menstrual periods: bloating
+      headache
+    disease_context:
+      text: menstrual periods
+      term_gap: >-
+        searched MONDO/HP "menstrua", HsapDv "menstrua": menstruation itself has no condition or
+        life-stage term. MONDO menstrual disorder, HP Abnormality of the menstrual cycle and their
+        children name disorders the label does not; HP:0025220 Triggered by menstruation is an onset
+        modifier, not a condition; HP:6000309 Menstruating female between menarche and menopause is
+        a past-history phenotype. The grounding store maps "menstrual periods" to UMLS:C0025344
+        (closeMatch), outside the configured ontologies
+    explanation: >-
+      "for the temporary relief of these symptoms associated with menstrual periods:" followed by
+      the listed symptom gives AMELIORATES_CONDITION ("temporary relief") for that symptom. HP
+      Headache. "associated with menstrual periods" names what the symptoms occur with, recorded as
+      an unbound disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: water-weight gain
+      term_gap: >-
+        searched HP "water-weight", "weight gain", "weight", "body weight", "fluid retention",
+        "edema": no term for a transient gain in weight from retained water. HP:0004324 Increased
+        body weight is an abnormally high weight state, not a transient gain; HP:0000969 Edema
+        (exact synonym "Water retention") names the retained fluid rather than the weight gain the
+        label names. The grounding store maps "water-weight gain" to sssom:NoTermFound
+    quote: >-
+      for the temporary relief of these symptoms associated with menstrual periods: bloating
+      headache water-weight gain
+    disease_context:
+      text: menstrual periods
+      term_gap: >-
+        searched MONDO/HP "menstrua", HsapDv "menstrua": menstruation itself has no condition or
+        life-stage term. MONDO menstrual disorder, HP Abnormality of the menstrual cycle and their
+        children name disorders the label does not; HP:0025220 Triggered by menstruation is an onset
+        modifier, not a condition; HP:6000309 Menstruating female between menarche and menopause is
+        a past-history phenotype. The grounding store maps "menstrual periods" to UMLS:C0025344
+        (closeMatch), outside the configured ontologies
+    explanation: >-
+      "for the temporary relief of these symptoms associated with menstrual periods:" followed by
+      the listed symptom gives AMELIORATES_CONDITION ("temporary relief") for that symptom.
+      "water-weight gain" is weight gain from retained water; no term fits, so it is unbound (see
+      term_gap). "associated with menstrual periods" names what the symptoms occur with, recorded as
+      an unbound disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: cramps
+      term:
+        id: HP:0100607
+        label: Dysmenorrhea
+      binding: NARROWER
+    quote: >-
+      for the temporary relief of these symptoms associated with menstrual periods: bloating
+      headache water-weight gain cramps
+    disease_context:
+      text: menstrual periods
+      term_gap: >-
+        searched MONDO/HP "menstrua", HsapDv "menstrua": menstruation itself has no condition or
+        life-stage term. MONDO menstrual disorder, HP Abnormality of the menstrual cycle and their
+        children name disorders the label does not; HP:0025220 Triggered by menstruation is an onset
+        modifier, not a condition; HP:6000309 Menstruating female between menarche and menopause is
+        a past-history phenotype. The grounding store maps "menstrual periods" to UMLS:C0025344
+        (closeMatch), outside the configured ontologies
+    explanation: >-
+      "for the temporary relief of these symptoms associated with menstrual periods:" followed by
+      the listed symptom gives AMELIORATES_CONDITION ("temporary relief") for that symptom. "cramps"
+      listed among symptoms associated with menstrual periods are menstrual cramps; HP Dysmenorrhea
+      (exact synonym "Painful menstruation") is more specific than the bare word, narrowed by the
+      list lead "associated with menstrual periods". "associated with menstrual periods" names what
+      the symptoms occur with, recorded as an unbound disease context.
+    status: DRAFT
+    notes: >-
+      The bare word "cramps" would read as HP Muscle spasm (exact synonym "Muscle cramps"; the
+      grounding store maps "cramps" to UMLS:C0026821 Cramps, Muscle), but cramps associated with
+      menstrual periods are uterine, not skeletal muscle cramps. HP Abdominal cramps was considered;
+      the label does not name the abdomen. Dysmenorrhea is a judgement call for the reviewer.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: backache
+      term:
+        id: HP:0003418
+        label: Back pain
+      binding: EXACT
+    quote: >-
+      for the temporary relief of these symptoms associated with menstrual periods: bloating
+      headache water-weight gain cramps backache
+    disease_context:
+      text: menstrual periods
+      term_gap: >-
+        searched MONDO/HP "menstrua", HsapDv "menstrua": menstruation itself has no condition or
+        life-stage term. MONDO menstrual disorder, HP Abnormality of the menstrual cycle and their
+        children name disorders the label does not; HP:0025220 Triggered by menstruation is an onset
+        modifier, not a condition; HP:6000309 Menstruating female between menarche and menopause is
+        a past-history phenotype. The grounding store maps "menstrual periods" to UMLS:C0025344
+        (closeMatch), outside the configured ontologies
+    explanation: >-
+      "for the temporary relief of these symptoms associated with menstrual periods:" followed by
+      the listed symptom gives AMELIORATES_CONDITION ("temporary relief") for that symptom.
+      "backache" is back pain; HP Back pain. "associated with menstrual periods" names what the
+      symptoms occur with, recorded as an unbound disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: fatigue
+      term:
+        id: HP:0012378
+        label: Fatigue
+      binding: EXACT
+    quote: >-
+      for the temporary relief of these symptoms associated with menstrual periods: bloating
+      headache water-weight gain cramps backache fatigue
+    disease_context:
+      text: menstrual periods
+      term_gap: >-
+        searched MONDO/HP "menstrua", HsapDv "menstrua": menstruation itself has no condition or
+        life-stage term. MONDO menstrual disorder, HP Abnormality of the menstrual cycle and their
+        children name disorders the label does not; HP:0025220 Triggered by menstruation is an onset
+        modifier, not a condition; HP:6000309 Menstruating female between menarche and menopause is
+        a past-history phenotype. The grounding store maps "menstrual periods" to UMLS:C0025344
+        (closeMatch), outside the configured ontologies
+    explanation: >-
+      "for the temporary relief of these symptoms associated with menstrual periods:" followed by
+      the listed symptom gives AMELIORATES_CONDITION ("temporary relief") for that symptom. HP
+      Fatigue. "associated with menstrual periods" names what the symptoms occur with, recorded as
+      an unbound disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: muscle aches
+      term:
+        id: HP:0003326
+        label: Myalgia
+      binding: EXACT
+    quote: >-
+      for the temporary relief of these symptoms associated with menstrual periods: bloating
+      headache water-weight gain cramps backache fatigue muscle aches
+    disease_context:
+      text: menstrual periods
+      term_gap: >-
+        searched MONDO/HP "menstrua", HsapDv "menstrua": menstruation itself has no condition or
+        life-stage term. MONDO menstrual disorder, HP Abnormality of the menstrual cycle and their
+        children name disorders the label does not; HP:0025220 Triggered by menstruation is an onset
+        modifier, not a condition; HP:6000309 Menstruating female between menarche and menopause is
+        a past-history phenotype. The grounding store maps "menstrual periods" to UMLS:C0025344
+        (closeMatch), outside the configured ontologies
+    explanation: >-
+      "for the temporary relief of these symptoms associated with menstrual periods:" followed by
+      the listed symptom gives AMELIORATES_CONDITION ("temporary relief") for that symptom. HP
+      Myalgia (exact synonym "Muscle ache"). "associated with menstrual periods" names what the
+      symptoms occur with, recorded as an unbound disease context.
+    status: DRAFT
+notes: >-
+  OTC Drug Facts label (MENSTRUAL COMPLETE); the Uses text is the indication section and "Do not
+  use" the Contraindications section. Uses is one symptom list under "for the temporary relief of
+  these symptoms associated with menstrual periods:": one AMELIORATES_CONDITION claim per symptom,
+  each with "menstrual periods" as an unbound disease context (menstruation is a physiological
+  process with no term in the configured ontologies; recorded like the pregnancy and lactation
+  states the skill curates unbound). No sex qualifier: the quote has no word naming the sex. No use
+  is assigned to an ingredient by the label, so no claim is attributed. No contraindication is
+  curated: "with any other drug containing acetaminophen" is a drug interaction with no patient
+  condition, and "if you have ever had an allergic reaction to this product or any of its
+  ingredients" is allergy to the product's own ingredients.

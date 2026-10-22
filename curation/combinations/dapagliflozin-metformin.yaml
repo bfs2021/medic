@@ -1,0 +1,147 @@
+id: MEDICNE:combo-aaf72b71-cd27-530e-8bf1-4e35905ede75
+name: dapagliflozin / metformin
+ingredients:
+- id: CHEBI:85078
+  label: dapagliflozin
+- id: CHEBI:6801
+  label: metformin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: eaf135b6-e378-4f62-a1e7-db45e23668c7
+    version: 7
+    title: 'These highlights do not include all the information needed to use DAPAGLIFLOZIN AND METFORMIN
+      HYDROCHLORIDE EXTENDED‑RELEASE TABLETS safely and effectively. See full prescribing information
+      for DAPAGLIFLOZIN AND METFORMIN HYDROCHLORIDE EXTENDED‑RELEASE TABLETS. DAPAGLIFLOZIN AND METFORMIN
+      HYDROCHLORIDE EXTENDED‑RELEASE tablets, for oral useInitial U.S. Approval: 2014'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=eaf135b6-e378-4f62-a1e7-db45e23668c7
+  product_name: dapagliflozin and metformin hydrochloride
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Dapagliflozin and Metformin HCl extended-release tablets are a combination of dapagliflozin
+      and metformin hydrochloride (HCl) extended-release, indicated as an adjunct to diet and
+      exercise to improve glycemic control in adults and pediatric patients aged 10 years and older
+      with type 2 diabetes mellitus.
+    age_range:
+      min_years: 10
+      text: aged 10 years and older
+    explanation: >-
+      "indicated ... to improve glycemic control in adults and pediatric patients aged 10 years and
+      older with type 2 diabetes mellitus" states treatment of type 2 diabetes mellitus; "aged 10
+      years and older" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject is the product ("a combination of dapagliflozin and
+      metformin hydrochloride"), which names both ingredients only as its contents. "as an adjunct
+      to diet and exercise" names non-drug measures, kept in the quote.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Severe renal impairment
+      term:
+        id: HP:0000083
+        label: Renal insufficiency
+      binding: BROADER
+    quote: >-
+      Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) or end-stage renal disease
+    explanation: >-
+      Under "are contraindicated in patients with:", the bullet "Severe renal impairment (eGFR below
+      30 mL/min/1.73 m 2 ) or end-stage renal disease" lists severe renal impairment as a
+      contraindicated condition; this claim covers that member of the coordination, the eGFR
+      threshold defining "severe".
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. HP Renal insufficiency is the term for impaired renal function
+      (as for "Renal impairment" in the drospirenone file); no severe-renal-insufficiency term
+      (searched HP "severe renal", "renal impairment"), so BROADER. The object text is the first
+      member alone, not the whole coordination with `member`: the validator reads the eGFR
+      parenthesis as further members ("min", "1.73 m 2") and rejects "Severe renal impairment" as a
+      member (tooling gap: members that drop parentheses).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: end-stage renal disease
+      term:
+        id: MONDO:0004375
+        label: end stage renal failure
+      binding: EXACT
+    quote: >-
+      Severe renal impairment (eGFR below 30 mL/min/1.73 m 2 ) or end-stage renal disease
+    explanation: >-
+      Under "are contraindicated in patients with:", the bullet "Severe renal impairment (eGFR below
+      30 mL/min/1.73 m 2 ) or end-stage renal disease" lists end-stage renal disease as a
+      contraindicated condition; this claim covers that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. MONDO end stage renal failure has the exact synonym "end stage
+      renal disease". Object text is the member alone, for the reason given on the severe renal
+      impairment claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or chronic metabolic acidosis
+      term:
+        id: MONDO:0000440
+        label: metabolic acidosis
+      binding: EXACT
+    examples:
+    - text: diabetic ketoacidosis
+      term:
+        id: MONDO:0012819
+        label: diabetic ketoacidosis
+      binding: EXACT
+    quote: >-
+      Acute or chronic metabolic acidosis, including diabetic ketoacidosis, with or without coma.
+    explanation: >-
+      Under "are contraindicated in patients with:", the bullet "Acute or chronic metabolic
+      acidosis, including diabetic ketoacidosis, with or without coma" lists metabolic acidosis as a
+      contraindicated condition; "Acute or chronic" is an exhaustive pair covering the whole class,
+      and "including diabetic ketoacidosis" names an example.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. One claim for the class (exhaustive pair), diabetic ketoacidosis
+      as a listed example; "with or without coma" does not restrict it.
+notes: >-
+  Not claimed: the Limitations of Use (type 1 diabetes mellitus; "Because of the metformin HCl
+  component, the use ... are limited to patients with type 2 diabetes mellitus"; chronic kidney
+  disease with polycystic kidney disease or immunosuppressive therapy, "not expected to be
+  effective"); "History of a serious hypersensitivity reaction to dapagliflozin, metformin HCl, or
+  any of the excipients" (own ingredients) and the reactions "reported with dapagliflozin" (a
+  report, not a contraindicated condition); "Diabetic ketoacidosis should be treated with insulin"
+  (treatment advice). The Highlights restate the contraindications more briefly. The
+  glycemic-control indication and the contraindications are the product's, so none is attributed.
+  NOT YET CURATED: the dapagliflozin-only indications under the list lead "Dapagliflozin, when
+  used as a component of Dapagliflozin and Metformin HCl extended-release tablets, is indicated in
+  adults with type 2 diabetes mellitus to reduce the risk of:". The label assigns them to
+  dapagliflozin, but the validator's INGREDIENT_SUBJECT check allows at most 40 characters between
+  the subject and "is" once the product's name is blanked; the SPL product name ("dapagliflozin
+  and metformin hydrochloride") is not the wording in the sentence, so the subject is 88
+  characters from its verb and the true attribution cannot pass. Recording them unattributed would
+  state them of the product, crediting metformin with kidney and heart-failure outcomes the label
+  gives to dapagliflozin alone, so they are left out until the check accepts the attribution.
+  Planned, each PREVENTATIVE_FOR_CONDITION, attributed to CHEBI:85078 by INGREDIENT_SUBJECT on
+  that lead (the lead says "in adults", but the bullet items say "patients", so an item-sized
+  quote holds no age wording and no age_range would be recorded): (1) "Sustained eGFR decline" (HP:0012213 Decreased glomerular filtration rate,
+  BROADER), "end stage kidney disease" (MONDO:0004375 end stage renal failure, EXACT) and
+  "hospitalization for heart failure" (MONDO:0005252 heart failure, BROADER), context "chronic
+  kidney disease at risk of progression" (MONDO:0005300 chronic kidney disease); (2)
+  "hospitalization for heart failure" / "urgent heart failure visit" (heart failure, BROADER),
+  context "heart failure"; (3) "Hospitalization for heart failure" (heart failure, BROADER),
+  context "type 2 diabetes mellitus" (the "either established cardiovascular disease (CVD) or
+  multiple cardiovascular (CV) risk factors" alternatives are not a single condition).
+  "cardiovascular death" is an outcome, not a condition (as "death" in the aspirin/omeprazole
+  file), so it would not be claimed.

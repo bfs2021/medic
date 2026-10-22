@@ -1,0 +1,85 @@
+id: MEDICNE:combo-7472610d-5b30-554d-9d71-d4e190ad5ac4
+name: albuterol / ipratropium
+ingredients:
+- id: CHEBI:2549
+  label: albuterol
+- id: CHEBI:5956
+  label: ipratropium
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 001e3b1c-b7c1-44aa-b812-e78dbf4f3069
+    version: 2
+    title: Ipratropium Bromide and Albuterol Sulfate
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=001e3b1c-b7c1-44aa-b812-e78dbf4f3069
+  product_name: Ipratropium Bromide and Albuterol Sulfate
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: bronchospasm
+      term:
+        id: HP:4000007
+        label: Bronchoconstriction
+      binding: EXACT
+    quote: >-
+      Ipratropium Bromide and Albuterol Sulfate Inhalation Solution is indicated for the treatment
+      of bronchospasm associated with COPD in patients requiring more than one bronchodilator.
+    disease_context:
+      text: COPD
+      term:
+        id: MONDO:0005002
+        label: chronic obstructive pulmonary disease
+      binding: EXACT
+    explanation: >-
+      "is indicated for the treatment of" gives TREATS; the object is "bronchospasm"; "associated
+      with COPD" restricts it to bronchospasm in COPD, the disease context. "in patients requiring
+      more than one bronchodilator" describes the population and is recorded as no qualifier.
+    status: DRAFT
+    notes: >-
+      Bronchospasm is a phenotype: HP Bronchoconstriction (exact synonym "Bronchospasm"). The
+      grounding store maps "bronchospasm" to MONDO:0001358 bronchial disorder, which is broader and
+      loses the phenotype. "in patients requiring more than one bronchodilator" is a population /
+      severity criterion, not a prior-therapy failure, so no line_of_therapy. Product-level claim,
+      unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: atropine
+      term:
+        id: CHEBI:16684
+        label: atropine
+      binding: EXACT
+    - text: its derivatives
+      term_gap: >-
+        searched CHEBI "atropine", "tropane", "muscarinic antagonist": no class for atropine
+        derivatives (tropane alkaloid and muscarinic antagonist are both broader and differ in
+        meaning)
+    quote: >-
+      Ipratropium Bromide and Albuterol Sulfate Inhalation Solution is contraindicated in patients
+      with a history of hypersensitivity to any of its components, or to atropine and its
+      derivatives.
+    explanation: >-
+      "is contraindicated in patients with a history of hypersensitivity ... to atropine and its
+      derivatives" is a contraindication in patients allergic to atropine and its derivatives
+      (cross-sensitivity to agents other than the product's own components), so the object is the
+      allergy and atropine and its derivatives are its specializations.
+    status: DRAFT
+    notes: >-
+      Only the cross-sensitivity to atropine and its derivatives is curated; "any of its
+      components" is allergy to the product's own ingredients and is not. drug allergy is
+      NARROWER than the bare word "hypersensitivity" (MONDO:0000605), justified by "to atropine
+      and its derivatives". Unattributed: atropine is the allergen, and the label does not name
+      ipratropium (an atropine derivative pharmacologically).

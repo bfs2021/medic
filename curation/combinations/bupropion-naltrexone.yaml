@@ -1,0 +1,306 @@
+id: MEDICNE:combo-31823be9-d776-5fbe-a1a9-0c2d04043317
+name: bupropion / naltrexone
+ingredients:
+- id: CHEBI:3219
+  label: bupropion
+- id: CHEBI:7465
+  label: naltrexone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 485ff360-32c8-11df-928b-0002a5d5c51b
+    version: 27
+    title: 'These highlights do not include all the information needed to use CONTRAVE® safely and effectively.
+      See full prescribing information for CONTRAVE. CONTRAVE (naltrexone hydrochloride and bupropion
+      hydrochloride) extended-release tablets, for oral use Initial U.S. Approval: 2014'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=485ff360-32c8-11df-928b-0002a5d5c51b
+  product_name: ContraveExtended-Release
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: obesity or overweight
+      member: obesity
+      term:
+        id: MONDO:0011122
+        label: obesity disorder
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adults
+    quote: >-
+      CONTRAVE is indicated in combination with a reduced-calorie diet and increased physical
+      activity to reduce excess body weight and maintain weight reduction long term in adults with
+      obesity or overweight in the presence of at least one weight-related comorbid condition.
+    explanation: >-
+      "indicated ... to reduce excess body weight and maintain weight reduction long term in adults
+      with obesity or overweight" is treatment of obesity (the first member of "obesity or
+      overweight"); "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level sentence ("CONTRAVE is indicated"), so unattributed; the Highlights sentence
+      naming naltrexone and bupropion describes their pharmacology and assigns the indication to
+      neither. "in combination with a reduced-calorie diet and increased physical activity" names a
+      lifestyle co-therapy, no agent, so it is left in the quote rather than in_combination_with.
+      "in the presence of at least one weight-related comorbid condition" names no specific
+      condition and is not recorded as a context. MONDO obesity disorder carries the exact synonym "obesity".
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: obesity or overweight
+      member: overweight
+      term:
+        id: HP:0025502
+        label: Overweight
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adults
+    quote: >-
+      CONTRAVE is indicated in combination with a reduced-calorie diet and increased physical
+      activity to reduce excess body weight and maintain weight reduction long term in adults with
+      obesity or overweight in the presence of at least one weight-related comorbid condition.
+    explanation: >-
+      "indicated ... to reduce excess body weight and maintain weight reduction long term in adults
+      with obesity or overweight" is treatment of overweight (the second member of "obesity or
+      overweight"); "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level sentence ("CONTRAVE is indicated"), so unattributed; the Highlights sentence
+      naming naltrexone and bupropion describes their pharmacology and assigns the indication to
+      neither. "in combination with a reduced-calorie diet and increased physical activity" names a
+      lifestyle co-therapy, no agent, so it is left in the quote rather than in_combination_with.
+      "in the presence of at least one weight-related comorbid condition" names no specific
+      condition and is not recorded as a context. No MONDO overweight term (searched MONDO "overweight"); HP Overweight says what the label says.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Uncontrolled hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      CONTRAVE is contraindicated in Uncontrolled hypertension
+    explanation: >-
+      The first item of "CONTRAVE is contraindicated in": "Uncontrolled hypertension".
+      "Uncontrolled" narrows the term, so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO hypertensive disorder has no "hypertension" synonym, so HP Hypertension (as in the other
+      combination files).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Seizure disorder or a history of seizures
+      member: Seizure disorder
+      term:
+        id: MONDO:0005027
+        label: epilepsy
+      binding: EXACT
+    quote: >-
+      Seizure disorder or a history of seizures
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": "Seizure disorder", the first member of "Seizure
+      disorder or a history of seizures".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Seizure disorder or a history of seizures
+      member: a history of seizures
+      term:
+        id: HP:0001250
+        label: Seizure
+      binding: EXACT
+    quote: >-
+      Seizure disorder or a history of seizures
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": "a history of seizures", the second member of "Seizure
+      disorder or a history of seizures".
+    status: DRAFT
+    notes: >-
+      "a history of" describes the patient, not a different condition, so HP Seizure is EXACT.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Bulimia or anorexia nervosa
+      member: Bulimia nervosa
+      term:
+        id: MONDO:0005452
+        label: bulimia nervosa
+      binding: EXACT
+    quote: >-
+      Bulimia or anorexia nervosa, which increase the risk for seizure
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": "Bulimia nervosa", the first member of "Bulimia or
+      anorexia nervosa" (the shared head "nervosa" completes "Bulimia"). "which increase the risk
+      for seizure" gives the label's reason and names no ingredient.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Bulimia or anorexia nervosa
+      member: anorexia nervosa
+      term:
+        id: MONDO:0005351
+        label: anorexia nervosa
+      binding: EXACT
+    quote: >-
+      Bulimia or anorexia nervosa, which increase the risk for seizure
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": "anorexia nervosa", the second member of "Bulimia or
+      anorexia nervosa". "which increase the risk
+      for seizure" gives the label's reason and names no ingredient.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Chronic opioid or opiate agonist (e.g., methadone) or partial agonists (e.g., buprenorphine)
+        use, or acute opiate withdrawal
+      member: acute opiate withdrawal
+      term:
+        id: MONDO:0005567
+        label: substance withdrawal syndrome
+      binding: BROADER
+    object_specialization:
+    - text: opiate
+      term:
+        id: CHEBI:60606
+        label: opioid receptor agonist
+      binding: BROADER
+    quote: >-
+      Chronic opioid or opiate agonist (e.g., methadone) or partial agonists (e.g., buprenorphine)
+      use, or acute opiate withdrawal
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": "acute opiate withdrawal", a withdrawal syndrome
+      from opiates (specialization).
+    status: DRAFT
+    notes: >-
+      No opioid-withdrawal term (searched MONDO "opioid withdrawal", "opiate", "withdrawal"); MONDO
+      substance withdrawal syndrome composed with the agent. No CHEBI opiate term (searched
+      "opiate"); opioid receptor agonist is broader (opioid agent was rejected because it also
+      covers antagonists such as naltrexone). The other alternative in the item, "Chronic opioid or
+      opiate agonist ... or partial agonists ... use", is concomitant drug use with no condition
+      (a drug interaction) and is not curated. The label does not say which ingredient this
+      concerns, so unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and antiepileptic drugs
+      member: abrupt discontinuation of alcohol
+      term_gap: >-
+        searched MONDO "withdrawal", "drug withdrawal", "alcohol withdrawal", "benzodiazepine
+        withdrawal": MONDO:0005567 substance withdrawal syndrome (and MONDO:0005433 alcohol
+        withdrawal) name the syndrome that may follow, but the label names the act of abrupt
+        discontinuation, not a syndrome, so no term is bound
+    object_specialization:
+    - text: alcohol
+      term:
+        id: CHEBI:16236
+        label: ethanol
+      binding: NARROWER
+    quote: >-
+      Patients undergoing an abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and
+      antiepileptic drugs
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": patients undergoing "abrupt discontinuation of alcohol", the first
+      member of the list, with the discontinued agent as the specialization.
+    status: DRAFT
+    notes: >-
+      "alcohol" (beverage alcohol) is bound to ethanol, more specific than the CHEBI alcohol class the word names, so NARROWER. Unbound object (see term_gap); a reviewer may prefer to bind substance withdrawal
+      syndrome. Unattributed: the label names no ingredient.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and antiepileptic drugs
+      member: abrupt discontinuation of benzodiazepines
+      term_gap: >-
+        searched MONDO "withdrawal", "drug withdrawal", "alcohol withdrawal", "benzodiazepine
+        withdrawal": MONDO:0005567 substance withdrawal syndrome (and MONDO:0005433 alcohol
+        withdrawal) name the syndrome that may follow, but the label names the act of abrupt
+        discontinuation, not a syndrome, so no term is bound
+    object_specialization:
+    - text: benzodiazepines
+      term:
+        id: CHEBI:22720
+        label: benzodiazepine
+      binding: EXACT
+    quote: >-
+      Patients undergoing an abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and
+      antiepileptic drugs
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": patients undergoing "abrupt discontinuation of benzodiazepines", the second
+      member of the list, with the discontinued agent as the specialization.
+    status: DRAFT
+    notes: >-
+      CHEBI benzodiazepine is the class of benzodiazepines. Unbound object (see term_gap); a reviewer may prefer to bind substance withdrawal
+      syndrome. Unattributed: the label names no ingredient.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and antiepileptic drugs
+      member: abrupt discontinuation of barbiturates
+      term_gap: >-
+        searched MONDO "withdrawal", "drug withdrawal", "alcohol withdrawal", "benzodiazepine
+        withdrawal": MONDO:0005567 substance withdrawal syndrome (and MONDO:0005433 alcohol
+        withdrawal) name the syndrome that may follow, but the label names the act of abrupt
+        discontinuation, not a syndrome, so no term is bound
+    object_specialization:
+    - text: barbiturates
+      term:
+        id: CHEBI:22693
+        label: barbiturates
+      binding: EXACT
+    quote: >-
+      Patients undergoing an abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and
+      antiepileptic drugs
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": patients undergoing "abrupt discontinuation of barbiturates", the third
+      member of the list, with the discontinued agent as the specialization.
+    status: DRAFT
+    notes: >-
+      CHEBI barbiturates is the drug class. Unbound object (see term_gap); a reviewer may prefer to bind substance withdrawal
+      syndrome. Unattributed: the label names no ingredient.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and antiepileptic drugs
+      member: abrupt discontinuation of antiepileptic drugs
+      term_gap: >-
+        searched MONDO "withdrawal", "drug withdrawal", "alcohol withdrawal", "benzodiazepine
+        withdrawal": MONDO:0005567 substance withdrawal syndrome (and MONDO:0005433 alcohol
+        withdrawal) name the syndrome that may follow, but the label names the act of abrupt
+        discontinuation, not a syndrome, so no term is bound
+    object_specialization:
+    - text: antiepileptic drugs
+      term:
+        id: CHEBI:35623
+        label: anticonvulsant
+      binding: EXACT
+    quote: >-
+      Patients undergoing an abrupt discontinuation of alcohol, benzodiazepines, barbiturates, and
+      antiepileptic drugs
+    explanation: >-
+      An item of "CONTRAVE is contraindicated in": patients undergoing "abrupt discontinuation of antiepileptic drugs", the fourth
+      member of the list, with the discontinued agent as the specialization.
+    status: DRAFT
+    notes: >-
+      No CHEBI "antiepileptic" term (searched); anticonvulsant is the same role. Unbound object (see term_gap); a reviewer may prefer to bind substance withdrawal
+      syndrome. Unattributed: the label names no ingredient.
+notes: >-
+  Not curated: "Use of other bupropion-containing products", "Chronic opioid ... use" and the MAOI
+  items (drug interactions with no condition; "Starting CONTRAVE in a patient treated with
+  reversible MAOIs such as linezolid or intravenous methylene blue" likewise); "Known allergy to
+  bupropion, naltrexone or any other component of CONTRAVE" (allergy to the product's own
+  ingredients); "Anaphylactoid/anaphylactic reactions and Stevens-Johnson syndrome have been reported
+  with bupropion" (a statement of risk, not a contraindicated condition); the Limitations of Use
+  ("has not been established", coadministration with other naltrexone- or bupropion-containing
+  products). The Highlights copies of the indication and contraindications restate the full text.

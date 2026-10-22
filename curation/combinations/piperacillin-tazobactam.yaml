@@ -1,0 +1,284 @@
+id: MEDICNE:combo-e9fcd691-cdd4-59e0-8e7a-77a445cdd799
+name: piperacillin / tazobactam
+ingredients:
+- id: CHEBI:8232
+  label: piperacillin
+- id: CHEBI:9421
+  label: tazobactam
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 80f4bdb8-131e-4485-b7a2-accd596d4cde
+    version: 3
+    title: 'These highlights do not include all the information needed to use PIPERACILLIN AND TAZOBACTAM
+      FOR INJECTION safely and effectively. See full prescribing information for PIPERACILLIN AND TAZOBACTAM
+      FOR INJECTION. PIPERACILLIN and TAZOBACTAM for injection, for intravenous use Initial U.S. approval:
+      1993'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=80f4bdb8-131e-4485-b7a2-accd596d4cde
+  product_name: Piperacillin and Tazobactam
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: appendicitis (complicated by rupture or abscess)
+      term:
+        id: MONDO:0005649
+        label: appendicitis
+      binding: BROADER
+    quote: >-
+      Piperacillin and tazobactam for injection is indicated in adults and pediatric patients (2
+      months of age and older) for the treatment of appendicitis (complicated by rupture or
+      abscess) and peritonitis caused by beta-lactamase producing isolates of Escherichia coli or
+      the following members of the Bacteroides fragilis group: B. fragilis , B. ovatus , B.
+      thetaiotaomicron , or B. vulgatus .
+    age_range:
+      min_years: 0.1667
+      text: 2 months of age and older
+    explanation: >-
+      "is indicated ... for the treatment of appendicitis (complicated by rupture or abscess)"
+      states treatment of complicated appendicitis; the parenthetical names two complications of
+      one condition, not two conditions, so the claim has no member; "adults and pediatric
+      patients (2 months of age and older)" gives the age bound (2 months = 0.1667 years).
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. No complicated- or perforated-appendicitis term (searched
+      MONDO "appendicitis", "perforated appendicitis", "complicated appendicitis"); appendicitis is
+      broader. MONDO appendicitis (a disease) is chosen over the grounding store's HP:6000143
+      Appendicitis (a morphology phenotype). The causative organisms ("caused by beta-lactamase
+      producing isolates of Escherichia coli or ... Bacteroides fragilis group") restrict the
+      indication but have no slot in the schema; they stay in the quote. "appendicitis (...) and
+      peritonitis" joins two conditions; each claim uses its own item as text rather than the
+      whole phrase with a member, because the parenthetical inside the first item would not
+      expand into members.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: peritonitis
+      term:
+        id: MONDO:0004522
+        label: infectious peritonitis
+      binding: NARROWER
+    quote: >-
+      Piperacillin and tazobactam for injection is indicated in adults and pediatric patients (2
+      months of age and older) for the treatment of appendicitis (complicated by rupture or
+      abscess) and peritonitis caused by beta-lactamase producing isolates of Escherichia coli or
+      the following members of the Bacteroides fragilis group: B. fragilis , B. ovatus , B.
+      thetaiotaomicron , or B. vulgatus .
+    age_range:
+      min_years: 0.1667
+      text: 2 months of age and older
+    explanation: >-
+      "is indicated ... for the treatment of ... peritonitis" states treatment of peritonitis;
+      "caused by beta-lactamase producing isolates of Escherichia coli or ... Bacteroides fragilis
+      group" makes it infectious, so infectious peritonitis, NARROWER than the word; "adults and
+      pediatric patients (2 months of age and older)" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. The grounding store maps "peritonitis" to MONDO peritonitis
+      (MONDO:1010128), the parent of the bound term. The causative organisms stay in the quote
+      (no schema slot).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: nosocomial pneumonia (moderate to severe)
+      term:
+        id: MONDO:0005249
+        label: pneumonia
+      binding: BROADER
+    quote: >-
+      Piperacillin and tazobactam for injection is indicated in adults and pediatric patients (2
+      months of age and older) for the treatment of nosocomial pneumonia (moderate to severe)
+      caused by beta-lactamase producing isolates of Staphylococcus aureus and by piperacillin and
+      tazobactam-susceptible Acinetobacter baumannii , Haemophilus influenzae , Klebsiella
+      pneumoniae , and Pseudomonas aeruginosa (Nosocomial pneumonia caused by P. aeruginosa should
+      be treated in combination with an aminoglycoside)
+    age_range:
+      min_years: 0.1667
+      text: 2 months of age and older
+    explanation: >-
+      "is indicated ... for the treatment of nosocomial pneumonia (moderate to severe)" states
+      treatment of nosocomial pneumonia; "adults and pediatric patients (2 months of age and
+      older)" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. No nosocomial- or hospital-acquired-pneumonia term (searched
+      MONDO "pneumonia", "nosocomial", "hospital", "hospital-acquired pneumonia"); MONDO pneumonia
+      is broader (it also lacks the "moderate to severe" severity). MONDO bacterial pneumonia
+      (MONDO:0004652) was considered but classifies by cause, not by setting, so it is not broader
+      than "nosocomial pneumonia". Grounding store maps the
+      phrase to UMLS:C0949083. The parenthetical "should be treated in combination with an
+      aminoglycoside" applies only to the P. aeruginosa subset, so it is not recorded as
+      in_combination_with on the whole indication; a reviewer may want a separate claim for it.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: skin and skin structure infections
+      term:
+        id: MONDO:0024295
+        label: skin disease caused by bacterial infection
+      binding: NARROWER
+    examples:
+    - text: cellulitis
+      term:
+        id: MONDO:0005230
+        label: cellulitis
+      binding: EXACT
+    - text: cutaneous abscesses
+      term:
+        id: HP:0031292
+        label: Cutaneous abscess
+      binding: EXACT
+    - text: ischemic/diabetic foot infections
+      term_gap: >-
+        searched MONDO "diabetic foot", "diabetic foot infection", "foot infection"; HP "diabetic
+        foot", "foot ulcer": no foot-infection term. Grounding store maps the phrase to
+        UMLS:C0744130.
+    quote: >-
+      Piperacillin and tazobactam for injection is indicated in adults for the treatment of
+      uncomplicated and complicated skin and skin structure infections, including cellulitis,
+      cutaneous abscesses and ischemic/diabetic foot infections caused by beta-lactamase producing
+      isolates of Staphylococcus aureus .
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "is indicated in adults for the treatment of uncomplicated and complicated skin and skin
+      structure infections" states treatment of skin and skin structure infections ("uncomplicated
+      and complicated" together cover the whole class); the members after "including" are
+      examples; "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "Skin and skin structure infections" is the regulatory category
+      for infections of the skin and the tissue under it; no term names it (searched MONDO "skin
+      and skin structure", "skin infection", "soft tissue infection"; the grounding store has
+      sssom:NoTermFound for the phrase). Bound NARROWER to MONDO skin disease caused by bacterial
+      infection: "caused by beta-lactamase producing isolates of Staphylococcus aureus" makes the
+      infections bacterial, and the term covers the cellulitis example (MONDO skin infection,
+      MONDO:0021201, does not, and was not used). The term covers the skin only, not the deeper
+      skin structures, which is a further reason it is NARROWER. A reviewer may prefer a term_gap.
+      Organisms stay in the quote.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: postpartum endometritis or pelvic inflammatory disease
+      member: postpartum endometritis
+      term:
+        id: MONDO:0000918
+        label: endometritis
+      binding: BROADER
+    quote: >-
+      Piperacillin and tazobactam for injection is indicated in adults for the treatment of
+      postpartum endometritis or pelvic inflammatory disease caused by beta-lactamase producing
+      isolates of Escherichia coli .
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "is indicated in adults for the treatment of postpartum endometritis or pelvic inflammatory
+      disease" states treatment; this claim covers the member "postpartum endometritis"; "adults"
+      gives the age bound.
+    status: DRAFT
+    notes: >-
+      No postpartum/puerperal-endometritis term (searched MONDO "endometritis", "postpartum",
+      "puerperal"; MONDO puerperal infection is not an endometritis term); endometritis is broader.
+      Grounding store maps the phrase to UMLS:C0269932. Organism stays in the quote.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: postpartum endometritis or pelvic inflammatory disease
+      member: pelvic inflammatory disease
+      term:
+        id: MONDO:0000922
+        label: pelvic inflammatory disease
+      binding: EXACT
+    quote: >-
+      Piperacillin and tazobactam for injection is indicated in adults for the treatment of
+      postpartum endometritis or pelvic inflammatory disease caused by beta-lactamase producing
+      isolates of Escherichia coli .
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "is indicated in adults for the treatment of postpartum endometritis or pelvic inflammatory
+      disease" states treatment; this claim covers the member "pelvic inflammatory disease";
+      "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Agrees with the grounding store. Organism stays in the quote.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: community-acquired pneumonia (moderate severity only)
+      term:
+        id: MONDO:0005249
+        label: pneumonia
+      binding: BROADER
+    quote: >-
+      Piperacillin and tazobactam for injection is indicated in adults for the treatment of
+      community-acquired pneumonia (moderate severity only) caused by beta-lactamase producing
+      isolates of Haemophilus influenzae .
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "is indicated in adults for the treatment of community-acquired pneumonia (moderate severity
+      only)" states treatment of community-acquired pneumonia; "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      No community-acquired-pneumonia term (searched MONDO "pneumonia", "community",
+      "community-acquired"); MONDO pneumonia is broader (bacterial pneumonia considered and not
+      used, as for the nosocomial claim). Grounding store maps the phrase to
+      UMLS:C0694549. Organism stays in the quote.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: allergic reactions
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: penicillins
+      term:
+        id: CHEBI:17334
+        label: penicillin
+      binding: EXACT
+    - text: cephalosporins
+      term:
+        id: CHEBI:23066
+        label: cephalosporin
+      binding: EXACT
+    - text: beta-lactamase inhibitors
+      term:
+        id: CHEBI:35625
+        label: EC 3.5.2.6 (beta-lactamase) inhibitor
+      binding: EXACT
+    quote: >-
+      Piperacillin and tazobactam for injection is contraindicated in patients with a history of
+      allergic reactions to any of the penicillins, cephalosporins, or beta-lactamase inhibitors.
+    explanation: >-
+      "is contraindicated in patients with a history of allergic reactions to any of the
+      penicillins, cephalosporins, or beta-lactamase inhibitors" states a drug-allergy
+      contraindication (the allergic reactions are to drugs, so drug allergy, NARROWER than the
+      words) with the three drug classes as the agents.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to three drug classes. Piperacillin is itself a penicillin and tazobactam a
+      beta-lactamase inhibitor, but the label names the classes, not the ingredients, and the
+      classes include other agents, so they are kept (cephalosporins are wholly other agents).
+      ChEBI penicillin (CHEBI:17334) and cephalosporin (CHEBI:23066) are the class terms. "a history
+      of" makes it a past reaction; recorded in this note only. Unattributed: allergens are not
+      causes.
+notes: >-
+  Not claimed: the Highlights summary list (it restates subsections 1.1-1.5 with the same
+  conditions); section 1.6 "Usage" (antimicrobial-stewardship text naming no condition). All
+  claims are product-level: the label never assigns an indication to piperacillin or tazobactam.
+  The causative organisms named in every indication have no slot in the schema and stay in the
+  quotes; the subsection headings ("Intra-abdominal Infections", "Female Pelvic Infections") are
+  not curated as objects because each subsection's sentence names its own conditions.

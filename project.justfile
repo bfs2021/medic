@@ -636,6 +636,15 @@ v1-drug-gap:
 v1-pair-gap ref="main":
   uv run python scripts/v1_pair_gap.py --ref {{ref}}
 
+# Score the build's combination-label claims against the curated gold standard
+# (curation/combinations/: 1,133 claims, 103 SPLs, 102 ingredient sets, hand-curated in
+# PRs #69-#87). Reports claim recall separately from attribution, because a product-level
+# claim credited to one moiety and an attributed claim credited to all of them are wrong in
+# opposite directions. This is the regression set #88/#89/#97 shipped without.
+[group('QC')]
+gold-combination-audit:
+  uv run python scripts/gold_combination_audit.py
+
 # ============== Utility ==============
 
 # List all drugs in the merged drug list

@@ -1,0 +1,444 @@
+id: MEDICNE:combo-78f4fb0b-276f-5962-b786-b27399372a2e
+name: fluorometholone / sulfacetamide
+ingredients:
+- id: CHEBI:31625
+  label: fluorometholone
+- id: CHEBI:63845
+  label: sulfacetamide
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 9d71d7fd-2b25-4163-922f-018ed8c5171f
+    version: 1
+    title: FML-S®(fluorometholone and sulfacetamide sodium ophthalmic suspension, USP) 0.1%/10%
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9d71d7fd-2b25-4163-922f-018ed8c5171f
+  product_name: ''
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: steroid-responsive inflammatory ocular conditions
+      term:
+        id: HP:0100533
+        label: Inflammatory abnormality of the eye
+      binding: BROADER
+    quote: >-
+      FML-S® ophthalmic suspension is indicated for steroid-responsive inflammatory ocular conditions
+      for which a corticosteroid is indicated and where superficial bacterial ocular infection or a risk
+      of bacterial ocular infection exists.
+    explanation: >-
+      "is indicated for steroid-responsive inflammatory ocular conditions" gives TREATS with the inflammatory
+      ocular conditions as the object. "where superficial bacterial ocular infection or a risk of bacterial
+      ocular infection exists" names two alternative settings (an existing infection, or only a risk of
+      one), so neither is recorded as a disease context.
+    status: DRAFT
+    notes: >-
+      HP Inflammatory abnormality of the eye (exact synonym "Ocular inflammation") is BROADER because
+      "steroid-responsive" narrows it. Product-level sentence, unattributed. The bacterial-infection clause
+      states a setting of use, not a treatment of the infection, so no TREATS-infection claim is made
+      from it; the anti-infective's role is curated from the "risk of superficial ocular infection" sentence
+      instead.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: inflammatory conditions of the palpebral and bulbar conjunctiva, cornea and anterior segment
+        of the globe
+      member: inflammatory conditions of the palpebral
+      term:
+        id: MONDO:0003799
+        label: conjunctivitis
+      binding: BROADER
+    quote: >-
+      Ocular steroids are indicated in inflammatory conditions of the palpebral and bulbar conjunctiva,
+      cornea and anterior segment of the globe, where the inherent risk of steroid use in certain infective
+      conjunctivitides is accepted to obtain a diminution in edema and inflammation.
+    explanation: >-
+      "Ocular steroids are indicated in inflammatory conditions of the palpebral ... conjunctiva", in
+      this product's Indications section, gives TREATS; this claim covers the palpebral conjunctiva member
+      of the site list. "to obtain a diminution in edema and inflammation" is the aim of that treatment.
+      The member is written "inflammatory conditions of the palpebral" and stands for the palpebral conjunctiva:
+      the head "conjunctiva" is shared with "bulbar".
+    status: DRAFT
+    notes: >-
+      The subject is the drug class "Ocular steroids", not a named ingredient, so the claim is not attributed
+      (the class points to fluorometholone, but the label does not name it here). conjunctivitis is BROADER
+      than inflammation of the palpebral conjunctiva alone; MONDO has no site-specific term. The validator's
+      parse of this nested coordination ("palpebral and bulbar conjunctiva" inside a comma list) does
+      not offer "inflammatory conditions of the palpebral conjunctiva" as a member, so the member omits
+      the shared head (tooling gap).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: inflammatory conditions of the palpebral and bulbar conjunctiva, cornea and anterior segment
+        of the globe
+      member: inflammatory conditions of the bulbar conjunctiva
+      term:
+        id: MONDO:0003799
+        label: conjunctivitis
+      binding: BROADER
+    quote: >-
+      Ocular steroids are indicated in inflammatory conditions of the palpebral and bulbar conjunctiva,
+      cornea and anterior segment of the globe, where the inherent risk of steroid use in certain infective
+      conjunctivitides is accepted to obtain a diminution in edema and inflammation.
+    explanation: >-
+      "Ocular steroids are indicated in inflammatory conditions of the ... bulbar conjunctiva" gives TREATS;
+      this claim covers the bulbar conjunctiva member of the site list.
+    status: DRAFT
+    notes: >-
+      The subject is the drug class "Ocular steroids", unattributed. conjunctivitis is BROADER than inflammation
+      of the bulbar conjunctiva alone.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: inflammatory conditions of the palpebral and bulbar conjunctiva, cornea and anterior segment
+        of the globe
+      member: inflammatory conditions of the cornea
+      term:
+        id: MONDO:0003085
+        label: keratitis
+      binding: EXACT
+    quote: >-
+      Ocular steroids are indicated in inflammatory conditions of the palpebral and bulbar conjunctiva,
+      cornea and anterior segment of the globe, where the inherent risk of steroid use in certain infective
+      conjunctivitides is accepted to obtain a diminution in edema and inflammation.
+    explanation: >-
+      "Ocular steroids are indicated in inflammatory conditions of the ... cornea" gives TREATS; this
+      claim covers the cornea member of the site list. Inflammation of the cornea is keratitis (MONDO
+      exact synonym "inflammation of cornea").
+    status: DRAFT
+    notes: >-
+      The subject is the drug class "Ocular steroids", not a named ingredient, so the claim is not attributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: inflammatory conditions of the palpebral and bulbar conjunctiva, cornea and anterior segment
+        of the globe
+      member: inflammatory conditions of the anterior segment of the globe
+      term:
+        id: HP:0100533
+        label: Inflammatory abnormality of the eye
+      binding: BROADER
+    quote: >-
+      Ocular steroids are indicated in inflammatory conditions of the palpebral and bulbar conjunctiva,
+      cornea and anterior segment of the globe, where the inherent risk of steroid use in certain infective
+      conjunctivitides is accepted to obtain a diminution in edema and inflammation.
+    explanation: >-
+      "Ocular steroids are indicated in inflammatory conditions of the ... anterior segment of the globe"
+      gives TREATS; this claim covers the anterior-segment member of the site list.
+    status: DRAFT
+    notes: >-
+      No MONDO/HP term for inflammation of the anterior segment as a whole (searched "anterior segment",
+      "ocular inflammation", "eye inflammation"); anterior uveitis covers only the uvea, so the broader
+      HP Inflammatory abnormality of the eye is bound. The subject is the drug class "Ocular steroids",
+      unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: chronic anterior uveitis
+      term:
+        id: MONDO:0006651
+        label: anterior uveitis
+      binding: BROADER
+    quote: >-
+      They are also indicated in chronic anterior uveitis and corneal injury from chemical, radiation
+      or thermal burns or penetration of foreign bodies.
+    explanation: >-
+      "They are also indicated in chronic anterior uveitis", with "They" referring back to the ocular
+      steroids of the previous sentence, gives TREATS chronic anterior uveitis.
+    status: DRAFT
+    notes: >-
+      No chronic anterior uveitis term in MONDO/HP (searched "chronic anterior uveitis"), so anterior
+      uveitis is BROADER. "They" is the drug class "Ocular steroids", unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: corneal injury from chemical, radiation or thermal burns or penetration of foreign bodies
+      member: corneal injury from chemical
+      term:
+        id: MONDO:0043519
+        label: burn
+      binding: BROADER
+    anatomical_context:
+      text: corneal
+      term:
+        id: UBERON:0000964
+        label: cornea
+      binding: EXACT
+    quote: >-
+      They are also indicated in chronic anterior uveitis and corneal injury from chemical, radiation
+      or thermal burns or penetration of foreign bodies.
+    explanation: >-
+      "They are also indicated in ... corneal injury from chemical ... burns" gives TREATS; this claim
+      covers the chemical-burn member, with the cornea as the site. The member is written "corneal injury
+      from chemical" and stands for chemical burns: the head "burns" is shared with "radiation or thermal".
+    status: DRAFT
+    notes: >-
+      MONDO/HP have no corneal injury, corneal burn or chemical/radiation/thermal burn term (searched
+      "corneal injury", "corneal burn", "eye burn", "chemical burn", "radiation burn", "eye injury", "ocular
+      injury"), so the burn members bind MONDO burn (BROADER) and the foreign-body member MONDO injury
+      (BROADER), each with the cornea as anatomical context. "They" is the drug class "Ocular steroids",
+      unattributed. The validator's parse of the nested coordination does not offer "corneal injury from
+      chemical burns" as a member, so the member omits the shared head (tooling gap). Without a comma
+      before "or penetration", the validator also reads "corneal injury from chemical radiation" as a
+      member; that is a misparse, not a condition, and is not curated.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: corneal injury from chemical, radiation or thermal burns or penetration of foreign bodies
+      member: corneal injury from radiation
+      term:
+        id: MONDO:0043519
+        label: burn
+      binding: BROADER
+    anatomical_context:
+      text: corneal
+      term:
+        id: UBERON:0000964
+        label: cornea
+      binding: EXACT
+    quote: >-
+      They are also indicated in chronic anterior uveitis and corneal injury from chemical, radiation
+      or thermal burns or penetration of foreign bodies.
+    explanation: >-
+      "They are also indicated in ... corneal injury from ... radiation ... burns" gives TREATS; this
+      claim covers the radiation-burn member, with the cornea as the site. The member "corneal injury
+      from radiation" stands for radiation burns (shared head "burns").
+    status: DRAFT
+    notes: >-
+      No corneal or radiation burn term; MONDO burn is BROADER. The member omits the shared head "burns"
+      (see the chemical-burn claim).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: corneal injury from chemical, radiation or thermal burns or penetration of foreign bodies
+      member: corneal injury from thermal burns
+      term:
+        id: MONDO:0043519
+        label: burn
+      binding: BROADER
+    anatomical_context:
+      text: corneal
+      term:
+        id: UBERON:0000964
+        label: cornea
+      binding: EXACT
+    quote: >-
+      They are also indicated in chronic anterior uveitis and corneal injury from chemical, radiation
+      or thermal burns or penetration of foreign bodies.
+    explanation: >-
+      "They are also indicated in ... corneal injury from ... thermal burns" gives TREATS; this claim
+      covers the thermal-burn member, with the cornea as the site.
+    status: DRAFT
+    notes: >-
+      No corneal or thermal burn term; MONDO burn is BROADER (see the chemical-burn claim).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: corneal injury from chemical, radiation or thermal burns or penetration of foreign bodies
+      member: corneal injury from penetration of foreign bodies
+      term:
+        id: MONDO:0021178
+        label: injury
+      binding: BROADER
+    anatomical_context:
+      text: corneal
+      term:
+        id: UBERON:0000964
+        label: cornea
+      binding: EXACT
+    quote: >-
+      They are also indicated in chronic anterior uveitis and corneal injury from chemical, radiation
+      or thermal burns or penetration of foreign bodies.
+    explanation: >-
+      "They are also indicated in ... corneal injury from ... penetration of foreign bodies" gives TREATS;
+      this claim covers the foreign-body member, with the cornea as the site.
+    status: DRAFT
+    notes: >-
+      No corneal injury or ocular foreign body term for humans (MONDO's corneal foreign body term is non-human
+      animal only); MONDO injury is BROADER.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: superficial ocular infection
+      term:
+        id: MONDO:0043885
+        label: eye infectious disorder
+      binding: BROADER
+    quote: >-
+      The use of a combination drug with an anti-infective component is indicated where the risk of superficial
+      ocular infection is high or where there is an expectation that potentially dangerous numbers of
+      bacteria will be present in the eye.
+    explanation: >-
+      "The use of a combination drug with an anti-infective component is indicated where the risk of superficial
+      ocular infection is high" is read as prevention of superficial ocular infection: the label does
+      not say "prevent", but it indicates the anti-infective component for patients at high risk of that
+      infection. "potentially dangerous numbers of bacteria will be present in the eye" is an alternative
+      setting and names no separate condition.
+    status: DRAFT
+    notes: >-
+      eye infectious disorder is BROADER: "superficial" narrows it, and MONDO has no superficial or bacterial
+      eye infection term (searched "bacterial eye", "eye infection"). The sentence names the anti-infective
+      only by its role ("an anti-infective component"), never the ingredient, so the claim is not attributed.
+      The organism sentence names sulfacetamide ("The anti-infective drug in this product, sulfacetamide,
+      is active against ..."), but it states antibacterial activity, not this claim, and is a separate
+      sentence. "This product does not provide adequate coverage against Neisseria species and Serratia
+      marcescens" is a negative microbiology statement and gives no claim. The organism list that follows
+      ("active against the following common bacterial eye pathogens") is microbiology, not a claim, and
+      there is no causative-organism slot to hold it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: viral diseases of the cornea and conjunctiva
+      member: viral diseases of the cornea
+      term:
+        id: MONDO:0020950
+        label: viral eye infection
+      binding: BROADER
+    examples:
+    - text: epithelial herpes simplex keratitis (dendritic keratitis)
+      term:
+        id: MONDO:0015288
+        label: herpes simplex virus keratitis
+      binding: BROADER
+    - text: vaccinia
+      term:
+        id: MONDO:0002595
+        label: vaccinia
+      binding: EXACT
+    - text: varicella
+      term:
+        id: MONDO:0005700
+        label: chickenpox
+      binding: EXACT
+    quote: >-
+      FML-S® ophthalmic suspension is contraindicated in most viral diseases of the cornea and conjunctiva,
+      including epithelial herpes simplex keratitis (dendritic keratitis), vaccinia and varicella, and
+      also in mycobacterial infection of the eye and fungal diseases of ocular structures.
+    explanation: >-
+      "contraindicated in most viral diseases of the cornea and conjunctiva including ..." gives CONTRAINDICATED_IN;
+      this claim covers the cornea member of "viral diseases of the cornea and conjunctiva". The diseases
+      after "including" are recorded as examples; "most" is a hedge on the category and is not a qualifier.
+    status: DRAFT
+    notes: >-
+      MONDO has no viral keratitis term (searched "viral keratitis"), so viral eye infection is BROADER
+      for the cornea member. herpes simplex virus keratitis (exact synonym "dendritic keratitis") is BROADER
+      than the epithelial form the label names, since it also covers stromal disease. Herpes simplex keratitis
+      is a corneal disease and is listed only on the cornea member; vaccinia and varicella name no site
+      and are listed on both members. "FML-S® ophthalmic suspension is contraindicated" makes the product
+      the subject. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: viral diseases of the cornea and conjunctiva
+      member: viral diseases of the conjunctiva
+      term:
+        id: MONDO:0043541
+        label: viral conjunctivitis
+      binding: EXACT
+    examples:
+    - text: vaccinia
+      term:
+        id: MONDO:0002595
+        label: vaccinia
+      binding: EXACT
+    - text: varicella
+      term:
+        id: MONDO:0005700
+        label: chickenpox
+      binding: EXACT
+    quote: >-
+      FML-S® ophthalmic suspension is contraindicated in most viral diseases of the cornea and conjunctiva,
+      including epithelial herpes simplex keratitis (dendritic keratitis), vaccinia and varicella, and
+      also in mycobacterial infection of the eye and fungal diseases of ocular structures.
+    explanation: >-
+      "contraindicated in most viral diseases of the cornea and conjunctiva including ..." gives CONTRAINDICATED_IN;
+      this claim covers the conjunctiva member, with vaccinia and varicella as the label's examples.
+    status: DRAFT
+    notes: >-
+      viral conjunctivitis is the conjunctiva member's exact term. "FML-S® ophthalmic suspension is contraindicated"
+      makes the product the subject. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: mycobacterial infection of the eye
+      term:
+        id: MONDO:0020590
+        label: mycobacterial infectious disease
+      binding: BROADER
+    anatomical_context:
+      text: eye
+      term:
+        id: UBERON:0000970
+        label: eye
+      binding: EXACT
+    quote: >-
+      FML-S® ophthalmic suspension is contraindicated in most viral diseases of the cornea and conjunctiva,
+      including epithelial herpes simplex keratitis (dendritic keratitis), vaccinia and varicella, and
+      also in mycobacterial infection of the eye and fungal diseases of ocular structures.
+    explanation: >-
+      "and also in mycobacterial infection of the eye" continues the contraindication: mycobacterial infection,
+      with the eye as its site.
+    status: DRAFT
+    notes: >-
+      No mycobacterial eye infection term (ocular tuberculosis covers tuberculosis only), so mycobacterial
+      infectious disease is BROADER, with the eye as anatomical context. "FML-S® ophthalmic suspension
+      is contraindicated" makes the product the subject. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: fungal diseases of ocular structures
+      term:
+        id: MONDO:0020944
+        label: fungal infection of eye
+      binding: EXACT
+    quote: >-
+      FML-S® ophthalmic suspension is contraindicated in most viral diseases of the cornea and conjunctiva,
+      including epithelial herpes simplex keratitis (dendritic keratitis), vaccinia and varicella, and
+      also in mycobacterial infection of the eye and fungal diseases of ocular structures.
+    explanation: >-
+      "and fungal diseases of ocular structures" continues the contraindication: fungal infection of the
+      eye.
+    status: DRAFT
+    notes: >-
+      "FML-S® ophthalmic suspension is contraindicated" makes the product the subject. Product-level,
+      unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: sulfonamides
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: EXACT
+    - text: other corticosteroids
+      term:
+        id: CHEBI:50858
+        label: corticosteroid
+      binding: EXACT
+    quote: >-
+      FML-S® ophthalmic suspension is also contraindicated in individuals with known or suspected hypersensitivity
+      to any of the ingredients of this preparation, to sulfonamides and to other corticosteroids.
+    explanation: >-
+      "contraindicated in individuals with known or suspected hypersensitivity ... to sulfonamides and
+      to other corticosteroids": drug allergy to the sulfonamides and to corticosteroids other than the
+      product's own (cross-sensitivity).
+    status: DRAFT
+    notes: >-
+      Hypersensitivity "to any of the ingredients of this preparation" is allergy to the product's own
+      ingredients and is not curated; the claim carries only the other agents. drug allergy is NARROWER
+      than "hypersensitivity", justified by the drug classes named. The sulfonamide class includes the
+      product's own sulfacetamide, but the label names the class, as "aspirin and other NSAIDs" names
+      NSAIDs; bound to ChEBI sulfonamide (the class name) rather than sulfonamide antibiotic, since the
+      label does not restrict it to antibacterials. Not attributed: the agents are allergens.

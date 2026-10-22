@@ -1,0 +1,390 @@
+id: MEDICNE:combo-b37d53b8-f676-5960-b960-fcd4ed366c29
+name: dextromethorphan / doxylamine / paracetamol
+ingredients:
+- id: CHEBI:4470
+  label: dextromethorphan
+- id: CHEBI:51380
+  label: doxylamine
+- id: CHEBI:46195
+  label: paracetamol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: cf31538c-9eee-4c81-80cb-66eecabf0aff
+    version: 9
+    title: HEB Nighttime Drug Facts
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cf31538c-9eee-4c81-80cb-66eecabf0aff
+  product_name: night time
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: cough due to minor throat and bronchial irritation
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: BROADER
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation
+    disease_context:
+      text: common cold/flu
+      member: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "cough due to minor throat and bronchial
+      irritation" is cough of a stated cause; HP Cough is broader than the cause-restricted
+      wording. "common cold/flu" coordinates common cold and flu; this claim takes the member
+      common cold as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: cough due to minor throat and bronchial irritation
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: BROADER
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation
+    disease_context:
+      text: common cold/flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "cough due to minor throat and bronchial
+      irritation" is cough of a stated cause; HP Cough is broader than the cause-restricted
+      wording. "common cold/flu" coordinates common cold and flu; this claim takes the member
+      flu as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sore throat
+      term:
+        id: HP:0033050
+        label: Pharyngalgia
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat
+    disease_context:
+      text: common cold/flu
+      member: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "sore throat" is the symptom; HP Pharyngalgia
+      (exact synonym "Sore throat"). "common cold/flu" coordinates common cold and flu; this
+      claim takes the member common cold as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: sore throat
+      term:
+        id: HP:0033050
+        label: Pharyngalgia
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat
+    disease_context:
+      text: common cold/flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "sore throat" is the symptom; HP Pharyngalgia
+      (exact synonym "Sore throat"). "common cold/flu" coordinates common cold and flu; this
+      claim takes the member flu as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache
+    disease_context:
+      text: common cold/flu
+      member: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "headache" is the symptom. "common cold/flu"
+      coordinates common cold and flu; this claim takes the member common cold as the disease
+      context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: headache
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache
+    disease_context:
+      text: common cold/flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "headache" is the symptom. "common cold/flu"
+      coordinates common cold and flu; this claim takes the member flu as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: minor aches and pains
+      term:
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains
+    disease_context:
+      text: common cold/flu
+      member: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "minor aches and pains" is mild pain; HP Pain,
+      broader because of "minor". The "and" joins two words that both name pain (an ache is a
+      pain), so this is one condition, not a coordination of two, and one claim covers it with
+      no member. "common cold/flu" coordinates common cold and flu; this claim takes the
+      member common cold as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: minor aches and pains
+      term:
+        id: HP:0012531
+        label: Pain
+      binding: BROADER
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains
+    disease_context:
+      text: common cold/flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "minor aches and pains" is mild pain; HP Pain,
+      broader because of "minor". The "and" joins two words that both name pain (an ache is a
+      pain), so this is one condition, not a coordination of two, and one claim covers it with
+      no member. "common cold/flu" coordinates common cold and flu; this claim takes the
+      member flu as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: fever
+      term:
+        id: HP:0001945
+        label: Fever
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains • fever
+    disease_context:
+      text: common cold/flu
+      member: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "fever" is the symptom. "common cold/flu"
+      coordinates common cold and flu; this claim takes the member common cold as the disease
+      context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: fever
+      term:
+        id: HP:0001945
+        label: Fever
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains • fever
+    disease_context:
+      text: common cold/flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "fever" is the symptom. "common cold/flu"
+      coordinates common cold and flu; this claim takes the member flu as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: runny nose and sneezing
+      member: runny nose
+      term:
+        id: HP:0031417
+        label: Rhinorrhea
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains • fever • runny nose and
+      sneezing
+    disease_context:
+      text: common cold/flu
+      member: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "runny nose and sneezing" names two symptoms;
+      this claim covers the member "runny nose", with the whole item as the object text. HP
+      Rhinorrhea (exact synonym "Runny Nose"). "common cold/flu" coordinates common cold and
+      flu; this claim takes the member common cold as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: runny nose and sneezing
+      member: runny nose
+      term:
+        id: HP:0031417
+        label: Rhinorrhea
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains • fever • runny nose and
+      sneezing
+    disease_context:
+      text: common cold/flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "runny nose and sneezing" names two symptoms;
+      this claim covers the member "runny nose", with the whole item as the object text. HP
+      Rhinorrhea (exact synonym "Runny Nose"). "common cold/flu" coordinates common cold and
+      flu; this claim takes the member flu as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: runny nose and sneezing
+      member: sneezing
+      term:
+        id: HP:0025095
+        label: Sneeze
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains • fever • runny nose and
+      sneezing
+    disease_context:
+      text: common cold/flu
+      member: common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "runny nose and sneezing" names two symptoms;
+      this claim covers the member "sneezing", with the whole item as the object text. HP
+      Sneeze (HP has no "sneezing" synonym; the grounding store maps "sneezing" to
+      UMLS:C0037383 Sneezings). "common cold/flu" coordinates common cold and flu; this claim
+      takes the member common cold as the disease context.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: runny nose and sneezing
+      member: sneezing
+      term:
+        id: HP:0025095
+        label: Sneeze
+      binding: EXACT
+    quote: >-
+      temporarily relieves common cold/flu symptoms: • cough due to minor throat and bronchial
+      irritation • sore throat • headache • minor aches and pains • fever • runny nose and
+      sneezing
+    disease_context:
+      text: common cold/flu
+      member: flu
+      term:
+        id: MONDO:0005812
+        label: influenza
+      binding: EXACT
+    explanation: >-
+      "temporarily relieves common cold/flu symptoms:" followed by the listed symptom gives
+      AMELIORATES_CONDITION for that symptom. "runny nose and sneezing" names two symptoms;
+      this claim covers the member "sneezing", with the whole item as the object text. HP
+      Sneeze (HP has no "sneezing" synonym; the grounding store maps "sneezing" to
+      UMLS:C0037383 Sneezings). "common cold/flu" coordinates common cold and flu; this claim
+      takes the member flu as the disease context.
+    status: DRAFT
+notes: >-
+  OTC Drug Facts label; the Uses text is the indication section and "Do not use" the Contraindications
+  section. Uses is an OTC symptom list under "temporarily relieves common cold/flu symptoms:": one
+  AMELIORATES_CONDITION claim per symptom per named condition (the members common cold and flu of
+  "common cold/flu", each recorded as the disease context's member). "runny nose and sneezing" is split
+  into its two symptoms. No use is assigned to an ingredient by the label, so no claim is attributed.
+  No contraindication is curated: "with any other drug containing acetaminophen" and "if you are now
+  taking a prescription monoamine oxidase inhibitor (MAOI)" are drug interactions with no condition
+  (the parenthesis "certain drugs for depression, psychiatric, or emotional conditions, or
+  Parkinson's disease" describes what MAOIs are for, not a patient condition); "if you have ever had
+  an allergic reaction to this product or any of its ingredients" is allergy to the product's own
+  ingredients. The SPL product name is "night time", kept as the helper wrote it.

@@ -1,0 +1,173 @@
+id: MEDICNE:combo-250f1fb1-7071-5385-b23b-5e0aaa82e714
+name: butalbital / caffeine / codeine / paracetamol
+ingredients:
+- id: CHEBI:102524
+  label: butalbital
+- id: CHEBI:27732
+  label: caffeine
+- id: CHEBI:16714
+  label: codeine
+- id: CHEBI:46195
+  label: paracetamol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: >-
+    https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 00431d9b-fe0b-4aab-9d18-ac6ee6b9d6fe
+    version: 4
+    title: 'These highlights do not include all the information needed to use BUTALBITAL, ACETAMINOPHEN,
+      CAFFEINE, and CODEINE PHOSPHATE CAPSULES safely and effectively. See full prescribing information
+      for BUTALBITAL, ACETAMINOPHEN, CAFFEINE, and CODEINE PHOSPHATE CAPSULES. BUTALBITAL, ACETAMINOPHEN,
+      CAFFEINE, and CODEINE PHOSPHATE capsules for oral use, CIIIInitial U.S. Approval: 1992'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00431d9b-fe0b-4aab-9d18-ac6ee6b9d6fe
+  product_name: Butalbital, Acetaminophen, Caffeine, and Codeine Phosphate
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: tension (or muscle contraction) headache
+      term:
+        id: HP:0012228
+        label: Tension-type headache
+      binding: EXACT
+    quote: >-
+      Butalbital, Acetaminophen, Caffeine, and Codeine Phosphate Capsules are indicated for the management
+      of the symptom complex of tension (or muscle contraction) headache when non-opioid analgesic and
+      alternative treatments are inadequate.
+    line_of_therapy:
+      text: when non-opioid analgesic and alternative treatments are inadequate
+      term_gap: >-
+        a line-of-therapy restriction (after inadequate non-opioid analgesic and alternative treatments);
+        no ontology term describes a prior-therapy requirement
+    explanation: >-
+      "indicated for the management of the symptom complex of" is treatment of the symptoms of a condition,
+      so AMELIORATES_CONDITION; the object is "tension (or muscle contraction) headache", where the parenthesis
+      gives an alternative name for the same headache. "when non-opioid analgesic and alternative treatments
+      are inadequate" is the line of therapy.
+    status: DRAFT
+    notes: >-
+      "management of" alone would read as TREATS; "the symptom complex of" makes it symptomatic, and the
+      aspirin sibling file (acetylsalicylic-acid-butalbital-caffeine-codeine.yaml, "relief of the symptom
+      complex of") uses AMELIORATES_CONDITION with the same HP term. No MONDO tension-type headache term
+      (searched MONDO "tension", "tension-type headache", "headache"); grounding store maps "tension headache"
+      to UMLS:C0033893. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Significant respiratory depression
+      term_gap: >-
+        searched HP/MONDO "respiratory depression" (no term), "hypoventilation", "respiratory insufficiency",
+        "breathing". The intended term is HP:0002791 Hypoventilation (reduced ventilation; exact synonyms
+        "Slow breathing", "Under breathing"), BROADER because of "Significant", but the validator anchors
+        the word "depression" on HP:0000716 Depressivity (mood) and rejects Hypoventilation as unrelated,
+        so the object is left unbound. Grounding store: the phrase is sssom:NoTermFound; "respiratory
+        depression" maps to UMLS:C0235063 Decreased pulmonary function, in no configured ontology
+    quote: Significant respiratory depression
+    explanation: >-
+      An item of "Butalbital, Acetaminophen, Caffeine, and Codeine Phosphate Capsules are also contraindicated
+      in patients with:": "Significant respiratory depression", a contraindicated patient condition.
+    status: DRAFT
+    notes: >-
+      Unbound only because of a term-check misreading ("depression" read as mood depression); a reviewer
+      may bind HP:0002791 Hypoventilation, BROADER. HP Respiratory insufficiency names failure of gas
+      exchange, not depressed breathing. Not attributed: the label states it of the product.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or severe bronchial asthma
+      member: Acute bronchial asthma
+      term:
+        id: MONDO:0850283
+        label: acute asthma
+      binding: EXACT
+    quote: >-
+      Acute or severe bronchial asthma in an unmonitored setting or in the absence of resuscitative equipment
+    explanation: >-
+      An item of "Butalbital, Acetaminophen, Caffeine, and Codeine Phosphate Capsules are also contraindicated
+      in patients with:": "Acute or severe bronchial asthma" coordinates acute and severe bronchial asthma;
+      this claim is the member "Acute bronchial asthma": MONDO acute asthma ("bronchial asthma" is asthma).
+      "in an unmonitored setting or in the absence of resuscitative equipment" restricts the setting,
+      for which the schema has no slot; it stays in the quote.
+    status: DRAFT
+    notes: >-
+      One claim per member of "Acute or severe bronchial asthma". Grounding store maps the phrase and
+      "acute bronchial asthma" to UMLS:C0004096 (Asthmas, broadMatch), in no configured ontology. Not
+      attributed: the label states it of the product.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or severe bronchial asthma
+      member: severe bronchial asthma
+      term:
+        id: MONDO:0004979
+        label: asthma
+      binding: BROADER
+    quote: >-
+      Acute or severe bronchial asthma in an unmonitored setting or in the absence of resuscitative equipment
+    explanation: >-
+      An item of "Butalbital, Acetaminophen, Caffeine, and Codeine Phosphate Capsules are also contraindicated
+      in patients with:": this claim is the member "severe bronchial asthma". MONDO asthma lacks the severity,
+      so BROADER. "in an unmonitored setting or in the absence of resuscitative equipment" restricts the
+      setting, for which the schema has no slot; it stays in the quote.
+    status: DRAFT
+    notes: >-
+      No severe-asthma term (searched MONDO "severe asthma", "asthma"; near-fatal asthma and status asthmaticus
+      are narrower than "severe"). Grounding store maps "severe bronchial asthma" to UMLS:C0004096 (broadMatch).
+      Not attributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: gastrointestinal obstruction
+      term:
+        id: HP:0004796
+        label: Gastrointestinal obstruction
+      binding: EXACT
+    quote: >-
+      Known or suspected gastrointestinal obstruction, including paralytic ileus
+    examples:
+    - text: paralytic ileus
+      term:
+        id: MONDO:0004568
+        label: paralytic ileus
+      binding: EXACT
+    explanation: >-
+      An item of "Butalbital, Acetaminophen, Caffeine, and Codeine Phosphate Capsules are also contraindicated
+      in patients with:": "Known or suspected gastrointestinal obstruction", HP Gastrointestinal obstruction;
+      "Known or suspected" describes how certain the diagnosis is, not a second condition. "including
+      paralytic ileus" lists an example, recorded in examples.
+    status: DRAFT
+    notes: >-
+      Grounding store maps "Gastrointestinal obstruction" to HP:0004796 (agrees) and the whole phrase
+      "Known or suspected gastrointestinal obstruction" to sssom:NoTermFound. Not attributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Porphyria
+      term:
+        id: MONDO:0037939
+        label: porphyria
+      binding: EXACT
+    quote: Porphyria
+    explanation: >-
+      An item of "Butalbital, Acetaminophen, Caffeine, and Codeine Phosphate Capsules are also contraindicated
+      in patients with:": "Porphyria".
+    status: DRAFT
+    notes: >-
+      Grounding store maps "Porphyria" to UMLS:C0032708, in no configured ontology. Not attributed.
+notes: >-
+  Prescription label (PLR format). Not curated: the Limitations of Use paragraphs (opioid and butalbital
+  risk reservation); "All children younger than 12 years of age" (an age group with no condition, a known
+  missing slot); "Post-operative management in children younger than 18 years of age following tonsillectomy
+  and/or adenoidectomy" (a procedure context, not a condition); "Concurrent use of monoamine oxidase inhibitors
+  (MAOIs) or use of MAOIs within the last 14 days" (a drug interaction); "Known intolerance or hypersensitivity
+  to acetaminophen, caffeine, butalbital, or codeine or to the components" (own ingredients). "in an unmonitored
+  setting or in the absence of resuscitative equipment" restricts the asthma contraindication to a care
+  setting; no slot, kept in the quote. The full-text Contraindications list runs its items together without
+  sentence breaks; quotes are the item words only. No claim is attributed: every claim is stated of the
+  product.

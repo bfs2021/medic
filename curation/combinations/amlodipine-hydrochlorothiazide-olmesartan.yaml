@@ -1,0 +1,148 @@
+id: MEDICNE:combo-0d257d19-db27-5e51-af9a-43ca9b4cc43c
+name: amlodipine / hydrochlorothiazide / olmesartan
+ingredients:
+- id: CHEBI:2668
+  label: amlodipine
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:48416
+  label: olmesartan
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 49ec5ac8-a626-4ab2-9799-8a138920201e
+    version: 103
+    title: 'These highlights do not include all the information needed to use OLMESARTAN MEDOXOMIL, AMLODIPINE
+      and HYDROCHLOROTHIAZIDE TABLETS safely and effectively. See full prescribing information for OLMESARTAN
+      MEDOXOMIL, AMLODIPINE and HYDROCHLOROTHIAZIDE TABLETS. OLMESARTAN MEDOXOMIL, AMLODIPINE and HYDROCHLOROTHIAZIDE
+      TABLETS Tablets, for oral use Initial U.S. Approval: 2010'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=49ec5ac8-a626-4ab2-9799-8a138920201e
+  product_name: olmesartan medoxomil / amlodipine besylate / hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Olmesartan medoxomil, amlodipine and hydrochlorothiazide tablets are indicated for the
+      treatment of hypertension, alone or with other antihypertensive agents, to lower blood
+      pressure.
+    explanation: >-
+      "indicated for the treatment of hypertension" states treatment of hypertension; "alone or with
+      other antihypertensive agents" and "to lower blood pressure" qualify use, not the condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "alone or with other antihypertensive agents" makes co-therapy
+      optional, so no in_combination_with. The Limitations of Use ("not indicated for the initial
+      therapy of hypertension") restricts this claim but produces none; it is not recorded as
+      line_of_therapy because it cannot be quoted. HP Hypertension agrees with the grounding
+      store; MONDO has no term labelled or exactly synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Because of the hydrochlorothiazide component, olmesartan medoxomil, amlodipine and
+      hydrochlorothiazide tablets is contraindicated in patients with anuria, hypersensitivity to
+      any component, or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: COMPONENT_STATEMENT
+      snippet: Because of the hydrochlorothiazide component
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide component", assigning every
+        contraindication it lists, anuria among them, to the hydrochlorothiazide component.
+    explanation: >-
+      "is contraindicated in patients with anuria" states the anuria contraindication, the first item
+      of the sentence's list.
+    status: DRAFT
+    notes: >-
+      "Because of the hydrochlorothiazide component" opens the sentence and governs every item in
+      it, so the anuria contraindication is attributed to hydrochlorothiazide.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Because of the hydrochlorothiazide component, olmesartan medoxomil, amlodipine and
+      hydrochlorothiazide tablets is contraindicated in patients with anuria, hypersensitivity to
+      any component, or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: COMPONENT_STATEMENT
+      snippet: Because of the hydrochlorothiazide component
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide component", assigning every
+        contraindication it lists, the sulfonamide cross-sensitivity among them, to the
+        hydrochlorothiazide component.
+    explanation: >-
+      "contraindicated in patients with ... hypersensitivity to other sulfonamide-derived drugs" states
+      a drug-allergy contraindication with other sulfonamide-derived drugs as the agents; "other"
+      excludes the product's own ingredients.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs; "hypersensitivity to any component"
+      (the product's own) is not curated. Attributed to hydrochlorothiazide on the label's
+      "Because of the hydrochlorothiazide component", not on the allergen (sulfonamides are
+      other drugs). ChEBI sulfonamide is the chemical class, broader than "sulfonamide-derived
+      drugs". The text stays "hypersensitivity", without `member`: the "or" before it joins
+      "hypersensitivity to any component" and "hypersensitivity to other sulfonamide-derived
+      drugs", the same condition with two sets of agents, so it coordinates agents, not
+      conditions. The agents are carried by object_specialization, and the own-component
+      alternative is not curated.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not coadminister aliskiren with olmesartan medoxomil, amlodipine and hydrochlorothiazide
+      tablets in patients with diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not coadminister aliskiren with ... in patients with diabetes" contraindicates the product in
+      patients with diabetes when given with aliskiren, recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration, so aliskiren is recorded in
+      when_coadministered_with. MONDO diabetes mellitus has the exact synonym "diabetes". Not
+      attributed: the label names no component (the aliskiren interaction points at olmesartan
+      pharmacologically, but the sentence speaks of the product). The Highlights restate it.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication (the label says
+  there are no controlled trials demonstrating risk reduction with this product); Limitations of
+  Use (not for initial therapy); "hypersensitivity to any component" (own ingredients). The
+  Highlights copy ("Anuria: Hypersensitivity to sulfonamide-derived drugs ( 4 )") restates the
+  full-text contraindications without the component wording.

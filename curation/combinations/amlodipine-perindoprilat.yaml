@@ -1,0 +1,177 @@
+id: MEDICNE:combo-73ab766a-9050-5814-b833-f0b6cf7e1955
+name: amlodipine / perindoprilat
+ingredients:
+- id: CHEBI:2668
+  label: amlodipine
+- id: CHEBI:132041
+  label: perindoprilat
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: eaa2bbbc-5fcc-4f15-a51c-c4e1bf320c90
+    version: 1
+    title: 'These highlights do not include all the information needed to use PRESTALIA® tablets safely
+      and effectively. See full prescribing information for PRESTALIA. PRESTALIA (perindopril arginine
+      and amlodipine) tablets, for oral use. Initial U.S. Approval: 2015'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=eaa2bbbc-5fcc-4f15-a51c-c4e1bf320c90
+  product_name: Prestalia
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      PRESTALIA contains perindopril arginine, an angiotensin converting enzyme inhibitor, and
+      amlodipine, a dihydropyridine calcium channel blocker, and is indicated for the treatment of
+      hypertension, to lower blood pressure.
+    explanation: >-
+      "PRESTALIA ... is indicated for the treatment of hypertension" states treatment of
+      hypertension; "to lower blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject of "is indicated" is PRESTALIA (the brand), and the
+      "contains perindopril arginine ... and amlodipine" clause describes the product's make-up
+      without assigning the indication to either. The next sentences ("may be used in patients
+      whose blood pressure is not adequately controlled on monotherapy", "may be used as initial
+      therapy in patients likely to need multiple drugs") are alternative settings that together do
+      not restrict the indication, so no line_of_therapy and no separate claim, as in the
+      azilsartan/chlorthalidone file. HP Hypertension agrees with the grounding store.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hereditary or idiopathic angioedema
+      member: hereditary angioedema
+      term:
+        id: MONDO:0019623
+        label: hereditary angioedema
+      binding: EXACT
+    quote: >-
+      PRESTALIA tablets are contraindicated in patients with hereditary or idiopathic angioedema,
+      with or without previous ACE inhibitor treatment, and in patients who are hypersensitive to
+      perindopril, to any other ACE inhibitor, or to amlodipine.
+    explanation: >-
+      "are contraindicated in patients with hereditary or idiopathic angioedema" states the
+      contraindication; this claim covers the member "hereditary angioedema". "with or without
+      previous ACE inhibitor treatment" says prior ACE-inhibitor exposure does not matter, so it is
+      not recorded as a specialization.
+    status: DRAFT
+    notes: >-
+      MONDO hereditary angioedema is exact. Hereditary angioedema is not an allergy (SKILL rule 3c),
+      so this is curated as a condition. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hereditary or idiopathic angioedema
+      member: idiopathic angioedema
+      term:
+        id: HP:0100665
+        label: Angioedema
+      binding: BROADER
+    quote: >-
+      PRESTALIA tablets are contraindicated in patients with hereditary or idiopathic angioedema,
+      with or without previous ACE inhibitor treatment, and in patients who are hypersensitive to
+      perindopril, to any other ACE inhibitor, or to amlodipine.
+    explanation: >-
+      "are contraindicated in patients with hereditary or idiopathic angioedema" states the
+      contraindication; this claim covers the member "idiopathic angioedema". Angioedema lacks
+      "idiopathic", so BROADER.
+    status: DRAFT
+    notes: >-
+      No idiopathic-angioedema term (searched MONDO "angioedema", "idiopathic"; HP "angioedema");
+      HP Angioedema is the closest, as in the trandolapril/verapamil file (MONDO angioedema sits
+      under urticaria). Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: History of angioedema
+      term:
+        id: HP:0100665
+        label: Angioedema
+      binding: EXACT
+    quote: >-
+      History of angioedema, or hypersensitivity to any ACE-inhibitor or to amlodipine ( 4 ).
+    explanation: >-
+      The Highlights Contraindications item "History of angioedema" contraindicates the product in
+      patients with past angioedema, naming no cause; "History of" places the condition in the past
+      and does not narrow it.
+    status: DRAFT
+    notes: >-
+      Curated separately because the Highlights wording is wider than the full text's "hereditary
+      or idiopathic angioedema, with or without previous ACE inhibitor treatment": it names any
+      past angioedema. A reviewer who reads the Highlights as a summary of the full text may drop
+      this claim. "History of" (past history) has no slot. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitive
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: any other ACE inhibitor
+      term:
+        id: CHEBI:35457
+        label: EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor
+      binding: EXACT
+    quote: >-
+      PRESTALIA tablets are contraindicated in patients with hereditary or idiopathic angioedema,
+      with or without previous ACE inhibitor treatment, and in patients who are hypersensitive to
+      perindopril, to any other ACE inhibitor, or to amlodipine.
+    explanation: >-
+      "and in patients who are hypersensitive to ... any other ACE inhibitor" states a drug-allergy
+      contraindication with other ACE inhibitors as the agents; perindopril and amlodipine, the
+      product's own ingredients, are dropped.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other ACE inhibitors, as in the trandolapril/verapamil file;
+      hypersensitivity to perindopril or amlodipine (own ingredients) is not curated. ChEBI EC
+      3.4.15.1 (peptidyl-dipeptidase A) inhibitor is the angiotensin-converting-enzyme inhibitor
+      class. The Highlights restate it ("hypersensitivity to any ACE-inhibitor"). Unattributed: an
+      allergen is not a cause.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not co-administer aliskiren with ACE inhibitors, including PRESTALIA, in patients with
+      diabetes.
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not co-administer aliskiren with ACE inhibitors, including PRESTALIA, in patients with
+      diabetes" contraindicates the product in patients with diabetes when given with aliskiren,
+      recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: the sentence speaks of ACE inhibitors as a class and of the
+      product by brand, not of perindopril. The Highlights restate it.
+notes: >-
+  The helper grounds the ACE-inhibitor ingredient to perindoprilat (CHEBI:132041), the SPL active
+  moiety; the label speaks of perindopril arginine, the prodrug salt. Not claimed: the class-level
+  cardiovascular-outcomes text (the label says "There are no controlled trials demonstrating risk
+  reduction with PRESTALIA"); the initial-therapy guidance, the "moderate-to-severe hypertension"
+  risk statement and the trial-probability figures; hypersensitivity to perindopril or amlodipine
+  (own ingredients); "contraindicated in combination with neprilysin inhibitor (e.g., sacubitril)"
+  and the 36-hour sacubitril/valsartan switching rule (pure drug interactions with no condition,
+  out of scope). All claims are product-level: the label never assigns an indication or
+  contraindication to amlodipine or perindopril.

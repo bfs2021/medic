@@ -1,0 +1,174 @@
+id: MEDICNE:combo-9dea593f-7c3a-5ab7-ba9e-f9e36f66454b
+name: metformin / rosiglitazone
+ingredients:
+- id: CHEBI:6801
+  label: metformin
+- id: CHEBI:50122
+  label: rosiglitazone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 0789dc6b-db34-44a6-8a5d-fdcc8e4ce8fd
+    version: 6
+    title: 'These highlights do not include all the information needed to use AVANDAMET safely and effectively.
+      See full prescribing information for AVANDAMET.AVANDAMET (rosiglitazone maleate and metformin hydrochloride)
+      TabletsInitial U.S. Approval: 2002'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0789dc6b-db34-44a6-8a5d-fdcc8e4ce8fd
+  product_name: AVANDAMET
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    quote: >-
+      After consultation with a healthcare professional who has considered and advised the patient
+      of the risks and benefits of rosiglitazone, AVANDAMET ® is indicated as an adjunct to diet and
+      exercise to improve glycemic control when treatment with both rosiglitazone and metformin is
+      appropriate in adults with type 2 diabetes mellitus
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      "AVANDAMET ® is indicated ... to improve glycemic control ... in adults with type 2 diabetes
+      mellitus" states treatment of type 2 diabetes mellitus; "adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the subject is the product (AVANDAMET); rosiglitazone and
+      metformin are named only in the counselling lead-in and in "when treatment with both
+      rosiglitazone and metformin is appropriate", neither of which assigns the indication to one
+      of them. The patient criteria that follow ("who either are: already taking rosiglitazone, or
+      not already taking rosiglitazone and unable to achieve glycemic control on other diabetes
+      medications and ... have decided not to take pioglitazone ...") are alternatives mixing prior
+      therapy with a treatment decision, so they are left in the label and not recorded as
+      line_of_therapy. This differs from the metformin/pioglitazone (ACTOPLUS MET) file, whose
+      clause is prior therapy in both alternatives and is recorded as line_of_therapy; here the
+      second alternative admits patients on no rosiglitazone who have chosen against pioglitazone. "as an adjunct to diet and exercise" names non-drug measures.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Class III or IV heart failure
+      member: Class III heart failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Initiation in patients with established New York Heart Association (NYHA) Class III or IV
+      heart failure
+    explanation: >-
+      In the Contraindications section, "Initiation in patients with established New York Heart
+      Association (NYHA) Class III or IV heart failure" states a contraindication in NYHA class III
+      heart failure; this claim covers that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the item cites the Boxed Warning, not an ingredient. No MONDO or
+      HP term carries the NYHA class (searched HP "NYHA", "class III", "heart failure"; MONDO
+      "NYHA", "heart failure"), so heart failure, BROADER, as in the metformin/pioglitazone file.
+      The object text starts at "Class" because the validator drops the "(NYHA)" parenthesis when
+      it expands members of the longer phrase (known gap). The label contraindicates initiation of
+      the product in these patients; the claim records the condition.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Class III or IV heart failure
+      member: Class IV heart failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: BROADER
+    quote: >-
+      Initiation in patients with established New York Heart Association (NYHA) Class III or IV
+      heart failure
+    explanation: >-
+      In the Contraindications section, "Initiation in patients with established New York Heart
+      Association (NYHA) Class III or IV heart failure" states a contraindication in NYHA class IV
+      heart failure; this claim covers that member of the coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: the item cites the Boxed Warning, not an ingredient. No MONDO or
+      HP term carries the NYHA class (searched HP "NYHA", "class III", "heart failure"; MONDO
+      "NYHA", "heart failure"), so heart failure, BROADER, as in the metformin/pioglitazone file.
+      The object text starts at "Class" because the validator drops the "(NYHA)" parenthesis when
+      it expands members of the longer phrase (known gap). The label contraindicates initiation of
+      the product in these patients; the claim records the condition.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: renal disease or renal dysfunction
+      member: renal disease
+      term:
+        id: MONDO:0005240
+        label: kidney disorder
+      binding: EXACT
+    quote: >-
+      Use in patients with renal disease or renal dysfunction
+    explanation: >-
+      In the Contraindications section, "Use in patients with renal disease or renal dysfunction"
+      lists renal disease as a contraindicated condition; this claim covers that member of the
+      coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. MONDO kidney disorder has the exact synonym "renal disease". The creatinine thresholds in the following parenthesis are diagnostic examples. The Highlights restate this as "significant renal disease or renal dysfunction"; the full-text item is curated.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: renal disease or renal dysfunction
+      member: renal dysfunction
+      term:
+        id: HP:0012211
+        label: Abnormal renal physiology
+      binding: EXACT
+    quote: >-
+      Use in patients with renal disease or renal dysfunction
+    explanation: >-
+      In the Contraindications section, "Use in patients with renal disease or renal dysfunction"
+      lists renal dysfunction as a contraindicated condition; this claim covers that member of the
+      coordination.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. HP Abnormal renal physiology (exact synonym "Abnormal renal function") is what "renal dysfunction" says, as in the glipizide/metformin file of PR #74. The causes from which renal dysfunction "may also result" (cardiovascular collapse (shock), acute myocardial infarction, septicemia) are not claimed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: acute or chronic metabolic acidosis
+      term:
+        id: MONDO:0000440
+        label: metabolic acidosis
+      binding: EXACT
+    examples:
+    - text: diabetic ketoacidosis
+      term:
+        id: MONDO:0012819
+        label: diabetic ketoacidosis
+      binding: EXACT
+    quote: >-
+      Use in patients with acute or chronic metabolic acidosis, including diabetic ketoacidosis,
+      with or without coma.
+    explanation: >-
+      In the Contraindications section, "Use in patients with acute or chronic metabolic acidosis,
+      including diabetic ketoacidosis, with or without coma" lists metabolic acidosis as a
+      contraindicated condition; "acute or chronic" is an exhaustive pair covering the whole class,
+      and "including diabetic ketoacidosis" names an example.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. One claim for the class (exhaustive pair), diabetic ketoacidosis
+      as a listed example; "with or without coma" does not restrict it.
+notes: >-
+  Not claimed: the Limitations of Use (type 1 diabetes, "for the treatment of diabetic
+  ketoacidosis", coadministration with insulin "not recommended"); the use in patients undergoing
+  radiologic studies with intravascular iodinated contrast (a procedure, not a condition); the
+  causes of renal dysfunction (shock, acute MI, septicemia). The Highlights restate the
+  indication and contraindications. The label names no component for any indication or
+  contraindication, so nothing is attributed. The Contraindications items are verbless noun
+  phrases ("Initiation in ...", "Use in ...") under the section heading; the section itself
+  supplies the contraindication.

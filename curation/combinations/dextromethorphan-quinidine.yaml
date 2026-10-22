@@ -1,0 +1,325 @@
+id: MEDICNE:combo-5d29e9dd-d6d8-50a7-8729-4ee9cde63aa6
+name: dextromethorphan / quinidine
+ingredients:
+- id: CHEBI:4470
+  label: dextromethorphan
+- id: CHEBI:28593
+  label: quinidine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 484e0918-3442-49dc-8ccf-177f1f3ee9f3
+    version: 29
+    title: 'These highlights do not include all the information needed to use NUEDEXTA safely and effectively.
+      See full prescribing information for NUEDEXTA. NUEDEXTA (dextromethorphan hydrobromide and quinidine
+      sulfate) capsules, for oral use Initial U.S. Approval: 2010'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=484e0918-3442-49dc-8ccf-177f1f3ee9f3
+  product_name: NUEDEXTA
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: pseudobulbar affect
+      term:
+        id: HP:0002193
+        label: Pseudobulbar affect
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is indicated for the treatment of pseudobulbar affect (PBA).
+    explanation: >-
+      "indicated for the treatment of pseudobulbar affect (PBA)" is treatment of pseudobulbar
+      affect.
+    status: DRAFT
+    notes: >-
+      No MONDO pseudobulbar-affect term (searched MONDO "pseudobulbar", "involuntary emotional",
+      "emotional"); HP Pseudobulbar affect says what the label says. Product-level sentence
+      ("NUEDEXTA is indicated"), unattributed; the Highlights sentence describes each ingredient's
+      pharmacology but assigns the indication to the product. The following sentences describe PBA
+      and add no claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome
+      member: thrombocytopenia
+      term:
+        id: MONDO:0002049
+        label: thrombocytopenia
+      binding: EXACT
+    object_specialization:
+    - text: quinine
+      term:
+        id: CHEBI:15854
+        label: quinine
+      binding: EXACT
+    - text: mefloquine
+      term:
+        id: CHEBI:63609
+        label: mefloquine
+      binding: EXACT
+    - text: quinidine
+      term:
+        id: CHEBI:28593
+        label: quinidine
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome.
+    explanation: >-
+      "contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced ... thrombocytopenia" is a contraindication in thrombocytopenia (the first member of
+      "thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome") induced by those drugs, recorded as specializations.
+    status: DRAFT
+    notes: >-
+      No drug-induced thrombocytopenia term (searched MONDO "drug-induced thrombocytopenia"); the agents are composed as specializations. "NUEDEXTA" (the product itself) is also named as an inducing agent; it has no CHEBI
+      term and is not recorded as a specialization. Quinidine is the product's own ingredient,
+      named here as the agent of a drug-caused condition, which is curated; it is not an
+      attribution because it is part of the condition's own wording.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome
+      member: hepatitis
+      term:
+        id: MONDO:0002184
+        label: drug-induced hepatitis
+      binding: NARROWER
+    object_specialization:
+    - text: quinine
+      term:
+        id: CHEBI:15854
+        label: quinine
+      binding: EXACT
+    - text: mefloquine
+      term:
+        id: CHEBI:63609
+        label: mefloquine
+      binding: EXACT
+    - text: quinidine
+      term:
+        id: CHEBI:28593
+        label: quinidine
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome.
+    explanation: >-
+      "contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced ... hepatitis" is a contraindication in hepatitis (the second member of
+      "thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome") induced by those drugs, recorded as specializations.
+    status: DRAFT
+    notes: >-
+      The term is more specific than the word "hepatitis"; "-induced" with the named drugs justifies drug-induced hepatitis, so NARROWER. "NUEDEXTA" (the product itself) is also named as an inducing agent; it has no CHEBI
+      term and is not recorded as a specialization. Quinidine is the product's own ingredient,
+      named here as the agent of a drug-caused condition, which is curated; it is not an
+      attribution because it is part of the condition's own wording.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome
+      member: bone marrow depression
+      term_gap: >-
+        searched MONDO/HP "bone marrow", "myelosuppression": no myelosuppression term. The
+        candidate HP:0005528 Bone marrow hypocellularity (exact synonym "Bone marrow failure") is
+        refused by the validator because the word "depression" anchors to HP:0000716 Depression
+        (the mood phenotype); left unbound for a human to decide
+    object_specialization:
+    - text: quinine
+      term:
+        id: CHEBI:15854
+        label: quinine
+      binding: EXACT
+    - text: mefloquine
+      term:
+        id: CHEBI:63609
+        label: mefloquine
+      binding: EXACT
+    - text: quinidine
+      term:
+        id: CHEBI:28593
+        label: quinidine
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome.
+    explanation: >-
+      "contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced ... bone marrow depression" is a contraindication in bone marrow depression (the third member of
+      "thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome") induced by those drugs, recorded as specializations.
+    status: DRAFT
+    notes: >-
+      Unbound: see term_gap. HP:0005528 Bone marrow hypocellularity is the intended term if a human agrees. "NUEDEXTA" (the product itself) is also named as an inducing agent; it has no CHEBI
+      term and is not recorded as a specialization. Quinidine is the product's own ingredient,
+      named here as the agent of a drug-caused condition, which is curated; it is not an
+      attribution because it is part of the condition's own wording.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome
+      member: lupus-like syndrome
+      term:
+        id: MONDO:0016474
+        label: drug-induced lupus erythematosus
+      binding: NARROWER
+    object_specialization:
+    - text: quinine
+      term:
+        id: CHEBI:15854
+        label: quinine
+      binding: EXACT
+    - text: mefloquine
+      term:
+        id: CHEBI:63609
+        label: mefloquine
+      binding: EXACT
+    - text: quinidine
+      term:
+        id: CHEBI:28593
+        label: quinidine
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome.
+    explanation: >-
+      "contraindicated in patients with a history of NUEDEXTA, quinine, mefloquine or
+      quinidine-induced ... lupus-like syndrome" is a contraindication in lupus-like syndrome (the fourth member of
+      "thrombocytopenia, hepatitis, bone marrow depression or lupus-like syndrome") induced by those drugs, recorded as specializations.
+    status: DRAFT
+    notes: >-
+      A drug-induced lupus-like syndrome is drug-induced lupus erythematosus (searched MONDO "lupus-like", "drug-induced lupus"); the term is more specific than the words "lupus-like syndrome", justified by "-induced", so NARROWER. "NUEDEXTA" (the product itself) is also named as an inducing agent; it has no CHEBI
+      term and is not recorded as a specialization. Quinidine is the product's own ingredient,
+      named here as the agent of a drug-caused condition, which is curated; it is not an
+      attribution because it is part of the condition's own wording.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombocytopenia, hepatitis, or other hypersensitivity reactions
+      member: other hypersensitivity reactions
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: quinine
+      term:
+        id: CHEBI:15854
+        label: quinine
+      binding: EXACT
+    - text: mefloquine
+      term:
+        id: CHEBI:63609
+        label: mefloquine
+      binding: EXACT
+    quote: >-
+      Patients with a history of quinidine, quinine or mefloquine-induced thrombocytopenia,
+      hepatitis, or other hypersensitivity reactions.
+    explanation: >-
+      The Highlights item "Patients with a history of quinidine, quinine or mefloquine-induced ...
+      other hypersensitivity reactions" is a contraindication in drug hypersensitivity to those
+      drugs; quinine and mefloquine are the cross-sensitivity agents.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity claim: quinidine is the product's own ingredient and is dropped from the
+      specializations; quinine and mefloquine are other agents. drug allergy is more specific than
+      "hypersensitivity reactions", justified by the drugs named, so NARROWER. Only the Highlights
+      copy names "other hypersensitivity reactions"; its thrombocytopenia and hepatitis members are
+      curated from the full-text section 4.2 sentence, which says more (it adds NUEDEXTA, bone
+      marrow depression and lupus-like syndrome), so they are not repeated here.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: a prolonged QT interval, congenital long QT syndrome or a history suggestive of torsades de pointes
+      member: a prolonged QT interval
+      term:
+        id: HP:0001657
+        label: Prolonged QT interval
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a prolonged QT interval, congenital long QT
+      syndrome or a history suggestive of torsades de pointes, and in patients with heart failure
+    explanation: >-
+      "NUEDEXTA is contraindicated in patients with" "a prolonged QT interval", the first member of
+      "a prolonged QT interval, congenital long QT syndrome or a history suggestive of torsades de pointes".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: a prolonged QT interval, congenital long QT syndrome or a history suggestive of torsades de pointes
+      member: congenital long QT syndrome
+      term:
+        id: MONDO:0019171
+        label: familial long QT syndrome
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a prolonged QT interval, congenital long QT
+      syndrome or a history suggestive of torsades de pointes, and in patients with heart failure
+    explanation: >-
+      "NUEDEXTA is contraindicated in patients with" "congenital long QT syndrome", the second member of
+      "a prolonged QT interval, congenital long QT syndrome or a history suggestive of torsades de pointes".
+    status: DRAFT
+    notes: >-
+      MONDO familial long QT syndrome carries the exact synonym "congenital long QT syndrome".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: a prolonged QT interval, congenital long QT syndrome or a history suggestive of torsades de pointes
+      member: a history suggestive of torsades de pointes
+      term:
+        id: MONDO:0005478
+        label: torsades de pointes
+      binding: BROADER
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a prolonged QT interval, congenital long QT
+      syndrome or a history suggestive of torsades de pointes, and in patients with heart failure
+    explanation: >-
+      "NUEDEXTA is contraindicated in patients with" "a history suggestive of torsades de pointes", the third member of
+      "a prolonged QT interval, congenital long QT syndrome or a history suggestive of torsades de pointes".
+    status: DRAFT
+    notes: >-
+      "a history suggestive of" makes the history uncertain; BROADER, as the validator suggests.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: heart failure
+      term:
+        id: MONDO:0005252
+        label: heart failure
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with a prolonged QT interval, congenital long QT
+      syndrome or a history suggestive of torsades de pointes, and in patients with heart failure
+    explanation: >-
+      "and in patients with heart failure" is a contraindication in heart failure.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: complete atrioventricular (AV) block
+      term:
+        id: MONDO:0000468
+        label: third-degree atrioventricular block
+      binding: EXACT
+    quote: >-
+      NUEDEXTA is contraindicated in patients with complete atrioventricular (AV) block without
+      implanted pacemakers
+    explanation: >-
+      "contraindicated in patients with complete atrioventricular (AV) block without implanted
+      pacemakers" is a contraindication in complete AV block.
+    status: DRAFT
+    notes: >-
+      MONDO:0000468 carries the exact synonyms "complete atrioventricular block" and "complete AV
+      block". "without implanted pacemakers" restricts the patients, but no qualifier slot holds a
+      device; it stays in the quote. "patients who are at high risk of complete AV block" names a
+      risk, not a condition the patient has, and is not curated.
+notes: >-
+  Not curated: concomitant use with quinidine, quinine or mefloquine (4.1), the MAOI
+  contraindication (4.3) and concomitant use with drugs that prolong QT and are metabolized by CYP2D6
+  (4.4), all drug interactions with no condition; "known hypersensitivity to dextromethorphan" (allergy
+  to the product's own ingredient); "patients at high risk of complete AV block" (a risk, not a
+  condition). The Highlights contraindication items restate section 4 except "other hypersensitivity
+  reactions", curated from the Highlights.

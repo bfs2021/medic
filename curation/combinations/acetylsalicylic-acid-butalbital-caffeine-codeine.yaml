@@ -1,0 +1,211 @@
+id: MEDICNE:combo-f4f5fff2-c18d-5a60-8381-4080c2b9568b
+name: acetylsalicylic acid / butalbital / caffeine / codeine
+ingredients:
+- id: CHEBI:15365
+  label: acetylsalicylic acid
+- id: CHEBI:102524
+  label: butalbital
+- id: CHEBI:27732
+  label: caffeine
+- id: CHEBI:16714
+  label: codeine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: c8b93fc1-472c-4890-8d02-2ee4f7175c22
+    version: 1
+    title: BUTALBITAL, ASPIRIN, CAFFEINE AND CODEINE PHOSPHATECAPSULES, USP
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=c8b93fc1-472c-4890-8d02-2ee4f7175c22
+  product_name: ''
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: tension (or muscle contraction) headache
+      term:
+        id: HP:0012228
+        label: Tension-type headache
+      binding: EXACT
+    quote: >-
+      Butalbital, Aspirin, Caffeine and Codeine Phosphate Capsules are indicated for the relief of
+      the symptom complex of tension (or muscle contraction) headache.
+    explanation: >-
+      "indicated for the relief of the symptom complex of" is amelioration; the object is "tension
+      (or muscle contraction) headache", where the parenthesis gives an alternative name for the
+      same headache, not a second condition.
+    status: DRAFT
+    notes: >-
+      "relief of the symptom complex of" -> AMELIORATES_CONDITION. No MONDO tension-type headache term
+      (searched MONDO "tension", "tension headache", "tension-type headache", "headache"); HP
+      Tension-type headache says what the label says ("muscle contraction headache" is the older
+      name). Grounding store maps "tension headache" to UMLS:C0033893. Product-level claim; the
+      clinical-trial text that follows states no further indication, and "Evidence ... in the
+      treatment of multiple recurrent headaches is unavailable" is negated.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hemorrhagic diathesis
+      term:
+        id: HP:0001892
+        label: Abnormal bleeding
+      binding: EXACT
+    quote: >-
+      Patients with hemorrhagic diathesis (e.g., hemophilia, hypoprothrombinemia, von Willebrand's
+      disease, the thrombocytopenias, thrombasthenia and other ill-defined hereditary platelet
+      dysfunctions, severe vitamin K deficiency and severe liver damage.)
+    explanation: >-
+      An item of "This combination product is contraindicated under the following conditions":
+      patients with hemorrhagic diathesis. The parenthesised "e.g." members are examples of that
+      category, recorded as examples, not as claims of their own.
+    examples:
+    - text: hemophilia
+      term:
+        id: MONDO:0018660
+        label: hemophilia
+      binding: EXACT
+    - text: hypoprothrombinemia
+      term:
+        id: MONDO:0024307
+        label: prothrombin deficiency
+      binding: EXACT
+    - text: von Willebrand's disease
+      term:
+        id: MONDO:0024574
+        label: von Willebrand disease (hereditary or acquired)
+      binding: EXACT
+    - text: the thrombocytopenias
+      term:
+        id: MONDO:0002049
+        label: thrombocytopenia
+      binding: EXACT
+    - text: thrombasthenia
+      term_gap: >-
+        searched MONDO "thrombasthenia", "platelet": MONDO lists "thrombasthenia" as an exact
+        synonym of MONDO:0031332 Glanzmann thrombasthenia 1 (an ITGA2B-related subtype) and the
+        grounding store maps it there too, so the validator refuses the grouping term MONDO:0100326
+        Glanzmann thrombasthenia; binding the subtype would say more than the label
+    - text: severe vitamin K deficiency
+      term:
+        id: MONDO:0001244
+        label: vitamin K deficiency hemorrhagic disease
+      binding: BROADER
+    - text: severe liver damage
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: BROADER
+    status: DRAFT
+    notes: >-
+      HP Abnormal bleeding carries the exact synonym "Hemorrhagic diathesis" (also the grounding-store
+      row). The parenthesis lists examples of the category, so they are recorded as `examples` on this
+      one claim. Example terms: hypoprothrombinemia is prothrombin deficiency (MONDO:0024307 covers
+      congenital and acquired; grounding store has sssom:NoTermFound); thrombasthenia is held unbound
+      (intended MONDO:0100326 Glanzmann thrombasthenia, pending a human semapv:ManualMappingCuration
+      row and possibly a MONDO synonym fix); MONDO:0001244 carries the exact synonym "vitamin K
+      deficiency" and "severe" narrows, so BROADER; no liver-damage term other than drug-induced liver
+      injury (searched MONDO "liver injury", "liver damage", "liver disease"), so liver disorder,
+      BROADER (grounding store maps "Severe liver damage" to UMLS:C0151763). "other ill-defined
+      hereditary platelet dysfunctions" is too vague to bind and is not recorded.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: the syndrome of nasal polyps, angioedema and bronchospastic reactivity to aspirin or other
+        nonsteroidal anti-inflammatory drugs
+      term_gap: >-
+        searched MONDO "aspirin", "aspirin-induced", "aspirin-exacerbated", "Samter", "nasal polyp",
+        "NSAID", "nonsteroidal" and HP "aspirin", "NSAID", "nasal polyp", "bronchospasm". Nearest
+        candidate MONDO:0008834 asthma, nasal polyps, and aspirin intolerance does not fit: the
+        label names no asthma (it names angioedema and bronchospastic reactivity), and the term
+        sits under hereditary disease. MONDO:0850287 aspirin-induced respiratory disease sits
+        under intrinsic asthma and likewise names asthma. HP:0012042 Aspirin-induced asthma
+        (is_a Asthma) is rejected for the same reason: it names asthma and aspirin alone, not
+        the syndrome of nasal polyps, angioedema and bronchospastic reactivity to other NSAIDs.
+        The text's word-span matches
+        (HP:0100582 Nasal polyposis, MONDO:0006314 nasal cavity polyp, HP:0100665 Angioedema,
+        MONDO:0005079, MONDO:0010481) each name one part of the syndrome, not the syndrome
+    quote: >-
+      Patients with the syndrome of nasal polyps, angioedema and bronchospastic reactivity to aspirin
+      or other nonsteroidal anti-inflammatory drugs.
+    object_specialization:
+    - text: nonsteroidal anti-inflammatory drugs
+      term:
+        id: CHEBI:35475
+        label: non-steroidal anti-inflammatory drug
+      binding: EXACT
+    explanation: >-
+      An item of the contraindications list: patients with the named syndrome of nasal polyps,
+      angioedema and bronchospastic reactivity to aspirin or other NSAIDs; one claim for the
+      syndrome, with the other NSAIDs as the agents it concerns.
+    status: DRAFT
+    notes: >-
+      One claim for the named syndrome, not split into its parts and given no `member`: the
+      validator reads "aspirin or other nonsteroidal anti-inflammatory drugs" as a coordination,
+      but it names the agents of one syndrome, not alternative conditions. Unbound: the nearest
+      term, MONDO:0008834, names asthma, which this label does not, and is classed under
+      hereditary disease (see term_gap); the aspirin/omeprazole file binds it NARROWER to a
+      label that does name asthma. Specialization: the other NSAIDs; aspirin is the product's own ingredient and is dropped. Not attributed: aspirin is named as the agent the patient reacts to, not as a cause.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Peptic ulcer or other serious gastrointestinal lesions
+      member: Peptic ulcer
+      term:
+        id: MONDO:0004247
+        label: peptic ulcer disease
+      binding: EXACT
+    quote: >-
+      Peptic ulcer or other serious gastrointestinal lesions.
+    explanation: >-
+      An item of the contraindications list: "Peptic ulcer", the first member of "Peptic ulcer or
+      other serious gastrointestinal lesions".
+    status: DRAFT
+    notes: >-
+      The coordination is split into two claims, each with the whole phrase as its text and its
+      own member.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Peptic ulcer or other serious gastrointestinal lesions
+      member: other serious gastrointestinal lesions
+      term_gap: >-
+        searched MONDO/HP "gastrointestinal lesion", "gastrointestinal ulcer": no lesion term; the
+        only fitting term, MONDO:0004335 digestive system disorder, would make the contraindication
+        far broader than "serious ... lesions". HP:0034274 Gastrointestinal ulcer is rejected: an
+        ulcer is one kind of lesion, so it would narrow "lesions" to ulcers, and an ulcer is
+        already what the other member, "Peptic ulcer", names. The phrase's term matches (MONDO:0004247,
+        HP:0004398, MONDO:0043839) all name the other member, "Peptic ulcer"
+    quote: >-
+      Peptic ulcer or other serious gastrointestinal lesions.
+    explanation: >-
+      An item of the contraindications list: "other serious gastrointestinal lesions", the second
+      member of "Peptic ulcer or other serious gastrointestinal lesions".
+    status: DRAFT
+    notes: >-
+      Previously left uncurated as too vague; recorded now as its own member with a term gap so the
+      coordination is not silently cut to its first member. A reviewer may reject it as too vague
+      to be useful.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: porphyria
+      term:
+        id: MONDO:0037939
+        label: porphyria
+      binding: EXACT
+    quote: >-
+      Patients with porphyria.
+    explanation: >-
+      An item of the contraindications list: "Patients with porphyria".
+    status: DRAFT
+notes: >-
+  Not curated: "Hypersensitivity or intolerance to aspirin, caffeine, butalbital or codeine" (allergy
+  to the product's own ingredients); "other ill-defined hereditary platelet dysfunctions" (too vague
+  to bind); "Anaphylactoid reactions have occurred in such
+  patients" (a statement of risk, not a condition). The SPL carries no product name, so product_name
+  is left as the helper wrote it (empty).

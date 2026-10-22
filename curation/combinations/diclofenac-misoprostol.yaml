@@ -1,0 +1,252 @@
+id: MEDICNE:combo-7ba00028-81c1-5db4-aaf6-42fb7965eeb8
+name: diclofenac / misoprostol
+ingredients:
+- id: CHEBI:47381
+  label: diclofenac
+- id: CHEBI:63610
+  label: misoprostol
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 9a22cb4b-e49a-4bd7-b235-47405c302658
+    version: 12
+    title: 'These highlights do not include all the information needed to use DICLOFENAC SODIUM AND MISOPROSTOL
+      DELAYED-RELEASE TABLETS safely and effectively. See full prescribing information for DICLOFENAC
+      SODIUM AND MISOPROSTOL DELAYED-RELEASE TABLETS. DICLOFENAC SODIUM and MISOPROSTOL delayed-release
+      tablets, for oral use Initial U.S. Approval: 1997'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9a22cb4b-e49a-4bd7-b235-47405c302658
+  product_name: Diclofenac Sodium and Misoprostol
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: osteoarthritis or rheumatoid arthritis
+      member: osteoarthritis
+      term:
+        id: MONDO:0005178
+        label: osteoarthritis
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adult patients
+    quote: >-
+      Diclofenac sodium and misoprostol delayed-release tablets are indicated for treatment of the
+      signs and symptoms of osteoarthritis or rheumatoid arthritis in adult patients at high risk of
+      developing NSAID-induced gastric and duodenal ulcers and their complications.
+    explanation: >-
+      "indicated for treatment of the signs and symptoms of osteoarthritis or rheumatoid
+      arthritis" is symptomatic treatment, so AMELIORATES_CONDITION; this claim covers the member
+      osteoarthritis; "in adult patients" gives the age.
+    status: DRAFT
+    notes: >-
+      Product-level claim ("Diclofenac sodium and misoprostol delayed-release tablets are
+      indicated"), unattributed. "at high risk of developing NSAID-induced gastric and duodenal
+      ulcers and their complications" restricts the population to patients at ulcer risk; it is a
+      risk criterion, not a disease the patients have, so it is not a disease_context, and the
+      label states no ulcer-prevention indication of its own.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: osteoarthritis or rheumatoid arthritis
+      member: rheumatoid arthritis
+      term:
+        id: MONDO:0008383
+        label: rheumatoid arthritis
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adult patients
+    quote: >-
+      Diclofenac sodium and misoprostol delayed-release tablets are indicated for treatment of the
+      signs and symptoms of osteoarthritis or rheumatoid arthritis in adult patients at high risk of
+      developing NSAID-induced gastric and duodenal ulcers and their complications.
+    explanation: >-
+      "indicated for treatment of the signs and symptoms of osteoarthritis or rheumatoid
+      arthritis" is symptomatic treatment; this claim covers the member rheumatoid arthritis;
+      "in adult patients" gives the age.
+    status: DRAFT
+    notes: >-
+      As the osteoarthritis claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Diclofenac sodium and misoprostol delayed-Release tablets are contraindicated in the following
+      patients: Pregnancy.
+    explanation: >-
+      The first item of "are contraindicated in the following patients:" is pregnancy.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. Not attributed, though the next sentence points at misoprostol
+      ("Use of misoprostol, a component of diclofenac sodium and misoprostol delayed-release
+      tablets, during pregnancy can result in maternal and fetal harm"): that sentence is a risk
+      statement of its own, outside the sentence that states the contraindication, so under the
+      skill's same-sentence rule it does not attribute this claim. A reviewer may judge it a
+      stated reason; uterine rupture, abortion, premature birth and birth defects there are risks,
+      not contraindicated conditions.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Active gastrointestinal bleeding
+      term:
+        id: HP:0002239
+        label: Gastrointestinal hemorrhage
+      binding: EXACT
+    quote: >-
+      Active gastrointestinal bleeding
+    explanation: >-
+      An item of "are contraindicated in the following patients:": active gastrointestinal
+      bleeding.
+    status: DRAFT
+    notes: >-
+      HP Gastrointestinal hemorrhage has "Gastrointestinal bleeding" as an exact synonym; "Active"
+      says the bleeding is present now, not a kind of bleeding, so EXACT despite the validator's
+      note on "active". No MONDO term (searched
+      "gastrointestinal hemorrhage", "gastrointestinal bleeding": non-human animal only).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: asthma, urticaria, or other allergic-type reactions
+      member: asthma
+      term:
+        id: MONDO:0004979
+        label: asthma
+      binding: EXACT
+    object_specialization:
+    - text: aspirin
+      term:
+        id: CHEBI:15365
+        label: acetylsalicylic acid
+      binding: EXACT
+    - text: other NSAIDs
+      term:
+        id: CHEBI:35475
+        label: non-steroidal anti-inflammatory drug
+      binding: EXACT
+    quote: >-
+      History of asthma, urticaria, or other allergic-type reactions after taking aspirin or other
+      NSAIDs.
+    explanation: >-
+      An item of "are contraindicated in the following patients:": a history of asthma after
+      taking aspirin or other NSAIDs; this claim covers the member asthma, with aspirin and the
+      NSAIDs as the agents.
+    status: DRAFT
+    notes: >-
+      Aspirin is not an ingredient of this product, so it is a specialization. MONDO asthma plus
+      the specializations composes NSAID-induced asthma. Not attributed: diclofenac is not named.
+      "Severe, sometimes fatal, anaphylactic reactions to NSAIDs have been reported" is a risk
+      statement.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: asthma, urticaria, or other allergic-type reactions
+      member: urticaria
+      term:
+        id: MONDO:0005492
+        label: urticaria
+      binding: EXACT
+    object_specialization:
+    - text: aspirin
+      term:
+        id: CHEBI:15365
+        label: acetylsalicylic acid
+      binding: EXACT
+    - text: other NSAIDs
+      term:
+        id: CHEBI:35475
+        label: non-steroidal anti-inflammatory drug
+      binding: EXACT
+    quote: >-
+      History of asthma, urticaria, or other allergic-type reactions after taking aspirin or other
+      NSAIDs.
+    explanation: >-
+      An item of "are contraindicated in the following patients:": a history of urticaria after
+      taking aspirin or other NSAIDs; this claim covers the member urticaria.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: asthma, urticaria, or other allergic-type reactions
+      member: other allergic-type reactions
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: aspirin
+      term:
+        id: CHEBI:15365
+        label: acetylsalicylic acid
+      binding: EXACT
+    - text: other NSAIDs
+      term:
+        id: CHEBI:35475
+        label: non-steroidal anti-inflammatory drug
+      binding: EXACT
+    quote: >-
+      History of asthma, urticaria, or other allergic-type reactions after taking aspirin or other
+      NSAIDs.
+    explanation: >-
+      An item of "are contraindicated in the following patients:": a history of other
+      allergic-type reactions after taking aspirin or other NSAIDs (cross-sensitivity); this claim
+      covers that member.
+    status: DRAFT
+    notes: >-
+      drug allergy is NARROWER than "allergic-type reactions", justified by "after taking aspirin
+      or other NSAIDs". The validator warns that no term matches "other allergic-type reactions";
+      drug allergy is the term for allergic reactions to drugs.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other prostaglandins
+      term:
+        id: CHEBI:26333
+        label: prostaglandin
+      binding: EXACT
+    examples:
+    - text: anaphylactic reactions
+      term:
+        id: MONDO:0100053
+        label: anaphylaxis
+      binding: EXACT
+    - text: serious skin reactions
+      term:
+        id: MONDO:0005594
+        label: severe cutaneous adverse reaction
+      binding: EXACT
+    quote: >-
+      Known hypersensitivity (e.g., anaphylactic reactions and serious skin reactions) to diclofenac
+      sodium and misoprostol, other prostaglandins, or any components of the drug product
+    explanation: >-
+      An item of "are contraindicated in the following patients:": known hypersensitivity to other
+      prostaglandins (cross-sensitivity), with anaphylactic and serious skin reactions as the
+      label's examples. Diclofenac sodium, misoprostol and the product's components are its own.
+    status: DRAFT
+    notes: >-
+      Only the cross-sensitivity to other prostaglandins is curated. Not attributed: the agents are
+      allergens. The Highlights copy omits "other prostaglandins".
+notes: >-
+  Not claimed: "In the setting of coronary artery bypass graft (CABG) surgery" names a procedure,
+  not a condition. Hypersensitivity to diclofenac sodium, misoprostol or any components is an
+  allergy to the product's own ingredients. The "maternal and fetal harm" sentence and the
+  anaphylaxis sentence state risks. The Indications sentence "For a list of factors that may
+  increase the risk ..." is a cross-reference. No claim in the label names diclofenac or
+  misoprostol as its cause in its own sentence, so none is attributed (see the pregnancy claim's
+  notes). The Highlights copies restate the full-text claims.

@@ -1,0 +1,91 @@
+id: MEDICNE:combo-81c12472-c406-5a93-aa56-2ec3c11496ff
+name: azilsartan / chlorthalidone
+ingredients:
+- id: CHEBI:68850
+  label: azilsartan
+- id: CHEBI:3654
+  label: chlorthalidone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: e60f795b-fce3-4361-aa03-f143451689d1
+    version: 18
+    title: 'These highlights do not include all the information needed to use EDARBYCLOR safely and effectively.
+      See full prescribing information for EDARBYCLOR. EDARBYCLOR (azilsartan medoxomil and chlorthalidone)
+      tablets, for oral use Initial U.S. Approval: 2011'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e60f795b-fce3-4361-aa03-f143451689d1
+  product_name: Edarbyclor
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Edarbyclor is indicated for the treatment of hypertension, to lower blood pressure.
+    explanation: >-
+      "is indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. The next sentences say Edarbyclor "may be used" in patients not
+      adequately controlled on monotherapy and "may be used as initial therapy" in patients likely
+      to need multiple drugs (the Highlights list both after "to lower blood pressure:"). They are
+      alternative settings that together do not restrict the indication, so no line_of_therapy is
+      recorded and no separate claim is made. HP Hypertension agrees with the grounding store.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Edarbyclor is contraindicated in patients with anuria
+    explanation: >-
+      "Edarbyclor is contraindicated in patients with anuria" states the anuria contraindication.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed: "Edarbyclor" is the brand name, not an ingredient. The
+      Highlights restate it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not coadminister aliskiren-containing products with Edarbyclor in patients with diabetes
+    when_coadministered_with:
+    - text: aliskiren-containing products
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not coadminister aliskiren-containing products with Edarbyclor in patients with diabetes"
+      contraindicates the product in patients with diabetes when given with aliskiren-containing
+      products, recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: the sentence names the product by brand. The Highlights restate
+      it.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication (the label says
+  there are no controlled trials demonstrating risk reduction with Edarbyclor); the initial-therapy
+  guidance, the "moderate-to-severe hypertension" risk statement and the trial-probability
+  figures (context for choosing therapy, not separate indications). All claims are product-level:
+  the label never assigns an indication or contraindication to azilsartan or chlorthalidone.

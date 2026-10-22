@@ -1,0 +1,434 @@
+id: MEDICNE:combo-8f353bd1-0c48-5d19-918a-790abb27ad3b
+name: 17alpha-ethynylestradiol / desogestrel
+ingredients:
+- id: CHEBI:4903
+  label: 17alpha-ethynylestradiol
+- id: CHEBI:4453
+  label: desogestrel
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 4a8f278f-f505-4537-8deb-74e8927df8c6
+    version: 105
+    title: IsibloomTM (Desogestrel and Ethinyl Estradiol Tablets, USP) 0.15 mg/0.03 mg Rx only
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4a8f278f-f505-4537-8deb-74e8927df8c6
+  product_name: Isibloom
+  claims:
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy", "pregnan", "contracept"; HP "pregnancy", "pregnant", "pregnan"; PATO
+        "pregnan": no term for pregnancy as a state (only pregnancy disorders, exposures and modifiers);
+        the grounding store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Isibloom TM (desogestrel and ethinyl estradiol tablets) are indicated for the prevention of pregnancy in
+      women who elect to use oral contraceptives as a method of contraception.
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "indicated for the prevention of pregnancy" is contraception: PREVENTATIVE_FOR_CONDITION with pregnancy
+      as the object; "in women" gives the sex.
+    status: DRAFT
+    notes: >-
+      "who elect to use oral contraceptives as a method of contraception" is a population criterion, not
+      a co-therapy. Object unbound (no configured ontology has a pregnancy term). The parenthetical generic
+      name lists both ingredients but assigns nothing to either; product-level claim, unattributed. The
+      efficacy table that follows, and its footnotes on emergency contraception and the lactational amenorrhea
+      method, describe other methods and products; no claim. "have not been studied for and are not indicated
+      for use in emergency contraception" is negated; no claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Thrombophlebitis or thromboembolic disorders
+      member: Thrombophlebitis
+      term:
+        id: HP:0004418
+        label: Thrombophlebitis
+      binding: EXACT
+    quote: Thrombophlebitis or thromboembolic disorders
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:"; this claim is the member "Thrombophlebitis" of the coordination "Thrombophlebitis or thromboembolic disorders".
+    status: DRAFT
+    notes: >-
+      HP rather than MONDO:0002800 thrombophlebitis, following the grounding store's row for "Thrombophlebitis".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Thrombophlebitis or thromboembolic disorders
+      member: thromboembolic disorders
+      term:
+        id: HP:0001907
+        label: Thromboembolism
+      binding: EXACT
+    quote: Thrombophlebitis or thromboembolic disorders
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:"; this claim is the member "thromboembolic disorders" of the coordination "Thrombophlebitis or thromboembolic disorders"
+      (HP Thromboembolism, exact synonym "Thromboembolic disease").
+    status: DRAFT
+    notes: >-
+      The grounding store maps "Thromboembolic disorders" to UMLS:C0040038 Thromboembolic events, an exact
+      synonym of the HP term.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombophlebitis or thromboembolic disorders
+      member: deep vein thrombophlebitis
+      term:
+        id: HP:0004418
+        label: Thrombophlebitis
+      binding: BROADER
+    quote: A past history of deep vein thrombophlebitis or thromboembolic disorders
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:"; this claim is the member "deep vein thrombophlebitis" of the coordination "deep vein thrombophlebitis or thromboembolic disorders". "A past history of" makes it a past episode; no slot records a temporal scope, so the object alone reads as current disease.
+    status: DRAFT
+    notes: >-
+      No deep-vein-thrombophlebitis term (searched MONDO and HP "thrombophlebitis", "deep vein"); HP
+      Thrombophlebitis lacks the deep-vein site, so BROADER. HP Deep venous thrombosis would drop the inflammation.
+      Grounding store maps "Deep vein thrombophlebitis" to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombophlebitis or thromboembolic disorders
+      member: thromboembolic disorders
+      term:
+        id: HP:0001907
+        label: Thromboembolism
+      binding: EXACT
+    quote: A past history of deep vein thrombophlebitis or thromboembolic disorders
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:"; this claim is the member "thromboembolic disorders" of the coordination "deep vein thrombophlebitis or thromboembolic disorders"
+      (HP Thromboembolism, exact synonym "Thromboembolic disease"). "A past history of" makes it a past episode; no slot records a temporal scope, so the object alone reads as current disease.
+    status: DRAFT
+    notes: >-
+      The grounding store maps "Thromboembolic disorders" to UMLS:C0040038 Thromboembolic events, an exact
+      synonym of the HP term.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: thrombophilic conditions
+      term:
+        id: MONDO:0002305
+        label: thrombophilia
+      binding: EXACT
+    quote: Known thrombophilic conditions
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:": known thrombophilic conditions, that is thrombophilia.
+    status: DRAFT
+    notes: Grounding store maps "Thrombophilic conditions" to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Cerebral vascular or coronary artery disease
+      member: Cerebral vascular disease
+      term:
+        id: MONDO:0011057
+        label: cerebrovascular disorder
+      binding: EXACT
+    quote: Cerebral vascular or coronary artery disease (current or history)
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:"; this claim is the member "Cerebral vascular disease" of the coordination "Cerebral
+      vascular or coronary artery disease". "(current or history)" covers current disease and a past episode.
+    status: DRAFT
+    notes: >-
+      "Cerebral vascular disease" is read as cerebrovascular disease. No slot records a temporal scope.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Cerebral vascular or coronary artery disease
+      member: coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    quote: Cerebral vascular or coronary artery disease (current or history)
+    explanation: >-
+      The same item; this claim is the member "coronary artery disease". "(current or history)" covers
+      current disease and a past episode.
+    status: DRAFT
+    notes: No slot records a temporal scope.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Valvular heart disease with complications
+      term:
+        id: MONDO:0002869
+        label: heart valve disorder
+      binding: BROADER
+    quote: Valvular heart disease with complications
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:": valvular heart disease with complications. "with complications" narrows heart
+      valve disorder, so BROADER.
+    status: DRAFT
+    notes: >-
+      Searched MONDO "valvular heart disease", "heart valve". The label does not say which complications.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Persistent blood pressure values of ≥ 160 mm Hg systolic or ≥ 100 mg Hg diastolic
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      Persistent blood pressure values of ≥ 160 mm Hg systolic or ≥ 100 mg Hg diastolic
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:": blood pressure persistently at or above 160 mm Hg systolic or 100 mm Hg diastolic,
+      which is hypertension at a stated threshold. Either reading qualifies, so it is one condition; Hypertension
+      lacks the threshold, so BROADER.
+    status: DRAFT
+    notes: >-
+      One claim, not two: the "or" joins two thresholds of one condition (raised blood pressure), not two
+      conditions. HP:0500106 Isolated systolic hypertension would wrongly exclude raised diastolic pressure;
+      no stage-2 or severe hypertension term (searched HP "Severe hypertension", "Stage 2 hypertension",
+      "Diastolic hypertension"). "mg Hg" is the label's typo for mm Hg, and the "102" after the item is
+      a footnote artifact, left out of the quote. Grounding store maps the similar phrase to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Diabetes with vascular involvement
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: BROADER
+    quote: Diabetes with vascular involvement
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:": diabetes with vascular involvement. "with vascular involvement" narrows diabetes
+      mellitus, so BROADER.
+    status: DRAFT
+    notes: >-
+      MONDO:0000960 diabetic peripheral angiopathy is labelled peripheral-only, so not bound, as in the
+      sibling files. Grounding store maps the text to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Headaches with focal neurological symptoms
+      term:
+        id: HP:0002315
+        label: Headache
+      binding: BROADER
+    quote: Headaches with focal neurological symptoms
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:": headaches with focal neurological symptoms. No term for headache with focal
+      neurological symptoms, so Headache BROADER.
+    status: DRAFT
+    notes: Searched HP "Headache", "focal". This label names no migraine contraindication.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breast cancer
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: >-
+      Current diagnosis of, or history of, breast cancer, which may be hormone sensitive
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:":
+      breast cancer, currently diagnosed or in the history. "which may be hormone sensitive" describes
+      the cancer; it does not restrict the contraindication.
+    status: DRAFT
+    notes: >-
+      No slot records a temporal scope; the label contraindicates current breast cancer and a history
+      of it. This older-format label has no Highlights, so the full-text item is quoted.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Carcinoma of the endometrium or other known or suspected estrogen-dependent neoplasia
+      member: Carcinoma of the endometrium
+      term:
+        id: MONDO:0002447
+        label: endometrial carcinoma
+      binding: EXACT
+    quote: >-
+      Carcinoma of the endometrium or other known or suspected estrogen-dependent neoplasia
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:";
+      this claim is the member "Carcinoma of the endometrium" (an exact synonym of the term).
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Carcinoma of the endometrium or other known or suspected estrogen-dependent neoplasia
+      member: other known estrogen-dependent neoplasia
+      term_gap: >-
+        searched MONDO "estrogen", "hormone-dependent", "hormone dependent": no term for estrogen-dependent
+        neoplasia in general (only estrogen-receptor positive breast cancer); MONDO:0005070 neoplasm and
+        HP:0002664 Neoplasm would drop the estrogen dependence
+    quote: >-
+      Carcinoma of the endometrium or other known or suspected estrogen-dependent neoplasia
+    explanation: >-
+      The same item; this claim is the member "other known or suspected estrogen-dependent neoplasia",
+      written "other known estrogen-dependent neoplasia". "known or suspected" qualifies how certain the
+      diagnosis is, not which condition, so it is one claim that covers a suspected neoplasia too.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. The validator splits "known or suspected" as a coordination of conditions
+      and rejects the unsplit member, so the member keeps "known"; its coverage warning for "suspected
+      estrogen-dependent neoplasia" is that misreading. Grounding store maps the phrase to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Undiagnosed abnormal genital bleeding
+      term:
+        id: HP:0001892
+        label: Abnormal bleeding
+      binding: BROADER
+    quote: Undiagnosed abnormal genital bleeding
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:":
+      undiagnosed abnormal genital bleeding.
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for genital bleeding (searched HP "genital bleeding", "genital hemorrhage", "genital",
+      "vaginal bleeding", "uterine bleeding"). Genital bleeding covers uterine and vaginal bleeding, so neither
+      HP:0034263 Abnormal vaginal bleeding nor HP:0000140 Abnormality of the menstrual cycle (bound for
+      "abnormal uterine bleeding" in the sibling files) is a superclass of it; HP Abnormal bleeding is,
+      so BROADER. A reviewer may prefer HP:0000140 for consistency. "Undiagnosed" describes the workup,
+      not the condition. Grounding store maps the text to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Cholestatic jaundice of pregnancy or jaundice with prior pill use
+      member: Cholestatic jaundice of pregnancy
+      term:
+        id: HP:0000952
+        label: Jaundice
+      binding: BROADER
+    quote: >-
+      Cholestatic jaundice of pregnancy or jaundice with prior pill use
+    life_stage:
+      text: pregnancy
+      term_gap: >-
+        searched HsapDv "pregnan"; MONDO and HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term
+        for pregnancy as a state
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:";
+      this claim is the member "Cholestatic jaundice of pregnancy": jaundice of cholestatic type arising
+      in pregnancy. HP Jaundice lacks the cholestatic type and the pregnancy, so BROADER; "of pregnancy"
+      is recorded as an unbound life stage.
+    status: DRAFT
+    notes: >-
+      The condition is intrahepatic cholestasis of pregnancy (MONDO:0100429), but binding it is an error:
+      the validator anchors "cholestatic jaundice" on MONDO:0006874 obstructive jaundice through the grounding
+      store and judges MONDO:0100429 unrelated to it. A reviewer may add a semapv:ManualMappingCuration
+      row and rebind to MONDO:0100429. The life stage is where the jaundice arose, not a restriction to
+      currently pregnant women; the label does not say whether a past episode suffices.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: >-
+        Cholestatic jaundice of pregnancy or jaundice with prior pill use
+      member: jaundice with prior pill use
+      term:
+        id: HP:0000952
+        label: Jaundice
+      binding: BROADER
+    object_specialization:
+    - text: pill
+      term:
+        id: CHEBI:49325
+        label: oral contraceptive
+      binding: NARROWER
+    quote: >-
+      Cholestatic jaundice of pregnancy or jaundice with prior pill use
+    explanation: >-
+      The same item; this claim is the member "jaundice with prior pill use": jaundice associated with
+      earlier use of the pill, composed as Jaundice specialised to oral contraceptives. "with prior pill
+      use" narrows the jaundice, so BROADER.
+    status: DRAFT
+    notes: >-
+      "pill" is read as the oral contraceptive pill, as the sentence's context of combined oral contraceptives
+      makes it; CHEBI oral contraceptive is more specific than the bare word, so NARROWER. The agent is
+      the drug class, not an attribution to either ingredient.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute or chronic hepatocellular disease with abnormal liver function
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: BROADER
+    quote: Acute or chronic hepatocellular disease with abnormal liver function
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:": hepatocellular disease with abnormal liver function. "Acute or chronic" is an
+      exhaustive pair (every course of the disease), so it is one claim; liver disorder lacks the hepatocellular
+      character and the abnormal function, so BROADER.
+    status: DRAFT
+    notes: >-
+      Searched MONDO "hepatocellular", "chronic liver disease", "acute liver", "liver disorder"; HP "abnormal
+      liver", "Acute hepatitis", "chronic hepatitis": no hepatocellular-disease term. HP:0001410 Decreased
+      liver function names only the "abnormal liver function" part. Grounding store maps "Acute hepatocellular
+      disease with abnormal liver function" and its chronic twin to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hepatic adenomas or carcinomas
+      member: Hepatic adenomas
+      term:
+        id: HP:0012028
+        label: Hepatocellular adenoma
+      binding: EXACT
+    quote: Hepatic adenomas or carcinomas
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:";
+      this claim is the member "Hepatic adenomas" (exact synonym "Hepatic adenoma" of the term).
+    status: DRAFT
+    notes: >-
+      HP rather than MONDO:0018902 hepatocellular adenoma (no "hepatic adenoma" synonym), following the
+      grounding store's row for "Hepatic adenomas".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hepatic adenomas or carcinomas
+      member: Hepatic carcinomas
+      term:
+        id: MONDO:0018531
+        label: carcinoma of liver and intrahepatic biliary tract
+      binding: BROADER
+    quote: Hepatic adenomas or carcinomas
+    explanation: >-
+      The same item; this claim is the member "Hepatic carcinomas" (the suspended "Hepatic" carries to
+      "carcinomas"). MONDO carcinoma of liver and intrahepatic biliary tract also covers bile-duct carcinoma,
+      so BROADER.
+    status: DRAFT
+    notes: >-
+      Searched MONDO "hepatic carcinoma", "liver carcinoma", "hepatocellular carcinoma". MONDO:0007256
+      hepatocellular carcinoma carries the exact synonym "liver carcinoma" but names one histology; the
+      label says carcinomas of the liver in general, so it is not bound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Known or suspected pregnancy
+      term_gap: >-
+        searched MONDO "pregnancy"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding store's
+        UMLS:C0032961 is in no configured ontology
+    quote: Known or suspected pregnancy
+    explanation: >-
+      An item of "contraindicated in females who are known to have or develop the following conditions:":
+      pregnancy, known or suspected. "Known or suspected" qualifies the certainty, not the condition, so
+      there is one claim and no member.
+    status: DRAFT
+    notes: Unbound for lack of a term.
+notes: >-
+  Not curated: "Major surgery with prolonged immobilization" (a procedure and the immobility after it, not
+  a condition the patient has; no claim object); "Hypersensitivity to any component of this product" (allergy
+  to the product itself); women receiving hepatitis C drug combinations containing ombitasvir/paritaprevir/ritonavir,
+  with or without dasabuvir (drug interaction, no condition). This older-format label has no Highlights
+  and no thrombotic risk-factor heading; each listed condition is its own claim.

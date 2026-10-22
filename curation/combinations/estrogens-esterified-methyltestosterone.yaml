@@ -1,0 +1,308 @@
+id: MEDICNE:combo-6a021084-fd53-56b5-83f9-f0b9a71ceb29
+name: estrogens, esterified / methyltestosterone
+ingredients:
+- id: CHEBI:749546
+  label: estrogens, esterified
+- id: CHEBI:27436
+  label: methyltestosterone
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: d42eeda8-d810-4481-a403-6a3520b9e69a
+    version: 6
+    title: Esterified Estrogens and Methyltestosterone Tablets, 1.25 mg/2.5 mg Esterified Estrogens and
+      Methyltestosterone Tablets, 0.625 mg/1.25 mg (Half-Strength) CIII
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d42eeda8-d810-4481-a403-6a3520b9e69a
+  product_name: Esterified Estrogens and Methyltestosterone
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: moderate to severe vasomotor symptoms
+      term_gap: >-
+        searched MONDO "vasomotor", "menopaus", "climacteric", "hot flash"; HP "vasomotor", "hot
+        flash", "hot flush", "menopaus": no term for menopausal vasomotor symptoms; HP:0031217 Hot
+        flashes names one vasomotor symptom only (night sweats are another), so binding it would say
+        less than the label
+    quote: >-
+      Treatment of moderate to severe vasomotor symptoms associated with the menopause in those
+      patients not improved by estrogens alone.
+    life_stage:
+      text: menopause
+      term_gap: >-
+        searched HsapDv "menopaus", "postmenopaus", "adult"; MONDO and HP "menopaus": no menopause
+        life-stage term (HP:0008209 Early menopause and MONDO:0001119 premature menopause are
+        disorders; adult stage would drop the restriction)
+    line_of_therapy:
+      text: not improved by estrogens alone
+      term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      The item of "... are indicated in the:": "Treatment of moderate to severe vasomotor symptoms"
+      gives TREATS and the object; "associated with the menopause" gives the life stage; "in those
+      patients not improved by estrogens alone" restricts the line of therapy.
+    status: DRAFT
+    notes: >-
+      Menopause is recorded as a life stage, not a disease context, since it is not a disease (as in
+      the other menopausal hormone files). "not improved by estrogens alone" is a prior-therapy
+      restriction; it names estrogen therapy, not an ingredient's role in this product, so it is no
+      attribution. Not curated from the same Indications section: the parenthetical "There is no
+      evidence that estrogens are effective for nervous symptoms or depression ..." and the bullet
+      "... have not been shown to be effective for any purpose during pregnancy ..." (both negated).
+      The label carries no DESI wording. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Undiagnosed abnormal genital bleeding
+      term:
+        id: HP:0030012
+        label: Abnormal female reproductive system physiology
+      binding: BROADER
+    quote: >-
+      Undiagnosed abnormal genital bleeding.
+    explanation: >-
+      Item 1 of "Esterified Estrogens and Methyltestosterone Full and Half-Strength Tablets should not
+      be used in women with any of the following conditions:": undiagnosed abnormal genital bleeding.
+    status: DRAFT
+    notes: >-
+      No HP or MONDO term for abnormal genital bleeding (searched HP "genital bleeding", "genital",
+      "uterine bleeding", "vaginal bleeding", "postmenopausal"; MONDO "vagin"). HP:0000140 Abnormality of
+      the menstrual cycle, used for "abnormal uterine bleeding" in the contraceptive files, does not fit
+      menopausal women, and HP:0033840 Postmenopausal bleeding adds a restriction the words do not
+      state, so the parent HP Abnormal female reproductive system physiology, BROADER. HP:0034263
+      Abnormal vaginal bleeding is the closest sign; a reviewer may prefer it. "Undiagnosed" describes
+      the workup, not the condition. Grounding store maps the text to sssom:NoTermFound.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: cancer of the breast
+      term:
+        id: MONDO:0007254
+        label: breast cancer
+      binding: EXACT
+    quote: >-
+      Known, suspected, or history of cancer of the breast.
+    explanation: >-
+      Item 2 of "... should not be used in women with any of the following conditions:": known,
+      suspected, or past cancer of the breast.
+    status: DRAFT
+    notes: >-
+      "Known, suspected, or history of" qualifies one condition; no slot records certainty or a
+      temporal scope, so one claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: estrogen-dependent neoplasia
+      term_gap: >-
+        searched MONDO "estrogen", "estrogen-dependent", "hormone", "hormone-sensitive"; no term for
+        estrogen-dependent neoplasm in general (only receptor-defined breast cancers); MONDO neoplasm
+        would drop the estrogen dependence. Grounding store maps the text to sssom:NoTermFound
+    quote: >-
+      Known or suspected estrogen-dependent neoplasia.
+    explanation: >-
+      Item 3 of "... should not be used in women with any of the following conditions:": known or
+      suspected estrogen-dependent neoplasia.
+    status: DRAFT
+    notes: Unbound, as in the other menopausal hormone files.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis, pulmonary embolism
+      member: deep vein thrombosis
+      term:
+        id: HP:0002625
+        label: Deep venous thrombosis
+      binding: EXACT
+    quote: >-
+      Active deep vein thrombosis, pulmonary embolism or history of these conditions.
+    explanation: >-
+      Item 4 of "... should not be used in women with any of the following conditions:". This claim
+      is the member "deep vein thrombosis" of "deep vein thrombosis, pulmonary embolism", active or
+      past.
+    status: DRAFT
+    notes: >-
+      No slot records "or history of these conditions", so the object alone reads as active disease.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: deep vein thrombosis, pulmonary embolism
+      member: pulmonary embolism
+      term:
+        id: MONDO:0005279
+        label: pulmonary embolism
+      binding: EXACT
+    quote: >-
+      Active deep vein thrombosis, pulmonary embolism or history of these conditions.
+    explanation: >-
+      The same item; this claim is the member "pulmonary embolism", active or past.
+    status: DRAFT
+    notes: >-
+      No slot records "or history of these conditions", so the object alone reads as active disease.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: arterial thromboembolic disease
+      term:
+        id: HP:0001907
+        label: Thromboembolism
+      binding: BROADER
+    quote: >-
+      Active or recent (e.g., within the past year) arterial thromboembolic disease (e.g., stroke,
+      myocardial infarction).
+    examples:
+    - text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    - text: myocardial infarction
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    explanation: >-
+      Item 5 of "... should not be used in women with any of the following conditions:": active or
+      recent ("e.g., within the past year") arterial thromboembolic disease; "(e.g., stroke, myocardial
+      infarction)" lists examples of the category.
+    status: DRAFT
+    notes: >-
+      HP Thromboembolism has the exact synonym "Thromboembolic disease"; "arterial" narrows it and no
+      arterial thromboembolism term exists (searched HP and MONDO "arterial thrombo", "thromboembol"),
+      so BROADER. No slot records "recent (e.g., within the past year)". This label says "Active or
+      recent" where the other two menopausal labels say "or a history of these conditions".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Liver dysfunction or disease
+      member: Liver dysfunction
+      term:
+        id: HP:0001410
+        label: Decreased liver function
+      binding: EXACT
+    quote: >-
+      Liver dysfunction or disease.
+    explanation: >-
+      Item 6 of "... should not be used in women with any of the following conditions:". This claim
+      is the member "Liver dysfunction" (an exact synonym of Decreased liver function) of the
+      coordination "Liver dysfunction or disease".
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Liver dysfunction or disease
+      member: Liver disease
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: EXACT
+    quote: >-
+      Liver dysfunction or disease.
+    explanation: >-
+      The same item; this claim is the member "Liver disease", an exact synonym of liver disorder.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnancy
+      term_gap: >-
+        searched MONDO "pregnan"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Known or suspected pregnancy.
+    explanation: >-
+      Item 8 of "... should not be used in women with any of the following conditions:": known or
+      suspected pregnancy.
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. Product-level; the methyltestosterone list below contraindicates
+      pregnancy again, attributed, as a separate claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe liver damage
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: BROADER
+    quote: >-
+      The presence of severe liver damage.
+    attributed_to:
+    - ingredient: CHEBI:27436
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Methyltestosterone should not be used in:'
+      explanation: >-
+        The list lead makes methyltestosterone the subject of "should not be used in:", and this is
+        item 1 of its list.
+    explanation: >-
+      Item 1 of "Methyltestosterone should not be used in:": the presence of severe liver damage.
+    status: DRAFT
+    notes: >-
+      No liver damage term (searched MONDO "liver damage", "liver disease"; HP "liver damage",
+      "hepatocellular injury", "hepatic failure"); "severe liver damage" is a liver disorder, so
+      BROADER. Grounding store maps the text to UMLS:C0151763 Hepatocellular Damage (another
+      ontology). The same file binds "Liver disease" (item 6) to liver disorder EXACT; the two claims
+      share the term and differ in binding.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Pregnancy
+      term_gap: >-
+        searched MONDO "pregnan"; HP "pregnancy", "pregnant", "pregnan"; PATO "pregnan": no term for
+        pregnancy as a state (only pregnancy disorders, exposures and modifiers); the grounding
+        store's UMLS:C0032961 is in no configured ontology
+    quote: >-
+      Pregnancy and in breast-feeding mothers because of the possibility of masculinization of the
+      female fetus or breast-fed infant.
+    attributed_to:
+    - ingredient: CHEBI:27436
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Methyltestosterone should not be used in:'
+      explanation: >-
+        The list lead makes methyltestosterone the subject of "should not be used in:", and pregnancy
+        is the first condition of item 2 of its list.
+    explanation: >-
+      Item 2 of "Methyltestosterone should not be used in:": pregnancy, "because of the possibility of
+      masculinization of the female fetus".
+    status: DRAFT
+    notes: >-
+      Unbound for lack of a term. The stated reason names no ingredient; the attribution rests on the
+      list lead. The product-level pregnancy contraindication (item 8 of the first list) is a separate
+      claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breast-feeding mothers
+      term_gap: >-
+        searched MONDO "lactat"; HP "Lactation", "breast": no term for lactation or breast-feeding as
+        a state (only lactation disorders)
+    quote: >-
+      Pregnancy and in breast-feeding mothers because of the possibility of masculinization of the
+      female fetus or breast-fed infant.
+    attributed_to:
+    - ingredient: CHEBI:27436
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Methyltestosterone should not be used in:'
+      explanation: >-
+        The list lead makes methyltestosterone the subject of "should not be used in:", and
+        breast-feeding mothers are the second condition of item 2 of its list.
+    explanation: >-
+      Item 2 of "Methyltestosterone should not be used in:" continues "and in breast-feeding mothers
+      because of the possibility of masculinization of the ... breast-fed infant": lactation is
+      contraindicated.
+    status: DRAFT
+    notes: Unbound for lack of a term.
+notes: >-
+  The Contraindications section has two lists: one for the product ("Esterified Estrogens and
+  Methyltestosterone Full and Half-Strength Tablets should not be used in women with any of the
+  following conditions:") and one for methyltestosterone ("Methyltestosterone should not be used
+  in:"). Claims from the second list are attributed to methyltestosterone on its list lead; claims
+  from the first are product-level. Not curated: item 7 ("known hypersensitivity to its ingredients",
+  allergy to the product itself); "There is no indication ... in pregnancy" and the following
+  sentence on birth defects (restate item 8 / give background, no further claim). The label has no
+  Highlights; one copy of each section.

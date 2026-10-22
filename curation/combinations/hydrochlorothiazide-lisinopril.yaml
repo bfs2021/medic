@@ -1,0 +1,208 @@
+id: MEDICNE:combo-34c716d1-ed55-511b-bf89-61e1d380a306
+name: hydrochlorothiazide / lisinopril
+ingredients:
+- id: CHEBI:5778
+  label: hydrochlorothiazide
+- id: CHEBI:43755
+  label: lisinopril
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 52b90789-2902-3ab9-e063-6394a90a5abb
+    version: 1
+    title: LISINOPRIL AND HYDROCHLOROTHIAZIDE TABLETS USP
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=52b90789-2902-3ab9-e063-6394a90a5abb
+  product_name: Lisinopril and Hydrochlorothiazide
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Lisinopril and hydrochlorothiazide tablets USP are indicated for the treatment of
+      hypertension, to lower blood pressure.
+    explanation: >-
+      "are indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. "These fixed-dose combinations are not indicated for initial
+      therapy" restricts this claim but produces none. HP Hypertension agrees with the grounding
+      store; MONDO has no term labelled or exactly synonymous with "hypertension".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: angioedema
+      term:
+        id: HP:0100665
+        label: Angioedema
+      binding: EXACT
+    object_specialization:
+    - text: angiotensin-converting enzyme inhibitor
+      term:
+        id: CHEBI:35457
+        label: EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor
+      binding: EXACT
+    quote: >-
+      Lisinopril and hydrochlorothiazide is contraindicated in patients who are hypersensitive to
+      this product and in patients with a history of angioedema related to previous treatment with
+      an angiotensin-converting enzyme inhibitor and in patients with hereditary or idiopathic
+      angioedema.
+    explanation: >-
+      "is contraindicated ... in patients with a history of angioedema related to previous treatment
+      with an angiotensin-converting enzyme inhibitor" states a contraindication in patients with
+      past angioedema, specialised to ACE inhibitors as its cause.
+    status: DRAFT
+    notes: >-
+      Angioedema + specialization ACE inhibitor composes "angioedema related to previous treatment
+      with an angiotensin-converting enzyme inhibitor", as in the hydrochlorothiazide/quinaprilat file (PR #72). "history of" places the angioedema in the past; the schema has no slot for that, so it
+      stays in the quote. HP Angioedema is used (not MONDO angioedema, which MONDO places under
+      urticaria). ChEBI EC 3.4.15.1 (peptidyl-dipeptidase A) inhibitor is the
+      angiotensin-converting-enzyme inhibitor class. Not attributed: the sentence speaks of the
+      product ("Lisinopril and hydrochlorothiazide" is the product name); "hypersensitive to this
+      product" is the product's own and is not curated.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hereditary or idiopathic angioedema
+      member: hereditary angioedema
+      term:
+        id: MONDO:0019623
+        label: hereditary angioedema
+      binding: EXACT
+    quote: >-
+      Lisinopril and hydrochlorothiazide is contraindicated in patients who are hypersensitive to
+      this product and in patients with a history of angioedema related to previous treatment with
+      an angiotensin-converting enzyme inhibitor and in patients with hereditary or idiopathic
+      angioedema.
+    explanation: >-
+      "is contraindicated ... in patients with hereditary or idiopathic angioedema" states a
+      contraindication in hereditary angioedema, the first member of the coordination.
+    status: DRAFT
+    notes: >-
+      Coordination split one claim per member. MONDO hereditary angioedema has the exact label;
+      it is a genetic disorder, not an allergy. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hereditary or idiopathic angioedema
+      member: idiopathic angioedema
+      term:
+        id: HP:0100665
+        label: Angioedema
+      binding: BROADER
+    quote: >-
+      Lisinopril and hydrochlorothiazide is contraindicated in patients who are hypersensitive to
+      this product and in patients with a history of angioedema related to previous treatment with
+      an angiotensin-converting enzyme inhibitor and in patients with hereditary or idiopathic
+      angioedema.
+    explanation: >-
+      "is contraindicated ... in patients with hereditary or idiopathic angioedema" states a
+      contraindication in idiopathic angioedema, the second member of the coordination.
+    status: DRAFT
+    notes: >-
+      Searched MONDO and HP "idiopathic angioedema": no term. Bound to HP Angioedema, BROADER
+      ("idiopathic" narrows it), the same term the ACE-inhibitor angioedema claim uses.
+      Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: anuria
+      term:
+        id: HP:0100519
+        label: Anuria
+      binding: EXACT
+    quote: >-
+      Because of the hydrochlorothiazide component, this product is contraindicated in patients
+      with anuria or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: COMPONENT_STATEMENT
+      snippet: Because of the hydrochlorothiazide component
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide component", assigning both
+        contraindications it lists, anuria among them, to the hydrochlorothiazide component.
+    explanation: >-
+      "this product is contraindicated in patients with anuria" states the anuria contraindication,
+      the first of the sentence's two conditions.
+    status: DRAFT
+    notes: >-
+      Attributed as in the olmesartan/amlodipine/hydrochlorothiazide file. The text is "anuria"
+      alone: the "or" joins two separate contraindications (anuria; sulfonamide hypersensitivity),
+      each curated as its own claim, as in the hydrochlorothiazide/quinaprilat file (PR #72).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: other sulfonamide-derived drugs
+      term:
+        id: CHEBI:35358
+        label: sulfonamide
+      binding: BROADER
+    quote: >-
+      Because of the hydrochlorothiazide component, this product is contraindicated in patients
+      with anuria or hypersensitivity to other sulfonamide-derived drugs.
+    attributed_to:
+    - ingredient: CHEBI:5778
+      basis: COMPONENT_STATEMENT
+      snippet: Because of the hydrochlorothiazide component
+      explanation: >-
+        The sentence opens with "Because of the hydrochlorothiazide component", assigning both
+        contraindications it lists, the sulfonamide cross-sensitivity among them, to the
+        hydrochlorothiazide component.
+    explanation: >-
+      "contraindicated in patients with ... hypersensitivity to other sulfonamide-derived drugs"
+      states a drug-allergy contraindication with other sulfonamide-derived drugs as the agents;
+      "other" excludes the product's own hydrochlorothiazide.
+    status: DRAFT
+    notes: >-
+      Cross-sensitivity to other sulfonamide-derived drugs. Attributed to hydrochlorothiazide on the
+      label's "Because of the hydrochlorothiazide component", not on the allergen. ChEBI
+      sulfonamide is the chemical class, broader than "sulfonamide-derived drugs".
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: diabetes
+      term:
+        id: MONDO:0005015
+        label: diabetes mellitus
+      binding: EXACT
+    quote: >-
+      Do not co-administer aliskiren with lisinopril and hydrochlorothiazide in patients with
+      diabetes
+    when_coadministered_with:
+    - text: aliskiren
+      term:
+        id: CHEBI:601027
+        label: aliskiren
+      binding: EXACT
+    explanation: >-
+      "Do not co-administer aliskiren with lisinopril and hydrochlorothiazide in patients with
+      diabetes" contraindicates the product in patients with diabetes when given with aliskiren,
+      recorded as when_coadministered_with.
+    status: DRAFT
+    notes: >-
+      Holds only with aliskiren co-administration. MONDO diabetes mellitus has the exact synonym
+      "diabetes". Not attributed: "lisinopril and hydrochlorothiazide" is the product's own name.
+notes: >-
+  Not claimed: the class-level cardiovascular-outcomes text after the indication; "These fixed-dose
+  combinations are not indicated for initial therapy"; the captopril agranulocytosis and
+  angioedema-in-black-patients sentences at the end of Indications (cautions, not indications);
+  "hypersensitive to this product" (own ingredients); the neprilysin-inhibitor (sacubitril)
+  contraindication and the 36-hour sacubitril/valsartan switching rule (pure drug interactions with
+  no condition, out of scope). The label carries no Highlights.

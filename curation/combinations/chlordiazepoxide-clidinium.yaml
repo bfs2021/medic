@@ -1,0 +1,182 @@
+id: MEDICNE:combo-3548b39b-e957-5823-8554-87a1484e672a
+name: chlordiazepoxide / clidinium
+ingredients:
+- id: CHEBI:3611
+  label: chlordiazepoxide
+- id: CHEBI:3743
+  label: clidinium
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 0fda7521-a452-4bac-953d-7d464d75ca22
+    version: 1
+    title: Chlordiazepoxide Hydrochloride and Clidinium Bromide Capsules, USP for oral use Rx only
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0fda7521-a452-4bac-953d-7d464d75ca22
+  product_name: Chlordiazepoxide Hydrochloride and Clidinium Bromide
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: emotional and somatic factors
+      term_gap: >-
+        searched MONDO/HP "emotional", "Emotional lability", "somatic": no term for the emotional
+        and somatic factors of a disease; the label names no specific symptom
+    disease_context:
+      text: gastrointestinal disorders
+      term:
+        id: MONDO:0004335
+        label: digestive system disorder
+      binding: EXACT
+    quote: >-
+      Chlordiazepoxide hydrochloride and clidinium bromide capsules are indicated to control
+      emotional and somatic factors in gastrointestinal disorders.
+    explanation: >-
+      "indicated to control emotional and somatic factors in gastrointestinal disorders" is
+      control (amelioration) of emotional and somatic factors, in the context of gastrointestinal
+      disorders; the label does not say the product treats the disorders themselves.
+    status: DRAFT
+    notes: >-
+      Unbound object (see term_gap), so this claim exports no edge as it stands; a reviewer may
+      reject it as too unspecific. MONDO digestive system disorder carries the exact synonym
+      "gastrointestinal disorder". "emotional and somatic factors" is one phrase, not two
+      conditions to split. Product-level sentence, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: peptic ulcer
+      term:
+        id: MONDO:0004247
+        label: peptic ulcer disease
+      binding: EXACT
+    quote: >-
+      Chlordiazepoxide hydrochloride and clidinium bromide capsules may also be used as adjunctive
+      therapy in the treatment of peptic ulcer and in the treatment of the irritable bowel syndrome
+      (irritable colon, spastic colon, mucous colitis) and acute enterocolitis.
+    line_of_therapy:
+      text: adjunctive therapy
+      term_gap: >-
+        no configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) has a term for adjunctive
+        use (searched HP "adjunct"); the label names no co-therapy, so in_combination_with does not
+        apply
+    explanation: >-
+      "may also be used as adjunctive therapy in the treatment of peptic ulcer" is treatment of peptic ulcer, restricted to adjunctive use (line_of_therapy).
+    status: DRAFT
+    notes: >-
+      "may also be used" is hedged but states a use. Product-level sentence, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: irritable bowel syndrome
+      term:
+        id: MONDO:0005052
+        label: irritable bowel syndrome
+      binding: EXACT
+    quote: >-
+      Chlordiazepoxide hydrochloride and clidinium bromide capsules may also be used as adjunctive
+      therapy in the treatment of peptic ulcer and in the treatment of the irritable bowel syndrome
+      (irritable colon, spastic colon, mucous colitis) and acute enterocolitis.
+    line_of_therapy:
+      text: adjunctive therapy
+      term_gap: >-
+        no configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) has a term for adjunctive
+        use (searched HP "adjunct"); the label names no co-therapy, so in_combination_with does not
+        apply
+    explanation: >-
+      "may also be used as adjunctive therapy ... in the treatment of the irritable bowel syndrome" is treatment of IBS, restricted to adjunctive use (line_of_therapy). The parenthesis (irritable colon, spastic colon, mucous colitis) gives other names for IBS.
+    status: DRAFT
+    notes: >-
+      The parenthetical lists synonyms of IBS, not separate conditions (as in the Phenohytro file). Product-level sentence, unattributed.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: acute enterocolitis
+      term:
+        id: MONDO:0009172
+        label: enterocolitis
+      binding: BROADER
+    quote: >-
+      Chlordiazepoxide hydrochloride and clidinium bromide capsules may also be used as adjunctive
+      therapy in the treatment of peptic ulcer and in the treatment of the irritable bowel syndrome
+      (irritable colon, spastic colon, mucous colitis) and acute enterocolitis.
+    line_of_therapy:
+      text: adjunctive therapy
+      term_gap: >-
+        no configured ontology (MONDO, HP, UBERON, HsapDv, PATO, CHEBI) has a term for adjunctive
+        use (searched HP "adjunct"); the label names no co-therapy, so in_combination_with does not
+        apply
+    explanation: >-
+      "may also be used as adjunctive therapy ... in the treatment of ... acute enterocolitis" is treatment of acute enterocolitis, restricted to adjunctive use (line_of_therapy).
+    status: DRAFT
+    notes: >-
+      No acute-enterocolitis term (searched MONDO "enterocolitis"); "acute" narrows the condition, so BROADER, as in the Phenohytro file. Product-level sentence, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: glaucoma
+      term:
+        id: MONDO:0005041
+        label: glaucoma
+      binding: EXACT
+    quote: >-
+      Chlordiazepoxide hydrochloride and clidinium bromide capsules are contraindicated in the
+      presence of glaucoma (since the anticholinergic component may produce some degree of
+      mydriasis) and in patients with prostatic hypertrophy and benign bladder neck obstruction.
+    explanation: >-
+      "are contraindicated in the presence of glaucoma" is a contraindication in glaucoma; the
+      parenthesis gives the reason.
+    status: DRAFT
+    notes: >-
+      The reason, "since the anticholinergic component may produce some degree of mydriasis", names
+      the cause only by role; the label never names the ingredient, so the claim is unattributed
+      (it points to clidinium, the anticholinergic ingredient).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: prostatic hypertrophy and benign bladder neck obstruction
+      member: prostatic hypertrophy
+      term:
+        id: MONDO:0010811
+        label: benign prostatic hyperplasia
+      binding: EXACT
+    quote: >-
+      Chlordiazepoxide hydrochloride and clidinium bromide capsules are contraindicated in the
+      presence of glaucoma (since the anticholinergic component may produce some degree of
+      mydriasis) and in patients with prostatic hypertrophy and benign bladder neck obstruction.
+    explanation: >-
+      "and in patients with prostatic hypertrophy and benign bladder neck obstruction" is a
+      contraindication in prostatic hypertrophy, the first member of "prostatic hypertrophy and benign bladder neck obstruction".
+    status: DRAFT
+    notes: >-
+      MONDO benign prostatic hyperplasia carries the exact synonym "benign prostatic hypertrophy"; prostatic hypertrophy is that condition. Read as two contraindicated conditions, not as one requiring both. Product-level
+      sentence, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: prostatic hypertrophy and benign bladder neck obstruction
+      member: benign bladder neck obstruction
+      term:
+        id: MONDO:0006679
+        label: bladder neck obstruction
+      binding: BROADER
+    quote: >-
+      Chlordiazepoxide hydrochloride and clidinium bromide capsules are contraindicated in the
+      presence of glaucoma (since the anticholinergic component may produce some degree of
+      mydriasis) and in patients with prostatic hypertrophy and benign bladder neck obstruction.
+    explanation: >-
+      "and in patients with prostatic hypertrophy and benign bladder neck obstruction" is a
+      contraindication in benign bladder neck obstruction, the second member of "prostatic hypertrophy and benign bladder neck obstruction".
+    status: DRAFT
+    notes: >-
+      No benign-bladder-neck-obstruction term (searched MONDO "bladder neck"); "benign" narrows, so BROADER. Read as two contraindicated conditions, not as one requiring both. Product-level
+      sentence, unattributed.
+notes: >-
+  Not curated: "known hypersensitivity to chlordiazepoxide hydrochloride and/or clidinium bromide"
+  (allergy to the product's own ingredients). "adjunctive therapy" is recorded as an unbound
+  line_of_therapy following the Phenohytro file's precedent. The label carries no DESI wording, so no
+  evidence_status is recorded.

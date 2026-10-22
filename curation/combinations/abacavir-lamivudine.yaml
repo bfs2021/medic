@@ -1,0 +1,77 @@
+id: MEDICNE:combo-403222d7-c81d-5ddc-8afd-9963a1bc6e47
+name: abacavir / lamivudine
+ingredients:
+- id: CHEBI:421707
+  label: abacavir
+- id: CHEBI:63577
+  label: lamivudine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/7ac206ab8d8bba065c7a228c2c0189a46026fb9f/.claude/skills/medic-combination-curation/SKILL.md#git-blob=f3a0879f3a7231248c98b4625cec89e2e99df573
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 080e3423-5962-4465-8e78-cd8793699336
+    version: 1
+    title: EPZICOM® (abacavir sulfate and lamivudine)Tablets
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=080e3423-5962-4465-8e78-cd8793699336
+  product_name: EPZICOM
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: HIV-1 infection
+      term:
+        id: MONDO:0005109
+        label: HIV infectious disease
+      binding: BROADER
+    quote: >-
+      EPZICOM Tablets, in combination with other antiretroviral agents, are indicated for the
+      treatment of HIV-1 infection.
+    in_combination_with:
+    - text: other antiretroviral agents
+      term:
+        id: CHEBI:64946
+        label: anti-HIV agent
+      binding: NARROWER
+    explanation: >-
+      "are indicated for the treatment of HIV-1 infection" gives TREATS with object HIV-1
+      infection; "in combination with other antiretroviral agents" names the co-therapy.
+    status: DRAFT
+    notes: >-
+      No HIV-1-specific MONDO term (searched MONDO "HIV-1", "HIV", "human immunodeficiency
+      virus"); HIV infectious disease is broader. Grounding store maps "HIV-1 infection" to
+      UMLS:C2363741. Co-therapy: CHEBI has no "antiretroviral" class (searched CHEBI
+      "antiretroviral", "anti-HIV", "antiviral"); anti-HIV agent is NARROWER than
+      "antiretroviral agents", justified by the HIV-1 indication in the same sentence.
+      Product-level claim, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hepatic impairment
+      term:
+        id: HP:0001410
+        label: Decreased liver function
+      binding: EXACT
+    quote: >-
+      EPZICOM Tablets are contraindicated in patients with hepatic impairment
+    explanation: >-
+      "are contraindicated in patients with hepatic impairment" gives CONTRAINDICATED_IN with
+      object hepatic impairment; the sentence names no restriction.
+    status: DRAFT
+    notes: >-
+      No MONDO term for hepatic impairment (searched MONDO "hepatic", "hepatic insufficiency",
+      "liver disease"; liver failure is more severe than impairment); HP Decreased liver function
+      (exact synonym "Liver dysfunction") says what the label says. Grounding store maps "Hepatic
+      impairment" to UMLS:C0948807. Unattributed: the label does not name a component (it points
+      to Clinical Pharmacology only).
+notes: >-
+  Not curated: "previously demonstrated hypersensitivity to abacavir or to any other component of
+  the product" and the "NEVER restart ... following a hypersensitivity reaction to abacavir"
+  sentence are allergy to the product's own ingredient. From Indications, the abacavir
+  reintroduction advice is a precaution, the triple-regimen advice is usage guidance, and the
+  Description of Clinical Studies text (CNA30021) states no indication. The setid is the EPZICOM
+  brand label.

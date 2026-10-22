@@ -1,0 +1,328 @@
+id: MEDICNE:combo-4a149e26-e4c1-59a3-ad6b-e9d3307ff211
+name: esomeprazole / naproxen
+ingredients:
+- id: CHEBI:50275
+  label: esomeprazole
+- id: CHEBI:7476
+  label: naproxen
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 733a93ff-8240-4afa-ba28-b0a6f8514efe
+    version: 1
+    title: 'These highlights do not include all the information needed to use NAPROXEN AND ESOMEPRAZOLE
+      MAGNESIUM DELAYED-RELEASE TABLETS safely and effectively. See full prescribing information for NAPROXEN
+      AND ESOMEPRAZOLE MAGNESIUM DELAYED-RELEASE TABLETS. NAPROXEN AND ESOMEPRAZOLE MAGNESIUM delayed-release
+      tablets, for oral use Initial U.S. Approval: 2010'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=733a93ff-8240-4afa-ba28-b0a6f8514efe
+  product_name: Naproxen and esomeprazole magnesium
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: osteoarthritis, rheumatoid arthritis and ankylosing spondylitis
+      member: osteoarthritis
+      term:
+        id: MONDO:0005178
+        label: osteoarthritis
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adults
+    quote: >-
+      The naproxen component of naproxen and esomeprazole magnesium delayed-release tablet is
+      indicated for relief of signs and symptoms of: • osteoarthritis, rheumatoid arthritis and
+      ankylosing spondylitis in adults.
+    attributed_to:
+    - ingredient: CHEBI:7476
+      basis: COMPONENT_STATEMENT
+      snippet: >-
+        The naproxen component of naproxen and esomeprazole magnesium delayed-release tablet is
+        indicated for relief of signs and symptoms of:
+      explanation: >-
+        The list lead assigns the relief of signs and symptoms of the arthritides it lists,
+        osteoarthritis among them, to the naproxen component.
+    explanation: >-
+      "indicated for relief of signs and symptoms of: osteoarthritis, rheumatoid arthritis and
+      ankylosing spondylitis in adults" is symptomatic relief, so AMELIORATES_CONDITION; this
+      claim covers the member osteoarthritis; "in adults" gives the age.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: osteoarthritis, rheumatoid arthritis and ankylosing spondylitis
+      member: rheumatoid arthritis
+      term:
+        id: MONDO:0008383
+        label: rheumatoid arthritis
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adults
+    quote: >-
+      The naproxen component of naproxen and esomeprazole magnesium delayed-release tablet is
+      indicated for relief of signs and symptoms of: • osteoarthritis, rheumatoid arthritis and
+      ankylosing spondylitis in adults.
+    attributed_to:
+    - ingredient: CHEBI:7476
+      basis: COMPONENT_STATEMENT
+      snippet: >-
+        The naproxen component of naproxen and esomeprazole magnesium delayed-release tablet is
+        indicated for relief of signs and symptoms of:
+      explanation: >-
+        The list lead assigns the relief of signs and symptoms of the arthritides it lists,
+        rheumatoid arthritis among them, to the naproxen component.
+    explanation: >-
+      "indicated for relief of signs and symptoms of: ... rheumatoid arthritis ... in adults" is
+      symptomatic relief of rheumatoid arthritis, the second member; "in adults" gives the age.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: osteoarthritis, rheumatoid arthritis and ankylosing spondylitis
+      member: ankylosing spondylitis
+      term:
+        id: MONDO:0005306
+        label: ankylosing spondylitis
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adults
+    quote: >-
+      The naproxen component of naproxen and esomeprazole magnesium delayed-release tablet is
+      indicated for relief of signs and symptoms of: • osteoarthritis, rheumatoid arthritis and
+      ankylosing spondylitis in adults.
+    attributed_to:
+    - ingredient: CHEBI:7476
+      basis: COMPONENT_STATEMENT
+      snippet: >-
+        The naproxen component of naproxen and esomeprazole magnesium delayed-release tablet is
+        indicated for relief of signs and symptoms of:
+      explanation: >-
+        The list lead assigns the relief of signs and symptoms of the arthritides it lists,
+        ankylosing spondylitis among them, to the naproxen component.
+    explanation: >-
+      "indicated for relief of signs and symptoms of: ... ankylosing spondylitis in adults" is
+      symptomatic relief of ankylosing spondylitis, the third member; "in adults" gives the age.
+    status: DRAFT
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: juvenile idiopathic arthritis (JIA)
+      term:
+        id: MONDO:0011429
+        label: juvenile idiopathic arthritis
+      binding: EXACT
+    life_stage:
+      text: adolescent patients
+      term_gap: >-
+        searched HsapDv "adolescent", "teen", "juvenile", "pediatric": no adolescent stage
+        (juvenile stage is 5-14 years, 15-19 year-old is an age band, pediatric stage is broader)
+    quote: >-
+      • juvenile idiopathic arthritis (JIA) in adolescent patients.
+    attributed_to:
+    - ingredient: CHEBI:7476
+      basis: COMPONENT_STATEMENT
+      snippet: >-
+        The naproxen component of naproxen and esomeprazole magnesium delayed-release tablet is
+        indicated for relief of signs and symptoms of:
+      explanation: >-
+        The list lead assigns the relief of signs and symptoms of each item after its colon, the
+        juvenile idiopathic arthritis item among them, to the naproxen component.
+    explanation: >-
+      The second item of "The naproxen component ... is indicated for relief of signs and
+      symptoms of:" is juvenile idiopathic arthritis in adolescent patients: symptomatic relief,
+      so AMELIORATES_CONDITION, with "adolescent patients" as the life stage.
+    status: DRAFT
+    notes: >-
+      The quote is the item alone; the list lead is the snippet. The validator warns that the item
+      has no relief wording: the relief wording ("relief of signs and symptoms of:") is in the
+      list lead that governs it. No age_range: the item says
+      "adolescent", and the "12 years of age and older weighing at least 38 kg" bound sits in the
+      product-level sentence, not in this item.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: naproxen-associated gastric ulcers
+      term:
+        id: MONDO:0001126
+        label: gastric ulcer
+      binding: BROADER
+    object_specialization:
+    - text: naproxen
+      term:
+        id: CHEBI:7476
+        label: naproxen
+      binding: EXACT
+    quote: >-
+      The esomeprazole magnesium component of naproxen and esomeprazole magnesium delayed-release
+      tablet is indicated to decrease the risk of developing naproxen-associated gastric ulcers.
+    explanation: >-
+      "indicated to decrease the risk of developing naproxen-associated gastric ulcers" is
+      prevention of gastric ulcer; "naproxen-associated" names naproxen as the agent, recorded as
+      the object specialization.
+    status: DRAFT
+    notes: >-
+      As the aspirin/omeprazole precedent: gastric ulcer + specialization naproxen composes
+      "naproxen-associated gastric ulcer"; no drug-induced gastric ulcer term (searched MONDO
+      "gastric ulcer", "peptic ulcer"). Naproxen here is the cause of the ulcer, not an
+      attribution. ATTRIBUTION WITHHELD FOR A TOOLING GAP: the label assigns this indication to
+      esomeprazole ("The esomeprazole magnesium component of naproxen and esomeprazole magnesium
+      delayed-release tablet is indicated"), a COMPONENT_STATEMENT, but the validator's
+      "the <ingredient> component" check does not accept the salt-qualified "esomeprazole
+      magnesium component". A reviewer should add the esomeprazole (CHEBI:50275) attribution once
+      the check accepts it.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: substituted benzimidazoles
+      term:
+        id: CHEBI:22715
+        label: benzimidazoles
+      binding: BROADER
+    examples:
+    - text: anaphylactic reactions
+      term:
+        id: MONDO:0100053
+        label: anaphylaxis
+      binding: EXACT
+    - text: serious skin reactions
+      term:
+        id: MONDO:0005594
+        label: severe cutaneous adverse reaction
+      binding: EXACT
+    quote: >-
+      Known hypersensitivity (e.g., anaphylactic reactions and serious skin reactions) to naproxen,
+      esomeprazole magnesium, substituted benzimidazoles, or to any components of the drug product,
+      including omeprazole.
+    explanation: >-
+      "contraindicated in the following patients: Known hypersensitivity ... to ... substituted
+      benzimidazoles" is a contraindication in drug allergy to the substituted benzimidazoles;
+      anaphylactic and serious skin reactions are the label's examples of the reactions. Naproxen
+      and esomeprazole magnesium, also listed, are the product's own ingredients.
+    status: DRAFT
+    notes: >-
+      Judgement call: the label lists omeprazole under "any components of the drug product, including
+      omeprazole", so by the label's own framing it is an own-component allergy and is not a
+      specialization, although omeprazole (CHEBI:7772, the racemate) differs from the grounded
+      ingredient esomeprazole (CHEBI:50275); omeprazole is in any case a substituted
+      benzimidazole, covered by the class specialization. benzimidazoles is BROADER
+      than "substituted benzimidazoles", as in the aspirin/omeprazole file. Not attributed: the
+      agents are allergens, not causes. The following sentence (reactions to esomeprazole "may
+      include anaphylaxis, ...") describes reactions, not a further contraindication.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: asthma, urticaria, or allergic-type reactions
+      member: asthma
+      term:
+        id: MONDO:0004979
+        label: asthma
+      binding: EXACT
+    object_specialization:
+    - text: aspirin
+      term:
+        id: CHEBI:15365
+        label: acetylsalicylic acid
+      binding: EXACT
+    - text: other NSAIDs
+      term:
+        id: CHEBI:35475
+        label: non-steroidal anti-inflammatory drug
+      binding: EXACT
+    quote: >-
+      History of asthma, urticaria, or allergic-type reactions after taking aspirin or other
+      NSAIDs.
+    explanation: >-
+      An item of "contraindicated in the following patients:": a history of asthma after taking
+      aspirin or other NSAIDs; this claim covers the member asthma, with aspirin and the NSAIDs as
+      the agents.
+    status: DRAFT
+    notes: >-
+      Reaction to aspirin and NSAIDs; aspirin is not an ingredient of this product, so it is a
+      specialization. MONDO asthma plus the specializations composes NSAID-induced asthma (HP
+      Aspirin-induced asthma would drop the NSAIDs). Not attributed: naproxen is not named. The
+      next sentence ("Severe, sometimes fatal, anaphylactic reactions to NSAIDs have been
+      reported") is a risk statement.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: asthma, urticaria, or allergic-type reactions
+      member: urticaria
+      term:
+        id: MONDO:0005492
+        label: urticaria
+      binding: EXACT
+    object_specialization:
+    - text: aspirin
+      term:
+        id: CHEBI:15365
+        label: acetylsalicylic acid
+      binding: EXACT
+    - text: other NSAIDs
+      term:
+        id: CHEBI:35475
+        label: non-steroidal anti-inflammatory drug
+      binding: EXACT
+    quote: >-
+      History of asthma, urticaria, or allergic-type reactions after taking aspirin or other
+      NSAIDs.
+    explanation: >-
+      An item of "contraindicated in the following patients:": a history of urticaria after taking
+      aspirin or other NSAIDs; this claim covers the member urticaria.
+    status: DRAFT
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: asthma, urticaria, or allergic-type reactions
+      member: allergic-type reactions
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: aspirin
+      term:
+        id: CHEBI:15365
+        label: acetylsalicylic acid
+      binding: EXACT
+    - text: other NSAIDs
+      term:
+        id: CHEBI:35475
+        label: non-steroidal anti-inflammatory drug
+      binding: EXACT
+    quote: >-
+      History of asthma, urticaria, or allergic-type reactions after taking aspirin or other
+      NSAIDs.
+    explanation: >-
+      An item of "contraindicated in the following patients:": a history of allergic-type
+      reactions after taking aspirin or other NSAIDs (cross-sensitivity); this claim covers that
+      member.
+    status: DRAFT
+    notes: >-
+      drug allergy is NARROWER than "allergic-type reactions", justified by "after taking aspirin
+      or other NSAIDs". The validator warns that no term matches "allergic-type reactions"; drug
+      allergy is the term for allergic reactions to drugs.
+notes: >-
+  Not claimed: the product-level sentence ("indicated in adult and adolescent patients 12 years of
+  age and older weighing at least 38 kg, requiring naproxen for symptomatic relief of arthritis and
+  esomeprazole magnesium to decrease the risk for developing naproxen-associated gastric ulcers")
+  describes the population; the component sentences that follow carry the claims. Limitations of
+  Use (no substitution, not for initial treatment of acute pain, 6-month studies) give no claims.
+  "In the setting of coronary artery bypass graft (CABG) surgery" names a procedure, not a
+  condition. "Proton pump inhibitors (PPIs), including esomeprazole magnesium, are contraindicated
+  in patients receiving rilpivirine-containing products" is a pure drug interaction. Naproxen and
+  esomeprazole magnesium as allergens and "any components of the drug product" are the product's
+  own. The Highlights copies restate the full-text claims.

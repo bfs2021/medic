@@ -1,0 +1,1361 @@
+id: MEDICNE:combo-9512849c-a97e-52ac-b8d8-9d0482aae2c6
+name: amlodipine / atorvastatin
+ingredients:
+- id: CHEBI:2668
+  label: amlodipine
+- id: CHEBI:39548
+  label: atorvastatin
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: https://github.com/monarch-initiative/medic/blob/7f80c42a205de15c949fb041f5bc5c08984c84f7/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 6f1a9bd8-ee30-4c7d-932f-3fa8c4e087b6
+    version: 52
+    title: 'These highlights do not include all the information needed to use CADUET safely and effectively.
+      See full prescribing information for CADUET. CADUET® (amlodipine and atorvastatin) tablets, for
+      oral use Initial U.S. Approval: 2004'
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=6f1a9bd8-ee30-4c7d-932f-3fa8c4e087b6
+  product_name: Caduet
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Amlodipine is indicated for the treatment of hypertension, to lower blood pressure.
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: Amlodipine is indicated for the treatment of hypertension
+      explanation: >-
+        Amlodipine is the subject of the sentence that states the hypertension indication.
+    explanation: >-
+      "indicated for the treatment of hypertension" states treatment of hypertension; "to lower
+      blood pressure" gives the means, not another condition.
+    status: DRAFT
+    notes: >-
+      Amlodipine is the sentence's subject; the label writes each ingredient's indications in its
+      own text. The following class-level text on cardiovascular risk reduction is not a separate
+      claim.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Coronary Artery Disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    quote: >-
+      Amlodipine is indicated for the treatment of Coronary Artery Disease ( 1 ).
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: Amlodipine is indicated for the treatment of Coronary Artery Disease
+      explanation: >-
+        Amlodipine is the subject of the Highlights sentence stating the CAD indication.
+    explanation: >-
+      "indicated for the treatment of Coronary Artery Disease" states treatment of coronary artery
+      disease (Highlights summary).
+    status: DRAFT
+    notes: >-
+      From the Highlights; the full text breaks CAD into the chronic stable angina, vasospastic
+      angina and angiographically documented CAD items, curated below. Kept because the Highlights
+      sentence states the indication on its own; a reviewer may drop it as a summary.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: chronic stable angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: BROADER
+    quote: >-
+      Amlodipine is indicated for the symptomatic treatment of chronic stable angina.
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: Amlodipine is indicated for the symptomatic treatment of chronic stable angina
+      explanation: >-
+        Amlodipine is the subject of the sentence stating the chronic stable angina indication.
+    explanation: >-
+      "indicated for the symptomatic treatment of chronic stable angina": symptomatic treatment, so
+      the relation is amelioration of chronic stable angina.
+    status: DRAFT
+    notes: >-
+      No stable-angina term in MONDO or HP (searched MONDO "angina"; HP "angina"); HP Angina
+      pectoris is broader. Grounding store maps the phrase to UMLS:C0340288.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: vasospastic angina
+      term:
+        id: MONDO:0006021
+        label: Prinzmetal angina
+      binding: EXACT
+    quote: >-
+      Amlodipine is indicated for the treatment of confirmed or suspected vasospastic angina.
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: Amlodipine is indicated for the treatment of confirmed or suspected vasospastic angina
+      explanation: >-
+        Amlodipine is the subject of the sentence stating the vasospastic angina indication.
+    explanation: >-
+      "indicated for the treatment of confirmed or suspected vasospastic angina" states treatment
+      of vasospastic angina; "confirmed or suspected" qualifies the diagnosis, not the condition.
+    status: DRAFT
+    notes: >-
+      The label's own heading equates vasospastic angina with Prinzmetal's or variant angina
+      (MONDO exact synonym "variant angina"). Grounding store maps the phrase to UMLS:C0002963.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: hospitalization for angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: BROADER
+    quote: >-
+      In patients with recently documented CAD by angiography and without heart failure or an
+      ejection fraction < 40%, amlodipine is indicated to reduce the risk of hospitalization
+      for angina
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: amlodipine is indicated to reduce the risk of hospitalization for angina
+      explanation: >-
+        Amlodipine is the grammatical subject of "is indicated to reduce the risk of
+        hospitalization for angina", after the lead-in "In patients with recently documented CAD
+        by angiography ...".
+    disease_context:
+      text: CAD
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    explanation: >-
+      "indicated to reduce the risk of hospitalization for angina" is an outcome endpoint for
+      angina, recorded as prevention of the condition per the outcome-endpoint rule; "In patients
+      with recently documented CAD by angiography" gives CAD as the disease context.
+    status: DRAFT
+    notes: >-
+      "without heart failure or an ejection fraction < 40%" is
+      an exclusion, not recorded. The coronary revascularization procedure in the same sentence is
+      a procedure, not a condition, so no claim. Outcome endpoint: PREVENTATIVE_FOR_CONDITION the
+      condition it is for (angina), object text keeping the outcome wording "hospitalization for
+      angina", bound BROADER.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: Myocardial infarction
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    quote: >-
+      Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults with
+      multiple risk factors for coronary heart disease (CHD) but without clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item "Myocardial infarction (MI), stroke, revascularization procedures,
+      and angina" lists Myocardial infarction as an outcome whose risk is reduced, so prevention;
+      "in adults" gives the age bound; the population "with multiple risk factors for coronary
+      heart disease (CHD) but without clinically evident CHD" names no disease the patients have,
+      so no disease context.
+    status: DRAFT
+    notes: >-
+      Primary prevention in adults with multiple CHD risk factors but without clinically evident
+      CHD (a population, so no disease_context). The item-sized quote has no risk-reduction
+      wording of its own; the relation comes from the list lead "To reduce the risk of:" that
+      governs the item. (The validator's prevention-cue check stays silent here only because "risk
+      factors" contains "risk".) The quote occurs in both the Highlights and the full text; the
+      validator reads it in the Highlights copy, whose list lead "Atorvastatin is indicated ( 1 ):"
+      carries the attribution (the full text's "Atorvastatin is indicated:" says the same).
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults with
+      multiple risk factors for coronary heart disease (CHD) but without clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item "Myocardial infarction (MI), stroke, revascularization procedures,
+      and angina" lists stroke as an outcome whose risk is reduced, so prevention; "in adults"
+      gives the age bound; the population "with multiple risk factors for coronary heart disease
+      (CHD) but without clinically evident CHD" names no disease the patients have, so no disease
+      context.
+    status: DRAFT
+    notes: >-
+      Primary prevention, as the myocardial infarction claim. The item-sized quote has no risk-reduction wording of its own; the relation comes from the
+      list lead "To reduce the risk of:" that governs the item. (The validator's prevention-cue
+      check stays silent here only because "risk factors" contains "risk".)
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: EXACT
+    quote: >-
+      Myocardial infarction (MI), stroke, revascularization procedures, and angina in adults with
+      multiple risk factors for coronary heart disease (CHD) but without clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item "Myocardial infarction (MI), stroke, revascularization procedures,
+      and angina" lists angina as an outcome whose risk is reduced, so prevention; "in adults"
+      gives the age bound; the population "with multiple risk factors for coronary heart disease
+      (CHD) but without clinically evident CHD" names no disease the patients have, so no disease
+      context.
+    status: DRAFT
+    notes: >-
+      Primary prevention, as the myocardial infarction claim. Revascularization procedures are not
+      a condition. The item-sized quote has no risk-reduction wording of its own; the relation comes from the
+      list lead "To reduce the risk of:" that governs the item. (The validator's prevention-cue
+      check stays silent here only because "risk factors" contains "risk".)
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: MI
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    quote: >-
+      MI and stroke in adults with type 2 diabetes mellitus with multiple risk factors for CHD but
+      without clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    disease_context:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item "MI and stroke in adults with type 2 diabetes
+      mellitus" makes MI an outcome whose risk is reduced, so prevention; type 2 diabetes mellitus
+      is the disease context and "adults" the age bound.
+    status: DRAFT
+    notes: >-
+      Adults with type 2 diabetes and multiple CHD risk factors but without clinically evident
+      CHD. The item-sized quote occurs in both the Highlights and the full text; the validator
+      reads it in the Highlights copy, whose list lead "Atorvastatin is indicated ( 1 ):" carries
+      the attribution (the full text's "Atorvastatin is indicated:" says the same).
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      MI and stroke in adults with type 2 diabetes mellitus with multiple risk factors for CHD but
+      without clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    disease_context:
+      text: type 2 diabetes mellitus
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item "MI and stroke in adults with type 2 diabetes
+      mellitus" makes stroke an outcome whose risk is reduced, so prevention; type 2 diabetes
+      mellitus is the disease context and "adults" the age bound.
+    status: DRAFT
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: Non-fatal MI
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    quote: >-
+      Non-fatal MI, fatal and non-fatal stroke, revascularization procedures, hospitalization for
+      congestive heart failure, and angina in adults with clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    disease_context:
+      text: clinically evident CHD
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item lists "Non-fatal MI" for "adults with clinically
+      evident CHD", so prevention, with CHD as the disease context and "adults" the age bound.
+    status: DRAFT
+    notes: >-
+      Secondary prevention in adults with clinically evident CHD. The item-sized quote has no risk
+      wording of its own; the relation comes from the list lead "To reduce the risk of:" that
+      governs the item (validator warning expected). The quote occurs in both the Highlights and
+      the full text; the validator reads it in the Highlights copy, whose list lead "Atorvastatin
+      is indicated ( 1 ):" carries the attribution.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: fatal and non-fatal stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      Non-fatal MI, fatal and non-fatal stroke, revascularization procedures, hospitalization for
+      congestive heart failure, and angina in adults with clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    disease_context:
+      text: clinically evident CHD
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item lists "fatal and non-fatal stroke" for "adults with
+      clinically evident CHD", so prevention, with CHD as the disease context and "adults" the age
+      bound.
+    status: DRAFT
+    notes: >-
+      The item-sized quote has no risk wording of its own; the relation comes from the list lead
+      "To reduce the risk of:" that governs the item (validator warning expected).
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: hospitalization for congestive heart failure
+      term:
+        id: MONDO:0005009
+        label: congestive heart failure
+      binding: BROADER
+    quote: >-
+      Non-fatal MI, fatal and non-fatal stroke, revascularization procedures, hospitalization for
+      congestive heart failure, and angina in adults with clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    disease_context:
+      text: clinically evident CHD
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under the list lead "To reduce the risk of:", the item lists "hospitalization for congestive
+      heart failure", an outcome endpoint for congestive heart failure (reduce the risk of
+      hospitalization for congestive heart failure), recorded as prevention of the condition per
+      the outcome-endpoint rule; "adults with clinically evident CHD" gives CHD as the disease
+      context and "adults" the age bound.
+    status: DRAFT
+    notes: >-
+      Outcome endpoint: PREVENTATIVE_FOR_CONDITION the condition it is for (congestive heart
+      failure), object text keeping the outcome wording "hospitalization for congestive heart
+      failure", bound BROADER. The revascularization procedures in the same list are procedures,
+      not conditions, so no claim. The item-sized quote has no risk wording of its own; the
+      relation comes from the list lead "To reduce the risk of:" that governs the item (validator
+      warning expected).
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: EXACT
+    quote: >-
+      Non-fatal MI, fatal and non-fatal stroke, revascularization procedures, hospitalization for
+      congestive heart failure, and angina in adults with clinically evident CHD
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    disease_context:
+      text: clinically evident CHD
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "To reduce the risk of:", the item lists "angina" for "adults with clinically evident
+      CHD", so prevention, with CHD as the disease context and "adults" the age bound.
+    status: DRAFT
+    notes: >-
+      The item-sized quote has no risk wording of its own; the relation comes from the list lead
+      "To reduce the risk of:" that governs the item (validator warning expected).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: primary hyperlipidemia
+      term:
+        id: MONDO:0021187
+        label: hyperlipidemia
+      binding: BROADER
+    quote: >-
+      As an adjunct to diet to reduce low-density lipoprotein cholesterol (LDL-C) in: o Adults with
+      primary hyperlipidemia.
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated:'
+      explanation: >-
+        Atorvastatin is the subject of "Atorvastatin is indicated:", which introduces the bulleted
+        list this item belongs to; the list has no other subject before the item.
+    age_range:
+      min_years: 18
+      text: Adults
+    explanation: >-
+      Under "Atorvastatin is indicated:", "As an adjunct to diet to reduce low-density lipoprotein
+      cholesterol (LDL-C) in: o Adults with primary hyperlipidemia" states treatment of primary
+      hyperlipidemia; "Adults" gives the age bound.
+    status: DRAFT
+    notes: >-
+      As an adjunct to diet, to reduce LDL-C. No primary-hyperlipidemia term (searched MONDO
+      "hyperlipidemia", "primary hyperlipidemia"); hyperlipidemia is broader, as the grounding
+      store's broadMatch row says. The quote is the item with its sub-lead; the list lead
+      "Atorvastatin is indicated:" carries the attribution.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: heterozygous familial hypercholesterolemia
+      term:
+        id: MONDO:0005439
+        label: familial hypercholesterolemia
+      binding: BROADER
+    quote: >-
+      Adults and pediatric patients aged 10 years and older with heterozygous familial
+      hypercholesterolemia (HeFH).
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated ( 1 ):'
+      explanation: >-
+        Atorvastatin is the subject of the Highlights list lead "Atorvastatin is indicated ( 1 ):",
+        which introduces the bulleted list this item belongs to; no other claim sentence comes
+        between the lead and the item.
+    age_range:
+      min_years: 10
+      text: aged 10 years and older
+    explanation: >-
+      Under "Atorvastatin is indicated ( 1 ):" and "As an adjunct to diet to reduce ... LDL-C in:",
+      the item "Adults and pediatric patients aged 10 years and older with heterozygous familial
+      hypercholesterolemia (HeFH)" states treatment of HeFH; "aged 10 years and older" is the age
+      bound.
+    status: DRAFT
+    notes: >-
+      No heterozygous-FH term in MONDO (searched "familial hypercholesterolemia", "heterozygous
+      familial hypercholesterolemia"); familial hypercholesterolemia is broader. Grounding store
+      maps the phrase to UMLS:C0342882. Adjunct to diet (from the sub-lead "As an adjunct to diet to
+      reduce low-density lipoprotein ... (LDL-C) in:", outside the item-sized quote). The quote
+      occurs in both the Highlights and the full text; the validator reads it in the Highlights
+      copy, whose list lead "Atorvastatin is indicated ( 1 ):" carries the attribution (the full
+      text's "Atorvastatin is indicated:" says the same).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: homozygous familial hypercholesterolemia
+      term:
+        id: MONDO:0018328
+        label: homozygous familial hypercholesterolemia
+      binding: EXACT
+    quote: >-
+      As an adjunct to other LDL-C-lowering therapies, or alone if such treatments are unavailable,
+      to reduce LDL C in adults and pediatric patients aged 10 years and older with homozygous
+      familial hypercholesterolemia (HoFH).
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated:'
+      explanation: >-
+        Atorvastatin is the subject of "Atorvastatin is indicated:", which introduces the bulleted
+        list this item belongs to; the list has no other subject before the item.
+    age_range:
+      min_years: 10
+      text: aged 10 years and older
+    explanation: >-
+      Under "Atorvastatin is indicated:", "to reduce LDL C in adults and pediatric patients aged 10
+      years and older with homozygous familial hypercholesterolemia (HoFH)" states treatment of
+      HoFH; "aged 10 years and older" is the age bound.
+    status: DRAFT
+    notes: >-
+      'As an adjunct to other LDL-C-lowering therapies, or alone' makes the co-therapy optional, so
+      no in_combination_with. The list lead "Atorvastatin is indicated:" carries the attribution.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Primary dysbetalipoproteinemia
+      term:
+        id: MONDO:0018473
+        label: hyperlipoproteinemia type 3
+      binding: EXACT
+    quote: >-
+      As an adjunct to diet for the treatment of adults with: o Primary dysbetalipoproteinemia o
+      Hypertriglyceridemia
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated:'
+      explanation: >-
+        Atorvastatin is the subject of "Atorvastatin is indicated:", which introduces the bulleted
+        list this item belongs to; the list has no other subject before the item.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "Atorvastatin is indicated:", "As an adjunct to diet for the treatment of adults with:
+      ... o Primary dysbetalipoproteinemia" states treatment of primary dysbetalipoproteinemia;
+      "adults" is the age bound.
+    status: DRAFT
+    notes: >-
+      MONDO hyperlipoproteinemia type 3 (exact synonym 'familial dysbetalipoproteinemia'; the label
+      adds 'Fredrickson Type III' in the older version). Grounding store maps the phrase to
+      UMLS:C0020479. The quote is the item with its sub-lead; the list lead "Atorvastatin is
+      indicated:" carries the attribution.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: Hypertriglyceridemia
+      term:
+        id: MONDO:0005347
+        label: hypertriglyceridemia
+      binding: EXACT
+    quote: >-
+      As an adjunct to diet for the treatment of adults with: o Primary dysbetalipoproteinemia o
+      Hypertriglyceridemia
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'Atorvastatin is indicated:'
+      explanation: >-
+        Atorvastatin is the subject of "Atorvastatin is indicated:", which introduces the bulleted
+        list this item belongs to; the list has no other subject before the item.
+    age_range:
+      min_years: 18
+      text: adults
+    explanation: >-
+      Under "Atorvastatin is indicated:", "As an adjunct to diet for the treatment of adults with:
+      ... o Hypertriglyceridemia" states treatment of hypertriglyceridemia; "adults" is the age
+      bound.
+    status: DRAFT
+    notes: >-
+      The quote is the item with its sub-lead (which also lists primary dysbetalipoproteinemia,
+      its own claim); the list lead "Atorvastatin is indicated:" carries the attribution.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute liver failure or decompensated cirrhosis
+      member: Acute liver failure
+      term:
+        id: MONDO:0019542
+        label: acute liver failure
+      binding: EXACT
+    quote: >-
+      • Acute liver failure or decompensated cirrhosis [see Warnings and Precautions (5.3) ] .
+    explanation: >-
+      The Contraindications bullet "Acute liver failure or decompensated cirrhosis" lists acute
+      liver failure as a contraindicated condition; this claim covers that member of the
+      coordination, decompensated cirrhosis its own claim.
+    status: DRAFT
+    notes: >-
+      Product-level, unattributed. Grounding store maps the phrase to UMLS:C0162557.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Acute liver failure or decompensated cirrhosis
+      member: decompensated cirrhosis
+      term:
+        id: MONDO:0005155
+        label: cirrhosis of liver
+      binding: BROADER
+    quote: >-
+      • Acute liver failure or decompensated cirrhosis [see Warnings and Precautions (5.3) ] .
+    explanation: >-
+      The Contraindications bullet "Acute liver failure or decompensated cirrhosis" lists
+      decompensated cirrhosis as a contraindicated condition; this claim covers that member of the
+      coordination, acute liver failure its own claim.
+    status: DRAFT
+    notes: >-
+      No decompensated-cirrhosis term (searched MONDO "cirrhosis", "decompensated"; MONDO chronic
+      liver failure has the synonym 'end stage liver disease (decompensated liver disease)', which
+      is not cirrhosis-specific); cirrhosis of liver is broader. Grounding store maps the phrase
+      to UMLS:C1619727.
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: 909fad96-a941-443a-a39f-4f93607410fb
+    version: 1
+    title: ''
+    url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=909fad96-a941-443a-a39f-4f93607410fb
+  product_name: Caduet
+  claims:
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: EXACT
+    quote: >-
+      Amlodipine is indicated for the treatment of hypertension.
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: Amlodipine is indicated for the treatment of hypertension
+      explanation: >-
+        Amlodipine is the subject of the sentence stating the hypertension indication.
+    explanation: >-
+      "indicated for the treatment of hypertension" states treatment of hypertension.
+    status: DRAFT
+    notes: >-
+      Preceded by the numbered heading 'Amlodipine1. Hypertension :'; the sentence itself opens
+      with amlodipine as its subject.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: chronic stable angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: BROADER
+    quote: >-
+      Amlodipine is indicated for the treatment of chronic stable angina.
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: Amlodipine is indicated for the treatment of chronic stable angina
+      explanation: >-
+        Amlodipine is the subject of the sentence stating the chronic stable angina indication.
+    explanation: >-
+      "indicated for the treatment of chronic stable angina" states treatment of chronic stable
+      angina.
+    status: DRAFT
+    notes: >-
+      This older label says 'treatment', the current one 'symptomatic treatment'; each block
+      follows its own wording. HP Angina pectoris is broader than chronic stable angina (no
+      stable-angina term).
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: vasospastic angina
+      term:
+        id: MONDO:0006021
+        label: Prinzmetal angina
+      binding: EXACT
+    quote: >-
+      Amlodipine is indicated for the treatment of confirmed or suspected vasospastic angina.
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: Amlodipine is indicated for the treatment of confirmed or suspected vasospastic angina
+      explanation: >-
+        Amlodipine is the subject of the sentence stating the vasospastic angina indication.
+    explanation: >-
+      "indicated for the treatment of confirmed or suspected vasospastic angina" states treatment
+      of vasospastic angina; "confirmed or suspected" qualifies the diagnosis.
+    status: DRAFT
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: hospitalization due to angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: BROADER
+    quote: >-
+      In patients with recently documented CAD by angiography and without heart failure or an
+      ejection fraction less than 40%, amlodipine is indicated to reduce the risk of
+      hospitalization due to angina
+    attributed_to:
+    - ingredient: CHEBI:2668
+      basis: INGREDIENT_SUBJECT
+      snippet: amlodipine is indicated to reduce the risk of hospitalization due to angina
+      explanation: >-
+        Amlodipine is the grammatical subject of "is indicated to reduce the risk of
+        hospitalization due to angina", after the lead-in "In patients with recently documented
+        CAD by angiography ...".
+    disease_context:
+      text: CAD
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: EXACT
+    explanation: >-
+      "indicated to reduce the risk of hospitalization due to angina" is an outcome endpoint for
+      angina, recorded as prevention of the condition per the outcome-endpoint rule; "In patients
+      with recently documented CAD by angiography" gives CAD as the disease context.
+    status: DRAFT
+    notes: >-
+      The coronary
+      revascularization procedure is a procedure, not a condition, so no claim. Outcome endpoint:
+      PREVENTATIVE_FOR_CONDITION the condition it is for (angina), object text keeping the outcome
+      wording "hospitalization due to angina", bound BROADER.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: myocardial infarction
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    quote: >-
+      In adult patients without clinically evident coronary heart disease, but with multiple risk
+      factors for coronary heart disease such as age, smoking, hypertension, low HDL-C, or a
+      family history of early coronary heart disease, atorvastatin is indicated to: Reduce the
+      risk of myocardial infarction Reduce the risk of stroke Reduce the risk for
+      revascularization procedures and angina
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'atorvastatin is indicated to:'
+      explanation: >-
+        Atorvastatin is the grammatical subject of "is indicated to:", after the population
+        lead-in; the list of "Reduce the risk of" items it introduces includes this claim's object.
+    age_range:
+      min_years: 18
+      text: adult patients
+    explanation: >-
+      "atorvastatin is indicated to: ... Reduce the risk of myocardial infarction" states
+      prevention of myocardial infarction; "adult patients" gives the age bound; the population
+      without clinically evident coronary heart disease but with risk factors names no disease the
+      patients have, so no disease context.
+    status: DRAFT
+    notes: >-
+      Primary prevention (a population, so no disease_context). The risk factors listed after 'such as' (hypertension among them)
+      are not contexts.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      In adult patients without clinically evident coronary heart disease, but with multiple risk
+      factors for coronary heart disease such as age, smoking, hypertension, low HDL-C, or a
+      family history of early coronary heart disease, atorvastatin is indicated to: Reduce the
+      risk of myocardial infarction Reduce the risk of stroke Reduce the risk for
+      revascularization procedures and angina
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'atorvastatin is indicated to:'
+      explanation: >-
+        Atorvastatin is the grammatical subject of "is indicated to:", after the population
+        lead-in; the list of "Reduce the risk of" items it introduces includes this claim's object.
+    age_range:
+      min_years: 18
+      text: adult patients
+    explanation: >-
+      "atorvastatin is indicated to: ... Reduce the risk of stroke" states prevention of stroke;
+      "adult patients" gives the age bound; the population without clinically evident coronary
+      heart disease but with risk factors names no disease the patients have, so no disease context.
+    status: DRAFT
+    notes: >-
+      Primary prevention (a population, so no disease_context). The risk factors listed after 'such as' (hypertension among them)
+      are not contexts.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: EXACT
+    quote: >-
+      In adult patients without clinically evident coronary heart disease, but with multiple risk
+      factors for coronary heart disease such as age, smoking, hypertension, low HDL-C, or a
+      family history of early coronary heart disease, atorvastatin is indicated to: Reduce the
+      risk of myocardial infarction Reduce the risk of stroke Reduce the risk for
+      revascularization procedures and angina
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: 'atorvastatin is indicated to:'
+      explanation: >-
+        Atorvastatin is the grammatical subject of "is indicated to:", after the population
+        lead-in; the list of "Reduce the risk of" items it introduces includes this claim's object.
+    age_range:
+      min_years: 18
+      text: adult patients
+    explanation: >-
+      "atorvastatin is indicated to: ... Reduce the risk for revascularization procedures and
+      angina" states prevention of angina; "adult patients" gives the age bound; the population
+      without clinically evident coronary heart disease but with risk factors names no disease the
+      patients have, so no disease context.
+    status: DRAFT
+    notes: >-
+      Primary prevention (a population, so no disease_context). The risk factors listed after 'such as' (hypertension among them)
+      are not contexts.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: myocardial infarction
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    quote: >-
+      In patients with type 2 diabetes, and without clinically evident coronary heart disease, but
+      with multiple risk factors for coronary heart disease such as retinopathy, albuminuria,
+      smoking, or hypertension, LIPITOR is indicated to: Reduce the risk of myocardial infarction
+      Reduce the risk of stroke
+    disease_context:
+      text: type 2 diabetes
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    explanation: >-
+      "LIPITOR is indicated to: Reduce the risk of ... myocardial infarction" states prevention of
+      myocardial infarction; "In patients with type 2 diabetes" gives the disease context.
+    status: DRAFT
+    notes: >-
+      Not attributed: the subject is 'LIPITOR' (atorvastatin's brand name, carried over into this
+      CADUET label); a brand name does not name the ingredient.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      In patients with type 2 diabetes, and without clinically evident coronary heart disease, but
+      with multiple risk factors for coronary heart disease such as retinopathy, albuminuria,
+      smoking, or hypertension, LIPITOR is indicated to: Reduce the risk of myocardial infarction
+      Reduce the risk of stroke
+    disease_context:
+      text: type 2 diabetes
+      term:
+        id: MONDO:0005148
+        label: type 2 diabetes mellitus
+      binding: EXACT
+    explanation: >-
+      "LIPITOR is indicated to: Reduce the risk of ... stroke" states prevention of stroke; "In
+      patients with type 2 diabetes" gives the disease context.
+    status: DRAFT
+    notes: >-
+      Not attributed: the subject is 'LIPITOR' (atorvastatin's brand name, carried over into this
+      CADUET label); a brand name does not name the ingredient.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: non-fatal myocardial infarction
+      term:
+        id: MONDO:0005068
+        label: myocardial infarction
+      binding: EXACT
+    quote: >-
+      In patients with clinically evident coronary heart disease, LIPITOR is indicated to: Reduce
+      the risk of non-fatal myocardial infarction Reduce the risk of fatal and non-fatal stroke
+      Reduce the risk for revascularization procedures Reduce the risk of hospitalization for CHF
+      Reduce the risk of angina
+    disease_context:
+      text: clinically evident coronary heart disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    explanation: >-
+      "LIPITOR is indicated to: ... Reduce the risk of non-fatal myocardial infarction" states
+      prevention; "In patients with clinically evident coronary heart disease" gives the disease
+      context.
+    status: DRAFT
+    notes: >-
+      Not attributed: the subject is 'LIPITOR' (atorvastatin's brand name, carried over into this
+      CADUET label); a brand name does not name the ingredient.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: fatal and non-fatal stroke
+      term:
+        id: MONDO:0005098
+        label: stroke disorder
+      binding: EXACT
+    quote: >-
+      In patients with clinically evident coronary heart disease, LIPITOR is indicated to: Reduce
+      the risk of non-fatal myocardial infarction Reduce the risk of fatal and non-fatal stroke
+      Reduce the risk for revascularization procedures Reduce the risk of hospitalization for CHF
+      Reduce the risk of angina
+    disease_context:
+      text: clinically evident coronary heart disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    explanation: >-
+      "LIPITOR is indicated to: ... Reduce the risk of fatal and non-fatal stroke" states
+      prevention; "In patients with clinically evident coronary heart disease" gives the disease
+      context.
+    status: DRAFT
+    notes: >-
+      Not attributed: the subject is 'LIPITOR' (atorvastatin's brand name, carried over into this
+      CADUET label); a brand name does not name the ingredient.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: hospitalization for CHF
+      term:
+        id: MONDO:0005009
+        label: congestive heart failure
+      binding: BROADER
+    quote: >-
+      In patients with clinically evident coronary heart disease, LIPITOR is indicated to: Reduce
+      the risk of non-fatal myocardial infarction Reduce the risk of fatal and non-fatal stroke
+      Reduce the risk for revascularization procedures Reduce the risk of hospitalization for CHF
+      Reduce the risk of angina
+    disease_context:
+      text: clinically evident coronary heart disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    explanation: >-
+      "LIPITOR is indicated to: ... Reduce the risk of hospitalization for CHF" states prevention;
+      "In patients with clinically evident coronary heart disease" gives the disease context.
+      "hospitalization for CHF" is an outcome endpoint for congestive heart failure (reduce the
+      risk of hospitalization for CHF), recorded as prevention of the condition per the
+      outcome-endpoint rule.
+    status: DRAFT
+    notes: >-
+      Outcome endpoint: PREVENTATIVE_FOR_CONDITION the condition it is for (congestive heart
+      failure), object text keeping the outcome wording "hospitalization for CHF", bound BROADER.
+      Not attributed: the subject is 'LIPITOR' (atorvastatin's brand name, carried over into this
+      CADUET label); a brand name does not name the ingredient.
+  - relation: PREVENTATIVE_FOR_CONDITION
+    section: INDICATIONS
+    object:
+      text: angina
+      term:
+        id: HP:0001681
+        label: Angina pectoris
+      binding: EXACT
+    quote: >-
+      In patients with clinically evident coronary heart disease, LIPITOR is indicated to: Reduce
+      the risk of non-fatal myocardial infarction Reduce the risk of fatal and non-fatal stroke
+      Reduce the risk for revascularization procedures Reduce the risk of hospitalization for CHF
+      Reduce the risk of angina
+    disease_context:
+      text: clinically evident coronary heart disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    explanation: >-
+      "LIPITOR is indicated to: ... Reduce the risk of angina" states prevention; "In patients with
+      clinically evident coronary heart disease" gives the disease context.
+    status: DRAFT
+    notes: >-
+      Same terms as the amlodipine angina | CAD claim above; they are distinct label statements
+      (amlodipine in angiographically documented CAD; the atorvastatin/LIPITOR secondary-prevention
+      list), so both are kept. Not attributed: the subject is 'LIPITOR' (atorvastatin's brand name,
+      carried over into this CADUET label); a brand name does not name the ingredient.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: primary hypercholesterolemia
+      term:
+        id: HP:0003124
+        label: Hypercholesterolemia
+      binding: BROADER
+    quote: >-
+      Atorvastatin is indicated as an adjunct to diet to reduce elevated total-C, LDL-C, apo B,
+      and TG levels and to increase HDL-C in patients with primary hypercholesterolemia
+      (heterozygous familial and nonfamilial) and mixed dyslipidemia ( Fredrickson Types IIa and
+      IIb);
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: Atorvastatin is indicated as an adjunct to diet
+      explanation: >-
+        Atorvastatin is the subject of the sentence stating the primary hypercholesterolemia and
+        mixed dyslipidemia indication.
+    explanation: >-
+      "indicated as an adjunct to diet to reduce elevated total-C, LDL-C, apo B, and TG levels and
+      to increase HDL-C in patients with primary hypercholesterolemia" states treatment of primary
+      hypercholesterolemia; mixed dyslipidemia, the other condition in the sentence, is its own
+      claim.
+    status: DRAFT
+    notes: >-
+      No primary-hypercholesterolemia term (searched MONDO "hypercholesterolemia",
+      "hypercholesterol", "primary hyper"; HP "hypercholesterolemia"). HP kept deliberately: every
+      MONDO hypercholesterolemia term is a familial/genetic form, which would exclude the
+      nonfamilial form the label names, and MONDO hyperlipidemia would say less (any raised
+      lipid) than HP Hypercholesterolemia, which is still broader than "primary".
+      Grounding store maps the phrase to UMLS:C0342879.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: mixed dyslipidemia
+      term:
+        id: MONDO:0021187
+        label: hyperlipidemia
+      binding: BROADER
+    quote: >-
+      Atorvastatin is indicated as an adjunct to diet to reduce elevated total-C, LDL-C, apo B,
+      and TG levels and to increase HDL-C in patients with primary hypercholesterolemia
+      (heterozygous familial and nonfamilial) and mixed dyslipidemia ( Fredrickson Types IIa and
+      IIb);
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: Atorvastatin is indicated as an adjunct to diet
+      explanation: >-
+        Atorvastatin is the subject of the sentence stating the primary hypercholesterolemia and
+        mixed dyslipidemia indication.
+    explanation: >-
+      The same sentence states treatment "in patients with ... mixed dyslipidemia ( Fredrickson
+      Types IIa and IIb)"; primary hypercholesterolemia is its own claim.
+    status: DRAFT
+    notes: >-
+      No mixed-dyslipidemia / combined-hyperlipidemia term outside familial forms (searched MONDO
+      "dyslipidemia", "dyslipid", "combined hyperlipidemia", "mixed", "hyperlipoproteinemia",
+      "Fredrickson"; HP "mixed"): MONDO's combined-hyperlipidemia terms are the familial/genetic
+      forms (hyperlipidemia, combined, 1 and 2; familial combined, LPL related), which the label
+      does not restrict to. MONDO hyperlipidemia is broader, the same term as the current label's
+      primary hyperlipidemia claim. The grounding store maps the phrase to UMLS:C0242339 only.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: elevated serum TG levels
+      term:
+        id: MONDO:0005347
+        label: hypertriglyceridemia
+      binding: EXACT
+    quote: >-
+      Atorvastatin is indicated as an adjunct to diet for the treatment of patients with elevated
+      serum TG levels ( Fredrickson Type IV);
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: Atorvastatin is indicated as an adjunct to diet for the treatment of patients
+      explanation: >-
+        Atorvastatin is the subject of the sentence stating the elevated serum TG indication.
+    explanation: >-
+      "indicated as an adjunct to diet for the treatment of patients with elevated serum TG levels"
+      states treatment of hypertriglyceridemia (elevated serum TG levels).
+    status: DRAFT
+    notes: >-
+      MONDO hypertriglyceridemia, the same term as the current label's Hypertriglyceridemia claim;
+      "elevated serum TG levels" names the condition (HP Hypertriglyceridemia's exact synonym
+      'Increased serum triglycerides' is the same wording), so EXACT. "( Fredrickson Type IV)" has
+      no MONDO term (searched "hyperlipoproteinemia type 4", "type IV", "Fredrickson", "familial
+      hypertriglyceridemia"). The validator anchors nothing on the abbreviated "TG" wording.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: primary dysbetalipoproteinemia
+      term:
+        id: MONDO:0018473
+        label: hyperlipoproteinemia type 3
+      binding: EXACT
+    quote: >-
+      Atorvastatin is indicated for the treatment of patients with primary dysbetalipoproteinemia
+      ( Fredrickson Type III) who do not respond adequately to diet;
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: Atorvastatin is indicated for the treatment of patients with primary dysbetalipoproteinemia
+      explanation: >-
+        Atorvastatin is the subject of the sentence stating the dysbetalipoproteinemia indication.
+    line_of_therapy:
+      text: who do not respond adequately to diet
+      term_gap: prior-therapy condition, no ontology term expected
+    explanation: >-
+      "indicated for the treatment of patients with primary dysbetalipoproteinemia" states
+      treatment; "who do not respond adequately to diet" restricts it to patients after diet has
+      failed (line of therapy).
+    status: DRAFT
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: homozygous familial hypercholesterolemia
+      term:
+        id: MONDO:0018328
+        label: homozygous familial hypercholesterolemia
+      binding: EXACT
+    quote: >-
+      Atorvastatin is indicated to reduce total-C and LDL-C in patients with homozygous familial
+      hypercholesterolemia as an adjunct to other lipid-lowering treatments (e.g., LDL apheresis)
+      or if such treatments are unavailable;
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: Atorvastatin is indicated to reduce total-C and LDL-C
+      explanation: >-
+        Atorvastatin is the subject of the sentence stating the HoFH indication.
+    explanation: >-
+      "indicated to reduce total-C and LDL-C in patients with homozygous familial
+      hypercholesterolemia" states treatment of HoFH; the adjunct co-therapy is optional ("or if
+      such treatments are unavailable").
+    status: DRAFT
+    notes: >-
+      'as an adjunct to other lipid-lowering treatments ... or if such treatments are unavailable'
+      makes the co-therapy optional, so no in_combination_with.
+  - relation: TREATS
+    section: INDICATIONS
+    object:
+      text: heterozygous familial hypercholesterolemia
+      term:
+        id: MONDO:0005439
+        label: familial hypercholesterolemia
+      binding: BROADER
+    quote: >-
+      Atorvastatin is indicated as an adjunct to diet to reduce total-C, LDL-C, and apo B levels
+      in boys and postmenarchal girls, 10 to 17 years of age, with heterozygous familial
+      hypercholesterolemia
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: INGREDIENT_SUBJECT
+      snippet: Atorvastatin is indicated as an adjunct to diet
+      explanation: >-
+        Atorvastatin is the subject of the sentence stating the pediatric HeFH indication.
+    age_range:
+      min_years: 10
+      max_years: 17
+      text: 10 to 17 years of age
+    explanation: >-
+      "indicated as an adjunct to diet to reduce total-C, LDL-C, and apo B levels in boys and
+      postmenarchal girls, 10 to 17 years of age, with heterozygous familial hypercholesterolemia"
+      states treatment of HeFH; "10 to 17 years of age" is the age bound.
+    status: DRAFT
+    notes: >-
+      Pediatric HeFH. The LDL-C thresholds and family-history criteria after the quoted span are
+      eligibility conditions, not recorded. 'postmenarchal girls' is not recorded as a
+      sex/life-stage qualifier because boys are included too.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: active liver disease
+      term:
+        id: MONDO:0005154
+        label: liver disorder
+      binding: BROADER
+    quote: >-
+      CADUET contains atorvastatin and is therefore contraindicated in patients with active liver
+      disease, which may include unexplained persistent elevations in hepatic transaminase levels.
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: STATED_REASON
+      snippet: contains atorvastatin and is therefore contraindicated
+      explanation: >-
+        The label gives the product's atorvastatin content as the reason ("therefore") for the active
+        liver disease contraindication.
+    explanation: >-
+      "contraindicated in patients with active liver disease" states the contraindication; "which
+      may include unexplained persistent elevations in hepatic transaminase levels" describes what
+      may count as active liver disease and is not a separate claim.
+    status: DRAFT
+    notes: >-
+      Attributed to atorvastatin on "CADUET contains atorvastatin and is therefore contraindicated"
+      (STATED_REASON). liver disorder is broader than "active liver disease". The transaminase
+      elevations follow "which may include", which describes what may count as active liver disease
+      rather than listing examples, so they are neither a claim nor an example; a reviewer may add
+      them as an example (HP Elevated circulating hepatic transaminase concentration).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnant or may become pregnant
+      member: pregnant
+      term_gap: >-
+        searched MONDO and HP "pregnan", PATO "pregnan", HsapDv "pregnan": only pregnancy
+        disorders, pregnancy history/exposure and modifiers; no term for the state of being (or
+        potentially becoming) pregnant. The grounding store row UMLS:C0549206 (patient currently
+        pregnant) is not in a configured ontology.
+    quote: >-
+      CADUET contains atorvastatin and is therefore contraindicated in women who are pregnant or
+      may become pregnant.
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: STATED_REASON
+      snippet: contains atorvastatin and is therefore contraindicated
+      explanation: >-
+        The label gives the product's atorvastatin content as the reason ("therefore") for the
+        contraindication in women who are pregnant.
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "contraindicated in women who are pregnant" states the pregnancy contraindication, the
+      member "pregnant" of "pregnant or may become pregnant"; "women" is the sex of the treated
+      patient.
+    status: DRAFT
+    notes: >-
+      Pregnancy is curated unbound (no configured ontology has a pregnancy-state term). Attributed
+      to atorvastatin on "contains atorvastatin and is therefore contraindicated" (STATED_REASON).
+      The following sentence ("The atorvastatin component of CADUET may cause fetal harm") is a
+      separate risk statement that names no condition of the patient.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: pregnant or may become pregnant
+      member: may become pregnant
+      term_gap: >-
+        searched MONDO and HP "pregnan", PATO "pregnan", HsapDv "pregnan": only pregnancy
+        disorders, pregnancy history/exposure and modifiers; no term for the state of being (or
+        potentially becoming) pregnant. The grounding store row UMLS:C0549206 (patient currently
+        pregnant) is not in a configured ontology.
+    quote: >-
+      CADUET contains atorvastatin and is therefore contraindicated in women who are pregnant or
+      may become pregnant.
+    attributed_to:
+    - ingredient: CHEBI:39548
+      basis: STATED_REASON
+      snippet: contains atorvastatin and is therefore contraindicated
+      explanation: >-
+        The label gives the product's atorvastatin content as the reason ("therefore") for the
+        contraindication in women who may become pregnant.
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "contraindicated in women who ... may become pregnant" states a contraindication in women who
+      may become pregnant, the member "may become pregnant" of "pregnant or may become pregnant".
+    status: DRAFT
+    notes: >-
+      Women who may become pregnant (of childbearing potential), a state distinct from current
+      pregnancy, so a separate claim; unbound for the same reason. A reviewer may prefer to fold it
+      into the pregnancy claim. Attributed as the pregnancy claim.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: breastfeed
+      term_gap: >-
+        searched MONDO "lactation", "breastfeed", "breast feeding"; HP "lactation", "breastfe":
+        only lactation disorders and modifiers (Triggered by breast feeding); no term for the
+        state of breastfeeding.
+    quote: >-
+      Because statins have the potential for serious adverse reactions in nursing infants, women
+      taking CADUET should not breastfeed their infants
+    sex:
+      text: women
+      term:
+        id: PATO:0000383
+        label: female
+      binding: EXACT
+    explanation: >-
+      "women taking CADUET should not breastfeed their infants", in the Contraindications section,
+      contraindicates breastfeeding; "women" is the treated patient.
+    status: DRAFT
+    notes: >-
+      Lactation contraindication, under the label's "Pregnancy and Lactation" heading in the
+      Contraindications section; curated unbound. The sex qualifier is the treated patient (the
+      woman), not the nursing infant. Not attributed: the stated reason names "statins", a class,
+      not atorvastatin, and precedes the object.
+notes: >-
+  Two CADUET labels: 6f1a9bd8 v52 (current PLR format) and 909fad96 v1 (older format, empty SPL
+  title). Not claimed: "indicated in patients for whom treatment with both amlodipine and
+  atorvastatin is appropriate" (a population); class-level antihypertensive outcome text;
+  revascularization procedures (procedures); hypersensitivity to amlodipine, atorvastatin, the
+  excipients or "any component" (own ingredients); the hypersensitivity-reaction list (describes
+  reactions). In v1: the "Prevention of Cardiovascular Disease" heading (the items under it are
+  curated); the lipid-therapy preamble; "has not been studied in conditions where ... elevation of
+  chylomicrons" (negated); "SHOULD BE ADMINISTERED TO WOMEN OF CHILDBEARING AGE ONLY WHEN ..."
+  (restates the may-become-pregnant contraindication as usage advice); the pregnancy background
+  sentences (cholesterol in pregnancy, animal and case-report data). The pregnancy, may-become-pregnant
+  and breastfeeding contraindications are curated unbound.

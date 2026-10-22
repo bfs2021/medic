@@ -1,0 +1,268 @@
+id: MEDICNE:combo-6c65bc38-40b5-59a4-8f90-30241cd2b186
+name: codeine / pseudoephedrine / triprolidine
+ingredients:
+- id: CHEBI:16714
+  label: codeine
+- id: CHEBI:51209
+  label: pseudoephedrine
+- id: CHEBI:84116
+  label: triprolidine
+curation_status: DRAFT
+curators:
+- curator_type: AI_AGENT
+  name: MeDIC combination-curation skill
+  curator_id: >-
+    https://github.com/monarch-initiative/medic/blob/6d2af0560d055cfbc17756abc3d9e4c32551838a/.claude/skills/medic-combination-curation/SKILL.md#git-blob=ce18196d25d9754bc7a75ba1d40c07a5cf5ae3c1
+products:
+- source: DAILYMED
+  jurisdiction: USA
+  document:
+    setid: DD62A5EB-DD5A-4329-8696-07ACB555AF10
+    version: 1
+    title: >-
+      PSEUDODINE™ C COUGH SYRUP (Triprolidine Hydrochloride, Pseudoephedrine Hydrochloride & Codeine Phosphate)
+    url: >-
+      https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=DD62A5EB-DD5A-4329-8696-07ACB555AF10
+  product_name: ''
+  claims:
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: coughs
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Pseudodine™ C Cough Syrup is indicated for temporary relief of coughs and upper respiratory symptoms,
+      including nasal congestion, associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    explanation: >-
+      "indicated for temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory symptoms"
+      names two conditions; this claim is the member "coughs". "associated with allergy or the common
+      cold" names the conditions they occur in; this claim takes the member "allergy" as the disease context
+      (one claim per symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed. MONDO allergic disease has the
+      exact synonym "allergy"; an indication context, not an allergy contraindication.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: coughs
+      term:
+        id: HP:0012735
+        label: Cough
+      binding: EXACT
+    quote: >-
+      Pseudodine™ C Cough Syrup is indicated for temporary relief of coughs and upper respiratory symptoms,
+      including nasal congestion, associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    explanation: >-
+      "indicated for temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory symptoms"
+      names two conditions; this claim is the member "coughs". "associated with allergy or the common
+      cold" names the conditions they occur in; this claim takes the member "the common cold" as the disease
+      context (one claim per symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no term
+        for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits under
+        Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper respiratory
+        tract disorder names a disease; the grounding store's UMLS:C0749874 is in no configured ontology
+    quote: >-
+      Pseudodine™ C Cough Syrup is indicated for temporary relief of coughs and upper respiratory symptoms,
+      including nasal congestion, associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: allergy
+      term:
+        id: MONDO:0005271
+        label: allergic disease
+      binding: EXACT
+    examples:
+    - text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    explanation: >-
+      "indicated for temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory symptoms"
+      names two conditions; this claim is the member "upper respiratory symptoms"; "including nasal congestion"
+      lists an example, recorded in examples. "associated with allergy or the common cold" names the conditions
+      they occur in; this claim takes the member "allergy" as the disease context (one claim per symptom
+      per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed. MONDO allergic disease has the
+      exact synonym "allergy"; an indication context, not an allergy contraindication.
+  - relation: AMELIORATES_CONDITION
+    section: INDICATIONS
+    object:
+      text: coughs and upper respiratory symptoms
+      member: upper respiratory symptoms
+      term_gap: >-
+        searched HP "upper respiratory", "respiratory"; MONDO "upper respiratory", "respiratory": no term
+        for upper respiratory symptoms. HP:0002087 Abnormality of the upper respiratory tract sits under
+        Abnormal respiratory system morphology (structural, not symptoms); MONDO:0004867 upper respiratory
+        tract disorder names a disease; the grounding store's UMLS:C0749874 is in no configured ontology
+    quote: >-
+      Pseudodine™ C Cough Syrup is indicated for temporary relief of coughs and upper respiratory symptoms,
+      including nasal congestion, associated with allergy or the common cold.
+    disease_context:
+      text: allergy or the common cold
+      member: the common cold
+      term:
+        id: MONDO:0005709
+        label: common cold
+      binding: EXACT
+    examples:
+    - text: nasal congestion
+      term:
+        id: HP:0001742
+        label: Nasal congestion
+      binding: EXACT
+    explanation: >-
+      "indicated for temporary relief of" gives AMELIORATES_CONDITION. "coughs and upper respiratory symptoms"
+      names two conditions; this claim is the member "upper respiratory symptoms"; "including nasal congestion"
+      lists an example, recorded in examples. "associated with allergy or the common cold" names the conditions
+      they occur in; this claim takes the member "the common cold" as the disease context (one claim per
+      symptom per condition).
+    status: DRAFT
+    notes: >-
+      Reading: "associated with allergy or the common cold" qualifies both coughs and the upper respiratory
+      symptoms, not only nasal congestion. Product-level, unattributed.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: newborn or premature infants
+      member: premature infants
+      term:
+        id: HP:0001622
+        label: Premature birth
+      binding: BROADER
+    quote: This drug should not be used in newborn or premature infants.
+    explanation: >-
+      Under "Pseudodine™ C Cough Syrup is contraindicated under the following conditions:", "This drug
+      should not be used in newborn or premature infants"; this claim is the member "premature infants":
+      HP Premature birth, the condition of having been born before term.
+    status: DRAFT
+    notes: >-
+      HP Premature birth also covers the delivery event, so BROADER, as in the brompheniramine/dextromethorphan/pseudoephedrine
+      file. The other member, "newborn", is an age population with no condition and is not curated (same
+      file's precedent).
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: Hypersensitivity
+      term:
+        id: MONDO:0000775
+        label: drug allergy
+      binding: NARROWER
+    object_specialization:
+    - text: narcotics
+      term:
+        id: CHEBI:35482
+        label: opioid analgesic
+      binding: NARROWER
+    - text: other antihistamines of similar chemical structure
+      term:
+        id: CHEBI:37955
+        label: H1-receptor antagonist
+      binding: BROADER
+    - text: sympathomimetic amines
+      term:
+        id: CHEBI:35524
+        label: sympathomimetic agent
+      binding: BROADER
+    quote: >-
+      Hypersensitivity to (1) codeine phosphate or other narcotics; (2) triprolidine hydrochloride or
+      other antihistamines of similar chemical structure; or (3) sympathomimetic amines, including pseudoephedrine.
+    explanation: >-
+      An item of "contraindicated under the following conditions": hypersensitivity to other narcotics,
+      to other antihistamines of similar chemical structure, or to sympathomimetic amines (cross-sensitivity).
+      drug allergy is NARROWER than "Hypersensitivity", justified by the named drug classes.
+    status: DRAFT
+    notes: >-
+      The quote crosses two label spans: the helper prints "Hypersensitivity to" and the numbered list
+      as separate paragraphs. Codeine phosphate, triprolidine hydrochloride and pseudoephedrine are the
+      product's own ingredients and are dropped; the other classes are kept. "narcotics" is bound to opioid
+      analgesic, the sense the label uses for codeine's class ("codeine phosphate or other narcotics");
+      "of similar chemical structure" narrows the H1-antagonist class, and "amines" narrows sympathomimetic
+      agent, so both BROADER (no CHEBI "antihistamine" or "sympathomimetic amine" term). Not attributed:
+      the agents are allergens.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe hypertension, severe coronary artery disease
+      member: severe hypertension
+      term:
+        id: HP:0000822
+        label: Hypertension
+      binding: BROADER
+    quote: >-
+      Sympathomimetic amines are contraindicated in patients with severe hypertension, severe coronary
+      artery disease and in patients on monoamine oxidase (MAO) inhibitor therapy
+    explanation: >-
+      "Sympathomimetic amines are contraindicated in patients with severe hypertension, severe coronary
+      artery disease"; this claim is the member "severe hypertension". HP Hypertension lacks the severity,
+      so BROADER.
+    status: DRAFT
+    notes: >-
+      Not attributed: the label names the class ("Sympathomimetic amines"), not the ingredient; it points
+      to pseudoephedrine, which the previous item names as a sympathomimetic amine. No severe-hypertension
+      term (searched HP/MONDO "hypertension"), as in the brompheniramine/dextromethorphan/pseudoephedrine
+      file.
+  - relation: CONTRAINDICATED_IN
+    section: CONTRAINDICATIONS
+    object:
+      text: severe hypertension, severe coronary artery disease
+      member: severe coronary artery disease
+      term:
+        id: MONDO:0005010
+        label: coronary artery disorder
+      binding: BROADER
+    quote: >-
+      Sympathomimetic amines are contraindicated in patients with severe hypertension, severe coronary
+      artery disease and in patients on monoamine oxidase (MAO) inhibitor therapy
+    explanation: >-
+      The same sentence; this claim is the member "severe coronary artery disease". MONDO coronary artery
+      disorder (exact synonym "coronary artery disease") lacks the severity, so BROADER.
+    status: DRAFT
+    notes: >-
+      Not attributed: the label names the class ("Sympathomimetic amines"), not the ingredient.
+notes: >-
+  Prescription-format label. The single indication sentence is split per symptom (coughs; upper respiratory
+  symptoms, with nasal congestion as its listed example) and per condition (allergy; the common cold),
+  as in the brompheniramine/dextromethorphan/pseudoephedrine file. No indication or contraindication is
+  assigned to an ingredient by name. Not curated: "newborn" (an age population with no condition); "Antihistamines
+  should not be used to treat lower respiratory tract symptoms, including asthma" (what the product should
+  not be used to treat, read as a limitation of use, as in the brompheniramine/dextromethorphan/pseudoephedrine
+  file; flagged for review, since here it sits under "contraindicated under the following conditions"
+  with the heading "Use in Lower Respiratory Disease"); hypersensitivity to codeine phosphate, triprolidine
+  hydrochloride and pseudoephedrine (the product's own ingredients); "in patients on monoamine oxidase
+  (MAO) inhibitor therapy" (a drug interaction). The SPL carries no product name, so product_name is left
+  as the helper wrote it (empty).
