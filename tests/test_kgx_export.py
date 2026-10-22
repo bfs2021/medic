@@ -311,6 +311,23 @@ def test_drug_node_unions_synonyms_and_xrefs():
     assert node["synonym"] == sorted(set(node["synonym"]))
 
 
+def test_drug_node_xref_unions_source_xrefs_with_alternate_ids():
+    """Source-copied cross-references (PHAROS, RxNorm) reach `xref` alongside the ids
+    MeDIC's own resolution established — one joinable list, deduplicated (#94)."""
+    from medic.export.kgx import nodes
+
+    record = {
+        **DRUG_RECORD,
+        "alternate_ids": ["DRUGBANK:DB00779", "UNII:3B91HWA56B"],
+        "source_xrefs": ["CHEMBL.COMPOUND:CHEMBL5", "RXCUI:7319", "UNII:3B91HWA56B"],
+    }
+    node = nodes.drug_node(record)
+    assert node["xref"] == [
+        "CHEMBL.COMPOUND:CHEMBL5", "DRUGBANK:DB00779", "RXCUI:7319", "UNII:3B91HWA56B",
+    ]
+    assert "source_xrefs" not in node       # folded into xref, not a slot of its own
+
+
 def test_drug_node_summarises_approvals_across_jurisdictions():
     from medic.export.kgx import nodes
 

@@ -108,13 +108,25 @@ def drug_node(
             *(drug.get("synonyms") or []),
             identity.get("original_literal") or "",
         ]),
-        # The FDA UNII the label asserts, where an indication row carried one (#94). 717
-        # drug ids (3,448 assertions) are unknown to the SRI Node Normalizer because ChEBI
-        # and DRON are fetched unpinned and mint ids newer than its snapshot, so a consumer
-        # joining on the primary id drops those edges — and they are the biologics. A UNII
-        # is stable and lets the join succeed whatever the primary id turns out to be.
+        # Three strengths of cross-reference, all of them Biolink `xref` (its loose
+        # cross-reference) and only the first a SSSOM exactMatch:
+        #
+        # * `alternate_ids` — ids MeDIC's own resolution established.
+        # * `source_xrefs` — copied from an enrichment source's record (PHAROS synonyms
+        #   matched by *label*, the RxNorm ingredient RxCUI by *approximate* match), so
+        #   published as closeMatch; see Drug.source_xrefs in the schema.
+        # * the SPL-asserted UNII, where an indication row carried one (#94). 717 drug ids
+        #   (3,448 assertions) are unknown to the SRI Node Normalizer because ChEBI and DRON
+        #   mint ids newer than its snapshot, so a consumer joining on the primary id drops
+        #   those edges — and they are the biologics. A UNII is stable and lets the join
+        #   succeed whatever the primary id turns out to be. It belongs to the
+        #   `source_xrefs` class, not `alternate_ids`: the label asserts the UNII of its
+        #   active moiety, but that the moiety is *this* ChEBI term is MeDIC's grounding
+        #   decision, so an exactMatch row would publish an identity we did not verify. It
+        #   reaches `xref` here but not the SSSOM export, which reads the drug product only.
         "xref": _uniq([
             *(drug.get("alternate_ids") or []),
+            *(drug.get("source_xrefs") or []),
             drug.get("drugbank_id") or "",
             f"UNII:{unii}" if unii else "",
         ]),
