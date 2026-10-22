@@ -371,3 +371,36 @@ except that #103 (the expensive one) went last so the cheap verification could r
   does not read.
 - #88 point 5's OTC half ("each partner owns its own symptom class") is still open; #101 is
   explicit about not covering it.
+
+### The gold standard, measured — #88's mechanism holds, claim recall does not
+
+First score of #88 against the recovered pilot (`just gold-combination-audit`), on the
+products as they stand *before* any of today's merges take effect:
+
+| | |
+|---|---:|
+| curated claims | 1,133 |
+| excluded — curator bound the term BROADER/NARROWER | 388 |
+| excluded — no curated term | 119 |
+| **scored** | **626** |
+| found | 309 (49.4%) |
+| missed | 317 (50.6%) |
+| — of found, attributed correctly | **276 (89.3%)** |
+| — of found, `over_attributed` | **0** |
+| — of found, `under_attributed` | 33 (10.7%) |
+
+**Zero over-attribution.** That is the number #88 was for: not one curated claim that the
+label attributes to a single moiety is credited to its partner as well. The residual 33 are
+the *opposite* error — a product-level claim reaching some ingredients and not all of them
+(`canagliflozin-anhydrous-metformin`: type 2 diabetes credited to metformin and not to
+canagliflozin) — which no amount of tightening attribution would fix and which the old
+single-number framing could not have distinguished.
+
+**The 50.6% miss is not an acquisition gap.** All 103 curated setids are on disk and all 626
+scored claims sit on documents we hold, so this is extraction or grounding, measured and not
+guessed. Checked before reporting it, because attributing a loss to the wrong stage is the
+mistake this project has made most often.
+
+Worth stating plainly: ~1,000 curated attributions existed for two weeks while #88, #89 and
+#97 shipped unscored, and the first thing scoring them says is that half the curated claims
+are not in the build at all.

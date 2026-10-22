@@ -645,6 +645,16 @@ v1-pair-gap ref="main":
 gold-combination-audit:
   uv run python scripts/gold_combination_audit.py
 
+# Move SPL labels out of the mined corpus that cannot contribute (no indications and no
+# contraindications section) or can only contribute wrongly (animal labels — an indication
+# mined from a veterinary label becomes a claim about a human drug). The corpus is the union
+# of every acquisition run ever made, including runs from before the pool was filtered by
+# human doctype, so filtering future searches does not clean up what is already on disk.
+# Reports only unless you pass `apply`; moves rather than deletes, since re-fetching is slow.
+[group('ingest')]
+prune-dailymed-corpus apply="":
+  uv run python scripts/prune_dailymed_corpus.py {{ if apply == "apply" { "--apply" } else { "" } }}
+
 # ============== Utility ==============
 
 # List all drugs in the merged drug list
