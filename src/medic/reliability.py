@@ -24,10 +24,16 @@ fairly trustworthy. Two orthogonal knobs:
 
   **Not every flag these gates read has a machine emitter, and the difference matters when
   reading a tier.** Emitted today: `truncated_snippet` (recognition), and
-  `negated_inversion` / `over_extraction` / `wrong_section` (assertion). Curator-supplied
-  only: `hallucination`, `coreference_ambiguity`, `scope_narrowed`, `wrong_pairing` — no
-  deterministic detector exists for them, and inferring them from lexical entailment would
-  mislabel synonymy as fabrication. So a HIGH tier means "nothing we can detect is wrong",
+  `negated_inversion` / `over_extraction` / `wrong_section` / `wrong_pairing` (assertion —
+  the last only by the enabler-partner class rule below, not in general). Curator-supplied
+  only: `hallucination`, `coreference_ambiguity`, `scope_narrowed` — no deterministic
+  detector exists for them, and inferring them from lexical entailment would mislabel
+  synonymy as fabrication.
+  2c. **enabler** — is the drug an ingredient that never owns a treatment indication
+     (beta-lactamase inhibitors, cilastatin, cobicistat; `mappings/enabler_partners.tsv`)?
+     An INDICATION on one is the combination partner's claim credited to the wrong active
+     moiety (FM §5.4, #88) → LOW. Contraindications are untouched: they are real claims
+     about the component. So a HIGH tier means "nothing we can detect is wrong",
   not "a human checked it"; that stronger claim is what `review_status: CONFIRMED` in
   `mappings/statement_review.tsv` is for. Every one of these read zero across all 12,694
   assertions until the detectors above were wired in, which made two of the five gates
@@ -71,6 +77,7 @@ import typer
 import yaml
 
 from medic import product_view as pv
+from medic.enabler_partners import enabler_class
 from medic.validation.extraction_fidelity import assertion_negated, entailment_score
 
 app = typer.Typer(add_completion=False)
@@ -373,6 +380,41 @@ def _assertion_gate(record: dict, statement_type: StatementType) -> ReliabilityT
     return ReliabilityTier.LOW
 
 
+def _drug_labels(record: dict) -> set[str]:
+    """Every name the record gives its drug: the pair label and each attestation's mention.
+
+    The mention's ``original_literal`` is only consulted when it has no ``resolved_label``:
+    the resolved name is the one the pair is keyed on, and a literal that resolved to
+    something else (a combination product) must not be judged on its own spelling.
+    """
+    labels = {pv.assoc_drug_label(record)}
+    mentions = [record.get("drug")] + [a.get("drug") for a in pv.assoc_assertions(record)]
+    for m in mentions:
+        if isinstance(m, dict):
+            labels.add(m.get("resolved_label") or m.get("original_literal") or "")
+    return {lbl for lbl in labels if lbl}
+
+
+def _enabler_gate(record: dict, statement_type: StatementType) -> ReliabilityTier | None:
+    """Is the drug an enabler partner that cannot own this indication? (#88, FM §5.4)
+
+    Beta-lactamase inhibitors, cilastatin and cobicistat ship only alongside the active
+    moiety they enable, so "avibactam treats pyelonephritis" is ceftazidime's claim credited
+    to the wrong component of the label. LOW rather than EXCLUDED: the pair is right for the
+    *product* and wrong for the *component*, which is a pairing fault, not a fabrication.
+    Only INDICATIONs: a contraindication on cobicistat is a real claim about cobicistat.
+
+    The merge stamps the same verdict as the ``wrong_pairing`` assertion flag (see
+    ``on_label_merge._build_disease_provenance``), which :func:`_assertion_gate` already
+    reads as LOW; this gate makes the rule hold for records scored without that flag.
+    """
+    if statement_type != StatementType.INDICATION:
+        return None
+    if any(enabler_class(lbl) for lbl in _drug_labels(record)):
+        return ReliabilityTier.LOW
+    return None
+
+
 def _recognition_gate(record: dict) -> ReliabilityTier | None:
     """Was the entity itself correctly recognised in the source? (the Mention's ExtractionStep)
 
@@ -587,6 +629,7 @@ def _score_one(record: dict, st: StatementType) -> ReliabilityTier:
         _grounding_gate(record),
         _recognition_gate(record),
         _assertion_gate(record, st),
+        _enabler_gate(record, st),
         _translation_gate(record),
         _attribution_gate(record),
         _context_gate(record),
