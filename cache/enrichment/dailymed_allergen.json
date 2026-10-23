@@ -123,6 +123,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ACECLIDINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ACER NEGUNDO POLLEN": {
     "is_allergen": true,
     "is_diagnostic_agent": false
@@ -133,6 +137,10 @@
   },
   "ACER SACCHARUM POLLEN": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ACESULFAME": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ACETAMINOPHE": {
@@ -627,6 +635,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ANGIOTENSIN II": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ANHYDROUS CITRIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -744,6 +756,10 @@
     "is_diagnostic_agent": false
   },
   "ARBUTIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ARCTIUM LAPPA ROOT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -899,6 +915,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ATRASENTAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ATRIPLEX CANESCENS POLLEN": {
     "is_allergen": true,
     "is_diagnostic_agent": false
@@ -916,6 +936,10 @@
     "is_diagnostic_agent": false
   },
   "AUTOLOGOUS CULTURED CHONDROCYTES": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "AVACINCAPTAD PEGOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1023,6 +1047,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BACILLUS SUBTILIS": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BACITRACIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1111,6 +1139,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BELUMOSUDIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BELZUTIFAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1156,6 +1188,14 @@
     "is_diagnostic_agent": false
   },
   "BENZETHONIUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BENZGALANTAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BENZHYDROCODONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1219,11 +1259,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BERDAZIMER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BEREMAGENE GEPERPAVEC": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "BEROTRALSTAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BESIFLOXACIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1463,6 +1511,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "BOSUTINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "BOTRYTIS CINEREA": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1476,6 +1528,10 @@
     "is_diagnostic_agent": false
   },
   "BRAZIL NUT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "BREMELANOTIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -1783,6 +1839,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CAPMATINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CAPRYLOYL GLYCINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -1852,6 +1912,10 @@
     "is_diagnostic_agent": false
   },
   "CARGLUMIC ACID": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "CARIPRAZINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2315,6 +2379,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "CITRAL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "CITRIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2487,6 +2555,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "COBIMETINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "COCAINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2504,6 +2576,10 @@
     "is_diagnostic_agent": true
   },
   "COCHLIOBOLUS SPICIFER": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "COCOA BUTTER": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2827,6 +2903,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DAPIPRAZOLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DAPRODUSTAT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2847,6 +2927,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DARIDOREXANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DARIFENACIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -2860,6 +2944,10 @@
     "is_diagnostic_agent": false
   },
   "DASATINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DASIGLUCAGON": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -2912,6 +3000,10 @@
     "is_diagnostic_agent": false
   },
   "DEFLAZACORT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DEGARELIX": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3299,6 +3391,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DONIDALORSEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DONISLECEL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3312,6 +3408,10 @@
     "is_diagnostic_agent": false
   },
   "DORAVIRINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DORDAVIPRONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3375,6 +3475,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "DRONEDARONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "DROPERIDOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3396,6 +3500,10 @@
     "is_diagnostic_agent": false
   },
   "DUPILUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "DURLOBACTAM": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3491,6 +3599,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ELACESTRANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ELADOCAGENE EXUPARVOVEC": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3524,6 +3636,10 @@
     "is_diagnostic_agent": false
   },
   "ELEXACAFTOR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ELIGLUSTAT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3607,6 +3723,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "ENSARTINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "ENSIFENTRINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -3671,7 +3791,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "EPLONTERSEN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "EPOETIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "EPOPROSTENOL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -3693,6 +3821,10 @@
   },
   "EQUUS CABALLUS HAIR": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "ERAVACYCLINE": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "ERDAFITINIB": {
@@ -3991,6 +4123,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "FD&C YELLOW NO. 5": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FEBANTEL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4012,6 +4148,10 @@
     "is_diagnostic_agent": false
   },
   "FELODIPINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "FENFLURAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4347,6 +4487,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": true
   },
+  "FOSTAMATINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "FRAGRANCE 13576": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4503,6 +4647,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "GEPOTIDACIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "GILTERITINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -4511,7 +4659,15 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "GIVINOSTAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "GIVOSIRAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "GLASDEGIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4572,6 +4728,10 @@
     "is_diagnostic_agent": false
   },
   "GLYCINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "GLYCOLIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -4967,6 +5127,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "HYPROMELLOSES": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "IBALIZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5071,11 +5235,19 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "IMLUNESTRANT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "INACTIVATED": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "INAVOLISIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "INCLISIRAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5287,6 +5459,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "IPTACOPAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "IRBESARTAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5415,6 +5591,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "IXAZOMIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "IXEKIZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5507,6 +5687,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LANDIOLOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LANOLIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5531,6 +5715,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "LAROTRECTINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LASMIDITAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "LATANOPROST": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -5544,6 +5736,10 @@
     "is_diagnostic_agent": false
   },
   "LAVANDIN OIL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LAZERTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5584,6 +5780,10 @@
     "is_diagnostic_agent": false
   },
   "LENIOLISIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LENVATINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5628,6 +5828,10 @@
     "is_diagnostic_agent": false
   },
   "LEVAMISOLE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LEVAMLODIPINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -5713,6 +5917,10 @@
   },
   "LIGUSTRUM VULGARE POLLEN": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "LIMONENE, (+)-": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "LINACLOTIDE": {
@@ -5880,6 +6088,14 @@
     "is_diagnostic_agent": false
   },
   "LUMACAFTOR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LUMASIRAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "LUMATEPERONE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6419,6 +6635,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "MITAPIVAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "MITOMYCIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6452,6 +6672,10 @@
     "is_diagnostic_agent": false
   },
   "MOLYBDENUM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MOMELOTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6508,6 +6732,10 @@
     "is_diagnostic_agent": false
   },
   "MOSUNETUZUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "MOTIXAFORTIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6623,6 +6851,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "NARATRIPTAN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "NARSOPLIMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -6644,6 +6876,10 @@
     "is_diagnostic_agent": false
   },
   "NEBIVOLOL": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NEDOSIRAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6700,6 +6936,10 @@
     "is_diagnostic_agent": false
   },
   "NERANDOMILAST": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NERATINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6772,6 +7012,10 @@
     "is_diagnostic_agent": false
   },
   "NIRMATRELVIR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NIROGACESTAT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6868,6 +7112,10 @@
     "is_diagnostic_agent": false
   },
   "NOVOBIOCIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "NUSINERSEN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -6987,6 +7235,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "OMADACYCLINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "OMALIZUMAB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7060,6 +7312,10 @@
     "is_diagnostic_agent": false
   },
   "OSILODROSTAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "OSIMERTINIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7163,6 +7419,14 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PACRITINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PAFOLACIANINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": true
+  },
   "PALBOCICLIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7195,6 +7459,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PALTUSOTINE": {
+    "is_allergen": true,
+    "is_diagnostic_agent": true
+  },
   "PAMIDRONIC ACID": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7216,6 +7484,10 @@
     "is_diagnostic_agent": false
   },
   "PANITUMUMAB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PANOBINOSTAT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7251,8 +7523,16 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PASIREOTIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PASPALUM NOTATUM POLLEN": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "PATISIRAN": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "PAZOPANIB": {
@@ -7422,6 +7702,10 @@
   "PERFLUTREN": {
     "is_allergen": false,
     "is_diagnostic_agent": true
+  },
+  "PERGOLIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
   },
   "PERILLA FRUTESCENS": {
     "is_allergen": true,
@@ -7663,6 +7947,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "PLAZOMICIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "PLECANATIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -7672,6 +7960,10 @@
     "is_diagnostic_agent": false
   },
   "PLERIXAFOR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "PLOZASIRAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -7720,6 +8012,10 @@
     "is_diagnostic_agent": false
   },
   "POLYMYXIN B": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "POLYOXYL 40 HYDROGENATED CASTOR OIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8115,6 +8411,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "QUIZARTINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RABEPRAZOLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8128,6 +8428,10 @@
     "is_diagnostic_agent": false
   },
   "RALOXIFENE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "RALTEGRAVIR": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8215,6 +8519,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RELEBACTAM": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RELUGOLIX": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8276,6 +8584,14 @@
     "is_diagnostic_agent": false
   },
   "REVEFENACIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "REVUMENIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "REZAFUNGIN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -8511,6 +8827,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "RUXOLITINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "RYE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8707,6 +9027,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "SELUMETINIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "SEMAGLUTIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -8745,6 +9069,10 @@
   },
   "SESAME SEED": {
     "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
+  "SETMELANOTIDE": {
+    "is_allergen": false,
     "is_diagnostic_agent": false
   },
   "SEVABERTINIB": {
@@ -9175,6 +9503,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "STREPTOMYCIN": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "STRING BEAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -9507,6 +9839,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TAUROLIDINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TAVABOROLE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -9516,6 +9852,10 @@
     "is_diagnostic_agent": false
   },
   "TAZAROTENE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TAZEMETOSTAT": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -9556,6 +9896,10 @@
     "is_diagnostic_agent": false
   },
   "TEDUGLUTIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TEGASEROD": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -9847,6 +10191,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TIOXOLONE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TIPIRACIL": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -9880,6 +10228,10 @@
     "is_diagnostic_agent": false
   },
   "TITANIUM DIOXIDE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TIVOZANIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -10103,6 +10455,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "TRILACICLIB": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "TRILOSTANE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -10120,6 +10476,10 @@
     "is_diagnostic_agent": false
   },
   "TRIMIPRAMINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "TRIPELENNAMINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -10252,6 +10612,10 @@
     "is_diagnostic_agent": false
   },
   "VADADUSTAT": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "VALBENAZINE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -10419,6 +10783,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "VINORELBINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "VISMODEGIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -10443,6 +10811,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "VORAPAXAR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "VORASIDENIB": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -10459,6 +10831,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "VORTIOXETINE": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
   "VOSORITIDE": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -10468,6 +10844,10 @@
     "is_diagnostic_agent": false
   },
   "VOXILAPREVIR": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "VUTRISIRAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
@@ -10523,6 +10903,10 @@
     "is_allergen": false,
     "is_diagnostic_agent": false
   },
+  "YEAST, UNSPECIFIED": {
+    "is_allergen": true,
+    "is_diagnostic_agent": false
+  },
   "ZAFIRLUKAST": {
     "is_allergen": false,
     "is_diagnostic_agent": false
@@ -10572,6 +10956,10 @@
     "is_diagnostic_agent": false
   },
   "ZILEUTON": {
+    "is_allergen": false,
+    "is_diagnostic_agent": false
+  },
+  "ZILUCOPLAN": {
     "is_allergen": false,
     "is_diagnostic_agent": false
   },

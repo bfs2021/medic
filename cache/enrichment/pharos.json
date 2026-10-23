@@ -1841,6 +1841,9 @@
       "unii:40ZTP2T37Q"
     ]
   },
+  "CHEBI:135862": {
+    "pharos_ids": []
+  },
   "CHEBI:135867": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1200645",
@@ -1902,6 +1905,15 @@
       "PubChem:6918245",
       "pt:PRALMORELIN",
       "unii:E6S6E1F19M"
+    ]
+  },
+  "CHEBI:135894": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL938",
+      "DrugCentral:3542",
+      "LyCHI:QA6JR3NKFLT2",
+      "PHAROS:QA6JR3NKFLT2",
+      "PubChem:6324663"
     ]
   },
   "CHEBI:135898": {
@@ -2218,6 +2230,9 @@
     ]
   },
   "CHEBI:135965": {
+    "pharos_ids": []
+  },
+  "CHEBI:135968": {
     "pharos_ids": []
   },
   "CHEBI:135975": {
@@ -2956,6 +2971,9 @@
   "CHEBI:157785": {
     "pharos_ids": []
   },
+  "CHEBI:15782": {
+    "pharos_ids": []
+  },
   "CHEBI:15843": {
     "pharos_ids": [
       "ChEMBL:CHEMBL267484",
@@ -3044,6 +3062,9 @@
     ]
   },
   "CHEBI:16134": {
+    "pharos_ids": []
+  },
+  "CHEBI:16137": {
     "pharos_ids": []
   },
   "CHEBI:16163": {
@@ -3493,6 +3514,9 @@
     ]
   },
   "CHEBI:169727": {
+    "pharos_ids": []
+  },
+  "CHEBI:16973": {
     "pharos_ids": []
   },
   "CHEBI:16977": {
@@ -4103,6 +4127,9 @@
       "unii:RP4A60D26L"
     ]
   },
+  "CHEBI:18211": {
+    "pharos_ids": []
+  },
   "CHEBI:18222": {
     "pharos_ids": []
   },
@@ -4290,6 +4317,9 @@
       "pt:ERTUGLIFLOZIN",
       "unii:6C282481IP"
     ]
+  },
+  "CHEBI:188978": {
+    "pharos_ids": []
   },
   "CHEBI:189104": {
     "pharos_ids": []
@@ -4534,6 +4564,12 @@
       "pt:ADENOSINE PHOSPHATE",
       "unii:415SHH325A"
     ]
+  },
+  "CHEBI:22470": {
+    "pharos_ids": []
+  },
+  "CHEBI:22494": {
+    "pharos_ids": []
   },
   "CHEBI:22495": {
     "pharos_ids": []
@@ -5184,6 +5220,17 @@
       "unii:4TI98Z838E"
     ]
   },
+  "CHEBI:2401": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1085",
+      "DrugCentral:59",
+      "LyCHI:ZP6YB99MZCHX",
+      "PHAROS:ZP6YB99MZCHX",
+      "PubChem:17676",
+      "pt:ACETOPHENAZINE",
+      "unii:8620H6K4QH"
+    ]
+  },
   "CHEBI:240107": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1077",
@@ -5387,6 +5434,17 @@
   },
   "CHEBI:26216": {
     "pharos_ids": []
+  },
+  "CHEBI:2627": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1652",
+      "DrugCentral:146",
+      "LyCHI:M2W5RT5D46DT",
+      "PHAROS:M2W5RT5D46DT",
+      "PubChem:2131",
+      "pt:AMBENONIUM",
+      "unii:L16PUN799N"
+    ]
   },
   "CHEBI:26271": {
     "pharos_ids": []
@@ -5734,6 +5792,19 @@
       "PubChem:6199"
     ]
   },
+  "CHEBI:27644": {
+    "pharos_ids": []
+  },
+  "CHEBI:27662": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201250",
+      "DrugCentral:331",
+      "Guide to Pharmacology:7124",
+      "LyCHI:6L1CLVFHP6ST",
+      "PHAROS:6L1CLVFHP6ST",
+      "PubChem:2342"
+    ]
+  },
   "CHEBI:27666": {
     "pharos_ids": []
   },
@@ -5980,6 +6051,18 @@
   "CHEBI:28490": {
     "pharos_ids": []
   },
+  "CHEBI:28502": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL770",
+      "DrugCentral:2695",
+      "Guide to Pharmacology:7310",
+      "LyCHI:9X64UPW5K3FF",
+      "PHAROS:9X64UPW5K3FF",
+      "PubChem:5504",
+      "pt:TOLAZOLINE",
+      "unii:CHH9H12AQ3"
+    ]
+  },
   "CHEBI:28527": {
     "pharos_ids": [
       "ChEMBL:CHEMBL226335",
@@ -6000,6 +6083,9 @@
     ]
   },
   "CHEBI:28548": {
+    "pharos_ids": []
+  },
+  "CHEBI:28568": {
     "pharos_ids": []
   },
   "CHEBI:28569": {
@@ -6534,7 +6620,22 @@
   "CHEBI:30512": {
     "pharos_ids": []
   },
+  "CHEBI:3061": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1008",
+      "DrugCentral:342",
+      "Guide to Pharmacology:2337",
+      "LyCHI:S1UMSUMGTCRA",
+      "PHAROS:S1UMSUMGTCRA",
+      "PubChem:2351",
+      "pt:BEPRIDIL",
+      "unii:755BO701MA"
+    ]
+  },
   "CHEBI:30618": {
+    "pharos_ids": []
+  },
+  "CHEBI:30659": {
     "pharos_ids": []
   },
   "CHEBI:3070": {
@@ -6971,6 +7072,17 @@
   },
   "CHEBI:31325": {
     "pharos_ids": []
+  },
+  "CHEBI:3133": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201295",
+      "DrugCentral:384",
+      "LyCHI:7QCR8S5UUJ2L",
+      "PHAROS:7QCR8S5UUJ2L",
+      "PubChem:35330",
+      "pt:BITOLTEROL",
+      "unii:9KY0QXD6LI"
+    ]
   },
   "CHEBI:31332": {
     "pharos_ids": []
@@ -7726,6 +7838,9 @@
   "CHEBI:31711": {
     "pharos_ids": []
   },
+  "CHEBI:31713": {
+    "pharos_ids": []
+  },
   "CHEBI:31714": {
     "pharos_ids": []
   },
@@ -7737,6 +7852,17 @@
   },
   "CHEBI:31718": {
     "pharos_ids": []
+  },
+  "CHEBI:3172": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1199080",
+      "DrugCentral:394",
+      "LyCHI:LK4V1U24SZNY",
+      "PHAROS:LK4V1U24SZNY",
+      "PubChem:2431",
+      "pt:BRETYLIUM",
+      "unii:RZR75EQ2KJ"
+    ]
   },
   "CHEBI:31721": {
     "pharos_ids": []
@@ -8521,6 +8647,17 @@
       "unii:A78GF17HJS"
     ]
   },
+  "CHEBI:3228": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL449",
+      "DrugCentral:439",
+      "LyCHI:APX8A76VGQR7",
+      "PHAROS:APX8A76VGQR7",
+      "PubChem:2479",
+      "pt:BUTABARBITAL",
+      "unii:P0078O25A9"
+    ]
+  },
   "CHEBI:32286": {
     "pharos_ids": []
   },
@@ -8722,6 +8859,9 @@
     "pharos_ids": []
   },
   "CHEBI:33336": {
+    "pharos_ids": []
+  },
+  "CHEBI:33382": {
     "pharos_ids": []
   },
   "CHEBI:3347": {
@@ -8948,6 +9088,9 @@
       "unii:9H05937G3X"
     ]
   },
+  "CHEBI:34521": {
+    "pharos_ids": []
+  },
   "CHEBI:34523": {
     "pharos_ids": [
       "ChEMBL:CHEMBL2107723",
@@ -9039,6 +9182,17 @@
   "CHEBI:3479": {
     "pharos_ids": []
   },
+  "CHEBI:34791": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1197",
+      "DrugCentral:1373",
+      "LyCHI:WD2ADLF52PMU",
+      "PHAROS:WD2ADLF52PMU",
+      "PubChem:10770",
+      "pt:HEXYLCAINE",
+      "unii:511IU0826Z"
+    ]
+  },
   "CHEBI:3480": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1360024,CHEMBL1146",
@@ -9095,6 +9249,9 @@
     "pharos_ids": []
   },
   "CHEBI:3490": {
+    "pharos_ids": []
+  },
+  "CHEBI:3491": {
     "pharos_ids": []
   },
   "CHEBI:34910": {
@@ -9247,6 +9404,9 @@
   "CHEBI:35505": {
     "pharos_ids": []
   },
+  "CHEBI:355510": {
+    "pharos_ids": []
+  },
   "CHEBI:3558": {
     "pharos_ids": [
       "ChEMBL:CHEMBL1477",
@@ -9310,6 +9470,9 @@
     "pharos_ids": []
   },
   "CHEBI:35778": {
+    "pharos_ids": []
+  },
+  "CHEBI:35854": {
     "pharos_ids": []
   },
   "CHEBI:35940": {
@@ -9429,6 +9592,17 @@
   },
   "CHEBI:3645": {
     "pharos_ids": []
+  },
+  "CHEBI:3646": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1201269",
+      "DrugCentral:618",
+      "LyCHI:J7U61FW7SXJX",
+      "PHAROS:J7U61FW7SXJX",
+      "PubChem:10007",
+      "pt:CHLORPHENTERMINE",
+      "unii:NHW07912O7"
+    ]
   },
   "CHEBI:3647": {
     "pharos_ids": [
@@ -10259,6 +10433,17 @@
       "unii:JCX84Q7J1L"
     ]
   },
+  "CHEBI:41462": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL499915",
+      "DrugCentral:493",
+      "LyCHI:DQUDV3PC1YW6",
+      "PHAROS:DQUDV3PC1YW6",
+      "PubChem:636403",
+      "pt:CARBENOXOLONE",
+      "unii:MM6384NG73"
+    ]
+  },
   "CHEBI:41500": {
     "pharos_ids": []
   },
@@ -10311,6 +10496,17 @@
       "PubChem:448537",
       "pt:DIETHYLSTILBESTROL",
       "unii:731DCA35BT"
+    ]
+  },
+  "CHEBI:41934": {
+    "pharos_ids": [
+      "ChEMBL:CHEMBL1190,CHEMBL1134",
+      "DrugCentral:789",
+      "LyCHI:D25TCYG3P4F1",
+      "PHAROS:D25TCYG3P4F1",
+      "PubChem:2968,10921",
+      "pt:DECAMETHONIUM",
+      "unii:C1CG1S3T2W"
     ]
   },
   "CHEBI:41948": {
