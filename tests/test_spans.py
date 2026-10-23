@@ -58,10 +58,15 @@ def test_no_character_is_lost_across_the_real_dailymed_corpus():
     inventing a character is not (I-7).
     """
     import re
+    from pathlib import Path
 
+    import pytest
     import yaml
 
-    records = yaml.safe_load(open("kb/indications/dailymed/indications.yaml"))
+    corpus = Path("kb/indications/dailymed/indications.yaml")
+    if not corpus.exists():
+        pytest.skip("the DailyMed ingest intermediate is untracked (1aebf63); needs a local ingest")
+    records = yaml.safe_load(corpus.open())
     for record in records:
         text = (record.get("indications_text") or "").strip()
         if not text:
