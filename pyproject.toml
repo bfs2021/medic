@@ -47,7 +47,7 @@ dependencies = [
   # to remember `--group export`, and `pip install medic` could not run the KGX export at all.
   # KGX is one of the three export families SPEC section 2 declares as product contract — the
   # same standing as the SSSOM/Babelon exports, whose dependencies were already here.
-  "biolink-model==4.3.7",
+  "biolink-model==4.4.6",
 ]
 
 [dependency-groups]

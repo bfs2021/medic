@@ -11,6 +11,20 @@ The pair-level view is not lost: every edge repeats the pair's aggregates
 (``medic_pair_*``), so ``GROUP BY (subject, predicate, object)`` reconstructs it without
 re-deriving anything.
 
+**Every edge is an instance of a Biolink association class.** The core of each record is
+built by instantiating the pydantic class :data:`medic.export.kgx.biolink.ASSOCIATION_CLASS`
+names for its predicate and dumping it, so the class fixes ``category``, enum slots reject
+values outside their permissible set, and a property the class does not declare cannot be
+written at all (see :func:`_build`). The ``medic_`` extension layer is attached afterwards
+and is kept to what a consumer needs on the edge itself; the rest of MeDIC's provenance is
+reachable through the ``MEDICNE:`` mention ids (I-8) and the products.
+
+**Where the source record lives.** The document a claim was read from — its CURIE, the
+landing page, the PDF — is Biolink's ``source_record_urls``, a property of
+``RetrievalSource``. So every edge carries one nested ``sources`` entry for its primary
+knowledge source holding those references. That is the one nested payload Biolink defines
+for an association's provenance, and it replaces six flat ``medic_*`` URL properties.
+
 Predicate choice is driven by *recorded data* — regulatory status, research phase, source —
 never by a source's name. That mirrors the rule ``medic.reliability`` already follows: the
 idiosyncrasies of DailyMed vs GRLS vs CDE must not leak into the semantics.
@@ -20,6 +34,8 @@ from __future__ import annotations
 
 import re
 import uuid
+
+from pydantic import ValidationError
 
 from medic import product_view as pv
 from medic.export.kgx import biolink as bl
@@ -94,15 +110,14 @@ def _offsets(mention: dict, supporting_text: str) -> list[int]:
 
 
 def _mention_properties(mention: dict, role: str) -> dict:
-    """The resolution join keys for one side of an edge (spec §2.3)."""
-    grounding = _step(mention, "GROUNDING")
-    return {
-        f"medic_{role}_mention_id": mention.get("id") or "",
-        f"medic_{role}_grounding_quality": grounding.get("quality") or "",
-        f"medic_{role}_applied_rules": list(grounding.get("applied_rules") or []),
-        f"medic_{role}_grounding_flags": list(grounding.get("flags") or []),
-        f"medic_{role}_translated": bool(_step(mention, "TRANSLATION")) or "",
-    }
+    """The resolution join key for one side of an edge (spec §2.3).
+
+    Only the ``MEDICNE:`` id ships. The grounding quality, applied rules and flags it used
+    to carry beside it are the SSSOM row's own columns, reachable through this key — which
+    is the I-8 design: the chain is replayable from the decision store, not duplicated onto
+    every edge that cites it.
+    """
+    return {f"medic_{role}_mention_id": mention.get("id") or ""}
 
 
 def _publications(references) -> list[str]:
@@ -113,18 +128,69 @@ def _publications(references) -> list[str]:
 
 
 def _supporting_text(text: str) -> tuple[str, bool]:
-    """The quoted span, and whether it was cut.
-
-    Returns a **string**. Biolink's ``supporting_text`` is single-valued, and wrapping it in a
-    one-element list is the same single-valued-discipline violation this export already fixed
-    for ``primary_knowledge_source`` — a consumer reading the slot per the model gets
-    ``["..."]`` where it expects text.
-    """
+    """The quoted span, and whether it was cut."""
     if not text:
         return "", False
     if len(text) <= MAX_SUPPORTING_TEXT:
         return text, False
     return text[:MAX_SUPPORTING_TEXT], True
+
+
+def _sources(resource_id: str, record_references) -> list[dict]:
+    """The edge's primary ``RetrievalSource``, carrying the source record references.
+
+    Biolink's ``source_record_urls`` ("a URL linking to a specific web page or document
+    provided by the source, that contains a record of the knowledge expressed in the Edge")
+    has domain ``retrieval source``, so the document CURIE and URLs live on a nested source
+    entry rather than flat on the edge. Only the primary source is listed: the aggregator is
+    already stated by ``aggregator_knowledge_source``, and repeating it here would add a
+    second object to 70,000 edges to say nothing new. Omitted entirely when there is no
+    record reference, so the entry never restates ``primary_knowledge_source`` alone.
+
+    ``id`` is the resource id. The class requires one, the entries are inlined, and the
+    retrieval source *is* that resource as consulted for this edge.
+    """
+    references = _uniq(record_references)
+    if not references:
+        return []
+    return [{
+        "id": resource_id,
+        "resource_id": resource_id,
+        "resource_role": "primary_knowledge_source",
+        "source_record_urls": references,
+    }]
+
+
+def _build(record: dict) -> dict:
+    """Construct one edge: the Biolink core through its association class, then the rest.
+
+    The un-namespaced keys of ``record`` are handed to the pydantic class
+    :data:`bl.ASSOCIATION_CLASS` names for the predicate. The class is strict — an
+    undeclared property, an enum value outside the permissible set, a list on a scalar slot
+    or a missing required slot all raise — so nothing Biolink 4.4.6 does not define can
+    reach the output. The class also stamps ``category``. The few Biolink slots the model
+    defines but does not attach to the class (:data:`bl.OFF_CLASS_EDGE_SLOTS`) and the
+    ``medic_`` extension layer are merged in after the dump.
+
+    A ``ValidationError`` here is a bug in a builder, not bad data, and is left to propagate.
+    """
+    record = {k: v for k, v in record.items() if v not in ("", [], {}, None)}
+    cls = bl.model_class(bl.association_category(record["predicate"]))
+    extension = {k: v for k, v in record.items() if k.startswith(bl.EXTENSION_PREFIX)}
+    # Only a slot *this* class lacks bypasses the constructor: `clinical_approval_status`
+    # is on the contraindication class and goes through it there.
+    off_class = {k: v for k, v in record.items()
+                 if k in bl.OFF_CLASS_EDGE_SLOTS and k not in cls.model_fields}
+    core = {k: v for k, v in record.items() if k not in extension and k not in off_class}
+    unknown = set(extension) - set(bl.EXTENSION_SLOTS)
+    if unknown:
+        raise ValueError(f"extension properties not declared in EXTENSION_SLOTS: {unknown}")
+
+    try:
+        built = cls(**core).model_dump(mode="json", exclude_none=True)
+    except ValidationError as exc:
+        raise ValueError(f"edge {core.get('id')} is not a valid {cls.__name__}: {exc}") from exc
+    return _clean({**built, **off_class, **extension})
 
 
 def _assertion_reliability(
@@ -172,16 +238,17 @@ def _source_literal(pair: dict, role: str) -> str:
 #: Matched on word boundaries, not as substrings. "men" occurs inside "postmenopausal" and
 #: "management", both of which appear in real population phrases — a naive containment test
 #: tags them male. The female alternatives are tried first so "women" is not read as "men".
+#: The slot's range is the class ``biological sex``, so the value is its PATO term.
 _SEX_PATTERNS = (
-    ("women", re.compile(r"(?i)\b(women|woman|female|females)\b")),
-    ("men", re.compile(r"(?i)\b(men|man|male|males)\b")),
+    (bl.SEX_QUALIFIER_TERMS["female"], re.compile(r"(?i)\b(women|woman|female|females)\b")),
+    (bl.SEX_QUALIFIER_TERMS["male"], re.compile(r"(?i)\b(men|man|male|males)\b")),
 )
 
 
 def _sex_qualifier(population: str) -> str:
-    for canonical, pattern in _SEX_PATTERNS:
+    for term, pattern in _SEX_PATTERNS:
         if pattern.search(population or ""):
-            return canonical
+            return term
     return ""
 
 
@@ -193,12 +260,11 @@ def _claim_qualifiers(evidence: dict) -> dict:
     that half was never counted. Biolink carries these on the `treats` association and DAKP
     already populates them on 5,686 of its 16,655 treats edges.
 
-    The slot is single-valued in Biolink, so only the first grounded context goes on it and
-    the full set goes on the namespaced `medic_disease_context_ids` / `_labels`; shipping a
-    list on the Biolink slot is the discipline violation this export already fixed once for
-    `primary_knowledge_source`. Co-administration has no Biolink slot on this
-    association, so it stays in the `medic_` extension layer rather than being invented as
-    a bare property — the conformance gate would reject it, correctly.
+    `disease_context_qualifier` is single-valued, so only the first grounded context goes on
+    it and the full set goes on the namespaced `medic_disease_context_ids`. Co-administration
+    has no Biolink slot on this association, so it stays in the `medic_` extension layer
+    rather than being invented as a bare property — the class constructor would reject it,
+    correctly.
     """
     contexts = [c for c in (evidence.get("disease_context") or []) if c]
     context_ids = [c for c in (evidence.get("disease_context_ids") or []) if c]
@@ -208,10 +274,8 @@ def _claim_qualifiers(evidence: dict) -> dict:
         # actually wants, and a free-text value satisfies only the slot's name. The grounded
         # id goes here when there is one; the label falls back otherwise, because losing the
         # context entirely because it did not ground would be worse than an untyped value.
-        # Human-readable names always stay on `medic_disease_context_labels`.
         "disease_context_qualifier": context_ids[0] if context_ids else ", ".join(contexts),
         "medic_disease_context_ids": context_ids,
-        "medic_disease_context_labels": contexts,
         "population_context_qualifier": population,
         "temporal_context_qualifier": (evidence.get("temporal_context") or "").strip(),
         "sex_qualifier": _sex_qualifier(population),
@@ -223,9 +287,6 @@ def _claim_qualifiers(evidence: dict) -> dict:
             if (evidence.get("claim_predicate") or "").strip().lower() not in ("", "treats")
             else ""
         ),
-        "medic_claim_attributed_to": (evidence.get("claim_attributed_to") or "").strip(),
-        "medic_claim_attribution_basis": (
-            evidence.get("claim_attribution_basis") or "").strip(),
     }
 
 
@@ -323,8 +384,6 @@ def association_edges(
         "medic_pair_n_assertions": pair_confidence.get("n_assertions")
         or len(pv.assoc_assertions(pair)) or "",
         "medic_pair_reliability": pair.get("reliability") or "",
-        "medic_pair_jurisdictions": sorted(pv.assoc_jurisdictions(pair)),
-        "medic_pair_authorities": sorted(pv.assoc_authorities(pair)),
     }
 
     built = []
@@ -353,7 +412,6 @@ def association_edges(
         spans = assertion.get("spans") or []
         index = claim.get("span_index")
         span = spans[index] if isinstance(index, int) and 0 <= index < len(spans) else None
-        span_role = (span or {}).get("role") or ""
 
         # The span the extraction read, not the evidence snippet. The character offsets are
         # computed against this string at merge, and Biolink defines them as offsets into
@@ -374,12 +432,20 @@ def association_edges(
             "knowledge_level": bl.KNOWLEDGE_LEVELS.get(predicate, "not_provided"),
             "agent_type": bl.agent_type(claim.get("method") or "",
                                         agent.get("agent_type") or ""),
+            "description": evidence.get("explanation") or "",
+
+            # the source record: document CURIE, landing page, PDF — on the retrieval source
+            "sources": _sources(primary, [
+                document,
+                regulatory.get("regulatory_document_url") or evidence.get("reference") or "",
+                regulatory.get("source_document_url")
+                or evidence.get("source_document_url") or "",
+            ]),
 
             # verbatim source strings — standard Biolink slots, no namespacing needed
             "original_subject": drug_mention.get("original_literal") or "",
             "original_object": disease_mention.get("original_literal") or "",
-            "supporting_text": text,
-            "supporting_text_section_type": span_role,
+            "supporting_text": [text] if text else [],
             "subject_location_in_text": _offsets(drug_mention, text),
             "object_location_in_text": _offsets(disease_mention, text),
             "publications": _publications([evidence.get("reference") or ""]),
@@ -388,60 +454,25 @@ def association_edges(
             # Only on an indication. Biolink defines this slot as approval *for treating the
             # object*, so on a `contraindicated_in` edge it asserts the inverse of the claim —
             # all 2,978 contraindications shipped stamped `fda_approved_for_condition`. The
-            # drug's approval status is not lost: it stays on `medic_regulatory_status`, where
-            # it means what it says.
+            # drug's approval status is not lost: it stays on `medic_approval_status_raw`,
+            # where it means what it says.
             "clinical_approval_status": (
                 bl.clinical_approval_status(status, authority)
                 if relationship != "CONTRAINDICATION" else ""
             ),
             "has_confidence_score": confidence.get("overall"),
 
-            # source and document
+            # source — the pair invariant I-1 is checked on at the export boundary
             "medic_source": source,
-            "medic_document": document,
             "medic_jurisdiction": assertion.get("jurisdiction")
             or evidence.get("jurisdiction") or "",
-            "medic_authority": authority,
-            "medic_source_role": regulatory.get("source_role") or "",
-            "medic_regulatory_status": status,
-            "medic_approval_status_raw": evidence.get("approval_status") or "",
-            "medic_document_url": regulatory.get("regulatory_document_url")
-            or evidence.get("reference") or "",
-            "medic_source_document_url": regulatory.get("source_document_url")
-            or evidence.get("source_document_url") or "",
+            "medic_approval_status_raw": status,
             "medic_approval_date": regulatory.get("approval_date")
             or evidence.get("approval_date") or "",
-            "medic_setid": regulatory.get("setid") or evidence.get("setid") or "",
-            "medic_application_number": regulatory.get("application_number") or "",
-            "medic_reference": evidence.get("reference") or "",
-            "medic_reference_title": evidence.get("reference_title") or "",
-            "medic_withdrawn": (status or "").upper() == "WITHDRAWN" or "",
 
-            # claim
+            # quality
             "medic_supporting_text_truncated": truncated or "",
-            "medic_explanation": evidence.get("explanation") or "",
-            "medic_trigger_cue": claim.get("trigger_cue") or "",
-            "medic_trigger_span": claim.get("trigger_span") or "",
-            # Whether negation was FOUND, not whether the check ran. `negation_scope` is the
-            # list of spans the check looked at, which is non-empty on essentially every edge —
-            # so this slot read `true` on 12,694 of 12,694, meaning a reader taking it at its
-            # name would conclude every claim in MeDIC is negated.
-            "medic_negation_detected": ("negated_inversion" in (claim.get("flags") or [])) or "",
             "medic_assertion_flags": list(claim.get("flags") or []),
-            "medic_assertion_method": claim.get("method") or "",
-            "medic_agent_name": agent.get("agent_name") or "",
-            "medic_agent_version": agent.get("agent_version") or "",
-            "medic_tool": claim.get("tool") or "",
-            "medic_tool_version": claim.get("tool_version") or "",
-            "medic_support": evidence.get("support") or "",
-            "medic_evidence_source": evidence.get("evidence_source") or "",
-
-            # confidence
-            "medic_confidence_subject": confidence.get("subject"),
-            "medic_confidence_object": confidence.get("object"),
-            "medic_confidence_relationship": confidence.get("relationship"),
-            "medic_confidence_overall": confidence.get("overall"),
-            "medic_confidence_basis": confidence.get("basis") or "",
             "medic_reliability": _assertion_reliability(pair, assertion, review),
 
             **_claim_qualifiers(evidence),
@@ -454,7 +485,7 @@ def association_edges(
             edge["medic_is_allergen"] = pair.get("is_allergen") or ""
             edge["medic_is_diagnostic_agent"] = pair.get("is_diagnostic_agent") or ""
 
-        built.append(_clean(edge))
+        built.append(_build(edge))
     return built
 
 
@@ -528,6 +559,8 @@ def research_edges(
         first = items[0]
         text, truncated = _supporting_text(first.get("snippet") or "")
         phases = [e.get("max_research_phase") or "" for e in items]
+        # A citable reference is a publication; a bare URL is the record the claim was read
+        # from and belongs on the retrieval source.
         urls = [
             e.get("reference") or "" for e in items
             if (e.get("reference") or "").startswith("http")
@@ -541,8 +574,10 @@ def research_edges(
             "aggregator_knowledge_source": [bl.AGGREGATOR],
             "knowledge_level": bl.KNOWLEDGE_LEVELS.get(predicate, "not_provided"),
             "agent_type": bl.agent_type(agent_kind="AI_AGENT"),
+            "description": first.get("explanation") or "",
+            "sources": _sources(primary, urls),
             "publications": _publications(e.get("reference") or "" for e in items),
-            "supporting_text": text,
+            "supporting_text": [text] if text else [],
             "max_research_phase": bl.research_phase(phases[0]),
             "clinical_approval_status": bl.clinical_approval_status(
                 first.get("approval_status") or ""),
@@ -551,13 +586,6 @@ def research_edges(
 
             "medic_research_phase_raw": _uniq(phases),
             "medic_approval_status_raw": first.get("approval_status") or "",
-            "medic_evidence_source": first.get("evidence_source") or "",
-            "medic_study_status": first.get("study_status") or "",
-            "medic_support": first.get("support") or "",
-            "medic_explanation": first.get("explanation") or "",
-            "medic_reference": first.get("reference") or "",
-            "medic_reference_title": first.get("reference_title") or "",
-            "medic_reference_url": urls[0] if urls else "",
             "medic_supporting_text_truncated": truncated or "",
             "medic_curation_status": record.get("curation_status") or "",
             "medic_reliability": reliability,
@@ -565,7 +593,7 @@ def research_edges(
         # A single raw phase reads better as a scalar than a one-element list.
         if len(edge["medic_research_phase_raw"]) == 1:
             edge["medic_research_phase_raw"] = edge["medic_research_phase_raw"][0]
-        built.append(_clean(edge))
+        built.append(_build(edge))
     return built
 
 
@@ -602,7 +630,7 @@ def adverse_event_edges(
             (source or "").upper(), bl.AE_REPORT_PREDICATE)
         primary = bl.primary_knowledge_source(source)
         text, truncated = _supporting_text(first.get("snippet") or "")
-        built.append(_clean({
+        built.append(_build({
             "id": edge_id(subject, predicate, obj, primary, source),
             "subject": subject,
             "predicate": predicate,
@@ -612,7 +640,7 @@ def adverse_event_edges(
             "knowledge_level": bl.KNOWLEDGE_LEVELS.get(predicate, "not_provided"),
             "agent_type": bl.agent_type(agent_kind="PIPELINE"),
             "publications": _publications([first.get("reference") or ""]),
-            "supporting_text": text,
+            "supporting_text": [text] if text else [],
             "original_object": record.get("adverse_event_label") or "",
 
             "medic_source": source,
@@ -668,7 +696,8 @@ def build_edges(
         for edge in edges_for_record:
             note(edge["object"], record.get("adverse_event_label") or "")
 
+    # The id is minted from (subject, predicate, object, source, document), so sorting on
+    # it last keeps two builds of unchanged products byte-identical.
     built.sort(key=lambda e: (e["subject"], e["predicate"], e["object"],
-                             e["primary_knowledge_source"], e.get("medic_document", ""),
-                             e["id"]))
+                             e["primary_knowledge_source"], e["id"]))
     return built, referenced

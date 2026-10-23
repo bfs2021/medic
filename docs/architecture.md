@@ -434,7 +434,7 @@ names. A claim is a `Claim` NamedTuple carrying:
 
 **Only `target` becomes the edge object.** The rest become Biolink qualifiers on the
 association (`disease_context_qualifier`, `population_context_qualifier`,
-`temporal_context_qualifier`, `sex_qualifier`) or, for co-administration, which Biolink 4.3.7
+`temporal_context_qualifier`, `sex_qualifier`) or, for co-administration, which Biolink 4.4.6
 does not model on this association, a namespaced `medic_co_administered_with`.
 
 This replaced four separate defects with one prompt change. A flat list of names promoted the
@@ -822,13 +822,25 @@ Generates files matching the v1.0.0 release format:
 ### 11.2 KGX export (Biolink knowledge graph)
 
 **Module:** `src/medic/export/kgx/` · **Targets:** `just export-kgx`, `just validate-kgx`
-**Biolink Model:** pinned at `4.3.7` · **Design:** [`specs/2026-08-13-kgx-export-design.md`](../specs/2026-08-13-kgx-export-design.md)
+**Biolink Model:** pinned at `4.4.6` · **Design:** [`specs/2026-08-13-kgx-export-design.md`](../specs/2026-08-13-kgx-export-design.md)
 
 The KGX export is the complete graph view of MeDIC — every product, not just drugs and
 indications. It is built in two layers: a strictly Biolink-valid core that a Translator
-ingest consumes unchanged, plus a `medic_`-namespaced extension layer carrying everything
-Biolink has no slot for. A strict consumer drops the extension layer with one rule and still
-has a valid graph.
+ingest consumes unchanged, plus a `medic_`-namespaced extension layer carrying what Biolink
+has no slot for and a consumer needs on the record itself. A strict consumer drops the
+extension layer with one rule and still has a valid graph.
+
+**Every record is an instance of a Biolink class.** The core of each node and edge is built
+by instantiating the matching class of the `biolink-model` pydantic model (generated from the
+same 4.4.6 schema) and dumping it. The class fixes `category`, rejects any property it does
+not declare (`extra="forbid"`), rejects enum values outside the permissible set and a list
+where it wants a scalar, and requires what is required. A term Biolink does not define
+therefore cannot reach the file. Six Biolink slots the model defines but does not attach to
+every class here (`clinical_approval_status` and `max_research_phase`, which 4.4.6 put on
+the `treats` class but not the contraindication class; `temporal_context_qualifier` and
+`sex_qualifier`; the two `*_location_in_text` offsets) are written beside the dumped core
+where the class lacks them; they are listed once in `biolink.py` with the reason each is
+there, and a test pins the list.
 
 **One edge per source assertion, not per pair.** Each edge is single-sourced by construction
 (the same property invariant I-10 enforces on `SourceAssertion`), so it carries exactly one
@@ -836,47 +848,85 @@ has a valid graph.
 aggregates ride along on every edge as `medic_pair_*`, so the collapsed drug–disease view is
 a `GROUP BY (subject, predicate, object)` rather than a re-derivation.
 
-**Nodes** (28,821):
+**Nodes** — one category each, the class's own:
 
 | Type | Category | Content |
 |---|---|---|
-| Drug | `biolink:Drug`, `biolink:ChemicalEntity` | name, synonyms, xrefs, ATC, SMILES, features, per-jurisdiction approval summary, reliability, `MEDICNE:` mention id |
-| Disease | `biolink:Disease` | all 23,224 from the disease list — definition, synonyms, crossrefs, subsets, and the `f_*` filter flags that are true |
+| Drug | `biolink:Drug` | name, synonyms, xrefs (incl. the SPL-asserted UNII), `available_from` (RX/OTC), ATC codes, SMILES, features, per-jurisdiction approval summary, reliability, `MEDICNE:` mention id |
+| Disease | `biolink:Disease` | all 23,224 from the disease list — definition, synonyms, crossrefs, MONDO `subsets` (a Biolink slot since 4.4.6), and the `f_*` filter flags that are true |
 | Stub | inferred from id prefix | edge endpoints no product describes (unmapped `UNII:`/`ORPHA:`/`UMLS:` ids), marked `medic_stub` so the graph stays referentially closed |
 
-**Edges** (12,858) — predicate chosen from recorded data, never from a source's name:
+**Edges** — predicate chosen from recorded data, never from a source's name, and the
+association class chosen by what it constrains:
 
-| Statement | Predicate | knowledge_level |
-|---|---|---|
-| Approved regulatory indication | `biolink:treats` | `knowledge_assertion` |
-| Indication not recorded as approved | `biolink:treats_or_applied_or_studied_to_treat` | `not_provided` |
-| Contraindication | `biolink:contraindicated_in` | `knowledge_assertion` |
-| Research — `max_research_phase: CASE_REPORT` | `biolink:applied_to_treat` | `observation` |
-| Research — numbered trial phase | `biolink:in_clinical_trials_for` | `observation` |
-| Research — other literature | `biolink:studied_to_treat` | `observation` |
-| Adverse event — PVLens (label-listed) | `biolink:has_side_effect` | `knowledge_assertion` |
-| Adverse event — FAERS (reported) | `biolink:has_adverse_event` | `observation` |
+| Statement | Predicate | Association class (`category`) | knowledge_level |
+|---|---|---|---|
+| Approved regulatory indication | `biolink:treats` | `ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation` | `knowledge_assertion` |
+| Vaccine / risk-reduction indication | `biolink:preventative_for_condition` | same | `knowledge_assertion` |
+| Diagnostic-agent indication | `biolink:diagnoses` | `ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation` | `knowledge_assertion` |
+| Indication not recorded as approved | `biolink:treats_or_applied_or_studied_to_treat` | `ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation` | `not_provided` |
+| Contraindication | `biolink:contraindicated_in` | `ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation` | `knowledge_assertion` |
+| Research — `max_research_phase: CASE_REPORT` | `biolink:applied_to_treat` | `ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation` | `observation` |
+| Research — numbered trial phase | `biolink:in_clinical_trials_for` | same | `observation` |
+| Research — other literature | `biolink:studied_to_treat` | same | `observation` |
+| Adverse event — PVLens (label-listed) | `biolink:has_side_effect` | `ChemicalOrDrugOrTreatmentSideEffectAssociation` | `knowledge_assertion` |
+| Adverse event — FAERS (reported) | `biolink:has_adverse_event` | `ChemicalOrDrugOrTreatmentAdverseEventAssociation` | `observation` |
+
+The treats-family class restricts its predicate to `treats or applied or studied to treat`,
+which every predicate in those rows specialises (`preventative_for_condition` through its
+`treats` mixin). `contraindicated_in` and `diagnoses` specialise nothing any class restricts
+to, so they take the unrestricted chemical-to-disease class rather than the bare
+`Association`. The gate checks the constraint, since the pydantic class types `predicate` as
+a plain string.
 
 `agent_type` is **derived** from `assertion.method` / `assertion.agent.agent_type` — an
 LLM-extracted DailyMed indication is a `text_mining_agent`, a structured field is a
-`data_analysis_pipeline`. It is never asserted as `manual_agent` wholesale.
+`data_analysis_pipeline`. It is never asserted as `manual_agent` wholesale. *Which* LLM and
+extractor version produced the build is one fact per build and lives in
+`medic_kgx_metadata.yaml` (`extraction_agents`), not on every edge.
+
+**Where the source record lives.** The document a claim was read from — its CURIE
+(`DailyMed:<setid>`), the landing page and the PDF — is Biolink's `source_record_urls`, a
+property of `RetrievalSource`. Every edge therefore carries one nested `sources` entry for its
+primary knowledge source holding those references. That is the one nested payload Biolink
+defines for an association's provenance; it replaces six flat `medic_*_url`/`medic_document`
+properties. The aggregator is not repeated inside `sources`, since
+`aggregator_knowledge_source` already states it.
 
 MeDIC's verbatim source strings map onto standard Biolink slots: `original_subject` /
-`original_object` (the I-7 literals), `supporting_text` (the quoted label span),
-`subject_location_in_text` / `object_location_in_text` (character offsets). The full
-transformation trail is not embedded — edges carry the `MEDICNE:` mention ids, which join to
-the shipped `mappings/*.sssom.tsv` and Babelon stores, so I-8 replayability holds at the
-graph level without JSON blobs in edge properties.
+`original_object` (the I-7 literals), `supporting_text` (the quoted label span, a
+one-element list — the slot is multivalued), `subject_location_in_text` /
+`object_location_in_text` (character offsets), `description` (the extraction's explanation).
+The label's context ships as `disease_context_qualifier` (a CURIE where it grounded),
+`population_context_qualifier`, `temporal_context_qualifier` and `sex_qualifier` (a PATO
+term, the slot's range being `biological sex`). The full transformation trail is not
+embedded — edges carry the `MEDICNE:` mention ids, which join to the shipped
+`mappings/*.sssom.tsv` and Babelon stores, so I-8 replayability holds at the graph level
+without JSON blobs in edge properties.
+
+**The extension layer is the residue, not the inventory.** It is kept to: the source /
+jurisdiction pair the I-1 gate checks; the raw approval status and date; the assertion
+quality flags and the truncation marker; the two mention-id join keys; the three pair
+aggregates a `GROUP BY` cannot rebuild (noisy-OR confidence, assertion count, tier); claim
+context Biolink has no qualifier for (further disease-context ids, co-administered drugs, the
+label's finer relation); and the allergen / diagnostic-agent markers on contraindications.
+Everything else that used to be namespaced was derivable from a Biolink slot on the same
+record, constant across the build, or replayable from the products through the join keys.
 
 **Validation.** `just export-kgx` checks the graph it just built against the *installed*
-Biolink model and exits non-zero on any error: unknown category/predicate/slot, a
-`medic_*` name shadowing a real slot, a dangling edge endpoint, a list where Biolink
-requires a scalar, and a source-isolation violation (I-1, echoed at the export boundary).
+Biolink model and exits non-zero on any error. Every record is re-validated through the
+pydantic class its `category` names — the same class that built it — so an edited or
+older file is held to the same rules: undeclared property, impermissible enum value, list
+where the class wants a scalar, missing required slot. On top of that: a predicate the
+association class does not admit, a `medic_*` name shadowing a real slot, a dangling edge
+endpoint, an off-class enum value, and a source-isolation violation (I-1, echoed at the
+export boundary).
 Unusual-but-legitimate findings (a `DRON:` prefix Biolink does not list, an edge that could
 not be attributed to a primary source) are warnings with counts.
 
 Output: `exports/medic_nodes.jsonl`, `exports/medic_edges.jsonl`,
-`exports/medic_kgx_metadata.yaml` (counts by category/predicate/source/reliability),
+`exports/medic_kgx_metadata.yaml` (counts by category/predicate/source/reliability, the
+extraction agents),
 `exports/infores_medic.yaml` (proposed Translator registry entry).
 
 ### 11.3 SSSOM export (drug mappings)

@@ -6,7 +6,7 @@ error of #89 — or dropped, which the audit scores as *correct* and so never co
 
 Biolink already has the slots on the `treats` association, and DAKP populates them on 5,686
 of its 16,655 `treats` edges, so there is consumer precedent in the same graph MeDIC sits
-next to. All five used here are in the pinned 4.3.7 model, which the conformance gate
+next to. All five used here are in the pinned 4.4.6 model, which the conformance gate
 checks independently: an un-namespaced edge property that is not a Biolink slot is an error.
 
 `disease_context_qualifier` is the one no source in the graph fills yet.
@@ -65,7 +65,7 @@ def test_a_sex_restriction_is_routed_to_the_sex_qualifier():
     """Biolink has a dedicated slot, and DAKP fills it on 1,991 edges. A population that is
     only a sex belongs there rather than in the general population slot."""
     e = _edge(population_context="postmenopausal women")
-    assert e["sex_qualifier"] == "women"
+    assert e["sex_qualifier"] == "PATO:0000383"       # female: the slot's range is a class
     assert e["population_context_qualifier"] == "postmenopausal women"
 
 
@@ -84,7 +84,8 @@ def test_several_disease_contexts_are_joined_on_one_slot():
 
 def test_co_administration_is_namespaced_not_a_biolink_slot():
     """Biolink has no co-administration slot on this association, so it goes in the
-    medic_ extension layer rather than being invented as a bare property."""
+    medic_ extension layer rather than being invented as a bare property — the class
+    constructor would reject it."""
     e = _edge(co_administered_with=["methotrexate"])
     assert e["medic_co_administered_with"] == ["methotrexate"]
     assert "co_administered_with" not in e
@@ -126,10 +127,11 @@ def test_a_word_containing_men_is_not_a_sex_restriction(population):
 
 
 @pytest.mark.parametrize("population,expected", [
-    ("postmenopausal women", "women"),
-    ("pregnant women", "women"),
-    ("adult males", "men"),
-    ("female patients of childbearing potential", "women"),
+    ("postmenopausal women", "PATO:0000383"),
+    ("pregnant women", "PATO:0000383"),
+    ("adult males", "PATO:0000384"),
+    ("female patients of childbearing potential", "PATO:0000383"),
 ])
 def test_a_real_sex_restriction_is_detected(population, expected):
+    """`sex_qualifier` has range `biological sex`, so the value is the PATO term."""
     assert _edge(population_context=population)["sex_qualifier"] == expected
