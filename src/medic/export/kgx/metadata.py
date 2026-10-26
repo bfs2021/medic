@@ -91,11 +91,38 @@ def extraction_agents(*products: list[dict]) -> list[dict]:
     ]
 
 
+def source_explanations(*products: list[dict]) -> list[dict]:
+    """The explanation each regulatory source attaches to its assertions, with counts.
+
+    An ingester writes one sentence per source ("FDA-approved indication from DailyMed
+    structured product label"), so on the edges it was a ``description`` taking a handful
+    of values across 70,000 records — the same shape as :func:`extraction_agents`, and it
+    lives here for the same reason. Research edges keep their per-claim explanation.
+    """
+    from medic import product_view as pv
+    from medic.export.kgx import biolink as bl
+
+    counts: Counter = Counter()
+    for product in products:
+        for assoc in product or []:
+            for assertion in pv.assoc_assertions(assoc):
+                regulatory = assertion.get("regulatory_status") or {}
+                evidence = assertion.get("evidence") or {}
+                source = regulatory.get("source") or assertion.get("source") or ""
+                primary = bl.primary_knowledge_source(source, regulatory.get("authority") or "")
+                counts[(primary, evidence.get("explanation") or "")] += 1
+    return [
+        {"primary_knowledge_source": primary, "description": text, "assertions": n}
+        for (primary, text), n in sorted(counts.items())
+    ]
+
+
 def content_metadata(
     nodes: list[dict],
     edges: list[dict],
     build_date: str = "",
     agents: list[dict] | None = None,
+    explanations: list[dict] | None = None,
 ) -> dict:
     """Counts a consumer needs before deciding whether to ingest the graph."""
     by_category: Counter = Counter()
@@ -115,6 +142,7 @@ def content_metadata(
         "build_date": build_date,
         "aggregator_knowledge_source": bl.AGGREGATOR,
         "extraction_agents": agents or [],
+        "source_explanations": explanations or [],
         "license": _license_block(),
         "nodes": {
             "total": len(nodes),

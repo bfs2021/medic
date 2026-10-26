@@ -896,7 +896,9 @@ properties. The aggregator is not repeated inside `sources`, since
 MeDIC's verbatim source strings map onto standard Biolink slots: `original_subject` /
 `original_object` (the I-7 literals), `supporting_text` (the quoted label span, a
 one-element list — the slot is multivalued), `subject_location_in_text` /
-`object_location_in_text` (character offsets), `description` (the extraction's explanation).
+`object_location_in_text` (character offsets), and on research edges `description` (the
+per-claim explanation; a regulatory source's one-sentence explanation is build-level and is
+recorded once in the metadata as `source_explanations`).
 The label's context ships as `disease_context_qualifier` (a CURIE where it grounded),
 `population_context_qualifier`, `temporal_context_qualifier` and `sex_qualifier` (a PATO
 term, the slot's range being `biological sex`). The full transformation trail is not

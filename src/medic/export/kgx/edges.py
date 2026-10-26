@@ -62,8 +62,19 @@ MEDICEDGE_NAMESPACE = uuid.uuid5(
 PUBLICATION_PREFIXES = ("PMID", "PMC", "NCT", "DOI")
 
 
+def _empty(value) -> bool:
+    """``None`` or an empty str/list/dict — the shapes a builder uses for "not set".
+
+    Written as a type check rather than ``v in ("", [], {}, None)``: that form runs ``==``
+    against the value, which raises on a pandas/numpy object ("truth value of a Series is
+    ambiguous"). Everything reaching the builders comes out of ``yaml.safe_load`` and is a
+    builtin, but this holds either way.
+    """
+    return value is None or (isinstance(value, (str, list, dict)) and not value)
+
+
 def _clean(edge: dict) -> dict:
-    return {k: v for k, v in sorted(edge.items()) if v not in ("", [], {}, None)}
+    return {k: v for k, v in sorted(edge.items()) if not _empty(v)}
 
 
 def _uniq(values) -> list[str]:
@@ -172,9 +183,13 @@ def _build(record: dict) -> dict:
     defines but does not attach to the class (:data:`bl.OFF_CLASS_EDGE_SLOTS`) and the
     ``medic_`` extension layer are merged in after the dump.
 
-    A ``ValidationError`` here is a bug in a builder, not bad data, and is left to propagate.
+    Two failures here raise and must keep raising: a ``ValidationError`` from the class,
+    and an extension key missing from :data:`bl.EXTENSION_SLOTS`. Both are a bug in a
+    builder, not bad data, and both are load-bearing for the property cull this module
+    went through — if either were swallowed, a property could silently vanish from a record
+    with nothing downstream to notice.
     """
-    record = {k: v for k, v in record.items() if v not in ("", [], {}, None)}
+    record = {k: v for k, v in record.items() if not _empty(v)}
     cls = bl.model_class(bl.association_category(record["predicate"]))
     extension = {k: v for k, v in record.items() if k.startswith(bl.EXTENSION_PREFIX)}
     # Only a slot *this* class lacks bypasses the constructor: `clinical_approval_status`
@@ -432,7 +447,11 @@ def association_edges(
             "knowledge_level": bl.KNOWLEDGE_LEVELS.get(predicate, "not_provided"),
             "agent_type": bl.agent_type(claim.get("method") or "",
                                         agent.get("agent_type") or ""),
-            "description": evidence.get("explanation") or "",
+            # No `description`: a regulatory assertion's explanation is the ingester's
+            # boilerplate per source ("FDA-approved indication from DailyMed structured
+            # product label"), one value across tens of thousands of edges. It is recorded
+            # once in the metadata (`source_explanations`); research edges, whose
+            # explanation is per claim, keep theirs.
 
             # the source record: document CURIE, landing page, PDF — on the retrieval source
             "sources": _sources(primary, [

@@ -98,6 +98,8 @@ def export_kgx(
             built_nodes, built_edges, build_date,
             agents=metadata_builders.extraction_agents(
                 products["indications"], products["contraindications"]),
+            explanations=metadata_builders.source_explanations(
+                products["indications"], products["contraindications"]),
         ),
         exports_dir / METADATA_FILE,
     )

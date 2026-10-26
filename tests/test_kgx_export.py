@@ -7,6 +7,8 @@ gate is what proves the rest of the export is Biolink-valid rather than plausibl
 
 from __future__ import annotations
 
+import copy
+
 import pytest
 
 from medic.export.kgx import biolink as bl
@@ -703,12 +705,24 @@ def test_the_source_record_lives_on_the_retrieval_source():
     assert not [k for k in edge if k.endswith("_url") or k in ("medic_document", "medic_setid")]
 
 
-def test_the_explanation_is_the_associations_description():
+def test_a_regulatory_explanation_is_build_level_not_a_description_on_every_edge():
+    """"EMA approved indication" is the ingester's one sentence per source; on the edge it
+    was ~4 MB of a valid slot saying the same thing 70,000 times. It is recorded once in the
+    metadata (see the metadata test below)."""
     from medic.export.kgx import edges
 
     edge = edges.association_edges(PAIR)[0]
-    assert edge["description"] == "EMA approved indication"
+    assert "description" not in edge
     assert "medic_explanation" not in edge
+
+
+def test_a_research_explanation_is_per_claim_and_stays_on_the_edge():
+    from medic.export.kgx import edges
+
+    record = copy.deepcopy(RESEARCH)
+    record["evidence"][0]["explanation"] = "Phase 3 ReDUX4 trial met its primary endpoint"
+    edge = edges.research_edges(record)[0]
+    assert edge["description"] == "Phase 3 ReDUX4 trial met its primary endpoint"
 
 
 def test_unapproved_indication_drops_to_the_grouping_predicate():
@@ -1014,6 +1028,14 @@ def test_build_level_agent_provenance_is_in_the_metadata_not_on_every_edge(tmp_p
         "assertions": 2,
     }]
     assert not any("medic_agent_name" in e or "medic_tool" in e for e in built_edges)
+    assert meta["source_explanations"] == [
+        {"primary_knowledge_source": "infores:ema", "description": "EMA approved indication",
+         "assertions": 1},
+        {"primary_knowledge_source": "infores:pmda", "description": "EMA approved indication",
+         "assertions": 1},
+    ]
+    assert not any("description" in e for e in built_edges
+                   if e["primary_knowledge_source"] == "infores:ema")
 
 
 def test_export_closes_dangling_endpoints_with_stubs(tmp_path):

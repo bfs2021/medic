@@ -606,8 +606,10 @@ are written beside the dumped core where the class lacks them, listed once as
 `biolink.OFF_CLASS_EDGE_SLOTS` with the reason, and pinned by a test.
 `population_context_qualifier` was in the list under 4.3.7; 4.4.6 attaches it to all four
 classes, so it now goes through the constructor.
-`supporting_text_section_type` was in the same position and was dropped (three values,
-no consumer). `sex_qualifier` now takes the PATO term, the slot's range being a class.
+`supporting_text_section_type` was in the same position and was dropped: it is recoverable
+from `medic_label_section`, which names the SPL section the span came from, so it clears
+the same bar as the rest of the removed list. `sex_qualifier` now takes the PATO term, the
+slot's range being a class.
 
 **`sources`.** The document CURIE, landing page and PDF URL go on one nested
 `RetrievalSource` for the primary knowledge source as `source_record_urls` — the slot's
@@ -616,6 +618,10 @@ This is the only nested payload Biolink defines for association provenance, and 
 `medic_document`, `medic_document_url`, `medic_source_document_url`, `medic_reference`,
 `medic_reference_url` and `medic_setid`. `supporting_text` is a one-element list: the slot
 is multivalued in 4.3.7 and 4.4.6, and §5.4's "single-valued" claim was wrong.
+
+A nested object is representable in KGX JSONL but not in KGX TSV: a TSV sink will stringify
+the `sources` column. A consumer merging through TSV should take the document CURIE from
+`source_record_urls[0]` before converting, or merge from the JSONL.
 
 **Extension layer, after.** Edge: `medic_source`, `medic_jurisdiction`,
 `medic_approval_status_raw`, `medic_approval_date`, `medic_assertion_flags`,
@@ -631,7 +637,10 @@ is multivalued in 4.3.7 and 4.4.6, and §5.4's "single-valued" claim was wrong.
 `medic_registration_numbers`, `medic_reliability`, `medic_mention_id`, `medic_stub`,
 `medic_f_*`.
 
-Removed, and why: `medic_explanation` → `description`; `medic_marketing_status_usa`
+Removed, and why: `medic_explanation` → the metadata's `source_explanations` (a regulatory
+assertion's explanation is the ingester's one sentence per source, six distinct strings
+across 70,000 edges, the same build-level shape as the agent columns; research edges keep
+their per-claim explanation as `description`); `medic_marketing_status_usa`
 additionally → `available_from` for RX/OTC; `medic_agent_name` / `_agent_version` /
 `_tool` / `_tool_version` / `_assertion_method` were one value across the build and are now
 `extraction_agents` in the metadata file; `medic_authority`, `medic_source_role`,
