@@ -899,7 +899,11 @@ one-element list — the slot is multivalued), `subject_location_in_text` /
 `object_location_in_text` (character offsets), and on research edges `description` (the
 per-claim explanation; a regulatory source's one-sentence explanation is build-level and is
 recorded once in the metadata as `source_explanations`).
-The label's context ships as `disease_context_qualifier` (a CURIE where it grounded),
+The label's context ships as `disease_context_qualifier` (**a MONDO term only** — the
+slot's range is `disease`, and a UMLS or HP id passes the pydantic constructor while free
+text passes the `str` typing, so neither guard catches a value that is not one; every
+grounded id whatever its prefix stays on `medic_disease_context_ids` and the label's own
+wording on `medic_disease_context`, so narrowing the slot loses nothing),
 `population_context_qualifier`, `temporal_context_qualifier` and `sex_qualifier` (a PATO
 term, the slot's range being `biological sex`). The full transformation trail is not
 embedded — edges carry the `MEDICNE:` mention ids, which join to the shipped

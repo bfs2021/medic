@@ -436,6 +436,22 @@ OFF_CLASS_ENUMS = {
 #: label's word maps to the term rather than shipping ``"women"`` in a class-ranged slot.
 SEX_QUALIFIER_TERMS = {"female": "PATO:0000383", "male": "PATO:0000384"}
 
+#: The only prefix ``disease_context_qualifier`` may carry (#110).
+#:
+#: The slot's range is ``disease``, and neither guard on the way out catches a value that is
+#: not one: UMLS and HP are on that class's ``id_prefixes``, so the pydantic constructor
+#: accepts them, and the slot is typed as a plain ``str``, so it accepts free text too. On
+#: the 95,170-edge build the slot was populated 20,342 times and only 10,314 of those were
+#: MONDO — 3,702 UMLS, 1,618 HP and 4,708 free text over 1,022 distinct strings, several of
+#: them wording variants of one context ("non-neutropenic", "non-neutropenic patients")
+#: that split otherwise identical edges.
+#:
+#: Narrowed to MONDO rather than to the class's whole prefix list so the context is a node
+#: in the same disease space the edge's own object sits in, which is what a consumer joins
+#: on. The non-MONDO ids are not discarded: every grounded id stays on
+#: ``medic_disease_context_ids`` and the verbatim names on ``medic_disease_context``.
+DISEASE_CONTEXT_PREFIX = "MONDO"
+
 EXTENSION_PREFIX = "medic_"
 
 #: Everything MeDIC knows that Biolink has no slot for **and** that a graph consumer needs
@@ -469,8 +485,13 @@ EXTENSION_SLOTS = (
     "medic_subject_mention_id", "medic_object_mention_id",
     # edge — pair aggregates (repeated on every edge of the pair, spec §2.1)
     "medic_pair_confidence", "medic_pair_n_assertions", "medic_pair_reliability",
-    # edge — claim context with no Biolink qualifier
-    "medic_disease_context_ids", "medic_co_administered_with", "medic_claim_relation",
+    # edge — claim context with no Biolink qualifier. `medic_disease_context` carries the
+    # label's own wording: once `disease_context_qualifier` is MONDO-only (#110) nothing
+    # else on the record holds the context for the 4,708 edges whose context did not ground,
+    # so by this tuple's own bar — not on a Biolink slot here, not constant, not replayable
+    # through a mention id, since contexts are not minted one — it has to stay.
+    "medic_disease_context", "medic_disease_context_ids",
+    "medic_co_administered_with", "medic_claim_relation",
     # edge — contraindication specifics
     "medic_is_allergen", "medic_is_diagnostic_agent",
     # edge — research

@@ -611,6 +611,41 @@ from `medic_label_section`, which names the SPL section the span came from, so i
 the same bar as the rest of the removed list. `sex_qualifier` now takes the PATO term, the
 slot's range being a class.
 
+**`disease_context_qualifier` carries MONDO and nothing else (#110).** The slot's range is
+`disease`, and neither guard on the way out enforces that. UMLS and HP are on the `disease`
+class's `id_prefixes`, so the pydantic constructor accepts them; the field is typed as a
+plain `str`, so it accepts free text. On the 95,170-edge build the slot was populated 20,342
+times and only 10,314 of those were MONDO — 3,702 UMLS, 1,618 HP, and 4,708 free text over
+1,022 distinct strings. Much of the free text is not a disease at all
+(`radiological examination of the stomach and/or small intestine`), and several strings are
+wording variants of one context (`non-neutropenic`, `non-neutropenic patients`), which also
+splits otherwise identical edges.
+
+Narrowed to MONDO rather than to the class's whole prefix list, so a context is a node in
+the same disease space the edge's object already sits in — which is what a consumer joins
+on. The rule takes the **first MONDO term among the grounded ids**, not the first id if it
+happens to be MONDO: the ids arrive in the order the label named the contexts, which carries
+no priority, and the positional reading blanks the slot on 481 edges that do have a MONDO
+context sitting behind a CUI.
+
+Nothing is dropped. Every grounded id, whatever its prefix, stays on
+`medic_disease_context_ids`, and the label's own wording is on `medic_disease_context` —
+one property added back to the extension layer, because by that layer's own bar the
+verbatim context is not on a Biolink slot on the record once this slot is MONDO-only, is
+not constant across the build, and is not replayable through a mention id, since a context
+is never minted one. The two are **positionally aligned**, which is the contract
+`record_claim_context` already writes in the products: the id at index *i* grounds the name
+at index *i*, and is `""` where it did not ground. The edge builder used to compact the id
+list, which was harmless while the names were not on the edge; with both there it would
+re-pair every name after an ungrounded one with the wrong CURIE. The conformance gate
+rejects any non-MONDO value on the slot, so a file from an older build or an edited export
+is held to the rule too.
+
+The UMLS and HP residue is **not** a context-specific grounding gap: `ground_context_names`
+already resolves through `resolve_disease_onto_record`, the same two-stage
+grounding + normalisation the edge objects get. A context that stays a CUI is the same
+normalisation gap as an object that stays a CUI, so it is fixed there or not at all.
+
 **`sources`.** The document CURIE, landing page and PDF URL go on one nested
 `RetrievalSource` for the primary knowledge source as `source_record_urls` — the slot's
 domain is `retrieval source`, which is why §5.4 had rejected putting it flat on the edge.
@@ -627,7 +662,8 @@ the `sources` column. A consumer merging through TSV should take the document CU
 `medic_approval_status_raw`, `medic_approval_date`, `medic_assertion_flags`,
 `medic_supporting_text_truncated`, `medic_subject_mention_id`, `medic_object_mention_id`,
 `medic_pair_confidence`, `medic_pair_n_assertions`, `medic_pair_reliability`,
-`medic_reliability`, `medic_disease_context_ids`, `medic_co_administered_with`,
+`medic_reliability`, `medic_disease_context`, `medic_disease_context_ids`,
+`medic_co_administered_with`,
 `medic_claim_relation`, `medic_is_allergen`, `medic_is_diagnostic_agent`,
 `medic_research_phase_raw`, `medic_curation_status`, `medic_severity`, `medic_frequency`,
 `medic_label_section`. Node: `medic_smiles`, `medic_atc_codes`, `medic_features`,

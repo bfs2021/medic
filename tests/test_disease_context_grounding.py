@@ -189,10 +189,15 @@ def test_the_grounded_curie_goes_on_the_biolink_slot():
     assert "medic_disease_context_labels" not in e   # the ids name themselves
 
 
-def test_an_ungrounded_context_still_ships_its_label():
-    """Dropping the context because it did not ground would lose more than it protects."""
+def test_an_ungrounded_context_still_ships_its_label_but_not_on_the_biolink_slot():
+    """Dropping the context because it did not ground would lose more than it protects — so
+    the label still ships, on the namespaced property. It used to ship on
+    `disease_context_qualifier` itself, which was the lesser of two evils only until there
+    was somewhere else to put it: the slot's range is `disease`, and a string satisfies the
+    slot's name and nothing more (#110)."""
     e = _edge(disease_context=["congenital heart disease"])
-    assert e["disease_context_qualifier"] == "congenital heart disease"
+    assert "disease_context_qualifier" not in e
+    assert e["medic_disease_context"] == ["congenital heart disease"]
     assert "medic_disease_context_ids" not in e
 
 

@@ -28,6 +28,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
+from medic.curie_utils import get_prefix
 from medic.export.kgx import biolink as bl
 
 ERROR = "error"
@@ -173,6 +174,20 @@ def _check_edge(edge: dict, node_ids: set[str], report: Report) -> None:
                     if not k.startswith(bl.EXTENSION_PREFIX)
                     and not (k in bl.OFF_CLASS_EDGE_SLOTS and k not in fields)}
             _validate_as(category, core, "edge", report)
+
+    # `disease_context_qualifier` has range `disease`, and nothing on the way out enforces
+    # it: UMLS and HP are on that class's `id_prefixes` so the constructor takes them, and
+    # the field is typed `str` so it takes free text. Checked here because this is the only
+    # place that can (#110). The grounded ids and the label's wording are on
+    # `medic_disease_context_ids` / `medic_disease_context`, so this rejects a value in the
+    # wrong place rather than a value that has nowhere else to go.
+    context = edge.get("disease_context_qualifier")
+    if context and get_prefix(context) != bl.DISEASE_CONTEXT_PREFIX:
+        report.error(
+            f"edge {edge_id} has disease_context_qualifier '{context}', which is not a "
+            f"{bl.DISEASE_CONTEXT_PREFIX} term — the slot's range is `disease` and the "
+            f"context belongs on medic_disease_context_ids or medic_disease_context"
+        )
 
     # The off-class slots never meet the class constructor, so their enum ranges are
     # checked here. Existence was checked by _check_properties.

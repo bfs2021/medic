@@ -38,6 +38,7 @@ import uuid
 from pydantic import ValidationError
 
 from medic import product_view as pv
+from medic.curie_utils import get_prefix
 from medic.export.kgx import biolink as bl
 from medic.reliability import (
     StatementReviewStore,
@@ -267,6 +268,25 @@ def _sex_qualifier(population: str) -> str:
     return ""
 
 
+def _mondo_context(context_ids: list[str]) -> str:
+    """The first MONDO term among the grounded contexts, or ``""``.
+
+    The *first MONDO* rather than "the first id, if it happens to be MONDO". Both rules
+    guarantee a conformant slot, but the positional one blanks the slot on 481 edges of the
+    95,170-edge build that do have a MONDO context sitting behind a CUI — the ids arrive in
+    the order the label named the contexts, which carries no priority, so reading position 0
+    as the preferred context would be inventing a meaning it does not have.
+
+    ``get_prefix`` rather than a ``split(":")``: the project's CURIE contract, and it also
+    makes free text fall out here instead of being matched as a prefix (it returns ``""``
+    for a string that is not a CURIE).
+    """
+    for context_id in context_ids:
+        if get_prefix(context_id) == bl.DISEASE_CONTEXT_PREFIX:
+            return context_id
+    return ""
+
+
 def _claim_qualifiers(evidence: dict) -> dict:
     """Map the label's recorded context onto Biolink qualifier slots (#90).
 
@@ -275,21 +295,33 @@ def _claim_qualifiers(evidence: dict) -> dict:
     that half was never counted. Biolink carries these on the `treats` association and DAKP
     already populates them on 5,686 of its 16,655 treats edges.
 
-    `disease_context_qualifier` is single-valued, so only the first grounded context goes on
-    it and the full set goes on the namespaced `medic_disease_context_ids`. Co-administration
+    `disease_context_qualifier` is single-valued, so only one context goes on it and the
+    full set goes on the namespaced `medic_disease_context_ids`. Co-administration
     has no Biolink slot on this association, so it stays in the `medic_` extension layer
     rather than being invented as a bare property — the class constructor would reject it,
     correctly.
+
+    `medic_disease_context` and `medic_disease_context_ids` stay **positionally aligned**,
+    which is the contract `record_claim_context` writes in the products: the id at index *i*
+    is the grounding of the name at index *i*, and `""` where that name did not ground. The
+    ids used to be compacted here, which was harmless while the names were not on the edge;
+    now that they are, compacting would silently re-pair every name after an ungrounded one
+    with the wrong CURIE.
     """
     contexts = [c for c in (evidence.get("disease_context") or []) if c]
-    context_ids = [c for c in (evidence.get("disease_context_ids") or []) if c]
+    context_ids = list(evidence.get("disease_context_ids") or [])
     population = (evidence.get("population_context") or "").strip()
     return {
-        # Biolink types this slot `disease` — a class, not a string — so the CURIE is what it
-        # actually wants, and a free-text value satisfies only the slot's name. The grounded
-        # id goes here when there is one; the label falls back otherwise, because losing the
-        # context entirely because it did not ground would be worse than an untyped value.
-        "disease_context_qualifier": context_ids[0] if context_ids else ", ".join(contexts),
+        # Biolink types this slot `disease` — a class, not a string — so only a MONDO term
+        # goes on it (#110). A UMLS or HP id passes the constructor, because both are on the
+        # class's `id_prefixes`, and free text passes because the field is typed `str`; both
+        # satisfy the slot's name rather than its range. Nothing is lost by the narrowing:
+        # every grounded id is on `medic_disease_context_ids` and the label's own wording is
+        # on `medic_disease_context`, so an ungrounded context is still readable and still
+        # searchable as text from the export itself. `_mondo_context` skips the `""`
+        # placeholders by construction, since they have no prefix.
+        "disease_context_qualifier": _mondo_context(context_ids),
+        "medic_disease_context": contexts,
         "medic_disease_context_ids": context_ids,
         "population_context_qualifier": population,
         "temporal_context_qualifier": (evidence.get("temporal_context") or "").strip(),
