@@ -209,8 +209,9 @@ def record_claim_context(
 
     What kind of relation it is, who owns it, and the context it is restricted to — the
     fields the flat disease list could not carry. All declared on `EvidenceItem` and mapped
-    to Biolink qualifiers at export: `disease_context_qualifier`,
-    `population_context_qualifier`, `temporal_context_qualifier` (#88, #89, #90, #99).
+    to Biolink qualifiers or their namespaced verbatim homes at export:
+    `disease_context_qualifier` (MONDO only) with `medic_disease_context`,
+    `medic_population_context` and `medic_temporal_context` (#88, #89, #90, #99, #111).
 
     Only non-default values are written, so a plain product-level `treats` claim adds
     nothing and the products do not grow by a column of constants.

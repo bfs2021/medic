@@ -287,6 +287,32 @@ def _mondo_context(context_ids: list[str]) -> str:
     return ""
 
 
+def _population_term(population: str) -> str:
+    """The population string only when it is a term the slot's range accepts (#111).
+
+    ``population_context_qualifier`` is ranged to ``population of individual organisms``,
+    whose identifiers the model declares as HANCESTRO terms — an ancestry vocabulary. The
+    label's values (``adults``, ``pediatric patients``, ``women``) are phrases: 33,244
+    populated edges, not one a term, and no vocabulary in the model names them. Free text
+    therefore falls out here the way free disease text falls out of ``_mondo_context``, the
+    verbatim string is kept on ``medic_population_context``, and the sex part of the phrase
+    is already routed to ``sex_qualifier`` in its own term form. A grounding step that one
+    day maps the repetitive head of the distribution to real terms fills the slot again by
+    extending this function — the same door #110 left open for disease contexts.
+    """
+    return population if get_prefix(population) in bl.POPULATION_CONTEXT_PREFIXES else ""
+
+
+#: Populations whose entire content is the sex ``sex_qualifier`` already states on the same
+#: edge (#111). Matched against the whole trimmed, lowercased string, so ``pregnant women``
+#: and ``females of reproductive potential`` are kept — they say more than the PATO term —
+#: while ``females`` and ``women`` are dropped rather than duplicated onto
+#: ``medic_population_context``.
+_SEX_ONLY_POPULATIONS = frozenset(
+    {"female", "females", "woman", "women", "male", "males", "man", "men"}
+)
+
+
 def _claim_qualifiers(evidence: dict) -> dict:
     """Map the label's recorded context onto Biolink qualifier slots (#90).
 
@@ -311,6 +337,7 @@ def _claim_qualifiers(evidence: dict) -> dict:
     contexts = [c for c in (evidence.get("disease_context") or []) if c]
     context_ids = list(evidence.get("disease_context_ids") or [])
     population = (evidence.get("population_context") or "").strip()
+    temporal = (evidence.get("temporal_context") or "").strip()
     return {
         # Biolink types this slot `disease` — a class, not a string — so only a MONDO term
         # goes on it (#110). A UMLS or HP id passes the constructor, because both are on the
@@ -323,8 +350,18 @@ def _claim_qualifiers(evidence: dict) -> dict:
         "disease_context_qualifier": _mondo_context(context_ids),
         "medic_disease_context": contexts,
         "medic_disease_context_ids": context_ids,
-        "population_context_qualifier": population,
-        "temporal_context_qualifier": (evidence.get("temporal_context") or "").strip(),
+        # The other two qualifier slots are ranged as well (#111) — population to the class
+        # `population of individual organisms` (HANCESTRO identifiers), temporal to the
+        # `time type` lexical space (a point in time, xsd:time) — and the same rule holds:
+        # the slot carries what its range admits, and the label's wording, which never
+        # does, stays on the namespaced property. `temporal_context_qualifier` is therefore
+        # not emitted at all: no value MeDIC holds is a time expression. Only a population
+        # that restates `sex_qualifier` is dropped outright, since the edge already states
+        # it in the slot's own term form.
+        "population_context_qualifier": _population_term(population),
+        "medic_population_context":
+            "" if population.lower() in _SEX_ONLY_POPULATIONS else population,
+        "medic_temporal_context": temporal,
         "sex_qualifier": _sex_qualifier(population),
         "medic_co_administered_with": list(evidence.get("co_administered_with") or []),
         # Kept because two relations share `treats` and two share

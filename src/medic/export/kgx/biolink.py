@@ -411,9 +411,13 @@ def association_category(predicate: str) -> str:
 #:   they still bypass it. The slots' own definitions are about a chemical–condition pair,
 #:   which is what every edge here is.
 #: * ``temporal_context_qualifier`` / ``sex_qualifier`` — attached only to exposure-outcome
-#:   and phenotype associations. They carry the label's stated context (#90) and DAKP
+#:   and phenotype associations. They carried the label's stated context (#90) and DAKP
 #:   ships them on ``treats`` edges in the same graph. (``population_context_qualifier``
 #:   left this list in 4.4.6, which attached it to every class the exporter writes.)
+#:   ``temporal_context_qualifier`` is no longer emitted at all (#111): its range is the
+#:   ``time type`` lexical space, which no label wording satisfies. It stays listed so a
+#:   record that still carries one is validated by the gate's own range check rather than
+#:   failing the class constructor with an unexplained extra field.
 #: * ``subject_location_in_text`` / ``object_location_in_text`` — attached only to
 #:   ``TextMiningStudyResult``; they are offsets into ``supporting_text``, which *is* on
 #:   the association.
@@ -451,6 +455,32 @@ SEX_QUALIFIER_TERMS = {"female": "PATO:0000383", "male": "PATO:0000384"}
 #: on. The non-MONDO ids are not discarded: every grounded id stays on
 #: ``medic_disease_context_ids`` and the verbatim names on ``medic_disease_context``.
 DISEASE_CONTEXT_PREFIX = "MONDO"
+
+#: The prefixes ``population_context_qualifier`` may carry (#111), read from the installed
+#: model rather than hardcoded so a model bump keeps the rule honest.
+#:
+#: The slot's range is ``population of individual organisms``, and 4.4.6 attaches it to
+#: every class the exporter writes, so the constructor sees the value — but the field is
+#: typed ``str``, so free text passes. The class's ``id_prefixes`` name the vocabulary its
+#: instances come from: HANCESTRO, an ancestry/geography ontology. MeDIC's 33,244 populated
+#: values are the label's own phrases (``adults``, ``pediatric patients``, ``women``) — not
+#: one is a term in that or any vocabulary, and the term table that would route them does
+#: not exist (spec §5.5 reached the same conclusion for the extractor's ``patient_type``).
+#: Free text therefore never rides the slot: the verbatim string goes on
+#: ``medic_population_context`` and a future grounding step fills the slot through
+#: ``edges._population_term``.
+POPULATION_CONTEXT_PREFIXES = id_prefixes("biolink:PopulationOfIndividualOrganisms")
+
+#: ``temporal_context_qualifier`` has range ``time type`` (#111) — not a class but a LinkML
+#: type, "a value representing a point in time, serialised as a lexical representation of
+#: xsd:time". There is no vocabulary to ground to and nothing to route: on the 95,170-edge
+#: build not one of the 7,404 populated values is a time expression — they are phrases
+#: (``postoperative``, ``prior to conception``), and the most frequent ones are not even
+#: temporal (``for surgery, dental and oral surgery procedures ...`` is a setting). The
+#: exporter no longer populates the slot; the label's wording rides
+#: ``medic_temporal_context``. The gate checks the range the model actually declares, so an
+#: old build's prose is rejected rather than passed on the slot's name.
+XSD_TIME_PATTERN = re.compile(r"^\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2})?$")
 
 EXTENSION_PREFIX = "medic_"
 
@@ -490,7 +520,11 @@ EXTENSION_SLOTS = (
     # else on the record holds the context for the 4,708 edges whose context did not ground,
     # so by this tuple's own bar — not on a Biolink slot here, not constant, not replayable
     # through a mention id, since contexts are not minted one — it has to stay.
+    # `medic_population_context` / `medic_temporal_context` are the same judgement for the
+    # other two class-ranged qualifier slots (#111): free text cannot ride them, and the
+    # verbatim wording is the only home it has.
     "medic_disease_context", "medic_disease_context_ids",
+    "medic_population_context", "medic_temporal_context",
     "medic_co_administered_with", "medic_claim_relation",
     # edge — contraindication specifics
     "medic_is_allergen", "medic_is_diagnostic_agent",

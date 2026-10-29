@@ -646,6 +646,41 @@ already resolves through `resolve_disease_onto_record`, the same two-stage
 grounding + normalisation the edge objects get. A context that stays a CUI is the same
 normalisation gap as an object that stays a CUI, so it is fixed there or not at all.
 
+**`population_context_qualifier` and `temporal_context_qualifier` carry what their ranges
+admit — for MeDIC's values, nothing (#111).** Same class of problem as the slot above, so
+the same principle decides them: a class-ranged qualifier carries a term the range's
+vocabulary names, the label's wording stays on a `medic_` property, and the gate holds the
+rule. Measured on the 95,170-edge build:
+
+- *Population* (33,244 populated, 4,125 distinct, not one a CURIE): the range class
+  `population of individual organisms` declares its identifiers as HANCESTRO terms — an
+  ancestry/geography ontology with no term for any of the values, head or tail (`adults`,
+  `adult patients`, `pediatric patients`, ...). The term table the head would need does not
+  exist (§5.5 reached the same conclusion for the extractor's `patient_type`), and routing
+  the head to MeSH check tags — the UMLS T098 vocabulary, one of the class's
+  `exact_mappings` — measured at ~23% of populated edges while putting ids outside the
+  declared `id_prefixes` on a class-ranged slot, the exact violation #110 removed. Free
+  text therefore no longer rides the slot: `edges._population_term` passes a value through
+  only when its prefix is in the class's declared `id_prefixes` (none today; the same door
+  `_mondo_context` left open), every verbatim string goes on the new
+  `medic_population_context`, and a population that only restates `sex_qualifier`
+  (`females`, `women`) is dropped outright, the edge already stating it in the slot's own
+  term form.
+- *Temporal* (7,404 populated, 1,527 distinct): the range `time type` is not a class in the
+  model but a LinkML type — "a point in time, serialised as a lexical representation of
+  xsd:time". There is nothing to ground to, and the measured share of populated values that
+  is a time expression is **0 of 7,404**: the field is extraction over-fill, mixing
+  genuinely temporal phrases (`prior to conception`, `postoperative`) with settings
+  (`for surgery, dental and oral surgery procedures ...`) and effect claims
+  (`temporary relief`). The slot is no longer populated at all and the wording rides the
+  new `medic_temporal_context`, so nothing is lost; whether the wording belongs in the
+  extraction at all is #89's question, not this one.
+
+The gate rejects a value whose prefix is outside the range class's `id_prefixes` on
+`population_context_qualifier`, and any non-xsd:time value on `temporal_context_qualifier`
+— so a file from an older build, where every populated value fails, is held to the rule,
+and the builders cannot regress it quietly.
+
 **`sources`.** The document CURIE, landing page and PDF URL go on one nested
 `RetrievalSource` for the primary knowledge source as `source_record_urls` — the slot's
 domain is `retrieval source`, which is why §5.4 had rejected putting it flat on the edge.
@@ -663,7 +698,7 @@ the `sources` column. A consumer merging through TSV should take the document CU
 `medic_supporting_text_truncated`, `medic_subject_mention_id`, `medic_object_mention_id`,
 `medic_pair_confidence`, `medic_pair_n_assertions`, `medic_pair_reliability`,
 `medic_reliability`, `medic_disease_context`, `medic_disease_context_ids`,
-`medic_co_administered_with`,
+`medic_population_context`, `medic_temporal_context`, `medic_co_administered_with`,
 `medic_claim_relation`, `medic_is_allergen`, `medic_is_diagnostic_agent`,
 `medic_research_phase_raw`, `medic_curation_status`, `medic_severity`, `medic_frequency`,
 `medic_label_section`. Node: `medic_smiles`, `medic_atc_codes`, `medic_features`,

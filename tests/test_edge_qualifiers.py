@@ -52,27 +52,52 @@ def test_a_grounded_disease_context_becomes_a_qualifier():
     assert e["disease_context_qualifier"] == "MONDO:0005453"
 
 
-def test_a_population_becomes_a_qualifier():
+def test_free_text_population_stays_off_the_class_ranged_slot():
+    """`population_context_qualifier` has range `population of individual organisms`, whose
+    identifiers the model declares as HANCESTRO terms — an ancestry vocabulary (#111). The
+    label's phrases satisfy the slot's `str` typing, not its range: 33,244 populated edges
+    on the current build, not one a term. The wording is kept on `medic_population_context`
+    the way #110 keeps `medic_disease_context`, and a grounding step that one day maps the
+    repetitive head to real terms fills the slot again (`_population_term`)."""
     e = _edge(population_context="adult and pediatric patients")
-    assert e["population_context_qualifier"] == "adult and pediatric patients"
+    assert "population_context_qualifier" not in e
+    assert e["medic_population_context"] == "adult and pediatric patients"
 
 
-def test_a_temporal_context_becomes_a_qualifier():
+def test_free_text_temporal_context_stays_off_the_class_ranged_slot():
+    """`temporal_context_qualifier` has range `time type` — not a class but a LinkML type,
+    "a point in time ... serialised as a lexical representation of xsd:time". Not one of
+    the 6,023 populated values on the current build is one; they are phrases ("postoperative",
+    "prior to conception"), and some are not temporal at all (#111). The slot is no longer
+    populated and the wording rides `medic_temporal_context`."""
     e = _edge(temporal_context="following myocardial infarction")
-    assert e["temporal_context_qualifier"] == "following myocardial infarction"
+    assert "temporal_context_qualifier" not in e
+    assert e["medic_temporal_context"] == "following myocardial infarction"
 
 
 def test_a_sex_restriction_is_routed_to_the_sex_qualifier():
     """Biolink has a dedicated slot, and DAKP fills it on 1,991 edges. A population that is
-    only a sex belongs there rather than in the general population slot."""
+    only a sex belongs there rather than in the general population slot; the population
+    itself keeps its wording, since "postmenopausal" says more than `sex_qualifier` does."""
     e = _edge(population_context="postmenopausal women")
     assert e["sex_qualifier"] == "PATO:0000383"       # female: the slot's range is a class
-    assert e["population_context_qualifier"] == "postmenopausal women"
+    assert e["medic_population_context"] == "postmenopausal women"
+
+
+def test_a_population_that_only_restates_the_sex_qualifier_is_stripped():
+    """`females` adds nothing the `sex_qualifier` PATO term on the same edge does not
+    already state (#111), so the verbatim string is dropped rather than duplicated onto
+    `medic_population_context`."""
+    e = _edge(population_context="females")
+    assert e["sex_qualifier"] == "PATO:0000383"
+    assert "medic_population_context" not in e
+    assert "population_context_qualifier" not in e
 
 
 def test_a_population_without_a_sex_sets_no_sex_qualifier():
     e = _edge(population_context="adults")
     assert "sex_qualifier" not in e
+    assert e["medic_population_context"] == "adults"
 
 
 def test_several_disease_contexts_put_one_term_on_the_slot():
@@ -146,6 +171,38 @@ def test_the_gate_rejects_a_non_mondo_context_qualifier():
     assert [p for p in report.errors if "not a MONDO term" in str(p)]
 
 
+# ---------------------------------------------------------------------------
+# The population and temporal slots are ranged too (#111)
+# ---------------------------------------------------------------------------
+def test_the_gate_rejects_free_text_on_the_population_qualifier():
+    """Old builds carried 33,244 free-text values on the slot, not one of them a term in
+    the range class's declared vocabulary. The gate holds the range for a file written by
+    an older build or edited by hand, as it does for `disease_context_qualifier`."""
+    e = _edge(population_context="adults")
+    report = validate.check([], [{**e, "population_context_qualifier": "adults"}])
+    assert [p for p in report.errors if "population_context_qualifier" in str(p)]
+
+
+def test_the_gate_takes_a_term_from_the_range_vocabulary_on_the_population_qualifier():
+    e = _edge(population_context="adults")
+    report = validate.check([], [{**e, "population_context_qualifier": "HANCESTRO:0004"}])
+    assert not [p for p in report.errors if "population_context_qualifier" in str(p)]
+
+
+def test_the_gate_rejects_prose_on_the_temporal_qualifier():
+    """The range is a LinkML `time type`: a point in time in xsd:time lexical form. Every
+    one of the 6,023 values the current build used to carry is prose, not a time."""
+    e = _edge(temporal_context="postoperative")
+    report = validate.check([], [{**e, "temporal_context_qualifier": "postoperative"}])
+    assert [p for p in report.errors if "temporal_context_qualifier" in str(p)]
+
+
+def test_the_gate_takes_an_xsd_time_on_the_temporal_qualifier():
+    e = _edge(temporal_context="postoperative")
+    report = validate.check([], [{**e, "temporal_context_qualifier": "13:45:30"}])
+    assert not [p for p in report.errors if "temporal_context_qualifier" in str(p)]
+
+
 def test_the_gate_rejects_free_text_on_the_context_qualifier():
     e = _edge(disease_context=["congenital heart disease"],
               disease_context_ids=["MONDO:0005453"])
@@ -172,7 +229,8 @@ def test_co_administration_is_namespaced_not_a_biolink_slot():
 def test_an_edge_without_context_carries_no_qualifier_slots():
     e = _edge()
     for slot in ("disease_context_qualifier", "population_context_qualifier",
-                 "temporal_context_qualifier", "sex_qualifier"):
+                 "temporal_context_qualifier", "sex_qualifier",
+                 "medic_population_context", "medic_temporal_context"):
         assert slot not in e
 
 

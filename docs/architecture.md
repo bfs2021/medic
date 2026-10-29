@@ -433,9 +433,12 @@ names. A claim is a `Claim` NamedTuple carrying:
 | `co_administered_with` | drugs the claim is conditioned on |
 
 **Only `target` becomes the edge object.** The rest become Biolink qualifiers on the
-association (`disease_context_qualifier`, `population_context_qualifier`,
-`temporal_context_qualifier`, `sex_qualifier`) or, for co-administration, which Biolink 4.4.6
-does not model on this association, a namespaced `medic_co_administered_with`.
+association where the value satisfies the slot's range — `disease_context_qualifier` (a
+MONDO term only, #110), `population_context_qualifier` (a term from the range vocabulary,
+#111), `sex_qualifier` (a PATO term) — or namespaced `medic_` properties carrying the
+verbatim wording (`medic_disease_context`, `medic_population_context`,
+`medic_temporal_context`), or, for co-administration, which Biolink 4.4.6 does not model on
+this association, `medic_co_administered_with`.
 
 This replaced four separate defects with one prompt change. A flat list of names promoted the
 population or setting to the object, dropped the restricting context entirely, credited every
@@ -904,8 +907,11 @@ slot's range is `disease`, and a UMLS or HP id passes the pydantic constructor w
 text passes the `str` typing, so neither guard catches a value that is not one; every
 grounded id whatever its prefix stays on `medic_disease_context_ids` and the label's own
 wording on `medic_disease_context`, so narrowing the slot loses nothing),
-`population_context_qualifier`, `temporal_context_qualifier` and `sex_qualifier` (a PATO
-term, the slot's range being `biological sex`). The full transformation trail is not
+`population_context_qualifier` (a term from the range vocabulary — MeDIC's values are the
+label's phrases, so the slot stays empty and the wording rides `medic_population_context`,
+#111), `sex_qualifier` (a PATO term, the slot's range being `biological sex`) and
+`medic_temporal_context` (`temporal_context_qualifier` is no longer populated: its range is
+a point in time, xsd:time, and no label wording is one, #111). The full transformation trail is not
 embedded — edges carry the `MEDICNE:` mention ids, which join to the shipped
 `mappings/*.sssom.tsv` and Babelon stores, so I-8 replayability holds at the graph level
 without JSON blobs in edge properties.

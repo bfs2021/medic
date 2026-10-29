@@ -503,12 +503,16 @@ classes:
         range: string
         description: >-
           The population the claim is restricted to — age group, sex, pregnancy, transplant
-          recipient. Emitted as Biolink `population_context_qualifier` (#90).
+          recipient. Exported verbatim on `medic_population_context`; only a term from the
+          range vocabulary may ride Biolink `population_context_qualifier` (#111), and the
+          sex part routes to `sex_qualifier`.
       temporal_context:
         range: string
         description: >-
           Timing or procedural context — "post-MI", "following hip replacement", "after
-          initial 6 months". Emitted as Biolink `temporal_context_qualifier` (#90).
+          initial 6 months". Exported verbatim on `medic_temporal_context`: the
+          `temporal_context_qualifier` range is a point in time (xsd:time), which none of
+          these wordings is (#111).
       co_administered_with:
         range: string
         multivalued: true

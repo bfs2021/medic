@@ -189,6 +189,33 @@ def _check_edge(edge: dict, node_ids: set[str], report: Report) -> None:
             f"context belongs on medic_disease_context_ids or medic_disease_context"
         )
 
+    # The same rule for the other two class-ranged qualifier slots (#111).
+    #
+    # `population_context_qualifier` has range `population of individual organisms`, whose
+    # `id_prefixes` the model declares; the field is typed `str` and 4.4.6 attaches the slot
+    # to every class the exporter writes, so the constructor accepts any string. The label's
+    # phrases live on `medic_population_context`, so a value here has somewhere else to be.
+    population = edge.get("population_context_qualifier")
+    if population and get_prefix(population) not in bl.POPULATION_CONTEXT_PREFIXES:
+        report.error(
+            f"edge {edge_id} has population_context_qualifier '{population}', which is "
+            f"not a term from the slot's range vocabulary "
+            f"({', '.join(sorted(bl.POPULATION_CONTEXT_PREFIXES)) or 'none declared'}) — "
+            f"the label's wording belongs on medic_population_context"
+        )
+
+    # `temporal_context_qualifier` has range `time type`: a LinkML type whose lexical space
+    # is a point in time, not a phrase. The exporter stopped populating the slot (#111) and
+    # the wording rides `medic_temporal_context`; this holds the range for a file from an
+    # older build.
+    temporal = edge.get("temporal_context_qualifier")
+    if temporal and not bl.XSD_TIME_PATTERN.match(temporal):
+        report.error(
+            f"edge {edge_id} has temporal_context_qualifier '{temporal}', which is not an "
+            f"xsd:time value — the slot's range is `time type` and the label's wording "
+            f"belongs on medic_temporal_context"
+        )
+
     # The off-class slots never meet the class constructor, so their enum ranges are
     # checked here. Existence was checked by _check_properties.
     for slot, enum_name in bl.OFF_CLASS_ENUMS.items():
