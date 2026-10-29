@@ -1,7 +1,7 @@
 # A complete Biolink KGX export for MeDIC
 
 *Date: 2026-08-13* · **Status:** implemented (`src/medic/export/kgx/`, 66 tests)
-· **Biolink Model pinned at:** `4.3.7`
+· **Biolink Model pinned at:** `4.4.6` (was `4.3.7` until 2026-10-23; see §12)
 
 > **As-built note.** Sections 4–5 record the design *as implemented*. Six decisions changed
 > during implementation, each because checking the model contradicted the draft; they are
@@ -169,7 +169,7 @@ All 23,148, per §2.2.
 | `synonym` | ✔ | `synonyms` |
 | `xref` | ✔ | `crossreferences` |
 | `provided_by` | ✔ | `["infores:medic"]` |
-| `medic_subsets` | ✗ | `subsets` |
+| `subsets` | ✔ (since 4.4.6; was `medic_subsets`) | `subsets` |
 | `medic_f_<flag>` × 26 | ✗ | every `f_*` boolean, emitted only when `True` |
 
 Only true flags are emitted. Writing 26 booleans onto 23,148 nodes would add roughly 12 MB
@@ -572,3 +572,105 @@ were previously ignored.
    populate `applied_to_treat`.
 
 Both are filed as issues.
+
+## 12. Revised 2026-10-23: built through the Biolink pydantic model
+
+Review of the v2.0.0-rc1 graph in a KG build found three things this spec's "two layers"
+design had let through: edges carried no association `category`; the extension layer had
+grown to 62 edge and 30 node `medic_*` properties, most of them derivable, constant across
+the build, or replayable from the products; and the document URLs sat in flat `medic_*`
+properties although Biolink has a slot for them.
+
+**Construction.** Every node and edge is now an instance of the matching `biolink-model`
+pydantic class, dumped to JSON (`edges._build`, `nodes._build`). The class is strict
+(`extra="forbid"`, enum validation, required slots, `category` fixed to the class), so the
+guard rail is at construction rather than only at the gate. The gate re-validates every
+record through the class its `category` names, and additionally checks the one rule the
+class cannot — that the predicate specialises what the class's `slot_usage` restricts it to.
+
+**Association classes** (`biolink.ASSOCIATION_CLASS`): the treats family, including
+`preventative_for_condition` (a `treats` through its mixin) and the research predicates, is
+`ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation`; `contraindicated_in`
+and `diagnoses`, which no class restricts to, are
+`ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation`; adverse events use the two
+dedicated classes. Nodes carry one category, the class's own (`biolink:Drug`, not
+`[Drug, ChemicalEntity]` — the class literal rejects the pair).
+
+**Off-class slots.** Biolink defines but does not attach to every class here:
+`clinical_approval_status` and `max_research_phase` (4.3.7 had them on the contraindication
+class only; 4.4.6 moved them to the `treats` class, so they are now constructor-validated on
+49,789 edges and bypass it on the 676 contraindication edges that carry one),
+`temporal_context_qualifier` / `sex_qualifier` (exposure and phenotype associations only),
+`subject_location_in_text` / `object_location_in_text` (`TextMiningStudyResult` only). They
+are written beside the dumped core where the class lacks them, listed once as
+`biolink.OFF_CLASS_EDGE_SLOTS` with the reason, and pinned by a test.
+`population_context_qualifier` was in the list under 4.3.7; 4.4.6 attaches it to all four
+classes, so it now goes through the constructor.
+`supporting_text_section_type` was in the same position and was dropped: it is recoverable
+from `medic_label_section`, which names the SPL section the span came from, so it clears
+the same bar as the rest of the removed list. `sex_qualifier` now takes the PATO term, the
+slot's range being a class.
+
+**`sources`.** The document CURIE, landing page and PDF URL go on one nested
+`RetrievalSource` for the primary knowledge source as `source_record_urls` — the slot's
+domain is `retrieval source`, which is why §5.4 had rejected putting it flat on the edge.
+This is the only nested payload Biolink defines for association provenance, and it replaces
+`medic_document`, `medic_document_url`, `medic_source_document_url`, `medic_reference`,
+`medic_reference_url` and `medic_setid`. `supporting_text` is a one-element list: the slot
+is multivalued in 4.3.7 and 4.4.6, and §5.4's "single-valued" claim was wrong.
+
+A nested object is representable in KGX JSONL but not in KGX TSV: a TSV sink will stringify
+the `sources` column. A consumer merging through TSV should take the document CURIE from
+`source_record_urls[0]` before converting, or merge from the JSONL.
+
+**Extension layer, after.** Edge: `medic_source`, `medic_jurisdiction`,
+`medic_approval_status_raw`, `medic_approval_date`, `medic_assertion_flags`,
+`medic_supporting_text_truncated`, `medic_subject_mention_id`, `medic_object_mention_id`,
+`medic_pair_confidence`, `medic_pair_n_assertions`, `medic_pair_reliability`,
+`medic_reliability`, `medic_disease_context_ids`, `medic_co_administered_with`,
+`medic_claim_relation`, `medic_is_allergen`, `medic_is_diagnostic_agent`,
+`medic_research_phase_raw`, `medic_curation_status`, `medic_severity`, `medic_frequency`,
+`medic_label_section`. Node: `medic_smiles`, `medic_atc_codes`, `medic_features`,
+`medic_is_combination_therapy`, `medic_combination_ingredient_ids`,
+`medic_approved_authorities`, `medic_approved_jurisdictions`,
+`medic_earliest_approval_date`, `medic_marketing_status_usa`, `medic_application_numbers`,
+`medic_registration_numbers`, `medic_reliability`, `medic_mention_id`, `medic_stub`,
+`medic_f_*`.
+
+Removed, and why: `medic_explanation` → the metadata's `source_explanations` (a regulatory
+assertion's explanation is the ingester's one sentence per source, six distinct strings
+across 70,000 edges, the same build-level shape as the agent columns; research edges keep
+their per-claim explanation as `description`); `medic_marketing_status_usa`
+additionally → `available_from` for RX/OTC; `medic_agent_name` / `_agent_version` /
+`_tool` / `_tool_version` / `_assertion_method` were one value across the build and are now
+`extraction_agents` in the metadata file; `medic_authority`, `medic_source_role`,
+`medic_regulatory_status`, `medic_withdrawn`, `medic_negation_detected`,
+`medic_pair_jurisdictions`, `medic_pair_authorities`, the ATC levels and `medic_atc_main`
+were derivable from a slot on the same record or a `GROUP BY`; the five confidence
+components, the per-side grounding quality / rules / flags / translated markers,
+`medic_trigger_cue` / `_span`, `medic_claim_attributed_to` / `_basis`,
+`medic_disease_context_labels`, `medic_support`, `medic_evidence_source`,
+`medic_study_status`, `medic_reference_title`, `medic_application_number`,
+`medic_combination_ingredients`, `medic_regulatory_document_urls`, `medic_original_literal`
+(it is in `synonym`), `medic_mention_source`, `medic_grounding_quality` and
+`medic_resolution_confidence` are the products' and the decision stores' columns, reachable
+through the mention ids, which is what I-8 asks for.
+
+**Pin moved to 4.4.6 (same day).** The question "can we use `…ToDisease` /
+`…ToPhenotypicFeature` classes instead of the combo classes" has the answer *no* in both
+4.3.7 and 4.4.6: the only chemical-subject association classes are the two
+`…ToDiseaseOrPhenotypicFeature` combos and the two adverse-event classes, and the
+object-split `EntityToDiseaseAssociation` / `EntityToPhenotypicFeatureAssociation` are
+undescribed placeholders with no subject or predicate constraint and (in 4.3.7) none of
+the context qualifiers. Checking that showed 4.4.6 attaches the clinical-trial and
+regulatory-approval context mixin to `ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation`
+and `population_context_qualifier` to every class the exporter writes, so the pin was moved:
+the off-class list shrinks from seven to six, and `clinical_approval_status`,
+`max_research_phase` and `population_context_qualifier` are constructor-validated on the
+`treats` family. Nothing emitted changed shape; every predicate, enum value, class and slot
+the exporter uses exists unchanged in 4.4.6. 4.4.6 also adds a `subsets` node slot
+(`oboInOwl:inSubset` values, range string, multivalued) that is exactly what
+`medic_subsets` carried on every disease node, so the MONDO subsets now ship under the
+native name and `medic_subsets` is gone. Not yet used: 4.4.6's `treatment_outcome` and
+`regulatory_approvals` on the same class.
+

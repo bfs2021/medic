@@ -9,11 +9,17 @@ Making them visible is the point — the stub count is a coverage metric, not a 
 Every builder omits empty values rather than writing ``""`` or ``[]``: an absent fact should
 be an absent key, so a consumer never has to distinguish "no ATC code" from "ATC code is the
 empty string".
+
+Every node is an instance of its Biolink class: the un-namespaced properties go through the
+pydantic class for the node's category (see :func:`_build`), which fixes ``category`` and
+rejects any property the class does not declare. The ``medic_`` layer is attached after.
 """
 
 from __future__ import annotations
 
 import re
+
+from pydantic import ValidationError
 
 from medic import product_view as pv
 from medic.export.kgx import biolink as bl
@@ -32,6 +38,29 @@ def _clean(node: dict) -> dict:
 
 def _uniq(values) -> list[str]:
     return sorted({v.strip() for v in values if isinstance(v, str) and v.strip()})
+
+
+def _build(category: str, record: dict) -> dict:
+    """Construct one node: the Biolink core through its class, then the ``medic_`` layer.
+
+    The class stamps ``category`` — one per node, its own — and is strict about everything
+    else, so a property Biolink 4.4.6 does not define on that class cannot be written. A
+    ``ValidationError`` is a bug in a builder, not bad data, and is left to propagate.
+    """
+    record = {k: v for k, v in record.items() if v not in ("", [], {}, None)}
+    extension = {k: v for k, v in record.items() if k.startswith(bl.EXTENSION_PREFIX)}
+    core = {k: v for k, v in record.items() if k not in extension}
+    unknown = {k for k in extension if k not in bl.EXTENSION_SLOTS
+               and not k.startswith(f"{bl.EXTENSION_PREFIX}{DISEASE_FLAG_PREFIX}")}
+    if unknown:
+        raise ValueError(f"extension properties not declared in EXTENSION_SLOTS: {unknown}")
+
+    cls = bl.model_class(category)
+    try:
+        built = cls(**core).model_dump(mode="json", exclude_none=True)
+    except ValidationError as exc:
+        raise ValueError(f"node {core.get('id')} is not a valid {cls.__name__}: {exc}") from exc
+    return _clean({**built, **extension})
 
 
 def _step(mention: dict, category: str) -> dict:
@@ -87,9 +116,9 @@ def drug_node(
         return None
 
     identity = drug.get("identity") or {}
-    resolution = identity.get("resolution") or {}
     atc = drug.get("atc") or {}
     unii = (unii_by_drug or {}).get(drug_id, "")
+    marketing = pv.marketing_status_usa(drug) or ""
 
     description = " · ".join(
         v for v in (drug.get("drug_class"), drug.get("therapeutic_area"),
@@ -100,7 +129,6 @@ def drug_node(
     node = {
         "id": drug_id,
         "name": pv.drug_label(drug),
-        "category": bl.DRUG_CATEGORIES,
         "provided_by": [bl.AGGREGATOR],
         "description": description,
         "synonym": _uniq([
@@ -130,22 +158,17 @@ def drug_node(
             drug.get("drugbank_id") or "",
             f"UNII:{unii}" if unii else "",
         ]),
+        # US marketing status, where Biolink's enum can say it (RX/OTC; DISCN cannot).
+        "available_from": [bl.AVAILABLE_FROM[marketing]]
+        if marketing in bl.AVAILABLE_FROM else [],
 
-        # chemistry
+        # chemistry — the ATC code is the leaf; every coarser level is its prefix
         "medic_smiles": drug.get("smiles") or "",
         "medic_atc_codes": _uniq(atc.get("codes") or drug.get("atc_codes") or []),
-        "medic_atc_main": atc.get("main") or drug.get("atc_main") or "",
-        "medic_atc_level1": atc.get("level1") or drug.get("atc_level1") or "",
-        "medic_atc_level2": atc.get("level2") or drug.get("atc_level2") or "",
-        "medic_atc_level3": atc.get("level3") or drug.get("atc_level3") or "",
-        "medic_atc_level4": atc.get("level4") or drug.get("atc_level4") or "",
-        "medic_atc_level5": atc.get("level5") or drug.get("atc_level5") or "",
         "medic_features": list(drug.get("features") or []),
 
         # combinations
         "medic_is_combination_therapy": drug.get("is_combination_therapy") or "",
-        "medic_combination_ingredients": _uniq(
-            drug.get("combination_therapy_ingredients") or []),
         "medic_combination_ingredient_ids": _uniq(
             drug.get("combination_therapy_ingredients_curies") or []),
 
@@ -153,7 +176,7 @@ def drug_node(
         "medic_approved_authorities": sorted(pv.approved_authorities(drug)),
         "medic_approved_jurisdictions": sorted(pv.approved_jurisdictions(drug)),
         "medic_earliest_approval_date": pv.earliest_approval_date(drug),
-        "medic_marketing_status_usa": pv.marketing_status_usa(drug),
+        "medic_marketing_status_usa": marketing,
         # Split by issuing authority, not flattened (#52 / LICENSING.md). `medic_application_
         # numbers` is FDA application/BLA numbers — US government public domain. Registration
         # numbers from registers that grant no open licence (Russian GRLS) go in their own
@@ -168,20 +191,16 @@ def drug_node(
             if authority != "FDA"
             for number in numbers
         ),
-        "medic_regulatory_document_urls": _uniq(
-            a.get("regulatory_document_url") or "" for a in pv.approvals(drug)),
 
-        # provenance join keys into the shipped mappings/ decision stores (spec §2.3)
+        # provenance join key into the shipped mappings/ decision stores (spec §2.3). The
+        # grounding quality, source and confidence it used to carry beside it are the
+        # store's own columns, reachable through this key.
         "medic_mention_id": identity.get("id") or "",
-        "medic_original_literal": identity.get("original_literal") or "",
-        "medic_mention_source": identity.get("mention_source") or "",
-        "medic_grounding_quality": _step(identity, "GROUNDING").get("quality") or "",
-        "medic_resolution_confidence": resolution.get("confidence"),
         "medic_reliability": score_reliability(
             drug, review_status=(review or default_review_store()).status(drug)
         ).value,
     }
-    return _clean(node)
+    return _build(bl.DRUG_CATEGORY, node)
 
 
 # ---------------------------------------------------------------------------
@@ -200,17 +219,16 @@ def disease_node(disease: dict) -> dict | None:
     node = {
         "id": disease_id,
         "name": deinvert_thesaurus_name(disease.get("label") or ""),
-        "category": bl.DISEASE_CATEGORIES,
         "provided_by": [bl.AGGREGATOR],
         "description": disease.get("definition") or "",
         "synonym": _uniq(disease.get("synonyms") or []),
         "xref": _uniq(disease.get("crossreferences") or []),
-        "medic_subsets": _uniq(disease.get("subsets") or []),
+        "subsets": _uniq(disease.get("subsets") or []),
     }
     for key, value in disease.items():
         if key.startswith(DISEASE_FLAG_PREFIX) and value is True:
             node[f"{bl.EXTENSION_PREFIX}{key}"] = True
-    return _clean(node)
+    return _build(bl.DISEASE_CATEGORY, node)
 
 
 # ---------------------------------------------------------------------------
@@ -247,10 +265,9 @@ def stub_node(curie: str, name: str = "") -> dict:
     ship. 91 stubs used by 5,086 edges had none at all, so the node went out as a bare CUI
     and the audit could not judge the edges at all (#96).
     """
-    return _clean({
+    return _build(bl.category_for_prefix(curie), {
         "id": curie,
         "name": deinvert_thesaurus_name(name),
-        "category": [bl.category_for_prefix(curie)],
         "provided_by": [bl.AGGREGATOR],
         "medic_stub": True,
     })

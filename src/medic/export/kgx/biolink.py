@@ -22,10 +22,10 @@ import yaml
 from medic.source_isolation import SOURCE_JURISDICTION as _SOURCE_JURISDICTION
 
 #: The Biolink Model release this export targets. Kept in lockstep with the
-#: ``biolink-model`` distribution pinned in the project's ``export`` dependency group; a
+#: ``biolink-model`` distribution pinned in ``pyproject.toml``; a
 #: test fails if the two drift apart, because a silent model upgrade can change which
 #: predicates exist.
-BIOLINK_VERSION = "4.3.7"
+BIOLINK_VERSION = "4.4.6"
 
 _CAMEL = re.compile(r"(?<!^)(?=[A-Z])")
 
@@ -103,10 +103,77 @@ def id_prefixes(category: str) -> frozenset[str]:
 
 
 # ---------------------------------------------------------------------------
+# The pydantic model — the guard rail
+# ---------------------------------------------------------------------------
+#: Every node and edge the exporter writes is built by instantiating the matching class of
+#: the ``biolink_model`` pydantic model and dumping it. The model is generated from the same
+#: schema :func:`_model` reads, and it is strict: ``extra="forbid"`` rejects a property the
+#: class does not declare, enum slots reject values outside their permissible set, required
+#: slots cannot be omitted, and ``category`` is fixed to the class. A term that is not in
+#: Biolink 4.4.6 therefore cannot reach the output file, which is a stronger guarantee than
+#: the gate's post-hoc check that each name exists somewhere in the model.
+@lru_cache(maxsize=1)
+def pydantic_model():
+    from biolink_model.datamodel import pydanticmodel_v2
+
+    return pydanticmodel_v2
+
+
+def model_class(category: str):
+    """The pydantic class for a Biolink category CURIE (``biolink:Drug`` -> ``Drug``)."""
+    return getattr(pydantic_model(), category.split(":", 1)[-1])
+
+
+@lru_cache(maxsize=None)
+def predicate_ancestors(curie: str) -> frozenset[str]:
+    """Every predicate a CURIE specialises, through ``is_a`` *and* ``mixins``.
+
+    Both matter: ``preventative for condition`` is a ``treats`` only through its mixin, and
+    ``applied to treat`` reaches ``treats or applied or studied to treat`` the same way.
+    """
+    slots = _model().get("slots", {})
+    out: set[str] = set()
+    todo = [model_name(curie)]
+    while todo:
+        name = todo.pop()
+        if name in out or name not in slots:
+            continue
+        out.add(name)
+        parent = slots[name].get("is_a")
+        if parent:
+            todo.append(parent)
+        todo.extend(slots[name].get("mixins") or [])
+    return frozenset(out)
+
+
+@lru_cache(maxsize=None)
+def class_predicate_constraint(category: str) -> str:
+    """The predicate an association class restricts itself to (``""`` if unrestricted).
+
+    Read from the class's ``slot_usage`` and its ancestors'. This is the one rule the
+    pydantic class cannot enforce — it types ``predicate`` as a plain string — so the gate
+    checks it against :func:`predicate_ancestors`.
+    """
+    classes = _model().get("classes", {})
+    name = model_name(category)
+    seen: set[str] = set()
+    while name in classes and name not in seen:
+        seen.add(name)
+        usage = (classes[name].get("slot_usage") or {}).get("predicate") or {}
+        if usage.get("subproperty_of"):
+            return usage["subproperty_of"]
+        name = classes[name].get("is_a", "")
+    return ""
+
+
+# ---------------------------------------------------------------------------
 # Node categories
 # ---------------------------------------------------------------------------
-DRUG_CATEGORIES = ["biolink:Drug", "biolink:ChemicalEntity"]
-DISEASE_CATEGORIES = ["biolink:Disease"]
+#: One category per node — the pydantic class fixes ``category`` to its own name, and the
+#: class hierarchy is the consumer's to expand. The old export listed
+#: ``[Drug, ChemicalEntity]``, which the model rejects (``Drug.category`` is a literal).
+DRUG_CATEGORY = "biolink:Drug"
+DISEASE_CATEGORY = "biolink:Disease"
 
 #: Category for an edge endpoint that no product describes (spec §4.3). MeDIC genuinely
 #: emits such endpoints — research associations carry ``UNII:`` drugs and ``ORPHA:``/
@@ -139,8 +206,14 @@ def category_for_prefix(curie: str) -> str:
 
 
 def all_categories() -> list[str]:
-    return sorted({*DRUG_CATEGORIES, *DISEASE_CATEGORIES, *PREFIX_CATEGORY.values(),
+    return sorted({DRUG_CATEGORY, DISEASE_CATEGORY, *PREFIX_CATEGORY.values(),
                    FALLBACK_CATEGORY})
+
+
+#: ``DrugAvailabilityEnum``. MeDIC's US marketing status is RX/OTC/DISCN; the first two are
+#: exactly Biolink's two values. DISCN (marketing ceased) is not an availability and stays
+#: on ``medic_marketing_status_usa`` only.
+AVAILABLE_FROM = {"RX": "prescription", "OTC": "over_the_counter"}
 
 
 # ---------------------------------------------------------------------------
@@ -287,91 +360,126 @@ SOURCE_JURISDICTION = _SOURCE_JURISDICTION
 
 
 # ---------------------------------------------------------------------------
+# Association classes
+# ---------------------------------------------------------------------------
+#: Predicate -> the Biolink association class an edge is built as. Chosen by what the class
+#: *constrains*: ``ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation``
+#: restricts its predicate to ``treats or applied or studied to treat`` and every
+#: treatment-family predicate here specialises that (``preventative for condition`` through
+#: its ``treats`` mixin); the two adverse-event classes restrict to ``has side effect`` /
+#: ``has adverse event``. ``contraindicated in`` and ``diagnoses`` specialise nothing a
+#: class restricts to, so they take ``ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation``
+#: — the unrestricted chemical-to-disease class, and the one Biolink hangs
+#: ``clinical approval status`` on — rather than the bare ``Association``.
+ASSOCIATION_CLASS = {
+    "biolink:treats":
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:treats_or_applied_or_studied_to_treat":
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:preventative_for_condition":
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:applied_to_treat":
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:in_clinical_trials_for":
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:studied_to_treat":
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:contraindicated_in":
+        "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:diagnoses":
+        "biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation",
+    "biolink:has_side_effect": "biolink:ChemicalOrDrugOrTreatmentSideEffectAssociation",
+    "biolink:has_adverse_event": "biolink:ChemicalOrDrugOrTreatmentAdverseEventAssociation",
+}
+
+
+def association_category(predicate: str) -> str:
+    return ASSOCIATION_CLASS[predicate]
+
+
+# ---------------------------------------------------------------------------
 # Slots the exporter writes
 # ---------------------------------------------------------------------------
-#: Un-namespaced node properties.
+#: Biolink slots the exporter writes on an edge that the model defines but does **not**
+#: attach to the association class the edge is built as, so they bypass the pydantic
+#: constructor and are checked by the gate for existence and enum range only. Each is here
+#: for a stated reason, and a test pins the list so it cannot grow quietly:
 #:
-#: ``highest_FDA_approval_status`` is deliberately absent. Its range is Biolink's
-#: ``ApprovalStatusEnum``, which enumerates FDA *review pathways* (``fda_fast_track``,
-#: ``fda_accelerated_approval``, ``regular_fda_approval``) — not marketing status. MeDIC
-#: knows RX/OTC/DISCN and does not know which pathway a drug took, so filling the slot would
-#: mean inventing knowledge. The real value stays on ``medic_marketing_status_usa``.
-CORE_NODE_SLOTS = (
-    "id", "name", "category", "description", "synonym", "xref", "provided_by",
-)
-
-#: Un-namespaced edge properties. Several of these were nearly namespaced before a sweep of
-#: the model found Biolink already defines them — the verbatim source strings
-#: (``original_subject``/``original_object``), the quoted label text (``supporting_text``),
-#: the mention character offsets (``*_location_in_text``) and the approval/phase enums. Using
-#: the standard slot is always preferred; ``medic_*`` is the residue Biolink cannot express.
-CORE_EDGE_SLOTS = (
-    "id", "subject", "predicate", "object",
-    "primary_knowledge_source", "aggregator_knowledge_source",
-    "knowledge_level", "agent_type", "publications",
-    "original_subject", "original_object", "has_evidence",
-    "supporting_text", "supporting_text_section_type",
+#: * ``clinical_approval_status`` / ``max_research_phase`` — 4.4.6 moved them onto the
+#:   ``treats`` class (via the clinical-trial-and-regulatory-approval-context mixin), where
+#:   they are now validated by the constructor, and off the contraindication class, where
+#:   they still bypass it. The slots' own definitions are about a chemical–condition pair,
+#:   which is what every edge here is.
+#: * ``temporal_context_qualifier`` / ``sex_qualifier`` — attached only to exposure-outcome
+#:   and phenotype associations. They carry the label's stated context (#90) and DAKP
+#:   ships them on ``treats`` edges in the same graph. (``population_context_qualifier``
+#:   left this list in 4.4.6, which attached it to every class the exporter writes.)
+#: * ``subject_location_in_text`` / ``object_location_in_text`` — attached only to
+#:   ``TextMiningStudyResult``; they are offsets into ``supporting_text``, which *is* on
+#:   the association.
+#:
+#: Everything else un-namespaced goes through the class constructor and cannot be a slot
+#: the class lacks.
+OFF_CLASS_EDGE_SLOTS = (
+    "clinical_approval_status", "max_research_phase",
+    "temporal_context_qualifier", "sex_qualifier",
     "subject_location_in_text", "object_location_in_text",
-    "clinical_approval_status", "max_research_phase", "has_confidence_score",
 )
 
-#: Biolink defines these as single-valued. Emitting a list is the defect that collapsing
-#: several jurisdictions onto one edge used to force.
-SINGLE_VALUED_EDGE_SLOTS = ("primary_knowledge_source", "knowledge_level", "agent_type",
-                            "subject", "object", "predicate", "id")
+#: Enum-ranged off-class slots, checked by the gate since pydantic never sees them.
+OFF_CLASS_ENUMS = {
+    "clinical_approval_status": "ClinicalApprovalStatusEnum",
+    "max_research_phase": "ResearchPhaseEnum",
+}
+
+#: ``sex_qualifier`` has range ``biological sex``, a class whose ids are PATO terms. The
+#: label's word maps to the term rather than shipping ``"women"`` in a class-ranged slot.
+SEX_QUALIFIER_TERMS = {"female": "PATO:0000383", "male": "PATO:0000384"}
 
 EXTENSION_PREFIX = "medic_"
 
-#: Everything MeDIC knows that Biolink has no slot for. Named exhaustively so the collision
-#: check (a ``medic_x`` shadowing a Biolink slot ``x``) can run over the whole vocabulary.
+#: Everything MeDIC knows that Biolink has no slot for **and** that a graph consumer needs
+#: on the node or edge itself. Named exhaustively so the collision check (a ``medic_x``
+#: shadowing a Biolink slot ``x``) can run over the whole vocabulary.
+#:
+#: This is deliberately the residue, not the inventory. The previous export namespaced 62
+#: edge and 30 node properties; most were either derivable from a Biolink slot already on
+#: the record, constant across every edge of a build (so belong in the metadata file), or
+#: detail that is replayable from the products through the ``MEDICNE:`` join keys (I-8).
+#: What is kept: the I-1 source/jurisdiction pair the gate checks, the join keys, the
+#: pair-level aggregates a ``GROUP BY`` cannot rebuild, quality flags a consumer should
+#: weigh, and claim context Biolink has no qualifier for.
 EXTENSION_SLOTS = (
     # node — drug
-    "medic_smiles", "medic_atc_codes", "medic_atc_main", "medic_atc_level1",
-    "medic_atc_level2", "medic_atc_level3", "medic_atc_level4", "medic_atc_level5",
-    "medic_features", "medic_is_combination_therapy", "medic_combination_ingredients",
-    "medic_combination_ingredient_ids", "medic_approved_authorities",
-    "medic_approved_jurisdictions", "medic_earliest_approval_date",
+    "medic_smiles", "medic_atc_codes", "medic_features",
+    "medic_is_combination_therapy", "medic_combination_ingredient_ids",
+    "medic_approved_authorities", "medic_approved_jurisdictions",
+    "medic_earliest_approval_date", "medic_marketing_status_usa",
     "medic_application_numbers", "medic_registration_numbers",
-    "medic_marketing_status_usa",
-    "medic_regulatory_document_urls",
     # node — disease
-    "medic_subsets",
     # node — shared
-    "medic_reliability", "medic_mention_id", "medic_original_literal",
-    "medic_mention_source", "medic_grounding_quality", "medic_resolution_confidence",
-    "medic_stub",
-    # edge — source and document
-    "medic_source", "medic_document", "medic_jurisdiction", "medic_authority",
-    "medic_source_role", "medic_regulatory_status", "medic_document_url",
-    "medic_source_document_url", "medic_approval_date", "medic_setid",
-    "medic_application_number", "medic_reference", "medic_reference_url",
-    "medic_reference_title", "medic_withdrawn",
-    # edge — claim
-    "medic_supporting_text_truncated", "medic_explanation",
-    "medic_trigger_cue", "medic_trigger_span", "medic_negation_detected",
-    "medic_assertion_flags", "medic_assertion_method", "medic_agent_name",
-    "medic_agent_version", "medic_tool", "medic_tool_version", "medic_curation_status",
-    "medic_evidence_source", "medic_study_status", "medic_support",
-    # edge — MeDIC values Biolink's enums cannot express (kept alongside the mapped slot)
-    "medic_approval_status_raw", "medic_research_phase_raw",
+    "medic_reliability", "medic_mention_id", "medic_stub",
+    # edge — source (invariant I-1 is checked on these two)
+    "medic_source", "medic_jurisdiction",
+    # edge — regulatory facts Biolink's enum cannot carry
+    "medic_approval_status_raw", "medic_approval_date",
+    # edge — quality
+    "medic_assertion_flags", "medic_supporting_text_truncated",
+    # edge — resolution join keys into the shipped mappings/ decision stores (spec §2.3)
+    "medic_subject_mention_id", "medic_object_mention_id",
+    # edge — pair aggregates (repeated on every edge of the pair, spec §2.1)
+    "medic_pair_confidence", "medic_pair_n_assertions", "medic_pair_reliability",
+    # edge — claim context with no Biolink qualifier
+    "medic_disease_context_ids", "medic_co_administered_with", "medic_claim_relation",
+    # edge — contraindication specifics
+    "medic_is_allergen", "medic_is_diagnostic_agent",
+    # edge — research
+    "medic_research_phase_raw", "medic_curation_status",
     # edge — adverse events (Biolink's severity/frequency qualifiers take ontology terms,
     # MeDIC has an enum and free text, so mapping them would require a term table)
     "medic_severity", "medic_frequency", "medic_label_section",
-    # edge — confidence and quality
-    "medic_confidence_subject", "medic_confidence_object",
-    "medic_confidence_relationship", "medic_confidence_overall", "medic_confidence_basis",
-    # edge — resolution join keys
-    "medic_subject_mention_id", "medic_object_mention_id",
-    "medic_subject_grounding_quality", "medic_object_grounding_quality",
-    "medic_subject_applied_rules", "medic_object_applied_rules",
-    "medic_subject_grounding_flags", "medic_object_grounding_flags",
-    "medic_subject_translated", "medic_object_translated",
-    # edge — pair aggregates (repeated on every edge of the pair, spec §2.1)
-    "medic_pair_confidence", "medic_pair_n_assertions", "medic_pair_reliability",
-    "medic_pair_jurisdictions", "medic_pair_authorities",
-    # edge — contraindication specifics
-    "medic_is_allergen", "medic_is_diagnostic_agent",
 )
+
 
 #: The regulatory-label evidence class. Only this one has an unambiguous ECO term; the slot
 #: is omitted elsewhere rather than populated with a plausible guess (spec §10).

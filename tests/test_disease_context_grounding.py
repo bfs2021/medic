@@ -186,8 +186,7 @@ def test_the_grounded_curie_goes_on_the_biolink_slot():
               disease_context_ids=["MONDO:0005009", "MONDO:0005155"])
     assert e["disease_context_qualifier"] == "MONDO:0005009"
     assert e["medic_disease_context_ids"] == ["MONDO:0005009", "MONDO:0005155"]
-    assert e["medic_disease_context_labels"] == ["congestive heart failure",
-                                                 "hepatic cirrhosis"]
+    assert "medic_disease_context_labels" not in e   # the ids name themselves
 
 
 def test_an_ungrounded_context_still_ships_its_label():

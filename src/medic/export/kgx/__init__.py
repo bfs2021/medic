@@ -11,9 +11,13 @@ Two things shape the output; both are argued in
   ``primary_knowledge_source``, one document, one quoted span and one confidence. Pair-level
   aggregates ride along on every edge, so the collapsed drug-disease view is a ``GROUP BY``.
 * **Two layers.** A strictly Biolink-valid core that a Translator ingest can consume
-  unchanged, plus a ``medic_``-namespaced extension layer carrying everything Biolink has no
-  slot for. A strict consumer drops the extension layer with one rule and still has a valid
-  graph.
+  unchanged, plus a ``medic_``-namespaced extension layer carrying what Biolink has no slot
+  for and a consumer needs on the record. A strict consumer drops the extension layer with
+  one rule and still has a valid graph.
+* **Built through the model.** Every node and edge is an instance of a Biolink pydantic
+  class (``biolink:Drug``, ``biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeature
+  Association``, ...) dumped to JSON, so the class fixes ``category`` and refuses a property
+  or enum value Biolink 4.4.6 does not define.
 """
 
 from __future__ import annotations
@@ -90,7 +94,13 @@ def export_kgx(
     writer.write_jsonl(built_nodes, exports_dir / NODES_FILE)
     writer.write_jsonl(built_edges, exports_dir / EDGES_FILE)
     writer.write_yaml(
-        metadata_builders.content_metadata(built_nodes, built_edges, build_date),
+        metadata_builders.content_metadata(
+            built_nodes, built_edges, build_date,
+            agents=metadata_builders.extraction_agents(
+                products["indications"], products["contraindications"]),
+            explanations=metadata_builders.source_explanations(
+                products["indications"], products["contraindications"]),
+        ),
         exports_dir / METADATA_FILE,
     )
     writer.write_yaml(metadata_builders.infores_entry(), exports_dir / INFORES_FILE)

@@ -7,6 +7,8 @@ gate is what proves the rest of the export is Biolink-valid rather than plausibl
 
 from __future__ import annotations
 
+import copy
+
 import pytest
 
 from medic.export.kgx import biolink as bl
@@ -66,17 +68,58 @@ def test_every_agent_type_is_permissible():
         assert value in permissible
 
 
-def test_core_edge_slots_exist_in_biolink():
-    """The un-namespaced edge properties the exporter writes must be real Biolink slots."""
-    slots = bl.biolink_slots()
-    for slot in bl.CORE_EDGE_SLOTS:
-        assert slot.replace("_", " ") in slots, f"{slot} is not a Biolink slot"
+def test_every_predicate_has_an_association_class_that_admits_it():
+    """The class is the edge's `category`; its predicate constraint must hold.
+
+    The pydantic class types `predicate` as a plain string, so this is the one rule the
+    constructor cannot enforce and the gate checks instead.
+    """
+    for predicate in bl.all_predicates():
+        category = bl.association_category(predicate)
+        assert bl.model_name(category) in bl.biolink_classes(), category
+        assert "association" in bl.model_name(category)
+        constraint = bl.class_predicate_constraint(category)
+        assert not constraint or constraint in bl.predicate_ancestors(predicate), (
+            f"{predicate} does not specialise {constraint}, which {category} requires")
 
 
-def test_core_node_slots_exist_in_biolink():
+def test_predicate_ancestry_follows_mixins_as_well_as_is_a():
+    """`preventative for condition` is a `treats` only through its mixin."""
+    assert "treats" in bl.predicate_ancestors("biolink:preventative_for_condition")
+    assert "treats or applied or studied to treat" in bl.predicate_ancestors(
+        "biolink:applied_to_treat")
+    assert "treats" not in bl.predicate_ancestors("biolink:contraindicated_in")
+
+
+def test_off_class_edge_slots_are_real_biolink_slots_and_pinned():
+    """The slots that bypass the class constructor: each must exist in the model, and the
+    list is pinned so it cannot grow without a stated reason in biolink.py."""
     slots = bl.biolink_slots()
-    for slot in bl.CORE_NODE_SLOTS:
+    for slot in bl.OFF_CLASS_EDGE_SLOTS:
         assert slot.replace("_", " ") in slots, f"{slot} is not a Biolink slot"
+    assert set(bl.OFF_CLASS_EDGE_SLOTS) == {
+        "clinical_approval_status", "max_research_phase",
+        "temporal_context_qualifier", "sex_qualifier",
+        "subject_location_in_text", "object_location_in_text",
+    }
+    for slot in bl.OFF_CLASS_ENUMS:
+        assert slot in bl.OFF_CLASS_EDGE_SLOTS
+
+
+def test_every_off_class_slot_is_absent_from_at_least_one_emitting_class():
+    """The list exists for slots some class lacks. If a Biolink release attaches one to
+    every class the exporter writes, it belongs in the constructor path, not here. (A slot
+    a *particular* class declares already goes through that class: `_build` only bypasses
+    what the class lacks, so `clinical_approval_status` is validated on `treats` edges.)
+    `population_context_qualifier` left the list this way when 4.4.6 attached it everywhere."""
+    classes = {bl.model_class(c) for c in set(bl.ASSOCIATION_CLASS.values())}
+    for slot in bl.OFF_CLASS_EDGE_SLOTS:
+        lacking = [c.__name__ for c in classes if slot not in c.model_fields]
+        assert lacking, f"every class declares {slot}; drop it from OFF_CLASS_EDGE_SLOTS"
+
+
+def test_sex_qualifier_terms_are_biological_sex_ids():
+    assert set(bl.SEX_QUALIFIER_TERMS.values()) == {"PATO:0000383", "PATO:0000384"}
 
 
 def test_medic_extension_prefix_cannot_shadow_a_biolink_slot():
@@ -132,6 +175,7 @@ GOOD_NODES = [
 ]
 GOOD_EDGE = {
     "id": "MEDICEDGE:1",
+    "category": ["biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"],
     "subject": "CHEBI:10023",
     "predicate": "biolink:treats",
     "object": "MONDO:0000240",
@@ -182,6 +226,77 @@ def test_gate_rejects_a_dangling_edge_endpoint():
     report = validate.check(GOOD_NODES, [edge])
     assert not report.ok
     assert "MONDO:9999999" in _messages(report)
+
+
+def test_gate_rejects_an_edge_without_a_category():
+    from medic.export.kgx import validate
+
+    edge = {k: v for k, v in GOOD_EDGE.items() if k != "category"}
+    report = validate.check(GOOD_NODES, [edge])
+    assert not report.ok
+    assert "no category" in _messages(report)
+
+
+def test_gate_rejects_a_predicate_the_association_class_does_not_admit():
+    """`contraindicated_in` is not a `treats or applied or studied to treat`."""
+    from medic.export.kgx import validate
+
+    edge = {**GOOD_EDGE, "predicate": "biolink:contraindicated_in"}
+    report = validate.check(GOOD_NODES, [edge])
+    assert not report.ok
+    assert "does not specialise" in _messages(report)
+
+
+def test_gate_rejects_a_biolink_slot_the_class_does_not_declare():
+    """A real Biolink slot is not enough: it must be on the edge's class (or in the pinned
+    off-class list). `supporting_text_section_type` exists in the model, on
+    TextMiningStudyResult only."""
+    from medic.export.kgx import validate
+
+    edge = {**GOOD_EDGE, "supporting_text_section_type": "BODY"}
+    report = validate.check(GOOD_NODES, [edge])
+    assert not report.ok
+    assert "supporting_text_section_type" in _messages(report)
+
+
+def test_gate_rejects_an_impermissible_enum_value():
+    from medic.export.kgx import validate
+
+    edge = {**GOOD_EDGE, "knowledge_level": "pretty_sure"}
+    report = validate.check(GOOD_NODES, [edge])
+    assert not report.ok
+    assert "knowledge_level" in _messages(report)
+
+    edge = {**GOOD_EDGE, "clinical_approval_status": "approved_ish"}
+    report = validate.check(GOOD_NODES, [edge])
+    assert not report.ok
+    assert "ClinicalApprovalStatusEnum" in _messages(report)
+
+
+def test_gate_accepts_a_nested_retrieval_source():
+    from medic.export.kgx import validate
+
+    edge = {**GOOD_EDGE, "sources": [{
+        "id": "infores:ema", "resource_id": "infores:ema",
+        "resource_role": "primary_knowledge_source",
+        "source_record_urls": ["EMA:vfend", "https://ema.europa.eu/x"]}]}
+    report = validate.check(GOOD_NODES, [edge])
+    assert report.ok, _messages(report)
+
+    edge = {**GOOD_EDGE, "sources": [{"id": "infores:ema", "resource_role": "primary_knowledge_source"}]}
+    report = validate.check(GOOD_NODES, [edge])
+    assert not report.ok                      # resource_id is required
+    assert "resource_id" in _messages(report)
+
+
+def test_gate_rejects_a_node_with_two_categories():
+    """The class fixes `category` to itself; a consumer expands the hierarchy."""
+    from medic.export.kgx import validate
+
+    nodes = [*GOOD_NODES, {"id": "X:1", "category": ["biolink:Drug", "biolink:ChemicalEntity"]}]
+    report = validate.check(nodes, [GOOD_EDGE])
+    assert not report.ok
+    assert "expected one" in _messages(report)
 
 
 def test_gate_rejects_an_unknown_node_category():
@@ -297,7 +412,7 @@ def test_drug_node_carries_canonical_identity_and_categories():
     node = nodes.drug_node(DRUG_RECORD)
     assert node["id"] == "CHEBI:100147"
     assert node["name"] == "nalidixic acid"
-    assert node["category"] == bl.DRUG_CATEGORIES
+    assert node["category"] == [bl.DRUG_CATEGORY] == ["biolink:Drug"]
     assert node["provided_by"] == [bl.AGGREGATOR]
 
 
@@ -336,20 +451,54 @@ def test_drug_node_summarises_approvals_across_jurisdictions():
     assert node["medic_approved_jurisdictions"] == ["russia", "usa"]
     assert node["medic_earliest_approval_date"] == "19820101"
     assert node["medic_marketing_status_usa"] == "DISCN"
+    assert "available_from" not in node         # DISCN is not an availability
     assert node["medic_application_numbers"] == ["014214"]
 
 
-def test_drug_node_carries_chemistry_and_provenance_join_keys():
+def test_us_marketing_status_maps_onto_available_from_where_it_can():
+    """RX and OTC are exactly Biolink's two DrugAvailabilityEnum values."""
+    import copy
+
+    from medic.export.kgx import nodes
+
+    record = copy.deepcopy(DRUG_RECORD)
+    record["approvals"][0]["marketing_status"] = "RX"
+    node = nodes.drug_node(record)
+    assert node["available_from"] == ["prescription"]
+    assert node["medic_marketing_status_usa"] == "RX"
+
+
+def test_drug_node_carries_chemistry_and_the_provenance_join_key():
+    """The ATC levels are prefixes of the code, and the grounding quality, source and
+    literal are the mapping store's columns, reachable through the mention id — none of
+    them earns a column on 4,000 nodes."""
     from medic.export.kgx import nodes
 
     node = nodes.drug_node(DRUG_RECORD)
     assert node["medic_atc_codes"] == ["J01MB02"]
-    assert node["medic_atc_main"] == "J"
+    assert "medic_atc_main" not in node
+    assert "medic_atc_level1" not in node
     assert node["medic_smiles"].startswith("CCN1")
     assert node["medic_features"] == ["ANTIMICROBIAL"]
     assert node["medic_mention_id"] == "MEDICNE:1d3f4d29"
-    assert node["medic_original_literal"] == "NALIDIXIC ACID"
-    assert node["medic_grounding_quality"] == "lexical_exact"
+    assert "medic_original_literal" not in node   # it is in `synonym`
+    assert "medic_grounding_quality" not in node
+    assert "NALIDIXIC ACID" in node["synonym"]
+
+
+def test_every_node_property_is_declared():
+    """Nothing un-namespaced that the node's Biolink class lacks; nothing namespaced that
+    EXTENSION_SLOTS does not list."""
+    from medic.export.kgx import nodes
+
+    for node in (nodes.drug_node(DRUG_RECORD), nodes.disease_node(DISEASE_RECORD),
+                 nodes.stub_node("ORPHA:1", "x")):
+        fields = bl.model_class(node["category"][0]).model_fields
+        for key in node:
+            if key.startswith(bl.EXTENSION_PREFIX):
+                assert key in bl.EXTENSION_SLOTS or key.startswith("medic_f_"), key
+            else:
+                assert key in fields, key
 
 
 def test_node_omits_empty_values_entirely():
@@ -374,10 +523,10 @@ def test_disease_node_maps_definition_and_crossreferences():
 
     node = nodes.disease_node(DISEASE_RECORD)
     assert node["id"] == "MONDO:0000240"
-    assert node["category"] == bl.DISEASE_CATEGORIES
+    assert node["category"] == [bl.DISEASE_CATEGORY]
     assert node["description"].startswith("An aspergillosis")
     assert node["xref"] == ["MESH:D055744", "UMLS:C0004030"]
-    assert node["medic_subsets"] == ["mondo:gard_rare"]
+    assert node["subsets"] == ["mondo:gard_rare"]
 
 
 def test_disease_node_emits_only_true_filter_flags():
@@ -516,8 +665,64 @@ def test_approved_indication_is_asserted_as_treats():
 
     edge = edges.association_edges(PAIR)[0]
     assert edge["predicate"] == "biolink:treats"
+    assert edge["category"] == [
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation"]
     assert edge["knowledge_level"] == "knowledge_assertion"
     assert edge["clinical_approval_status"] == "approved_for_condition"
+
+
+def test_every_edge_is_a_valid_instance_of_its_association_class():
+    """The construction path: un-namespaced properties are exactly the class's fields plus
+    the pinned off-class slots, and the class re-validates the dumped record."""
+    from medic.export.kgx import edges
+
+    contraindication = {**PAIR, "relationship_type": "CONTRAINDICATION", "is_allergen": True}
+    for edge in [*edges.association_edges(PAIR),
+                 *edges.association_edges(contraindication),
+                 *edges.research_edges(RESEARCH)]:
+        cls = bl.model_class(edge["category"][0])
+        core = {k: v for k, v in edge.items()
+                if not k.startswith(bl.EXTENSION_PREFIX) and k not in bl.OFF_CLASS_EDGE_SLOTS}
+        cls.model_validate(core)                 # raises on any undeclared property
+        for key in edge:
+            if key.startswith(bl.EXTENSION_PREFIX):
+                assert key in bl.EXTENSION_SLOTS, key
+
+
+def test_the_source_record_lives_on_the_retrieval_source():
+    """Biolink's `source_record_urls` has domain `retrieval source`, so the document CURIE
+    and its URLs ship as one nested `sources` entry for the primary source — not as six
+    flat `medic_*_url` properties."""
+    from medic.export.kgx import edges
+
+    edge = edges.association_edges(PAIR)[0]
+    assert len(edge["sources"]) == 1
+    source = edge["sources"][0]
+    assert source["resource_id"] == "infores:ema" == edge["primary_knowledge_source"]
+    assert source["resource_role"] == "primary_knowledge_source"
+    assert source["category"] == ["biolink:RetrievalSource"]
+    assert source["source_record_urls"] == ["EMA:vfend", "https://ema.europa.eu/x"]
+    assert not [k for k in edge if k.endswith("_url") or k in ("medic_document", "medic_setid")]
+
+
+def test_a_regulatory_explanation_is_build_level_not_a_description_on_every_edge():
+    """"EMA approved indication" is the ingester's one sentence per source; on the edge it
+    was ~4 MB of a valid slot saying the same thing 70,000 times. It is recorded once in the
+    metadata (see the metadata test below)."""
+    from medic.export.kgx import edges
+
+    edge = edges.association_edges(PAIR)[0]
+    assert "description" not in edge
+    assert "medic_explanation" not in edge
+
+
+def test_a_research_explanation_is_per_claim_and_stays_on_the_edge():
+    from medic.export.kgx import edges
+
+    record = copy.deepcopy(RESEARCH)
+    record["evidence"][0]["explanation"] = "Phase 3 ReDUX4 trial met its primary endpoint"
+    edge = edges.research_edges(record)[0]
+    assert edge["description"] == "Phase 3 ReDUX4 trial met its primary endpoint"
 
 
 def test_unapproved_indication_drops_to_the_grouping_predicate():
@@ -536,6 +741,7 @@ def test_contraindication_uses_contraindicated_in():
             "is_allergen": True}
     edge = edges.association_edges(pair)[0]
     assert edge["predicate"] == "biolink:contraindicated_in"
+    assert edge["category"] == ["biolink:ChemicalEntityToDiseaseOrPhenotypicFeatureAssociation"]
     assert edge["medic_is_allergen"] is True
 
 
@@ -567,16 +773,17 @@ def test_edge_carries_supporting_text_and_character_offsets():
     from medic.export.kgx import edges
 
     edge = edges.association_edges(PAIR)[0]
-    # A string, not a one-element list: `supporting_text` is single-valued in Biolink, and
-    # this assertion previously pinned the wrapped shape in place.
+    # A one-element list: Biolink 4.4.6 defines `supporting_text` as multivalued, and the
+    # pydantic class rejects a bare string. (An earlier revision shipped a string on the
+    # belief it was single-valued; the class is the authority now.)
     # supporting_text is the span the offsets index, not the evidence snippet — Biolink
     # defines *_location_in_text as offsets into this string.
-    assert edge["supporting_text"] == (
-        "voriconazole is indicated in adults with invasive aspergillosis")
+    assert edge["supporting_text"] == [
+        "voriconazole is indicated in adults with invasive aspergillosis"]
     assert edge["subject_location_in_text"] == [0, 12]
     assert edge["object_location_in_text"] == [41, 63]
-    assert edge["supporting_text_section_type"] == "BODY"
-    text = edge["supporting_text"]
+    assert "supporting_text_section_type" not in edge   # TextMiningStudyResult only
+    text = edge["supporting_text"][0]
     assert text[0:12] == "voriconazole"
     assert text[41:63] == "invasive aspergillosis"
 
@@ -587,8 +794,9 @@ def test_edge_carries_resolution_join_keys():
     edge = edges.association_edges(PAIR)[0]
     assert edge["medic_subject_mention_id"] == "MEDICNE:d1"
     assert edge["medic_object_mention_id"] == "MEDICNE:s1"
-    assert edge["medic_object_applied_rules"] == ["base_normalization"]
-    assert edge["medic_object_grounding_quality"] == "lexical_exact"
+    # The rules, quality and flags are the SSSOM row's columns, reached through the id.
+    assert "medic_object_applied_rules" not in edge
+    assert "medic_object_grounding_quality" not in edge
 
 
 def test_edge_repeats_pair_level_aggregates_on_every_edge():
@@ -600,7 +808,9 @@ def test_edge_repeats_pair_level_aggregates_on_every_edge():
         assert edge["medic_pair_confidence"] == 0.97
         assert edge["medic_pair_n_assertions"] == 2
         assert edge["medic_pair_reliability"] == "HIGH"
-        assert edge["medic_pair_jurisdictions"] == ["EU", "JAPAN"]
+        # Jurisdictions and authorities are a GROUP BY over `medic_jurisdiction` and
+        # `primary_knowledge_source`, so they are not repeated.
+        assert "medic_pair_jurisdictions" not in edge
 
 
 def test_edge_confidence_is_this_assertions_own():
@@ -608,8 +818,7 @@ def test_edge_confidence_is_this_assertions_own():
 
     edge = edges.association_edges(PAIR)[0]
     assert edge["has_confidence_score"] == 0.9
-    assert edge["medic_confidence_subject"] == 0.9
-    assert edge["medic_confidence_basis"] == "MEASURED"
+    assert "medic_confidence_subject" not in edge     # components stay in the products
 
 
 def test_long_supporting_text_is_truncated_and_flagged():
@@ -619,7 +828,7 @@ def test_long_supporting_text_is_truncated_and_flagged():
     assertion["spans"][0]["text"] = "x" * 5000
     pair = {**PAIR, "assertions": [assertion]}
     edge = edges.association_edges(pair)[0]
-    assert len(edge["supporting_text"]) == edges.MAX_SUPPORTING_TEXT
+    assert len(edge["supporting_text"][0]) == edges.MAX_SUPPORTING_TEXT
     assert edge["medic_supporting_text_truncated"] is True
     # Offsets that no longer select their literal in the shipped string are withheld rather
     # than shipped pointing at the wrong words.
@@ -703,7 +912,8 @@ def test_publications_take_only_curies_not_bare_urls():
          "max_research_phase": "PHASE_II"}]}
     edge = edges.research_edges(record)[0]
     assert "publications" not in edge
-    assert edge["medic_reference_url"] == "https://www.fshdsociety.org/x"
+    assert edge["sources"][0]["source_record_urls"] == ["https://www.fshdsociety.org/x"]
+    assert "medic_reference_url" not in edge
 
 
 def test_label_mined_adverse_event_is_a_side_effect():
@@ -716,6 +926,7 @@ def test_label_mined_adverse_event_is_a_side_effect():
               "severity": "MILD", "evidence": []}
     edge = edges.adverse_event_edges(record)[0]
     assert edge["predicate"] == "biolink:has_side_effect"
+    assert edge["category"] == ["biolink:ChemicalOrDrugOrTreatmentSideEffectAssociation"]
     assert edge["object"] == "MedDRA:10019211"
     assert edge["medic_label_section"] == "ADVERSE_REACTIONS"
     assert edge["medic_severity"] == "MILD"
@@ -729,6 +940,7 @@ def test_spontaneously_reported_adverse_event_is_an_adverse_event():
               "evidence": []}
     edge = edges.adverse_event_edges(record)[0]
     assert edge["predicate"] == "biolink:has_adverse_event"
+    assert edge["category"] == ["biolink:ChemicalOrDrugOrTreatmentAdverseEventAssociation"]
     assert edge["object"] == "HP:0002315"       # prefers the HPO mapping when present
     assert edge["knowledge_level"] == "observation"
 
@@ -795,6 +1007,35 @@ def test_export_writes_content_metadata(tmp_path):
     assert meta["nodes"]["stubs"] == 3
     assert meta["edges"]["by_predicate"]["biolink:treats"] == 2
     assert "infores:ema" in meta["edges"]["by_primary_knowledge_source"]
+    assert meta["edges"]["by_category"] == {
+        "biolink:ChemicalOrDrugOrTreatmentToDiseaseOrPhenotypicFeatureAssociation": 3}
+
+
+def test_build_level_agent_provenance_is_in_the_metadata_not_on_every_edge(tmp_path):
+    """Which LLM and which extractor version produced the assertions is one fact per build;
+    it used to ride on every edge as five constant `medic_*` columns."""
+    from medic.export.kgx import export_kgx
+
+    products = _write_products(tmp_path / "products")
+    exports = tmp_path / "exports"
+    _, built_edges = export_kgx(products_dir=products, exports_dir=exports)
+
+    meta = yaml.safe_load((exports / "medic_kgx_metadata.yaml").read_text())
+    assert meta["extraction_agents"] == [{
+        "agent_name": "anthropic/claude-haiku-4-5-20251001",
+        "agent_version": "claude-haiku-4-5-20251001",
+        "tool": "medic-extractor", "tool_version": "1", "method": "LLM",
+        "assertions": 2,
+    }]
+    assert not any("medic_agent_name" in e or "medic_tool" in e for e in built_edges)
+    assert meta["source_explanations"] == [
+        {"primary_knowledge_source": "infores:ema", "description": "EMA approved indication",
+         "assertions": 1},
+        {"primary_knowledge_source": "infores:pmda", "description": "EMA approved indication",
+         "assertions": 1},
+    ]
+    assert not any("description" in e for e in built_edges
+                   if e["primary_knowledge_source"] == "infores:ema")
 
 
 def test_export_closes_dangling_endpoints_with_stubs(tmp_path):
@@ -872,7 +1113,7 @@ def test_a_contraindication_carries_no_clinical_approval_status():
     edge = edges.association_edges(pair)[0]
     assert edge["predicate"] == "biolink:contraindicated_in"
     assert not edge.get("clinical_approval_status")   # pruned, not emitted empty
-    assert edge["medic_regulatory_status"]
+    assert edge["medic_approval_status_raw"] == "APPROVED"
 
 
 def test_an_indication_still_carries_clinical_approval_status():
@@ -912,9 +1153,7 @@ def test_an_unmapped_source_is_an_error_not_a_skip():
     """The `unmapped` default made the gate report success when it had lost track of the data."""
     from medic.export.kgx import validate
 
-    edge = {"id": "e1", "subject": "CHEBI:1", "predicate": "biolink:treats",
-            "object": "MONDO:1", "medic_source": "NEW_REGISTRY",
-            "medic_jurisdiction": "USA"}
+    edge = {**GOOD_EDGE, "medic_source": "NEW_REGISTRY", "medic_jurisdiction": "USA"}
     report = validate.Report()
     validate._check_edge(edge, {"CHEBI:1", "MONDO:1"}, report)
     assert any("SOURCE_JURISDICTION" in p.message for p in report.errors)
@@ -926,8 +1165,7 @@ def test_india_edges_are_actually_checked_for_source_isolation():
     from medic.export.kgx import validate
 
     assert bl.SOURCE_JURISDICTION.get("INDIA") == "INDIA"
-    edge = {"id": "e1", "subject": "CHEBI:1", "predicate": "biolink:treats",
-            "object": "MONDO:1", "medic_source": "INDIA", "medic_jurisdiction": "EU"}
+    edge = {**GOOD_EDGE, "medic_source": "INDIA", "medic_jurisdiction": "EU"}
     report = validate.Report()
     validate._check_edge(edge, {"CHEBI:1", "MONDO:1"}, report)
     assert any("source isolation" in p.message for p in report.errors)
